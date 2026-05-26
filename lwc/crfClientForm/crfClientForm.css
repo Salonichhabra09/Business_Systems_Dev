@@ -1,0 +1,74 @@
+.icon-size{
+    display: flex; /* Use flexbox */
+    align-items:flex-end;  /* Vertically center items */
+    margin-top:5%;
+    zoom:500%;
+}
+
+.thank-you{
+    font-size: xx-large;
+    color: black;
+    padding-top: 5%;
+    padding-bottom: 1%;
+}
+
+.success-message{
+    font-size: large;
+    padding-bottom:5%;
+}
+
+hr.solid {
+    border-top: 3px solid #bbb;
+    margin: 0.2em auto;
+  }
+
+  .progress-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 4px;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: #4caf50;
+    /*border-radius: 10px 0 0 10px; */
+}
+
+.progress-info {
+    text-align: center;
+    font-size: 10px;
+    margin-bottom:5px;
+}
+.button-alignment {
+    position: relative;
+    text-align: right;
+}
+
+
+.image-container {
+    position: relative;
+    text-align: center;
+    color: white; /* Change color based on your image */
+}
+
+.image-container img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.overlay-heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the heading */
+    font-size: 24px; /* Adjust font size as needed */
+    color: white;
+    text-align: center;
+    width: 80%;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.); /* Optional: semi-transparent background */
+    padding: 10px; /* Optional: padding around the text */
+}

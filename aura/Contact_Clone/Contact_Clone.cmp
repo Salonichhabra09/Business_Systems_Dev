@@ -1,0 +1,17 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" >
+ 	<aura:attribute name="recordId" type="id" access="global" description="The record Id of the Contact"/>
+    <aura:html tag="style">
+        .slds-modal__content.slds-p-around--medium {
+            height: fit-content !important;
+            max-height: fit-content !important;
+        }
+    </aura:html>
+    
+
+    <div>
+        <h2 class="slds-text-heading--medium">This button should not be used to create new contacts. Before saving your changes, please make sure you update the Account and E-mail Address. Check the qualifications are showing on the new record.</h2>
+        <div class="slds-m-top_small" style="text-align: right" >
+            <lightning:button variant="brand" onclick="{!c.CloneContact}" label="OK"></lightning:button>           
+        </div>
+    </div>
+</aura:component>

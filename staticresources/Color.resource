@@ -1,0 +1,40 @@
+.datatable-green{
+  color:#000;
+  background-color:#ACD7CA;
+}
+.datatable-green:hover{
+  color:#000;
+  background-color:#E3F2ED;
+}
+.datatable-grey{
+  color:#000;
+  background-color:#ffcce6;
+}
+.datatable-grey:hover{
+  color:#000;
+  background-color:#ACD7CA;
+}
+.datatable-orange{
+  color:#000;
+  background-color:#e6b3b3;
+}
+.datatable-orange:hover{
+  color:#000;
+  background-color:#FFC000;
+}
+.datatable-blue{
+  color:#000;
+  background-color:#99e6ff;
+}
+.datatable-blue:hover{
+  color:#000;
+  background-color:#75B6E5;
+}
+.datatable-yellow{
+  color:#000;
+  background-color:#FFFF99;
+}
+.datatable-yellow:hover{
+  color:#000;
+  background-color:#FFFF00;
+}

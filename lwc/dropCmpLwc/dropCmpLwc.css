@@ -1,0 +1,12 @@
+hr.solid {
+    border-top: 3px solid #bbb;
+    margin: 0.2em auto;
+  }
+/*.limitVert {
+  max-height: 30vh;
+  overflow: auto;
+}*/
+
+.date-overflow{
+  overflow: hidden;
+}

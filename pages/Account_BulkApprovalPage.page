@@ -1,0 +1,7 @@
+<apex:page controller="Account_BulkApprovalPageController" >
+<!-- Begin Default Content REMOVE THIS -->
+<h1>Account Approval Process Tester</h1>
+<apex:form >
+<apex:commandButton value="Execute" action="{!Execute}"/>
+      </apex:form>       
+</apex:page>

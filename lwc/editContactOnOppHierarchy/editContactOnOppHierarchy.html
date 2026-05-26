@@ -1,0 +1,182 @@
+<template>
+    <template lwc:if={showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+    </template>
+        <div class="slds-card__header slds-grid">
+            <header lwc-7eubp5ml88f="" class="slds-media slds-media_center slds-has-flexi-truncate" part="header">
+                <div lwc-7eubp5ml88f="" class="slds-media__figure" part="icon">
+                    <lightning-icon icon-name="standard:contact" class="slds-icon-standard-contact slds-icon_container">
+                    </lightning-icon>
+                </div>
+                <div class="slds-media__body" part="title">
+                    
+                        <lightning-layout>
+                            <lightning-layout-item size="10">
+                                <h2 class="slds-card__header-title">
+                                    <a class="contact-name" onclick={handleNavigateToContact}>{contact.Name} <lightning-icon class="slds-m-left_medium" icon-name="utility:new_window" size="x-small"></lightning-icon></a>
+                                </h2>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="2">
+                                <lightning-button-icon lwc:if={isView} class="slds-m-left_medium" icon-name="utility:edit" variant="bare" onclick={handleEditContact} size="medium"></lightning-button-icon>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                </div>
+          </header>
+        </div>
+        <lightning-record-edit-form
+        lwc:if={isEdit}
+        record-id={contact.Id}
+        object-api-name="Contact"
+        onload={handleFormLoad}
+        onsubmit={handleSubmit}
+        onsuccess={handleSuccess}
+        onerror={handleError}
+    >
+    <!-- <lightning-messages></lightning-messages> -->
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field field-name="FirstName"></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field field-name="Contact_Status__c"></lightning-input-field>
+            </div>
+        </div>
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field field-name="LastName"></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field field-name="Title"></lightning-input-field>
+            </div>
+        </div>
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field field-name="Job_Level__c"></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Persona__c"></lightning-output-field>
+            </div>
+        </div>
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field field-name="Job_Function__c"></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field field-name="Area_of_Interest__c"></lightning-input-field>
+            </div>
+        </div>
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field field-name="Email"></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field field-name="Phone"></lightning-input-field>
+            </div>
+        </div>
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_xx-small">
+                <label class="slds-form-element__label" for="reportsTo" lwc:if={isFormLoaded}>Reports To</label>
+                <lightning-input-field id="reportsTo" field-name="ReportsToId" disabled variant="label-hidden"></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field field-name="Advocacy_Level__c"></lightning-input-field>
+            </div>
+        </div>
+        <h3 class="slds-section-title--divider slds-m-top_medium" lwc:if={isFormLoaded}>Address Information</h3>
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Global_Mailing_Country__c"></lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Mailing_City__c"></lightning-output-field>
+            </div>
+        </div>
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Mailing_State_County__c"></lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Mailing_ZIP_Postal_Code__c"></lightning-output-field>
+            </div>
+        </div>
+        <footer class="footer">
+            <button class="slds-button slds-button_neutral" 
+            onclick={handleCloseEdit} type="Cancel" title="Cancel">Cancel</button>
+            <button class="slds-button slds-button_brand" 
+            type="submit" title="Save">Save</button>
+        </footer>
+    </lightning-record-edit-form>
+    <lightning-record-view-form
+        lwc:if={isView}
+        record-id={contact.Id}
+        object-api-name="Contact"
+        onload={handleFormLoad}
+    >
+        <div class="slds-grid  slds-m-top_x-large">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="FirstName"></lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Contact_Status__c"></lightning-output-field>
+            </div>
+        </div>
+        <div class="slds-grid slds-m-top_medium">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="LastName"></lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Title"></lightning-output-field>
+            </div>
+        </div>
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Job_Level__c"></lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Persona__c"></lightning-output-field>
+            </div>
+        </div>
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Job_Function__c"></lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Area_of_Interest__c"></lightning-output-field>
+            </div>
+        </div>
+        <div class="slds-grid slds-m-top_medium">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Email"></lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Phone"></lightning-output-field>
+            </div>
+        </div>
+        <div class="slds-grid slds-m-top_medium">
+            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_xx-small">
+                <label class="slds-form-element__label" for="reportsTo" lwc:if={isFormLoaded}>Reports To</label>
+                <lightning-output-field field-name="ReportsToId" variant="label-hidden"></lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Advocacy_Level__c"></lightning-output-field>
+            </div>
+        </div>
+        <h3 class="slds-section-title--divider slds-m-top_medium" lwc:if={isFormLoaded}>Address Information</h3>
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Global_Mailing_Country__c"></lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Mailing_City__c"></lightning-output-field>
+            </div>
+        </div>
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Mailing_State_County__c"></lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Mailing_ZIP_Postal_Code__c"></lightning-output-field>
+            </div>
+        </div>
+    </lightning-record-view-form>
+</template>

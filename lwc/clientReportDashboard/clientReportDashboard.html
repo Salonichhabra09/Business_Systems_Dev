@@ -1,0 +1,114 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 11-19-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <template if:true={showMessage}>
+        <p class="no-data-message">Charts not available for selected columns. Please select one or more status columns to generate the charts.</p>
+    </template>
+    <template if:false={showMessage}>
+    <lightning-card class="slds-size_1-of-1">
+        <lightning-layout>
+            <lightning-layout-item size="12">
+                <div>
+                    <div class="slds-grid slds-wrap" if:true={Fourcolumn}>
+                        <div class="slds-col slds-size_1-of-4" if:true={TConly}>
+                            <c-root-chart chart-dataset={oppPieconfigTC}  ></c-root-chart>
+                            <div style="display: flex; justify-content: center;"><b>Assessment Status</b></div>
+                        </div>
+                        
+                        <div class="slds-col slds-size_1-of-4" if:true={MFSonly}>
+                            <c-root-chart chart-dataset={oppPieconfigMFS} ></c-root-chart>
+                            <div style="display: flex; justify-content: center;"><b>360 Status</b></div>
+                        </div>
+                        
+                        <div class="slds-col slds-size_1-of-4" if:true={VADConly}>
+                            <c-root-chart chart-dataset={oppPieconfigVADC}  ></c-root-chart>
+                            <div style="display: flex; justify-content: center;"><b>VADC Status</b></div>
+                        </div>
+                        
+                        <div class="slds-col slds-size_1-of-4" if:true={Insightonly}>
+                            <c-root-chart chart-dataset={oppPieconfigInsight}  ></c-root-chart>
+                            <div style="display: flex; justify-content: center;"><b>Insights Status</b></div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="slds-grid slds-wrap" if:true={Threecolumn}>
+                        <div class="slds-col slds-size_1-of-3" if:true={TConly}>
+                            <c-root-chart chart-dataset={oppPieconfigTC}  ></c-root-chart>
+                            <div style="display: flex; justify-content: center;"><b>Assessment Status</b></div>
+                        </div>
+                        
+                        <div class="slds-col slds-size_1-of-3" if:true={MFSonly}>
+                            <c-root-chart chart-dataset={oppPieconfigMFS}  ></c-root-chart>
+                            <div style="display: flex; justify-content: center;"><b>360 Status</b></div>
+                        </div>
+                        
+                        <div class="slds-col slds-size_1-of-3" if:true={VADConly}>
+                            <c-root-chart chart-dataset={oppPieconfigVADC}  ></c-root-chart>
+                            <div style="display: flex; justify-content: center;"><b>VADC Status</b></div>
+                        </div>
+                        
+                        <div class="slds-col slds-size_1-of-3" if:true={Insightonly}>
+                            <c-root-chart chart-dataset={oppPieconfigInsight}  ></c-root-chart>
+                            <div style="display: flex; justify-content: center;"><b>Insights Status</b></div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="slds-grid slds-wrap" if:true={Twocolumn}>
+                        <div class="slds-col slds-size_1-of-2" if:true={TConly}>
+                            <c-root-chart chart-dataset={oppPieconfigTC}  ></c-root-chart>
+                            <div style="display: flex; justify-content: center;"><b>Assessment Status</b></div>
+                        </div>
+                        
+                        <div class="slds-col slds-size_1-of-2" if:true={MFSonly}>
+                            <c-root-chart chart-dataset={oppPieconfigMFS}  ></c-root-chart>
+                            <div style="display: flex; justify-content: center;"><b>360 Status</b></div>
+                        </div>
+                        
+                        <div class="slds-col slds-size_1-of-2" if:true={VADConly}>
+                            <c-root-chart chart-dataset={oppPieconfigVADC}  ></c-root-chart>
+                            <div style="display: flex; justify-content: center;"><b>VADC Status</b></div>
+                        </div>
+                        
+                        <div class="slds-col slds-size_1-of-2" if:true={Insightonly}>
+                            <c-root-chart chart-dataset={oppPieconfigInsight}  ></c-root-chart>
+                            <div style="display: flex; justify-content: center;"><b>Insights Status</b></div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="slds-grid slds-wrap" if:true={Onecolumn}>
+                        <div class="slds-col slds-size_1-of-1" if:true={TConly}>
+                            <c-root-chart chart-dataset={oppPieconfigTC}  ></c-root-chart>
+                            <div style="display: flex; justify-content: center;" ><b>Assessment Status</b></div>
+                        </div>
+                        
+                        <div class="slds-col slds-size_1-of-1" if:true={MFSonly}>
+                            <c-root-chart chart-dataset={oppPieconfigMFS}  ></c-root-chart>
+                            <div style="display: flex; justify-content: center;"><b>360 Status</b></div>
+                        </div>
+                        
+                        <div class="slds-col slds-size_1-of-1" if:true={VADConly}>
+                            <c-root-chart chart-dataset={oppPieconfigVADC}  ></c-root-chart>
+                            <div style="display: flex; justify-content: center;"><b>VADC Status</b></div>
+                        </div>
+                        
+                        <div class="slds-col slds-size_1-of-1" if:true={Insightonly}>
+                            <c-root-chart chart-dataset={oppPieconfigInsight}  ></c-root-chart>
+                            <div style="display: flex; justify-content: center;"><b>Insights Status</b></div>
+                        </div>
+                        
+                    </div>
+                   
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
+</template>

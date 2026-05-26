@@ -1,0 +1,17 @@
+<template>
+    <div class="slds-var-p-around_medium">
+        <template if:true={showLoadingSpinner}>
+            <div style="z-index: 10000 !important;">
+                <lightning-spinner alternative-text="Hello" size="medium" class="spins"
+                    style="z-index: 10000 !important;">
+                </lightning-spinner>
+            </div>
+        </template>
+        <template if:true={limitReached}>
+            <div class="slds-notify slds-notify_alert slds-theme_info">
+                <span class="slds-assistive-text">info</span>
+                <span>Candidate Limit has been reached. Please split the file containing {remainingLimit} remaining Candidates and create a new opp/job for extra usage of {extraUsage}.</span>
+            </div>
+        </template>
+    </div>
+</template>

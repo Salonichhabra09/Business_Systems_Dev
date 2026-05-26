@@ -1,0 +1,319 @@
+<template>
+    <!-- Check if recordId is available -->
+    <template lwc:if={recordId}>
+
+        <div class="contHierarchy">
+            <template if:true={isExpanded}>
+                <lightning-button-icon icon-name={iconName} size="small" onclick={handleFiltersVisibility}></lightning-button-icon>
+            </template>
+            <div class={expandedClass} if:true={showFilters}>
+            <lightning-layout>
+                <lightning-layout-item size="5">
+                    <div class="zoomBtns slds-no-print">
+                        <!-- Zoom Out button -->
+                       <lightning-button-icon icon-name="utility:zoomout" variant="border-filled" onclick={zoomOut}
+                           alternative-text="Zoom Out" title="Zoom Out">
+                       </lightning-button-icon>
+                       <div class="slider"></div>
+       
+                       <!-- Slider for zoom level -->
+                       <lightning-slider class="slider" max="100" min={minimum} step="1" value={zoomLevel}
+                           onchange={handleZoom}>
+                       </lightning-slider>
+       
+                       <!-- Zoom In button -->
+                       <lightning-button-icon icon-name="utility:zoomin" variant="border-filled" onclick={zoomIn}
+                           alternative-text="Zoom In" title="Zoom In">
+                       </lightning-button-icon>
+                       </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <div class="zoomBtns slds-no-print">
+                    <!--Added by Prachi SSE-21596-->
+            <template if:true = {showUploadContactButtons}    > 
+           <lightning-button icon-name="utility:download" label="Contact Import Template" title="Contact Import Template"
+           onclick={downloadCSVFile} variant="brand" 
+           style="margin-top:2px"></lightning-button>
+
+         
+           <lightning-input   
+                         
+           type="file"
+           accept=".csv"
+           onchange={handleFileUpload}
+           disabled={disableUploadButton}
+           variant = "label-hidden"
+           style="margin-left:1rem"
+           multiple="false"
+         >
+         </lightning-input></template>   
+           <!--Changes end SSE-21596-->
+        </div>
+                </lightning-layout-item>
+            </lightning-layout>
+            <!-- Zoom buttons -->
+            <!-- <div class="zoomBtns slds-no-print"> -->
+                 <!-- Zoom Out button -->
+                <!-- <lightning-button-icon icon-name="utility:zoomout" variant="border-filled" onclick={zoomOut}
+                    alternative-text="Zoom Out" title="Zoom Out">
+                </lightning-button-icon>
+                <div class="slider"></div> -->
+
+                <!-- Slider for zoom level -->
+                <!-- <lightning-slider class="slider" max="100" min={minimum} step="1" value={zoomLevel}
+                    onchange={handleZoom}>
+                </lightning-slider> -->
+
+                <!-- Zoom In button -->
+                <!-- <lightning-button-icon icon-name="utility:zoomin" variant="border-filled" onclick={zoomIn}
+                    alternative-text="Zoom In" title="Zoom In">
+                </lightning-button-icon> -->
+           
+           
+           <!--Added by Prachi SSE-21596-->
+           <!-- <lightning-button icon-name="utility:download" label="Contact Upload Template" title="Contact Upload Template"
+           onclick={downloadCSVFile} variant="brand" 
+           style="margin-top:2px;margin-left:11.2rem"></lightning-button>
+
+         
+           <lightning-input   
+                         
+           type="file"
+           accept=".csv"
+           onchange={handleFileUpload}
+           disabled={disableUploadButton}
+           variant = "label-hidden"
+           style="margin-left:2rem"
+           multiple="false"
+         >
+         </lightning-input> -->
+           <!--Changes end SSE-21596-->
+            <!-- </div> -->
+            </div>
+            
+
+            <div data-id="mainPatt" >
+                <template if:true={isRegionalOrGlobal}>
+                    <lightning-layout class={expandedClass}>
+                        <lightning-layout-item size="5">
+                            <div class="slds-col slds-size_5-of-12 slds-m-top_large" style="margin-left: .6rem;">
+                                <div class="diffAccount">
+                                    From different Account
+                                </div>
+                                </div>
+                    </lightning-layout-item>
+                        <lightning-layout-item size="6">
+                            <div style="max-width: 350px" class={expandedClassForAcc}>
+                                <lightning-combobox
+                                    name="progress"
+                                    label="Accounts"
+                                    value={currentAccount}
+                                    placeholder="Select Account"
+                                    options={dNumberList}
+                                    onchange={handleChange} ></lightning-combobox>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </template>
+                <div class={expandedClass} if:true={showFilters}>
+                <div class="tree" data-id="toPrint">
+                    <lightning-spinner class={spinnerClass} data-id="mySpinner" size="large" variant="brand"
+                        alternative-text="Loading...">
+                    </lightning-spinner>
+                    
+                    <!-- Legend for different contact types -->
+                    <div class="chartLegend">
+                        <div class="slds-grid">
+                            <div class="slds-col slds-size_5-of-12">
+                                <div class="haveMeet">
+                                    People we have met
+                                </div>
+                                <div class="needToMeet">
+                                    People we need to meet
+                                </div>
+                                <div class="notActiveContacts">
+                                    Not Active Contacts
+                                </div>
+                            </div>
+                            <div class="slds-col slds-size_7-of-12">
+                                <div class="slds-grid">
+                                    <div class="slds-col slds-size_6-of-12 filterLabels">
+                                        Contacts with Opportunities
+                                    </div>
+                                    <div class="slds-col slds-size_6-of-12">
+                                        <input type="checkbox" name="filter1" onchange={handleFilterSelection} checked={selectedFilters.filter1} />
+                                    </div>
+
+                                </div>
+                                <div class="slds-grid">
+                                    <div class="slds-col slds-size_6-of-12 filterLabels">
+                                        Contacts with Strategies     
+                                    </div>
+                                    <div class="slds-col slds-size_6-of-12">
+                                        <input type="checkbox" name="filter2" onchange={handleFilterSelection} checked={selectedFilters.filter2} />
+                                    </div>
+                                </div>
+                                <div class="slds-grid">
+                                    <div class="slds-col slds-size_6-of-12 filterLabels">
+                                        Inactive Contacts     
+                                    </div>
+                                    <div class="slds-col slds-size_6-of-12">
+                                        <input type="checkbox" name="filter3" onchange={handleFilterSelection} checked={selectedFilters.filter3} />
+                                    </div>
+                                </div>
+                                <div class="slds-grid">
+                                    <!-- <div class="slds-col slds-size_6-of-12">
+                                        Job Level     
+                                    </div> -->
+                                    <div class="slds-col slds-size_6-of-12">
+                                        <lightning-record-edit-form object-api-name="Contact">
+                                            <div class="slds-grid slds-gutters">
+                                              <div class="slds-col">
+                                                <lightning-input-field name="filter4" field-name="Job_Level__c" onchange={handleFilterSelection} value={selectedFilters.filter4}></lightning-input-field>
+                                              </div>
+                                            </div>
+                                          </lightning-record-edit-form>
+                                    </div>
+                                    <div class="slds-col slds-size_6-of-12">
+                                        <lightning-record-edit-form object-api-name="Contact">
+                                            <div class="slds-grid slds-gutters">
+                                              <div class="slds-col" style="padding-right: 0px;">
+                                                <lightning-input-field name="filter5" field-name="Job_Function__c" onchange={handleFilterSelection} value={selectedFilters.filter5}></lightning-input-field>
+                                              </div>
+                                            </div>
+                                          </lightning-record-edit-form>
+                                    </div>
+                                </div>
+                                <!-- <div class="slds-grid">
+                                    <div class="slds-col slds-size_6-of-12">
+                                        Job Function     
+                                    </div>
+                                    <div class="slds-col slds-size_6-of-12">
+                                        <lightning-record-edit-form object-api-name="Contact">
+                                            <div class="slds-grid slds-gutters">
+                                              <div class="slds-col">
+                                                <lightning-input-field field-name="Job_Function__c" onchange={handleFilterSelection} value={selectedFilters.filter5}></lightning-input-field>
+                                              </div>
+                                            </div>
+                                          </lightning-record-edit-form>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+                    <!-- Check if there are contacts to display -->
+                    <template if:true={showHierarchy}>
+                    <template lwc:if={showContacts}>
+                        <div class="dragContainer" style="
+                        margin-top: 50px;
+                        padding: 30px;
+                        border: 2px solid rgb(240, 240, 240);
+                        border-radius: 4px;">
+                            
+                        <!-- Scrollable container for contact hierarchy -->
+                            <div class="resize" onmousedown={mouseDownHandler} onmousemove={mouseMoveHandler}
+                                onmouseup={mouseUpHandler}>
+                                <!-- <div class="theAccount account-card">
+                                    <a>Account Name</a>
+                                    <div class="slds-align_absolute_centre slds-m-top_large">
+                                        <lightning-button-icon icon-name="utility:add" class="slds-p-around_medium" size="large"></lightning-button-icon>
+                                    </div>
+                                </div> -->
+                                <!-- <li class="theAccount level-1">
+                                    Account Name
+                                </li>
+                                <div class="level-2"> -->
+                                <ul>
+                                    <!-- Iterate through contacts -->
+                                    <template for:each={contacts} for:item='cont'>
+                                        <!-- Checks if the Contact Reporst to Id is null (it's a top level contact) -->
+                                        <template lwc:if={cont.condition}>
+                                            <!-- Contact card component for each contact -->
+                                            <li key={cont.Id} data-id="liResize" class="level-2">
+                                                <c-contact-hierarchy_contact-card-l-w-c contact={cont}
+                                                    contacts={contacts} record-id={accountplanId} zoom-level={zoomLevel}
+                                                    onrefreshhierarcky={handleRefreshHierarcky} is-acc-plan-retired={isAccPlanRetired}
+                                                    filters={selectedFilters} all-contacts-list={allContactsList}
+                                                    >
+                                                </c-contact-hierarchy_contact-card-l-w-c>
+                                            </li>
+                                        </template>
+                                    </template>
+                                </ul>
+                            <!-- </div> -->
+                            </div>
+                            <template if:true={showErrorMessage}>
+                                    <div class="slds-align_absolute-center slds-text-heading_small"
+                                        style="height: 150px!important; text-align: center; padding-left:240px;">
+                                        <lightning-formatted-text value={errorGettingContacts}></lightning-formatted-text>
+                                    </div>
+                            </template>
+                        </div>
+                    </template>
+
+                    <!-- Display error message if no contacts available -->
+                    <template lwc:else>
+                        <lightning-card>
+                            <div class="slds-align_absolute-center slds-text-heading_small"
+                                style="height: 150px!important; text-align: center;">
+                                <lightning-formatted-text value={errorGettingContacts}></lightning-formatted-text>
+                            </div>
+                        </lightning-card>
+                    </template>
+                </template>
+                </div>
+                <template if:false={isExpanded}>
+                <template if:true={showHierarchy}>
+                <!-- Section for last contacted record -->
+                <div class="lastContactedSection">
+                    <div class={contactedIconClass}>
+
+                        <!-- Icon indicating last contact -->
+                        <lightning-icon icon-name="utility:chat" size="small" alternative-text="Last met"
+                            title="Last met">
+                        </lightning-icon>
+                    </div>
+                    <div class="slds-grid">
+                        <!-- Column for label "Who did we last contacted in the organization?" -->
+                        <div class="slds-col slds-size_5-of-12">
+                            <p class="lastContacted_Labels">Who did we last contacted in the organization?</p>
+                        </div>
+                         <!-- Column for the last contacted record value -->
+                        <div class="slds-col slds-size_7-of-12">
+                            <p class="lastContacted_Value">
+                                <!-- Link to navigate to the contacted record -->
+                                <a href="#" onclick={navigateToContacted}>
+                                    {contactedRecord}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                         <!-- Column for label "Subject discussed & actions agreed" -->
+                        <div class="slds-col slds-size_5-of-12">
+                            <p class="lastContacted_Labels">Subject discussed & actions agreed</p>
+                        </div>
+                        <!-- Column for the subject value -->
+                        <div class="slds-col slds-size_7-of-12">
+                            <p class="lastContacted_Value">{subject}</p>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </template>
+            </div>
+        </template>
+    
+    <template lwc:else><!-- Shows error message if recordId is not available -->
+        <lightning-card>
+            <div class="slds-align_absolute-center slds-text-heading_small"
+                style="height: 150px!important; text-align: center;">
+                <!-- Lightning formatted text component to display the error message -->
+                <lightning-formatted-text value={errorAccessingRecId}></lightning-formatted-text>
+            </div>
+        </lightning-card>
+    </template>
+</template>

@@ -1,0 +1,20 @@
+<aura:documentation>
+    
+    <aura:example name="ExampleName" ref="c:Contact_Qualification" label="Qualifications">
+    </aura:example> 
+    
+    <aura:description>
+        <p style="line-height: normal;"><strong><span style="font-family: 'Arial',sans-serif; color: #080707;">Overview:</span></strong></p>
+        <ul>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">This component is present as a widget on right rail of Contact record.</span></li>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">This component displays the current Qualifications of the contact.</span></li>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">When there are no qualifications associated with the contact a message is displayed - "There are no qualifications to display!"</span></li>
+        </ul>
+        <p style="line-height: normal;"><strong><span style="font-family: 'Arial',sans-serif; color: #080707;">&nbsp;For the Developers:</span></strong></p>
+        <ul>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">This component gets initialized and the 'doInit' controller function is called when a user lands on any of the contact's record page.</span></li>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">The 'doInit' function is fetching the Qualification(s) of the contact using &ldquo;Lightning Data Service&rdquo;.</span></li>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in; border: none; padding: 0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Since the qualification(s) are Multi-select picklist, the values are being split by ';' and then being stored in an array to display them separately in the Qualifications section.</span></li>
+        </ul>
+    </aura:description>
+</aura:documentation>

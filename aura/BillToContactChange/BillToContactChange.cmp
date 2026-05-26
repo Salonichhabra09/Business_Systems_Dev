@@ -1,0 +1,32 @@
+<aura:component controller="BillToContactChangeController" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,force:hasRecordId" access="global">
+    <aura:attribute name="OrderRecord" type="Order"/>
+    <aura:attribute name="recordLoadError" type="String"/>
+     <aura:attribute name="recordId" type="id" access="global" description="Used to Hold the Id of record in Context"/>
+    <aura:attribute name="record" type="Object" access="global" description="To hold the object type variable" />
+    <aura:attribute name="selectedId" type="String" />
+    <lightning:notificationsLibrary aura:id="notifLib" />
+    <force:recordData aura:id="recordLoader"
+    recordId="{!v.recordId}"
+    fields="BillToContactId,AccountId"
+    targetRecord="{!v.record}"
+    targetFields="{!v.OrderRecord}"
+    targetError="{!v.recordLoadError}"
+    />
+  <lightning:card title="Update Bill To Contact"> 
+      <lightning:spinner aura:id="mySpinner" class="slds-hide" variant="brand"  />
+   <c:lookupField 
+                    objectAPIName="Contact" 
+                    returnFields="['Name','Phone']" 
+                    queryFields="['Name','Phone']"
+                    selectedId="{!v.selectedId}"
+                  filter="{!'AccountId = \''+v.OrderRecord.AccountId+'\''}"
+                  />
+      <br></br>
+      <div class="slds-clearfix">
+        <div class="slds-float_right">
+            <lightning:button variant="brand" label="Update" onclick="{!c.updateOrder}"  />
+        </div>
+    </div>
+    
+    </lightning:card>
+</aura:component>

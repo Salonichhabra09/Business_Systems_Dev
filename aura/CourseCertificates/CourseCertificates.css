@@ -1,0 +1,49 @@
+.THIS .slds-form-element__label:empty {
+    display:none;
+}
+
+.THIS .slds-file-selector__dropzone .slds-file-selector__text{
+    display: none;
+}
+
+.THIS .slds-file-selector__dropzone .slds-file-selector__button{
+    font-size: 0;
+}
+
+.THIS .slds-file-selector{
+    display: block;
+}
+                            
+.THIS .slds-file-selector__dropzone .slds-file-selector__button:after{
+    content: 'Load Partner Logo';
+    font-size: .8125rem;
+    color: rgba(27, 82, 151, 1.0);
+}
+
+.THIS .slds-form-element__label {
+    display: none;                          
+}
+/*.THIS.c-container {
+
+    
+    background-color: white;
+    height:297mm; 
+    width:210mm; 
+    margin-left:auto; 
+    margin-right:auto;
+    margin-bottom: 50px;
+}
+.THIS .page-section {
+    padding: 1rem;
+}
+.THIS .page-header,
+.THIS .page-footer {
+    height: 50px;
+}
+.THIS .page-main {
+    background: white;
+}
+.THIS .page-left,
+.THIS .page-right {
+    background: white;
+}*/

@@ -1,0 +1,89 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-18-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <div class="container">
+        <!--<div class="container-header">Feedback Summary</div>-->
+        <!-- First Table and Chart -->
+        <template if:true={dataSELF.length}>
+            <div class="combined-section-side">
+                <!-- Header -->
+                <div class="section-header">
+                    <span>Self Assessment Status</span>
+                </div>
+
+                <!-- Content -->
+                <div class="content-wrapper">
+                    <div class="table-container">
+                        <lightning-datatable 
+                            key-field="id"
+                            data={dataSELF}
+                            columns={columnsSELF}
+                            hide-checkbox-column>
+                        </lightning-datatable>
+                    </div>
+                    <div class="chart-container">
+                        <canvas data-id="chartCanvasSELF"></canvas>
+                    </div>
+                </div>
+            </div>
+        </template>
+    
+       
+        <!-- Second Table and Chart -->
+        <template if:true={dataMFS.length}>
+			<div class="combined-section-side">
+                <!-- Header -->
+                <div class="section-header">
+                    <span>Feedback Status</span>
+                </div>
+				<!-- Content -->
+                <div class="content-wrapper">
+                    <div class="table-container">
+                        <lightning-datatable 
+                            key-field="id"
+                            data={dataMFS}
+                            columns={columnsMFS}
+                            hide-checkbox-column>
+                        </lightning-datatable>
+                    </div>
+                    <div class="chart-container">
+                        <canvas data-id="chartCanvasMFS"></canvas>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </template>
+
+        <!-- Third Table and Chart -->
+        <template if:true={data.length}>
+            <div class="combined-section">
+                <!-- Header -->
+                <div class="section-header">
+                    <span>Assessment Status</span>
+                </div>
+				<!-- Content -->
+                <div class="content-wrapper">
+                    <div class="table-container-single">
+                        <lightning-datatable 
+                            key-field="id"
+                            data={data}
+                            columns={columns}
+                            hide-checkbox-column>
+                        </lightning-datatable>
+                    </div>
+                    <div class="chart-container-single">
+                        <canvas data-id="chartCanvas"></canvas>
+                    </div>
+                </div>
+                
+            </div>
+        </template>
+    </div>
+    
+</template>

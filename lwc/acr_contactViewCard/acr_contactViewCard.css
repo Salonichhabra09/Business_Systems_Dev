@@ -1,0 +1,32 @@
+.notes-tab{
+    zoom: 73.5%;
+}
+
+.notes-footer{
+    float: right;
+    padding-bottom: 0.5rem;
+    padding-right: 0.5rem;
+    margin-top: 0.5rem;
+    --slds-c-button-brand-color-background : dimgray;
+}
+
+.history-heading{
+    margin-left: 2px;
+    font-size: medium;
+    font-weight: 600;
+}
+
+.history-section{
+    height : 15rem;
+    overflow: auto;
+    background-color: rgb(243, 243, 243);
+    border: solid 1px lightgray;
+    resize: vertical;
+    border-radius: 4px;
+    margin-top: 0.3rem;
+}
+
+.scrollable-tab-content {
+    max-height: 400px;
+    overflow-y: auto;
+}

@@ -1,0 +1,4772 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <content>CourseBooking_DeleteOverride</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>CourseBooking_EditOverride</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Course_Booking_Record_Page2</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Course_Booking_LEX_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Course_Booking_LEX_Compact_Layout</fullName>
+        <fields>Delegate_Contact__c</fields>
+        <fields>Name</fields>
+        <fields>Course_Name__c</fields>
+        <fields>Course_Number__c</fields>
+        <fields>Booking_Status__c</fields>
+        <fields>Course_Start_Date__c</fields>
+        <fields>Course_End_Date__c</fields>
+        <label>Course Booking LEX Compact Layout</label>
+    </compactLayouts>
+    <compactLayouts>
+        <fullName>Course_Booking_compact_Layout</fullName>
+        <fields>Booking_Status__c</fields>
+        <fields>Course_Start_Date__c</fields>
+        <fields>Course_End_Date__c</fields>
+        <fields>Course_Name__c</fields>
+        <fields>Name</fields>
+        <fields>Course_Number__c</fields>
+        <label>Course Booking compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Public and Incompany course bookings to replace Big Sky Courses &amp; Bookings module</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Assessments__c</fullName>
+        <label>Assessments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AutomationBypassDateTime__c</fullName>
+        <label>AutomationBypassDateTime</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Billing_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Billing Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>R00N20000001PpD0EAK</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Billing_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Billing Contact</label>
+        <lookupFilter>
+            <active>false</active>
+            <errorMessage>Either Course Booking and it&apos;s billing Contact are not from the same Billing Account And Billing Contact is Inactive.</errorMessage>
+            <filterItems>
+                <field>$Source.Billing_Account__c</field>
+                <operation>equals</operation>
+                <valueField>Contact.Account.Id</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Course Bookings (Billing Contact)</relationshipLabel>
+        <relationshipName>R00N20000001PpD1EAK</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Booker_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Booker Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>R00N20000000pQbmEAE</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Booking_Status__c</fullName>
+        <description>Status of the booking</description>
+        <label>Booking Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Provisional</fullName>
+                    <default>true</default>
+                    <label>Provisional</label>
+                </value>
+                <value>
+                    <fullName>Confirmed</fullName>
+                    <default>false</default>
+                    <label>Confirmed</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Waiting</fullName>
+                    <default>false</default>
+                    <label>Waiting</label>
+                </value>
+                <value>
+                    <fullName>Waiting to be marked</fullName>
+                    <default>false</default>
+                    <label>Waiting to be marked</label>
+                </value>
+                <value>
+                    <fullName>Marked – Pass</fullName>
+                    <default>false</default>
+                    <label>Marked – Pass</label>
+                </value>
+                <value>
+                    <fullName>Marked – not complete</fullName>
+                    <default>false</default>
+                    <label>Marked – not complete</label>
+                </value>
+                <value>
+                    <fullName>Ready to be confirmed</fullName>
+                    <default>false</default>
+                    <label>Ready to be confirmed</label>
+                </value>
+                <value>
+                    <fullName>Cancelled - to be rebooked</fullName>
+                    <default>false</default>
+                    <label>Cancelled - to be rebooked</label>
+                </value>
+                <value>
+                    <fullName>Cancelled - to be credited</fullName>
+                    <default>false</default>
+                    <label>Cancelled - to be credited</label>
+                </value>
+                <value>
+                    <fullName>Cancelled - chargeable</fullName>
+                    <default>false</default>
+                    <label>Cancelled - chargeable</label>
+                </value>
+                <value>
+                    <fullName>Training not complete</fullName>
+                    <default>false</default>
+                    <label>Training not complete</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Campaign__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Campaign</label>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipLabel>Course Bookings</relationshipLabel>
+        <relationshipName>Course_Bookings</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cancellation_Refund_Type__c</fullName>
+        <label>Cancellation Refund Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Full</fullName>
+                    <default>false</default>
+                    <label>Full</label>
+                </value>
+                <value>
+                    <fullName>Partial</fullName>
+                    <default>false</default>
+                    <label>Partial</label>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Certificate_Sent__c</fullName>
+        <label>Certificate Sent Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Closed_from_button__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Closed from button</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Completion_Survey_Sent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Created for Qualtrics and is being used in Outbound message.</description>
+        <label>Completion Survey Sent</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Confirmed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Course Booking Confirmed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Notes__c</fullName>
+        <label>Contact Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Course_Booking_BU__c</fullName>
+        <description>Business Unit from the course on the course booking</description>
+        <externalId>false</externalId>
+        <label>Course Country</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Course_Booking_Transferred_From__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Course Booking Transferred From</label>
+        <referenceTo>Course_Booking__c</referenceTo>
+        <relationshipLabel>Course Bookings</relationshipLabel>
+        <relationshipName>Course_Bookings</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Course_Booking_Transferred_To__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Course Booking Transferred To</label>
+        <referenceTo>Course_Booking__c</referenceTo>
+        <relationshipLabel>Course Bookings (Course Booking Transferred To)</relationshipLabel>
+        <relationshipName>Course_Bookings1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Course_Category__c</fullName>
+        <description>Created for Qualtrics and is being used in Outbound message.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Course_Number__r.Course_Category__c)</formula>
+        <label>Course Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Course_Country__c</fullName>
+        <description>Created for Qualtrics and is being used in Outbound message.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Course_Number__r.Course_BU__c)</formula>
+        <label>Course Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Course_Description__c</fullName>
+        <description>From the course record</description>
+        <externalId>false</externalId>
+        <label>Course Description</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Course_Director__c</fullName>
+        <description>Created for Qualtrics and is being used in Outbound message.</description>
+        <externalId>false</externalId>
+        <formula>Course_Number__r.Course_Director__r.Contact_Full_Name__c</formula>
+        <label>Course Director</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Course_End_Date__c</fullName>
+        <label>Course End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Course_Name__c</fullName>
+        <description>Course Name from Course Object</description>
+        <externalId>false</externalId>
+        <label>Course Name</label>
+        <length>120</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Course_Number_Text__c</fullName>
+        <description>Created for Qualtrics and is being used in Outbound message.</description>
+        <externalId>false</externalId>
+        <formula>Course_Number__r.Name</formula>
+        <label>Course Number Text</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Course_Number__c</fullName>
+        <label>Course Number</label>
+        <referenceTo>Courses__c</referenceTo>
+        <relationshipLabel>Course Bookings</relationshipLabel>
+        <relationshipName>Course_Booking</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Course_Price_Discount__c</fullName>
+        <description>Discount on the base course price, changed to 5 digits - JM 12/3/10.</description>
+        <inlineHelpText>Please enter as a total amount, not a % value</inlineHelpText>
+        <label>Course Discount</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Course_Price__c</fullName>
+        <description>Course price with no discount and no extras</description>
+        <inlineHelpText>Prices are now fixed in Sun based on agreed price.</inlineHelpText>
+        <label>Public Course Price</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Course_Start_Date__c</fullName>
+        <label>Course Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Course_Type__c</fullName>
+        <description>Course Type from Course object</description>
+        <externalId>false</externalId>
+        <label>Course Type</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Course_Venue__c</fullName>
+        <externalId>false</externalId>
+        <label>Course Venue</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Credit_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit Amount</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Credit_Date__c</fullName>
+        <label>Credit Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Credit_Notes__c</fullName>
+        <label>Credit Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Credit_Reason__c</fullName>
+        <label>Credit Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>S04 - Client Order Error</fullName>
+                    <default>false</default>
+                    <label>S04 - Client Order Error</label>
+                </value>
+                <value>
+                    <fullName>S05 - SOE Operator Error</fullName>
+                    <default>false</default>
+                    <label>S05 - SOE Operator Error</label>
+                </value>
+                <value>
+                    <fullName>S07 - Client Cancelled Training</fullName>
+                    <default>false</default>
+                    <label>S07 - Client Cancelled Training</label>
+                </value>
+                <value>
+                    <fullName>S08 - SHL Cancelled Course</fullName>
+                    <default>false</default>
+                    <label>S08 - SHL Cancelled Course</label>
+                </value>
+                <value>
+                    <fullName>S09 - Goodwill Gesture</fullName>
+                    <default>false</default>
+                    <label>S09 - Goodwill Gesture</label>
+                </value>
+                <value>
+                    <fullName>S11 - System Error</fullName>
+                    <default>false</default>
+                    <label>S11 - System Error</label>
+                </value>
+                <value>
+                    <fullName>S12 - Requestor Error</fullName>
+                    <default>false</default>
+                    <label>S12 - Requestor Error</label>
+                </value>
+                <value>
+                    <fullName>S14 - Training Operator Error</fullName>
+                    <default>false</default>
+                    <label>S14 - Training Operator Error</label>
+                </value>
+                <value>
+                    <fullName>S13 - Client Support Operator Error</fullName>
+                    <default>false</default>
+                    <label>S13 - Client Support Operator Error</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Credit_Status__c</fullName>
+        <label>Credit Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Ready to be credited</fullName>
+                    <default>false</default>
+                    <label>Ready to be credited</label>
+                </value>
+                <value>
+                    <fullName>Queried</fullName>
+                    <default>false</default>
+                    <label>Queried</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Completed via order</fullName>
+                    <default>false</default>
+                    <label>Completed via order</label>
+                </value>
+                <value>
+                    <fullName>Ready for OAT</fullName>
+                    <default>false</default>
+                    <label>Ready for OAT</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Credit_Text_Description__c</fullName>
+        <label>Credit Text Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Cross_Border_BU__c</fullName>
+        <label>Cross Border BU</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Abu Dhabi - AD1</fullName>
+                    <default>false</default>
+                    <label>Abu Dhabi - AD1</label>
+                </value>
+                <value>
+                    <fullName>Australia - AU1</fullName>
+                    <default>false</default>
+                    <label>Australia - AU1</label>
+                </value>
+                <value>
+                    <fullName>Belgium SPS - BE5</fullName>
+                    <default>false</default>
+                    <label>Belgium SPS - BE5</label>
+                </value>
+                <value>
+                    <fullName>Canada - CA1</fullName>
+                    <default>false</default>
+                    <label>Canada - CA1</label>
+                </value>
+                <value>
+                    <fullName>China - CN1</fullName>
+                    <default>false</default>
+                    <label>China - CN1</label>
+                </value>
+                <value>
+                    <fullName>Denmark - DK1</fullName>
+                    <default>false</default>
+                    <label>Denmark - DK1</label>
+                </value>
+                <value>
+                    <fullName>EU Region - E50</fullName>
+                    <default>false</default>
+                    <label>EU Region - E50</label>
+                </value>
+                <value>
+                    <fullName>Finland - FI1</fullName>
+                    <default>false</default>
+                    <label>Finland - FI1</label>
+                </value>
+                <value>
+                    <fullName>France - FR1</fullName>
+                    <default>false</default>
+                    <label>France - FR1</label>
+                </value>
+                <value>
+                    <fullName>France SPS - FR5</fullName>
+                    <default>false</default>
+                    <label>France SPS - FR5</label>
+                </value>
+                <value>
+                    <fullName>Germany SPS - DE5</fullName>
+                    <default>false</default>
+                    <label>Germany SPS - DE5</label>
+                </value>
+                <value>
+                    <fullName>Hong Kong - HK1</fullName>
+                    <default>false</default>
+                    <label>Hong Kong - HK1</label>
+                </value>
+                <value>
+                    <fullName>India - IN1</fullName>
+                    <default>false</default>
+                    <label>India - IN1</label>
+                </value>
+                <value>
+                    <fullName>Italy - IT1</fullName>
+                    <default>false</default>
+                    <label>Italy - IT1</label>
+                </value>
+                <value>
+                    <fullName>Middle East - ME1</fullName>
+                    <default>false</default>
+                    <label>Middle East - ME1</label>
+                </value>
+                <value>
+                    <fullName>Netherlands SPS - NL5</fullName>
+                    <default>false</default>
+                    <label>Netherlands SPS - NL5</label>
+                </value>
+                <value>
+                    <fullName>New Zealand - NZ1</fullName>
+                    <default>false</default>
+                    <label>New Zealand - NZ1</label>
+                </value>
+                <value>
+                    <fullName>Norway - NO1</fullName>
+                    <default>false</default>
+                    <label>Norway - NO1</label>
+                </value>
+                <value>
+                    <fullName>Philippines - PH1</fullName>
+                    <default>false</default>
+                    <label>Philippines - PH1</label>
+                </value>
+                <value>
+                    <fullName>Poland - PL1</fullName>
+                    <default>false</default>
+                    <label>Poland - PL1</label>
+                </value>
+                <value>
+                    <fullName>Saudi Arabia - SA5</fullName>
+                    <default>false</default>
+                    <label>Saudi Arabia - SA5</label>
+                </value>
+                <value>
+                    <fullName>SHL Previsor - P10</fullName>
+                    <default>false</default>
+                    <label>SHL Previsor - P10</label>
+                </value>
+                <value>
+                    <fullName>Singapore - SG1</fullName>
+                    <default>false</default>
+                    <label>Singapore - SG1</label>
+                </value>
+                <value>
+                    <fullName>South Africa - ZA1</fullName>
+                    <default>false</default>
+                    <label>South Africa - ZA1</label>
+                </value>
+                <value>
+                    <fullName>Spain - ES1</fullName>
+                    <default>false</default>
+                    <label>Spain - ES1</label>
+                </value>
+                <value>
+                    <fullName>Sweden - SE1</fullName>
+                    <default>false</default>
+                    <label>Sweden - SE1</label>
+                </value>
+                <value>
+                    <fullName>Switzerland - CH1</fullName>
+                    <default>false</default>
+                    <label>Switzerland - CH1</label>
+                </value>
+                <value>
+                    <fullName>UK - UK1</fullName>
+                    <default>false</default>
+                    <label>UK - UK1</label>
+                </value>
+                <value>
+                    <fullName>US - US5</fullName>
+                    <default>false</default>
+                    <label>US - US5</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Cross_Border_Invoice__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Cross Border Invoice</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Currency_to_Invoice__c</fullName>
+        <label>Currency to Invoice</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>AED</fullName>
+                    <default>false</default>
+                    <label>AED</label>
+                </value>
+                <value>
+                    <fullName>AUD</fullName>
+                    <default>false</default>
+                    <label>AUD</label>
+                </value>
+                <value>
+                    <fullName>BRL</fullName>
+                    <default>false</default>
+                    <label>BRL</label>
+                </value>
+                <value>
+                    <fullName>CAD</fullName>
+                    <default>false</default>
+                    <label>CAD</label>
+                </value>
+                <value>
+                    <fullName>CHF</fullName>
+                    <default>false</default>
+                    <label>CHF</label>
+                </value>
+                <value>
+                    <fullName>CNY</fullName>
+                    <default>false</default>
+                    <label>CNY</label>
+                </value>
+                <value>
+                    <fullName>DKK</fullName>
+                    <default>false</default>
+                    <label>DKK</label>
+                </value>
+                <value>
+                    <fullName>EUR</fullName>
+                    <default>false</default>
+                    <label>EUR</label>
+                </value>
+                <value>
+                    <fullName>GBP</fullName>
+                    <default>false</default>
+                    <label>GBP</label>
+                </value>
+                <value>
+                    <fullName>HKD</fullName>
+                    <default>false</default>
+                    <label>HKD</label>
+                </value>
+                <value>
+                    <fullName>HUF</fullName>
+                    <default>false</default>
+                    <label>HUF</label>
+                </value>
+                <value>
+                    <fullName>IDR</fullName>
+                    <default>false</default>
+                    <label>IDR</label>
+                </value>
+                <value>
+                    <fullName>INR</fullName>
+                    <default>false</default>
+                    <label>INR</label>
+                </value>
+                <value>
+                    <fullName>JPY</fullName>
+                    <default>false</default>
+                    <label>JPY</label>
+                </value>
+                <value>
+                    <fullName>KRW</fullName>
+                    <default>false</default>
+                    <label>KRW</label>
+                </value>
+                <value>
+                    <fullName>KWD</fullName>
+                    <default>false</default>
+                    <label>KWD</label>
+                </value>
+                <value>
+                    <fullName>MXN</fullName>
+                    <default>false</default>
+                    <label>MXN</label>
+                </value>
+                <value>
+                    <fullName>MYR</fullName>
+                    <default>false</default>
+                    <label>MYR</label>
+                </value>
+                <value>
+                    <fullName>NOK</fullName>
+                    <default>false</default>
+                    <label>NOK</label>
+                </value>
+                <value>
+                    <fullName>NZD</fullName>
+                    <default>false</default>
+                    <label>NZD</label>
+                </value>
+                <value>
+                    <fullName>OMR</fullName>
+                    <default>false</default>
+                    <label>OMR</label>
+                </value>
+                <value>
+                    <fullName>PHP</fullName>
+                    <default>false</default>
+                    <label>PHP</label>
+                </value>
+                <value>
+                    <fullName>PKR</fullName>
+                    <default>false</default>
+                    <label>PKR</label>
+                </value>
+                <value>
+                    <fullName>PLN</fullName>
+                    <default>false</default>
+                    <label>PLN</label>
+                </value>
+                <value>
+                    <fullName>SAR</fullName>
+                    <default>false</default>
+                    <label>SAR</label>
+                </value>
+                <value>
+                    <fullName>SEK</fullName>
+                    <default>false</default>
+                    <label>SEK</label>
+                </value>
+                <value>
+                    <fullName>SGD</fullName>
+                    <default>false</default>
+                    <label>SGD</label>
+                </value>
+                <value>
+                    <fullName>THB</fullName>
+                    <default>false</default>
+                    <label>THB</label>
+                </value>
+                <value>
+                    <fullName>TRY</fullName>
+                    <default>false</default>
+                    <label>TRY</label>
+                </value>
+                <value>
+                    <fullName>TWD</fullName>
+                    <default>false</default>
+                    <label>TWD</label>
+                </value>
+                <value>
+                    <fullName>USD</fullName>
+                    <default>false</default>
+                    <label>USD</label>
+                </value>
+                <value>
+                    <fullName>VND</fullName>
+                    <default>false</default>
+                    <label>VND</label>
+                </value>
+                <value>
+                    <fullName>ZAR</fullName>
+                    <default>false</default>
+                    <label>ZAR</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Customer_Order_Ref__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Order Ref</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>D_No__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Account__r.Account_Number__c</formula>
+        <label>D-No</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>D_Number1__c</fullName>
+        <externalId>false</externalId>
+        <formula>Delegate_Account__r.Account_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>D Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>D_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>D Number</label>
+        <length>8</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Booking_Made__c</fullName>
+        <label>Date Booking Made</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Cancelled__c</fullName>
+        <description>Date booking cancelled</description>
+        <label>Date Cancelled</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Credit_Raised__c</fullName>
+        <inlineHelpText>Date the actual credit note raised in Sun</inlineHelpText>
+        <label>Date Credit Raised</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Invoiced__c</fullName>
+        <label>Date Invoiced</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_JI_Sent__c</fullName>
+        <label>Date JI Sent</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Survey_Sent__c</fullName>
+        <label>Completion Survey Sent Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Deferral_Month__c</fullName>
+        <label>Deferral Month</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Delegate_Account_Id__c</fullName>
+        <description>Pulling Delegate Contact&apos;s Account Owner Id</description>
+        <externalId>false</externalId>
+        <formula>Delegate_Contact__r.AccountId</formula>
+        <label>Delegate Account Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Delegate_Account_Old__c</fullName>
+        <externalId>false</externalId>
+        <formula>Delegate_Contact__r.Account.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Delegate Account Old</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Delegate_Account_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Delegate Account Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Delegate_Account_Owner</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Delegate_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Delegate Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Course Bookings (Delegate Account)</relationshipLabel>
+        <relationshipName>Course_Bookings1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Delegate_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Delegate Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>R00N20000000pPXoEAM</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Delivery_Mode__c</fullName>
+        <description>Created for Qualtrics and is being used in Outbound message.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Course_Number__r.Delivery_Mode__c)</formula>
+        <label>Delivery Mode</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Department_Code__c</fullName>
+        <label>Department Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>COOGCSC</fullName>
+                    <default>true</default>
+                    <label>COOGCSC</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DiscountApprovedBy__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <inlineHelpText>Discount approvers: 
+C Malliaros 
+H Deavin 
+H Korduner 
+J Rautiainen 
+K Coppe 
+K McLoughlin 
+K-A Steffensen 
+M Whelan 
+N Shaw 
+O Chinotti 
+R Herbert 
+R Hezemans 
+S Raymond</inlineHelpText>
+        <label>Discount Approved By</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>User.Approve_CB_Discounts__c</field>
+                <operation>equals</operation>
+                <value>true</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Course_Bookings</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Do_not_Contact_Delegates__c</fullName>
+        <description>Created for Qualtrics and is being used in Outbound message.</description>
+        <formula>Delegate_Contact__r.Do_Not_Contact__c</formula>
+        <label>Do not Contact Delegates</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Elearning__c</fullName>
+        <label>Elearning</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Extra_Night__c</fullName>
+        <label>Extra Night</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Extra_night_price__c</fullName>
+        <label>Extra Night Price</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Follow_up_Survey_Send_Date__c</fullName>
+        <description>Created for Qualtrics and is being used in Outbound message.</description>
+        <label>Follow-up Survey Send Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Follow_up_Survey_Sent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Created for Qualtrics and is being used in Outbound message.</description>
+        <label>Follow-up Survey Sent</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Formatted_Defferal_Month__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(  MONTH(Deferral_Month__c) , 1,&quot;Jan-09&quot;, 2,&quot; Feb-09&quot;,3,&quot;Mar-09&quot;,4,&quot;Apr-09&quot;,5,&quot;May-09&quot;,6,&quot;Jun-09&quot;,7,&quot;Jul-09&quot;,8,&quot;Aug-09&quot;,9,&quot;Sep-09&quot;,10,&quot;Oct-09&quot;,11,&quot;Nov-09&quot;,12,&quot;Dec-09&quot;,&quot;&quot;)</formula>
+        <label>Formatted Defferal Month</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Date__c</fullName>
+        <label>Invoice Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Language__c</fullName>
+        <label>Invoice Language</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>German</fullName>
+                    <default>false</default>
+                    <label>German</label>
+                </value>
+                <value>
+                    <fullName>French</fullName>
+                    <default>false</default>
+                    <label>French</label>
+                </value>
+                <value>
+                    <fullName>Swiss</fullName>
+                    <default>false</default>
+                    <label>Swiss</label>
+                </value>
+                <value>
+                    <fullName>English</fullName>
+                    <default>true</default>
+                    <label>English</label>
+                </value>
+                <value>
+                    <fullName>Dutch</fullName>
+                    <default>false</default>
+                    <label>Dutch</label>
+                </value>
+                <value>
+                    <fullName>Italian</fullName>
+                    <default>false</default>
+                    <label>Italian</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Invoice_Notes__c</fullName>
+        <label>Invoice Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Status__c</fullName>
+        <label>Invoice Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Ready to be invoiced</fullName>
+                    <default>false</default>
+                    <label>Ready to be invoiced</label>
+                </value>
+                <value>
+                    <fullName>Queried</fullName>
+                    <default>false</default>
+                    <label>Queried</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Unit Transfer</fullName>
+                    <default>false</default>
+                    <label>Unit Transfer</label>
+                </value>
+                <value>
+                    <fullName>Completed via order</fullName>
+                    <default>false</default>
+                    <label>Completed via order</label>
+                </value>
+                <value>
+                    <fullName>Ready for OAT</fullName>
+                    <default>false</default>
+                    <label>Ready for OAT</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Invoice_Text_Description__c</fullName>
+        <label>Invoice Text Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>IsAutomationBypassed__c</fullName>
+        <formula>AutomationBypassDateTime__c &gt; (NOW() - 0.00005787037)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>IsAutomationBypassed?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Item_Master_Lookup__c</fullName>
+        <label>Item Master Lookup</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Profit_Centre__c</controllingField>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>AccommNightBefore</fullName>
+                    <default>false</default>
+                    <label>AccommNightBefore</label>
+                </value>
+                <value>
+                    <fullName>CancelCharge</fullName>
+                    <default>false</default>
+                    <label>CancelCharge</label>
+                </value>
+                <value>
+                    <fullName>Cancellation Fee</fullName>
+                    <default>false</default>
+                    <label>Cancellation Fee</label>
+                </value>
+                <value>
+                    <fullName>Cert_Request</fullName>
+                    <default>false</default>
+                    <label>Cert_Request</label>
+                </value>
+                <value>
+                    <fullName>MySHL_12</fullName>
+                    <default>false</default>
+                    <label>MySHL_12</label>
+                </value>
+                <value>
+                    <fullName>PUB360TRN</fullName>
+                    <default>false</default>
+                    <label>PUB360TRN</label>
+                </value>
+                <value>
+                    <fullName>PUBASSTTRN</fullName>
+                    <default>false</default>
+                    <label>PUBASSTTRN</label>
+                </value>
+                <value>
+                    <fullName>PubCBITRN</fullName>
+                    <default>false</default>
+                    <label>PubCBITRN</label>
+                </value>
+                <value>
+                    <fullName>PUBCOACH</fullName>
+                    <default>false</default>
+                    <label>PUBCOACH</label>
+                </value>
+                <value>
+                    <fullName>PubELCombo</fullName>
+                    <default>false</default>
+                    <label>PubELCombo</label>
+                </value>
+                <value>
+                    <fullName>PubELOPQC</fullName>
+                    <default>false</default>
+                    <label>PubELOPQC</label>
+                </value>
+                <value>
+                    <fullName>PUBEMPMOT</fullName>
+                    <default>false</default>
+                    <label>PUBEMPMOT</label>
+                </value>
+                <value>
+                    <fullName>PubEXLEAD</fullName>
+                    <default>false</default>
+                    <label>PubEXLEAD</label>
+                </value>
+                <value>
+                    <fullName>PubHAU-POT</fullName>
+                    <default>false</default>
+                    <label>PubHAU-POT</label>
+                </value>
+                <value>
+                    <fullName>PubHPTeam</fullName>
+                    <default>false</default>
+                    <label>PubHPTeam</label>
+                </value>
+                <value>
+                    <fullName>PubHRPio</fullName>
+                    <default>false</default>
+                    <label>PubHRPio</label>
+                </value>
+                <value>
+                    <fullName>PubIndIDP</fullName>
+                    <default>false</default>
+                    <label>PubIndIDP</label>
+                </value>
+                <value>
+                    <fullName>PubIntTec</fullName>
+                    <default>false</default>
+                    <label>PubIntTec</label>
+                </value>
+                <value>
+                    <fullName>PubLEADTRN</fullName>
+                    <default>false</default>
+                    <label>PubLEADTRN</label>
+                </value>
+                <value>
+                    <fullName>PubNRes360</fullName>
+                    <default>false</default>
+                    <label>PubNRes360</label>
+                </value>
+                <value>
+                    <fullName>PUBNRES360F</fullName>
+                    <default>false</default>
+                    <label>PUBNRES360F</label>
+                </value>
+                <value>
+                    <fullName>PubNResACDC</fullName>
+                    <default>false</default>
+                    <label>PubNResACDC</label>
+                </value>
+                <value>
+                    <fullName>PubNResAss</fullName>
+                    <default>false</default>
+                    <label>PubNResAss</label>
+                </value>
+                <value>
+                    <fullName>PubNResBCOMBO</fullName>
+                    <default>false</default>
+                    <label>PubNResBCOMBO</label>
+                </value>
+                <value>
+                    <fullName>PubNResBOPQ</fullName>
+                    <default>false</default>
+                    <label>PubNResBOPQ</label>
+                </value>
+                <value>
+                    <fullName>PubNResBOT</fullName>
+                    <default>false</default>
+                    <label>PubNResBOT</label>
+                </value>
+                <value>
+                    <fullName>PubNResBP</fullName>
+                    <default>false</default>
+                    <label>PubNResBP</label>
+                </value>
+                <value>
+                    <fullName>PubNResCBI</fullName>
+                    <default>false</default>
+                    <label>PubNResCBI</label>
+                </value>
+                <value>
+                    <fullName>PUBNRESCBIA</fullName>
+                    <default>false</default>
+                    <label>PUBNRESCBIA</label>
+                </value>
+                <value>
+                    <fullName>PubNResCombo</fullName>
+                    <default>false</default>
+                    <label>PubNResCombo</label>
+                </value>
+                <value>
+                    <fullName>PubNResCompd</fullName>
+                    <default>false</default>
+                    <label>PubNResCompd</label>
+                </value>
+                <value>
+                    <fullName>PubNresDHPTEAM</fullName>
+                    <default>false</default>
+                    <label>PubNresDHPTEAM</label>
+                </value>
+                <value>
+                    <fullName>PubNresDIVWORK</fullName>
+                    <default>false</default>
+                    <label>PubNresDIVWORK</label>
+                </value>
+                <value>
+                    <fullName>PubNResEOL</fullName>
+                    <default>false</default>
+                    <label>PubNResEOL</label>
+                </value>
+                <value>
+                    <fullName>PubNResESC</fullName>
+                    <default>false</default>
+                    <label>PubNResESC</label>
+                </value>
+                <value>
+                    <fullName>PubNResIMP360</fullName>
+                    <default>false</default>
+                    <label>PubNResIMP360</label>
+                </value>
+                <value>
+                    <fullName>PubNResJA2</fullName>
+                    <default>false</default>
+                    <label>PubNResJA2</label>
+                </value>
+                <value>
+                    <fullName>PubNResJACD</fullName>
+                    <default>false</default>
+                    <label>PubNResJACD</label>
+                </value>
+                <value>
+                    <fullName>PubNresLsem</fullName>
+                    <default>false</default>
+                    <label>PubNresLsem</label>
+                </value>
+                <value>
+                    <fullName>PubNResMAS</fullName>
+                    <default>false</default>
+                    <label>PubNResMAS</label>
+                </value>
+                <value>
+                    <fullName>PubNResMQ</fullName>
+                    <default>false</default>
+                    <label>PubNResMQ</label>
+                </value>
+                <value>
+                    <fullName>PubNresMW</fullName>
+                    <default>false</default>
+                    <label>PubNresMW</label>
+                </value>
+                <value>
+                    <fullName>PubNResOPQ</fullName>
+                    <default>false</default>
+                    <label>PubNResOPQ</label>
+                </value>
+                <value>
+                    <fullName>PubNResOPQ2</fullName>
+                    <default>false</default>
+                    <label>PubNResOPQ2</label>
+                </value>
+                <value>
+                    <fullName>PubNResOPQC</fullName>
+                    <default>false</default>
+                    <label>PubNResOPQC</label>
+                </value>
+                <value>
+                    <fullName>PubNResOPQCCSQ</fullName>
+                    <default>false</default>
+                    <label>PubNResOPQCCSQ</label>
+                </value>
+                <value>
+                    <fullName>PubNResOPQF</fullName>
+                    <default>false</default>
+                    <label>PubNResOPQF</label>
+                </value>
+                <value>
+                    <fullName>PubNResOPQM</fullName>
+                    <default>false</default>
+                    <label>PubNResOPQM</label>
+                </value>
+                <value>
+                    <fullName>PubNResOPQR</fullName>
+                    <default>false</default>
+                    <label>PubNResOPQR</label>
+                </value>
+                <value>
+                    <fullName>PubNResOPQthema</fullName>
+                    <default>false</default>
+                    <label>PubNResOPQthema</label>
+                </value>
+                <value>
+                    <fullName>PubnresOPQVMQ</fullName>
+                    <default>false</default>
+                    <label>PubnresOPQVMQ</label>
+                </value>
+                <value>
+                    <fullName>PubNResOPQW</fullName>
+                    <default>false</default>
+                    <label>PubNResOPQW</label>
+                </value>
+                <value>
+                    <fullName>PubNResOT</fullName>
+                    <default>false</default>
+                    <label>PubNResOT</label>
+                </value>
+                <value>
+                    <fullName>PubNResOT5</fullName>
+                    <default>false</default>
+                    <label>PubNResOT5</label>
+                </value>
+                <value>
+                    <fullName>PubNResOTC</fullName>
+                    <default>false</default>
+                    <label>PubNResOTC</label>
+                </value>
+                <value>
+                    <fullName>PubNResOther</fullName>
+                    <default>false</default>
+                    <label>PubNResOther</label>
+                </value>
+                <value>
+                    <fullName>PubNResPAA</fullName>
+                    <default>false</default>
+                    <label>PubNResPAA</label>
+                </value>
+                <value>
+                    <fullName>PubNResPAA3</fullName>
+                    <default>false</default>
+                    <label>PubNResPAA3</label>
+                </value>
+                <value>
+                    <fullName>PubNResPITC</fullName>
+                    <default>false</default>
+                    <label>PubNResPITC</label>
+                </value>
+                <value>
+                    <fullName>PubNresPRACJA</fullName>
+                    <default>false</default>
+                    <label>PubNresPRACJA</label>
+                </value>
+                <value>
+                    <fullName>PubNResPWShop</fullName>
+                    <default>false</default>
+                    <label>PubNResPWShop</label>
+                </value>
+                <value>
+                    <fullName>PUBNRESREF</fullName>
+                    <default>false</default>
+                    <label>PUBNRESREF</label>
+                </value>
+                <value>
+                    <fullName>PubNResScen</fullName>
+                    <default>false</default>
+                    <label>PubNResScen</label>
+                </value>
+                <value>
+                    <fullName>PubNResSelDel</fullName>
+                    <default>false</default>
+                    <label>PubNResSelDel</label>
+                </value>
+                <value>
+                    <fullName>PUBNRESSODA</fullName>
+                    <default>false</default>
+                    <label>PUBNRESSODA</label>
+                </value>
+                <value>
+                    <fullName>PubNresSUCCPLA</fullName>
+                    <default>false</default>
+                    <label>PubNresSUCCPLA</label>
+                </value>
+                <value>
+                    <fullName>PubNResSystem</fullName>
+                    <default>false</default>
+                    <label>PubNResSystem</label>
+                </value>
+                <value>
+                    <fullName>PubNResTA</fullName>
+                    <default>false</default>
+                    <label>PubNResTA</label>
+                </value>
+                <value>
+                    <fullName>PubNResTACOMBO</fullName>
+                    <default>false</default>
+                    <label>PubNResTACOMBO</label>
+                </value>
+                <value>
+                    <fullName>PubNResTAGCOMBO</fullName>
+                    <default>false</default>
+                    <label>PubNResTAGCOMBO</label>
+                </value>
+                <value>
+                    <fullName>PUBNRESTALASS</fullName>
+                    <default>false</default>
+                    <label>PUBNRESTALASS</label>
+                </value>
+                <value>
+                    <fullName>PubNresTalAU</fullName>
+                    <default>false</default>
+                    <label>PubNresTalAU</label>
+                </value>
+                <value>
+                    <fullName>PubNresTDEV</fullName>
+                    <default>false</default>
+                    <label>PubNresTDEV</label>
+                </value>
+                <value>
+                    <fullName>PubNResTrMc</fullName>
+                    <default>false</default>
+                    <label>PubNResTrMc</label>
+                </value>
+                <value>
+                    <fullName>PubNResTrMcFD</fullName>
+                    <default>false</default>
+                    <label>PubNResTrMcFD</label>
+                </value>
+                <value>
+                    <fullName>PubNResTrWs</fullName>
+                    <default>false</default>
+                    <label>PubNResTrWs</label>
+                </value>
+                <value>
+                    <fullName>PubNResTrWsFD</fullName>
+                    <default>false</default>
+                    <label>PubNResTrWsFD</label>
+                </value>
+                <value>
+                    <fullName>PUBNRESVERIFY</fullName>
+                    <default>false</default>
+                    <label>PUBNRESVERIFY</label>
+                </value>
+                <value>
+                    <fullName>PubNResWPCD</fullName>
+                    <default>false</default>
+                    <label>PubNResWPCD</label>
+                </value>
+                <value>
+                    <fullName>PubOCCASSES</fullName>
+                    <default>false</default>
+                    <label>PubOCCASSES</label>
+                </value>
+                <value>
+                    <fullName>PubOLOPQAOC</fullName>
+                    <default>false</default>
+                    <label>PubOLOPQAOC</label>
+                </value>
+                <value>
+                    <fullName>PubOLOPQC</fullName>
+                    <default>false</default>
+                    <label>PubOLOPQC</label>
+                </value>
+                <value>
+                    <fullName>PubOLOTAOC</fullName>
+                    <default>false</default>
+                    <label>PubOLOTAOC</label>
+                </value>
+                <value>
+                    <fullName>PubOPQAOC</fullName>
+                    <default>false</default>
+                    <label>PubOPQAOC</label>
+                </value>
+                <value>
+                    <fullName>PubOPQOTCCSQ</fullName>
+                    <default>false</default>
+                    <label>PubOPQOTCCSQ</label>
+                </value>
+                <value>
+                    <fullName>PubOPQOTMQCCSQ</fullName>
+                    <default>false</default>
+                    <label>PubOPQOTMQCCSQ</label>
+                </value>
+                <value>
+                    <fullName>PUBOPQRef</fullName>
+                    <default>false</default>
+                    <label>PUBOPQRef</label>
+                </value>
+                <value>
+                    <fullName>PUBOPQVERSUM</fullName>
+                    <default>false</default>
+                    <label>PUBOPQVERSUM</label>
+                </value>
+                <value>
+                    <fullName>PubPartnerConf</fullName>
+                    <default>false</default>
+                    <label>PubPartnerConf</label>
+                </value>
+                <value>
+                    <fullName>PubPartnerWorkshop</fullName>
+                    <default>false</default>
+                    <label>PubPartnerWorkshop</label>
+                </value>
+                <value>
+                    <fullName>PubPerfMan</fullName>
+                    <default>false</default>
+                    <label>PubPerfMan</label>
+                </value>
+                <value>
+                    <fullName>PubRes360</fullName>
+                    <default>false</default>
+                    <label>PubRes360</label>
+                </value>
+                <value>
+                    <fullName>PubResACDC</fullName>
+                    <default>false</default>
+                    <label>PubResACDC</label>
+                </value>
+                <value>
+                    <fullName>PubResAss</fullName>
+                    <default>false</default>
+                    <label>PubResAss</label>
+                </value>
+                <value>
+                    <fullName>PubResBCOMBO</fullName>
+                    <default>false</default>
+                    <label>PubResBCOMBO</label>
+                </value>
+                <value>
+                    <fullName>PubResBOPQ</fullName>
+                    <default>false</default>
+                    <label>PubResBOPQ</label>
+                </value>
+                <value>
+                    <fullName>PubResBOT</fullName>
+                    <default>false</default>
+                    <label>PubResBOT</label>
+                </value>
+                <value>
+                    <fullName>PubResCBI</fullName>
+                    <default>false</default>
+                    <label>PubResCBI</label>
+                </value>
+                <value>
+                    <fullName>PubResCombo</fullName>
+                    <default>false</default>
+                    <label>PubResCombo</label>
+                </value>
+                <value>
+                    <fullName>PubResCompd</fullName>
+                    <default>false</default>
+                    <label>PubResCompd</label>
+                </value>
+                <value>
+                    <fullName>PubResOPQ</fullName>
+                    <default>false</default>
+                    <label>PubResOPQ</label>
+                </value>
+                <value>
+                    <fullName>PubResOPQR</fullName>
+                    <default>false</default>
+                    <label>PubResOPQR</label>
+                </value>
+                <value>
+                    <fullName>PubResOPQW</fullName>
+                    <default>false</default>
+                    <label>PubResOPQW</label>
+                </value>
+                <value>
+                    <fullName>PubResOT</fullName>
+                    <default>false</default>
+                    <label>PubResOT</label>
+                </value>
+                <value>
+                    <fullName>PubResOT5</fullName>
+                    <default>false</default>
+                    <label>PubResOT5</label>
+                </value>
+                <value>
+                    <fullName>PubResOTC</fullName>
+                    <default>false</default>
+                    <label>PubResOTC</label>
+                </value>
+                <value>
+                    <fullName>PubResTA</fullName>
+                    <default>false</default>
+                    <label>PubResTA</label>
+                </value>
+                <value>
+                    <fullName>PubSitLead</fullName>
+                    <default>false</default>
+                    <label>PubSitLead</label>
+                </value>
+                <value>
+                    <fullName>PubSuccpla</fullName>
+                    <default>false</default>
+                    <label>PubSuccpla</label>
+                </value>
+                <value>
+                    <fullName>PubWorkper</fullName>
+                    <default>false</default>
+                    <label>PubWorkper</label>
+                </value>
+                <value>
+                    <fullName>SPNOPQ1</fullName>
+                    <default>false</default>
+                    <label>SPNOPQ1</label>
+                </value>
+                <value>
+                    <fullName>SPNOPQ2</fullName>
+                    <default>false</default>
+                    <label>SPNOPQ2</label>
+                </value>
+                <value>
+                    <fullName>TrainpassOPQNRE</fullName>
+                    <default>false</default>
+                    <label>TrainpassOPQNRE</label>
+                </value>
+                <value>
+                    <fullName>TrainpassOPQRES</fullName>
+                    <default>false</default>
+                    <label>TrainpassOPQRES</label>
+                </value>
+                <value>
+                    <fullName>TrainpassPAANRE</fullName>
+                    <default>false</default>
+                    <label>TrainpassPAANRE</label>
+                </value>
+                <value>
+                    <fullName>TrainpassPAARES</fullName>
+                    <default>false</default>
+                    <label>TrainpassPAARES</label>
+                </value>
+                <value>
+                    <fullName>TRCBI-OPEN</fullName>
+                    <default>false</default>
+                    <label>TRCBI-OPEN</label>
+                </value>
+                <value>
+                    <fullName>TROPQ-OPEN</fullName>
+                    <default>false</default>
+                    <label>TROPQ-OPEN</label>
+                </value>
+                <value>
+                    <fullName>TROPQREFRESH-OP</fullName>
+                    <default>false</default>
+                    <label>TROPQREFRESH-OP</label>
+                </value>
+                <value>
+                    <fullName>TROPQWORKSHOP-OPEN</fullName>
+                    <default>false</default>
+                    <label>TROPQWORKSHOP-OPEN</label>
+                </value>
+                <value>
+                    <fullName>TROT-OPEN</fullName>
+                    <default>false</default>
+                    <label>TROT-OPEN</label>
+                </value>
+                <value>
+                    <fullName>TRTA-OPEN</fullName>
+                    <default>false</default>
+                    <label>TRTA-OPEN</label>
+                </value>
+                <value>
+                    <fullName>TRWPCD-OPEN</fullName>
+                    <default>false</default>
+                    <label>TRWPCD-OPEN</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>South Africa - ZA1</controllingFieldValue>
+                <valueName>PubHPTeam</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>South Africa - ZA1</controllingFieldValue>
+                <valueName>PubHRPio</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>South Africa - ZA1</controllingFieldValue>
+                <valueName>PubIndIDP</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>South Africa - ZA1</controllingFieldValue>
+                <valueName>PubIntTec</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>South Africa - ZA1</controllingFieldValue>
+                <valueName>PUBNRESSODA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>South Africa - ZA1</controllingFieldValue>
+                <valueName>PubOCCASSES</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>South Africa - ZA1</controllingFieldValue>
+                <valueName>PubPerfMan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>South Africa - ZA1</controllingFieldValue>
+                <valueName>PubSitLead</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>South Africa - ZA1</controllingFieldValue>
+                <valueName>PubSuccpla</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>South Africa - ZA1</controllingFieldValue>
+                <valueName>PubWorkper</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>South Africa - ZA1</controllingFieldValue>
+                <valueName>TRCBI-OPEN</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>South Africa - ZA1</controllingFieldValue>
+                <valueName>TROPQ-OPEN</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>South Africa - ZA1</controllingFieldValue>
+                <valueName>TROPQREFRESH-OP</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>South Africa - ZA1</controllingFieldValue>
+                <valueName>TROPQWORKSHOP-OPEN</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>South Africa - ZA1</controllingFieldValue>
+                <valueName>TROT-OPEN</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>South Africa - ZA1</controllingFieldValue>
+                <valueName>TRWPCD-OPEN</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Belgium - BE5</controllingFieldValue>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>US - US5</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>CancelCharge</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Belgium - BE5</controllingFieldValue>
+                <controllingFieldValue>Netherlands - NL5</controllingFieldValue>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>US - US5</controllingFieldValue>
+                <controllingFieldValue>Norway - NO1</controllingFieldValue>
+                <controllingFieldValue>Sweden - SE1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <controllingFieldValue>Australia - AU1</controllingFieldValue>
+                <controllingFieldValue>France - FR1</controllingFieldValue>
+                <valueName>PubNRes360</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Belgium - BE5</controllingFieldValue>
+                <controllingFieldValue>Netherlands - NL5</controllingFieldValue>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>China - CN1</controllingFieldValue>
+                <controllingFieldValue>US - US5</controllingFieldValue>
+                <controllingFieldValue>Norway - NO1</controllingFieldValue>
+                <controllingFieldValue>Singapore - SG1</controllingFieldValue>
+                <controllingFieldValue>Sweden - SE1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <controllingFieldValue>Ireland - IE1</controllingFieldValue>
+                <controllingFieldValue>Australia - AU1</controllingFieldValue>
+                <controllingFieldValue>Denmark - DK1</controllingFieldValue>
+                <controllingFieldValue>Hong Kong - HK1</controllingFieldValue>
+                <valueName>PubNResCBI</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Belgium - BE5</controllingFieldValue>
+                <controllingFieldValue>Netherlands - NL5</controllingFieldValue>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>China - CN1</controllingFieldValue>
+                <controllingFieldValue>New Zealand - NZ1</controllingFieldValue>
+                <controllingFieldValue>Norway - NO1</controllingFieldValue>
+                <controllingFieldValue>Sweden - SE1</controllingFieldValue>
+                <controllingFieldValue>Switzerland - CH1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <controllingFieldValue>US - US1</controllingFieldValue>
+                <controllingFieldValue>Philippines - PH1</controllingFieldValue>
+                <controllingFieldValue>Australia - AU1</controllingFieldValue>
+                <controllingFieldValue>Denmark - DK1</controllingFieldValue>
+                <controllingFieldValue>Finland - FI1</controllingFieldValue>
+                <controllingFieldValue>France - FR1</controllingFieldValue>
+                <controllingFieldValue>Germany - DE1</controllingFieldValue>
+                <controllingFieldValue>Hong Kong - HK1</controllingFieldValue>
+                <valueName>PubNResCombo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Belgium - BE5</controllingFieldValue>
+                <controllingFieldValue>France - FR1</controllingFieldValue>
+                <valueName>PubNResESC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Belgium - BE5</controllingFieldValue>
+                <valueName>PubNresLsem</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Belgium - BE5</controllingFieldValue>
+                <valueName>PubNresMW</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Belgium - BE5</controllingFieldValue>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <controllingFieldValue>Finland - FI1</controllingFieldValue>
+                <controllingFieldValue>France - FR1</controllingFieldValue>
+                <valueName>PubNResOPQC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Belgium - BE5</controllingFieldValue>
+                <controllingFieldValue>Netherlands - NL5</controllingFieldValue>
+                <controllingFieldValue>France - FR1</controllingFieldValue>
+                <valueName>PubNResOPQW</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Belgium - BE5</controllingFieldValue>
+                <controllingFieldValue>Netherlands - NL5</controllingFieldValue>
+                <valueName>PubNResPITC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Belgium - BE5</controllingFieldValue>
+                <valueName>PubNResSelDel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Belgium - BE5</controllingFieldValue>
+                <controllingFieldValue>Netherlands - NL5</controllingFieldValue>
+                <controllingFieldValue>France - FR1</controllingFieldValue>
+                <valueName>PubNResSystem</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Belgium - BE5</controllingFieldValue>
+                <valueName>PubNresTDEV</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Belgium - BE5</controllingFieldValue>
+                <controllingFieldValue>Netherlands - NL5</controllingFieldValue>
+                <valueName>PUBOPQVERSUM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Netherlands - NL5</controllingFieldValue>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>New Zealand - NZ1</controllingFieldValue>
+                <controllingFieldValue>Norway - NO1</controllingFieldValue>
+                <controllingFieldValue>Singapore - SG1</controllingFieldValue>
+                <controllingFieldValue>Switzerland - CH1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <controllingFieldValue>US - US1</controllingFieldValue>
+                <controllingFieldValue>Australia - AU1</controllingFieldValue>
+                <controllingFieldValue>Canada - CA1</controllingFieldValue>
+                <controllingFieldValue>Finland - FI1</controllingFieldValue>
+                <controllingFieldValue>France - FR1</controllingFieldValue>
+                <controllingFieldValue>Hong Kong - HK1</controllingFieldValue>
+                <valueName>MySHL_12</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Netherlands - NL5</controllingFieldValue>
+                <valueName>PubNResJA2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Netherlands - NL5</controllingFieldValue>
+                <controllingFieldValue>Australia - AU1</controllingFieldValue>
+                <valueName>PubNResJACD</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Netherlands - NL5</controllingFieldValue>
+                <controllingFieldValue>New Zealand - NZ1</controllingFieldValue>
+                <controllingFieldValue>Sweden - SE1</controllingFieldValue>
+                <controllingFieldValue>Denmark - DK1</controllingFieldValue>
+                <controllingFieldValue>France - FR1</controllingFieldValue>
+                <valueName>PubNResMQ</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Netherlands - NL5</controllingFieldValue>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>China - CN1</controllingFieldValue>
+                <controllingFieldValue>Switzerland - CH1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <controllingFieldValue>US - US1</controllingFieldValue>
+                <controllingFieldValue>Ireland - IE1</controllingFieldValue>
+                <controllingFieldValue>Australia - AU1</controllingFieldValue>
+                <controllingFieldValue>Canada - CA1</controllingFieldValue>
+                <controllingFieldValue>Hong Kong - HK1</controllingFieldValue>
+                <valueName>PubNResOPQ</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Netherlands - NL5</controllingFieldValue>
+                <valueName>PubNResOPQthema</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Netherlands - NL5</controllingFieldValue>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>China - CN1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <controllingFieldValue>US - US1</controllingFieldValue>
+                <controllingFieldValue>Ireland - IE1</controllingFieldValue>
+                <controllingFieldValue>Australia - AU1</controllingFieldValue>
+                <controllingFieldValue>Denmark - DK1</controllingFieldValue>
+                <controllingFieldValue>Finland - FI1</controllingFieldValue>
+                <controllingFieldValue>France - FR1</controllingFieldValue>
+                <controllingFieldValue>Hong Kong - HK1</controllingFieldValue>
+                <controllingFieldValue>Italy - IT1</controllingFieldValue>
+                <valueName>PubNResOT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Netherlands - NL5</controllingFieldValue>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubResBCOMBO</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Netherlands - NL5</controllingFieldValue>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubResCombo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Netherlands - NL5</controllingFieldValue>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubResOT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>Cert_Request</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>Norway - NO1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <controllingFieldValue>Australia - AU1</controllingFieldValue>
+                <controllingFieldValue>France - FR1</controllingFieldValue>
+                <valueName>PubNResACDC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>China - CN1</controllingFieldValue>
+                <controllingFieldValue>US - US5</controllingFieldValue>
+                <controllingFieldValue>Switzerland - CH1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <controllingFieldValue>Ireland - IE1</controllingFieldValue>
+                <controllingFieldValue>Hong Kong - HK1</controllingFieldValue>
+                <valueName>PubNResAss</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>US - US5</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubNResBCOMBO</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>US - US5</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubNResBOPQ</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>US - US5</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubNResBOT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubNResCompd</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubNResOPQF</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubNResOT5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubNResOTC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>China - CN1</controllingFieldValue>
+                <controllingFieldValue>US - US5</controllingFieldValue>
+                <controllingFieldValue>New Zealand - NZ1</controllingFieldValue>
+                <controllingFieldValue>Norway - NO1</controllingFieldValue>
+                <controllingFieldValue>Singapore - SG1</controllingFieldValue>
+                <controllingFieldValue>Sweden - SE1</controllingFieldValue>
+                <controllingFieldValue>Switzerland - CH1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <controllingFieldValue>Ireland - IE1</controllingFieldValue>
+                <controllingFieldValue>Australia - AU1</controllingFieldValue>
+                <controllingFieldValue>Hong Kong - HK1</controllingFieldValue>
+                <valueName>PubNResTA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>Sweden - SE1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <controllingFieldValue>Denmark - DK1</controllingFieldValue>
+                <controllingFieldValue>Finland - FI1</controllingFieldValue>
+                <valueName>PubNResTrMc</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubNResTrMcFD</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubNResTrWs</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubNResTrWsFD</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubOLOPQAOC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <controllingFieldValue>Ireland - IE1</controllingFieldValue>
+                <controllingFieldValue>Canada - CA1</controllingFieldValue>
+                <valueName>PubOLOPQC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubOLOTAOC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubResACDC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubResBOPQ</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubResBOT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubResOPQ</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubResOPQR</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubResOT5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>China - CN1</controllingFieldValue>
+                <controllingFieldValue>Hong Kong - HK1</controllingFieldValue>
+                <valueName>PubNResOther</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - US5</controllingFieldValue>
+                <controllingFieldValue>France - FR1</controllingFieldValue>
+                <valueName>Cancellation Fee</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>New Zealand - NZ1</controllingFieldValue>
+                <controllingFieldValue>Sweden - SE1</controllingFieldValue>
+                <controllingFieldValue>Switzerland - CH1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <controllingFieldValue>Australia - AU1</controllingFieldValue>
+                <valueName>PubNResOPQR</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Norway - NO1</controllingFieldValue>
+                <controllingFieldValue>Sweden - SE1</controllingFieldValue>
+                <controllingFieldValue>Denmark - DK1</controllingFieldValue>
+                <controllingFieldValue>Finland - FI1</controllingFieldValue>
+                <valueName>PubNResBP</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Norway - NO1</controllingFieldValue>
+                <controllingFieldValue>Italy - IT1</controllingFieldValue>
+                <valueName>PubNResOPQ2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Norway - NO1</controllingFieldValue>
+                <controllingFieldValue>Sweden - SE1</controllingFieldValue>
+                <valueName>PubNResScen</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Singapore - SG1</controllingFieldValue>
+                <valueName>PubNResPAA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>AccommNightBefore</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PUBNRESCBIA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubNresDHPTEAM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubNresDIVWORK</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubNresPRACJA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PubNresSUCCPLA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>PUBNRESTALASS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>TrainpassOPQNRE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>TrainpassOPQRES</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>TrainpassPAANRE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <valueName>TrainpassPAARES</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - US1</controllingFieldValue>
+                <controllingFieldValue>Canada - CA1</controllingFieldValue>
+                <valueName>PubNResWPCD</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - US1</controllingFieldValue>
+                <valueName>PubPartnerConf</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - US1</controllingFieldValue>
+                <valueName>PubPartnerWorkshop</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Ireland - IE1</controllingFieldValue>
+                <valueName>PubResCompd</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Ireland - IE1</controllingFieldValue>
+                <valueName>PubResOPQW</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Australia - AU1</controllingFieldValue>
+                <valueName>PubNResPWShop</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Australia - AU1</controllingFieldValue>
+                <valueName>PUBNRESVERIFY</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Australia - AU1</controllingFieldValue>
+                <valueName>SPNOPQ1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Australia - AU1</controllingFieldValue>
+                <valueName>SPNOPQ2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>France - FR1</controllingFieldValue>
+                <valueName>PubHAU-POT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>France - FR1</controllingFieldValue>
+                <valueName>PUBNRES360F</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>France - FR1</controllingFieldValue>
+                <valueName>PubNResEOL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>France - FR1</controllingFieldValue>
+                <valueName>PubNResOPQCCSQ</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>France - FR1</controllingFieldValue>
+                <valueName>PubOPQOTCCSQ</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>France - FR1</controllingFieldValue>
+                <valueName>PubOPQOTMQCCSQ</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Germany - DE1</controllingFieldValue>
+                <valueName>PUB360TRN</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Germany - DE1</controllingFieldValue>
+                <valueName>PUBASSTTRN</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Germany - DE1</controllingFieldValue>
+                <valueName>PUBCOACH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Germany - DE1</controllingFieldValue>
+                <valueName>PUBEMPMOT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Germany - DE1</controllingFieldValue>
+                <valueName>PubEXLEAD</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Germany - DE1</controllingFieldValue>
+                <valueName>PubLEADTRN</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Germany - DE1</controllingFieldValue>
+                <valueName>PUBOPQRef</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Italy - IT1</controllingFieldValue>
+                <valueName>PubNResPAA3</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Lead_Source__c</fullName>
+        <description>For Sun SOE data entry</description>
+        <label>Lead Source</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>L01 - Advertisement</fullName>
+                    <default>false</default>
+                    <label>L01 - Advertisement</label>
+                </value>
+                <value>
+                    <fullName>L02 - News story / article</fullName>
+                    <default>false</default>
+                    <label>L02 - News story / article</label>
+                </value>
+                <value>
+                    <fullName>L03 - SHL newsletter</fullName>
+                    <default>false</default>
+                    <label>L03 - SHL newsletter</label>
+                </value>
+                <value>
+                    <fullName>L04 - Promotional campaign email</fullName>
+                    <default>false</default>
+                    <label>L04 - Promotional campaign email</label>
+                </value>
+                <value>
+                    <fullName>L05 - Promotional campaign direct mail</fullName>
+                    <default>false</default>
+                    <label>L05 - Promotional campaign direct mail</label>
+                </value>
+                <value>
+                    <fullName>L06 - Promotional campaign call</fullName>
+                    <default>false</default>
+                    <label>L06 - Promotional campaign call</label>
+                </value>
+                <value>
+                    <fullName>L07 - SHL Sales / Account Manager / Consultant discussion</fullName>
+                    <default>false</default>
+                    <label>L07 - SHL Sales / Account Manager / Consultant discussion</label>
+                </value>
+                <value>
+                    <fullName>L08 - SHL Duty Consultant</fullName>
+                    <default>false</default>
+                    <label>L08 - SHL Duty Consultant</label>
+                </value>
+                <value>
+                    <fullName>L09 - SHL Partner</fullName>
+                    <default>false</default>
+                    <label>L09 - SHL Partner</label>
+                </value>
+                <value>
+                    <fullName>L10 - SHL website promotion</fullName>
+                    <default>false</default>
+                    <label>L10 - SHL website promotion</label>
+                </value>
+                <value>
+                    <fullName>L11 - Other (non-SHL) website promotion</fullName>
+                    <default>false</default>
+                    <label>L11 - Other (non-SHL) website promotion</label>
+                </value>
+                <value>
+                    <fullName>L12 - Reputation / referral</fullName>
+                    <default>false</default>
+                    <label>L12 - Reputation / referral</label>
+                </value>
+                <value>
+                    <fullName>L13 - Conference / seminar attendance</fullName>
+                    <default>false</default>
+                    <label>L13 - Conference / seminar attendance</label>
+                </value>
+                <value>
+                    <fullName>L14 - SHL training course attendance</fullName>
+                    <default>false</default>
+                    <label>L14 - SHL training course attendance</label>
+                </value>
+                <value>
+                    <fullName>L15 - Exhibition / trade show attendance</fullName>
+                    <default>false</default>
+                    <label>L15 - Exhibition / trade show attendance</label>
+                </value>
+                <value>
+                    <fullName>LZZ - No specified source (eg. simple repeat order)</fullName>
+                    <default>false</default>
+                    <label>LZZ - No specified source (eg. simple repeat order)</label>
+                </value>
+                <value>
+                    <fullName>L16 Customer Experience</fullName>
+                    <default>false</default>
+                    <label>L16 Customer Experience</label>
+                </value>
+                <value>
+                    <fullName>L17 System Training</fullName>
+                    <default>false</default>
+                    <label>L17 System Training</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>No_of_Units_Transferred__c</fullName>
+        <description>Specify number of units transferred</description>
+        <externalId>false</externalId>
+        <label>No. of Units Transferred</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OAT_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>OAT Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Offer_Code__c</fullName>
+        <description>Offer code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter Course Offer Code</inlineHelpText>
+        <label>Offer Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Course Bookings</relationshipLabel>
+        <relationshipName>Course_Bookings</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Other_Credit_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Value of credit if not for a booking cancellation</inlineHelpText>
+        <label>Other Credit Amount</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Credit_Date__c</fullName>
+        <label>Other Credit Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Other_Credit_Notes__c</fullName>
+        <label>Other Credit Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Other_Credit_Reason__c</fullName>
+        <label>Other Credit Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>S04 - Client Order Error</fullName>
+                    <default>false</default>
+                    <label>S04 - Client Order Error</label>
+                </value>
+                <value>
+                    <fullName>S05 - SOE Operator Error</fullName>
+                    <default>false</default>
+                    <label>S05 - SOE Operator Error</label>
+                </value>
+                <value>
+                    <fullName>S07 - Client Cancelled Training</fullName>
+                    <default>false</default>
+                    <label>S07 - Client Cancelled Training</label>
+                </value>
+                <value>
+                    <fullName>S08 - SHL Cancelled Course</fullName>
+                    <default>false</default>
+                    <label>S08 - SHL Cancelled Course</label>
+                </value>
+                <value>
+                    <fullName>S09 - Goodwill Gesture</fullName>
+                    <default>false</default>
+                    <label>S09 - Goodwill Gesture</label>
+                </value>
+                <value>
+                    <fullName>S11 - System Error</fullName>
+                    <default>false</default>
+                    <label>S11 - System Error</label>
+                </value>
+                <value>
+                    <fullName>S12 - Requestor Error</fullName>
+                    <default>false</default>
+                    <label>S12 - Requestor Error</label>
+                </value>
+                <value>
+                    <fullName>S13 – Client Support Operator Error</fullName>
+                    <default>false</default>
+                    <label>S13 – Client Support Operator Error</label>
+                </value>
+                <value>
+                    <fullName>S14 – Training Operator Error</fullName>
+                    <default>false</default>
+                    <label>S14 – Training Operator Error</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Other_Credit_SUN_Credit_Note_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Credit SUN Credit Note Number</label>
+        <length>13</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Credit_Status__c</fullName>
+        <label>Other Credit Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Ready to be credited</fullName>
+                    <default>false</default>
+                    <label>Ready to be credited</label>
+                </value>
+                <value>
+                    <fullName>Queried</fullName>
+                    <default>false</default>
+                    <label>Queried</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Completed via order</fullName>
+                    <default>false</default>
+                    <label>Completed via order</label>
+                </value>
+                <value>
+                    <fullName>Ready for OAT</fullName>
+                    <default>false</default>
+                    <label>Ready for OAT</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Other_Credit_Text_Description__c</fullName>
+        <label>Other Credit Text Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Pass_Status__c</fullName>
+        <label>Pass Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pass</fullName>
+                    <default>false</default>
+                    <label>Pass</label>
+                </value>
+                <value>
+                    <fullName>Fail</fullName>
+                    <default>false</default>
+                    <label>Fail</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Pre_Course_Deadline__c</fullName>
+        <formula>Course_Number__r.Pre_Course_Deadline__c</formula>
+        <label>Pre-Course Deadline</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Pre_Discount_Total__c</fullName>
+        <externalId>false</externalId>
+        <label>Pre Discount Total</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Profit_Centre__c</fullName>
+        <label>Profit Centre</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Australia - AU1</fullName>
+                    <default>false</default>
+                    <label>Australia - AU1</label>
+                </value>
+                <value>
+                    <fullName>Belgium - BE5</fullName>
+                    <default>false</default>
+                    <label>Belgium - BE5</label>
+                </value>
+                <value>
+                    <fullName>Canada - CA1</fullName>
+                    <default>false</default>
+                    <label>Canada - CA1</label>
+                </value>
+                <value>
+                    <fullName>China - CN1</fullName>
+                    <default>false</default>
+                    <label>China - CN1</label>
+                </value>
+                <value>
+                    <fullName>Denmark - DK1</fullName>
+                    <default>false</default>
+                    <label>Denmark - DK1</label>
+                </value>
+                <value>
+                    <fullName>Finland - FI1</fullName>
+                    <default>false</default>
+                    <label>Finland - FI1</label>
+                </value>
+                <value>
+                    <fullName>France - FR1</fullName>
+                    <default>false</default>
+                    <label>France - FR1</label>
+                </value>
+                <value>
+                    <fullName>Germany - DE1</fullName>
+                    <default>false</default>
+                    <label>Germany - DE1</label>
+                </value>
+                <value>
+                    <fullName>Hong Kong - HK1</fullName>
+                    <default>false</default>
+                    <label>Hong Kong - HK1</label>
+                </value>
+                <value>
+                    <fullName>India - IN1</fullName>
+                    <default>false</default>
+                    <label>India - IN1</label>
+                </value>
+                <value>
+                    <fullName>Ireland - IE1</fullName>
+                    <default>false</default>
+                    <label>Ireland - IE1</label>
+                </value>
+                <value>
+                    <fullName>Italy - IT1</fullName>
+                    <default>false</default>
+                    <label>Italy - IT1</label>
+                </value>
+                <value>
+                    <fullName>Middle East - ME1</fullName>
+                    <default>false</default>
+                    <label>Middle East - ME1</label>
+                </value>
+                <value>
+                    <fullName>Netherlands - NL5</fullName>
+                    <default>false</default>
+                    <label>Netherlands - NL5</label>
+                </value>
+                <value>
+                    <fullName>New Zealand - NZ1</fullName>
+                    <default>false</default>
+                    <label>New Zealand - NZ1</label>
+                </value>
+                <value>
+                    <fullName>Norway - NO1</fullName>
+                    <default>false</default>
+                    <label>Norway - NO1</label>
+                </value>
+                <value>
+                    <fullName>Philippines - PH1</fullName>
+                    <default>false</default>
+                    <label>Philippines - PH1</label>
+                </value>
+                <value>
+                    <fullName>Poland - PL1</fullName>
+                    <default>false</default>
+                    <label>Poland - PL1</label>
+                </value>
+                <value>
+                    <fullName>Singapore - SG1</fullName>
+                    <default>false</default>
+                    <label>Singapore - SG1</label>
+                </value>
+                <value>
+                    <fullName>South Africa - ZA1</fullName>
+                    <default>false</default>
+                    <label>South Africa - ZA1</label>
+                </value>
+                <value>
+                    <fullName>Spain - ES1</fullName>
+                    <default>false</default>
+                    <label>Spain - ES1</label>
+                </value>
+                <value>
+                    <fullName>Sweden - SE1</fullName>
+                    <default>false</default>
+                    <label>Sweden - SE1</label>
+                </value>
+                <value>
+                    <fullName>Switzerland - CH1</fullName>
+                    <default>false</default>
+                    <label>Switzerland - CH1</label>
+                </value>
+                <value>
+                    <fullName>UK - UK1</fullName>
+                    <default>false</default>
+                    <label>UK - UK1</label>
+                </value>
+                <value>
+                    <fullName>US - US1</fullName>
+                    <default>false</default>
+                    <label>US - US1</label>
+                </value>
+                <value>
+                    <fullName>US - US5</fullName>
+                    <default>false</default>
+                    <label>US - US5</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Cancellation__c</fullName>
+        <description>Text to state why the booking was cancelled, can be used in credit and rebooking checks</description>
+        <label>Reason For Cancellation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Registration_No__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Contact__r.Registration_Number__c</formula>
+        <label>Registration No</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Registration_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Registration Number</label>
+        <length>7</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reminder_sent__c</fullName>
+        <label>Reminder sent</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Requires_Residence__c</fullName>
+        <label>Residential Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Non-Residential</fullName>
+                    <default>true</default>
+                    <label>Non-Residential</label>
+                </value>
+                <value>
+                    <fullName>Residential</fullName>
+                    <default>false</default>
+                    <label>Residential</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Residential_price__c</fullName>
+        <description>Additional cost on top of the base course price for residence during the course</description>
+        <label>Residential Price</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SSC_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>SSC Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SUN_Credit_Note_Number__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Must be entered for credit notes raised on cancelled bookings</inlineHelpText>
+        <label>SUN Credit Note Number</label>
+        <length>13</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SUN_Order_Number__c</fullName>
+        <description>SUN Order Number for cross reference</description>
+        <externalId>false</externalId>
+        <label>SUN Order Number</label>
+        <length>11</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Send_Instructions_To__c</fullName>
+        <label>Send Instructions To</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Booker</fullName>
+                    <default>false</default>
+                    <label>Booker</label>
+                </value>
+                <value>
+                    <fullName>Delegate</fullName>
+                    <default>true</default>
+                    <label>Delegate</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Send_Survey__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Created for Qualtrics and is being used in Outbound message.</description>
+        <label>Send Survey</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Survey_Language__c</fullName>
+        <description>Created for Qualtrics and is being used in Outbound message.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Course_Number__r.Survey_Language__c)</formula>
+        <label>Survey Language</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Taker__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Person who took the course order</description>
+        <label>Taker</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>R00N20000000pQatEAE</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Total_Price__c</fullName>
+        <description>Calculation based on the Extra Night &amp; Require Residence flag values.</description>
+        <formula>IF(ISPICKVAL(Requires_Residence__c, &quot;Residential&quot;),  Residential_price__c , Course_Price__c) + IF(ISPICKVAL(Extra_Night__c,&quot;Yes&quot;),Extra_night_price__c,0) - Course_Price_Discount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Prices are now fixed in Sun based on agreed price.</inlineHelpText>
+        <label>Total Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Training_Email_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Training Email Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Transferred_Booking__c</fullName>
+        <label>Transferred Booking</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Upsell_Value__c</fullName>
+        <label>Upsell Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Course Booking</label>
+    <listViews>
+        <fullName>ANZ_Delegate_Certificates</fullName>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Course_Number__c</columns>
+        <columns>NAME</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>Course_Description__c</columns>
+        <columns>Billing_Account__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Elearning__c</columns>
+        <columns>Assessments__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Course_Booking_BU__c</field>
+            <operation>equals</operation>
+            <value>Australia,New Zealand</value>
+        </filters>
+        <filters>
+            <field>Booking_Status__c</field>
+            <operation>notContain</operation>
+            <value>Cancelled</value>
+        </filters>
+        <filters>
+            <field>Course_Start_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>YESTERDAY</value>
+        </filters>
+        <filters>
+            <field>Course_Description__c</field>
+            <operation>notContain</operation>
+            <value>system,workshop,CBI</value>
+        </filters>
+        <label>~ANZ Delegate Pre-Course Work</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ANZAdmin</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>ANZ_Pre_Course_Tracking</fullName>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Course_Number__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Description__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Elearning__c</columns>
+        <columns>Contact_Notes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Course_Booking_BU__c</field>
+            <operation>equals</operation>
+            <value>Australia,New Zealand</value>
+        </filters>
+        <filters>
+            <field>Booking_Status__c</field>
+            <operation>equals</operation>
+            <value>Confirmed</value>
+        </filters>
+        <filters>
+            <field>Course_Start_Date__c</field>
+            <operation>lessThan</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>Course_Start_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>LAST_N_DAYS:60</value>
+        </filters>
+        <filters>
+            <field>Course_Description__c</field>
+            <operation>notContain</operation>
+            <value>system,workshop</value>
+        </filters>
+        <label>~ANZ Delegate Certificates</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ANZAdmin</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>AllAmericasBookings</fullName>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>LAST_ACTIVITY</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Booking_Status__c</field>
+            <operation>equals</operation>
+            <value>Provisional</value>
+        </filters>
+        <filters>
+            <field>Profit_Centre__c</field>
+            <operation>equals</operation>
+            <value>Canada - CA1,US - US1,US - US5</value>
+        </filters>
+        <filters>
+            <field>Course_Start_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>Course_Name__c</field>
+            <operation>notContain</operation>
+            <value>SODA</value>
+        </filters>
+        <filters>
+            <field>Course_Description__c</field>
+            <operation>notContain</operation>
+            <value>SODA</value>
+        </filters>
+        <label>All Americas Provisional Bookings</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>AllBookingsspecificcompany</fullName>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Billing_Account__c</field>
+            <operation>startsWith</operation>
+            <value>Sun Chemical</value>
+        </filters>
+        <label>All Bookings specific company</label>
+    </listViews>
+    <listViews>
+        <fullName>AllHongKongBookings</fullName>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Course_Booking_BU__c</field>
+            <operation>startsWith</operation>
+            <value>Hong</value>
+        </filters>
+        <label>All Hong Kong Bookings</label>
+    </listViews>
+    <listViews>
+        <fullName>AllIndiaBookings</fullName>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Course_Booking_BU__c</field>
+            <operation>startsWith</operation>
+            <value>India</value>
+        </filters>
+        <label>All India Bookings</label>
+    </listViews>
+    <listViews>
+        <fullName>AllUKProvisionalBookings_d_2</fullName>
+        <columns>Course_Description__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>LAST_ACTIVITY</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Profit_Centre__c</field>
+            <operation>equals</operation>
+            <value>UK - UK1</value>
+        </filters>
+        <filters>
+            <field>Booking_Status__c</field>
+            <operation>equals</operation>
+            <value>Provisional</value>
+        </filters>
+        <filters>
+            <field>Course_Start_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>Course_Description__c</field>
+            <operation>notContain</operation>
+            <value>S2P,SODA,system,correspondence,marking</value>
+        </filters>
+        <filters>
+            <field>Course_Venue__c</field>
+            <operation>notContain</operation>
+            <value>webinar,thames ditton</value>
+        </filters>
+        <label>All UK Provisional Bookings</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>AllUKandIrelandProvisionalBookings</fullName>
+        <booleanFilter>(1 OR 2) AND 3 AND 4 AND 5</booleanFilter>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <columns>LAST_ACTIVITY</columns>
+        <columns>Delegate_Account__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Course_Booking_BU__c</field>
+            <operation>equals</operation>
+            <value>UK</value>
+        </filters>
+        <filters>
+            <field>Course_Booking_BU__c</field>
+            <operation>equals</operation>
+            <value>Ireland</value>
+        </filters>
+        <filters>
+            <field>Booking_Status__c</field>
+            <operation>equals</operation>
+            <value>Provisional</value>
+        </filters>
+        <filters>
+            <field>Course_Name__c</field>
+            <operation>notContain</operation>
+            <value>TC UK,SODA,TC APAC,S2P,MFS</value>
+        </filters>
+        <filters>
+            <field>Course_Start_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>All UK and Ireland Provisional Bookings</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All_DE_CH_IT_Provisional_Bookings</fullName>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Course_End_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>LAST_ACTIVITY</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Profit_Centre__c</field>
+            <operation>equals</operation>
+            <value>Germany - DE1,Italy - IT1,Switzerland - CH1</value>
+        </filters>
+        <filters>
+            <field>Booking_Status__c</field>
+            <operation>equals</operation>
+            <value>Provisional</value>
+        </filters>
+        <filters>
+            <field>Course_Venue__c</field>
+            <operation>notEqual</operation>
+            <value>Client Site</value>
+        </filters>
+        <label>All DE, CH, IT Provisional Bookings</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Global_Provisional_Bookings</fullName>
+        <columns>Profit_Centre__c</columns>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Course_End_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>LAST_ACTIVITY</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Booking_Status__c</field>
+            <operation>equals</operation>
+            <value>Provisional</value>
+        </filters>
+        <filters>
+            <field>Course_Start_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>Profit_Centre__c</field>
+            <operation>notEqual</operation>
+            <value>Canada - CA1,India - IN1</value>
+        </filters>
+        <filters>
+            <field>Course_Venue__c</field>
+            <operation>notContain</operation>
+            <value>webinar,the pavilion</value>
+        </filters>
+        <filters>
+            <field>Course_Name__c</field>
+            <operation>notEqual</operation>
+            <value>OPQAOC,OTAOC</value>
+        </filters>
+        <label>All Global Provisional Bookings</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Nordic_Provisional_Bookings</fullName>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Profit_Centre__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>LAST_ACTIVITY</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Booking_Status__c</field>
+            <operation>equals</operation>
+            <value>Provisional</value>
+        </filters>
+        <filters>
+            <field>Profit_Centre__c</field>
+            <operation>equals</operation>
+            <value>Denmark - DK1,Finland - FI1,Norway - NO1,Sweden - SE1</value>
+        </filters>
+        <filters>
+            <field>Course_Start_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>Course_Name__c</field>
+            <operation>notContain</operation>
+            <value>SODA</value>
+        </filters>
+        <filters>
+            <field>Course_Description__c</field>
+            <operation>notContain</operation>
+            <value>SODA</value>
+        </filters>
+        <label>All Nordic Provisional Bookings</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All_Nordic_Ready_To_Be_Confirmed_Booking</fullName>
+        <columns>Course_Number__c</columns>
+        <columns>Course_Name__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Course_End_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Delegate_Account__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>Course_Type__c</columns>
+        <columns>LAST_ACTIVITY</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Booking_Status__c</field>
+            <operation>equals</operation>
+            <value>Ready to be confirmed</value>
+        </filters>
+        <filters>
+            <field>Profit_Centre__c</field>
+            <operation>equals</operation>
+            <value>Denmark - DK1,Finland - FI1,Norway - NO1,Sweden - SE1</value>
+        </filters>
+        <filters>
+            <field>Course_Start_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>Course_Venue__c</field>
+            <operation>notContain</operation>
+            <value>Client site</value>
+        </filters>
+        <label>All Nordic Ready ToBe Confirmed Bookings</label>
+    </listViews>
+    <listViews>
+        <fullName>All_SA_Provisional_Bookings1</fullName>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Course_End_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>NAME</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>LAST_ACTIVITY</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Profit_Centre__c</field>
+            <operation>equals</operation>
+            <value>South Africa - ZA1</value>
+        </filters>
+        <filters>
+            <field>Booking_Status__c</field>
+            <operation>equals</operation>
+            <value>Provisional</value>
+        </filters>
+        <filters>
+            <field>Course_Start_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>Course_Description__c</field>
+            <operation>notContain</operation>
+            <value>S2P,SODA,system</value>
+        </filters>
+        <filters>
+            <field>Course_Venue__c</field>
+            <operation>notContain</operation>
+            <value>webinar,thames ditton</value>
+        </filters>
+        <label>All SA Provisional Bookings</label>
+    </listViews>
+    <listViews>
+        <fullName>All_UK_Ready_ToBe_Confirmed_Bookings</fullName>
+        <columns>Course_Number__c</columns>
+        <columns>Course_Name__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Course_End_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Delegate_Account__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>Course_Type__c</columns>
+        <columns>LAST_ACTIVITY</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Booking_Status__c</field>
+            <operation>equals</operation>
+            <value>Ready to be confirmed</value>
+        </filters>
+        <filters>
+            <field>Course_Venue__c</field>
+            <operation>notContain</operation>
+            <value>Client site</value>
+        </filters>
+        <filters>
+            <field>Course_Start_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Global Ready ToBe Confirmed Bookings</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All_WE_Provisional_Bookings</fullName>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Country__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>LAST_ACTIVITY</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Profit_Centre__c</field>
+            <operation>equals</operation>
+            <value>Belgium - BE5,France - FR1,Netherlands - NL5</value>
+        </filters>
+        <filters>
+            <field>Booking_Status__c</field>
+            <operation>equals</operation>
+            <value>Provisional</value>
+        </filters>
+        <filters>
+            <field>Course_Venue__c</field>
+            <operation>notEqual</operation>
+            <value>Client site</value>
+        </filters>
+        <filters>
+            <field>Course_Name__c</field>
+            <operation>notEqual</operation>
+            <value>Pre-Sales Webinar</value>
+        </filters>
+        <label>All BE/NL/FR Provisional Bookings</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Western_Europe_Provisional_Bookings</fullName>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>LAST_ACTIVITY</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Booking_Status__c</field>
+            <operation>equals</operation>
+            <value>Provisional</value>
+        </filters>
+        <filters>
+            <field>Profit_Centre__c</field>
+            <operation>equals</operation>
+            <value>Middle East - ME1</value>
+        </filters>
+        <filters>
+            <field>Course_Venue__c</field>
+            <operation>notContain</operation>
+            <value>client site</value>
+        </filters>
+        <label>All ME Provisional Bookings</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>AstridBookings</fullName>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATEDBY_USER</field>
+            <operation>contains</operation>
+            <value>Astrid</value>
+        </filters>
+        <label>Astrid Bookings</label>
+    </listViews>
+    <listViews>
+        <fullName>CSIT_SODA_Bookings</fullName>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <columns>Course_Description__c</columns>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>Contact_Notes__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Course_Type__c</field>
+            <operation>equals</operation>
+            <value>System Training</value>
+        </filters>
+        <filters>
+            <field>Booking_Status__c</field>
+            <operation>equals</operation>
+            <value>Provisional,Waiting</value>
+        </filters>
+        <filters>
+            <field>Course_Start_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>Course_Name__c</field>
+            <operation>notEqual</operation>
+            <value>SA F2F</value>
+        </filters>
+        <label>CSIT Provisional Course Bookings</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Denmark_Bookings</fullName>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Account__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Course_Booking_BU__c</field>
+            <operation>equals</operation>
+            <value>Denmark</value>
+        </filters>
+        <label>Denmark Bookings</label>
+    </listViews>
+    <listViews>
+        <fullName>Finland_Bookings</fullName>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <columns>Billing_Account__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Course_Booking_BU__c</field>
+            <operation>equals</operation>
+            <value>Finland</value>
+        </filters>
+        <label>Finland Bookings</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Gothenburg_Bookings</fullName>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Course_Booking_BU__c</field>
+            <operation>equals</operation>
+            <value>Sweden</value>
+        </filters>
+        <filters>
+            <field>Course_Venue__c</field>
+            <operation>equals</operation>
+            <value>SHL Gothenburg Office</value>
+        </filters>
+        <label>Gothenburg Bookings</label>
+    </listViews>
+    <listViews>
+        <fullName>Jan_Erik_Hamnes</fullName>
+        <columns>Course_End_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Booking_BU__c</columns>
+        <columns>Course_Description__c</columns>
+        <columns>Course_Name__c</columns>
+        <columns>Delegate_Account_Old__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Course_Booking_BU__c</field>
+            <operation>equals</operation>
+            <value>Norway</value>
+        </filters>
+        <filters>
+            <field>Course_End_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>1/1/2009</value>
+        </filters>
+        <label>Jan Erik Hamnes</label>
+        <sharedTo>
+            <group>ASMNORDICFO</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NZ_Delegates_from_today</fullName>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Course_Number__c</columns>
+        <columns>NAME</columns>
+        <columns>Billing_Account__c</columns>
+        <columns>Course_Description__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Elearning__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Course_Start_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>1/1/2014</value>
+        </filters>
+        <filters>
+            <field>Course_Booking_BU__c</field>
+            <operation>equals</operation>
+            <value>new zealand</value>
+        </filters>
+        <label>~NZ Delegates from today</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ANZ</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Nordic_Bookings</fullName>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Course_Booking_BU__c</field>
+            <operation>equals</operation>
+            <value>Sweden</value>
+        </filters>
+        <label>Sweden Bookings</label>
+    </listViews>
+    <listViews>
+        <fullName>Nordic_Bookings1</fullName>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>Date_Cancelled__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Course_Booking_BU__c</field>
+            <operation>equals</operation>
+            <value>,Denmark,Finland,Norway,Sweden</value>
+        </filters>
+        <label>Nordic Bookings</label>
+    </listViews>
+    <listViews>
+        <fullName>Norway_Bookings</fullName>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Course_Booking_BU__c</field>
+            <operation>equals</operation>
+            <value>Norway</value>
+        </filters>
+        <label>Norway Bookings</label>
+    </listViews>
+    <listViews>
+        <fullName>Ready_to_be_Confirmed</fullName>
+        <columns>NAME</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>Course_Booking_BU__c</columns>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Number__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Course_End_Date__c</columns>
+        <columns>Course_Venue__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Course_Booking_BU__c</field>
+            <operation>equals</operation>
+            <value>UK</value>
+        </filters>
+        <filters>
+            <field>Booking_Status__c</field>
+            <operation>equals</operation>
+            <value>Ready to be confirmed</value>
+        </filters>
+        <label>UK Ready to be Confirmed</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>SHL_Waiting</fullName>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Booking_Status__c</field>
+            <operation>equals</operation>
+            <value>Waiting</value>
+        </filters>
+        <filters>
+            <field>Course_Start_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>Course_Name__c</field>
+            <operation>notContain</operation>
+            <value>TC UK,SODA</value>
+        </filters>
+        <label>SHL Waiting</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>SODA_Bookings</fullName>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <columns>Course_Booking_BU__c</columns>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Contact_Notes__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Course_Name__c</field>
+            <operation>contains</operation>
+            <value>SODA</value>
+        </filters>
+        <filters>
+            <field>Booking_Status__c</field>
+            <operation>equals</operation>
+            <value>Provisional,Waiting</value>
+        </filters>
+        <filters>
+            <field>Course_Start_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>SODA Bookings</label>
+    </listViews>
+    <listViews>
+        <fullName>Stockholm_Bookings</fullName>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Course_Booking_BU__c</field>
+            <operation>equals</operation>
+            <value>Sweden; Finland; Denmark; Norway</value>
+        </filters>
+        <label>Stockholm Bookings</label>
+    </listViews>
+    <listViews>
+        <fullName>Stockholm_Bookings1</fullName>
+        <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Course_Booking_BU__c</field>
+            <operation>equals</operation>
+            <value>Sweden</value>
+        </filters>
+        <filters>
+            <field>Course_Booking_BU__c</field>
+            <operation>equals</operation>
+            <value>Finland</value>
+        </filters>
+        <filters>
+            <field>Course_Booking_BU__c</field>
+            <operation>equals</operation>
+            <value>Denmark</value>
+        </filters>
+        <filters>
+            <field>Course_Booking_BU__c</field>
+            <operation>equals</operation>
+            <value>Norway</value>
+        </filters>
+        <label>Nordics Course Booking by change date</label>
+    </listViews>
+    <listViews>
+        <fullName>Sweden_Bookings1</fullName>
+        <columns>Course_Name__c</columns>
+        <columns>Course_Start_Date__c</columns>
+        <columns>Delegate_Contact__c</columns>
+        <columns>Course_Venue__c</columns>
+        <columns>Booking_Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Course_Number__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Course_Booking_BU__c</field>
+            <operation>equals</operation>
+            <value>Sweden</value>
+        </filters>
+        <filters>
+            <field>Course_Venue__c</field>
+            <operation>equals</operation>
+            <value>SHL Stockholm Office</value>
+        </filters>
+        <label>Stockholm Bookings</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CB{000000}</displayFormat>
+        <label>Booking Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Course Bookings</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Course_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Course_Start_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Delegate_Contact__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Course_Venue__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Booking_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Course_Number__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Delegate_Contact__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Registration_No__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Course_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Course_Start_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Course_Venue__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Booking_Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Course_Number__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Delegate_Contact__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Course_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Course_Start_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Course_Venue__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Booking_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Course_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Billing_Account__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>BillingContactCheck</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ISCHANGED( Invoice_Status__c ),
+ ISPICKVAL(Invoice_Status__c, &apos;Ready for OAT&apos;),
+  Billing_Contact__r.AccountId  &lt;&gt;  Billing_Account__r.Id,
+NOT(ISPICKVAL(Billing_Contact__r.Contact_Status__c, &apos;Active&apos;)) 
+)</errorConditionFormula>
+        <errorDisplayField>Billing_Contact__c</errorDisplayField>
+        <errorMessage>Selected Billing Contact is not part of Billing Account or the Billing Contact is inactive. Please select correct Billing Contact/Account to mark Invoice status as &apos;Ready for OAT&apos;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Course_Booking_Status_RestrictedTraining</fullName>
+        <active>true</active>
+        <description>Training profile can still set one of the status fields to Complete&apos; or &apos;Ready for invoicing/crediting&apos;.</description>
+        <errorConditionFormula>AND(IF($Permission.Training,
+	IF( 
+	OR(
+		IF(
+			ISCHANGED(Invoice_Status__c),
+			IF(
+				OR(
+					ISPICKVAL(Invoice_Status__c, &apos;Ready for OAT&apos;),
+					ISPICKVAL(Invoice_Status__c, &apos;Completed via order&apos;),
+					ISPICKVAL(Invoice_Status__c, &apos;Queried&apos;),
+					ISPICKVAL(Invoice_Status__c, &apos;Unit Transfer&apos;)
+				),false,true
+			),false
+		),
+		IF(
+			ISCHANGED(Credit_Status__c),
+			IF(
+				OR(
+					ISPICKVAL(Credit_Status__c, &apos;Ready for OAT&apos;),
+					ISPICKVAL(Credit_Status__c, &apos;Completed via order&apos;),
+					ISPICKVAL(Credit_Status__c, &apos;Queried&apos;),
+					ISPICKVAL(Credit_Status__c, &apos;Unit Transfer&apos;)
+				),false,true
+			),false
+		),
+		IF(
+			ISCHANGED(Other_Credit_Status__c),
+			IF(
+				OR(
+					ISPICKVAL(Other_Credit_Status__c, &apos;Ready for OAT&apos;),
+					ISPICKVAL(Other_Credit_Status__c, &apos;Completed via order&apos;),
+					ISPICKVAL(Other_Credit_Status__c, &apos;Queried&apos;),
+					ISPICKVAL(Other_Credit_Status__c, &apos;Unit Transfer&apos;)
+				),false,true
+			),false
+		)
+	),true,
+	false),
+	false
+),NOT(IsAutomationBypassed__c))</errorConditionFormula>
+        <errorMessage>You can not set Invoice Status or Credit Status or Other Credit Status to Complete&apos; or &apos;Ready for invoicing/crediting&apos;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Course_Booking_Status_Restricted_OAT</fullName>
+        <active>true</active>
+        <description>OAT profile can still set one of the status fields to &apos;Completed&apos;.</description>
+        <errorConditionFormula>IF( $Permission.OATs ,
+	IF( 
+		OR(
+			IF(
+				ISCHANGED(Invoice_Status__c),
+				IF(
+					OR(
+						ISPICKVAL(Invoice_Status__c, &apos;Ready for OAT&apos;),
+						ISPICKVAL(Invoice_Status__c, &apos;Completed via order&apos;),
+						ISPICKVAL(Invoice_Status__c, &apos;Queried&apos;),
+						ISPICKVAL(Invoice_Status__c, &apos;Unit Transfer&apos;),
+						ISPICKVAL(Invoice_Status__c, &apos;Ready to be invoiced&apos;)
+					),false, IF(IsAutomationBypassed__c=true,false, true)  
+				),false
+			),
+			IF(
+				ISCHANGED(Credit_Status__c),
+				IF(
+					OR(
+						ISPICKVAL(Credit_Status__c, &apos;Ready for OAT&apos;),
+						ISPICKVAL(Credit_Status__c, &apos;Completed via order&apos;),
+						ISPICKVAL(Credit_Status__c, &apos;Queried&apos;),
+						ISPICKVAL(Credit_Status__c, &apos;Unit Transfer&apos;),
+						ISPICKVAL(Credit_Status__c, &apos;Ready to be credited&apos;)
+					),false,true
+				),false
+			),
+			IF(
+				ISCHANGED(Other_Credit_Status__c),
+				IF(
+					OR(
+						ISPICKVAL(Other_Credit_Status__c, &apos;Ready for OAT&apos;),
+						ISPICKVAL(Other_Credit_Status__c, &apos;Completed via order&apos;),
+						ISPICKVAL(Other_Credit_Status__c, &apos;Queried&apos;),
+						ISPICKVAL(Other_Credit_Status__c, &apos;Unit Transfer&apos;),
+						ISPICKVAL(Other_Credit_Status__c, &apos;Ready to be credited&apos;)
+					),false,true
+				),false
+			)
+		),true,
+	false),
+	false
+)</errorConditionFormula>
+        <errorMessage>You can not set Invoice Status or Credit Status or Other Credit Status to &apos;Completed&apos;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Course_Booking_Status_Restricted_SOE</fullName>
+        <active>true</active>
+        <description>Training profile can still set one of the status fields to &apos;Ready for OAT&apos; or &apos;Ready for invoicing/crediting&apos; or &apos;Unit transfer&apos;.</description>
+        <errorConditionFormula>IF( $Permission.SOE ,
+	IF( 
+	OR(
+		IF(
+			ISCHANGED(Invoice_Status__c),
+			IF(
+				OR(
+					ISPICKVAL(Invoice_Status__c, &apos;Completed via order&apos;),
+					ISPICKVAL(Invoice_Status__c, &apos;Queried&apos;),
+					ISPICKVAL(Invoice_Status__c, &apos;Completed&apos;)
+				),false,true
+			),false
+		),
+		IF(
+			ISCHANGED(Credit_Status__c),
+			IF(
+				OR(
+					ISPICKVAL(Credit_Status__c, &apos;Completed via order&apos;),
+					ISPICKVAL(Credit_Status__c, &apos;Queried&apos;),
+					ISPICKVAL(Credit_Status__c, &apos;Completed&apos;)
+				),false,true
+			),false
+		),
+		IF(
+			ISCHANGED(Other_Credit_Status__c),
+			IF(
+				OR(
+					ISPICKVAL(Other_Credit_Status__c, &apos;Completed via order&apos;),
+					ISPICKVAL(Other_Credit_Status__c, &apos;Queried&apos;),
+					ISPICKVAL(Other_Credit_Status__c, &apos;Completed&apos;)
+				),false,true
+			),false
+		)
+	),true,
+	false),
+	false
+)</errorConditionFormula>
+        <errorMessage>You can not set Invoice Status or Credit Status or Other Credit Status to &apos;Ready for OAT&apos; or &apos;Ready for invoicing/crediting&apos; or &apos;Unit transfer&apos;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Course_booking_transfer_deferral_month</fullName>
+        <active>true</active>
+        <description>Ensure deferral month is complete if booking set to transferred.</description>
+        <errorConditionFormula>AND ( 
+ISPICKVAL(Transferred_Booking__c ,&quot;Yes&quot;), 
+ISBLANK(Deferral_Month__c)
+)</errorConditionFormula>
+        <errorMessage>Please enter the deferral month.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Course_booking_transfer_new_reference</fullName>
+        <active>true</active>
+        <description>If the course booking transfer checkbox field is selected, either the new or from course booking reference must be added.</description>
+        <errorConditionFormula>AND ( 
+ISPICKVAL( Transferred_Booking__c ,&quot;Yes&quot;), 
+Course_Booking_Transferred_To__c  =&quot;&quot;,
+Course_Booking_Transferred_From__c  =&quot;&quot;
+)</errorConditionFormula>
+        <errorMessage>Please ensure you enter either the new or from course booking reference for the transferred booking.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CreditStatusandSectionDetails</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND ( 
+ISPICKVAL(Credit_Status__c ,&quot;Ready to be credited&quot;), 
+OR( 
+Reason_for_Cancellation__c =&quot;&quot;, 
+ISNULL(Date_Cancelled__c), 
+ISPICKVAL( Cancellation_Refund_Type__c ,&quot;&quot;), 
+ISNULL(Credit_Amount__c), 
+ISPICKVAL( Credit_Reason__c ,&quot;&quot;), 
+Credit_Text_Description__c =&quot;&quot; 
+) 
+)</errorConditionFormula>
+        <errorMessage>It is mandatory to enter the Public Booking Cancellation Credit Details section fields (except SUN Credit Note No. &amp; Credit note Notes) if the Credit Status is &quot;Ready to be Credited&quot;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Customer_order_ref_blank_check</fullName>
+        <active>true</active>
+        <description>If the purchase order is required on the account of the billing account then the customer order ref cannot be blank. Needs all invoice and credit status ready rules to have the customer order ref removed too. JM 30/11/09</description>
+        <errorConditionFormula>AND (NOT (ISBLANK( Billing_Account__c )) ,NOT ( Billing_Account__r.PurchaseOrderRequired__c ), ISBLANK ( Customer_Order_Ref__c ), ISPICKVAL( Invoice_Status__c ,&quot;Ready for OAT&quot;) )</errorConditionFormula>
+        <errorMessage>Please ensure you enter the customer order ref.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>DelegateAccountOwnershouldbeActive</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+				 NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)),
+					OR(
+					ISPICKVAL(Booking_Status__c, &apos;Confirmed&apos;),
+					ISPICKVAL(Booking_Status__c, &apos;Cancelled&apos;),
+					ISPICKVAL(Booking_Status__c, &apos;Waiting&apos;)
+					),
+					NOT(Delegate_Account_Owner__r.IsActive),
+				 ISCHANGED(Booking_Status__c)
+)</errorConditionFormula>
+        <errorMessage>Delegate Account Owner is Inactive</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>DiscountApprovedByMandatory</fullName>
+        <active>true</active>
+        <description>Discount Approved By field is mandatory if the Discount amount is greater than zero.</description>
+        <errorConditionFormula>AND(   Course_Price_Discount__c  &gt;0,  DiscountApprovedBy__c=&quot;&quot; )</errorConditionFormula>
+        <errorMessage>Discount Approved By field is mandatory as the  Course Discount amount is greater than zero.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>InvStatusCompleted_SUN_order_number_reqd</fullName>
+        <active>true</active>
+        <description>The SUN order number becomes a required field is the invoice status is completed</description>
+        <errorConditionFormula>AND 
+( 
+SUN_Order_Number__c=&quot;&quot; , 
+(ISPICKVAL( Invoice_Status__c ,&quot;Completed&quot;)))</errorConditionFormula>
+        <errorMessage>It is mandatory to enter SUN Order Number if Invoice Status is &quot;Completed&quot;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>InvoiceStatus_and_NoofUnitsTransferred</fullName>
+        <active>true</active>
+        <description>Checks that if the Invoice Status field is set to Unit Transfer that an actual amount is entered into the No of Units Transferred field.</description>
+        <errorConditionFormula>OR( 
+AND(ISPICKVAL( Invoice_Status__c , &quot;Unit Transfer&quot;) 
+, ISNULL( No_of_Units_Transferred__c ) ) 
+,AND(ISPICKVAL( Invoice_Status__c , &quot;Unit Transfer&quot;) 
+, No_of_Units_Transferred__c = 0) 
+)</errorConditionFormula>
+        <errorDisplayField>No_of_Units_Transferred__c</errorDisplayField>
+        <errorMessage>Please enter the number of units transferred.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>InvoiceStatusandSectionDetails</fullName>
+        <active>true</active>
+        <description>Removed customer order ref - JM 1/12/09</description>
+        <errorConditionFormula>AND (
+ISPICKVAL( Invoice_Status__c ,&quot;Ready for OAT&quot;),
+OR(
+Billing_Account__c =&quot;&quot;,
+Billing_Contact__c =&quot;&quot;,
+ISPICKVAL(Invoice_Language__c,&quot;&quot;),
+ISPICKVAL( Item_Master_Lookup__c ,&quot;&quot;),
+Invoice_Text_Description__c =&quot;&quot;,
+ISPICKVAL( Currency_to_Invoice__c ,&quot;&quot;),
+ISPICKVAL( Department_Code__c ,&quot;&quot;),
+ISBLANK(Course_Price__c )
+)
+)</errorConditionFormula>
+        <errorMessage>It is mandatory to enter the Course Price &amp; Public Booking Invoice Details section fields (except SUN Order No. &amp; Order Ref ) if the Invoice Status is &quot;Ready for OAT&quot;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LeadSourceMandatory</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND 
+( 
+ISPICKVAL( Course_Number__r.Course_Category__c ,&quot;Public&quot;), 
+ISPICKVAL( Lead_Source__c ,&quot;&quot;) 
+)</errorConditionFormula>
+        <errorDisplayField>Lead_Source__c</errorDisplayField>
+        <errorMessage>It is mandatory to select Lead Source if the Course Category on the Course is &quot;Public&quot;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Offer_code_when_discount_is_added</fullName>
+        <active>true</active>
+        <description>Offer code to be mandatory when a discount is applied</description>
+        <errorConditionFormula>AND(Course_Price_Discount__c &gt;=0.01,ISBLANK(Offer_Code__c ),NOT(ISCHANGED(Delegate_Account_Owner__c)))</errorConditionFormula>
+        <errorMessage>Discount has been applied to this booking - please enter the course offer code</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>OnlyConfirmedBookingsCanBeInvoiced</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(NOT(ISPICKVAL(Booking_Status__c,&apos;Confirmed&apos;)),
+ISPICKVAL( Invoice_Status__c , &apos;Ready For OAT&apos;))</errorConditionFormula>
+        <errorMessage>Only Course Bookings with &apos;Confirmed&apos; booking status can be marked as &apos;Ready For OAT&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>OtherCreditStatusandSectionDetails</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND ( 
+ISPICKVAL(Other_Credit_Status__c ,&quot;Ready to be credited&quot;), 
+OR( 
+ISNULL(Other_Credit_Amount__c ), 
+ISPICKVAL( Other_Credit_Reason__c ,&quot;&quot;), 
+Other_Credit_Text_Description__c =&quot;&quot; 
+) 
+)</errorConditionFormula>
+        <errorMessage>It is mandatory to enter the Public Booking Other Credits section fields (except Other Credit SUN Credit Note No. &amp; Other Credit Notes) if the Other Credit Status is &quot;Ready to be credited&quot;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SunOrderNoMandatory</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND 
+( 
+SUN_Order_Number__c=&quot;&quot; , 
+OR 
+( 
+ISPICKVAL(Credit_Status__c ,&quot;Ready to be credited&quot;), 
+ISPICKVAL(Other_Credit_Status__c ,&quot;Ready to be credited&quot;) 
+) 
+)</errorConditionFormula>
+        <errorMessage>It is mandatory to enter SUN Order Number if Credit Status or Other Credit Status is &quot;Ready to be Credited&quot;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Transferredbooking_SUN_order_number_reqd</fullName>
+        <active>true</active>
+        <description>The SUN order number becomes a required field if the Transferred Booking field is set to Yes</description>
+        <errorConditionFormula>AND 
+( SUN_Order_Number__c=&quot;&quot; , (ISPICKVAL( Transferred_Booking__c ,&quot;Yes&quot;)))</errorConditionFormula>
+        <errorMessage>It is mandatory to enter SUN Order Number if Transferred Booking is set to &quot;Yes&quot;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Unit_Transfer_units_required</fullName>
+        <active>true</active>
+        <description>When the invoice status field on the course booking and course has the unit transfer picklist option chosen, there should be a field and validation rule to ensure the user enters the number of units to transfer.</description>
+        <errorConditionFormula>AND (ISPICKVAL(Invoice_Status__c,&quot;Unit Transfer&quot;),  ISBLANK( No_of_Units_Transferred__c ))</errorConditionFormula>
+        <errorMessage>Please enter number of units transfered</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>CourseBooking_Clone</fullName>
+        <availability>online</availability>
+        <description>Displays Qualification Check &amp; Waiting Message while Clone a booking</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Clone</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.alert(&quot;Please create a booking from the Courses Tab&quot;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>CourseBooking_New</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/support/console/28.0/integration.js&quot;)}
+if(&quot;{!Courses__c.Course_Status__c}&quot; == &quot;Cancelled&quot;)
+{
+alert(&quot;No new booking can be created as this Course has been Cancelled.&quot;);
+if (sforce.console.isInConsole()) { 
+srcUp(&apos;{!URLFOR( $Action.Courses__c.View , Courses__c.Id, null, true)}&apos;); 
+} else { 
+window.parent.location.href =&apos;{!URLFOR( $Action.Courses__c.View   , Courses__c.Id, null, true)}&apos;;
+}
+}
+else
+{
+alert(&quot;Please ensure the delegate has the required qualifications for this course before making the booking.&quot;); 
+
+if (&quot;{!Courses__c.Course_Free_Spaces__c}&quot;&lt;= 0) 
+	alert(&quot;This course is currently full so this booking will be saved with a status of Waiting.&quot;); 
+
+var Currency=&apos;{!Courses__c.CurrencyIsoCode}&apos;;
+var completeUrl;
+
+var url =&apos;{!URLFOR($Action.Course_Booking__c.New, Course_Booking__c.Id, [CF00N20000000pPXU_lkid=Courses__c.Id, CF00N20000000pPXU=Courses__c.Name], true)}&apos;;
+
+completeUrl= url+&apos;&amp;CurrencyIsoCode=&apos;+Currency;
+if (sforce.console.isInConsole()) { 
+srcUp(completeUrl + &apos;&amp;00N20000000pQaK={!TEXT(Courses__c.Course_Price__c)}&amp;00N20000000pQaZ={!TEXT(Courses__c.Course_Residential_Price__c)}&amp;00N20000001I2pZ={!TEXT(Courses__c.Extra_night_price__c)}&apos;); 
+} else { 
+window.parent.location.href =completeUrl + &apos;&amp;00N20000000pQaK={!TEXT(Courses__c.Course_Price__c)}&amp;00N20000000pQaZ={!TEXT(Courses__c.Course_Residential_Price__c)}&amp;00N20000001I2pZ={!TEXT(Courses__c.Extra_night_price__c)}&apos;;
+}
+
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>CourseBooking_PassDelegate</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Pass Booking</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/8.0/connection.js&quot;)}
+var records = {!GETRECORDIDS($ObjectType.Course_Booking__c)}; 
+var newRecords = [];
+if (records[0] == null)
+{
+    alert(&quot;Please select at least one row&quot;)
+}
+else
+{
+    courseBooking = sforce.connection.retrieve(&quot;Id, Pass_Status__c,Booking_Status__c&quot;, &quot;Course_Booking__c&quot;, records);
+
+    for (var i in courseBooking) 
+    {
+        if(courseBooking[i].Booking_Status__c ==&quot;Confirmed&quot; &amp;&amp; courseBooking[i].Pass_Status__c== null)
+        courseBooking[i].Pass_Status__c= &quot;Pass&quot;;
+    
+        
+    }
+    saveresult = sforce.connection.update(courseBooking );
+   top.window.location.href = top.window.location.href;
+    alert(&quot;Pass status for Confirmed Bookings updated successfully&quot;); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Course_Booking_Bulk</fullName>
+        <availability>online</availability>
+        <description>Used to create the Course Booking in bulk from Course Related List</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New CB Bulk</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/lightning/cmp/c__CourseBookingsFromCourse?c__recordId={!Courses__c.Id}&amp;c__courseStatus={!Courses__c.Course_Status__c}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_on_Lex_Courses</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New CB Single</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/lightning/cmp/c__New_Course_Bookings?c__id={!Courses__c.Id}&amp;c__courseStatus={!Courses__c.Course_Status__c}&amp;c__freeSpaces={!Courses__c.Course_Free_Spaces__c}&amp;c__cName={!URLENCODE(TEXT(Courses__c.Course_Name__c))}&amp;c__coursePrice={!Courses__c.Course_Price__c}&amp;c__currency={!Courses__c.CurrencyIsoCode}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Price_Information</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Price Information</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.open(&quot;/servlet/servlet.FileDownload?file=015R00000005jiw&quot;)</url>
+    </webLinks>
+</CustomObject>

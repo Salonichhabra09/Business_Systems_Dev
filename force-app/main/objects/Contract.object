@@ -1,0 +1,1053 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>ACV_2__c</fullName>
+        <label>ACV 2(Legacy)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ACV_3__c</fullName>
+        <label>ACV 3(Legacy)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Account_Region__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Region__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Activated_Date__c</fullName>
+        <description>New custom field for Activated Date which will be hidden on Page layouts</description>
+        <label>Activated Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Activation_Offset__c</fullName>
+        <externalId>false</externalId>
+        <label>Activation Offset</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agreement__c</fullName>
+        <label>Agreement</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Standard</fullName>
+                    <default>true</default>
+                    <label>Standard</label>
+                </value>
+                <value>
+                    <fullName>Standard MA</fullName>
+                    <default>false</default>
+                    <label>Standard MA</label>
+                </value>
+                <value>
+                    <fullName>Non-Standard</fullName>
+                    <default>false</default>
+                    <label>Non-Standard</label>
+                </value>
+                <value>
+                    <fullName>Non-Standard MA</fullName>
+                    <default>false</default>
+                    <label>Non-Standard MA</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Annual_Contract_Value__c</fullName>
+        <label>ACV1(Legacy)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>BU_From_Account__c</fullName>
+        <description>BU from Account</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Account.BU__c)</formula>
+        <inlineHelpText>BU is determined by the BU attached to the Account. If incorrect check that you have selected the correct Account Number for this client</inlineHelpText>
+        <label>BU</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Billing Contact(Legacy)</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Contracts (Billing Contact)</relationshipLabel>
+        <relationshipName>Contracts2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Booked_Elsewhere__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Booked Elsewhere(Legacy)</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Booking_Date_2__c</fullName>
+        <label>Booking Date 2(Legacy)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Booking_Date_3__c</fullName>
+        <label>Booking Date 3(Legacy)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Booking_Date_EST__c</fullName>
+        <label>Booking Date(Legacy)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Booking_Date_New__c</fullName>
+        <label>Booking Date 1(Legacy)</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Booking_Date__c</fullName>
+        <label>SHL Signed Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CSVCount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>CSVCount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Client_Display__c</fullName>
+        <label>Client Display</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Detailed Pricing</fullName>
+                    <default>false</default>
+                    <label>Detailed Pricing</label>
+                </value>
+                <value>
+                    <fullName>Summary Pricing</fullName>
+                    <default>false</default>
+                    <label>Summary Pricing</label>
+                </value>
+                <value>
+                    <fullName>Exception</fullName>
+                    <default>false</default>
+                    <label>Exception</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ContractType__c</fullName>
+        <label>Contract Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Non Cancellable</fullName>
+                    <default>true</default>
+                    <label>Non Cancellable</label>
+                </value>
+                <value>
+                    <fullName>Cancellable</fullName>
+                    <default>false</default>
+                    <label>Cancellable</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Contract_End_Date__c</fullName>
+        <description>Custom field to capture end date of contract and can be edited by user manually.</description>
+        <inlineHelpText>Automatically populated on OAT review and activation – calculated using Product Subscription Start Date plus Duration (from Opportunity) / MSA expiry date.</inlineHelpText>
+        <label>Contract End Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Type__c</fullName>
+        <label>Order Type(Legacy)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>360</fullName>
+                    <default>false</default>
+                    <label>360</label>
+                </value>
+                <value>
+                    <fullName>Assessment 1:1</fullName>
+                    <default>false</default>
+                    <label>Assessment 1:1</label>
+                </value>
+                <value>
+                    <fullName>Assessment Centre</fullName>
+                    <default>false</default>
+                    <label>Assessment Centre</label>
+                </value>
+                <value>
+                    <fullName>Enterprise Leadership Solution</fullName>
+                    <default>false</default>
+                    <label>Enterprise Leadership Solution</label>
+                </value>
+                <value>
+                    <fullName>Sales Challenger</fullName>
+                    <default>false</default>
+                    <label>Sales Challenger</label>
+                </value>
+                <value>
+                    <fullName>Consulting</fullName>
+                    <default>false</default>
+                    <label>Consulting</label>
+                </value>
+                <value>
+                    <fullName>Development Centre</fullName>
+                    <default>false</default>
+                    <label>Development Centre</label>
+                </value>
+                <value>
+                    <fullName>HiPo Solution</fullName>
+                    <default>false</default>
+                    <label>HiPo Solution</label>
+                </value>
+                <value>
+                    <fullName>Leadership Academy</fullName>
+                    <default>false</default>
+                    <label>Leadership Academy</label>
+                </value>
+                <value>
+                    <fullName>Licence Fees</fullName>
+                    <default>false</default>
+                    <label>Licence Fees</label>
+                </value>
+                <value>
+                    <fullName>Managed Services</fullName>
+                    <default>false</default>
+                    <label>Managed Services</label>
+                </value>
+                <value>
+                    <fullName>Multi - enter types in Description</fullName>
+                    <default>false</default>
+                    <label>Multi - enter types in Description</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Other Product</fullName>
+                    <default>false</default>
+                    <label>Other Product</label>
+                </value>
+                <value>
+                    <fullName>Pencil &amp; Paper, Books</fullName>
+                    <default>false</default>
+                    <label>Pencil &amp; Paper, Books</label>
+                </value>
+                <value>
+                    <fullName>Precise Fit</fullName>
+                    <default>false</default>
+                    <label>Precise Fit</label>
+                </value>
+                <value>
+                    <fullName>Royalties</fullName>
+                    <default>false</default>
+                    <label>Royalties</label>
+                </value>
+                <value>
+                    <fullName>S2P - Capped Subscription</fullName>
+                    <default>false</default>
+                    <label>S2P - Capped Subscription</label>
+                </value>
+                <value>
+                    <fullName>S2P - In Advance</fullName>
+                    <default>false</default>
+                    <label>S2P - In Advance</label>
+                </value>
+                <value>
+                    <fullName>S2P - In Arrears</fullName>
+                    <default>false</default>
+                    <label>S2P - In Arrears</label>
+                </value>
+                <value>
+                    <fullName>S2P - Uncapped Subscription</fullName>
+                    <default>false</default>
+                    <label>S2P - Uncapped Subscription</label>
+                </value>
+                <value>
+                    <fullName>Site SetUp</fullName>
+                    <default>false</default>
+                    <label>Site SetUp</label>
+                </value>
+                <value>
+                    <fullName>SODA - Capped Subscription</fullName>
+                    <default>false</default>
+                    <label>SODA - Capped Subscription</label>
+                </value>
+                <value>
+                    <fullName>SODA - In Advance</fullName>
+                    <default>false</default>
+                    <label>SODA - In Advance</label>
+                </value>
+                <value>
+                    <fullName>SODA - In Arrears</fullName>
+                    <default>false</default>
+                    <label>SODA - In Arrears</label>
+                </value>
+                <value>
+                    <fullName>SODA - Uncapped Subscription</fullName>
+                    <default>false</default>
+                    <label>SODA - Uncapped Subscription</label>
+                </value>
+                <value>
+                    <fullName>Sunstone Analytics</fullName>
+                    <default>false</default>
+                    <label>Sunstone Analytics</label>
+                </value>
+                <value>
+                    <fullName>Talent Audit</fullName>
+                    <default>false</default>
+                    <label>Talent Audit</label>
+                </value>
+                <value>
+                    <fullName>TC - Capped Subscription</fullName>
+                    <default>false</default>
+                    <label>TC - Capped Subscription</label>
+                </value>
+                <value>
+                    <fullName>TC - In Advance</fullName>
+                    <default>false</default>
+                    <label>TC - In Advance</label>
+                </value>
+                <value>
+                    <fullName>TC - In Arrears</fullName>
+                    <default>false</default>
+                    <label>TC - In Arrears</label>
+                </value>
+                <value>
+                    <fullName>TC - Uncapped Subscription</fullName>
+                    <default>false</default>
+                    <label>TC - Uncapped Subscription</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+                <value>
+                    <fullName>Leader Edge</fullName>
+                    <default>false</default>
+                    <label>Leader Edge</label>
+                </value>
+                <value>
+                    <fullName>Digital Readiness Solution</fullName>
+                    <default>false</default>
+                    <label>Digital Readiness Solution</label>
+                </value>
+                <value>
+                    <fullName>Aspiring Minds</fullName>
+                    <default>false</default>
+                    <label>Aspiring Minds</label>
+                </value>
+                <value>
+                    <fullName>Wardhead: Block (In Advance)</fullName>
+                    <default>false</default>
+                    <label>Wardhead: Block (In Advance)</label>
+                </value>
+                <value>
+                    <fullName>Wardhead: Embed (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>Wardhead: Embed (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>Wardhead: Capped Subscription</fullName>
+                    <default>false</default>
+                    <label>Wardhead: Capped Subscription</label>
+                </value>
+                <value>
+                    <fullName>Wardhead: Uncapped Subscription</fullName>
+                    <default>false</default>
+                    <label>Wardhead: Uncapped Subscription</label>
+                </value>
+                <value>
+                    <fullName>Wardhead: Site Licence</fullName>
+                    <default>false</default>
+                    <label>Wardhead: Site Licence</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Customer_Cancelled_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Cancelled Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>D_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Account_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>D Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Daylight_End_Date_US_Submission__c</fullName>
+        <formula>DATETIMEVALUE(DATE(YEAR(DATEvalue(Final_Submission_Date_EST__c)),11,1) 
++ 
+( 7 
+- 
+CASE( MOD(DATE ( YEAR (DATEvalue(Final_Submission_Date_EST__c)),11,1) - DATE (1900,1,7),7) , 
+0,7,MOD(DATE ( YEAR (DATEvalue(Final_Submission_Date_EST__c)),11,1) - DATE (1900,1,7),7)) 
+)) + 6/24</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Daylight End Date US(submission)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Daylight_Start_Date_US_Submission__c</fullName>
+        <formula>DATETIMEVALUE(DATE(YEAR(DATEvalue(Final_Submission_Date_EST__c)),3,1)
++
+( 14
+-
+CASE( MOD(DATE ( YEAR (DATEvalue(Final_Submission_Date_EST__c)),3,1) - DATE (1900,1,7),7) ,
+0,7,MOD(DATE ( YEAR (DATEvalue(Final_Submission_Date_EST__c)),3,1) - DATE (1900,1,7),7))
+)) + 7/24</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Daylight Start Date US(Submission)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Days_remaining_from_annual_subscription__c</fullName>
+        <externalId>false</externalId>
+        <label>Days remaining from annual sub(Legacy)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Earliest_Start_Date_Plus_Leap_Year__c</fullName>
+        <label>Earliest StartDate Plus LeapYear(Legacy)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Earliest_Start_Date__c</fullName>
+        <label>Earliest Start Date(Legacy)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Final_Submission_Date_EST__c</fullName>
+        <label>Submitted to OATs(Legacy)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Invoicing_Contact__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <label>Primary Contact(Legacy)</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Contracts (Invoicing Contact)</relationshipLabel>
+        <relationshipName>Contracts1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Last_Possible_Submission_Date_Daylight__c</fullName>
+        <description>Calculates Final submission date with adding daylight saving value and used in calculating Last possible submission date field.</description>
+        <label>Last Possible Submission Date Daylight</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Last_Possible_Submission_Date__c</fullName>
+        <formula>DATETIMEVALUE(CASE(MOD(DATE( 
+YEAR(DATEVALUE(Last_Possible_Submission_Date_Daylight__c)), 
+MONTH(DATEVALUE(Last_Possible_Submission_Date_Daylight__c)), 
+CASE( MONTH(DATEVALUE(Last_Possible_Submission_Date_Daylight__c)), 
+2, IF( MOD( YEAR(DATEVALUE(Last_Possible_Submission_Date_Daylight__c)), 4) = 0, 29, 28), 
+4, 30, 
+6, 30, 
+9, 30, 
+11, 30, 
+31 
+) 
+)- DATE(2013, 1, 6),7),0,DATE( 
+YEAR(DATEVALUE(Last_Possible_Submission_Date_Daylight__c)), 
+MONTH(DATEVALUE(Last_Possible_Submission_Date_Daylight__c)), 
+CASE( MONTH(DATEVALUE(Last_Possible_Submission_Date_Daylight__c)), 
+2, IF(MOD(YEAR(DATEVALUE(Last_Possible_Submission_Date_Daylight__c)), 4) = 0, 27, 26), 
+4, 28, 
+6, 28, 
+9, 28, 
+11, 28, 
+29 
+) 
+),6,DATE( 
+YEAR(DATEVALUE(Last_Possible_Submission_Date_Daylight__c)), 
+MONTH(DATEVALUE(Last_Possible_Submission_Date_Daylight__c)), 
+CASE( MONTH(DATEVALUE(Last_Possible_Submission_Date_Daylight__c)), 
+2, IF( MOD( YEAR(DATEVALUE(Last_Possible_Submission_Date_Daylight__c)), 4) = 0, 28, 27), 
+4, 29, 
+6, 29, 
+9, 29, 
+11, 29, 
+30 
+) 
+),DATE( 
+YEAR(DATEVALUE(Last_Possible_Submission_Date_Daylight__c)), 
+MONTH(DATEVALUE(Last_Possible_Submission_Date_Daylight__c)), 
+CASE( MONTH(DATEVALUE(Last_Possible_Submission_Date_Daylight__c)), 
+2, IF( MOD( YEAR(DATEVALUE(Last_Possible_Submission_Date_Daylight__c)), 4) = 0, 29, 28), 
+4, 30, 
+6, 30, 
+9, 30, 
+11, 30, 
+31 
+))))+ ((23 -(Submission_Offset__c/3600000))/24) + (59/1440)</formula>
+        <label>Last Possible Submission Date(Legacy)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Legal_Order_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Legal Order Name(Legacy)</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Multi_Year_Increase_Clause__c</fullName>
+        <label>Multi-Year Price Increase Clause</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Standard Price Increase Clause</fullName>
+                    <default>false</default>
+                    <label>Standard Price Increase Clause</label>
+                </value>
+                <value>
+                    <fullName>Non-standard Price Increase Clause</fullName>
+                    <default>false</default>
+                    <label>Non-standard Price Increase Clause</label>
+                </value>
+                <value>
+                    <fullName>Delete Price Increase Clause</fullName>
+                    <default>false</default>
+                    <label>Delete Price Increase Clause</label>
+                </value>
+                <value>
+                    <fullName>Old Standard Inflationary Increase</fullName>
+                    <default>false</default>
+                    <label>Old Standard Inflationary Increase</label>
+                </value>
+                <value>
+                    <fullName>Delete Inflationary Increase Clause</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Delete Inflationary Increase Clause</label>
+                </value>
+                <value>
+                    <fullName>Delete Standard Inflationary Increase</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Delete Standard Inflationary Increase</label>
+                </value>
+                <value>
+                    <fullName>Non-standard Increase Clause</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Non-standard Increase Clause</label>
+                </value>
+                <value>
+                    <fullName>Standard Inflationary Increase</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Standard Inflationary Increase</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>NVM_Credit_Card_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>NVM Payment ID(Legacy)</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Offering__c</fullName>
+        <externalId>false</externalId>
+        <formula>BillingCity</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Offering</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Number__c</fullName>
+        <description>This is a backend field</description>
+        <externalId>false</externalId>
+        <label>First Year Opportunity Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Opportunity(Legacy)</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Orders</relationshipLabel>
+        <relationshipName>Contracts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Original_Contract__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Parent Contract</label>
+        <referenceTo>Contract</referenceTo>
+        <relationshipLabel>Variation Contracts</relationshipLabel>
+        <relationshipName>Variation_Contracts</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Original_Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Original Order(Legacy)</label>
+        <referenceTo>Contract</referenceTo>
+        <relationshipLabel>Variation Orders</relationshipLabel>
+        <relationshipName>Contracts1</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PDFCount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>PDFCount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_terms__c</fullName>
+        <label>Payment terms</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>15 days</fullName>
+                    <default>false</default>
+                    <label>15 days</label>
+                </value>
+                <value>
+                    <fullName>30 days</fullName>
+                    <default>true</default>
+                    <label>30 days</label>
+                </value>
+                <value>
+                    <fullName>45 days</fullName>
+                    <default>false</default>
+                    <label>45 days</label>
+                </value>
+                <value>
+                    <fullName>60 days</fullName>
+                    <default>false</default>
+                    <label>60 days</label>
+                </value>
+                <value>
+                    <fullName>90 days</fullName>
+                    <default>false</default>
+                    <label>90 days</label>
+                </value>
+                <value>
+                    <fullName>120 days</fullName>
+                    <default>false</default>
+                    <label>120 days</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Billing_Frequency__c</fullName>
+        <label>Product Billing Frequency</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Monthly</fullName>
+                    <default>false</default>
+                    <label>Monthly</label>
+                </value>
+                <value>
+                    <fullName>Quarterly</fullName>
+                    <default>false</default>
+                    <label>Quarterly</label>
+                </value>
+                <value>
+                    <fullName>Bi-annual</fullName>
+                    <default>false</default>
+                    <label>Bi-annual</label>
+                </value>
+                <value>
+                    <fullName>Annual</fullName>
+                    <default>true</default>
+                    <label>Annual</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Reboost_Opp_Error__c</fullName>
+        <label>Reboost Opp Error</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Reboost_Opportunity__c</fullName>
+        <label>Reboost Opportunity(Legacy)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Related_System_type__c</fullName>
+        <label>Related System type(Legacy)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Legacy Soda</fullName>
+                    <default>false</default>
+                    <label>Legacy Soda</label>
+                </value>
+                <value>
+                    <fullName>Legacy S2P</fullName>
+                    <default>false</default>
+                    <label>Legacy S2P</label>
+                </value>
+                <value>
+                    <fullName>Legacy Other</fullName>
+                    <default>false</default>
+                    <label>Legacy Other</label>
+                </value>
+                <value>
+                    <fullName>TalentCentral</fullName>
+                    <default>false</default>
+                    <label>TalentCentral</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Renewal_Date__c</fullName>
+        <label>Renewal Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Opp_Error__c</fullName>
+        <description>Field is created to capture the error message which comes from back end Renewal Opp creation process.</description>
+        <label>Renewal Opp Error</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Renewal_Opportunity__c</fullName>
+        <description>Link  to Renewal Opportunity  for this order.</description>
+        <label>Renewal Opportunity(Legacy)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Run_Order_Creation_Flow__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Run Order Creation Flow</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Running_total_of_non_subscription_amount__c</fullName>
+        <label>Running total of non-sub amount(Legacy)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Running_total_of_subscription_amount__c</fullName>
+        <label>Running total of sub amt(Legacy)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Running_total_of_subscription_days__c</fullName>
+        <externalId>false</externalId>
+        <label>Running total of sub days(Legacy)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>S2P_Reference_Required__c</fullName>
+        <description>Check on the S2P Reference.</description>
+        <inlineHelpText>Choose new if system referenced in the order does not currently exist, otherwise choose Existing</inlineHelpText>
+        <label>System Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Existing</fullName>
+                    <default>false</default>
+                    <label>Existing</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Service_billing_frequency__c</fullName>
+        <label>Service billing frequency</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>25% up front, 50% on milestones, 25% on completion</fullName>
+                    <default>false</default>
+                    <label>25% up front, 50% on milestones, 25% on completion</label>
+                </value>
+                <value>
+                    <fullName>100% Upfront</fullName>
+                    <default>true</default>
+                    <label>100% Upfront</label>
+                </value>
+                <value>
+                    <fullName>Invoice per milestone</fullName>
+                    <default>false</default>
+                    <label>Invoice per milestone</label>
+                </value>
+                <value>
+                    <fullName>Upon completion</fullName>
+                    <default>false</default>
+                    <label>Upon completion</label>
+                </value>
+                <value>
+                    <fullName>Special Invoicing Instructions</fullName>
+                    <default>false</default>
+                    <label>Special Invoicing Instructions</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Submission_Offset__c</fullName>
+        <externalId>false</externalId>
+        <label>Submission Offset</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subscription_Start_Date__c</fullName>
+        <inlineHelpText>This date should be the same as the Contract Start Date unless delay has been approved in CLM.</inlineHelpText>
+        <label>Product Subscription Start Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>System_Client_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>System Client ID</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TCV__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <label>Total Contract Value(Legacy)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Contract_Value__c</fullName>
+        <label>Total Contract Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Unconfirmed_Sun_Order_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Unconfirmed Sun Order Number(Legacy)</label>
+        <length>11</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Variation_Order__c</fullName>
+        <externalId>false</externalId>
+        <formula>text(Opportunity__r.Variation_Opportunity__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Variation Opportunity(Legacy)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

@@ -1,0 +1,29 @@
+<script language=javascript>
+        
+var allowNew = false;
+var projectType = '{!ProjectObject__c.Project_Type__c}';
+if('{!ISPICKVAL($User.PSA_Role__c, 'PSA Lead')}' == 'true')
+	allowNew = true;
+else if('{!ISPICKVAL($User.PSA_Role__c, 'Project Manager')}' == 'true')
+	if('{!ProjectObject__c.Project_ManagerId__c}' == '{!$User.Id}')
+		allowNew = true;
+
+if(allowNew)
+  {
+   if(projectType == 'Intercompany Delivery')
+   {
+    url = '{!URLFOR($Action.Project_Invoice__c.New, null , [CF00N20000001KCeI_lkid= ProjectObject__c.Id,CF00N20000001KCeI=ProjectObject__c.Name,CF00N20000001RCX5_lkid= ProjectObject__c.Billing_ContactId__c ,CF00N20000001RCX5= ProjectObject__c.Billing_Contact__c,cancelURL=$Request.retURL, retURL=$Request.retURL], true)}' + '&00N20000001KxbX={!ProjectObject__c.LBU__c}&CurrencyIsoCode={!ProjectObject__c.CurrencyIsoCode}';}
+  else
+  { 
+   url = '{!URLFOR($Action.Project_Invoice__c.New, null , [CF00N20000001KCeI_lkid= ProjectObject__c.Id,CF00N20000001KCeI=ProjectObject__c.Name,CF00N20000001RCWm_lkid=ProjectObject__c.AccountId__c , CF00N20000001RCWm=ProjectObject__c.Account__c ,CF00N20000001RCX0_lkid= ProjectObject__c.ContactId__c, CF00N20000001RCX0= ProjectObject__c.Contact__c,CF00N20000001RCX5_lkid= ProjectObject__c.Billing_ContactId__c ,CF00N20000001RCX5= ProjectObject__c.Billing_Contact__c,cancelURL=$Request.retURL, retURL=$Request.retURL], true)}' + '&00N20000001KxbX={!ProjectObject__c.LBU__c}&CurrencyIsoCode={!ProjectObject__c.CurrencyIsoCode}';
+  }
+ }
+ else
+ {
+ alert("Sorry! You do not have permission to create the Invoice");
+url = '{!URLFOR( $Action.ProjectObject__c.View , ProjectObject__c.Id, null, true)}';
+	}
+
+window.parent.location.replace(url);
+
+</script>

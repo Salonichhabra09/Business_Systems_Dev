@@ -1,0 +1,223 @@
+<template>
+    <lightning-card title="Competitor" icon-name="standard:account_info">
+
+        <lightning-button variant="brand-outline" label="New" title="New" onclick={openModalPopup}
+         slot="actions" disabled={showNewButton}></lightning-button>
+
+        </lightning-card>
+
+        <template if:true={competitorData}>
+   
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+    </template>
+    
+
+        <div class="slds-scrollable_x" style="height:100%;">
+          <!--slds-table_fixed-layout -->
+      <table class="slds-table slds-table_bordered 
+      slds-table_resizable-cols slds-border_left slds-border_right slds-border_top slds-border_bottom" 
+    style="margin-top: 15px;background-color:rgb(255, 255, 255)">
+  <thead>
+  <tr class="" style="margin-top:5px;margin-bottom:5px;">
+   
+    <th class="slds-text-align_left tableColMargin thBorder" scope="col" style="margin-left:3px;width:2px">
+                 
+         </th>
+
+      <th class="slds-text-align_left tableColMargin thBorder" scope="col" style="margin-left:3px;font-weight:700">
+     <!-- style="width:3.25rem">-->
+          <div class="slds-truncate "
+              title="Competitor Name">Competitor Name</div>
+              
+      </th>
+      <th class="slds-text-align_left tableColMargin thBorder" scope="col" style="margin-left:3px;font-weight:700">
+          <div class="slds-truncate" title="Total Est. Customer Spend">
+           Total Est. Customer Spend</div>
+              
+      </th>
+    
+    
+  </tr>
+</thead>
+<tbody>
+  <template for:each={competitorData} for:item="mod" for:index="indexVar">
+      <tr key={mod.key} class="slds-hint-parent" style="margin-top:5px;margin-bottom:5px;background-color:rgb(255, 255, 255)">
+
+        <th scope="row" class="slds-text-align_left">
+            
+            <div class="slds-grid slds-grid_vertical-align-center" >
+                <div class="slds-truncate " style="font-weight:500">
+                    {mod.MainTableSno}
+              </div>
+            </div>        
+           
+          </th>
+
+          <th scope="row" class="slds-text-align_left">
+            
+              <div class="slds-grid slds-grid_vertical-align-center" >
+                  <div class="slds-truncate " style="overflow-wrap:break-word; inline-size: 7.5rem;white-space:pre-wrap;font-weight:500">
+                  <a href={mod.compAccountUrl} target="_blank" tabindex="-1">{mod.competitorAccName}</a>
+                </div>
+              </div>        
+             
+            </th>
+            <th scope="row" class="slds-text-align_left" >
+              <div class="slds-truncate" style="white-space:pre-wrap;font-weight:500">
+                  {mod.totalEstimatedCustomerSpend}
+              </div>
+            </th>
+      </tr>
+      
+       
+      <tr data-name="child-table" data-key={mod.id} key={mod.id} data-id={mod.id} 
+      class="slds-p-top_small" >
+          <template if:true={showSpinnerforChild} style="margin-left:10px;margin-top:10px">
+          <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+        </template>
+        <template if:false={showSpinnerforChild}>
+                 
+            
+        <td colspan="3">
+          <template if:true={mod.competitorDetails}>
+            <div  class="slds-scrollable">
+          <div  class="tableCss slds-border_left slds-border_right slds-border_top slds-border_bottom "  
+          style="max-height:14.1rem;" >
+           
+            <lightning-datatable
+              key-field="id"
+              data={mod.competitorDetails}
+              columns={columns}
+              wrap-text-max-lines="5"
+              hide-checkbox-column
+              class="eighty-percent myCss" 
+              min-column-width="100"
+              >
+              <!-- Remove the  column-widths-mode="auto" Prachi SSE-22562-->
+            </lightning-datatable>
+          </div></div>
+          </template>
+          <template if:false={mod.competitorDetails}>
+            <div class="slds-align_absolute-center" style="margin-top:3px;margin-bottom:5px;"><b>No Competitors Found!</b> </div>
+          </template>
+          
+        </td>
+        
+      </template>
+    </tr>   
+
+  </template>
+</tbody>
+</table></div>
+
+
+
+   
+</template>
+    <template if:false={competitorData}>
+        <p class="slds-align_absolute-center">No Competitor Accounts Found!</p>
+    </template>
+
+<template if:true={openModal}>
+    <!-- Modal/Popup Box LWC starts here -->
+    <div class="max-height">
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container slds-is-relative">
+            <!-- Modal/Popup Box LWC header here -->
+            <div class="slds-is-relative">
+                <template if:true={showSpinner}>
+                    <lightning-spinner alternative-text="Loading" size="small" ></lightning-spinner>
+                </template>
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                    <lightning-icon icon-name="utility:close"
+                        alternative-text="close"
+                        variant="inverse"
+                        size="small" ></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <h3 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Create Competitor</h3>
+            </header>
+            <!-- Modal/Popup Box LWC body starts here -->
+            <lightning-record-edit-form
+                object-api-name={objectApiName}
+                onsuccess={handleSuccess}
+                onerror={handleError}
+            >
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1" >
+                <template if:true={showErrorMessage}>
+                    <div class="slds-notify slds-notify_toast slds-theme_error slds-align_absolute-center" role="status">
+                        <span class="slds-assistive-text">error</span>
+                        <div class="slds-notify__content">
+                          <h2 class="slds-text-heading_small ">Please Fill In Required Fields</h2>
+                        </div>
+                    </div>
+                </template>
+            <lightning-messages></lightning-messages>
+            <lightning-layout class="slds-p-top_medium">
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name="Account__c" value={recordId} disabled="true"></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <lightning-input-field class="required-fields" field-name="Competitor__c" required></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="6">
+                    <lightning-input-field class="required-fields" field-name="Competing_Solution_Area__c" required></lightning-input-field>
+                </lightning-layout-item >
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name="Opportunity__c"></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-p-bottom_xx-small">
+                <lightning-layout-item size='2'>
+                    <div style="margin-left:5px;">
+                        <span class="slds-form-element__label">Notes</span>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size='10'>
+                    <lightning-input-field field-name="Notes__c"
+                        variant="label-hidden">
+                    </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <h3 class="slds-section-title--divider">Incumbent Information</h3>
+            <lightning-layout class="slds-p-top_medium">
+                <lightning-layout-item size="6">
+                    <lightning-input-field class="required-fields" field-name="Incumbent_Vendor__c" required></lightning-input-field>
+                </lightning-layout-item >
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name="Incumbent_Renewal_Date__c"></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name="Incumbent_Value__c" ></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name="Auto_create_Displacement_Opportunity__c"></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name="CurrencyIsoCode"></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            </div>
+            <!-- Modal/Popup Box LWC footer starts here -->
+            <footer class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" onclick={closeModal} type="Cancel" title="Cancel">Cancel</button>
+                <button class="slds-button slds-button_brand" type="submit" title="Save" onclick={handleSave}>Save</button>
+            </footer>
+            
+        </lightning-record-edit-form>
+        </div>
+    </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</div>
+</template>
+
+</template>

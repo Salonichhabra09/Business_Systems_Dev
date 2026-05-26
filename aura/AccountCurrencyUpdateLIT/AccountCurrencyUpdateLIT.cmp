@@ -1,0 +1,58 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName" controller="AccountCurrencyUpdateCtr" extends="c:GenericBase" access="global" >
+	<aura:attribute name="isCurrencyChanged" type="Boolean" default="false" />
+    <aura:attribute name="showCurrencyEditSection" type="Boolean" default="false"/>
+    <aura:attribute name="AccountCurrency_BU_Map" type="Map" />
+    <aura:attribute name="CurrencyISO_Map" type="Map" />
+    <aura:attribute name="listOfCurrencies" type="List" />
+    <aura:attribute name="buCurrency" type="String" />    
+    <aura:attribute name="record" type="Object"
+                    description="The record object to be displayed"/>
+    <aura:attribute name="simplerecord" type="Object"
+                    description="A simplified view record object to be displayed"/>
+    <aura:attribute name="recordError" type="String"
+                    description="An error message bound to force:recordData"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <!--<aura:handler event="force:refreshView" action="{!c.RefreshChange}" />-->
+       
+    <force:recordData aura:id="AccountRecordLoader"                     
+                              recordId="{!v.recordId}"  
+                              layoutType="FULL"
+                              targetError="{!v.recordError}"
+                              targetRecord="{!v.record}"
+                              targetFields="{!v.simplerecord}"
+                              mode="EDIT"
+                              fields="CurrencyIsoCode,IsCurrencyChanged__c,BU__c"
+                              recordUpdated="{!c.recordUpdated}" 
+                              />  
+    
+    <lightning:card>      
+        <aura:if isTrue="{!v.isCurrencyChanged}"> 
+        <aura:if isTrue="{!(!v.showCurrencyEditSection)}">
+            <ui:message title="WARNING!" severity="warning" closable="false" >         
+            <b>                
+                Account currency does not match the mapped currency for the account country. If you want to change it then please click on the appropriate buttons below. <br/><br/>
+                Mapped  <lightning:button variant="Neutral" label="{!v.buCurrency}" value="{!v.buCurrency}" onclick="{!c.updateAccountCurrency}" /> &nbsp;&nbsp;&nbsp;
+                Current <lightning:button variant="Neutral" label="{!v.simplerecord.CurrencyIsoCode}" value="{!v.simplerecord.CurrencyIsoCode}" onclick="{!c.cancelAccountCurrencyUpdate}" /> &nbsp;&nbsp;&nbsp;
+                <lightning:button variant="Neutral" label="Other" value="Other" onclick="{!c.editAccountCurrency}" />
+            </b>
+            </ui:message>  
+        </aura:if>
+        </aura:if>
+       
+        <aura:if isTrue="{!and(v.isCurrencyChanged,v.showCurrencyEditSection)}">
+            <ui:message title="WARNING!" severity="warning" closable="false" >         
+            <b>                
+                Account currency does not match the mapped currency for the account country. Please select the desired currency from the drop down and save it. <br/><br/>
+                <lightning:select aura:id="CurrencyPicklist">
+                    <aura:iteration items="{!v.listOfCurrencies}" var="key" >                    
+                        <option id="op" class="slds-select" value="{!key}" text="{!key}"/> 
+                    </aura:iteration> 
+                </lightning:select> <br/>
+                <lightning:button variant="Neutral" label="Save" value="Save" onclick="{!c.saveAccountCurrency}" /> &nbsp;&nbsp;&nbsp;
+                <lightning:button variant="Neutral" label="Cancel" value="Cancel" onclick="{!c.cancelChange}" /> &nbsp;&nbsp;&nbsp;                
+            </b>
+            </ui:message> 
+        </aura:if>
+    </lightning:card>
+       
+</aura:component>

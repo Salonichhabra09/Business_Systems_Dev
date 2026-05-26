@@ -1,0 +1,125 @@
+<apex:page standardController="Case" extensions="NVM_Payment_Form_Controller" lightningStylesheets="true" showheader="false" sidebar="false"> 
+  
+      <!--<apex:pageMessages id="msgs"/>-->
+      
+    <script type="text/javascript">
+        function saveRecord_JS(){
+        
+        saveRecord_JS1();
+        
+        }
+    </script>   
+   
+  
+  <apex:form > 
+    
+  <apex:actionFunction action="{!save}" name="saveRecord_JS1" oncomplete="CallWebService_JS();"/>
+  <apex:actionFunction action="{!CallWebService}" name="CallWebService_JS" />
+  
+  
+  <apex:pageBlock title="Payment Form" rendered="{!showpg}" id="test"> 
+     
+      <!--<apex:pageMessages id="showmsg"></apex:pageMessages>-->
+      <apex:pageMessage summary="State is mandatory & should be a two char ISO2" severity="warning" strength="3" rendered="{!countryflag}" />
+        <apex:pageMessages />
+      
+      
+         
+        <apex:pageBlockSection title="Account Details" >   
+        <apex:outputText label="Agent ID" value="{!agentid}"/>   <br/>
+        <apex:outputText value="{!Case.Account.Name}"/>
+        <apex:inputText label="Caller's Name" value="{!CallerNamestr}"/>                             
+        <apex:outputText value="{!Case.Account.Account_Number__c}"/>               
+        <apex:inputText label="Sun Reference No." value="{!Sunrefnovf}" required="true"/>               
+        <apex:outputText value="{!Case.Account.BU__c}"/>             
+        <apex:inputText label="Ref Type" value="{!reftypevf}" required="true"/>   
+               
+          
+            
+       </apex:pageBlockSection> 
+      
+      
+      <apex:actionRegion >        
+        <apex:pageBlockSection title="Card Holder Details" id="pgb"> 
+            
+            
+            
+            <apex:inputcheckbox label="Auto-Fill from Case" value="{!samecont}" >
+             <apex:actionSupport event="onchange" reRender="pgb" action="{!changeconinfo}"  />
+              
+            </apex:inputCheckbox>
+            
+
+            <!--<br/>            
+            <apex:selectList label="Card Type" id="choosecard" value="{!CardType}" size="1">
+            <apex:selectOption itemValue="" itemLabel="--None--"/>
+            <apex:selectOption itemValue="Visa" itemLabel="Visa"/>
+            <apex:selectOption itemValue="MasterCard" itemLabel="MasterCard"/>
+            <apex:selectOption itemValue="American Express" itemLabel="American Express"/>
+            </apex:selectList> -->
+            
+            <br/>
+           
+            <apex:inputText label="First Name" value="{!conFirstName }"/>   
+            <apex:inputText label="Last Name" value="{!conLastName }"/>    
+            <apex:inputText label="Door Number/Building Name" value="{!buildingname}"/>   
+            <apex:inputText label="Street" value="{!street}"/>   
+            <apex:inputText label="City/Town" value="{!city }"/>   
+            <apex:inputText label="Zip/Postal Code" value="{!zip }"/>   
+            <apex:inputText label="State" value="{!state }"/>  
+            <!--<apex:inputText label="Country" value="{!case.Country__c}"/>-->
+                
+            <apex:selectList label="Country" value="{!selectedCountry}" size="1"  >
+                <apex:selectOptions value="{!CountryOption }" />
+            </apex:selectList>  
+           
+        </apex:pageBlockSection>
+        </apex:actionRegion>
+       
+            <apex:pageBlockSection title="Amount Details" id="pay" > 
+            
+                 
+                    <apex:selectList label="Currency" value="{!selectedCurrency}" size="1"  >
+                        <apex:selectOptions value="{!CurrencyOption }" />
+                    </apex:selectList>
+            
+                
+                <apex:inputText label="Value including VAT" value="{!accamount}" required="true"/>  
+                <apex:inputField label="Notes" value="{!case.Notes__c}" />
+            
+            </apex:pageBlockSection>
+        <div align="center" draggable="false" >
+        <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<apex:commandButton value="NEXT" onclick="saveRecord_JS(); return false;"  />  
+        </div>
+         
+        
+    </apex:pageBlock> 
+    
+    <apex:pageblock title="WARNING"  rendered="{!showwar}">
+        Please ensure your payment case meets the following criteria:
+        <ul>
+            <li>Status is In Progress. </li>
+            <li>Case Type is set to Invoice/Credit/License. </li>
+            <li>Mandatory fields are completed. </li>
+            
+        </ul>
+        If you are trying to process a payment for India, China, Saudi Arabia or Abu Dhabi, these countries have not had credit card payments enabled yet.<br/>
+        Please advise the client they will need to use a different payment method.
+
+        
+    </apex:pageblock> 
+    
+     
+    
+    <apex:pageblock title="WARNING"  rendered="{!shownoagent}">
+       You are not an NVM agent.
+        
+        
+        
+    </apex:pageblock> 
+    
+   
+  </apex:form>  
+  
+</apex:page>

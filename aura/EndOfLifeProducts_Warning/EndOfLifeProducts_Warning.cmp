@@ -1,0 +1,22 @@
+<aura:component controller="EndOfLifeProducts" 
+                implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,lightning:availableForFlowScreens,force:hasRecordId,force:hasSObjectName" access="global" >
+
+    
+    <aura:attribute name="warningMessage" type="String" default=""/>
+    <aura:attribute name="showMessage" type="Boolean" default="false"/>
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="sObjectName" type="String"/>
+    
+    <aura:handler   name="init" value="{!this}" action="{!c.init}"/>
+    
+	<force:recordData
+                  aura:id="forceRecord"
+                  recordId="{!v.recordId}"
+                  layoutType="FULL"
+                  recordUpdated="{!c.recordUpdated}" />
+    
+    <aura:if isTrue="{!v.showMessage}">
+    	<div class="slds-card slds-box slds-text-align_center slds-text-color_error slds-text-title_bold">{!v.warningMessage}</div>
+    </aura:if> 
+    
+</aura:component>

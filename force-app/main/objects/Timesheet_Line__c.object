@@ -1,0 +1,3709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Time recording in T&amp;E module</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>ApprovedBy__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>ApprovedBy</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>R00N20000001JpaNEAS</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Approved_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>Approved Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billable1__c</fullName>
+        <label>Billable</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Task__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Design</controllingFieldValue>
+                <controllingFieldValue>Solution Build (S2P, TC)</controllingFieldValue>
+                <controllingFieldValue>Analysis</controllingFieldValue>
+                <controllingFieldValue>Subscription Support</controllingFieldValue>
+                <controllingFieldValue>Data Format</controllingFieldValue>
+                <controllingFieldValue>Tailored Assessments</controllingFieldValue>
+                <controllingFieldValue>Talent Analytics</controllingFieldValue>
+                <controllingFieldValue>Generic Support (Billable)</controllingFieldValue>
+                <controllingFieldValue>Assessment and Development Delivery</controllingFieldValue>
+                <controllingFieldValue>HiPo/Enterprise Leadership</controllingFieldValue>
+                <controllingFieldValue>Leader Edge</controllingFieldValue>
+                <controllingFieldValue>BOS/Validation</controllingFieldValue>
+                <controllingFieldValue>SJT MM</controllingFieldValue>
+                <controllingFieldValue>TC Integration Implementation Support</controllingFieldValue>
+                <controllingFieldValue>Custom Report</controllingFieldValue>
+                <controllingFieldValue>RJP</controllingFieldValue>
+                <controllingFieldValue>Application Analytics Consulting</controllingFieldValue>
+                <controllingFieldValue>PM Application Analytics Consulting</controllingFieldValue>
+                <controllingFieldValue>MFS 360</controllingFieldValue>
+                <controllingFieldValue>Mockups</controllingFieldValue>
+                <controllingFieldValue>SJT</controllingFieldValue>
+                <controllingFieldValue>Multimedia Consultancy</controllingFieldValue>
+                <controllingFieldValue>Integration</controllingFieldValue>
+                <controllingFieldValue>Multimedia Delivery</controllingFieldValue>
+                <controllingFieldValue>Outsourced Assessments Travel</controllingFieldValue>
+                <controllingFieldValue>Project Management</controllingFieldValue>
+                <controllingFieldValue>Talent Audit</controllingFieldValue>
+                <controllingFieldValue>Precise Fit</controllingFieldValue>
+                <controllingFieldValue>Account Review and Preparation &amp; Facilitation</controllingFieldValue>
+                <controllingFieldValue>Project Financials</controllingFieldValue>
+                <controllingFieldValue>Client Changes</controllingFieldValue>
+                <controllingFieldValue>Project Scheduling</controllingFieldValue>
+                <controllingFieldValue>In-company Training</controllingFieldValue>
+                <controllingFieldValue>Ad-hoc Advisory Support</controllingFieldValue>
+                <controllingFieldValue>Public Training</controllingFieldValue>
+                <controllingFieldValue>Advisory Program Initiation</controllingFieldValue>
+                <controllingFieldValue>Competency Framework</controllingFieldValue>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <controllingFieldValue>Assessment Solution Updates</controllingFieldValue>
+                <controllingFieldValue>Configuration and Implementation</controllingFieldValue>
+                <controllingFieldValue>Value Demonstration</controllingFieldValue>
+                <controllingFieldValue>Consulting Travel</controllingFieldValue>
+                <valueName>Yes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Strategic Planning &amp; Analysis</controllingFieldValue>
+                <controllingFieldValue>Support Internal Processes &amp; Systems</controllingFieldValue>
+                <controllingFieldValue>System Support</controllingFieldValue>
+                <controllingFieldValue>Development Program</controllingFieldValue>
+                <controllingFieldValue>Development Training</controllingFieldValue>
+                <controllingFieldValue>Talent Central</controllingFieldValue>
+                <controllingFieldValue>Tech Issues</controllingFieldValue>
+                <controllingFieldValue>Professional Development</controllingFieldValue>
+                <controllingFieldValue>Enablement</controllingFieldValue>
+                <controllingFieldValue>Expenses</controllingFieldValue>
+                <controllingFieldValue>How to Guide</controllingFieldValue>
+                <controllingFieldValue>Internal Changes</controllingFieldValue>
+                <controllingFieldValue>Internal Development</controllingFieldValue>
+                <controllingFieldValue>Investment Related Travel</controllingFieldValue>
+                <controllingFieldValue>Lead Tracking</controllingFieldValue>
+                <controllingFieldValue>Timesheet</controllingFieldValue>
+                <controllingFieldValue>Mandatory Company Training</controllingFieldValue>
+                <controllingFieldValue>Volunteer days</controllingFieldValue>
+                <controllingFieldValue>Generic Support (Non-Billable)</controllingFieldValue>
+                <controllingFieldValue>General Admin</controllingFieldValue>
+                <controllingFieldValue>IT Issues</controllingFieldValue>
+                <controllingFieldValue>Migration between Platforms</controllingFieldValue>
+                <controllingFieldValue>Sickness</controllingFieldValue>
+                <controllingFieldValue>Non-Billable</controllingFieldValue>
+                <controllingFieldValue>Off-Site Training</controllingFieldValue>
+                <controllingFieldValue>On-the-Job Shadowing</controllingFieldValue>
+                <controllingFieldValue>Opportunity Tracking</controllingFieldValue>
+                <controllingFieldValue>Other Internal Development</controllingFieldValue>
+                <controllingFieldValue>Engagement</controllingFieldValue>
+                <controllingFieldValue>1:1</controllingFieldValue>
+                <controllingFieldValue>Paid Time Off / Holiday</controllingFieldValue>
+                <controllingFieldValue>Post Project Support</controllingFieldValue>
+                <controllingFieldValue>Pre-Sales Related Travel</controllingFieldValue>
+                <controllingFieldValue>Automation</controllingFieldValue>
+                <controllingFieldValue>Product Enhancements</controllingFieldValue>
+                <controllingFieldValue>Internal Meetings</controllingFieldValue>
+                <controllingFieldValue>Client Support</controllingFieldValue>
+                <controllingFieldValue>Company Holiday</controllingFieldValue>
+                <controllingFieldValue>RFP / Proposal Design</controllingFieldValue>
+                <controllingFieldValue>Compassionate Leave</controllingFieldValue>
+                <valueName>No</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Billable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Billable</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Billing_Rate__c</fullName>
+        <label>Billing Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CPS_Timesheet__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>CPS Timesheet</label>
+        <referenceTo>Timesheet_Line__c</referenceTo>
+        <relationshipLabel>Timesheets</relationshipLabel>
+        <relationshipName>Timesheets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Checked_Flag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Checked Flag</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Current_Logged_In_User__c</fullName>
+        <description>Used in Report: To Filter Timesheet Records Based on logged-in User</description>
+        <formula>IF(Resource__c=$User.Id,true,false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current Logged-In User</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Date_Invoiced__c</fullName>
+        <label>Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Day__c</fullName>
+        <label>Day</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Monday</fullName>
+                    <default>false</default>
+                    <label>Monday</label>
+                </value>
+                <value>
+                    <fullName>Tuesday</fullName>
+                    <default>false</default>
+                    <label>Tuesday</label>
+                </value>
+                <value>
+                    <fullName>Wednesday</fullName>
+                    <default>false</default>
+                    <label>Wednesday</label>
+                </value>
+                <value>
+                    <fullName>Thursday</fullName>
+                    <default>false</default>
+                    <label>Thursday</label>
+                </value>
+                <value>
+                    <fullName>Friday</fullName>
+                    <default>false</default>
+                    <label>Friday</label>
+                </value>
+                <value>
+                    <fullName>Saturday</fullName>
+                    <default>false</default>
+                    <label>Saturday</label>
+                </value>
+                <value>
+                    <fullName>Sunday</fullName>
+                    <default>false</default>
+                    <label>Sunday</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Delivery_Hours_Timesheet__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR(ISPICKVAL(Task_Category__c,&quot;Advisory Services&quot;),
+ISPICKVAL(Task_Category__c,&quot;Client Support&quot;),
+ISPICKVAL(Task_Category__c,&quot;Job Analysis and Competency Design&quot;),
+ISPICKVAL(Task_Category__c,&quot;Migration&quot;),
+ISPICKVAL(Task_Category__c,&quot;Problem Resolution&quot;),
+ISPICKVAL(Task_Category__c,&quot;Product Consulting&quot;),
+ISPICKVAL(Task_Category__c,&quot;PS Consulting&quot;),
+ISPICKVAL(Task_Category__c,&quot;Re-work&quot;),
+ISPICKVAL(Task_Category__c,&quot;Solutions Consulting&quot;),
+ISPICKVAL(Task_Category__c,&quot;System Configuration and Implementation&quot;),
+ISPICKVAL(Task_Category__c,&quot;Training&quot;),
+ISPICKVAL(Task_Category__c,&quot;Travel&quot;)
+),Hours__c,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Delivery Hours Timesheet</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Function__c</fullName>
+        <label>Function</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>CT</fullName>
+                    <default>false</default>
+                    <label>CT</label>
+                </value>
+                <value>
+                    <fullName>SAL</fullName>
+                    <default>false</default>
+                    <label>SAL</label>
+                </value>
+                <value>
+                    <fullName>PSAL</fullName>
+                    <default>false</default>
+                    <label>PSAL</label>
+                </value>
+                <value>
+                    <fullName>INT</fullName>
+                    <default>false</default>
+                    <label>INT</label>
+                </value>
+                <value>
+                    <fullName>CT;PSAL</fullName>
+                    <default>false</default>
+                    <label>CT;PSAL</label>
+                </value>
+                <value>
+                    <fullName>CO</fullName>
+                    <default>false</default>
+                    <label>CO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>Hours</label>
+        <precision>4</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Request__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The invoice in which the billable amount of this timesheet
+			is included.</description>
+        <inlineHelpText>The invoice in which the billable amount of this timesheet
+			is included.</inlineHelpText>
+        <label>Invoice Request</label>
+        <referenceTo>Project_Invoice__c</referenceTo>
+        <relationshipName>R00N20000001KxbdEAC</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>IsCPSTimesheet__c</fullName>
+        <formula>Project__r.RecordType.DeveloperName   &lt;&gt; &apos;Project&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is CPS Timesheet</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LPSProject__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Project__r.RecordType.Name = &apos;Project&apos;,  HYPERLINK(LEFT($Api.Partner_Server_URL_260, FIND( &apos;/services&apos;, $Api.Partner_Server_URL_260))+Project__c   , Project__r.Name, &apos;_blank&apos;),  HYPERLINK(LEFT($Api.Partner_Server_URL_260, FIND( &apos;/services&apos;, $Api.Partner_Server_URL_260))+Project__r.PS_Project_Number__c,  Project__r.PS_Project_Number__r.Name , &apos;_blank&apos;) 
+ )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LPS Project</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LPS_Project_Number_Report_Filter__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Project__r.RecordType.Name=&apos;Project&apos;,  Project__r.Name ,  Project__r.PS_Project_Number__r.Name )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LPS Project Number (Report Filter)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Optional_Details__c</fullName>
+        <label>Optional Details</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Project_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Project Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Timesheets</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Project__r.Project_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Nickname__c</fullName>
+        <externalId>false</externalId>
+        <formula>Project__r.Project_Nick_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Nickname</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Project__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Project__r.Project_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <label>Project</label>
+        <referenceTo>ProjectObject__c</referenceTo>
+        <relationshipLabel>Timesheets</relationshipLabel>
+        <relationshipName>Timesheets</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Resource_Information__c</fullName>
+        <externalId>false</externalId>
+        <formula>TimesheetReportResourceBU__c + &quot;  (&quot; + UserUtilizationFunction__c +&quot;)&quot;</formula>
+        <label>Resource BU (Utilisation Function)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Resource__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Resource</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>R00N20000001Jpa3EAC</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Submitted for Approval</fullName>
+                    <default>true</default>
+                    <label>Submitted for Approval</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Processed</fullName>
+                    <default>false</default>
+                    <label>Processed</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Submitted for Processing</fullName>
+                    <default>false</default>
+                    <label>Submitted for Processing</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Task1__c</fullName>
+        <label>Task</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Task_Category__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Assessment and Development Consulting (including content design)</fullName>
+                    <default>false</default>
+                    <label>Assessment and Development Consulting (including content design)</label>
+                </value>
+                <value>
+                    <fullName>Solutions Consulting</fullName>
+                    <default>false</default>
+                    <label>Solutions Consulting</label>
+                </value>
+                <value>
+                    <fullName>Job Analysis and Competency Design</fullName>
+                    <default>false</default>
+                    <label>Job Analysis and Competency Design</label>
+                </value>
+                <value>
+                    <fullName>BOS</fullName>
+                    <default>false</default>
+                    <label>BOS</label>
+                </value>
+                <value>
+                    <fullName>Custom report</fullName>
+                    <default>false</default>
+                    <label>Custom report</label>
+                </value>
+                <value>
+                    <fullName>RJP</fullName>
+                    <default>false</default>
+                    <label>RJP</label>
+                </value>
+                <value>
+                    <fullName>Data Extract</fullName>
+                    <default>false</default>
+                    <label>Data Extract</label>
+                </value>
+                <value>
+                    <fullName>S2P</fullName>
+                    <default>false</default>
+                    <label>S2P</label>
+                </value>
+                <value>
+                    <fullName>SJT</fullName>
+                    <default>false</default>
+                    <label>SJT</label>
+                </value>
+                <value>
+                    <fullName>360</fullName>
+                    <default>false</default>
+                    <label>360</label>
+                </value>
+                <value>
+                    <fullName>Integration</fullName>
+                    <default>false</default>
+                    <label>Integration</label>
+                </value>
+                <value>
+                    <fullName>Post Implementation Support</fullName>
+                    <default>false</default>
+                    <label>Post Implementation Support</label>
+                </value>
+                <value>
+                    <fullName>TA</fullName>
+                    <default>false</default>
+                    <label>TA</label>
+                </value>
+                <value>
+                    <fullName>Problem Resolution</fullName>
+                    <default>false</default>
+                    <label>Problem Resolution</label>
+                </value>
+                <value>
+                    <fullName>Administration</fullName>
+                    <default>false</default>
+                    <label>Administration</label>
+                </value>
+                <value>
+                    <fullName>Product Management</fullName>
+                    <default>false</default>
+                    <label>Product Management</label>
+                </value>
+                <value>
+                    <fullName>Corp and Man Contribution</fullName>
+                    <default>false</default>
+                    <label>Corp and Man Contribution</label>
+                </value>
+                <value>
+                    <fullName>Personal development</fullName>
+                    <default>false</default>
+                    <label>Personal development</label>
+                </value>
+                <value>
+                    <fullName>Holidays</fullName>
+                    <default>false</default>
+                    <label>Holidays</label>
+                </value>
+                <value>
+                    <fullName>Sickness</fullName>
+                    <default>false</default>
+                    <label>Sickness</label>
+                </value>
+                <value>
+                    <fullName>Thought Leadership</fullName>
+                    <default>false</default>
+                    <label>Thought Leadership</label>
+                </value>
+                <value>
+                    <fullName>Internal meetings</fullName>
+                    <default>false</default>
+                    <label>Internal meetings</label>
+                </value>
+                <value>
+                    <fullName>Billable Travel</fullName>
+                    <default>false</default>
+                    <label>Billable Travel</label>
+                </value>
+                <value>
+                    <fullName>Non-billable Travel</fullName>
+                    <default>false</default>
+                    <label>Non-billable Travel</label>
+                </value>
+                <value>
+                    <fullName>1:1 delivery</fullName>
+                    <default>false</default>
+                    <label>1:1 delivery</label>
+                </value>
+                <value>
+                    <fullName>1:M delivery</fullName>
+                    <default>false</default>
+                    <label>1:M delivery</label>
+                </value>
+                <value>
+                    <fullName>360 Degree Facilitation</fullName>
+                    <default>false</default>
+                    <label>360 Degree Facilitation</label>
+                </value>
+                <value>
+                    <fullName>360 Design</fullName>
+                    <default>false</default>
+                    <label>360 Design</label>
+                </value>
+                <value>
+                    <fullName>360 system support</fullName>
+                    <default>false</default>
+                    <label>360 system support</label>
+                </value>
+                <value>
+                    <fullName>Account planning and review</fullName>
+                    <default>false</default>
+                    <label>Account planning and review</label>
+                </value>
+                <value>
+                    <fullName>Aggregate feedback</fullName>
+                    <default>false</default>
+                    <label>Aggregate feedback</label>
+                </value>
+                <value>
+                    <fullName>Analyse - Job Analysis</fullName>
+                    <default>false</default>
+                    <label>Analyse - Job Analysis</label>
+                </value>
+                <value>
+                    <fullName>Analysis</fullName>
+                    <default>false</default>
+                    <label>Analysis</label>
+                </value>
+                <value>
+                    <fullName>Assessment &amp; Development Centre</fullName>
+                    <default>false</default>
+                    <label>Assessment &amp; Development Centre</label>
+                </value>
+                <value>
+                    <fullName>Assessment 1:1</fullName>
+                    <default>false</default>
+                    <label>Assessment 1:1</label>
+                </value>
+                <value>
+                    <fullName>Assessment 1:Many</fullName>
+                    <default>false</default>
+                    <label>Assessment 1:Many</label>
+                </value>
+                <value>
+                    <fullName>Assessor Training</fullName>
+                    <default>false</default>
+                    <label>Assessor Training</label>
+                </value>
+                <value>
+                    <fullName>Bespoke</fullName>
+                    <default>false</default>
+                    <label>Bespoke</label>
+                </value>
+                <value>
+                    <fullName>Bespoke Reports</fullName>
+                    <default>false</default>
+                    <label>Bespoke Reports</label>
+                </value>
+                <value>
+                    <fullName>Bespoke Training Delivery</fullName>
+                    <default>false</default>
+                    <label>Bespoke Training Delivery</label>
+                </value>
+                <value>
+                    <fullName>Best Practice in Online Assessment</fullName>
+                    <default>false</default>
+                    <label>Best Practice in Online Assessment</label>
+                </value>
+                <value>
+                    <fullName>Build solution</fullName>
+                    <default>false</default>
+                    <label>Build solution</label>
+                </value>
+                <value>
+                    <fullName>Business Outcome Studies</fullName>
+                    <default>false</default>
+                    <label>Business Outcome Studies</label>
+                </value>
+                <value>
+                    <fullName>client/partner visit</fullName>
+                    <default>false</default>
+                    <label>client/partner visit</label>
+                </value>
+                <value>
+                    <fullName>Client/product Support</fullName>
+                    <default>false</default>
+                    <label>Client/product Support</label>
+                </value>
+                <value>
+                    <fullName>Client meetings</fullName>
+                    <default>false</default>
+                    <label>Client meetings</label>
+                </value>
+                <value>
+                    <fullName>Coaching</fullName>
+                    <default>false</default>
+                    <label>Coaching</label>
+                </value>
+                <value>
+                    <fullName>Competency / scale mapping</fullName>
+                    <default>false</default>
+                    <label>Competency / scale mapping</label>
+                </value>
+                <value>
+                    <fullName>Competency Based Interviewing</fullName>
+                    <default>false</default>
+                    <label>Competency Based Interviewing</label>
+                </value>
+                <value>
+                    <fullName>Competency Design &amp; Job Analysis</fullName>
+                    <default>false</default>
+                    <label>Competency Design &amp; Job Analysis</label>
+                </value>
+                <value>
+                    <fullName>Competency Modelling</fullName>
+                    <default>false</default>
+                    <label>Competency Modelling</label>
+                </value>
+                <value>
+                    <fullName>Competency Modelling, Role Profiling, Job Analysis</fullName>
+                    <default>false</default>
+                    <label>Competency Modelling, Role Profiling, Job Analysis</label>
+                </value>
+                <value>
+                    <fullName>Construct Design</fullName>
+                    <default>false</default>
+                    <label>Construct Design</label>
+                </value>
+                <value>
+                    <fullName>Contact marketing</fullName>
+                    <default>false</default>
+                    <label>Contact marketing</label>
+                </value>
+                <value>
+                    <fullName>Content Creation</fullName>
+                    <default>false</default>
+                    <label>Content Creation</label>
+                </value>
+                <value>
+                    <fullName>Contract Renewal</fullName>
+                    <default>false</default>
+                    <label>Contract Renewal</label>
+                </value>
+                <value>
+                    <fullName>Corporate Contribution</fullName>
+                    <default>false</default>
+                    <label>Corporate Contribution</label>
+                </value>
+                <value>
+                    <fullName>Create specifications</fullName>
+                    <default>false</default>
+                    <label>Create specifications</label>
+                </value>
+                <value>
+                    <fullName>Data Analysis</fullName>
+                    <default>false</default>
+                    <label>Data Analysis</label>
+                </value>
+                <value>
+                    <fullName>Data Audit</fullName>
+                    <default>false</default>
+                    <label>Data Audit</label>
+                </value>
+                <value>
+                    <fullName>Data extracts</fullName>
+                    <default>false</default>
+                    <label>Data extracts</label>
+                </value>
+                <value>
+                    <fullName>Data Modelling</fullName>
+                    <default>false</default>
+                    <label>Data Modelling</label>
+                </value>
+                <value>
+                    <fullName>Deliver - Implementation and Training</fullName>
+                    <default>false</default>
+                    <label>Deliver - Implementation and Training</label>
+                </value>
+                <value>
+                    <fullName>Design</fullName>
+                    <default>false</default>
+                    <label>Design</label>
+                </value>
+                <value>
+                    <fullName>Design - Assessment Build</fullName>
+                    <default>false</default>
+                    <label>Design - Assessment Build</label>
+                </value>
+                <value>
+                    <fullName>Development</fullName>
+                    <default>false</default>
+                    <label>Development</label>
+                </value>
+                <value>
+                    <fullName>Development 1:1</fullName>
+                    <default>false</default>
+                    <label>Development 1:1</label>
+                </value>
+                <value>
+                    <fullName>Development 1:Many</fullName>
+                    <default>false</default>
+                    <label>Development 1:Many</label>
+                </value>
+                <value>
+                    <fullName>DSPS Config Client delivery</fullName>
+                    <default>false</default>
+                    <label>DSPS Config Client delivery</label>
+                </value>
+                <value>
+                    <fullName>DSPS Maintenance</fullName>
+                    <default>false</default>
+                    <label>DSPS Maintenance</label>
+                </value>
+                <value>
+                    <fullName>DSPS Standard Client delivery</fullName>
+                    <default>false</default>
+                    <label>DSPS Standard Client delivery</label>
+                </value>
+                <value>
+                    <fullName>Embedding the Solution</fullName>
+                    <default>false</default>
+                    <label>Embedding the Solution</label>
+                </value>
+                <value>
+                    <fullName>Engagement</fullName>
+                    <default>false</default>
+                    <label>Engagement</label>
+                </value>
+                <value>
+                    <fullName>Expert user UAT for quarterly development cycle</fullName>
+                    <default>false</default>
+                    <label>Expert user UAT for quarterly development cycle</label>
+                </value>
+                <value>
+                    <fullName>Handover</fullName>
+                    <default>false</default>
+                    <label>Handover</label>
+                </value>
+                <value>
+                    <fullName>Implementation support</fullName>
+                    <default>false</default>
+                    <label>Implementation support</label>
+                </value>
+                <value>
+                    <fullName>Individual feedback</fullName>
+                    <default>false</default>
+                    <label>Individual feedback</label>
+                </value>
+                <value>
+                    <fullName>Infrastructure</fullName>
+                    <default>false</default>
+                    <label>Infrastructure</label>
+                </value>
+                <value>
+                    <fullName>Integration system support</fullName>
+                    <default>false</default>
+                    <label>Integration system support</label>
+                </value>
+                <value>
+                    <fullName>Internal cross charge</fullName>
+                    <default>false</default>
+                    <label>Internal cross charge</label>
+                </value>
+                <value>
+                    <fullName>IP development / PR</fullName>
+                    <default>false</default>
+                    <label>IP development / PR</label>
+                </value>
+                <value>
+                    <fullName>Job Analysis</fullName>
+                    <default>false</default>
+                    <label>Job Analysis</label>
+                </value>
+                <value>
+                    <fullName>Leadership development</fullName>
+                    <default>false</default>
+                    <label>Leadership development</label>
+                </value>
+                <value>
+                    <fullName>Learn - Data Collection</fullName>
+                    <default>false</default>
+                    <label>Learn - Data Collection</label>
+                </value>
+                <value>
+                    <fullName>Management contribution</fullName>
+                    <default>false</default>
+                    <label>Management contribution</label>
+                </value>
+                <value>
+                    <fullName>Management development</fullName>
+                    <default>false</default>
+                    <label>Management development</label>
+                </value>
+                <value>
+                    <fullName>Meeting</fullName>
+                    <default>false</default>
+                    <label>Meeting</label>
+                </value>
+                <value>
+                    <fullName>MFS Configured Client delivery</fullName>
+                    <default>false</default>
+                    <label>MFS Configured Client delivery</label>
+                </value>
+                <value>
+                    <fullName>MFS Maintenance</fullName>
+                    <default>false</default>
+                    <label>MFS Maintenance</label>
+                </value>
+                <value>
+                    <fullName>MFS Standard Client delivery</fullName>
+                    <default>false</default>
+                    <label>MFS Standard Client delivery</label>
+                </value>
+                <value>
+                    <fullName>Motivation</fullName>
+                    <default>false</default>
+                    <label>Motivation</label>
+                </value>
+                <value>
+                    <fullName>Nacho/WPS</fullName>
+                    <default>false</default>
+                    <label>Nacho/WPS</label>
+                </value>
+                <value>
+                    <fullName>Nacho Config Client delivery</fullName>
+                    <default>false</default>
+                    <label>Nacho Config Client delivery</label>
+                </value>
+                <value>
+                    <fullName>Nacho Maintenance</fullName>
+                    <default>false</default>
+                    <label>Nacho Maintenance</label>
+                </value>
+                <value>
+                    <fullName>Non Billable Delivery</fullName>
+                    <default>false</default>
+                    <label>Non Billable Delivery</label>
+                </value>
+                <value>
+                    <fullName>OAS Maintenance</fullName>
+                    <default>false</default>
+                    <label>OAS Maintenance</label>
+                </value>
+                <value>
+                    <fullName>Occupational Personality Questionnaire</fullName>
+                    <default>false</default>
+                    <label>Occupational Personality Questionnaire</label>
+                </value>
+                <value>
+                    <fullName>Occupational Testing</fullName>
+                    <default>false</default>
+                    <label>Occupational Testing</label>
+                </value>
+                <value>
+                    <fullName>Onboarding</fullName>
+                    <default>false</default>
+                    <label>Onboarding</label>
+                </value>
+                <value>
+                    <fullName>OT/OPQ Combined</fullName>
+                    <default>false</default>
+                    <label>OT/OPQ Combined</label>
+                </value>
+                <value>
+                    <fullName>P41/ASO/ SODA Config Client delivery</fullName>
+                    <default>false</default>
+                    <label>P41/ASO/ SODA Config Client delivery</label>
+                </value>
+                <value>
+                    <fullName>P41/ASO/ SODA Maintenance</fullName>
+                    <default>false</default>
+                    <label>P41/ASO/ SODA Maintenance</label>
+                </value>
+                <value>
+                    <fullName>P41/ASO/ SODA Std. Client delivery</fullName>
+                    <default>false</default>
+                    <label>P41/ASO/ SODA Std. Client delivery</label>
+                </value>
+                <value>
+                    <fullName>PC Configured Client delivery</fullName>
+                    <default>false</default>
+                    <label>PC Configured Client delivery</label>
+                </value>
+                <value>
+                    <fullName>PC Expert</fullName>
+                    <default>false</default>
+                    <label>PC Expert</label>
+                </value>
+                <value>
+                    <fullName>PC Maintenance</fullName>
+                    <default>false</default>
+                    <label>PC Maintenance</label>
+                </value>
+                <value>
+                    <fullName>PC Standard Client delivery</fullName>
+                    <default>false</default>
+                    <label>PC Standard Client delivery</label>
+                </value>
+                <value>
+                    <fullName>People management</fullName>
+                    <default>false</default>
+                    <label>People management</label>
+                </value>
+                <value>
+                    <fullName>Performance management</fullName>
+                    <default>false</default>
+                    <label>Performance management</label>
+                </value>
+                <value>
+                    <fullName>Person Job Match</fullName>
+                    <default>false</default>
+                    <label>Person Job Match</label>
+                </value>
+                <value>
+                    <fullName>Post Project</fullName>
+                    <default>false</default>
+                    <label>Post Project</label>
+                </value>
+                <value>
+                    <fullName>Post-sales</fullName>
+                    <default>false</default>
+                    <label>Post-sales</label>
+                </value>
+                <value>
+                    <fullName>Prep for Delivery</fullName>
+                    <default>false</default>
+                    <label>Prep for Delivery</label>
+                </value>
+                <value>
+                    <fullName>Pre-Sales</fullName>
+                    <default>false</default>
+                    <label>Pre-Sales</label>
+                </value>
+                <value>
+                    <fullName>Problem Resolution: Solution</fullName>
+                    <default>false</default>
+                    <label>Problem Resolution: Solution</label>
+                </value>
+                <value>
+                    <fullName>Problem Resolution: Technology</fullName>
+                    <default>false</default>
+                    <label>Problem Resolution: Technology</label>
+                </value>
+                <value>
+                    <fullName>Process Design</fullName>
+                    <default>false</default>
+                    <label>Process Design</label>
+                </value>
+                <value>
+                    <fullName>Process Design, Strategic Needs Analysis</fullName>
+                    <default>false</default>
+                    <label>Process Design, Strategic Needs Analysis</label>
+                </value>
+                <value>
+                    <fullName>Product Design Other</fullName>
+                    <default>false</default>
+                    <label>Product Design Other</label>
+                </value>
+                <value>
+                    <fullName>Product localisation support</fullName>
+                    <default>false</default>
+                    <label>Product localisation support</label>
+                </value>
+                <value>
+                    <fullName>Product Release support</fullName>
+                    <default>false</default>
+                    <label>Product Release support</label>
+                </value>
+                <value>
+                    <fullName>Project Extension</fullName>
+                    <default>false</default>
+                    <label>Project Extension</label>
+                </value>
+                <value>
+                    <fullName>Proposal/bid support</fullName>
+                    <default>false</default>
+                    <label>Proposal/bid support</label>
+                </value>
+                <value>
+                    <fullName>Proposal Writing(Not Tenders)</fullName>
+                    <default>false</default>
+                    <label>Proposal Writing(Not Tenders)</label>
+                </value>
+                <value>
+                    <fullName>Quicksift/SAF</fullName>
+                    <default>false</default>
+                    <label>Quicksift/SAF</label>
+                </value>
+                <value>
+                    <fullName>Reboarding</fullName>
+                    <default>false</default>
+                    <label>Reboarding</label>
+                </value>
+                <value>
+                    <fullName>Recruitment</fullName>
+                    <default>false</default>
+                    <label>Recruitment</label>
+                </value>
+                <value>
+                    <fullName>Report Development</fullName>
+                    <default>false</default>
+                    <label>Report Development</label>
+                </value>
+                <value>
+                    <fullName>Report writing</fullName>
+                    <default>false</default>
+                    <label>Report writing</label>
+                </value>
+                <value>
+                    <fullName>Research, Statistics, Norms, Validation</fullName>
+                    <default>false</default>
+                    <label>Research, Statistics, Norms, Validation</label>
+                </value>
+                <value>
+                    <fullName>Research Support</fullName>
+                    <default>false</default>
+                    <label>Research Support</label>
+                </value>
+                <value>
+                    <fullName>Rulebase</fullName>
+                    <default>false</default>
+                    <label>Rulebase</label>
+                </value>
+                <value>
+                    <fullName>Sales/Client interaction</fullName>
+                    <default>false</default>
+                    <label>Sales/Client interaction</label>
+                </value>
+                <value>
+                    <fullName>Sales Preparation</fullName>
+                    <default>false</default>
+                    <label>Sales Preparation</label>
+                </value>
+                <value>
+                    <fullName>Selection 1:1</fullName>
+                    <default>false</default>
+                    <label>Selection 1:1</label>
+                </value>
+                <value>
+                    <fullName>Selection 1:Many</fullName>
+                    <default>false</default>
+                    <label>Selection 1:Many</label>
+                </value>
+                <value>
+                    <fullName>SHL System Training</fullName>
+                    <default>false</default>
+                    <label>SHL System Training</label>
+                </value>
+                <value>
+                    <fullName>SODA Training</fullName>
+                    <default>false</default>
+                    <label>SODA Training</label>
+                </value>
+                <value>
+                    <fullName>Standard system support (SODA/S2P)</fullName>
+                    <default>false</default>
+                    <label>Standard system support (SODA/S2P)</label>
+                </value>
+                <value>
+                    <fullName>Strategic Dialogue</fullName>
+                    <default>false</default>
+                    <label>Strategic Dialogue</label>
+                </value>
+                <value>
+                    <fullName>Succession planning</fullName>
+                    <default>false</default>
+                    <label>Succession planning</label>
+                </value>
+                <value>
+                    <fullName>System training</fullName>
+                    <default>false</default>
+                    <label>System training</label>
+                </value>
+                <value>
+                    <fullName>Talent audit</fullName>
+                    <default>false</default>
+                    <label>Talent audit</label>
+                </value>
+                <value>
+                    <fullName>Talent management</fullName>
+                    <default>false</default>
+                    <label>Talent management</label>
+                </value>
+                <value>
+                    <fullName>Talent Screener/RJP</fullName>
+                    <default>false</default>
+                    <label>Talent Screener/RJP</label>
+                </value>
+                <value>
+                    <fullName>Task</fullName>
+                    <default>false</default>
+                    <label>Task</label>
+                </value>
+                <value>
+                    <fullName>TBE system support</fullName>
+                    <default>false</default>
+                    <label>TBE system support</label>
+                </value>
+                <value>
+                    <fullName>Tender Work</fullName>
+                    <default>false</default>
+                    <label>Tender Work</label>
+                </value>
+                <value>
+                    <fullName>Test Administration</fullName>
+                    <default>false</default>
+                    <label>Test Administration</label>
+                </value>
+                <value>
+                    <fullName>Testing</fullName>
+                    <default>false</default>
+                    <label>Testing</label>
+                </value>
+                <value>
+                    <fullName>Tools Development</fullName>
+                    <default>false</default>
+                    <label>Tools Development</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+                <value>
+                    <fullName>Training Delivery</fullName>
+                    <default>false</default>
+                    <label>Training Delivery</label>
+                </value>
+                <value>
+                    <fullName>Travel</fullName>
+                    <default>false</default>
+                    <label>Travel</label>
+                </value>
+                <value>
+                    <fullName>Trialling</fullName>
+                    <default>false</default>
+                    <label>Trialling</label>
+                </value>
+                <value>
+                    <fullName>Usage Consultancy</fullName>
+                    <default>false</default>
+                    <label>Usage Consultancy</label>
+                </value>
+                <value>
+                    <fullName>Validation, Equal Ops &amp; Data Analysis</fullName>
+                    <default>false</default>
+                    <label>Validation, Equal Ops &amp; Data Analysis</label>
+                </value>
+                <value>
+                    <fullName>Work package management</fullName>
+                    <default>false</default>
+                    <label>Work package management</label>
+                </value>
+                <value>
+                    <fullName>Outsourced assessments</fullName>
+                    <default>false</default>
+                    <label>Outsourced assessments</label>
+                </value>
+                <value>
+                    <fullName>Consulting</fullName>
+                    <default>false</default>
+                    <label>Consulting</label>
+                </value>
+                <value>
+                    <fullName>In-company training</fullName>
+                    <default>false</default>
+                    <label>In-company training</label>
+                </value>
+                <value>
+                    <fullName>Public training</fullName>
+                    <default>false</default>
+                    <label>Public training</label>
+                </value>
+                <value>
+                    <fullName>Sales</fullName>
+                    <default>false</default>
+                    <label>Sales</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Account Specific</fullName>
+                    <default>false</default>
+                    <label>Account Specific</label>
+                </value>
+                <value>
+                    <fullName>Opportunity specific</fullName>
+                    <default>false</default>
+                    <label>Opportunity specific</label>
+                </value>
+                <value>
+                    <fullName>Generic</fullName>
+                    <default>false</default>
+                    <label>Generic</label>
+                </value>
+                <value>
+                    <fullName>Holiday</fullName>
+                    <default>false</default>
+                    <label>Holiday</label>
+                </value>
+                <value>
+                    <fullName>Accommodation / Travel</fullName>
+                    <default>false</default>
+                    <label>Accommodation / Travel</label>
+                </value>
+                <value>
+                    <fullName>Meeting Arrangement / Diary Management</fullName>
+                    <default>false</default>
+                    <label>Meeting Arrangement / Diary Management</label>
+                </value>
+                <value>
+                    <fullName>Norms creation</fullName>
+                    <default>false</default>
+                    <label>Norms creation</label>
+                </value>
+                <value>
+                    <fullName>Inbox tasks</fullName>
+                    <default>false</default>
+                    <label>Inbox tasks</label>
+                </value>
+                <value>
+                    <fullName>Internal Meeting / Training</fullName>
+                    <default>false</default>
+                    <label>Internal Meeting / Training</label>
+                </value>
+                <value>
+                    <fullName>RFP Support</fullName>
+                    <default>false</default>
+                    <label>RFP Support</label>
+                </value>
+                <value>
+                    <fullName>Non-Work</fullName>
+                    <default>false</default>
+                    <label>Non-Work</label>
+                </value>
+                <value>
+                    <fullName>Management Reporting</fullName>
+                    <default>false</default>
+                    <label>Management Reporting</label>
+                </value>
+                <value>
+                    <fullName>Team Management</fullName>
+                    <default>false</default>
+                    <label>Team Management</label>
+                </value>
+                <value>
+                    <fullName>Commissions &amp; Portfolios</fullName>
+                    <default>false</default>
+                    <label>Commissions &amp; Portfolios</label>
+                </value>
+                <value>
+                    <fullName>Project Administration</fullName>
+                    <default>false</default>
+                    <label>Project Administration</label>
+                </value>
+                <value>
+                    <fullName>Project Management</fullName>
+                    <default>false</default>
+                    <label>Project Management</label>
+                </value>
+                <value>
+                    <fullName>Subscription Support</fullName>
+                    <default>false</default>
+                    <label>Subscription Support</label>
+                </value>
+                <value>
+                    <fullName>Product|Management</fullName>
+                    <default>false</default>
+                    <label>Product|Management</label>
+                </value>
+                <value>
+                    <fullName>BOS - Delivery</fullName>
+                    <default>false</default>
+                    <label>BOS - Delivery</label>
+                </value>
+                <value>
+                    <fullName>BOS - PM</fullName>
+                    <default>false</default>
+                    <label>BOS - PM</label>
+                </value>
+                <value>
+                    <fullName>Custom Report - Delivery</fullName>
+                    <default>false</default>
+                    <label>Custom Report - Delivery</label>
+                </value>
+                <value>
+                    <fullName>Custom Report - PM</fullName>
+                    <default>false</default>
+                    <label>Custom Report - PM</label>
+                </value>
+                <value>
+                    <fullName>RJP - Delivery</fullName>
+                    <default>false</default>
+                    <label>RJP - Delivery</label>
+                </value>
+                <value>
+                    <fullName>RJP - PM</fullName>
+                    <default>false</default>
+                    <label>RJP - PM</label>
+                </value>
+                <value>
+                    <fullName>S2P - Delivery</fullName>
+                    <default>false</default>
+                    <label>S2P - Delivery</label>
+                </value>
+                <value>
+                    <fullName>S2P - PM</fullName>
+                    <default>false</default>
+                    <label>S2P - PM</label>
+                </value>
+                <value>
+                    <fullName>SJT Txt - Delivery</fullName>
+                    <default>false</default>
+                    <label>SJT Txt - Delivery</label>
+                </value>
+                <value>
+                    <fullName>SJT Txt - PM</fullName>
+                    <default>false</default>
+                    <label>SJT Txt - PM</label>
+                </value>
+                <value>
+                    <fullName>JCS - Delivery</fullName>
+                    <default>false</default>
+                    <label>JCS - Delivery</label>
+                </value>
+                <value>
+                    <fullName>JCS - PM</fullName>
+                    <default>false</default>
+                    <label>JCS - PM</label>
+                </value>
+                <value>
+                    <fullName>Retention Diagnostic - Delivery</fullName>
+                    <default>false</default>
+                    <label>Retention Diagnostic - Delivery</label>
+                </value>
+                <value>
+                    <fullName>Retention Diagnostic - PM</fullName>
+                    <default>false</default>
+                    <label>Retention Diagnostic - PM</label>
+                </value>
+                <value>
+                    <fullName>Talent Analytics - Delivery</fullName>
+                    <default>false</default>
+                    <label>Talent Analytics - Delivery</label>
+                </value>
+                <value>
+                    <fullName>Talent Analytics - PM</fullName>
+                    <default>false</default>
+                    <label>Talent Analytics - PM</label>
+                </value>
+                <value>
+                    <fullName>Talent Audit - Delivery</fullName>
+                    <default>false</default>
+                    <label>Talent Audit - Delivery</label>
+                </value>
+                <value>
+                    <fullName>Talent Audit - PM</fullName>
+                    <default>false</default>
+                    <label>Talent Audit - PM</label>
+                </value>
+                <value>
+                    <fullName>Validation - Delivery</fullName>
+                    <default>false</default>
+                    <label>Validation - Delivery</label>
+                </value>
+                <value>
+                    <fullName>Validation - PM</fullName>
+                    <default>false</default>
+                    <label>Validation - PM</label>
+                </value>
+                <value>
+                    <fullName>Other - Delivery</fullName>
+                    <default>false</default>
+                    <label>Other - Delivery</label>
+                </value>
+                <value>
+                    <fullName>Other - PM</fullName>
+                    <default>false</default>
+                    <label>Other - PM</label>
+                </value>
+                <value>
+                    <fullName>Data Extract-Delivery</fullName>
+                    <default>false</default>
+                    <label>Data Extract-Delivery</label>
+                </value>
+                <value>
+                    <fullName>Data Extract - PM</fullName>
+                    <default>false</default>
+                    <label>Data Extract - PM</label>
+                </value>
+                <value>
+                    <fullName>360 - Delivery</fullName>
+                    <default>false</default>
+                    <label>360 - Delivery</label>
+                </value>
+                <value>
+                    <fullName>360-PM</fullName>
+                    <default>false</default>
+                    <label>360-PM</label>
+                </value>
+                <value>
+                    <fullName>Integration - Delivery</fullName>
+                    <default>false</default>
+                    <label>Integration - Delivery</label>
+                </value>
+                <value>
+                    <fullName>Integration - PM</fullName>
+                    <default>false</default>
+                    <label>Integration - PM</label>
+                </value>
+                <value>
+                    <fullName>Other Bespoke Instrument - Delivery</fullName>
+                    <default>false</default>
+                    <label>Other Bespoke Instrument - Delivery</label>
+                </value>
+                <value>
+                    <fullName>Other Bespoke Instrument - PM</fullName>
+                    <default>false</default>
+                    <label>Other Bespoke Instrument - PM</label>
+                </value>
+                <value>
+                    <fullName>Serious Game - Delivery</fullName>
+                    <default>false</default>
+                    <label>Serious Game - Delivery</label>
+                </value>
+                <value>
+                    <fullName>Serious Game - PM</fullName>
+                    <default>false</default>
+                    <label>Serious Game - PM</label>
+                </value>
+                <value>
+                    <fullName>SJT MM - Delivery</fullName>
+                    <default>false</default>
+                    <label>SJT MM - Delivery</label>
+                </value>
+                <value>
+                    <fullName>SJT MM - PM</fullName>
+                    <default>false</default>
+                    <label>SJT MM - PM</label>
+                </value>
+                <value>
+                    <fullName>RJP MM - Delivery</fullName>
+                    <default>false</default>
+                    <label>RJP MM - Delivery</label>
+                </value>
+                <value>
+                    <fullName>RJP MM - PM</fullName>
+                    <default>false</default>
+                    <label>RJP MM - PM</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>PS Consulting</controllingFieldValue>
+                <valueName>Assessment and Development Consulting (including content design)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PS Consulting</controllingFieldValue>
+                <valueName>Solutions Consulting</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PS Consulting</controllingFieldValue>
+                <valueName>Job Analysis and Competency Design</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PS Consulting</controllingFieldValue>
+                <valueName>BOS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PS Consulting</controllingFieldValue>
+                <valueName>Custom report</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PS Consulting</controllingFieldValue>
+                <valueName>RJP</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PS Consulting</controllingFieldValue>
+                <valueName>S2P</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PS Consulting</controllingFieldValue>
+                <valueName>SJT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PS Consulting</controllingFieldValue>
+                <valueName>TA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PS Consulting</controllingFieldValue>
+                <valueName>Problem Resolution</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PS Consulting</controllingFieldValue>
+                <valueName>Billable Travel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PS Consulting</controllingFieldValue>
+                <valueName>Non-billable Travel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PS Consulting</controllingFieldValue>
+                <controllingFieldValue>Solutions Consulting</controllingFieldValue>
+                <valueName>Project Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PS Consulting</controllingFieldValue>
+                <valueName>Subscription Support</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Solutions Consulting</controllingFieldValue>
+                <valueName>Competency Modelling, Role Profiling, Job Analysis</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Solutions Consulting</controllingFieldValue>
+                <valueName>Post Project</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Solutions Consulting</controllingFieldValue>
+                <valueName>Prep for Delivery</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Solutions Consulting</controllingFieldValue>
+                <valueName>Process Design, Strategic Needs Analysis</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Solutions Consulting</controllingFieldValue>
+                <valueName>Travel</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Task_Category__c</fullName>
+        <label>Task Category</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1:1 Assessment</fullName>
+                    <default>false</default>
+                    <label>1:1 Assessment</label>
+                </value>
+                <value>
+                    <fullName>1:1 Assessment Feedback Session</fullName>
+                    <default>false</default>
+                    <label>1:1 Assessment Feedback Session</label>
+                </value>
+                <value>
+                    <fullName>1:1 Developmental Feedback Session</fullName>
+                    <default>false</default>
+                    <label>1:1 Developmental Feedback Session</label>
+                </value>
+                <value>
+                    <fullName>1:1 Development Assessment</fullName>
+                    <default>false</default>
+                    <label>1:1 Development Assessment</label>
+                </value>
+                <value>
+                    <fullName>360 System</fullName>
+                    <default>false</default>
+                    <label>360 System</label>
+                </value>
+                <value>
+                    <fullName>Account Specific</fullName>
+                    <default>false</default>
+                    <label>Account Specific</label>
+                </value>
+                <value>
+                    <fullName>Admin</fullName>
+                    <default>false</default>
+                    <label>Admin</label>
+                </value>
+                <value>
+                    <fullName>Advisory Services</fullName>
+                    <default>false</default>
+                    <label>Advisory Services</label>
+                </value>
+                <value>
+                    <fullName>Aspiring Minds</fullName>
+                    <default>false</default>
+                    <label>Aspiring Minds</label>
+                </value>
+                <value>
+                    <fullName>Assessment Centre</fullName>
+                    <default>false</default>
+                    <label>Assessment Centre</label>
+                </value>
+                <value>
+                    <fullName>Business Outcome Study / Validation Study</fullName>
+                    <default>false</default>
+                    <label>Business Outcome Study / Validation Study</label>
+                </value>
+                <value>
+                    <fullName>Client and End-User Support and Consulting</fullName>
+                    <default>false</default>
+                    <label>Client and End-User Support and Consulting</label>
+                </value>
+                <value>
+                    <fullName>Client Custom Assessment</fullName>
+                    <default>false</default>
+                    <label>Client Custom Assessment</label>
+                </value>
+                <value>
+                    <fullName>Client Support</fullName>
+                    <default>false</default>
+                    <label>Client Support</label>
+                </value>
+                <value>
+                    <fullName>Coaching</fullName>
+                    <default>false</default>
+                    <label>Coaching</label>
+                </value>
+                <value>
+                    <fullName>Competency Design</fullName>
+                    <default>false</default>
+                    <label>Competency Design</label>
+                </value>
+                <value>
+                    <fullName>Competency Mapping</fullName>
+                    <default>false</default>
+                    <label>Competency Mapping</label>
+                </value>
+                <value>
+                    <fullName>Coordination of Intra SHL Purchase of Services</fullName>
+                    <default>false</default>
+                    <label>Coordination of Intra SHL Purchase of Services</label>
+                </value>
+                <value>
+                    <fullName>Custom Norm</fullName>
+                    <default>false</default>
+                    <label>Custom Norm</label>
+                </value>
+                <value>
+                    <fullName>Custom Report</fullName>
+                    <default>false</default>
+                    <label>Custom Report</label>
+                </value>
+                <value>
+                    <fullName>Custom Report - Configured</fullName>
+                    <default>false</default>
+                    <label>Custom Report - Configured</label>
+                </value>
+                <value>
+                    <fullName>Dashboards</fullName>
+                    <default>false</default>
+                    <label>Dashboards</label>
+                </value>
+                <value>
+                    <fullName>Development Centre</fullName>
+                    <default>false</default>
+                    <label>Development Centre</label>
+                </value>
+                <value>
+                    <fullName>Development Coach</fullName>
+                    <default>false</default>
+                    <label>Development Coach</label>
+                </value>
+                <value>
+                    <fullName>Digital Readiness</fullName>
+                    <default>false</default>
+                    <label>Digital Readiness</label>
+                </value>
+                <value>
+                    <fullName>Enablement</fullName>
+                    <default>false</default>
+                    <label>Enablement</label>
+                </value>
+                <value>
+                    <fullName>Engagement</fullName>
+                    <default>false</default>
+                    <label>Engagement</label>
+                </value>
+                <value>
+                    <fullName>Enterprise Leadership</fullName>
+                    <default>false</default>
+                    <label>Enterprise Leadership</label>
+                </value>
+                <value>
+                    <fullName>Generic</fullName>
+                    <default>false</default>
+                    <label>Generic</label>
+                </value>
+                <value>
+                    <fullName>Graduate Solution</fullName>
+                    <default>false</default>
+                    <label>Graduate Solution</label>
+                </value>
+                <value>
+                    <fullName>Group Development Feedback Session</fullName>
+                    <default>false</default>
+                    <label>Group Development Feedback Session</label>
+                </value>
+                <value>
+                    <fullName>HiPo</fullName>
+                    <default>false</default>
+                    <label>HiPo</label>
+                </value>
+                <value>
+                    <fullName>Implementation Consulting</fullName>
+                    <default>false</default>
+                    <label>Implementation Consulting</label>
+                </value>
+                <value>
+                    <fullName>In-Company Training: Custom Training</fullName>
+                    <default>false</default>
+                    <label>In-Company Training: Custom Training</label>
+                </value>
+                <value>
+                    <fullName>In-Company Training: SHL Standard Training</fullName>
+                    <default>false</default>
+                    <label>In-Company Training: SHL Standard Training</label>
+                </value>
+                <value>
+                    <fullName>In-Company Workshop / Webinar</fullName>
+                    <default>false</default>
+                    <label>In-Company Workshop / Webinar</label>
+                </value>
+                <value>
+                    <fullName>Insight Consulting</fullName>
+                    <default>false</default>
+                    <label>Insight Consulting</label>
+                </value>
+                <value>
+                    <fullName>Integration</fullName>
+                    <default>false</default>
+                    <label>Integration</label>
+                </value>
+                <value>
+                    <fullName>Integration: New ATS</fullName>
+                    <default>false</default>
+                    <label>Integration: New ATS</label>
+                </value>
+                <value>
+                    <fullName>Internal Downtime</fullName>
+                    <default>false</default>
+                    <label>Internal Downtime</label>
+                </value>
+                <value>
+                    <fullName>Interview Expert / Guide</fullName>
+                    <default>false</default>
+                    <label>Interview Expert / Guide</label>
+                </value>
+                <value>
+                    <fullName>Job Aids</fullName>
+                    <default>false</default>
+                    <label>Job Aids</label>
+                </value>
+                <value>
+                    <fullName>Job Analysis</fullName>
+                    <default>false</default>
+                    <label>Job Analysis</label>
+                </value>
+                <value>
+                    <fullName>Job Analysis and Competency Design</fullName>
+                    <default>false</default>
+                    <label>Job Analysis and Competency Design</label>
+                </value>
+                <value>
+                    <fullName>Job-Focused Assessment</fullName>
+                    <default>false</default>
+                    <label>Job-Focused Assessment</label>
+                </value>
+                <value>
+                    <fullName>Leadership Program</fullName>
+                    <default>false</default>
+                    <label>Leadership Program</label>
+                </value>
+                <value>
+                    <fullName>Leave</fullName>
+                    <default>false</default>
+                    <label>Leave</label>
+                </value>
+                <value>
+                    <fullName>Local improvement projects</fullName>
+                    <default>false</default>
+                    <label>Local improvement projects</label>
+                </value>
+                <value>
+                    <fullName>Localisation</fullName>
+                    <default>false</default>
+                    <label>Localisation</label>
+                </value>
+                <value>
+                    <fullName>Management and Meetings</fullName>
+                    <default>false</default>
+                    <label>Management and Meetings</label>
+                </value>
+                <value>
+                    <fullName>Marketing Events</fullName>
+                    <default>false</default>
+                    <label>Marketing Events</label>
+                </value>
+                <value>
+                    <fullName>Migration</fullName>
+                    <default>false</default>
+                    <label>Migration</label>
+                </value>
+                <value>
+                    <fullName>Multi-Media</fullName>
+                    <default>false</default>
+                    <label>Multi-Media</label>
+                </value>
+                <value>
+                    <fullName>Operational Improvements</fullName>
+                    <default>false</default>
+                    <label>Operational Improvements</label>
+                </value>
+                <value>
+                    <fullName>Operational Support</fullName>
+                    <default>false</default>
+                    <label>Operational Support</label>
+                </value>
+                <value>
+                    <fullName>Opportunity Qualification</fullName>
+                    <default>false</default>
+                    <label>Opportunity Qualification</label>
+                </value>
+                <value>
+                    <fullName>Opportunity Specific</fullName>
+                    <default>false</default>
+                    <label>Opportunity Specific</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Outcome Based Measures</fullName>
+                    <default>false</default>
+                    <label>Outcome Based Measures</label>
+                </value>
+                <value>
+                    <fullName>Platform Migration</fullName>
+                    <default>false</default>
+                    <label>Platform Migration</label>
+                </value>
+                <value>
+                    <fullName>POMP Initiative</fullName>
+                    <default>false</default>
+                    <label>POMP Initiative</label>
+                </value>
+                <value>
+                    <fullName>Precise Fit</fullName>
+                    <default>false</default>
+                    <label>Precise Fit</label>
+                </value>
+                <value>
+                    <fullName>Presales Planning</fullName>
+                    <default>false</default>
+                    <label>Presales Planning</label>
+                </value>
+                <value>
+                    <fullName>Problem Resolution</fullName>
+                    <default>false</default>
+                    <label>Problem Resolution</label>
+                </value>
+                <value>
+                    <fullName>Product Champion</fullName>
+                    <default>false</default>
+                    <label>Product Champion</label>
+                </value>
+                <value>
+                    <fullName>Product Development</fullName>
+                    <default>false</default>
+                    <label>Product Development</label>
+                </value>
+                <value>
+                    <fullName>Project coordination with Managed Services</fullName>
+                    <default>false</default>
+                    <label>Project coordination with Managed Services</label>
+                </value>
+                <value>
+                    <fullName>PS Consulting</fullName>
+                    <default>false</default>
+                    <label>PS Consulting</label>
+                </value>
+                <value>
+                    <fullName>Public Training: SHL Content</fullName>
+                    <default>false</default>
+                    <label>Public Training: SHL Content</label>
+                </value>
+                <value>
+                    <fullName>Public Workshop / Webinar</fullName>
+                    <default>false</default>
+                    <label>Public Workshop / Webinar</label>
+                </value>
+                <value>
+                    <fullName>Re-work</fullName>
+                    <default>false</default>
+                    <label>Re-work</label>
+                </value>
+                <value>
+                    <fullName>RJP / Realistic Preview</fullName>
+                    <default>false</default>
+                    <label>RJP / Realistic Preview</label>
+                </value>
+                <value>
+                    <fullName>RJP - Multi-Media</fullName>
+                    <default>false</default>
+                    <label>RJP - Multi-Media</label>
+                </value>
+                <value>
+                    <fullName>SHL Experiences</fullName>
+                    <default>false</default>
+                    <label>SHL Experiences</label>
+                </value>
+                <value>
+                    <fullName>SJT</fullName>
+                    <default>false</default>
+                    <label>SJT</label>
+                </value>
+                <value>
+                    <fullName>SJT - Custom</fullName>
+                    <default>false</default>
+                    <label>SJT - Custom</label>
+                </value>
+                <value>
+                    <fullName>SJT Evaluation</fullName>
+                    <default>false</default>
+                    <label>SJT Evaluation</label>
+                </value>
+                <value>
+                    <fullName>SJT - Multi-Media</fullName>
+                    <default>false</default>
+                    <label>SJT - Multi-Media</label>
+                </value>
+                <value>
+                    <fullName>Solutions Build (old S2P)</fullName>
+                    <default>false</default>
+                    <label>Solutions Build (old S2P)</label>
+                </value>
+                <value>
+                    <fullName>Solutions Consulting</fullName>
+                    <default>false</default>
+                    <label>Solutions Consulting</label>
+                </value>
+                <value>
+                    <fullName>Staff Development</fullName>
+                    <default>false</default>
+                    <label>Staff Development</label>
+                </value>
+                <value>
+                    <fullName>Subscription Support</fullName>
+                    <default>false</default>
+                    <label>Subscription Support</label>
+                </value>
+                <value>
+                    <fullName>System Configuration</fullName>
+                    <default>false</default>
+                    <label>System Configuration</label>
+                </value>
+                <value>
+                    <fullName>System Configuration and Implementation</fullName>
+                    <default>false</default>
+                    <label>System Configuration and Implementation</label>
+                </value>
+                <value>
+                    <fullName>Talent Analytics</fullName>
+                    <default>false</default>
+                    <label>Talent Analytics</label>
+                </value>
+                <value>
+                    <fullName>Talent Audit / Workforce Review</fullName>
+                    <default>false</default>
+                    <label>Talent Audit / Workforce Review</label>
+                </value>
+                <value>
+                    <fullName>Talent Mobility / Leader Edge</fullName>
+                    <default>false</default>
+                    <label>Talent Mobility / Leader Edge</label>
+                </value>
+                <value>
+                    <fullName>Talent Screener Evaluation</fullName>
+                    <default>false</default>
+                    <label>Talent Screener Evaluation</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+                <value>
+                    <fullName>Travel</fullName>
+                    <default>false</default>
+                    <label>Travel</label>
+                </value>
+                <value>
+                    <fullName>Validation Study</fullName>
+                    <default>false</default>
+                    <label>Validation Study</label>
+                </value>
+                <value>
+                    <fullName>Video Interview</fullName>
+                    <default>false</default>
+                    <label>Video Interview</label>
+                </value>
+                <value>
+                    <fullName>Virtual AC</fullName>
+                    <default>false</default>
+                    <label>Virtual AC</label>
+                </value>
+                <value>
+                    <fullName>Virtual DC</fullName>
+                    <default>false</default>
+                    <label>Virtual DC</label>
+                </value>
+                <value>
+                    <fullName>Volume Solution</fullName>
+                    <default>false</default>
+                    <label>Volume Solution</label>
+                </value>
+                <value>
+                    <fullName>Resourcing</fullName>
+                    <default>false</default>
+                    <label>Resourcing</label>
+                </value>
+                <value>
+                    <fullName>PAA</fullName>
+                    <default>false</default>
+                    <label>PAA</label>
+                </value>
+                <value>
+                    <fullName>Associate Management</fullName>
+                    <default>false</default>
+                    <label>Associate Management</label>
+                </value>
+                <value>
+                    <fullName>Project Support</fullName>
+                    <default>false</default>
+                    <label>Project Support</label>
+                </value>
+                <value>
+                    <fullName>Non PMO Tasks</fullName>
+                    <default>false</default>
+                    <label>Non PMO Tasks</label>
+                </value>
+                <value>
+                    <fullName>Online System updates</fullName>
+                    <default>false</default>
+                    <label>Online System updates</label>
+                </value>
+                <value>
+                    <fullName>New Online System</fullName>
+                    <default>false</default>
+                    <label>New Online System</label>
+                </value>
+                <value>
+                    <fullName>System Training - 1:1</fullName>
+                    <default>false</default>
+                    <label>System Training - 1:1</label>
+                </value>
+                <value>
+                    <fullName>System Training - public</fullName>
+                    <default>false</default>
+                    <label>System Training - public</label>
+                </value>
+                <value>
+                    <fullName>System demo - 1:1</fullName>
+                    <default>false</default>
+                    <label>System demo - 1:1</label>
+                </value>
+                <value>
+                    <fullName>System demo - public</fullName>
+                    <default>false</default>
+                    <label>System demo - public</label>
+                </value>
+                <value>
+                    <fullName>Coordination-CSIT</fullName>
+                    <default>false</default>
+                    <label>Coordination-CSIT</label>
+                </value>
+                <value>
+                    <fullName>Emails</fullName>
+                    <default>false</default>
+                    <label>Emails</label>
+                </value>
+                <value>
+                    <fullName>Support Materials</fullName>
+                    <default>false</default>
+                    <label>Support Materials</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Task__c</fullName>
+        <label>Task</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Time_Category__c</controllingField>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>1:1</fullName>
+                    <default>false</default>
+                    <label>1:1</label>
+                </value>
+                <value>
+                    <fullName>Account / Opportunity Specific</fullName>
+                    <default>false</default>
+                    <label>Account / Opportunity Specific</label>
+                </value>
+                <value>
+                    <fullName>Account Review and Preparation &amp; Facilitation</fullName>
+                    <default>false</default>
+                    <label>Account Review and Preparation &amp; Facilitation</label>
+                </value>
+                <value>
+                    <fullName>Additional Consultancy Coordination</fullName>
+                    <default>false</default>
+                    <label>Additional Consultancy Coordination</label>
+                </value>
+                <value>
+                    <fullName>Ad-hoc Advisory Support</fullName>
+                    <default>false</default>
+                    <label>Ad-hoc Advisory Support</label>
+                </value>
+                <value>
+                    <fullName>Admin, Management and Meetings</fullName>
+                    <default>false</default>
+                    <label>Admin, Management and Meetings</label>
+                </value>
+                <value>
+                    <fullName>Admin for projects – e.g. spec doc creation, JIRA ticket creation, issue management</fullName>
+                    <default>false</default>
+                    <label>Admin for projects - e.g. spec doc creation, JIRA ticket creation, issue management</label>
+                </value>
+                <value>
+                    <fullName>Advisory</fullName>
+                    <default>false</default>
+                    <label>Advisory</label>
+                </value>
+                <value>
+                    <fullName>Advisory Program Initiation</fullName>
+                    <default>false</default>
+                    <label>Advisory Program Initiation</label>
+                </value>
+                <value>
+                    <fullName>Analysis</fullName>
+                    <default>false</default>
+                    <label>Analysis</label>
+                </value>
+                <value>
+                    <fullName>Analytics</fullName>
+                    <default>false</default>
+                    <label>Analytics</label>
+                </value>
+                <value>
+                    <fullName>Application Analytics Consulting</fullName>
+                    <default>false</default>
+                    <label>Application Analytics Consulting</label>
+                </value>
+                <value>
+                    <fullName>Assessment / Development Centre</fullName>
+                    <default>false</default>
+                    <label>Assessment / Development Centre</label>
+                </value>
+                <value>
+                    <fullName>Assessment and Development Delivery</fullName>
+                    <default>false</default>
+                    <label>Assessment and Development Delivery</label>
+                </value>
+                <value>
+                    <fullName>Assessment Solution Updates</fullName>
+                    <default>false</default>
+                    <label>Assessment Solution Updates</label>
+                </value>
+                <value>
+                    <fullName>Associate Contracting</fullName>
+                    <default>false</default>
+                    <label>Associate Contracting</label>
+                </value>
+                <value>
+                    <fullName>Associate Payment</fullName>
+                    <default>false</default>
+                    <label>Associate Payment</label>
+                </value>
+                <value>
+                    <fullName>Attending Company Training</fullName>
+                    <default>false</default>
+                    <label>Attending Company Training</label>
+                </value>
+                <value>
+                    <fullName>Automation</fullName>
+                    <default>false</default>
+                    <label>Automation</label>
+                </value>
+                <value>
+                    <fullName>BOS/Validation</fullName>
+                    <default>false</default>
+                    <label>BOS/Validation</label>
+                </value>
+                <value>
+                    <fullName>Build</fullName>
+                    <default>false</default>
+                    <label>Build</label>
+                </value>
+                <value>
+                    <fullName>Client Changes</fullName>
+                    <default>false</default>
+                    <label>Client Changes</label>
+                </value>
+                <value>
+                    <fullName>Client Support</fullName>
+                    <default>false</default>
+                    <label>Client Support</label>
+                </value>
+                <value>
+                    <fullName>Coaching</fullName>
+                    <default>false</default>
+                    <label>Coaching</label>
+                </value>
+                <value>
+                    <fullName>Company Holiday</fullName>
+                    <default>false</default>
+                    <label>Company Holiday</label>
+                </value>
+                <value>
+                    <fullName>Compassionate Leave</fullName>
+                    <default>false</default>
+                    <label>Compassionate Leave</label>
+                </value>
+                <value>
+                    <fullName>Competency Framework</fullName>
+                    <default>false</default>
+                    <label>Competency Framework</label>
+                </value>
+                <value>
+                    <fullName>Configuration and Implementation</fullName>
+                    <default>false</default>
+                    <label>Configuration and Implementation</label>
+                </value>
+                <value>
+                    <fullName>Configuration Forms</fullName>
+                    <default>false</default>
+                    <label>Configuration Forms</label>
+                </value>
+                <value>
+                    <fullName>Consulting Travel</fullName>
+                    <default>false</default>
+                    <label>Consulting Travel</label>
+                </value>
+                <value>
+                    <fullName>Coordination Support</fullName>
+                    <default>false</default>
+                    <label>Coordination Support</label>
+                </value>
+                <value>
+                    <fullName>Course Delivery</fullName>
+                    <default>false</default>
+                    <label>Course Delivery</label>
+                </value>
+                <value>
+                    <fullName>CPS improvement projects</fullName>
+                    <default>false</default>
+                    <label>CPS improvement projects</label>
+                </value>
+                <value>
+                    <fullName>Customer/Internal project meetings/calls</fullName>
+                    <default>false</default>
+                    <label>Customer/Internal project meetings/calls</label>
+                </value>
+                <value>
+                    <fullName>Customisation</fullName>
+                    <default>false</default>
+                    <label>Customisation</label>
+                </value>
+                <value>
+                    <fullName>Customisation/Tailoring content</fullName>
+                    <default>false</default>
+                    <label>Customisation/Tailoring content</label>
+                </value>
+                <value>
+                    <fullName>Custom Report</fullName>
+                    <default>false</default>
+                    <label>Custom Report</label>
+                </value>
+                <value>
+                    <fullName>Data Format</fullName>
+                    <default>false</default>
+                    <label>Data Format</label>
+                </value>
+                <value>
+                    <fullName>Define and Design</fullName>
+                    <default>false</default>
+                    <label>Define and Design</label>
+                </value>
+                <value>
+                    <fullName>Delivery</fullName>
+                    <default>false</default>
+                    <label>Delivery</label>
+                </value>
+                <value>
+                    <fullName>Design</fullName>
+                    <default>false</default>
+                    <label>Design</label>
+                </value>
+                <value>
+                    <fullName>Design – e.g. workflow, competency mapping, competency framework</fullName>
+                    <default>false</default>
+                    <label>Design - e.g. workflow, competency mapping, competency framework</label>
+                </value>
+                <value>
+                    <fullName>Development Program</fullName>
+                    <default>false</default>
+                    <label>Development Program</label>
+                </value>
+                <value>
+                    <fullName>Development Training</fullName>
+                    <default>false</default>
+                    <label>Development Training</label>
+                </value>
+                <value>
+                    <fullName>Documentation</fullName>
+                    <default>false</default>
+                    <label>Documentation</label>
+                </value>
+                <value>
+                    <fullName>Emails</fullName>
+                    <default>false</default>
+                    <label>Emails</label>
+                </value>
+                <value>
+                    <fullName>Enablement</fullName>
+                    <default>false</default>
+                    <label>Enablement</label>
+                </value>
+                <value>
+                    <fullName>Engagement</fullName>
+                    <default>false</default>
+                    <label>Engagement</label>
+                </value>
+                <value>
+                    <fullName>Expenses</fullName>
+                    <default>false</default>
+                    <label>Expenses</label>
+                </value>
+                <value>
+                    <fullName>Feedback</fullName>
+                    <default>false</default>
+                    <label>Feedback</label>
+                </value>
+                <value>
+                    <fullName>Follow-up</fullName>
+                    <default>false</default>
+                    <label>Follow-up</label>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                    <label>General</label>
+                </value>
+                <value>
+                    <fullName>General Admin</fullName>
+                    <default>false</default>
+                    <label>General Admin</label>
+                </value>
+                <value>
+                    <fullName>Generic Project Support</fullName>
+                    <default>false</default>
+                    <label>Generic Project Support</label>
+                </value>
+                <value>
+                    <fullName>Generic resourcing</fullName>
+                    <default>false</default>
+                    <label>Generic resourcing</label>
+                </value>
+                <value>
+                    <fullName>Generic Support (Billable)</fullName>
+                    <default>false</default>
+                    <label>Generic Support (Billable)</label>
+                </value>
+                <value>
+                    <fullName>Generic Support (Non-Billable)</fullName>
+                    <default>false</default>
+                    <label>Generic Support (Non-Billable)</label>
+                </value>
+                <value>
+                    <fullName>HiPo/Enterprise Leadership</fullName>
+                    <default>false</default>
+                    <label>HiPo/Enterprise Leadership</label>
+                </value>
+                <value>
+                    <fullName>How to Guide</fullName>
+                    <default>false</default>
+                    <label>How to Guide</label>
+                </value>
+                <value>
+                    <fullName>HR Support</fullName>
+                    <default>false</default>
+                    <label>HR Support</label>
+                </value>
+                <value>
+                    <fullName>In-company Training</fullName>
+                    <default>false</default>
+                    <label>In-company Training</label>
+                </value>
+                <value>
+                    <fullName>Insights</fullName>
+                    <default>false</default>
+                    <label>Insights</label>
+                </value>
+                <value>
+                    <fullName>Integration</fullName>
+                    <default>false</default>
+                    <label>Integration</label>
+                </value>
+                <value>
+                    <fullName>Internal Changes</fullName>
+                    <default>false</default>
+                    <label>Internal Changes</label>
+                </value>
+                <value>
+                    <fullName>Internal Development</fullName>
+                    <default>false</default>
+                    <label>Internal Development</label>
+                </value>
+                <value>
+                    <fullName>Internal Meetings</fullName>
+                    <default>false</default>
+                    <label>Internal Meetings</label>
+                </value>
+                <value>
+                    <fullName>Internal Salesforce Admin</fullName>
+                    <default>false</default>
+                    <label>Internal Salesforce Admin</label>
+                </value>
+                <value>
+                    <fullName>Internal Support</fullName>
+                    <default>false</default>
+                    <label>Internal Support</label>
+                </value>
+                <value>
+                    <fullName>Investment internal projects - Global</fullName>
+                    <default>false</default>
+                    <label>Investment internal projects - Global</label>
+                </value>
+                <value>
+                    <fullName>Investment internal projects - Regional</fullName>
+                    <default>false</default>
+                    <label>Investment internal projects - Regional</label>
+                </value>
+                <value>
+                    <fullName>Investment Related Travel</fullName>
+                    <default>false</default>
+                    <label>Investment Related Travel</label>
+                </value>
+                <value>
+                    <fullName>IT Downtime</fullName>
+                    <default>false</default>
+                    <label>IT Downtime</label>
+                </value>
+                <value>
+                    <fullName>IT Issues</fullName>
+                    <default>false</default>
+                    <label>IT Issues</label>
+                </value>
+                <value>
+                    <fullName>Job analysis/profiling</fullName>
+                    <default>false</default>
+                    <label>Job analysis/profiling</label>
+                </value>
+                <value>
+                    <fullName>Leader Edge</fullName>
+                    <default>false</default>
+                    <label>Leader Edge</label>
+                </value>
+                <value>
+                    <fullName>Lead Tracking</fullName>
+                    <default>false</default>
+                    <label>Lead Tracking</label>
+                </value>
+                <value>
+                    <fullName>Leave</fullName>
+                    <default>false</default>
+                    <label>Leave</label>
+                </value>
+                <value>
+                    <fullName>Local improvement projects</fullName>
+                    <default>false</default>
+                    <label>Local improvement projects</label>
+                </value>
+                <value>
+                    <fullName>Localisation</fullName>
+                    <default>false</default>
+                    <label>Localisation</label>
+                </value>
+                <value>
+                    <fullName>Mandatory Company Training</fullName>
+                    <default>false</default>
+                    <label>Mandatory Company Training</label>
+                </value>
+                <value>
+                    <fullName>Marketing Support</fullName>
+                    <default>false</default>
+                    <label>Marketing Support</label>
+                </value>
+                <value>
+                    <fullName>MFS 360</fullName>
+                    <default>false</default>
+                    <label>MFS 360</label>
+                </value>
+                <value>
+                    <fullName>Migration between Platforms</fullName>
+                    <default>false</default>
+                    <label>Migration between Platforms</label>
+                </value>
+                <value>
+                    <fullName>Mockups</fullName>
+                    <default>false</default>
+                    <label>Mockups</label>
+                </value>
+                <value>
+                    <fullName>Multi-customer engagement</fullName>
+                    <default>false</default>
+                    <label>Multi-customer engagement</label>
+                </value>
+                <value>
+                    <fullName>Multimedia Consultancy</fullName>
+                    <default>false</default>
+                    <label>Multimedia Consultancy</label>
+                </value>
+                <value>
+                    <fullName>Multimedia Delivery</fullName>
+                    <default>false</default>
+                    <label>Multimedia Delivery</label>
+                </value>
+                <value>
+                    <fullName>Non-Billable</fullName>
+                    <default>false</default>
+                    <label>Non-Billable</label>
+                </value>
+                <value>
+                    <fullName>Office Management</fullName>
+                    <default>false</default>
+                    <label>Office Management</label>
+                </value>
+                <value>
+                    <fullName>Off-Site Training</fullName>
+                    <default>false</default>
+                    <label>Off-Site Training</label>
+                </value>
+                <value>
+                    <fullName>Online System updates</fullName>
+                    <default>false</default>
+                    <label>Online System updates</label>
+                </value>
+                <value>
+                    <fullName>On-the-Job Shadowing</fullName>
+                    <default>false</default>
+                    <label>On-the-Job Shadowing</label>
+                </value>
+                <value>
+                    <fullName>Operational Improvements</fullName>
+                    <default>false</default>
+                    <label>Operational Improvements</label>
+                </value>
+                <value>
+                    <fullName>Opportunity Qualification</fullName>
+                    <default>false</default>
+                    <label>Opportunity Qualification</label>
+                </value>
+                <value>
+                    <fullName>Opportunity Tracking</fullName>
+                    <default>false</default>
+                    <label>Opportunity Tracking</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Other Internal Development</fullName>
+                    <default>false</default>
+                    <label>Other Internal Development</label>
+                </value>
+                <value>
+                    <fullName>Outsourced Assessments Travel</fullName>
+                    <default>false</default>
+                    <label>Outsourced Assessments Travel</label>
+                </value>
+                <value>
+                    <fullName>PAA improvement projects</fullName>
+                    <default>false</default>
+                    <label>PAA improvement projects</label>
+                </value>
+                <value>
+                    <fullName>Paid Time Off / Holiday</fullName>
+                    <default>false</default>
+                    <label>Paid Time Off / Holiday</label>
+                </value>
+                <value>
+                    <fullName>PM Application Analytics Consulting</fullName>
+                    <default>false</default>
+                    <label>PM Application Analytics Consulting</label>
+                </value>
+                <value>
+                    <fullName>POMP Initiative</fullName>
+                    <default>false</default>
+                    <label>POMP Initiative</label>
+                </value>
+                <value>
+                    <fullName>Post Project Support</fullName>
+                    <default>false</default>
+                    <label>Post Project Support</label>
+                </value>
+                <value>
+                    <fullName>Post Project Support / Problem Resolution</fullName>
+                    <default>false</default>
+                    <label>Post Project Support / Problem Resolution</label>
+                </value>
+                <value>
+                    <fullName>Precise Fit</fullName>
+                    <default>false</default>
+                    <label>Precise Fit</label>
+                </value>
+                <value>
+                    <fullName>Preparation</fullName>
+                    <default>false</default>
+                    <label>Preparation</label>
+                </value>
+                <value>
+                    <fullName>Preparation work</fullName>
+                    <default>false</default>
+                    <label>Preparation work</label>
+                </value>
+                <value>
+                    <fullName>Preparing / Delivering Internal Training</fullName>
+                    <default>false</default>
+                    <label>Preparing / Delivering Internal Training</label>
+                </value>
+                <value>
+                    <fullName>Presales (AMS ONLY)</fullName>
+                    <default>false</default>
+                    <label>Presales (AMS ONLY)</label>
+                </value>
+                <value>
+                    <fullName>Presales Planning</fullName>
+                    <default>false</default>
+                    <label>Presales Planning</label>
+                </value>
+                <value>
+                    <fullName>Pre-Sales Related Travel</fullName>
+                    <default>false</default>
+                    <label>Pre-Sales Related Travel</label>
+                </value>
+                <value>
+                    <fullName>Problem Resolution</fullName>
+                    <default>false</default>
+                    <label>Problem Resolution</label>
+                </value>
+                <value>
+                    <fullName>Product / Solution Enhancements</fullName>
+                    <default>false</default>
+                    <label>Product / Solution Enhancements</label>
+                </value>
+                <value>
+                    <fullName>Product Champion</fullName>
+                    <default>false</default>
+                    <label>Product Champion</label>
+                </value>
+                <value>
+                    <fullName>Product Enhancements</fullName>
+                    <default>false</default>
+                    <label>Product Enhancements</label>
+                </value>
+                <value>
+                    <fullName>Professional Development</fullName>
+                    <default>false</default>
+                    <label>Professional Development</label>
+                </value>
+                <value>
+                    <fullName>Project Financials</fullName>
+                    <default>false</default>
+                    <label>Project Financials</label>
+                </value>
+                <value>
+                    <fullName>Project Management</fullName>
+                    <default>false</default>
+                    <label>Project Management</label>
+                </value>
+                <value>
+                    <fullName>Project Scheduling</fullName>
+                    <default>false</default>
+                    <label>Project Scheduling</label>
+                </value>
+                <value>
+                    <fullName>Public Holiday</fullName>
+                    <default>false</default>
+                    <label>Public Holiday</label>
+                </value>
+                <value>
+                    <fullName>Public PAA resourcing</fullName>
+                    <default>false</default>
+                    <label>Public PAA resourcing</label>
+                </value>
+                <value>
+                    <fullName>Public Training</fullName>
+                    <default>false</default>
+                    <label>Public Training</label>
+                </value>
+                <value>
+                    <fullName>QA/UAT</fullName>
+                    <default>false</default>
+                    <label>QA/UAT</label>
+                </value>
+                <value>
+                    <fullName>Recruitment</fullName>
+                    <default>false</default>
+                    <label>Recruitment</label>
+                </value>
+                <value>
+                    <fullName>Report / Feedback</fullName>
+                    <default>false</default>
+                    <label>Report / Feedback</label>
+                </value>
+                <value>
+                    <fullName>Report Writing / Finalisation</fullName>
+                    <default>false</default>
+                    <label>Report Writing / Finalisation</label>
+                </value>
+                <value>
+                    <fullName>Re-work: Client Changes</fullName>
+                    <default>false</default>
+                    <label>Re-work: Client Changes</label>
+                </value>
+                <value>
+                    <fullName>Re-work: Internal Changes</fullName>
+                    <default>false</default>
+                    <label>Re-work: Internal Changes</label>
+                </value>
+                <value>
+                    <fullName>RFP / Proposal Design</fullName>
+                    <default>false</default>
+                    <label>RFP / Proposal Design</label>
+                </value>
+                <value>
+                    <fullName>RFP Proposal Design/Development</fullName>
+                    <default>false</default>
+                    <label>RFP Proposal Design/Development</label>
+                </value>
+                <value>
+                    <fullName>RJP</fullName>
+                    <default>false</default>
+                    <label>RJP</label>
+                </value>
+                <value>
+                    <fullName>Sales / Solution Engagement</fullName>
+                    <default>false</default>
+                    <label>Sales / Solution Engagement</label>
+                </value>
+                <value>
+                    <fullName>Scheduling</fullName>
+                    <default>false</default>
+                    <label>Scheduling</label>
+                </value>
+                <value>
+                    <fullName>Sickness</fullName>
+                    <default>false</default>
+                    <label>Sickness</label>
+                </value>
+                <value>
+                    <fullName>SJT</fullName>
+                    <default>false</default>
+                    <label>SJT</label>
+                </value>
+                <value>
+                    <fullName>SJT MM</fullName>
+                    <default>false</default>
+                    <label>SJT MM</label>
+                </value>
+                <value>
+                    <fullName>Slides</fullName>
+                    <default>false</default>
+                    <label>Slides</label>
+                </value>
+                <value>
+                    <fullName>Solution Build (S2P, TC)</fullName>
+                    <default>false</default>
+                    <label>Solution Build (S2P, TC)</label>
+                </value>
+                <value>
+                    <fullName>Solution Support</fullName>
+                    <default>false</default>
+                    <label>Solution Support</label>
+                </value>
+                <value>
+                    <fullName>Staff Development</fullName>
+                    <default>false</default>
+                    <label>Staff Development</label>
+                </value>
+                <value>
+                    <fullName>Strategic Planning &amp; Analysis</fullName>
+                    <default>false</default>
+                    <label>Strategic Planning &amp; Analysis</label>
+                </value>
+                <value>
+                    <fullName>Subscription Support</fullName>
+                    <default>false</default>
+                    <label>Subscription Support</label>
+                </value>
+                <value>
+                    <fullName>Support Internal Processes &amp; Systems</fullName>
+                    <default>false</default>
+                    <label>Support Internal Processes &amp; Systems</label>
+                </value>
+                <value>
+                    <fullName>System Support</fullName>
+                    <default>false</default>
+                    <label>System Support</label>
+                </value>
+                <value>
+                    <fullName>Tailored Assessments</fullName>
+                    <default>false</default>
+                    <label>Tailored Assessments</label>
+                </value>
+                <value>
+                    <fullName>Talent Analytics</fullName>
+                    <default>false</default>
+                    <label>Talent Analytics</label>
+                </value>
+                <value>
+                    <fullName>Talent Audit</fullName>
+                    <default>false</default>
+                    <label>Talent Audit</label>
+                </value>
+                <value>
+                    <fullName>Talent Central</fullName>
+                    <default>false</default>
+                    <label>Talent Central</label>
+                </value>
+                <value>
+                    <fullName>TC+</fullName>
+                    <default>false</default>
+                    <label>TC+</label>
+                </value>
+                <value>
+                    <fullName>TC Build</fullName>
+                    <default>false</default>
+                    <label>TC Build</label>
+                </value>
+                <value>
+                    <fullName>TC Integration</fullName>
+                    <default>false</default>
+                    <label>TC Integration</label>
+                </value>
+                <value>
+                    <fullName>TC Integration Implementation Support</fullName>
+                    <default>false</default>
+                    <label>TC Integration Implementation Support</label>
+                </value>
+                <value>
+                    <fullName>TCLP</fullName>
+                    <default>false</default>
+                    <label>TCLP</label>
+                </value>
+                <value>
+                    <fullName>TC Training</fullName>
+                    <default>false</default>
+                    <label>TC Training</label>
+                </value>
+                <value>
+                    <fullName>Tech/IT support</fullName>
+                    <default>false</default>
+                    <label>Tech/IT support</label>
+                </value>
+                <value>
+                    <fullName>Tech Build</fullName>
+                    <default>false</default>
+                    <label>Tech Build</label>
+                </value>
+                <value>
+                    <fullName>Tech Issues</fullName>
+                    <default>false</default>
+                    <label>Tech Issues</label>
+                </value>
+                <value>
+                    <fullName>Timesheet</fullName>
+                    <default>false</default>
+                    <label>Timesheet</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+                <value>
+                    <fullName>Training Delivery</fullName>
+                    <default>false</default>
+                    <label>Training Delivery</label>
+                </value>
+                <value>
+                    <fullName>Training Design</fullName>
+                    <default>false</default>
+                    <label>Training Design</label>
+                </value>
+                <value>
+                    <fullName>Translation</fullName>
+                    <default>false</default>
+                    <label>Translation</label>
+                </value>
+                <value>
+                    <fullName>Translation review</fullName>
+                    <default>false</default>
+                    <label>Translation review</label>
+                </value>
+                <value>
+                    <fullName>Travel</fullName>
+                    <default>false</default>
+                    <label>Travel</label>
+                </value>
+                <value>
+                    <fullName>User Guides</fullName>
+                    <default>false</default>
+                    <label>User Guides</label>
+                </value>
+                <value>
+                    <fullName>Value Demonstration</fullName>
+                    <default>false</default>
+                    <label>Value Demonstration</label>
+                </value>
+                <value>
+                    <fullName>Video</fullName>
+                    <default>false</default>
+                    <label>Video</label>
+                </value>
+                <value>
+                    <fullName>Volunteer days</fullName>
+                    <default>false</default>
+                    <label>Volunteer days</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Delivery – Solution, Product</controllingFieldValue>
+                <valueName>Admin for projects – e.g. spec doc creation, JIRA ticket creation, issue management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery – Solution, Product</controllingFieldValue>
+                <valueName>Advisory</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery – Solution, Product</controllingFieldValue>
+                <valueName>Analytics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery – Solution, Product</controllingFieldValue>
+                <controllingFieldValue>Delivery - Outsourced Assessments</controllingFieldValue>
+                <valueName>Build</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery – Solution, Product</controllingFieldValue>
+                <valueName>Customer/Internal project meetings/calls</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery – Solution, Product</controllingFieldValue>
+                <valueName>Customisation/Tailoring content</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery – Solution, Product</controllingFieldValue>
+                <valueName>Design – e.g. workflow, competency mapping, competency framework</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery – Solution, Product</controllingFieldValue>
+                <valueName>Job analysis/profiling</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery – Solution, Product</controllingFieldValue>
+                <controllingFieldValue>Delivery - Outsourced Assessments</controllingFieldValue>
+                <valueName>Project Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery – Solution, Product</controllingFieldValue>
+                <controllingFieldValue>Delivery - Outsourced Assessments</controllingFieldValue>
+                <valueName>QA/UAT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery – Solution, Product</controllingFieldValue>
+                <valueName>Solution Support</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery – Solution, Product</controllingFieldValue>
+                <valueName>Training</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Internal Organisation</controllingFieldValue>
+                <valueName>Admin, Management and Meetings</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Internal Organisation</controllingFieldValue>
+                <valueName>IT Downtime</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Internal Organisation</controllingFieldValue>
+                <valueName>Leave</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Internal Organisation</controllingFieldValue>
+                <valueName>Staff Development</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Investments</controllingFieldValue>
+                <valueName>Investment internal projects - Global</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Investments</controllingFieldValue>
+                <valueName>Investment internal projects - Regional</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre-Sales</controllingFieldValue>
+                <valueName>Account / Opportunity Specific</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre-Sales</controllingFieldValue>
+                <valueName>Multi-customer engagement</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre-Sales</controllingFieldValue>
+                <valueName>RFP Proposal Design/Development</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery - Outsourced Assessments</controllingFieldValue>
+                <valueName>Assessment / Development Centre</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery - Outsourced Assessments</controllingFieldValue>
+                <valueName>Customisation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery - Outsourced Assessments</controllingFieldValue>
+                <valueName>Design</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery - Outsourced Assessments</controllingFieldValue>
+                <valueName>Feedback</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery - Outsourced Assessments</controllingFieldValue>
+                <valueName>Report Writing / Finalisation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery - Other</controllingFieldValue>
+                <valueName>Coaching</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery - Other</controllingFieldValue>
+                <valueName>Localisation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery - Other</controllingFieldValue>
+                <valueName>Travel</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Time_Amount__c</fullName>
+        <formula>if (ISNULL(Billing_Rate__c) ,0,(Hours__c /8)* Billing_Rate__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Time Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Time_Category__c</fullName>
+        <label>Time Category</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Internal Organisation</fullName>
+                    <default>false</default>
+                    <label>Internal Organisation</label>
+                </value>
+                <value>
+                    <fullName>Investments</fullName>
+                    <default>false</default>
+                    <label>Investments</label>
+                </value>
+                <value>
+                    <fullName>Pre-Sales</fullName>
+                    <default>false</default>
+                    <label>Pre-Sales</label>
+                </value>
+                <value>
+                    <fullName>Delivery - Outsourced Assessments</fullName>
+                    <default>false</default>
+                    <label>Delivery - Outsourced Assessments</label>
+                </value>
+                <value>
+                    <fullName>Delivery – Solution, Product</fullName>
+                    <default>false</default>
+                    <label>Delivery - Solution, Product</label>
+                </value>
+                <value>
+                    <fullName>Delivery - Other</fullName>
+                    <default>false</default>
+                    <label>Delivery - Other</label>
+                </value>
+                <value>
+                    <fullName>Cases - CSIT</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Cases - CSIT</label>
+                </value>
+                <value>
+                    <fullName>Courses - CSIT</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Courses - CSIT</label>
+                </value>
+                <value>
+                    <fullName>Delivery</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Delivery</label>
+                </value>
+                <value>
+                    <fullName>Delivery - Product Consulting</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Delivery - Product Consulting</label>
+                </value>
+                <value>
+                    <fullName>Delivery - Solutions Consulting</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Delivery - Solutions Consulting</label>
+                </value>
+                <value>
+                    <fullName>Delivery - Training</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Delivery - Training</label>
+                </value>
+                <value>
+                    <fullName>Email - CSIT</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Email - CSIT</label>
+                </value>
+                <value>
+                    <fullName>Project Resourcing and Support</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Project Resourcing and Support</label>
+                </value>
+                <value>
+                    <fullName>Support Materials - CSIT</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Support Materials - CSIT</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Time_Cost__c</fullName>
+        <label>Time Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TimesheeetReportUserBU__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( $User.Company_BU__c ,
+&quot;Abu Dhabi - AD1&quot;,&quot;Abu Dhabi - AD1&quot;, 
+&quot;AP Region - P10&quot;, &quot;AP Region - P10&quot;, 
+&quot;Australia - AU1&quot;,&quot;Australia - AU1&quot;, 
+&quot;Belgium - BE1&quot;,&quot;Belgium - BE1&quot;, 
+&quot;Belgium SPS - BE5&quot;,&quot;Belgium SPS - BE5&quot;, 
+&quot;Canada - CA1&quot;,&quot;Canada - CA1&quot;, 
+&quot;Denmark - DK1&quot;,&quot;Denmark - DK1&quot;, 
+&quot;Denmark SPS - DK5&quot;,&quot;Denmark SPS - DK5&quot;, 
+&quot;EU Region - E50&quot;,&quot;EU Region - E50&quot;, 
+&quot;Finland - FI1&quot;,&quot;Finland - FI1&quot;, 
+&quot;France - FR1&quot;,&quot;France - FR1&quot;, 
+&quot;France SPS - FR5&quot;,&quot;France SPS - FR5&quot;, 
+&quot;Germany - DE1&quot;,&quot;Germany - DE1&quot;, 
+&quot;Germany SPS - DE5&quot;,&quot;Germany SPS - DE5&quot;, 
+&quot;Hong Kong - HK1&quot;,&quot;Hong Kong - HK1&quot;, 
+&quot;India - IN1&quot;,&quot;India - IN1&quot;,&quot;Ireland - IE1&quot;, 
+&quot;Ireland - IE1&quot;,&quot;Italy - IT1&quot;,&quot;Italy - IT1&quot;, 
+&quot;Netherlands - NL1&quot;,&quot;Netherlands - NL1&quot;, 
+&quot;Netherlands SPS - NL5&quot;,&quot;Netherlands SPS - NL5&quot;, 
+&quot;New Zealand - NZ1&quot;,&quot;New Zealand - NZ1&quot;, 
+&quot;Norway - NO1&quot;,&quot;Norway - NO1&quot;, 
+&quot;Poland - PL1&quot;,&quot;Poland - PL1&quot;, 
+&quot;Saudi Arabia - SA5&quot;,&quot;Saudi Arabia - SA5&quot;,
+&quot;Singapore - SG1&quot;,&quot;Singapore - SG1&quot;, 
+&quot;South Africa - ZA1&quot;,&quot;South Africa - ZA1&quot;, 
+&quot;Spain - ES1&quot;,&quot;Spain - ES1&quot;, 
+&quot;Sweden - SE1&quot;,&quot;Sweden - SE1&quot;, 
+&quot;Sweden SPS - SE5&quot;,&quot;Sweden SPS - SE5&quot;, 
+&quot;Switzerland - CH1&quot;,&quot;Switzerland - CH1&quot;, 
+&quot;UK SPS - UK5&quot;,&quot;UK SPS - UK5&quot;, 
+&quot;UK - UK1&quot;,&quot;UK - UK1&quot;, 
+&quot;US - US1&quot;,&quot;US - US1&quot;, 
+&quot;none&quot;)</formula>
+        <label>User BU</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TimesheetReportField__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Resource__c = $User.Id ,1, 0)</formula>
+        <label>TimesheetReportField</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TimesheetReportResourceBU__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( Resource__r.Company_BU__c  ,
+&quot;Abu Dhabi - AD1&quot;,&quot;Abu Dhabi - AD1&quot;,
+&quot;AP Region - P10&quot;, &quot;AP Region - P10&quot;,
+&quot;Australia - AU1&quot;,&quot;Australia - AU1&quot;,
+&quot;Belgium - BE1&quot;,&quot;Belgium - BE1&quot;,
+&quot;Belgium SPS - BE5&quot;,&quot;Belgium SPS - BE5&quot;,
+&quot;Canada - CA1&quot;,&quot;Canada - CA1&quot;,
+&quot;China - CN1&quot;,&quot;China - CN1&quot;,
+&quot;Denmark - DK1&quot;,&quot;Denmark - DK1&quot;,
+&quot;Denmark SPS - DK5&quot;,&quot;Denmark SPS - DK5&quot;,
+&quot;EU Region - E50&quot;,&quot;EU Region - E50&quot;,
+&quot;Finland - FI1&quot;,&quot;Finland - FI1&quot;,
+&quot;France - FR1&quot;,&quot;France - FR1&quot;,
+&quot;France SPS - FR5&quot;,&quot;France SPS - FR5&quot;,
+&quot;Germany - DE1&quot;,&quot;Germany - DE1&quot;,
+&quot;Germany SPS - DE5&quot;,&quot;Germany SPS - DE5&quot;,
+&quot;Hong Kong - HK1&quot;,&quot;Hong Kong - HK1&quot;,
+&quot;India - IN1&quot;,&quot;India - IN1&quot;,&quot;Ireland - IE1&quot;,
+&quot;Ireland - IE1&quot;,&quot;Italy - IT1&quot;,&quot;Italy - IT1&quot;,
+&quot;Netherlands - NL1&quot;,&quot;Netherlands - NL1&quot;,
+&quot;Netherlands SPS - NL5&quot;,&quot;Netherlands SPS - NL5&quot;,
+&quot;New Zealand - NZ1&quot;,&quot;New Zealand - NZ1&quot;,
+&quot;Norway - NO1&quot;,&quot;Norway - NO1&quot;,
+&quot;Poland - PL1&quot;,&quot;Poland - PL1&quot;,
+&quot;Saudi Arabia - SA5&quot;,&quot;Saudi Arabia - SA5&quot;,
+&quot;Singapore - SG1&quot;,&quot;Singapore - SG1&quot;,
+&quot;South Africa - ZA1&quot;,&quot;South Africa - ZA1&quot;,
+&quot;Spain - ES1&quot;,&quot;Spain - ES1&quot;,
+&quot;Sweden - SE1&quot;,&quot;Sweden - SE1&quot;,
+&quot;Sweden SPS - SE5&quot;,&quot;Sweden SPS - SE5&quot;,
+&quot;Switzerland - CH1&quot;,&quot;Switzerland - CH1&quot;,
+&quot;UK SPS - UK5&quot;,&quot;UK SPS - UK5&quot;,
+&quot;UK - UK1&quot;,&quot;UK - UK1&quot;,
+&quot;US - US1&quot;,&quot;US - US1&quot;,
+&quot;US - US5&quot;,&quot;US - US5&quot;,
+&quot;None&quot;)</formula>
+        <label>Resource BU</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Timesheet_From_CPS_Project__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Timesheet From CPS Project (Legacy)</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UserUtilizationFunction__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( Resource__r.Utilisation_Function__c ,&quot;Admin&quot;,&quot;Admin&quot;,&quot;PS&quot;,&quot;PS&quot;,&quot;Sales&quot;,&quot;Sales&quot;,&quot;SPS&quot;,&quot;SPS&quot;,&quot;TS&quot;,&quot;TS&quot;,&quot;None&quot;)</formula>
+        <label>UserUtilizationFunction</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Timesheet</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Timesheets</fullName>
+        <columns>NAME</columns>
+        <columns>Project__c</columns>
+        <columns>Time_Category__c</columns>
+        <columns>Task_Category__c</columns>
+        <columns>Task__c</columns>
+        <columns>Resource__c</columns>
+        <columns>Date_Invoiced__c</columns>
+        <columns>Hours__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Current_Logged_In_User__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Date_Invoiced__c</field>
+            <operation>equals</operation>
+            <value>THIS_YEAR</value>
+        </filters>
+        <label>My Timesheets</label>
+    </listViews>
+    <nameField>
+        <displayFormat>TSL{000000}</displayFormat>
+        <label>Timesheet Line Ref</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Timesheets</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Resource__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Task_Category__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Task__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Date_Invoiced__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Hours__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Billing_Rate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Day__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Resource__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Task_Category__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Task__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Hours__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Restrict_TimeLogs_on_CompletedOldProject</fullName>
+        <active>true</active>
+        <description>This rule restricts logging timesheets on 6 months old cancelled or closed projects.</description>
+        <errorConditionFormula>AND(
+OR(
+AND(
+NOT(ISNEW()),
+ISCHANGED(Hours__c)),                      
+ISNEW()),  
+NOT(ISBLANK(Project__r.Project_Closed_Date__c)),
+OR(ISPICKVAL(Project__r.Project_Status__c, &quot;Closed&quot;),
+ISPICKVAL(Project__r.Project_Status__c, &quot;Cancelled&quot;)),
+ADDMONTHS(Project__r.Project_Closed_Date__c, 6) &lt; TODAY()
+)</errorConditionFormula>
+        <errorMessage>You cannot log time to a project if the status was set to Closed / Cancelled more than 6 months ago.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Timesheet_Function_Values_Validate</fullName>
+        <active>false</active>
+        <description>if task category is not filtered on the basis of newly added values on function field, display message &apos;this record can not be saved as the function value has been discontinued.&apos;</description>
+        <errorConditionFormula>IF( Text(Function__c)  &lt;&gt;  Project__r.Function_Timesheet__c , true,false)</errorConditionFormula>
+        <errorMessage>The functional area selected for this timesheet row has been discontinued.So, kindly create a new timesheet row for entering time against this project.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>TimesheetLine_New</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>///top.window.location =&quot;servlet/servlet.Integration?lid=01r2000000052XT&amp;ic=1&quot;;
+top.window.location =&quot;{!URLFOR( $Action.Timesheet_Line__c.Tab, $ObjectType.Timesheet_Line__c )}&quot;;</url>
+    </webLinks>
+</CustomObject>

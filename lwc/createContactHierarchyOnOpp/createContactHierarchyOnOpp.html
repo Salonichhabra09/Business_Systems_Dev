@@ -1,0 +1,90 @@
+<template>
+    <template lwc:if={isComponentVisible}>
+    <lightning-card title="Contact Relationship Map" icon-name="standard:hierarchy">
+        <template lwc:if={showSpinner}>
+            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+        </template>
+        <lightning-button variant="neutral" onclick={handleCreateHierarchy} label="Create" slot="actions" lwc:if={isCreateVisible}></lightning-button>                     
+        <lightning-button variant="neutral" onclick={handleManageHierarchy} label="Manage" slot="actions" lwc:if={hasContactHierarchy}></lightning-button>
+        <lightning-button class="slds-m-left_small" variant="neutral" onclick={handleDeleteHierarchy} label="Delete" slot="actions" lwc:if={isDeleteVisible}></lightning-button>                     
+        <div lwc:if={hasContactHierarchy} class="slds-p-around_small address-font">
+            <!-- <div class="font-weight-label slds-p-bottom_x-small">Details :</div> -->
+            <lightning-layout>
+                <lightning-layout-item size="3" class="font-weight-label slds-m-right_medium">
+                    Last Modified By
+                </lightning-layout-item>
+                <lightning-layout-item size="9" class="font-weight-value">
+                    <h1>{hierarchyInformation.LastModifiedBy.FirstName} {hierarchyInformation.LastModifiedBy.LastName}</h1>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-m-top_x-small">
+                <lightning-layout-item size="3" class="font-weight-label slds-m-right_medium">
+                    Last Modified Date
+                </lightning-layout-item>
+                <lightning-layout-item size="9" class="font-weight-value">
+                    <h1>{lastModifiedDate}</h1>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-m-top_x-small">
+                <lightning-layout-item size="3" class="font-weight-label slds-m-right_medium">
+                    Created Date
+                </lightning-layout-item>
+                <lightning-layout-item size="9" class="font-weight-value">
+                    <h1>{createdDate}</h1>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+        <div lwc:if={hasNoContactHierarchy} class="slds-p-horizontal_small slds-p-bottom_medium">
+                No Contact Chart exists for this Opportunity. Please click on create to add.
+        </div>
+        
+    </lightning-card>
+</template>
+    <div lwc:if={isOpenPopup}>
+        <section role="dialog" tabindex="-1" aria-labelledby="contact-edit-modal" 
+        aria-modal="true" aria-describedby="contact-edit-modal" class="slds-modal slds-fade-in-open custom-alignment">
+            <div class="slds-modal__container slds-is-relative">
+    
+                <!-- Modal/Popup Box LWC header here -->
+                <div class="slds-is-relative custom-width">
+                    <template lwc:if={showSpinner}>
+                        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                    </template>
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" 
+                    title="Close" onclick={handleClose}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h3 id="modal-heading-06" class="slds-text-heading_medium slds-hyphenate">{headerTitle}</h3>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-4">
+                <!-- <div lwc:if={isCreateRecord}>
+                    <lightning-radio-group name="radioGroup"
+                          label="Hierarchy Options"
+                          options={hierarchyOptions}
+                          value={hierarchyValue}
+                          type="radio"
+                          onchange={handleHierarchyTypeChange}></lightning-radio-group>
+                </div> -->
+                <div lwc:if={isDeleteRecord}>
+                    <p class="delete-message slds-align_absolute-center">Are you sure you want to delete the current hierarchy?</p>
+                </div>
+                </div>
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" 
+                    onclick={handleClose} type="Cancel" title="Cancel">Cancel</button>
+                    <!-- <button lwc:if={isCreateRecord} class="slds-button slds-button_brand" onclick={handleSubmit}
+                    type="submit" title="Save">Submit</button> -->
+                    <button lwc:if={isDeleteRecord} class="slds-button slds-button_brand" onclick={deleteHierarchy}
+                    type="submit" title="Save">Delete</button>
+                </footer>
+            </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+</template>

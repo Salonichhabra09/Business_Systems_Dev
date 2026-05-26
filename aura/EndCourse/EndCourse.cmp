@@ -1,0 +1,12 @@
+<aura:component controller="Course_Manager" implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+	 <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="CourseType" type="String"/>
+    <aura:attribute name="message" type="String"/>
+    <aura:handler name="init" value="this" action="{!c.validateEndCourse}"/>
+    
+    <!--div>
+        <Center>
+    		{!v.message}
+        </Center>
+    </div-->
+</aura:component>

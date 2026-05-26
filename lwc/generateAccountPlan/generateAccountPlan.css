@@ -1,0 +1,113 @@
+.box_class{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.accordion_class{
+    --slds-c-accordion-summary-color-background: rgb(242, 242, 242);
+    
+}
+
+.margin_class{
+    margin-top: 10px;
+}
+
+.account_name{
+    --lwc-inputStaticFontSize: 14px;
+    --lwc-inputStaticFontWeight: bold;
+    --slds-c-input-text-color: rgb(96, 227, 15);
+ }
+
+ .button_class{
+    height:40px;
+    width:250px;
+    margin-top:45px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    
+}
+
+.border_class{
+    --slds-c-input-color-border-disabled:    rgb(234,234,234);
+    --slds-c-input-color-background: white !important; /*slds-input[disabled]*/
+}
+
+.horizontalBar{
+    height: 100%;
+    width: 70%;
+}
+
+.input-wrapper {
+    /*display: inline-block;
+    max-width: 85%;
+    margin-bottom: .75rem;*/
+    --slds-c-input-spacing-horizontal-start:20px;
+}
+.required-fields{
+    color: #e32;
+    content: '*';
+    display:inline;
+}
+
+th {
+    background-color: rgb(255,255,255);
+}
+
+
+.text_area{
+    --sds-c-textarea-sizing-min-height: 250px;
+
+}
+
+.text_area_objectives{
+    --sds-c-textarea-sizing-min-height: 120px;
+
+}
+
+.span_Class_Left{ 
+    border-bottom: 0.5px solid rgb(229, 229, 229);
+    margin-bottom: 12px;
+    margin-top:5px;
+    
+}
+.span_Class_NotVisible{ 
+    border-bottom: 0.5px solid rgb(255, 255, 255);
+    margin-bottom: 12px;
+    margin-top:5px;
+    
+}
+.widthLine{
+    width:100%;
+    
+}
+
+.widthLineRight{
+    width:100%;
+    margin-left:10px;
+    
+}
+
+.parent-Class{
+
+    margin: 1rem;
+    padding: 2rem 2rem;
+    text-align: center;
+}
+
+
+.span_Class_Right{ 
+    border-bottom: 0.5px solid rgb(229, 229, 229);
+    padding-bottom : 5px;
+    margin-bottom: 10px;  
+    display:inline-block; 
+    margin-top:5px;
+}
+
+
+.buttoncss{
+    margin-top: 50px;
+    margin-right: 20px;
+    margin-left: 20px;
+}

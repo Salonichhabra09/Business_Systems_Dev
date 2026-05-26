@@ -1,0 +1,83 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-24-2026
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<aura:component controller="recordtypeController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader" access="global">
+    
+    <aura:registerEvent name="ButtonEvent" type="c:ButtonClicked"/>
+    <aura:attribute name="sObjectName" type="String" />
+    <aura:attribute name="lstOfRecordType" type="String[]" />
+    <aura:attribute name="isOpen" type="boolean" default="false" />
+     <aura:attribute name="AccountRecord" type="Account"/>
+    <aura:attribute name="ContactRecord" type="Contact"/>
+    <aura:attribute name="recordLoadError" type="String"/>
+    <aura:attribute name="currentUserProfile" type="String"/>
+    <aura:attribute name="currentUserRole" type="String"/>
+     <aura:attribute name="recordId" type="id" access="global" description="Used to Hold the Id of record in Context"/>
+    <aura:attribute name="record" type="Object" access="global" description="To hold the object type variable" />
+    <aura:if isTrue="{!v.sObjectName == 'Account' }" > 
+    <force:recordData aura:id="recordLoader"
+    recordId="{!v.recordId}"
+    fields="CurrencyIsoCode,Territory__c,Territory__r.Name"
+    targetRecord="{!v.record}"
+    targetFields="{!v.AccountRecord}"
+    targetError="{!v.recordLoadError}"
+    recordUpdated="{!c.CheckAccountTerritory}"                  
+    />
+    </aura:if>
+    <aura:if isTrue="{!v.sObjectName == 'Contact' }" > 
+    <force:recordData aura:id="recordLoader"
+    recordId="{!v.recordId}"
+    fields="Account.CurrencyIsoCode,AccountId,Account.Territory__c,Account.Territory__r.Name"
+    targetRecord="{!v.record}"
+    targetFields="{!v.ContactRecord}"
+    targetError="{!v.recordLoadError}"
+    recordUpdated="{!c.CheckAccountTerritory}"                  
+    />
+    </aura:if>
+    <aura:if isTrue="{!v.sObjectName == 'Opportunity' }" > 
+    <force:recordData aura:id="recordLoader"
+    recordId="{!v.recordId}"
+    fields="Opportunity.Name"
+    targetRecord="{!v.record}"
+    targetFields="{!v.OpportunityRecord}"
+    targetError="{!v.recordLoadError}" 
+    recordUpdated="{!c.CheckAccountTerritory}"                
+    />
+    </aura:if>
+    
+
+        <aura:handler name="init" value="{!this}" action="{!c.fetchListOfRecordTypes}"/>
+        
+    
+   <!-- Model Box Start -->    
+    <aura:if isTrue="{!v.isOpen}">
+        <div class="source-center-slds" >
+        <div class="slds-p-around--x-large">
+        
+                             <div class="slds-align--absolute-center">Select a Record Type</div>                            
+                            <lightning:select aura:id="selectid">
+                                <aura:iteration items="{!v.lstOfRecordType}" var="opp">                            
+                                    <option text="{!opp}" label="{!opp}" value="{!opp.Id}" />
+                                </aura:iteration>
+                            </lightning:select>
+                        </div>
+                  <div style="text-align: right">
+                    <lightning:button class="slds-button slds-button--neutral" aura:id="Cancel" onclick="{!c.closeModal}">Cancel</lightning:button>
+                    <lightning:button class="slds-button slds-button--brand" aura:id="Next" onclick="{!c.createRecord}">Next</lightning:button>
+                </div> 
+                    </div>   
+          <aura:set attribute="else">
+           <!-- Show the territory error only for Account/Contact context, never for Opportunity list context -->
+          <h2 class="slds-text-heading_small slds-align_absolute-center">Error Message </h2>
+           <br></br>
+           <br></br>
+           <p class="slds-align_absolute-center"> <h3> <b style="color: red;">The Account Linked to this Opportunity needs a territory Assigned!
+Please contact sales ops and get assigned the territory to the account and try again.</b></h3></p>
+        </aura:set>
+    </aura:if>
+    
+</aura:component>

@@ -1,0 +1,3 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+	 <aura:handler  event="force:showToast" action="{! c.isRefreshedToast }" />
+</aura:component>

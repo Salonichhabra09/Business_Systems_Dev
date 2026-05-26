@@ -1,0 +1,22 @@
+.progress-bar{
+    background-color: limegreen;
+    width: var(--progressBarWidth, 1%);
+    position: relative;
+    z-index: 1;
+    bottom: 1.1rem;
+}
+.progress-bar-height{
+    height: 1.2rem;
+}
+.percentage{
+    position: relative;
+    margin-left:50%;
+    font-weight: bold;
+    z-index: 2;
+}
+.total-value{
+    margin-left: var(--totalValue, 1%); 
+}
+.completed-activities{
+    margin-left: var(--completedActivities, 1%);
+}

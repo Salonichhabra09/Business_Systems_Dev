@@ -1,0 +1,44 @@
+.THIS .slds-page-header {
+    border-bottom: none;
+    box-shadow: none;
+    border: none;
+}
+                    
+.THIS.customSize {
+    min-height: 100vh;
+    background: white;
+    border-bottom: var(--lwc-borderWidthThin,1px) solid var(--lwc-pageHeaderColorBorder,rgb(201, 201, 201));
+    border-radius: var(--lwc-pageHeaderBorderRadius,0.25rem);
+    background-clip: padding-box;
+    box-shadow: var(--lwc-pageHeaderShadow,0 2px 2px 0 rgba(0, 0, 0, 0.10));
+    border: var(--lwc-borderWidthThin,1px) solid var(--lwc-pageHeaderColorBorder,rgb(201, 201, 201));                     
+}
+.THIS .slds-table_bordered {
+    border-bottom: none; 
+}
+                            
+.THIS .slds-file-selector__dropzone .slds-file-selector__text{
+    display: none;
+}
+
+.THIS .slds-file-selector__dropzone .slds-file-selector__button{
+    font-size: 0;
+}
+                            
+.THIS .slds-file-selector__dropzone .slds-file-selector__button:after{
+    content: 'Import CSV';
+    font-size: .8125rem;
+    color: rgba(27, 82, 151, 1.0);
+}
+
+.THIS .slds-form-element__label {
+    display: none;                          
+}
+                            
+.THIS h2.slds-text-heading_small {
+    display: none;
+}
+                            
+.THIS .uiMessage {
+    text-align: center;
+}

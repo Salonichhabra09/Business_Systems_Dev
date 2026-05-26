@@ -1,0 +1,237 @@
+<template>
+    <template if:true={showSystemSelector}>
+        <c-form-System-Input onsystemselected={handleSystemSelected} job-number={jobNumber}
+            last-system-selected={lastSystemSelected} last-solution-selected={solutionSelected}
+            record-id={recordId}></c-form-System-Input>
+    </template>
+    <template if:false={showSystemSelector}>
+        <div style="background-color:#ccd1d2;">
+            <div class="slds-page-header slds-page-header_record-home">
+                <div class="slds-page-header__row">
+                    <div class="slds-page-header__col-title">
+                        <span class="slds-page-header__title slds-truncate">You are
+                            generating {systemSelected} form for Job <lightning-formatted-url value={recordUrl}
+                                label={jobNumber}></lightning-formatted-url></span>
+                        <div class="slds-media">
+                            <div class="slds-media__figure">
+                            </div>
+                            <div class="slds-media__body">
+                                <div class="slds-page-header__name">
+                                    <div class="slds-page-header__name-title">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-page-header__col-actions">
+                        <div class="slds-page-header__controls">
+                            <!--<div class="slds-page-header__control">
+                                <lightning-combobox name="progress" value={value} variant="label-hidden"
+                                    placeholder="Select Progress" options={options} onchange={handleChange}>
+                                </lightning-combobox>
+                            </div>-->
+                            <div class="slds-page-header__control">
+                                <ul class="slds-button-group-list">
+                                    <!--    <li>
+                                    <button class="slds-button slds-button_neutral"> Reset </button>
+                                </li> -->
+
+                                    <li>
+                                        <lightning-button-icon icon-name="action:back" alternative-text="Back"
+                                            title="Back" onclick={handleBack}></lightning-button-icon>
+                                    </li>
+                                    <li>
+                                        <lightning-button variant="success" label="Preview" icon-name="utility:preview"
+                                            icon-position="right" class="slds-m-left_x-small"
+                                            onclick={showPreviewFunction}></lightning-button>
+
+                                    </li>
+                                    <li>
+                                        <lightning-button if:true={showGenerateUrl} onclick={handleGenerateURL}
+                                            label="Generate & Send to Client" class="slds-m-left_x-small"
+                                            title="Generate & Send to Client">Generate & Send to
+                                            Client</lightning-button>
+                                    </li>
+                                    <li>
+                                        <lightning-button if:true={showNextButton} label="Next"
+                                            onclick={handleCandidateComponent}
+                                            class="slds-m-left_x-small"></lightning-button>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <template if:true={showCandidateFields}>
+                <c-drag-candidate record-id={recordId} account-id={accountId} onsubmit={getCandidateValue}
+                    ondelete={getDeletetedValue} candidate-existing-fields={candidateFieldsList}
+                    system-used={systemSelected} last-system-used={lastSystemSelected}
+                    system-value-changed={systemValueChanged} ondisconnect={getUpdatedValuesCandidate}
+                    candidate-updated-values={candidateUpdatedValues} ondropevent={getDropEventFromCandidate}
+                    oninstruction={getCandidateInstruction}></c-drag-candidate>
+            </template>
+            <template if:true={showFormCreation}>
+                <lightning-layout multiple-rows>
+                    <lightning-layout-item size="4" padding="around-small" class="split left">
+                        <lightning-card variant="Narrow">
+                            <lightning-layout multiple-rows>
+                                <lightning-layout-item size="6" padding="around-small">
+                                    <div class="slds-p-bottom_medium" draggable="true" data-item="text"
+                                        ondragstart={handleDragText} onmouseover={changeCusrsor}>
+                                        <lightning-icon icon-name="utility:text" size="small"> </lightning-icon>
+                                        <b> Text </b>
+                                    </div>
+                                    <div class="slds-p-bottom_medium" draggable="true" data-item="Number"
+                                        ondragstart={handleDragText} onmouseover={changeCusrsor}>
+                                        <lightning-icon icon-name="utility:number_input" size="small"> </lightning-icon>
+                                        <b> Number </b>
+                                    </div>
+                                    <div class="slds-p-bottom_medium" draggable="true" data-item="dropdown"
+                                        ondragstart={handleDragText} onmouseover={changeCusrsor}>
+                                        <lightning-icon icon-name="utility:picklist" size="small"> </lightning-icon>
+                                        <b> DropDown </b>
+                                    </div>
+                                    <div class="slds-p-bottom_medium" draggable="true" data-item="checkbox"
+                                        ondragstart={handleDragText} onmouseover={changeCusrsor}>
+                                        <lightning-icon icon-name="utility:check" size="small"> </lightning-icon>
+                                        <b> Checkbox </b>
+                                    </div>
+                                    <!-- <div class="slds-p-bottom_medium" draggable="true" data-item="password"
+                                ondragstart={handleDragText}>
+                                <lightning-icon icon-name="utility:password" size="small"> </lightning-icon>
+                                <b> Password  </b>
+                            </div> -->
+                                    <div class="slds-p-bottom_medium" draggable="true" data-item="radiogroup"
+                                        ondragstart={handleDragText} onmouseover={changeCusrsor}>
+                                        <lightning-icon icon-name="utility:date_time" size="small">
+                                        </lightning-icon>
+                                        <b> Radiogroup </b>
+
+                                    </div>
+                                    <div class="slds-p-bottom_medium" draggable="true" data-item="section"
+                                        ondragstart={handleDragText} onmouseover={changeCusrsor}>
+                                        <lightning-icon icon-name="utility:section" size="small">
+                                        </lightning-icon>
+                                        <b> Section </b>
+                                    </div>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="6" padding="around-small">
+                                    <div class="slds-p-bottom_medium" draggable="true" data-item="email"
+                                        ondragstart={handleDragText} onmouseover={changeCusrsor}>
+                                        <lightning-icon icon-name="utility:email" size="small"></lightning-icon>
+                                        <b> Email </b>
+                                    </div>
+                                    <div class="slds-p-bottom_medium" draggable="true" data-item="date"
+                                        ondragstart={handleDragText} onmouseover={changeCusrsor}>
+                                        <lightning-icon icon-name="utility:event" size="small"> </lightning-icon>
+                                        <b> Date </b>
+                                    </div>
+                                    <div class="slds-p-bottom_medium" draggable="true" data-item="time"
+                                        ondragstart={handleDragText} onmouseover={changeCusrsor}>
+                                        <lightning-icon icon-name="utility:clock" size="small"> </lightning-icon>
+                                        <b> Time </b>
+                                    </div>
+                                    <div class="slds-p-bottom_medium" draggable="true" data-item="checkboxgroup"
+                                        ondragstart={handleDragText} onmouseover={changeCusrsor}>
+                                        <lightning-icon icon-name="utility:link" size="small"> </lightning-icon>
+                                        <b> Checkbox Group </b>
+                                    </div>
+                                    <div class="slds-p-bottom_medium" draggable="true" data-item="Textarea"
+                                        ondragstart={handleDragText} onmouseover={changeCusrsor}>
+                                        <lightning-icon icon-name="utility:textarea" size="small">
+                                        </lightning-icon>
+                                        <b> Textarea </b>
+                                    </div>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </lightning-card>
+                        <lightning-card>
+                            <lightning-input type='text' label='WRF Client Name' data-name="clientName"
+                                placeholder="Enter Client Name" onchange={handleClientName} value={wrfClientName}
+                                required=true style="padding: 10px;">
+                            </lightning-input>
+                        </lightning-card>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="7" padding="around-small" class="split right">
+                        <lightning-layout>
+                            <lightning-layout-item size="8">
+                                <c-drop-Cmp-Lwc lwc:if={childVisible} onsubmit={getAllValue}
+                                    ondisconnect={getUpdatedValues} colamsize={value} existingvalues={ExistingFields}
+                                    updatedvalues={updatedValues} system-value-changed={systemValueChanged}
+                                    index-val={indexToStart} onremove={handleRemove}></c-drop-Cmp-Lwc>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="4" style="padding-left: 22px;">
+                                <lightning-card title="Standard Instruction">
+                                    <lightning-input-rich-text name="TextUnderLogo" label="Text Under Logo"
+                                        placeholder="Type Standard Instruction" onchange={handleTextUnderLogo}
+                                        value={textUnderLogo}></lightning-input-rich-text>
+                                </lightning-card>
+                                <br>
+                                <lightning-card title="Company Logo">
+                                    <h2 style="color: red;padding-left: 11px;">Caution: Changing this logo will reflect
+                                        on all running WRFs for this Account that Clients might already be accessing.
+                                    </h2>
+                                    <c-image-uploader record-id={accountId}></c-image-uploader>
+                                </lightning-card>
+                            </lightning-layout-item>
+                        </lightning-layout>
+
+
+                    </lightning-layout-item>
+                    <!-- <lightning-layout-item size="4" padding="around-small">
+                        <lightning-card>
+                            <c-image-uploader record-id={accountId}></c-image-uploader>
+                            <lightning-input-rich-text name="TextUnderLogo" label="Text Under Logo"
+                                placeholder="type here..." onchange={handleTextUnderLogo}></lightning-input-rich-text>
+                        </lightning-card>
+                    </lightning-layout-item> -->
+                </lightning-layout>
+            </template>
+            <template lwc:if={showPreview}>
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                    aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+
+                        <!--Header part of the Modal-->
+                        <header class="slds-modal__header">
+                            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                title="Close" onclick={hideModal}>
+                                <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                                    size="small" onclick={cancelPreview}></lightning-icon>
+                                <span class="slds-assistive-text">Close</span>
+                            </button>
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Work Request Form
+                                - Preview</h2>
+                        </header>
+                        <!--Header part of the Modal Ends-->
+
+                        <!--Body part of the Modal-->
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                            <c-preview-Form allvalue={allvalue} account-id={accountId}
+                                text-under-logo={textUnderLogo}></c-preview-Form>
+                            <template lwc:if={showGenerateUrl}>
+                                <div class="slds-p-top_medium container">
+                                    <hr class="solid">
+                                    <c-candidate-template-preview
+                                        candidate-existing-fields={candidateFieldsList}></c-candidate-template-preview>
+                                </div>
+                            </template>
+                        </div>
+                        <!--Body part of the Modal ends-->
+
+                        <!--Footer part of the Modal-->
+                        <footer class="slds-modal__footer">
+                            <button class="slds-button slds-button_neutral" onclick={cancelPreview}
+                                title="Close">Close</button>
+
+                        </footer>
+                        <!--Footer part of the Modal-->
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </template>
+        </div>
+    </template>
+</template>

@@ -1,0 +1,20 @@
+<apex:page controller="NVM_PaymentController2" showHeader="false" sidebar="false" action="{!PaymentStatus}"> <!-- action="{!PaymentStatus}" -->
+  <apex:form >
+    <apex:actionPoller action="{!PaymentStatus}" rendered="{!flag}" interval="20"/>
+  </apex:form>
+<body>
+<iframe name="paymentframe" id="theFrame" style="width:100%;position:fixed;left:0;top:0;height:100%;"></iframe> 
+     <form action="{!Iframe_URL}" target="paymentframe" id="initForm" method="POST" >
+           <input name="X-BEARER-TOKEN" value="{!agent_AccessToken}" type="hidden"/>
+           <input name="X-REFRESH-TOKEN" value="{!agent_RefreshToken}" type="hidden"/>
+          
+     </form>
+  
+ <script>
+  document.getElementById("initForm").submit();  
+</script>
+</body> 
+<!--<apex:commandButton action="{!PaymentStatus}" value="Finish" id="theButton"/>
+ <input type="button" value="FINISH"/>
+</apex:form> -->
+</apex:page>

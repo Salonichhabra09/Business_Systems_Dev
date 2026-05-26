@@ -1,0 +1,135 @@
+<template>
+    <template lwc:if={isComponentVisible}>
+        <lightning-card title="Contact Relationship Map" icon-name="standard:hierarchy">
+            <template lwc:if={isShowSpinner}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </template>
+            <lightning-button variant="neutral" onclick={handleCreateHierarchyPopupOpen} label="Create"
+                slot="actions"></lightning-button>
+
+            <div lwc:if={hasNoContactHierarchy} class="slds-p-horizontal_small slds-p-bottom_medium">
+                No Contact Relationship Map exists for this Account. Please click on create to add.
+            </div>
+            <div lwc:else class="slds-p-horizontal_small slds-p-vertical_medium auto-height">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped map-table">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th class="table-column slds-cell-wrap" scope="col">
+                                <div class="slds-wrap">Name</div>
+                            </th>
+                            <th class="table-column slds-cell-wrap" scope="col">
+                                <div class="slds-wrap">Last Modified By</div>
+                            </th>
+                            <th class="table-column slds-cell-wrap" scope="col">
+                                <div class="slds-wrap">Last Modified Date</div>
+                            </th>
+                            <th class="table-column slds-cell-wrap blank-column" scope="col">
+                                <div class="slds-wrap"></div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={existingHierarchyList} for:item="item">
+                            <tr key={item.Id}>
+                                <td>
+                                    <div class="slds-cell-wrap">
+                                        <h1>
+                                            <lightning-layout>
+                                                <lightning-layout-item size="9">
+                                                    <a onclick={handleManageHierarchy} accesskey={item.Id}
+                                                        data-name={item.Hierarchy_Name__c}>{item.Hierarchy_Name__c}</a>
+                                                </lightning-layout-item>
+                                                <lightning-layout-item size="3">
+                                                    <lightning-button-icon class="slds-m-left_x-small"
+                                                        icon-name="utility:edit" variant="bare" accesskey={item.Id}
+                                                        data-name={item.Hierarchy_Name__c} title="Edit Name"
+                                                        size="small"
+                                                        onclick={handleRenameHierarchy}></lightning-button-icon>
+                                                </lightning-layout-item>
+                                            </lightning-layout>
+                                        </h1>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="slds-cell-wrap">
+                                        <h1>{item.LastModifiedBy.FirstName} {item.LastModifiedBy.LastName}</h1>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="slds-cell-wrap">
+                                        <h1>{item.formattedDate}</h1>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="">
+                                        <!-- <lightning-button-icon icon-name="utility:edit_form" variant="bare"
+                                            onclick={handleManageHierarchy} accesskey={item.Id}
+                                            data-name={item.Hierarchy_Name__c} title="Manage"
+                                            size="large"></lightning-button-icon> -->
+                                        <lightning-button-icon icon-name="utility:delete" variant="bare"
+                                            onclick={handleDeleteHierarchy} accesskey={item.Id} title="Delete"
+                                            size="large" lwc:if={isDeleteVisible}
+                                            class="slds-m-left_small"></lightning-button-icon>
+                                    </div>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </lightning-card>
+    </template>
+    <div lwc:if={isOpenPopup}>
+        <section role="dialog" tabindex="-1" aria-labelledby="contact-edit-modal" aria-modal="true"
+            aria-describedby="contact-edit-modal" class="slds-modal slds-fade-in-open custom-alignment">
+            <div class="slds-modal__container slds-is-relative">
+
+                <!-- Modal/Popup Box LWC header here -->
+                <div class="slds-is-relative custom-width">
+                    <template lwc:if={isShowSpinner}>
+                        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                    </template>
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close" onclick={handleCreateHierarchyPopupClose}>
+                            <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                                size="small"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h3 id="modal-heading-06" class="slds-text-heading_medium slds-hyphenate">{headerTitle}</h3>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-4">
+                        <div lwc:if={isDeleteRecord}>
+                            <p class="delete-message slds-align_absolute-center">Are you sure you want to delete the
+                                current relationship map?</p>
+                        </div>
+                        <div lwc:else>
+                            <div class="slds-m-bottom_small">
+                                <p>Enter a name for the Relationship Map
+                                    <lightning-helptext class="slds-m-left_xx-small slds-p-top_xx-small"
+                                        content="Please assign a relevant name with a minimum length of 2 characters."></lightning-helptext>
+                                </p>
+                            </div>
+
+                            <lightning-input type="Text" variant="label-hidden" value={hierarchyName}
+                                onchange={handleChangeOfHierarchyName}>
+                            </lightning-input>
+                        </div>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral" onclick={handleCreateHierarchyPopupClose}
+                            type="Cancel" title="Cancel">Cancel</button>
+                        <button lwc:if={isDeleteRecord} class="slds-button slds-button_brand"
+                            onclick={handleDeleteOnHierarchy} type="submit" title="Delete">Delete</button>
+                        <button lwc:elseif={isRenameRecord} class="slds-button slds-button_brand"
+                            onclick={handleRenameOnHierarchy} type="submit" title="Rename"
+                            disabled={isSubmitDisabled}>Rename</button>
+                        <button lwc:else class="slds-button slds-button_brand" onclick={handleCreateHierachy}
+                            type="submit" title="Create" disabled={isSubmitDisabled}>Create</button>
+                    </footer>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+</template>

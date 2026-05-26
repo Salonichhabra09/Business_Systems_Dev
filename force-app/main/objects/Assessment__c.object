@@ -1,0 +1,1900 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Assessment_Compact_Layout</fullName>
+        <fields>Project_Number__c</fields>
+        <fields>Category__c</fields>
+        <fields>Name</fields>
+        <fields>BU__c</fields>
+        <fields>Assessment_Date__c</fields>
+        <fields>Status__c</fields>
+        <label>Assessment Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Area to keep list of all course types, codes, costs and venues</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Account Manager</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>Account_Manager</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Assessments (Account)</relationshipLabel>
+        <relationshipName>Assessments</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Assessment_Date__c</fullName>
+        <label>Assessment Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>BU__c</fullName>
+        <description>Business Unit which the assessment relates to</description>
+        <inlineHelpText>Where the assessment is run</inlineHelpText>
+        <label>Assessment Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Australia</fullName>
+                    <default>false</default>
+                    <label>Australia</label>
+                </value>
+                <value>
+                    <fullName>Austria</fullName>
+                    <default>false</default>
+                    <label>Austria</label>
+                </value>
+                <value>
+                    <fullName>Belgium</fullName>
+                    <default>false</default>
+                    <label>Belgium</label>
+                </value>
+                <value>
+                    <fullName>Canada</fullName>
+                    <default>false</default>
+                    <label>Canada</label>
+                </value>
+                <value>
+                    <fullName>China</fullName>
+                    <default>false</default>
+                    <label>China</label>
+                </value>
+                <value>
+                    <fullName>Czech Republic</fullName>
+                    <default>false</default>
+                    <label>Czech Republic</label>
+                </value>
+                <value>
+                    <fullName>Denmark</fullName>
+                    <default>false</default>
+                    <label>Denmark</label>
+                </value>
+                <value>
+                    <fullName>Egypt</fullName>
+                    <default>false</default>
+                    <label>Egypt</label>
+                </value>
+                <value>
+                    <fullName>Finland</fullName>
+                    <default>false</default>
+                    <label>Finland</label>
+                </value>
+                <value>
+                    <fullName>France</fullName>
+                    <default>false</default>
+                    <label>France</label>
+                </value>
+                <value>
+                    <fullName>Georgia</fullName>
+                    <default>false</default>
+                    <label>Georgia</label>
+                </value>
+                <value>
+                    <fullName>Germany</fullName>
+                    <default>false</default>
+                    <label>Germany</label>
+                </value>
+                <value>
+                    <fullName>Hong Kong</fullName>
+                    <default>false</default>
+                    <label>Hong Kong</label>
+                </value>
+                <value>
+                    <fullName>India</fullName>
+                    <default>false</default>
+                    <label>India</label>
+                </value>
+                <value>
+                    <fullName>Ireland</fullName>
+                    <default>false</default>
+                    <label>Ireland</label>
+                </value>
+                <value>
+                    <fullName>Italy</fullName>
+                    <default>false</default>
+                    <label>Italy</label>
+                </value>
+                <value>
+                    <fullName>Luxembourg</fullName>
+                    <default>false</default>
+                    <label>Luxembourg</label>
+                </value>
+                <value>
+                    <fullName>Malaysia</fullName>
+                    <default>false</default>
+                    <label>Malaysia</label>
+                </value>
+                <value>
+                    <fullName>Netherlands</fullName>
+                    <default>false</default>
+                    <label>Netherlands</label>
+                </value>
+                <value>
+                    <fullName>New Zealand</fullName>
+                    <default>false</default>
+                    <label>New Zealand</label>
+                </value>
+                <value>
+                    <fullName>Nigeria</fullName>
+                    <default>false</default>
+                    <label>Nigeria</label>
+                </value>
+                <value>
+                    <fullName>Norway</fullName>
+                    <default>false</default>
+                    <label>Norway</label>
+                </value>
+                <value>
+                    <fullName>Oman</fullName>
+                    <default>false</default>
+                    <label>Oman</label>
+                </value>
+                <value>
+                    <fullName>Poland</fullName>
+                    <default>false</default>
+                    <label>Poland</label>
+                </value>
+                <value>
+                    <fullName>Qatar</fullName>
+                    <default>false</default>
+                    <label>Qatar</label>
+                </value>
+                <value>
+                    <fullName>Saudi Arabia</fullName>
+                    <default>false</default>
+                    <label>Saudi Arabia</label>
+                </value>
+                <value>
+                    <fullName>Singapore</fullName>
+                    <default>false</default>
+                    <label>Singapore</label>
+                </value>
+                <value>
+                    <fullName>South Africa</fullName>
+                    <default>false</default>
+                    <label>South Africa</label>
+                </value>
+                <value>
+                    <fullName>Spain</fullName>
+                    <default>false</default>
+                    <label>Spain</label>
+                </value>
+                <value>
+                    <fullName>Sweden</fullName>
+                    <default>false</default>
+                    <label>Sweden</label>
+                </value>
+                <value>
+                    <fullName>Switzerland</fullName>
+                    <default>false</default>
+                    <label>Switzerland</label>
+                </value>
+                <value>
+                    <fullName>Thailand</fullName>
+                    <default>false</default>
+                    <label>Thailand</label>
+                </value>
+                <value>
+                    <fullName>UK</fullName>
+                    <default>false</default>
+                    <label>UK</label>
+                </value>
+                <value>
+                    <fullName>United Arab Emirates</fullName>
+                    <default>false</default>
+                    <label>United Arab Emirates</label>
+                </value>
+                <value>
+                    <fullName>US</fullName>
+                    <default>false</default>
+                    <label>US</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Billing_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <inlineHelpText>Billing contact for Sun order</inlineHelpText>
+        <label>Billing Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Assessment (In Company Billing Contact)</relationshipLabel>
+        <relationshipName>Assessment_BillingContact</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Booker_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Booker Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Assessments (Booker Contact)</relationshipLabel>
+        <relationshipName>Assessments</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Candidate_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Candidate Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Candidate_Permission_Report__c</fullName>
+        <label>Candidate Permission Report</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Candidate_Phone_Number__c</fullName>
+        <label>Candidate Phone Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <description>Assessment category to identify group,individual, internal or partner.</description>
+        <label>Assessment Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Group T&amp;E</fullName>
+                    <default>false</default>
+                    <label>Group T&amp;E</label>
+                </value>
+                <value>
+                    <fullName>Group A&amp;B</fullName>
+                    <default>false</default>
+                    <label>Group A&amp;B</label>
+                </value>
+                <value>
+                    <fullName>Individual</fullName>
+                    <default>false</default>
+                    <label>Individual</label>
+                </value>
+                <value>
+                    <fullName>Internal</fullName>
+                    <default>false</default>
+                    <label>Internal</label>
+                </value>
+                <value>
+                    <fullName>Partner</fullName>
+                    <default>false</default>
+                    <label>Partner</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Consultant__c</fullName>
+        <label>Consultant</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Course_Free_Spaces__c</fullName>
+        <description>Calculated field to get the free/available spaces for a Course.</description>
+        <externalId>false</externalId>
+        <formula>Maximum_Delegates__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Free Spaces</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Credit_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit Amount</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Credit_Date__c</fullName>
+        <label>Credit Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Credit_Note_Notes__c</fullName>
+        <inlineHelpText>For SSC use</inlineHelpText>
+        <label>Credit Note Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Credit_Reason__c</fullName>
+        <label>Credit Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>S04 - Client Order Error</fullName>
+                    <default>false</default>
+                    <label>S04 - Client Order Error</label>
+                </value>
+                <value>
+                    <fullName>S05 - Operator Error</fullName>
+                    <default>false</default>
+                    <label>S05 - Operator Error</label>
+                </value>
+                <value>
+                    <fullName>S07 - Client Cancelled Assessment</fullName>
+                    <default>false</default>
+                    <label>S07 - Client Cancelled Assessment</label>
+                </value>
+                <value>
+                    <fullName>S08 - SPS Cancelled Assessment</fullName>
+                    <default>false</default>
+                    <label>S08 - SPS Cancelled Assessment</label>
+                </value>
+                <value>
+                    <fullName>S09 - Goodwill Gesture</fullName>
+                    <default>false</default>
+                    <label>S09 - Goodwill Gesture</label>
+                </value>
+                <value>
+                    <fullName>S11 - System Error</fullName>
+                    <default>false</default>
+                    <label>S11 - System Error</label>
+                </value>
+                <value>
+                    <fullName>S07 - Client Cancelled Training</fullName>
+                    <default>false</default>
+                    <label>S07 - Client Cancelled Training</label>
+                </value>
+                <value>
+                    <fullName>S08 - SHL Cancelled Course</fullName>
+                    <default>false</default>
+                    <label>S08 - SHL Cancelled Course</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Credit_Status__c</fullName>
+        <label>Credit Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Ready to be credited</fullName>
+                    <default>false</default>
+                    <label>Ready to be credited</label>
+                </value>
+                <value>
+                    <fullName>Queried</fullName>
+                    <default>false</default>
+                    <label>Queried</label>
+                </value>
+                <value>
+                    <fullName>Complete</fullName>
+                    <default>false</default>
+                    <label>Complete</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Credit_Text_Description__c</fullName>
+        <label>Credit Text Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Currency_to_Invoice__c</fullName>
+        <label>Currency to Invoice</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AUD</fullName>
+                    <default>false</default>
+                    <label>AUD</label>
+                </value>
+                <value>
+                    <fullName>CAD</fullName>
+                    <default>false</default>
+                    <label>CAD</label>
+                </value>
+                <value>
+                    <fullName>CHF</fullName>
+                    <default>false</default>
+                    <label>CHF</label>
+                </value>
+                <value>
+                    <fullName>DKK</fullName>
+                    <default>false</default>
+                    <label>DKK</label>
+                </value>
+                <value>
+                    <fullName>EUR</fullName>
+                    <default>false</default>
+                    <label>EUR</label>
+                </value>
+                <value>
+                    <fullName>GBP</fullName>
+                    <default>false</default>
+                    <label>GBP</label>
+                </value>
+                <value>
+                    <fullName>HKD</fullName>
+                    <default>false</default>
+                    <label>HKD</label>
+                </value>
+                <value>
+                    <fullName>INR</fullName>
+                    <default>false</default>
+                    <label>INR</label>
+                </value>
+                <value>
+                    <fullName>NOK</fullName>
+                    <default>false</default>
+                    <label>NOK</label>
+                </value>
+                <value>
+                    <fullName>NZD</fullName>
+                    <default>false</default>
+                    <label>NZD</label>
+                </value>
+                <value>
+                    <fullName>SEK</fullName>
+                    <default>false</default>
+                    <label>SEK</label>
+                </value>
+                <value>
+                    <fullName>SGD</fullName>
+                    <default>false</default>
+                    <label>SGD</label>
+                </value>
+                <value>
+                    <fullName>USD</fullName>
+                    <default>false</default>
+                    <label>USD</label>
+                </value>
+                <value>
+                    <fullName>ZAR</fullName>
+                    <default>false</default>
+                    <label>ZAR</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Customer_Order_Ref__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Order Ref</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>D_No__c</fullName>
+        <externalId>false</externalId>
+        <formula>Partner_Account_Name__r.Account_Number__c</formula>
+        <label>D-No</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>D_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>D Number</label>
+        <length>8</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Expenses_Invoiced__c</fullName>
+        <label>Date Expenses Invoiced</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Delivery_Mode__c</fullName>
+        <label>Delivery Mode</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Face to Face</fullName>
+                    <default>false</default>
+                    <label>Face to Face</label>
+                </value>
+                <value>
+                    <fullName>Online</fullName>
+                    <default>false</default>
+                    <label>Online</label>
+                </value>
+                <value>
+                    <fullName>Blended</fullName>
+                    <default>false</default>
+                    <label>Blended</label>
+                </value>
+                <value>
+                    <fullName>Webinar</fullName>
+                    <default>false</default>
+                    <label>Webinar</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Department_Code__c</fullName>
+        <label>Department Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DLYZZUT - Delivery Assessment Utrecht</fullName>
+                    <default>true</default>
+                    <label>DLYZZUT - Delivery Assessment Utrecht</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Assessment Description</description>
+        <externalId>false</externalId>
+        <label>Position Assessed For</label>
+        <length>50</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Duration__c</fullName>
+        <description>To replace duration formula field renamed to Old</description>
+        <externalId>false</externalId>
+        <label>Duration</label>
+        <length>4</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Expense_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Expense value for incompany courses - note this is in the currency of the course</inlineHelpText>
+        <label>Expense Amount</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expense_Credit_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Expense Credit Amount</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expense_Credit_Date__c</fullName>
+        <label>Expense Credit Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Expense_Credit_Notes__c</fullName>
+        <description>For SSC use</description>
+        <label>Expense Credit Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Expense_Credit_Reason__c</fullName>
+        <label>Expense Credit Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>S04 - Client Order Error</fullName>
+                    <default>false</default>
+                    <label>S04 - Client Order Error</label>
+                </value>
+                <value>
+                    <fullName>S05 - Operator Error</fullName>
+                    <default>false</default>
+                    <label>S05 - Operator Error</label>
+                </value>
+                <value>
+                    <fullName>S07 - Client Cancelled Training</fullName>
+                    <default>false</default>
+                    <label>S07 - Client Cancelled Training</label>
+                </value>
+                <value>
+                    <fullName>S08 - SHL Cancelled Course</fullName>
+                    <default>false</default>
+                    <label>S08 - SHL Cancelled Course</label>
+                </value>
+                <value>
+                    <fullName>S09 - Goodwill Gesture</fullName>
+                    <default>false</default>
+                    <label>S09 - Goodwill Gesture</label>
+                </value>
+                <value>
+                    <fullName>S11 - System Error</fullName>
+                    <default>false</default>
+                    <label>S11 - System Error</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Expense_Credit_Status__c</fullName>
+        <label>Expense Credit Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Ready to be credited</fullName>
+                    <default>false</default>
+                    <label>Ready to be credited</label>
+                </value>
+                <value>
+                    <fullName>Queried</fullName>
+                    <default>false</default>
+                    <label>Queried</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Expense_Credit_Text_Description__c</fullName>
+        <label>Expense Credit Text Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Expense_Invoice_Date__c</fullName>
+        <label>Expense Invoice Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Expense_Invoice_Notes__c</fullName>
+        <inlineHelpText>For SSC use</inlineHelpText>
+        <label>Expense Invoice Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Expense_Invoice_Status__c</fullName>
+        <label>Expense Invoice Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Ready to be invoiced</fullName>
+                    <default>false</default>
+                    <label>Ready to be invoiced</label>
+                </value>
+                <value>
+                    <fullName>Queried</fullName>
+                    <default>false</default>
+                    <label>Queried</label>
+                </value>
+                <value>
+                    <fullName>Competed</fullName>
+                    <default>false</default>
+                    <label>Competed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Expense_Invoice_Text_Description__c</fullName>
+        <label>Expense Invoice Text Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Expense_Item_Master_Lookup__c</fullName>
+        <label>Expense Credit IM code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Test</fullName>
+                    <default>false</default>
+                    <label>Test</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Expense_SUN_Credit_Note_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Expense SUN Credit Note Number</label>
+        <length>13</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expense_SUN_Order_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Expense SUN Order Number</label>
+        <length>11</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inco_Expense_IM_Code__c</fullName>
+        <defaultValue>&quot;DEB&quot;</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>This code should always be the same so is for information only</inlineHelpText>
+        <label>Expense Item Master Lookup</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Date__c</fullName>
+        <label>Invoice Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Language__c</fullName>
+        <label>Invoice Language</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>English</fullName>
+                    <default>true</default>
+                    <label>English</label>
+                </value>
+                <value>
+                    <fullName>French</fullName>
+                    <default>false</default>
+                    <label>French</label>
+                </value>
+                <value>
+                    <fullName>Swiss</fullName>
+                    <default>false</default>
+                    <label>Swiss</label>
+                </value>
+                <value>
+                    <fullName>German</fullName>
+                    <default>false</default>
+                    <label>German</label>
+                </value>
+                <value>
+                    <fullName>Dutch</fullName>
+                    <default>false</default>
+                    <label>Dutch</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Invoice_Notes__c</fullName>
+        <inlineHelpText>For SSC use</inlineHelpText>
+        <label>Invoice Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Status__c</fullName>
+        <label>Ass Invoice Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Ready to be invoiced</fullName>
+                    <default>false</default>
+                    <label>Ready to be invoiced</label>
+                </value>
+                <value>
+                    <fullName>Queried</fullName>
+                    <default>false</default>
+                    <label>Queried</label>
+                </value>
+                <value>
+                    <fullName>Complete</fullName>
+                    <default>false</default>
+                    <label>Complete</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Invoice_Text_Description__c</fullName>
+        <label>Invoice Text Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Item_Master_Lookup__c</fullName>
+        <inlineHelpText>Sun Item Master code lookup for SOE</inlineHelpText>
+        <label>Item Master Lookup</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Profit_Centre__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1:1 Delivery</fullName>
+                    <default>true</default>
+                    <label>1:1 Delivery</label>
+                </value>
+                <value>
+                    <fullName>Grp-Assess-Dlvy</fullName>
+                    <default>false</default>
+                    <label>Grp-Assess-Dlvy</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Netherlands - NL5</controllingFieldValue>
+                <valueName>1:1 Delivery</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Netherlands - NL5</controllingFieldValue>
+                <valueName>Grp-Assess-Dlvy</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Lead_Source__c</fullName>
+        <description>Lead source for Sun SOE data entry</description>
+        <label>Lead Source</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>L01 - Advertisement</fullName>
+                    <default>false</default>
+                    <label>L01 - Advertisement</label>
+                </value>
+                <value>
+                    <fullName>L02 - News story / article</fullName>
+                    <default>false</default>
+                    <label>L02 - News story / article</label>
+                </value>
+                <value>
+                    <fullName>L03 - SHL newsletter</fullName>
+                    <default>false</default>
+                    <label>L03 - SHL newsletter</label>
+                </value>
+                <value>
+                    <fullName>L04 - Promotional campaign email</fullName>
+                    <default>false</default>
+                    <label>L04 - Promotional campaign email</label>
+                </value>
+                <value>
+                    <fullName>L05 - Promotional campaign direct mail</fullName>
+                    <default>false</default>
+                    <label>L05 - Promotional campaign direct mail</label>
+                </value>
+                <value>
+                    <fullName>L06 - Promotional campaign call</fullName>
+                    <default>false</default>
+                    <label>L06 - Promotional campaign call</label>
+                </value>
+                <value>
+                    <fullName>L07 - SHL Sales / Account Manager / Consultant discussion</fullName>
+                    <default>false</default>
+                    <label>L07 - SHL Sales / Account Manager / Consultant discussion</label>
+                </value>
+                <value>
+                    <fullName>L08 - SHL Duty Consultant</fullName>
+                    <default>false</default>
+                    <label>L08 - SHL Duty Consultant</label>
+                </value>
+                <value>
+                    <fullName>L09 - SHL Partner</fullName>
+                    <default>false</default>
+                    <label>L09 - SHL Partner</label>
+                </value>
+                <value>
+                    <fullName>L10 - SHL website promotion</fullName>
+                    <default>false</default>
+                    <label>L10 - SHL website promotion</label>
+                </value>
+                <value>
+                    <fullName>L11 - Other (non-SHL) website promotion</fullName>
+                    <default>false</default>
+                    <label>L11 - Other (non-SHL) website promotion</label>
+                </value>
+                <value>
+                    <fullName>L12 - Reputation / referral</fullName>
+                    <default>false</default>
+                    <label>L12 - Reputation / referral</label>
+                </value>
+                <value>
+                    <fullName>L13 - Conference / seminar attendance</fullName>
+                    <default>false</default>
+                    <label>L13 - Conference / seminar attendance</label>
+                </value>
+                <value>
+                    <fullName>L14 - SHL training course attendance</fullName>
+                    <default>false</default>
+                    <label>L14 - SHL training course attendance</label>
+                </value>
+                <value>
+                    <fullName>L15 - Exhibition / trade show attendance</fullName>
+                    <default>false</default>
+                    <label>L15 - Exhibition / trade show attendance</label>
+                </value>
+                <value>
+                    <fullName>LZZ - No specified source (eg. simple repeat order)</fullName>
+                    <default>false</default>
+                    <label>LZZ - No specified source (eg. simple repeat order)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Maximum_Delegates__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This can be a maximum of 2 digits</inlineHelpText>
+        <label>Max Delegates</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <description>Full name of the Assessment</description>
+        <externalId>false</externalId>
+        <label>Assessment Candidate</label>
+        <length>50</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Assessments</relationshipLabel>
+        <relationshipName>Assessments</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Other_Consulting_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Group Other Consulting Price</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PO_Details__c</fullName>
+        <label>PO Details</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Partner_Account_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to account for incompany or partner course</description>
+        <inlineHelpText>Use this to record the account for Partner and In company courses</inlineHelpText>
+        <label>Billing Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Courses</relationshipLabel>
+        <relationshipName>Assessment</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Country__c</fullName>
+        <label>Partner Location</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Middle East</fullName>
+                    <default>false</default>
+                    <label>Middle East</label>
+                </value>
+                <value>
+                    <fullName>Europe</fullName>
+                    <default>false</default>
+                    <label>Europe</label>
+                </value>
+                <value>
+                    <fullName>London</fullName>
+                    <default>false</default>
+                    <label>London</label>
+                </value>
+                <value>
+                    <fullName>Jamaica</fullName>
+                    <default>false</default>
+                    <label>Jamaica</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Pass_Status__c</fullName>
+        <label>Pass Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Positive</fullName>
+                    <default>false</default>
+                    <label>Positive</label>
+                </value>
+                <value>
+                    <fullName>Negative</fullName>
+                    <default>false</default>
+                    <label>Negative</label>
+                </value>
+                <value>
+                    <fullName>Conditional</fullName>
+                    <default>false</default>
+                    <label>Conditional</label>
+                </value>
+                <value>
+                    <fullName>Development</fullName>
+                    <default>false</default>
+                    <label>Development</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Group Assessment Price</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Profit_Centre__c</fullName>
+        <inlineHelpText>Where the revenue is recognised</inlineHelpText>
+        <label>Profit Centre</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Belgium - BE5</fullName>
+                    <default>false</default>
+                    <label>Belgium - BE5</label>
+                </value>
+                <value>
+                    <fullName>Denmark - DK5</fullName>
+                    <default>false</default>
+                    <label>Denmark - DK5</label>
+                </value>
+                <value>
+                    <fullName>France - FR5</fullName>
+                    <default>false</default>
+                    <label>France - FR5</label>
+                </value>
+                <value>
+                    <fullName>Netherlands - NL5</fullName>
+                    <default>true</default>
+                    <label>Netherlands - NL5</label>
+                </value>
+                <value>
+                    <fullName>Germany - DE5</fullName>
+                    <default>false</default>
+                    <label>Germany - DE5</label>
+                </value>
+                <value>
+                    <fullName>Sweden - SE1</fullName>
+                    <default>false</default>
+                    <label>Sweden - SE1</label>
+                </value>
+                <value>
+                    <fullName>UK - UK1</fullName>
+                    <default>false</default>
+                    <label>UK - UK1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project_Number__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <inlineHelpText>This field must be added if the assessment category = Group T&amp;E.</inlineHelpText>
+        <label>Project Number</label>
+        <referenceTo>ProjectObject__c</referenceTo>
+        <relationshipLabel>Assessments</relationshipLabel>
+        <relationshipName>Assessments</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Reason_of_Cancellation__c</fullName>
+        <description>Reason of Cancellation</description>
+        <inlineHelpText>Enter the reason of cancellation</inlineHelpText>
+        <label>Reason of Cancellation</label>
+        <length>500</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Registration_No__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Contact__r.Registration_Number__c</formula>
+        <label>Registration No</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Registration_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Registration Number</label>
+        <length>7</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Room__c</fullName>
+        <label>Assessment Room</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Room 1</fullName>
+                    <default>false</default>
+                    <label>Room 1</label>
+                </value>
+                <value>
+                    <fullName>Room 2</fullName>
+                    <default>false</default>
+                    <label>Room 2</label>
+                </value>
+                <value>
+                    <fullName>Room 3</fullName>
+                    <default>false</default>
+                    <label>Room 3</label>
+                </value>
+                <value>
+                    <fullName>Room 4</fullName>
+                    <default>false</default>
+                    <label>Room 4</label>
+                </value>
+                <value>
+                    <fullName>Room 5</fullName>
+                    <default>false</default>
+                    <label>Room 5</label>
+                </value>
+                <value>
+                    <fullName>Room 6</fullName>
+                    <default>false</default>
+                    <label>Room 6</label>
+                </value>
+                <value>
+                    <fullName>Room 7</fullName>
+                    <default>false</default>
+                    <label>Room 7</label>
+                </value>
+                <value>
+                    <fullName>Room 8</fullName>
+                    <default>false</default>
+                    <label>Room 8</label>
+                </value>
+                <value>
+                    <fullName>Room 9</fullName>
+                    <default>false</default>
+                    <label>Room 9</label>
+                </value>
+                <value>
+                    <fullName>Room 10</fullName>
+                    <default>false</default>
+                    <label>Room 10</label>
+                </value>
+                <value>
+                    <fullName>Room 11</fullName>
+                    <default>false</default>
+                    <label>Room 11</label>
+                </value>
+                <value>
+                    <fullName>Room 12</fullName>
+                    <default>false</default>
+                    <label>Room 12</label>
+                </value>
+                <value>
+                    <fullName>Room 13</fullName>
+                    <default>false</default>
+                    <label>Room 13</label>
+                </value>
+                <value>
+                    <fullName>Room 14</fullName>
+                    <default>false</default>
+                    <label>Room 14</label>
+                </value>
+                <value>
+                    <fullName>Room 15</fullName>
+                    <default>false</default>
+                    <label>Room 15</label>
+                </value>
+                <value>
+                    <fullName>Group Assessment</fullName>
+                    <default>false</default>
+                    <label>Group Assessment</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SSC_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>SSC Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SUN_Credit_Note_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>SUN Credit Note Number</label>
+        <length>13</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shift__c</fullName>
+        <label>Shift</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Morning</fullName>
+                    <default>false</default>
+                    <label>Morning</label>
+                </value>
+                <value>
+                    <fullName>Afternoon</fullName>
+                    <default>false</default>
+                    <label>Afternoon</label>
+                </value>
+                <value>
+                    <fullName>Full Day</fullName>
+                    <default>false</default>
+                    <label>Full Day</label>
+                </value>
+                <value>
+                    <fullName>More than 1 day</fullName>
+                    <default>false</default>
+                    <label>More than 1 day</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <label>Assessment Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Provisional</fullName>
+                    <default>false</default>
+                    <label>Provisional</label>
+                </value>
+                <value>
+                    <fullName>Confirmed</fullName>
+                    <default>false</default>
+                    <label>Confirmed</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sun_Order_Number__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>For incompany, internal and partner courses where the invoice is for the course not per booking</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Add the Sun order number for any courses which are invoiced for the whole course not per booking. Format must be xxx/xxxxxx.</inlineHelpText>
+        <label>SUN Order Number</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Price__c</fullName>
+        <description>For those assessments invoiced at assessment level not per booking</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For those assessments invoiced at assessment level not per booking</inlineHelpText>
+        <label>Total Assessment Price</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Translation_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Group Translation Price</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Assessment</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Category__c</columns>
+        <columns>Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Group_Assessments</fullName>
+        <columns>NAME</columns>
+        <columns>Category__c</columns>
+        <columns>Name__c</columns>
+        <columns>Description__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Category__c</field>
+            <operation>equals</operation>
+            <value>Group T&amp;E,Group A&amp;B</value>
+        </filters>
+        <label>All Group Assessments</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Individual_Assessments</fullName>
+        <columns>NAME</columns>
+        <columns>Category__c</columns>
+        <columns>Description__c</columns>
+        <columns>Name__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Assessment_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>1/1/2022</value>
+        </filters>
+        <label>All Individual Assessments</label>
+    </listViews>
+    <nameField>
+        <displayFormat>AS{000000}</displayFormat>
+        <label>Assessment Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Assessments</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Start_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>End_Date__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Category__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Name__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>Category__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Name__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>AssessmentEndDateSmall</fullName>
+        <active>true</active>
+        <errorConditionFormula>End_Date__c &lt; Start_Date__c</errorConditionFormula>
+        <errorMessage>Assessment End Date must be after Assessment Start date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CreditStatusandSectionFields</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND 
+( 
+ISPICKVAL(Credit_Status__c ,&quot;Ready to be credited&quot;), 
+OR 
+( 
+ISNULL(Credit_Amount__c), 
+ISPICKVAL(Credit_Reason__c,&quot;&quot;), 
+Credit_Text_Description__c =&quot;&quot; 
+) 
+)</errorConditionFormula>
+        <errorMessage>It is mandatory to enter the Assessment Credit Details section fields (except SUN Credit Note No. &amp; Credit note Notes) if the Credit Status is &quot;Ready to be Credited&quot;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ExpenseCreditStatusandSectionDetails</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND ( 
+ISPICKVAL(Expense_Credit_Status__c ,&quot;Ready to be credited&quot;), 
+OR( 
+ISNULL(Expense_Credit_Amount__c), 
+ISPICKVAL(Expense_Credit_Reason__c ,&quot;&quot;), 
+Expense_Credit_Text_Description__c=&quot;&quot; 
+) 
+)</errorConditionFormula>
+        <errorMessage>It is mandatory to enter the Assessment Expense Credit Details section fields (except Expense SUN Credit note No. &amp; Expense Credit Notes) if the Expense Credit Status is &quot;Ready to be Credited&quot;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ExpenseInvoiceStatusandSectionFields</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND ( 
+ISPICKVAL( Expense_Invoice_Status__c ,&quot;Ready to be invoiced&quot;), 
+OR 
+( 
+Inco_Expense_IM_Code__c =&quot;&quot;, 
+ISNULL(Expense_Amount__c), 
+Expense_Invoice_Text_Description__c =&quot;&quot; 
+) 
+)</errorConditionFormula>
+        <errorMessage>It is mandatory to enter the Assessment Expense Invoice Details section fields (except Expense SUN Order No. &amp; Expense Invoice Notes) if the Expense Invoice Status is &quot;Ready to be Invoiced&quot;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>InvoiceStatusandSectionFields</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND ( 
+ISPICKVAL( Invoice_Status__c ,&quot;Ready to be invoiced&quot;), 
+OR( 
+Partner_Account_Name__c =&quot;&quot;, 
+Billing_Contact__c =&quot;&quot;, 
+ISPICKVAL(Item_Master_Lookup__c,&quot;&quot;), 
+ISPICKVAL(Invoice_Language__c,&quot;&quot;), 
+Invoice_Text_Description__c =&quot;&quot;, 
+Customer_Order_Ref__c =&quot;&quot;, 
+ISPICKVAL( Currency_to_Invoice__c ,&quot;&quot;), 
+ISPICKVAL( Department_Code__c ,&quot;&quot;), 
+ISNULL(Total_Price__c) 
+) 
+)</errorConditionFormula>
+        <errorMessage>It is mandatory to enter the Assessment Invoice Details section fields (except SUN Order No. &amp; Invoice Notes) if the Invoice Status is &quot;Ready to be Invoiced&quot;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SunOrderNoMandatory</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND 
+( 
+Sun_Order_Number__c=&quot;&quot; , 
+OR 
+( 
+ISPICKVAL(Credit_Status__c ,&quot;Ready to be credited&quot;), 
+ISPICKVAL(Expense_Credit_Status__c,&quot;Ready to be credited&quot;) 
+) 
+)</errorConditionFormula>
+        <errorMessage>It is mandatory to enter SUN Order Number if Credit Status or Expense Credit Status is &quot;Ready to be Credited&quot;.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

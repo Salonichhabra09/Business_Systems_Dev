@@ -1,0 +1,25 @@
+<template>
+        <!--fieldset class="slds-box slds-theme_default fieldSetBorder">
+            <legend id="reg2" class="slds-text-heading_small slds-var-p-vertical_medium bold-legend">
+                System Used
+            </legend-->
+            <template if:false={systemUsed}>
+                <div class="slds-m-vertical_medium slds-align_absolute-center">
+                    <p class="slds-text-body_large slds-text-title_bold">{errorMessage}</p>
+                </div>
+            </template>
+            <template if:true={systemUsed}>            
+            <template if:true={dataLoaded}>
+                <c-system-manager-table record-id={recordId}
+                                        onmanagesystem={showEditTable}>
+                </c-system-manager-table>
+            </template>
+        
+            <template if:true={manageData}>
+                <c-system-manager-edit-table system-info={systemInfo} 
+                job-id={recordId}
+                onshowtable={showTable}></c-system-manager-edit-table>
+            </template>
+        </template>
+        <!--/fieldset-->
+</template>

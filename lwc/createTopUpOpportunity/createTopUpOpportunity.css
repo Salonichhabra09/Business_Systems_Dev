@@ -1,0 +1,45 @@
+/*.slds-modal__content {
+    height: 22rem;
+    overflow: auto;
+}
+
+.slds-modal {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+}
+
+.slds-modal__container {
+    width: 90% !important;
+    max-width: 90% !important;
+}
+*/
+.total-potential-value-header {
+    font-weight: 500;
+    font-size: small;
+}
+
+.total-potential-value {
+    display: inline-block;
+    text-align: center;
+}
+
+.total-potential-value>.total-potential-value-header {
+    display: block;
+}
+
+.card-css {
+    --slds-c-card-header-spacing-inline-start: 0;
+}
+
+.page-card-css {
+    --slds-c-card-color-background: white;
+}
+
+.radio-label-header {
+    font-weight: 500;
+    font-size: small;
+}

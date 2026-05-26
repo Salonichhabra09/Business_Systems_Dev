@@ -1,0 +1,187 @@
+<template>
+  
+<template if:true={showSwitchToRegional}>
+    
+        <lightning-card>
+           
+        <div class="slds-align_absolute-center slds-p-around_small">
+        <p class ="slds-text-align_center slds-text-title_bold slds-text-heading_medium "
+       >A regional account plan exists for this buying centre id. Do you want to retire this Account Plan and switch to Regional Account Plan.</p>
+       
+    </div>
+    <div class="slds-align_absolute-center">
+        <button class="slds-button slds-button_brand "  
+        style="margin-top:15px;margin-bottom:15px" data-id="Regional"
+        onclick= {handleSwitchAccPlan} >Switch to Regional Account Plan
+    
+        </button>
+    </div>
+</lightning-card>
+    
+</template>
+
+<template if:true={showApplicableForRegional}>
+    <lightning-card>
+           
+        <div class="slds-align_absolute-center slds-p-around_small">
+        <p class ="slds-text-align_center slds-text-title_bold slds-text-heading_medium "
+        >This Account meets the criteria for Regional Account Plan. Do you want to convert this Account Plan to Regional.</p>
+       
+    </div>
+    <div class="slds-align_absolute-center">
+        <button class="slds-button slds-button_brand "  
+        style="margin-top:15px;margin-bottom:15px" data-id="Regional"
+        onclick= {handleConvertAccPlan} >Convert to Regional Account Plan    
+        </button>
+    </div>
+</lightning-card>
+</template>
+
+<template if:true={showApplicableForGlobal}>
+    <lightning-card>
+           
+        <div class="slds-align_absolute-center slds-p-around_small">
+        <p class ="slds-text-align_center slds-text-title_bold slds-text-heading_medium "
+        >This Account meets the criteria for Global Account Plan. Do you want to convert this Account Plan to Global.</p>
+       
+    </div>
+    <div class="slds-align_absolute-center">
+        <button class="slds-button slds-button_brand "  
+        style="margin-top:15px;margin-bottom:15px" data-id="Regional"
+        onclick= {handleConvertAccPlanToGlobal} >Convert to Global Account Plan    
+        </button>
+    </div>
+</lightning-card>
+</template>
+
+<template if:true={showApplicableForGlobalAndRegional}>
+    <lightning-card>
+           
+        <div class="slds-align_absolute-center slds-p-around_small">
+        <p class ="slds-text-align_center slds-text-title_bold slds-text-heading_medium "
+        >This Account meets the criteria for both Global and Regional Account Plan. Do you want to convert this Account Plan.</p>
+       
+    </div>
+    <div class="slds-align_absolute-center">
+        <button class="slds-button slds-button_brand "  
+        style="margin-top:15px;margin-bottom:15px;margin-right:15px" data-id="Regional"
+        onclick= {handleConvertAccPlanToGlobal} >Convert to Global   
+        </button>
+        <button class="slds-button slds-button_brand "  
+        style="margin-top:15px;margin-bottom:15px" data-id="Regional"
+        onclick= {handleConvertAccPlan} >Convert to Regional
+        </button>
+    </div>
+</lightning-card>
+</template>
+
+<template if:true={showSwitchToRegionalAndGlobal}>
+    <lightning-card>
+           
+        <div class="slds-align_absolute-center slds-p-around_small">
+        <p class ="slds-text-align_center slds-text-title_bold slds-text-heading_medium "
+        >This Account Plan can be switched to Existing Regional Account Plan or you can convert this Account Plan to Global.</p>
+       
+    </div>
+    <div class="slds-align_absolute-center">
+        <button class="slds-button slds-button_brand "  
+        style="margin-top:15px;margin-bottom:15px;margin-right:15px" data-id="Regional"
+        onclick= {handleConvertAccPlanToGlobal} >Convert to Global   
+        </button>
+        <button class="slds-button slds-button_brand "  
+        style="margin-top:15px;margin-bottom:15px" data-id="Regional"
+        onclick= {handleSwitchAccPlan} >Switch to Regional
+        </button>
+    </div>
+</lightning-card>
+</template>
+
+<template if:true={showModal}>
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" 
+    aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open custom-alignment">
+        <div class="slds-modal__container slds-is-relative">
+
+
+            <!-- Modal/Popup Box LWC header here -->
+            <div class="slds-is-relative custom-width">
+                <template if:true={showSpinner}>
+                    <lightning-spinner alternative-text="Loading" size="small" ></lightning-spinner>
+                </template>
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" 
+                title="Close" onclick={closeModal}>
+                    <lightning-icon icon-name="utility:close"
+                        alternative-text="close"
+                        variant="inverse"
+                        size="small" ></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <h3 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Switch to Regional</h3>
+            </header>
+         
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+        <lightning-card title="Strategies and Goals" icon-name="standard:strategy">
+            <template if:true={showSpinner}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </template>
+
+            <template if:true={strategyData}>
+
+        <div class="slds-border_left slds-border_right slds-border_top slds-border_bottom max-height">
+          
+        <lightning-datatable
+                    key-field="strategyId"
+                    data={strategyData}
+                    columns={strategyColumns}
+                    selected-rows={selectedStrategy}
+                    onrowselection={handleStrategySelection}
+                    min-column-width="120"
+                    wrap-text-max-lines="5">
+            </lightning-datatable>
+        </div>
+    </template>
+    <template if:false={strategyData}>
+        <p class="slds-align_absolute-center">No Open Strategy and Goals Found!</p>
+    </template>
+
+</lightning-card>
+<div class="slds-m-around_medium"></div>
+<lightning-card title="White Space Opportunities" icon-name="standard:opportunity">
+    <template if:true={whitespaceData}>
+
+        <div class="slds-border_left slds-border_right slds-border_top slds-border_bottom max-height">
+          
+        <lightning-datatable
+                    key-field="whiteSpaceOppId"
+                    data={whitespaceData}
+                    columns={whiteSpaceColumns}
+                    selected-rows={selectedWhiteSpace}
+                    onrowselection={handleWhiteSpaceSelection}
+                    min-column-width="120"
+                    wrap-text-max-lines="5">
+            </lightning-datatable>
+        </div>
+    </template>
+    <template if:false={whitespaceData}>
+        <p class="slds-align_absolute-center">No White Space RecordsFound!</p>
+    </template>
+   </lightning-card>
+</div>
+    <footer class="slds-modal__footer">
+        <button class="slds-button slds-button_neutral" onclick={closeModal} type="Cancel" title="Cancel">Cancel</button>
+        <button class="slds-button slds-button_brand" title="Save" onclick={switchAP}>Save</button>
+    </footer>
+   
+        </div>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+
+<template if:true={showSpinner}>
+    <lightning-spinner class={spinnerClass} data-id="mySpinner" size="large" variant="brand"
+    alternative-text="Loading...">
+</lightning-spinner>
+</template>
+
+</template>

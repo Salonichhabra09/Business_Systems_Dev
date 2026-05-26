@@ -1,0 +1,237 @@
+<template>
+    <lightning-card title="Related Contacts" icon-name="standard:contact">
+        <lightning-button class="slds-p-right_x-small" variant="brand-outline" label="New" title="New" onclick={openModalPopup} slot="actions" disabled={isAccountPlanUnderReview}></lightning-button>
+        <lightning-button variant="brand-outline" label="Add/Modify relationship" title="Add/Modify relationship" onclick={handleLinkOrDelink} slot="actions" disabled={isAccountPlanUnderReview}></lightning-button>
+        <template if:true={relationshipData}>
+    <div class="maxHeight">
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+    </template>
+        <lightning-layout multiple-rows>
+            <template for:each={relationshipData} for:item="relation">
+                <lightning-layout-item size="4" key={relation.Id} class="slds-p-around_medium">
+                    <lightning-tile label="" type="media">
+                          <!--Added By Prachi SSE-20682 -->
+                     <div style="margin-left:10px" class="slds-float_right" >
+                        <lightning-icon icon-name="utility:edit" 
+                        alternative-text="Edit!" title="Edit" onclick={handleEditContact} data-record-id={relation.contactId}
+                        size="xx-small"></lightning-icon></div>
+                         <!--Changes End-->
+                       
+                <div class="bold">Contact: <a class="plain" href={relation.linkToContact} >{relation.contactName}</a></div>
+                
+                <div class="bold">Roles: <label class="plain">{relation.roles}</label></div>
+                <!--Added By Prachi SSE-20682 -->
+                <div class="bold">Advocacy Level: <label class="plain">{relation.AdvocacyLevel}</label></div>
+                <!--Changes End-->
+                </lightning-tile>
+        </lightning-layout-item>
+            </template>
+        </lightning-layout>
+    </div>
+</template>
+    <template if:false={relationshipData}>
+        <p class="slds-align_absolute-center slds-m-vertical_xx-large">Strategy not linked yet !</p>
+    </template>
+</lightning-card>
+<template if:true={openModal}>
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open custom-alignment">
+        <div class="slds-modal__container slds-is-relative">
+            <!-- Modal/Popup Box LWC header here -->
+            <div class="slds-is-relative custom-width">
+                <template if:true={showSpinner}>
+                    <lightning-spinner alternative-text="Loading" size="small" ></lightning-spinner>
+                </template>
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                    <lightning-icon icon-name="utility:close"
+                        alternative-text="close"
+                        variant="inverse"
+                        size="small" ></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <h3 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{modalTitle}</h3>
+            </header>
+            <template if:false={isRelationshipModal}>
+            <lightning-record-edit-form
+                object-api-name={objectApiName}
+                onsuccess={handleSuccess}
+                onerror={handleError}
+                onsubmit={handleSave}
+            >
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                
+            <lightning-messages></lightning-messages>
+            <h3 class="slds-section-title--divider">Account Contact Relationship Information</h3>
+            <lightning-layout>
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name={fields.ACCOUNT} value={accountId} disabled="true"></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name={fields.ROLES} ></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name={fields.CONTACT}></lightning-input-field>
+                </lightning-layout-item >
+            </lightning-layout>
+            </div>
+            <footer class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" onclick={closeModal} type="Cancel" title="Cancel">Cancel</button>
+                <button class="slds-button slds-button_brand" type="submit" title="Save">Save</button>
+            </footer>
+        </lightning-record-edit-form>
+    </template>
+    <template if:true={isRelationshipModal}>
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+        <lightning-card title="Related Contacts" icon-name="standard:contact">
+            <template if:true={availableRelationshipData}>
+        <div class="slds-border_left slds-border_right slds-border_top slds-border_bottom max-height">
+            <!-- <template if:true={showSpinner}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </template> -->
+        <c-custom-datatable
+                    key-field="Id"
+                    data={availableRelationshipData}
+                    columns={columns}
+                    onupdateroles={handleUpdateRoles}
+                    ondisablesave={handleDisableSave}
+                    oncheckdisablesave={handleCheckDisableSave}
+                    min-column-width="120"
+                    wrap-text-max-lines="5"
+                    selected-rows={selectedRows}
+                    onrowselection={handleRowSelection}>
+            </c-custom-datatable>
+        </div>
+    </template>
+        <template if:false={availableRelationshipData}>
+            <p class="slds-align_absolute-center">No Record Found!</p>
+        </template>
+    </lightning-card>
+</div>
+    <footer class="slds-modal__footer">
+        <button class="slds-button slds-button_neutral" onclick={closeModal} type="Cancel" title="Cancel">Cancel</button>
+        <button class="slds-button slds-button_brand" title="Save" onclick={linkOrDelinkRelationships} disabled={isSaveDisabled}>Save</button>
+    </footer>
+    </template>
+        </div>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+
+<!--Added By Prachi SSE-20682 -->
+<!-- This components works on the click of edit button on Account Contact Relation-->
+<template if:true={showEditContact}>
+    <section role="dialog" tabindex="-1" aria-labelledby="contact-edit-modal" 
+    aria-modal="true" aria-describedby="contact-edit-modal" class="slds-modal slds-fade-in-open custom-alignment">
+        <div class="slds-modal__container slds-is-relative">
+
+            <!-- Modal/Popup Box LWC header here -->
+            <div class="slds-is-relative custom-width">
+                <template if:true={showSpinner}>
+                    <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                </template>
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" 
+                title="Close" onclick={handleCloseContactEditForm}>
+                    <lightning-icon icon-name="utility:close"
+                        alternative-text="close"
+                        variant="inverse"
+                        size="small" ></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <h3 id="modal-heading-06" class="slds-text-heading_medium slds-hyphenate">Edit Contact</h3>
+            </header>
+           
+            <lightning-record-edit-form
+                object-api-name="Contact"
+                onsuccess={handleContactEditSuccess}
+                onsubmit={handleSubmit}
+                onerror={handleContactError}
+                record-id={contactRowId}>
+               
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-4">
+                <lightning-messages></lightning-messages>
+                <lightning-layout>
+                    <lightning-layout-item size="6">
+                        <lightning-input-field field-name="FirstName" ></lightning-input-field> 
+                        
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6">
+                        <lightning-input-field field-name="ReportsToId" ></lightning-input-field>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout>
+                    <lightning-layout-item size="6">
+                        <lightning-input-field field-name="LastName" ></lightning-input-field>
+                    </lightning-layout-item >
+                    <lightning-layout-item size="6">
+                        <lightning-input-field field-name="Advocacy_Level__c"></lightning-input-field>
+                        
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout>
+                    <lightning-layout-item size="6">
+                        <lightning-input-field field-name="AccountId" ></lightning-input-field>
+                    </lightning-layout-item >
+                    <lightning-layout-item size="6">
+                        <lightning-input-field field-name="Contact_Status__c" ></lightning-input-field>   
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout>
+                    <lightning-layout-item size="6">
+                        <lightning-input-field field-name="Title" 
+                        ></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6">
+                        <lightning-input-field field-name="Job_Function__c"  
+                        ></lightning-input-field>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout>
+                    <lightning-layout-item size="6">
+                        <lightning-input-field field-name="Email" 
+                        ></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6">
+                        <lightning-input-field field-name="Job_Level__c"  
+                        ></lightning-input-field>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout>
+                    <lightning-layout-item size="6">
+                        <lightning-input-field field-name="Phone" 
+                        ></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6">
+                        <lightning-input-field field-name="MobilePhone"  
+                        ></lightning-input-field>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout>
+                    <lightning-layout-item size="6">
+                        <lightning-input-field field-name="Area_of_Interest__c" 
+                        ></lightning-input-field>
+                    </lightning-layout-item>
+                </lightning-layout>
+
+            </div>
+            <footer class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" 
+                onclick={handleCloseContactEditForm} type="Cancel" title="Cancel">Cancel</button>
+                <button class="slds-button slds-button_brand" 
+                type="submit" title="Save" onclick={handleContactSave}>Save</button>
+            </footer>
+        </lightning-record-edit-form> 
+    
+   
+        </div>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+<!--Change End SSE-20682 -->
+
+</template>

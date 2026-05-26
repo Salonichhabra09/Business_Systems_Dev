@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Select Fields for filter">
+        <div class="slds-grid slds-wrap slds-gutters">
+          <template for:each={parsedData} for:item="field">
+            <div key={field.label} class="slds-col slds-size_1-of-2">
+              <lightning-input type="checkbox" label={field.label} checked={field.selected}
+                onchange={handleCheckboxChange}>
+              </lightning-input>
+            </div>
+          </template>
+        </div>
+      </lightning-card>
+</template>

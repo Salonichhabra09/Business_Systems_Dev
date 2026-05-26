@@ -1,0 +1,9 @@
+.hide-lookup{
+    visibility: hidden;
+}
+.vl {
+    width: 2px;
+    height: 170%;
+    background-color: #000;
+    transform: rotate(180deg);
+}

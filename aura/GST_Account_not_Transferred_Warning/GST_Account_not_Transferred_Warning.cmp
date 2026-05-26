@@ -1,0 +1,9 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <lightning:card>
+        <ui:message title="WARNING!" severity="warning" closable="false" >           
+            <strong>CAUTION!</strong> The account related to this India GST record is not yet transferred to Infor10. Please transfer it first before transferring the GST record.
+            
+        </ui:message> 
+        
+    </lightning:card>
+</aura:component>

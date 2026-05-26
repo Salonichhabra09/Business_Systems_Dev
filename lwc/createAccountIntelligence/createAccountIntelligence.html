@@ -1,0 +1,125 @@
+<template>
+
+    <!-- This components works on the cload and shows the Acoount Intelligence Data-->
+    <lightning-card title="Account Intelligence" icon-name="standard:shipment">
+        <template if:true={showNew}>      
+            <lightning-button variant="brand-outline" label="New Account Intelligence" title="New Account Intelligence" 
+        onclick={openModalPopup} slot="actions"></lightning-button>
+
+        <lightning-button variant="brand-outline" label="New Local HR System" title="New Local HR System" 
+        onclick={openModalPopupSystem} slot="actions" class="slds-m-left_medium"></lightning-button>
+    </template>
+        <template if:false={showMessage}>
+            <template if:true={systemData}>
+    <div class="slds-border_left slds-border_right slds-border_top slds-border_bottom">
+    <lightning-datatable
+                key-field="id"
+                data={recordsToDisplay}
+                columns={columns}
+                wrap-text-max-lines="5"
+                min-column-width="120"
+                hide-checkbox-column>
+        </lightning-datatable>
+    </div>
+    <div class="slds-float_right slds-m-top_medium">
+        <template if:true={paginationVisible}>
+        <c-paginator records={systemData}  total-records={systemData.length} 
+        show-search-box="true" 
+        onpaginatorchange={handlePaginatorChange}>
+    </c-paginator>
+</template>
+    </div>
+</template>
+</template>
+    <template if:true={showMessage}>
+        <p class="slds-align_absolute-center">No System Record Found!</p>
+    </template>
+</lightning-card>
+
+<!-- This components works on the click of new button and creates the Account Intelligence-->
+<template if:true={openModal}>
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" 
+    aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open custom-alignment">
+        <div class="slds-modal__container slds-is-relative">
+
+            <!-- Modal/Popup Box LWC header here -->
+            <div class="slds-is-relative custom-width">
+                <template if:true={showSpinner}>
+                    <lightning-spinner alternative-text="Loading" size="small" ></lightning-spinner>
+                </template>
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" 
+                title="Close" onclick={closeModal}>
+                    <lightning-icon icon-name="utility:close"
+                        alternative-text="close"
+                        variant="inverse"
+                        size="small" ></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <h3 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{modalTitle}</h3>
+            </header>
+           
+            <lightning-record-edit-form
+                object-api-name={objectApiName}
+                onsuccess={handleSuccess}
+                onsubmit={handleSubmit}
+                onerror={handleError}
+                record-id={fieldValues.systemID}>
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+            <lightning-messages></lightning-messages>
+            <lightning-layout>
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name="Name" value={technology}></lightning-input-field> 
+                    <!-- value="Will be autopopulated on Creation" -->
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name="AccountName__c" value={accId} disabled="true"></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name="Salesforce_System_Id__c" onchange={getFieldsValues}></lightning-input-field>
+                </lightning-layout-item >
+                <lightning-layout-item size="6">
+            <!-- Change by Joana -> related to feddback "Add new columns Technological Category, Sub category and technology and remove Account Intelligence Type"  -->
+                    <!-- <lightning-input-field field-name="Account_Intelligence_Type__c" > </lightning-input-field>-->
+                    <lightning-input-field field-name="Technology__c" value={technology} readonly="true"></lightning-input-field>
+                    
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name="Technographic_Category__c" value={technographicCategory} readonly="true"></lightning-input-field>
+                </lightning-layout-item >
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name="Sub_Category__c" value={subCategory} readonly="true"></lightning-input-field>   
+                </lightning-layout-item>
+            </lightning-layout>
+            <!-- End changes by Joana -->
+            <lightning-layout>
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name="Short_Description__c"  
+                    ></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+  
+            
+            </div>
+            <footer class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" 
+                onclick={closeModal} type="Cancel" title="Cancel">Cancel</button>
+                <button class="slds-button slds-button_brand" 
+                type="submit" title="Save" onclick={handleSave}>Save</button>
+            </footer>
+        </lightning-record-edit-form> 
+    
+   
+        </div>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+<template if:true={isModalPopupSystem}>
+    <c-system-create-component onclosesystemmodal={closeSystemModal} record-type-id={recordTypeId}></c-system-create-component>
+</template>
+</template>

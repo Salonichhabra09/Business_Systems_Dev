@@ -1,0 +1,25 @@
+.pillSize{
+    width : 100%;
+    display: inline-flex;
+}
+.input-space{
+    padding-left: 2rem;
+    width: var(--inputFieldWidth, 100%);
+}
+.slds-combobox__input.slds-combobox__input-value{
+    padding-left: 2.25rem;
+}
+.slds-combobox__input-entity-icon{
+    top: var(--topMargin, 70%);
+}
+.slds-input__icon_right{
+    top: var(--topMargin, 70%);
+}
+.account-name{
+    vertical-align: -10px;
+    float: left;
+}
+.lookup-data{
+    font-size: smaller;
+    display: grid;
+}

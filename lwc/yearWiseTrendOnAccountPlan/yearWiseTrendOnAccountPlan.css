@@ -1,0 +1,16 @@
+.horizontalBar{
+    height: 100%;
+    width: 70%;
+}
+.custom-height{
+    height:350px;
+}
+.box {
+    height: 15px;
+    width: 15px;
+    margin-bottom: 15px;
+    clear: both;
+}
+.blue {
+    background-color: rgba(82, 183, 216, 1);
+}

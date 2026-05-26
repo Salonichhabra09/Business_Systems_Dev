@@ -1,0 +1,41 @@
+<aura:component controller="OrderTriggerManager" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<aura:attribute name="disable" type="Boolean" default="false" description="To hold boolean value for disabling button" />
+    <aura:attribute name="recordId" type="id" access="global" />
+    <aura:attribute name="OderObj" type="Order"/>
+    <aura:attribute name="InvoiceLinked" type="Boolean"/>
+    <aura:attribute name="isReductionOrder" type="Boolean" default="false" />
+    <aura:attribute name="isReductionOrderForGCSC" type="Boolean" default="false" />
+    <aura:attribute name="isNormalOrVariationOrder" type="Boolean" default="false" />
+    <aura:attribute name="isGCSCOrder" type="Boolean" default="false" />
+    <aura:attribute name="showFlow" type="Boolean" default="true" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />   
+    
+    <aura:if isTrue="{!v.isReductionOrder}">
+    <!--<lightning:flow aura:id="InvoiceHeaderFlowId"/>-->
+    <aura:if isTrue="{!v.showFlow}">
+        <lightning:flow aura:id="InvoiceHeaderFlowId" onstatuschange="{!c.OnStatusChange}" />
+    </aura:if>
+    <lightning:card title="Please Click 'Create Invoice' button to create Invoice Header and Invoice Lines" iconName="utility:warning"> 
+        <div class="slds-m-around_medium">
+            <lightning:button variant="brand" label="Create Invoice" title="Create Invoice" onclick="{! c.callFlow }" />
+        <!-- <lightning:button variant="brand" label="Create Reduction Invoice" title="Brand action" onclick="{! c.callFlow }" /> -->
+        </div>         
+    </lightning:card>
+    </aura:if>
+    <aura:if isTrue="{!!v.isReductionOrderForGCSC}">
+    <aura:if isTrue="{!v.isGCSCOrder}">
+    <!--<lightning:flow aura:id="InvoiceHeaderFlowId"/>-->
+        <lightning:flow aura:id="GCSCInvoiceHeaderFlowId" onstatuschange="{!c.OnStatusChange}" />
+    <lightning:card title="Please Click 'Create Invoice' button to create Invoice Header and Invoice Lines" iconName="utility:warning"> 
+        <div class="slds-m-around_medium">
+            <lightning:button variant="brand" label="Create MS Invoice" title="Create Invoice" onclick="{! c.callGCSCFlow }" />
+        <!-- <lightning:button variant="brand" label="Create Reduction Invoice" title="Brand action" onclick="{! c.callFlow }" /> -->
+        </div>         
+    </lightning:card>
+    </aura:if>
+</aura:if>
+
+    <aura:if isTrue="{!v.isNormalOrVariationOrder}">
+        <c:createInvoiceHeaderAndLines recordId="{!v.recordId}" />
+    </aura:if>
+</aura:component>

@@ -1,0 +1,22 @@
+<template>
+    <div class="slds-grid slds-float_right
+     slds-grid_align-spread" style="margin-bottom:10px" > 
+ 
+        <div class="slds-col"><!--PAGE NAVIGATION-->
+            <div style={controlPagination}>
+                <div class="slds-col slds-p-bottom_xx-small">
+                    <span style={controlPrevious}>
+                        <lightning-button-icon icon-name="utility:left" variant="bare" size="medium" alternative-text="Previous Page" 
+                        onclick={previousPage}></lightning-button-icon>
+                    </span>
+                    <label class="slds-text-color_weak slds-p-horizontal_x-small" for="pageNum">Page: {pageNumber} of {totalPages}</label> 
+                
+                    <span style={controlNext}>
+                        <lightning-button-icon icon-name="utility:right" variant="bare" size="medium" alternative-text="Next Page"
+                         onclick={nextPage} class="slds-p-horizontal_x-small"></lightning-button-icon>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

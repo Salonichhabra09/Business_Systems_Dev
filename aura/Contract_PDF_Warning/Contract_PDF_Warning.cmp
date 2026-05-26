@@ -1,0 +1,96 @@
+<aura:component  implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="record" type="Object" access="global"/> 
+    <aura:attribute name="simplerecord" type="Object" access="global"/> 
+    <!--  <aura:handler  event="force:showToast" action="{! c.isRefreshedToast }" />-->
+    <!-- <aura:handler event="force:refreshView" action="{!c.handleUploadFinished}"/>-->   
+    <force:recordData aura:id="ContractRecordLoader"
+                      layoutType="FULL"
+                      mode="EDIT"
+                      recordId="{!v.recordId}"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.simplerecord}"
+                      fields="PDFCount__c,CSVCount__c,Pricebook2Id,Booked_Elsewhere__c"
+                      
+                      />
+    <!--aura:if isTrue="{!(v.simplerecord.Opportunity__r.RecordTypeId == $Label.c.StandardRecordType )}"-->
+    <aura:if isTrue="{!(v.simplerecord.Pricebook2Id == '01s2000000009q8AAA')}">
+    <!--<aura:if isTrue="{!(v.simplerecord.Booked_Elsewhere__c==false)}">-->
+    <lightning:card>
+        <ui:message title="WARNING!" severity="warning" closable="false" >
+            You need at least one PDF and at least one Excel file before you can [Activate Contract].  This can include:<br/> <br/>
+            <!-- <aura:if isTrue="{!v.pdfCheck}">-->
+            <aura:if isTrue="{!(v.simplerecord.PDFCount__c >= 1)}">
+                <img src="{!$Resource.Approvalicon}" ></img>
+                <!--  <lightning:icon class="IconRadius" iconName="action:approval" size="xx-small" />-->
+                <span class="textStyle">‘Signed Order Form’, or if a variation, a CRF (PDF format)</span>
+                <aura:set attribute="else">   
+                    <img src="{!$Resource.Closeicon}" ></img>
+                    <!--  <lightning:icon class="IconRadius" iconName="action:close" size="xx-small" />-->
+                    <span class="textStyle">‘Signed Order Form’, or if a variation, a CRF (PDF format)</span>
+                </aura:set>
+            </aura:if>
+            <br/>
+            <aura:if isTrue="{!(v.simplerecord.CSVCount__c >=1)}">
+                <img src="{!$Resource.Approvalicon}" ></img>
+                <!--  <lightning:icon class="IconRadius" iconName="action:approval" size="xx-small" />-->
+                <span class="textStyle">Pricing configurator that matches the List Price and Sales Price that appear on the opportunity (Excel format)</span>
+                <aura:set attribute="else">
+                    <img src="{!$Resource.Closeicon}" ></img>
+                    <!-- <lightning:icon class="IconRadius" iconName="action:close" size="xx-small" />-->
+                    <span class="textStyle">Pricing configurator that matches the List Price and Sales Price that appear on the opportunity (Excel format)</span>
+                </aura:set>
+            </aura:if>
+            <div class="textStyle">Any other relevant supporting documentation (e.g. SOW, Scoping Template, authorising emails etc.) 
+            </div>
+            <br/>
+            Please choose the file using the button below to attach.
+            <lightning:fileUpload 
+                                  name="fileUploader"
+                                  multiple="true"                                      
+                                  recordId="{!v.recordId}"
+                                  onuploadfinished="{!c.handleUploadFinished}"/>                
+        </ui:message>             
+    </lightning:card>
+    </aura:if> 
+    <!--</aura:if>-->
+    <!--aura:if isTrue="{!(v.simplerecord.Opportunity__r.RecordTypeId == $Label.c.IgniteRecordType)}"-->
+    <aura:if isTrue="{!(v.simplerecord.Pricebook2Id == '01sD0000000Kh1pIAC')}">
+    <aura:if isTrue="{!(v.simplerecord.Status=='Draft' || v.simplerecord.Status=='Rejected')}">
+        <lightning:card>
+            <ui:message title="WARNING!" severity="warning" closable="false" >                
+                You need at least one PDF and at least one Excel file before you can [Activate Contract].  This can include:<br/> <br/>
+                <aura:if isTrue="{!(v.simplerecord.PDFCount__c >=2)}">
+                    <!--  <lightning:icon class="IconRadius" iconName="action:approval" size="xx-small" />-->
+                    <img src="{!$Resource.Approvalicon}" ></img>
+                    <span class="textStyle">‘Signed Order Form’, or if a variation, a CRF (PDF format)</span>
+                    <aura:set attribute="else">   
+                        <img src="{!$Resource.Closeicon}" ></img>
+                        <!--   <lightning:icon class="IconRadius" iconName="action:close" size="xx-small" />-->
+                        <span class="textStyle">‘Signed Order Form’, or if a variation, a CRF (PDF format)</span>
+                    </aura:set>
+                </aura:if>
+                <br/>
+                <aura:if isTrue="{!(v.simplerecord.CSVCount__c >=1)}">
+                    <img src="{!$Resource.Approvalicon}" ></img>
+                    <!--  <lightning:icon class="IconRadius" iconName="action:approval" size="xx-small" />-->
+                    <span class="textStyle">Pricing configurator that matches the List Price and Sales Price that appear on the opportunity (Excel format)</span>
+                    <aura:set attribute="else">
+                        <img src="{!$Resource.Closeicon}" ></img>
+                        <!--    <lightning:icon class="IconRadius" iconName="action:close" size="xx-small" />-->
+                        <span class="textStyle">Pricing configurator that matches the List Price and Sales Price that appear on the opportunity (Excel format)</span>
+                    </aura:set>
+                </aura:if>
+                <div class="textStyle">Any other relevant supporting documentation (e.g. SOW, Scoping Template, authorising emails etc.)
+                </div>
+                <br/>
+                Please choose the file using the button below to attach.
+                <lightning:fileUpload 
+                                      name="fileUploader"
+                                      multiple="true"                                        
+                                      recordId="{!v.recordId}"                                      
+                                      onuploadfinished="{!c.handleUploadFinished}" />
+            </ui:message>             
+        </lightning:card>
+    </aura:if>
+    </aura:if>
+</aura:component>

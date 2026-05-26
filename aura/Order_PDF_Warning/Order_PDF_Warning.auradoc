@@ -1,0 +1,31 @@
+<aura:documentation>
+    
+    <aura:example name="ExampleName" ref="c:Order_PDF_Warning" label="Order PDF Warning">
+    </aura:example> 
+    
+    <aura:description>
+        <p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-family: 'Arial',sans-serif; color: #080707;">Overview:</span></strong></p>
+        <ul>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">This Component is levarging the functionality of Order PDF Warning on Order.</span></li>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">The component is made visble on Opp detail page with different text in two senerios:</span></li>
+        </ul>
+        <ul>
+            <ul>
+                <ul>
+                    <li style="color: #080707; line-height: normal; tab-stops: list 1.5in;"><span style="font-family: 'Arial',sans-serif;">For Ignite Opportunity: When the Order status is Draft or Rejected.</span></li>
+                    <li style="color: #080707; line-height: normal; tab-stops: list 1.5in;"><span style="font-family: 'Arial',sans-serif;">For Standard Opportunity: if atleast one Excel and one PDF file is not attached.&nbsp;</span></li>
+                </ul>
+            </ul>
+        </ul>
+        <ul>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">On Clicking "Upload" button this component is being called to upload file, after upload it update the Text and Green Check mark for type of file.</span></li>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">The helper method calls a "GenericBase"-helper which returns the response to controller of the cmp.</span></li>
+        </ul>
+        <p style="margin-left: 1.75in;"><span style="font-family: 'Arial',sans-serif; color: #080707; background: white;">&nbsp;</span></p>
+        <p style="line-height: normal;"><strong><span style="font-family: 'Arial',sans-serif; color: #080707;">For the Developers:</span></strong></p>
+        <ul>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">On Clicking &ldquo;Upload Files&rdquo; button, a controller action &ldquo;handleUploadFinished&rdquo; being called, which in return calling a helper method named &ldquo;isRefreshed&rdquo;.</span></li>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">&ldquo;isRefreshed&rdquo; method is calling helper method &rdquo;Callserver&rdquo; (from base-parent component) which is collecting the server's response and passing that back to the helper of component.</span></li>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">The method &ldquo;isRefreshed&rdquo; on receiving a success response, is updating the fields (PDF Count &amp; CSV Count) on the basis of response collected &amp; also updating the Icon associated with the text message.</span></li>
+        </ul></aura:description>
+</aura:documentation>

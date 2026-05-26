@@ -1,0 +1,18 @@
+<aura:documentation>
+    <aura:example name="ExampleName" ref="c:AccountOrderInvoiceDetail" label="Invoice Detail Warning Message">
+    </aura:example> 
+    <aura:description>
+        <p style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-family: 'Arial',sans-serif;">Overview</span></strong></p>
+        <ul>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">This component has been added to Opportunity and Order record pages to display a static message at the top, followed by the value entered in &lsquo;Opportunity Invoicing Quality Details&rsquo; field on Account record.</span></li>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">This component will only be visible if opportunity&rsquo;s account record has a value in &lsquo;Opportunity Invoicing Quality Details&rsquo; field.</span></li>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Static message text - This client has complained about invoicing accuracy. Please take extra care in providing accurate and comprehensive information.</span></li>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">This component should not be visible if the opportunity is Closed Won.</span></li>
+        </ul>
+        <p style="line-height: normal;"><strong><span style="font-family: 'Arial',sans-serif; color: #080707;">For the Developers:</span></strong></p>
+        <ul>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">The Component is just handling the functionality of displaying an error message on Opportunity detail &amp; Order detail pages separately.</span></li>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in; border: none; padding: 0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">The visibility behavior of the component is being handled, on the basis of a custom field &ldquo;Opp_Invoicing_Quality_Details__c&rdquo; that is being defined on Opportunity &amp; Contract (order) objects, if the field is not holding any value, the component will be made visible on object&rsquo;s detail page, holding an error message.</span></li>
+        </ul>
+    </aura:description>
+</aura:documentation>

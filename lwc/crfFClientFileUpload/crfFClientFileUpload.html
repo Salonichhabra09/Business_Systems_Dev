@@ -1,0 +1,76 @@
+<template>
+    <!--<template lwc:if={showLoadingSpinner}>
+        <div style="z-index: 10000 !important;">
+            <lightning-spinner alternative-text="Hello" size="medium" style="z-index: 10000 !important;">
+            </lightning-spinner>
+        </div>
+    </template>-->
+    <!--<template lwc:if={showLoadingSpinner}>
+        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+    </template>-->
+
+    <template lwc:if={showOptionScreen}>
+        <lightning-card title="Candidate Details" >
+            <div class="slds-align_absolute-center slds-var-m-vertical_medium">
+                <lightning-button if:false={isMFSSystem} label="Create Candidates Manually"
+                    onclick={handleManualCandidate} variant="brand">
+                </lightning-button>
+                <div if:false={isMFSSystem} class="slds-var-p-around_small"> or </div>
+                <lightning-button label="Import New Candidate List" onclick={handleImportCandidate} variant="brand">
+                </lightning-button>
+            </div>
+        </lightning-card>
+    </template>
+
+    <template lwc:if={showManualCandidateScreen}>
+        <c-create-candidates-manually-w-r-f candidate-config={candidateData} wrf-id={recordId}
+            candidates-list-to-insert={candidatesList}></c-create-candidates-manually-w-r-f>
+    </template>
+
+    <template lwc:if={showImportCandidateScreen}>
+        <form>
+            <fieldset class="slds-box slds-theme_default fieldSetBorder">
+                <legend id="reg2" class="slds-text-heading_small slds-var-p-vertical_medium bold-legend">
+                    Upload CSV File
+                </legend>
+                <label></label>
+                <div class="slds-grid slds-grid_vertical slds-box slds-theme_warning" style="outline-style: solid;">
+                    <div class="slds-col">
+                        <b>Important Information - Before uploading the candidates:</b>
+                    </div>
+                    <div class="slds-col slds-var-m-left_medium">
+                        <ul style="list-style-type:disc">
+                            <li>Please use the template provided to upload the candidate data.</li>
+                            <li>Please ensure that there are no invalid character in your upload file like:
+                                !#$%^&amp;*()+={}[]|\:;&quot;&lt;&gt;?/&copy;</li>
+                            <li>Email Address column should have values as per universally accepted format.</li>
+                            <li>There should not be any extra blank spaces before or after any text.</li>
+                            <template for:each={templateInstructions} for:item="currentItem">
+                                <li key={currentItem}>{currentItem}</li>
+                            </template>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slds-align_absolute-center slds-var-m-vertical_medium">
+                    <lightning-file-upload label="Attach Candidate File" name="fileUploader" accept={acceptedFormats}
+                        record-id={recordId} onuploadfinished={handleUploadFinished} disabled={disableInput}>
+                    </lightning-file-upload>
+                </div>
+                <div class="slds-align_absolute-center slds-var-m-vertical_medium">
+                    Please ensure the CSV encoding is UTF-8 before upload or use the template below.
+                </div>
+                <div lwc:if={showErrorMessage} class="slds-align_absolute-center" style="color:red">
+                    Error Occurred: {errorMessage}
+                </div>
+                <div lwc:if={showFileName} class="slds-align_absolute-center" style="color:green">
+                    File Uploaded: {documentName}
+                </div>
+                <div class="slds-align_absolute-center">
+                    <lightning-button class="slds-m-right_small" label="Candidate Template"
+                        onclick={handleDownloadTemplate} variant="brand"
+                        icon-name="utility:download"></lightning-button>
+                </div>
+            </fieldset>
+        </form>
+    </template>
+</template>

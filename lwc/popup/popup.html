@@ -1,0 +1,267 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-03-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <template if:true={showLoadingSpinner}>
+    <div style="z-index: 10000 !important;">
+      <lightning-spinner alternative-text="Loading..." size="medium" style="z-index: 10000 !important;">
+      </lightning-spinner>
+    </div>
+  </template>
+  <template if:false={isActive}>
+    <header class="image-container">
+      <img src={imageUrl} alt="Header Image" />
+      <h1 class="overlay-heading">{heading}</h1>
+    </header>
+    <br>
+    <div class="slds-notify slds-notify_alert slds-theme_info">
+        <span class="slds-assistive-text">info</span>
+        <span>THIS LINK HAS BEEN DEACTIVATED! PLEASE CONTACT SHL MS TEAM (managedservices@shl.com) FOR FURTHER ASSISTANCE.</span>
+    </div>
+    <br>
+    <br>
+    <p slot="footer" class="slds-text-align_center">{label.WRF_Footer}</p>
+</template>
+<template if:true={isActive}>
+  <template if:true={isAuthenticationUI}>
+    <header class="image-container">
+      <img src={imageUrl} alt="Header Image" />
+      <h1 class="overlay-heading">{heading}</h1>
+    </header>
+    <br>
+        <c-client-report-authentication  onauthentication={handleVisibility} record-id={jobId}></c-client-report-authentication>
+        
+    <br>
+  <p slot="footer" class="slds-text-align_center">{label.WRF_Footer}</p>
+  </template>
+  <div class="dashboard-container">
+  <template if:false={isAuthenticationUI}>
+  <div if:true={hidebutton}>
+    <!-- Header Section-->
+    <!--<header class="image-container">
+      <img src={imageUrl} alt="Header Image" />
+      <h1 class="overlay-heading">{heading}</h1>
+    </header>-->
+    <!--<div class="banner">-->
+      <div class="logo-container">
+          <img src={shlLogo} alt="SHL Logo" class="shl-logo" />
+      </div>
+  <!--</div>-->
+  </div>
+  
+
+  <template if:false={messageview}>
+    <lightning-card title="Select Fields">
+      <div class="slds-grid slds-wrap slds-gutters">
+        <template for:each={fields} for:item="field">
+          <div key={field.label} class="slds-col slds-size_1-of-2">
+            <lightning-input type="checkbox" label={field.label} checked={field.selected} disabled={field.readonly}
+              onchange={handleCheckboxChange}>
+            </lightning-input>
+          </div>
+        </template>
+      </div>
+    </lightning-card>
+  </template>
+
+  <template if:true={exportReportFlag}>
+    <c-export-report-view record-id={jobId} rating-api-name-list={apilistforserach}
+      candidate-j-s-o-n={selectedFieldsData} candidate-api-name-list={candidateApiNameList}></c-export-report-view>
+  </template>
+
+ <template if:true={exportReportFlagSelf}>
+    <c-export-report-view record-id={jobId} rating-api-name-list={apilistforserach}
+      candidate-j-s-o-n={selectedFieldsDataSelfExport} candidate-api-name-list={candidateApiNameList}></c-export-report-view>
+  </template>
+
+  <template if:true={shouldDisplayMessage}>
+    <div if:false={hidebutton}>
+    <lightning-layout>
+      <!--<lightning-layout-item class="center-aligned">
+        <div class="horizontal-align" if:true={hidebutton}>
+          <h1 class="large-text"><b>Report View for Request: {jobnameWRF}</b></h1>
+        </div>
+     </lightning-layout-item>-->
+      <!-- Spacer to push right-aligned items to the right -->
+      <lightning-layout-item flexibility="auto" class="spacer"></lightning-layout-item>
+      <lightning-layout-item padding="around-small" class="right-aligned">
+        <div class="horizontal-align" if:false={hidebutton}>
+          <a href="javascript:void(0);" onclick={handleClick}>Click here go back to Job</a>
+        </div>
+      </lightning-layout-item>
+      <lightning-layout-item padding="around-small" class="right-aligned">
+        <div class="horizontal-align" if:false={hidebutton}>
+          <lightning-button label="Send Client Report" onclick={sendClientReport}
+            disabled={disableSubmit}></lightning-button>
+        </div>
+      </lightning-layout-item>
+     <!-- <lightning-layout-item padding="around-small" class="right-aligned">
+        <div class="horizontal-align">
+          <lightning-button label="Export Report" onclick={exportReport}></lightning-button>
+        </div>
+      </lightning-layout-item> -->
+      <!--<lightning-layout-item padding="around-small" class="left-aligned">
+        <div class="horizontal-align">
+        <lightning-button-icon icon-name="utility:refresh" variant="border-filled"
+            alternative-text="Refresh List" title="Refresh List"
+            onclick={handleRefresh}></lightning-button-icon>
+          </div>
+    </lightning-layout-item>-->
+    </lightning-layout>
+  </div>
+  <div>
+    <c-project-dashboard record-id={jobId}></c-project-dashboard>
+    <div class="spacing">
+        <c-feedback-status job-id={jobId}></c-feedback-status>
+    </div>
+</div>
+
+    <lightning-accordion allow-multiple-sections-open="false" active-section-name={activeSections}>
+      <!--<lightning-accordion-section label="Feedback Status" name="section2">
+        <lightning-layout horizontal-align="spread" multiple-rows>
+            
+            <lightning-layout-item size="6" padding="around-small" class="flex-item">
+              <c-feedback-status></c-feedback-status>
+            </lightning-layout-item>
+    
+        </lightning-layout>
+    </lightning-accordion-section>-->
+    
+    
+      <lightning-accordion-section label="Report Details" name="section3">
+        <template lwc:if={showSpinner}>
+          <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+        </template>
+         <!-- <lightning-layout>
+            <lightning-layout-item padding="around-small" class="right-aligned">
+             <lightning-input type="text" variant="label-hidden" label="" placeholder="Search..."
+                value={candidateFilterValue} onchange={handleCandidateFilterValue} onkeypress={handleEnter}>
+              </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" class="right-aligned">
+              <lightning-button variant="brand" label="Search" onclick={handleSearchAction}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" class="right-aligned">
+              <lightning-button-icon icon-name="utility:refresh" variant="border-filled" alternative-text="Refresh List"
+                title="Refresh List" onclick={handleRefresh}></lightning-button-icon>
+            </lightning-layout-item>
+          </lightning-layout>-->
+                      <!-- Self Report Table Section -->
+                    <template if:true={isMFSview}>
+                         <div class="table-container"> 
+                          <!--<div class="right-aligned slds-m-bottom_small">
+                            <lightning-button label="Export Report" onclick={exportReportSelf}></lightning-button>
+                          </div>-->
+                              <h2 class="table-header">Self Report</h2>
+                            <div title="Self Report" style="height: 600px; overflow: auto;" class="myTable1">
+                                <lightning-datatable 
+                                    key-field="id" 
+                                    data-id="table1"
+                                    columns={columnvalueself} 
+                                    data={jsonDataSelf} 
+                                    hide-checkbox-column
+                                    column-widths-mode="auto"
+                                    enable-infinite-loading
+                                    onloadmore={loadDataSelf}>
+                                </lightning-datatable>
+                            </div>
+                            <div class="slds-align_absolute-center slds-var-m-vertical_medium slds-text-body_small slds-text-color_weak">
+                              {loadMoreStatusSelf}
+                            </div>
+                        </div>
+                    </template>
+                
+                   
+                    <div class="filter-panel slds-var-p-around_x-small">
+                      <div class="table-container">
+                      <div class="filter-container">
+                        <template for:each={columnvalue} for:item="column">
+                          <template if:true={column.filter}>
+                            <div class="filter-item" key={column.fieldName}>
+                                <label>{column.label}</label>
+                                <template if:true={column.isDateField}>
+                                  <lightning-input
+                                      type="date"
+                                      data-field={column.fieldName}
+                                      onchange={handleFilterChange}
+                                      placeholder="Select a date">
+                                  </lightning-input>
+                              </template>
+                                <template if:true={column.dropdownfield}>
+                                  <lightning-combobox
+                                      data-field={column.fieldName}
+                                      options={column.dropdownOptions}
+                                      onchange={handleFilterChange}
+                                      placeholder="Select a value">
+                                  </lightning-combobox>
+                              </template>
+                              <template if:false={column.dropdownfield}>
+                                <template if:false={column.isDateField}>
+                                <lightning-input
+                                    type="text"
+                                    data-field={column.fieldName}
+                                    onchange={handleFilterChange}
+                                    placeholder="Filter...">
+                                </lightning-input>
+                                </template>
+                                </template>
+                            </div>
+                          </template>
+                        </template>
+                        <div class="button-container">
+                          <lightning-button variant="brand" label="Search" onclick={getRatingData}></lightning-button> &nbsp;
+                          <lightning-button-icon icon-name="utility:refresh" variant="border-filled" alternative-text="Reset Filter & Refresh Data"
+                          title="Reset Filter & Refresh Data" onclick={handleRefresh}></lightning-button-icon>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Full Report Table Section -->
+                    <div class="table-container">
+                      <!--<div class="right-aligned slds-m-bottom_small">
+                        <lightning-button label="Export Report" onclick={exportReport}></lightning-button>
+                      </div>-->
+                      <div class="table-header">
+                        <span>Full Report</span>
+                        <lightning-button class="export-button slds-m-bottom_small" label="Export Report" onclick={exportReport}></lightning-button>
+                    </div>
+                        <div title="Full Report" style="height: 600px; overflow: auto;" class="myTable">
+                            <lightning-datatable 
+                                key-field="id" 
+                                data-id="table2"
+                                columns={columnvalue} 
+                                data={jsonData} 
+                                hide-checkbox-column
+                                column-widths-mode="auto"
+                                enable-infinite-loading 
+                                onloadmore={loadData}>
+                            </lightning-datatable>
+                        </div>
+                        <div class="slds-align_absolute-center slds-var-m-vertical_medium slds-text-body_small slds-text-color_weak">
+                          {loadMoreStatus}
+                        </div>
+                    </div>
+        </div>
+       </lightning-accordion-section>
+
+    </lightning-accordion>
+    <br>
+    <footer if:true={hidebutton}>
+      <p slot="footer" class="slds-text-align_center">{label.WRF_Footer}</p>
+    </footer>
+  </template>
+  <div lwc:if={isSubmitUI} class="page-background">
+    <div class="slds-align_absolute-center">
+      <lightning-icon icon-name="standard:task2" class="icon-size"></lightning-icon>
+    </div>
+    <p class="thank-you slds-align_absolute-center">Thank you ! </p>
+    <p class="success-message slds-align_absolute-center">{successMessage}</p>
+  </div>
+</template>
+</div>
+</template>
+</template>

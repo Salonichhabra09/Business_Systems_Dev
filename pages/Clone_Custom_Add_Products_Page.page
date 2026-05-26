@@ -1,0 +1,502 @@
+<apex:page docType="html-5.0" standardController="Opportunity" extensions="Clone_Custom_Add_Products_Controller" standardStylesheets="false" lightningStylesheets="true" > <!--Future_Product__c-->
+   <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="page">
+    <apex:slds />
+    <div class="slds-scope">
+        
+        <apex:form id="form" >
+            <apex:outputPanel rendered="{!!showflag}">
+                <apex:commandLink value="{!Opportunity.name}" action="/{!Opportunity.id}"/>
+                <apex:pageMessages ></apex:pageMessages>
+                <center>
+                    <apex:commandButton action="{!Cancelled}" value="Back" styleClass="slds-button slds-button_brand" />
+                </center>
+            </apex:outputPanel>
+            <span id="messageBar" style="display:none;">
+                <apex:pageMessage severity="ERROR" title="Validation Error:" strength="3"  summary="You have not entered data in the required fields" />
+            </span>
+         
+       <apex:outputPanel id="multiyear" rendered="{!showflag}">
+           <apex:pageMessages ></apex:pageMessages>
+           <div class="slds-box slds-box_small">   
+                <b>*Note:</b><br/>
+                <li>Subscription product will be added automatically without delete option and all relevant information will be pulled from first year products and services.</li> 
+                <!--li>Non subscription product relevant information will be pulled from first year products and services.</li>
+                <li>Same products and services for the same contract year are considered as duplicate records</li-->
+            </div>  
+            <br/>
+            <center>       
+            <h1 style='font-size: 30px;'>
+                Edit All Products and Services(Future Period)
+            </h1>
+            </center>
+           <apex:commandLink value="{!Opportunity.name}" action="/{!Opportunity.id}"/>
+            <!--<apex:outputPanel id="multiyear" rendered="{!IF(OR(currentopp.Multi_YearDeal__c != ''), TRUE, FALSE)}"> -->
+            <apex:outputPanel id="l1">
+                <!--apex:variable var="ErrorImageURL" value="/img/msg_icons/error16.png"/-->
+                <apex:variable var="rowNumber" value="{!0}"/>
+                <table id="EditTable" class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+                    <tr class="slds-line-height_reset">
+                        <th>
+                            
+                        </th>
+                        <!--apex:outputPanel rendered="{!createDeleteFlag}"-->
+                        <!--th>
+                            Action
+                        </th-->
+                        <!--/apex:outputPanel-->
+                        <th>
+                            Product
+                        </th>
+                        <th>
+                            Contract Year
+                        </th>
+                        <th>
+                            Contract Value
+                        </th>
+                        <th>
+                            <abbr class="slds-required" title="required">* </abbr>Basis of Fees
+                        </th>
+                        <th>
+                            <abbr class="slds-required" title="required">* </abbr>Quantity
+                        </th>
+                        <!--Changes added by Prachi (SSE-SSE-17449)-->
+                        <th>
+                            Number of Service
+                        </th>
+                         <!--Changes Ended-->
+                        <th>
+                            <abbr class="slds-required" title="required">* </abbr>List Price/Basis of Fees
+                        </th>
+                        <th>
+                            <abbr class="slds-required" title="required">* </abbr>Sales Price/Basis of Fees
+                        </th>
+                        <th>
+                            <abbr class="slds-required" title="required">* </abbr>Use-case
+                        </th>
+                        <th>
+                            <abbr class="slds-required" title="required">* </abbr>Offering Details
+                        </th>
+                        <th>
+                            Solution Cap
+                        </th>
+                        <th>
+                            Renewability
+                        </th>
+                        <th>
+                            Usage Allowance
+                        </th>
+                        <th>
+                            Total Equivalent Units
+                        </th>
+                        <th>
+                            Platform
+                        </th>
+                        <th>
+                            PS Service End Date
+                        </th>
+                        <th>
+                            Line Description
+                        </th>
+                        <!--th>
+                            Basis of Fees - Other
+                        </th-->
+                        <!--th>
+                            Business Type
+                        </th-->
+                    </tr>
+                    <!--apex:actionFunction name="callApexMethod" action="{!updateProductValues(a,b)}"/-->
+                    <apex:repeat value="{!FPWList}" var="c" id="products" >
+                        <tr class="slds-hint-parent">
+                            <td>
+                                <apex:outputText value="{!rowNumber+1}" />
+                            </td>
+                            <!--apex:outputPanel rendered="{!createDeleteFlag}"-->
+                            <!--td>
+                                <apex:commandButton id="deletebutton" style="height:30px;width:30px;" action="{!deleteRow}" image="{!URLFOR($Resource.RemoveIcon,'')}" value="" reRender="l1" styleClass="slds-icon" rendered="{!IF(AND(createDeleteFlag == true,c.subs == false), TRUE, FALSE)}"  > 
+                                    <apex:param name="rowIndex" value="{!rowNumber}"/>
+                                </apex:commandButton>
+                            </td-->
+                            <!--/apex:outputPanel-->
+                            <td>
+                                <!--div class = "requiredInput">
+                                    <div class = "requiredBlock">
+                                        <apex:selectList id="productlist" value="{!c.prodid}" multiselect="false" size="1" onchange="return populateProductFields(this.value,{!rowNumber});" rendered="{!IF(AND(createDeleteFlag == true,c.subs == false), TRUE, FALSE)}" >
+                                            <apex:selectOptions value="{!AvailableProductList}"  />
+                                            <apex:param name="rowIndex" value="{!rowNumber}"/>
+                                        </apex:selectList>
+                                    </div>
+                                </div-->
+                                <!--apex:outputText value="{!c.prodname}" rendered="{!IF(OR(createDeleteFlag == false,c.subs == true), TRUE, FALSE)}" /-->
+                                <apex:outputText value="{!c.prodname}" />
+                                <!--apex:image id="productError" url="{!ErrorImageURL}" style="cursor:hand;display:none;" title="Please select a valid product" /-->
+                                <apex:variable var="rowNumber" value="{!rowNumber+1}"/>
+                            </td>
+                            <td>
+                                <!--<apex:selectList value="{!c.selectedConYear}" multiselect="false" size="1" rendered="{!AND(!createDeleteFlag,c.subs == false)}" style="width:45px"> -->
+                                <apex:selectList id="yearlist" value="{!c.selectedConYear}" multiselect="false" size="1" rendered="{!IF(AND(createDeleteFlag == true,c.subs == false), TRUE, FALSE)}" style="width:45px" >
+                                    <apex:selectOptions value="{!AvailableConYearsList}"/>
+                                </apex:selectList>
+                                <!--<apex:outputText value="{!c.selectedConYear}" rendered="{!OR(!!createDeleteFlag,c.subs == true)}"/>    -->
+                                <apex:outputText value="{!c.selectedConYear}" rendered="{!IF(OR(createDeleteFlag == false,c.subs == true), TRUE, FALSE)}" />                        
+                            </td>
+                            <td>
+                                <apex:outputField value="{!c.fp.Contract_Value__c}" />
+                            </td>
+                            <td>
+                                <div class = "requiredInput">
+                                    <div class = "requiredBlock">
+                                		<apex:inputField id="fees" value="{!c.fp.Basis_of_Fees__c}" required="false" rendered="{!createDeleteFlag}"/>
+                                    </div>
+                                </div>          
+                                <apex:outputField value="{!c.fp.Basis_of_Fees__c}" rendered="{!!createDeleteFlag}"/>
+                            </td>
+                            <td noWrap="true">
+                                <div class = "requiredInput">
+                                    <div class = "requiredBlock">
+                                        <apex:inputField id="quantity" value="{!c.fp.Quantity__c}" required="false"  rendered="{!createDeleteFlag}"/><!--styleclass="slds-has-error"-->
+                                    </div>
+                                </div>
+                                <apex:outputField value="{!c.fp.Quantity__c}" rendered="{!!createDeleteFlag}"/>
+                                <!--apex:image id="quantityError" url="{!ErrorImageURL}" style="cursor:hand;display:none;" title="Please enter Quantity (It is a mandatory field)" /-->
+                            </td>
+                             <!--Changes added by Prachi (SSE-SSE-17449)-->
+                              
+                              <td>
+                                <apex:inputField id="numOfServ" value="{!c.fp.Number_of_Services__c}" rendered="{!createDeleteFlag}"/>
+                                <apex:outputField value="{!c.fp.Number_of_Services__c}" rendered="{!!createDeleteFlag}"/>
+                            </td>
+                             <!--Changes End-->
+                            <td>
+                                <div class = "requiredInput">
+                                    <div class = "requiredBlock">
+                                        <apex:inputField id="listprice" value="{!c.fp.ListPrice__c}" required="false" rendered="{!createDeleteFlag}"/>
+                                    </div>
+                                </div>
+                                <apex:outputField value="{!c.fp.ListPrice__c}" rendered="{!!createDeleteFlag}"/>
+                                <!--apex:image id="listPriceError" url="{!ErrorImageURL}" style="cursor:hand;display:none;" title="Please enter List Price (It is a mandatory field)" /-->
+                            </td>
+                            <td>
+                                <div class = "requiredInput">
+                                    <div class = "requiredBlock">
+                                        <apex:inputField id="salesprice" value="{!c.fp.Sales_Price__c}" required="false" rendered="{!createDeleteFlag}"/>
+                                    </div>
+                                </div>
+                                <apex:outputField value="{!c.fp.Sales_Price__c}" rendered="{!!createDeleteFlag}"/>
+                                <!--apex:image id="salesPriceError" url="{!ErrorImageURL}" style="cursor:hand;display:none;" title="Please enter Sales Price (It is a mandatory field)" /-->
+                            </td>
+                            <td>
+                                <div class = "requiredInput">
+                                    <div class = "requiredBlock">
+                                        <apex:inputField id="proposition" value="{!c.fp.Proposition__c}" required="false" rendered="{!createDeleteFlag}"/>
+                                    </div>
+                                </div>
+                                <apex:outputField value="{!c.fp.Proposition__c}" rendered="{!!createDeleteFlag}"/>
+                                <!--apex:image id="propositionError" url="{!ErrorImageURL}" style="cursor:hand;display:none;" title="Please enter Proposition (It is a mandatory field)" /-->
+                            </td>
+                            <td>
+                                <div class = "requiredInput">
+                                    <div class = "requiredBlock">
+                                        <apex:inputField id="package" value="{!c.fp.Package__c}" required="false" rendered="{!createDeleteFlag}"/>
+                                    </div>
+                                </div>
+                                <apex:outputField value="{!c.fp.Package__c}"  rendered="{!!createDeleteFlag}"/>
+                                <!--apex:image id="packageError" url="{!ErrorImageURL}" style="cursor:hand;display:none;" title="Please enter Package (It is a mandatory field)" /-->
+                            </td>
+                            <td>
+                                <apex:inputField id="solcap" value="{!c.fp.Solution_Cap__c}" rendered="{!createDeleteFlag}"/>
+                                <apex:outputField value="{!c.fp.Solution_Cap__c}" rendered="{!!createDeleteFlag}"/>
+                            </td>
+                            <td>
+                                <apex:outputField value="{!c.fp.RenewableNew__c}" />
+                            </td>
+                            <td>
+                                <apex:inputField id="usage" value="{!c.fp.Usage_Allowance__c}" rendered="{!createDeleteFlag}"/>
+                                <apex:outputField value="{!c.fp.Usage_Allowance__c}" rendered="{!!createDeleteFlag}"/>
+                            </td>
+                            <td>
+                                <apex:inputField id="usagecap" value="{!c.fp.Usage_Cap_or_Estimation__c}" rendered="{!createDeleteFlag}"/>
+                                <apex:outputField value="{!c.fp.Usage_Cap_or_Estimation__c}" rendered="{!!createDeleteFlag}"/>
+                            </td>
+                            <td>
+                                <apex:inputField id="platform" value="{!c.fp.Platform__c}" rendered="{!createDeleteFlag}"/>
+                                <apex:outputField value="{!c.fp.Platform__c}" rendered="{!!createDeleteFlag}"/>
+                            </td>
+                            <td>
+                                <!--apex:input type="date" id="ServiceEndDate" value="{!c.fp.Service_End_Date__c}" rendered="{!createDeleteFlag}"></apex:input-->
+                                <apex:inputField id="ServiceEndDate" value="{!c.fp.Service_End_Date__c}" rendered="{!createDeleteFlag}"/>
+                                <apex:outputField value="{!c.fp.Service_End_Date__c}" rendered="{!!createDeleteFlag}"/>
+                            </td>
+                            <td>
+                                <apex:inputField id="description" value="{!c.fp.Line_Description__c}" rendered="{!createDeleteFlag}"/>
+                                <apex:outputField value="{!c.fp.Line_Description__c}" rendered="{!!createDeleteFlag}"/>
+                            </td>
+                            <!--td>
+                                <apex:inputField id="other" value="{!c.fp.Other__c}" rendered="{!createDeleteFlag}"/>
+                                <apex:outputField value="{!c.fp.Other__c}" rendered="{!!createDeleteFlag}"/>
+                            </td-->
+                            
+                            
+                            <!-- td>
+                                <apex:inputField id="booking" value="{!c.fp.Booking_Type__c}" rendered="{!createDeleteFlag}"/>
+                                <apex:outputField value="{!c.fp.Booking_Type__c}" rendered="{!!createDeleteFlag}"/>
+                            </td -->
+                        </tr>
+                    </apex:repeat>      
+                </table>
+            </apex:outputPanel>
+            <!--apex:commandButton action="{!addProduct}" value="Add Product" styleClass="slds-button slds-button_brand" rendered="{!createDeleteFlag}" style="margin: 10px;"/-->
+            <center>
+                <apex:commandButton onclick="if(!isValidProducts()) return false;" action="{!saveProducts}"  value="Save" styleClass="slds-button slds-button_outline-brand" rendered="{!createDeleteFlag}" />
+                <apex:commandButton action="{!Cancelled}" value="Cancel" styleClass="slds-button slds-button_text-destructive" rendered="{!createDeleteFlag}" />
+            </center>
+               <!-- </apex:outputPanel> -->
+         </apex:outputPanel> 
+            <script>
+            function getProductRecord(rowIndex, objectName){
+                return document.getElementById("j_id0:form:products"+":"+rowIndex+":"+objectName);
+            }
+            
+            function showObject(object){
+                object.style.display = "";
+            }
+            
+            function hideObject(object)
+            {
+                object.style.display = "none";
+            }
+            
+            function isValidProducts() {
+                 try 
+                {
+                    var isValid=1;
+                    for(var rowIndex=0;rowIndex<{!noOfProducts};rowIndex++) 
+                    {
+                        //Product Errors
+                        /*var productname = getProductRecord(rowIndex,"productlist");
+                        var productyear = getProductRecord(rowIndex,"yearlist");
+                        var duplicateFound = false;
+                        
+                        if(productname != null ) 
+                        { 
+                            //Product Name Error
+                            if(productname.value=='')
+                            {
+                                //showObject(getProductRecord(rowIndex,"productError"));
+                                productname.classList.add("slds-has-error");
+                                isValid=0;
+                            }
+                            
+                            //Duplicate Products Error
+                            for(var nextProductIndex=0;nextProductIndex<{!noOfProducts};nextProductIndex++){
+                                var nextproductname = getProductRecord(nextProductIndex,"productlist");
+                                var nextproductyear = getProductRecord(nextProductIndex,"yearlist");
+                                if(nextProductIndex != rowIndex && nextproductname != null && nextproductname.value==productname.value && nextproductyear.value==productyear.value){
+                                    
+                                    nextproductname.classList.add("slds-has-error");
+                                    duplicateFound=true;   
+                                }
+                            }
+                            if(duplicateFound){
+                                productname.classList.add("slds-has-error");
+                                isValid=0;
+                            }
+                            else if(productname.value != ''){
+                                productname.classList.remove("slds-has-error");
+                            }
+                        }*/ 
+                        
+                        //Quantity Error
+                        var poductquantity = getProductRecord(rowIndex,"quantity");
+                        if(poductquantity != null ) 
+                        { 
+                            if(poductquantity.value=='' || poductquantity.value=='0')
+                            {
+                                poductquantity.classList.add("slds-has-error");
+                                //showObject(getProductRecord(rowIndex,"quantityError"));
+                                isValid=0;
+                            }
+                            else{
+                                poductquantity.classList.remove("slds-has-error");
+                                //hideObject(getProductRecord(rowIndex,"quantityError"));
+                            }
+                        }
+                        
+                        //Basis of fees Error
+                        var poductbasisoffees = getProductRecord(rowIndex,"fees");
+                        if(poductbasisoffees != null ) 
+                        { 
+                            if(poductbasisoffees.value=='')
+                            {
+                                poductbasisoffees.classList.add("slds-has-error");
+                                //showObject(getProductRecord(rowIndex,"propositionError"));
+                                isValid=0;
+                            }
+                            else{
+                                poductbasisoffees.classList.remove("slds-has-error");
+                                //hideObject(getProductRecord(rowIndex,"propositionError"));
+                            }
+                        }
+                        
+                        //ListPrice Error
+                        var poductListPrice = getProductRecord(rowIndex,"listprice");
+                        if(poductListPrice != null ) 
+                        { 
+                            if(poductListPrice.value=='')
+                            {
+                                poductListPrice.classList.add("slds-has-error");
+                                //showObject(getProductRecord(rowIndex,"listPriceError"));
+                                isValid=0;
+                            }
+                            else{
+                                poductListPrice.classList.remove("slds-has-error");
+                                //hideObject(getProductRecord(rowIndex,"listPriceError"));
+                            }
+                        }
+                        
+                        //SalesPrice Error
+                        var poductSalesPrice = getProductRecord(rowIndex,"salesprice");
+                        if(poductSalesPrice != null ) 
+                        { 
+                            if(poductSalesPrice.value=='')
+                            {
+                                poductSalesPrice.classList.add("slds-has-error");
+                                //showObject(getProductRecord(rowIndex,"salesPriceError"));
+                                isValid=0;
+                            }
+                            else{
+                                poductSalesPrice.classList.remove("slds-has-error");
+                                //hideObject(getProductRecord(rowIndex,"salesPriceError"));
+                            }
+                        }
+                        
+                        //Proposition Error
+                        var poductProposition = getProductRecord(rowIndex,"proposition");
+                        if(poductProposition != null ) 
+                        { 
+                            if(poductProposition.value=='')
+                            {
+                                poductProposition.classList.add("slds-has-error");
+                                //showObject(getProductRecord(rowIndex,"propositionError"));
+                                isValid=0;
+                            }
+                            else{
+                                poductProposition.classList.remove("slds-has-error");
+                                //hideObject(getProductRecord(rowIndex,"propositionError"));
+                            }
+                        }
+                        
+                        //Package Error
+                        var poductPackage = getProductRecord(rowIndex,"package");
+                        if(poductPackage != null ) 
+                        { 
+                            if(poductPackage.value=='')
+                            {
+                                poductPackage.classList.add("slds-has-error");
+                                //showObject(getProductRecord(rowIndex,"packageError"));
+                                isValid=0;
+                            }
+                            else{
+                                poductPackage.classList.remove("slds-has-error");
+                                //hideObject(getProductRecord(rowIndex,"packageError"));
+                            }
+                        }
+                        
+                        
+                    }    
+                        if(isValid==1)
+                        return true;
+                    showObject(document.getElementById("messageBar"));          
+                    return null;
+                    
+                } 
+                catch(e) 
+                {
+                    alert(e);
+                    return false;
+                }
+            }
+            
+            /*function populateProductFields(prodid,index){
+
+                var productquantity = getProductRecord(index,"quantity");
+                var productlistprice = getProductRecord(index,"listprice");
+                var productsalesprice = getProductRecord(index,"salesprice");
+                var productdescription = getProductRecord(index,"description");
+                var productplatform = getProductRecord(index,"platform");
+                var productfees = getProductRecord(index,"fees");
+                var productother = getProductRecord(index,"other");
+                var productusage = getProductRecord(index,"usage");
+                var productusagecap = getProductRecord(index,"usagecap");
+                var productproposition = getProductRecord(index,"proposition");
+                var productpackage = getProductRecord(index,"package");
+                var productServiceEndDate = getProductRecord(index,"ServiceEndDate");
+                //var poductbooking = getProductRecord(index,"booking");
+                
+                //alert(prodid);
+                if(prodid !== ''){
+                    
+                if({!JsonMap}[prodid].Quantity != undefined)
+                productquantity.value = {!JsonMap}[prodid].Quantity;
+                
+                if({!JsonMap}[prodid].List_Price__c != undefined)
+                productlistprice.value = {!JsonMap}[prodid].List_Price__c;
+                
+                if({!JsonMap}[prodid].UnitPrice != undefined)
+                productsalesprice.value = {!JsonMap}[prodid].UnitPrice;
+                
+                if({!JsonMap}[prodid].Description != undefined)
+                productdescription.value = {!JsonMap}[prodid].Description;
+                
+                if({!JsonMap}[prodid].Platform__c != undefined)
+                productplatform.value = {!JsonMap}[prodid].Platform__c;
+                
+                if({!JsonMap}[prodid].Basis_of_Fees__c != undefined)
+                productfees.value = {!JsonMap}[prodid].Basis_of_Fees__c;
+                
+                if({!JsonMap}[prodid].Other__c != undefined)
+                productother.value = {!JsonMap}[prodid].Other__c;
+                
+                if({!JsonMap}[prodid].Usage_Allowance__c != undefined)
+                productusage.value = {!JsonMap}[prodid].Usage_Allowance__c;
+                
+                if({!JsonMap}[prodid].Usage_Cap_or_Estimation__c != undefined)
+                productusagecap.value = {!JsonMap}[prodid].Usage_Cap_or_Estimation__c;
+                    
+                    
+                var d = new Date({!JsonMap}[prodid].Service_End_Date__c);
+                var formattedDate = d.getDate()+'/'+d.getMonth()+'/'+d.getFullYear();
+                    
+                if({!JsonMap}[prodid].Service_End_Date__c != undefined)
+                productServiceEndDate.value = formattedDate;
+                    
+                
+                    //if({!JsonMap}[prodid].Proposition__c != undefined)
+                //poductproposition.value = {!JsonMap}[prodid].Proposition__c;
+                
+                //if({!JsonMap}[prodid].Package__c != undefined)
+                //poductpackage.value = {!JsonMap}[prodid].Package__c;
+                
+                //if({!JsonMap}[prodid].Booking_Type__c != undefined)
+                //poductbooking.value = {!JsonMap}[prodid].Booking_Type__c;
+               }
+                else{
+                    productquantity.value = '';
+                    productlistprice.value = '';
+                    productsalesprice.value = '';
+                    productdescription.value = '';
+                    productplatform.value = '';
+                    productfees.value = '';
+                    productother.value = '';
+                    productusage.value = '';
+                    productusagecap.value = '';
+                    productproposition.value = '';
+                    productpackage.value = '';
+                    productServiceEndDate.value = '';
+                }
+                return null;
+            }*/
+            </script>
+        </apex:form>
+    </div>
+    </html>
+</apex:page>

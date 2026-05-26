@@ -1,0 +1,20 @@
+<apex:page standardController="Order" showChat="false" showHeader="false" sidebar="false">
+
+
+<apex:outputPanel >
+<apex:pageMessage title="CAUTION! This client has complained about invoicing accuracy.Please take extra care in providing accurate and comprehensive information." rendered="{!IF(Order.Opportunity.Opp_Invoicing_Quality_Details__c=null,false,true)}" severity="Error" strength="1">
+ 
+ &nbsp;&nbsp;<apex:OutputField value="{!Order.Opportunity.Opp_Invoicing_Quality_Details__c}"/>
+ </apex:pageMessage>
+ <script type="text/javascript">
+
+    var thisWindow = window.name;
+    if(thisWindow)
+    {
+        var iframe = parent.document.getElementById(thisWindow);
+        iframe.style.height = "70px";        
+    }
+
+    </script>
+  </apex:outputPanel>
+</apex:page>

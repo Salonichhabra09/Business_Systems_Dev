@@ -1,0 +1,31 @@
+<aura:documentation>
+    
+    <aura:example name="ExampleName" ref="c:Order_Header" label="Make Order Header">
+    </aura:example> 
+    
+    <aura:description>
+        <p style="line-height: normal;"><strong><span style="font-family: 'Arial',sans-serif; color: #080707;">Overview</span></strong></p>
+        <ul>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">This component has been created to accommodate the feature of creating an Order from an Opportunity record.</span></li>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">This component contains:</span>
+                <ul>
+                    <li style="margin-left: 1.5in; text-indent: -.25in; line-height: normal; tab-stops: list -.5in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">A warning message as &ldquo;This Opportunity does not have an Order associated with it &ldquo;Please click &ldquo;Make Order Header&rdquo; button to create the order.</span></li>
+                    <li style="margin-left: 1.5in; text-indent: -.25in; line-height: normal; tab-stops: list -.5in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">&lsquo;Make Order Header&rsquo; button.</span></li>
+                </ul>
+            </li>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">This section/component is only visible on the opportunity record when</span>
+                <ul>
+                    <li style="margin-left: 1.5in; text-indent: -.25in; line-height: normal; tab-stops: list -.5in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Opportunity Stage is &ldquo;Verbal&rdquo;</span></li>
+                    <li style="margin-left: 1.5in; text-indent: -.25in; line-height: normal; tab-stops: list -.5in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Opportunity does not have an order attached (&lsquo;Order Number&rsquo; field should be blank on the opportunity record).</span></li>
+                </ul>
+            </li>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">On Clicking the &lsquo;Make Order Header&rsquo; button, &lsquo;New Order&rsquo; form opens up with opportunity information pre-populated.</span></li>
+        </ul>
+        <p style="line-height: normal;"><strong><span style="font-family: 'Arial',sans-serif; color: #080707;">For the Developers:</span></strong></p>
+        <ul>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">On Clicking "Make Order Header" button, a controller action &ldquo;echo&rdquo; is called which is handling the multiple checks for the conditions for order creation as per the criteria.</span></li>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">When criteria are met, &ldquo;echo&rdquo; is calling a helper method &ldquo;createOrderRecord&rdquo; which in return calling a &ldquo;CallServer&rdquo; method from a base component helper.</span></li>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">The required parameters are passed to &ldquo;CallServer&rdquo; method which on execution pops up Order edit page and allow the user to edit and create the order, the respective created order get attached to the Opportunity.</span></li>
+        </ul> 
+    </aura:description>
+</aura:documentation>

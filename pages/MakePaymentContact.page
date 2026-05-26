@@ -1,0 +1,5 @@
+<apex:page standardController="Contact" extensions="MakePaymentContact" action="{!createCase}">
+    <apex:form > 
+       
+    </apex:form>
+</apex:page>

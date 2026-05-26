@@ -1,0 +1,14 @@
+.fieldSetBorder{
+    border : 1.2px solid black;
+}
+.bold-legend{
+    font-weight: bold;
+    color : DodgerBlue;
+}
+.customPicklist{
+    margin-left: -5px;
+    margin-bottom: 5px;
+}
+.picklist{
+    display: inline-flex;
+}

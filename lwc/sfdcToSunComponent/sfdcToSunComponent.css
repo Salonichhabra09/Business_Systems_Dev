@@ -1,0 +1,9 @@
+.warning-message{
+    color: red;
+    font-weight: 600;
+}
+.warning-box{
+    background: ivory;
+    border: groove;
+    min-height: 2.5rem;
+}

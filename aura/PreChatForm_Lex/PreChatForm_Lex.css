@@ -1,0 +1,79 @@
+.THIS.prechatUI{
+    padding-left:20px;
+    padding-right:20px;
+    width:90%;
+    height: auto;
+    /*overflow-y: scroll;
+    overflow-x: hidden;*/
+}
+.THIS .embeddedServiceSidebarFormField .slds-style-inputtext{
+    height: 30px;
+    border: 1px solid #78d64b;
+}
+
+.THIS .slds-checkbox__label{
+    display: inline;
+    cursor:pointer;
+    text-align:left;
+    width:none;
+}
+
+.THIS .ChngCol{
+   font-weight:bold;
+   font-size:12px;
+   color:#78d64b;
+   /*border-radius: 20px;
+   border: 1px solid #78d64b;*/
+}
+
+.THIS.uiCSSCls2{
+	padding-left:20px;
+	padding-right:20px;
+	color: #333333;
+    position: static; 
+}
+.THIS .slds-input{
+    width:92%;
+    border: 1px solid #78d64b;
+    border-radius: 4px;
+    height: 30px;
+    margin-bottom: 2px;
+    text-align:left;
+    vertical-align: middle;
+    font-size:12px;
+    float:none;
+    padding:0 12px;
+    font-family: "Salesforce Sans",sans-serif;
+    position: relative;
+}
+
+.THIS .slds-form-element__label{
+    font-size:12px;
+    display:auto;
+    width:none;
+    padding-left: 5px;
+}
+
+.THIS .slds-select{
+    font: 100% sans-serif;
+    font-family: "Salesforce Sans",sans-serif;
+    font-size:12px;
+    color: #333333;
+    background-color: #fff;
+    border: 1px solid #78d64b;
+    -webkit-appearance: none;
+    border-radius: 4px;
+    width: 100%;
+    height: 30px;
+    padding: 0 12px;
+    vertical-align: middle;
+    text-align:left;
+    position: static;
+}
+
+.THIS.startButtonWrapper{
+    padding: 5px 28px 24px 30px;
+    width:85%;
+    position: static;
+    -webkit-appearance: checkbox;
+}

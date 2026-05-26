@@ -1,0 +1,4 @@
+<design:component>
+	<design:attribute name="inputCharLimit" label="Input Char limit" required = "true"/>
+    <design:attribute name="inputText" label="Input text" description = "variable that holds the text insert by the user"/>
+</design:component>

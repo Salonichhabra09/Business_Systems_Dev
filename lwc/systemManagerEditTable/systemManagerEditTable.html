@@ -1,0 +1,76 @@
+<template>
+    <template if:true={data}>
+
+        <div class="filter-panel slds-var-p-around_x-small slds-clearfix">
+            <br/>
+                <div class="slds-float_left">
+                    <lightning-icon class="slds-var-m-horizontal_x-small" 
+                    icon-name="standard:nft_settings" 
+                    alternative-text="System" 
+                    title="System"
+                    style="margin-left: 20px;"></lightning-icon>
+                    <b class="slds-text-heading_small">Project's Systems</b>
+                </div>
+                <div class="slds-align_absolute-center">
+                    <div class="slds-float_left" style="margin-right: 10px;">
+                            <lightning-button
+                            label="Save"
+                            onclick={handleSave} 
+                            variant="brand">
+                            </lightning-button>
+                        </div>
+                        <div class="slds-float_right">
+                            <lightning-button
+                            label="Cancel"
+                            onclick={handleCancel}>
+                            </lightning-button>
+                        </div>
+                </div>
+              <br/>
+
+            <!--lightning-layout>
+                <lightning-layout-item padding="around-small" size="4">
+                    <lightning-icon class="slds-var-m-horizontal_x-small" 
+                    icon-name="standard:nft_settings" 
+                    alternative-text="System" 
+                    title="System"></lightning-icon>
+                    <b class="slds-text-heading_small">Project's System</b>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small">
+                    <lightning-button
+                    label="Save"
+                    onclick={handleSave} 
+                    variant="brand">
+                    </lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small">
+                    <lightning-button
+                    label="Cancel"
+                    onclick={handleCancel}>
+                    </lightning-button>
+                </lightning-layout-item>
+            </lightning-layout-->
+        </div>
+
+        <div class="table-container slds-var-m-around_small" style="height:500px">
+            <div style="height:100%">
+            <c-custom-edit-table-helper 
+            key-field="Name" 
+            data={data} 
+            columns={columns} 
+            onpicklistchanged={picklistChanged} 
+            onpicklistload={picklistLoad}
+            oninputchanged={inputChanged}
+            oninputload={inputLoaded}
+            selected-rows={preSelectedRows}
+            onrowselection={getSelectedName}
+            language={language}
+            enable-infinite-loading
+            onloadmore={loadMoreData}
+            isdisabled={disabled}
+            aria-expanded="false">
+            </c-custom-edit-table-helper>
+        </div>
+        </div>
+    </template>
+</template>

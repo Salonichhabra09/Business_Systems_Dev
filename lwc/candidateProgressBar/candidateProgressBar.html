@@ -1,0 +1,13 @@
+<template>
+    <lightning-card>
+    <div class="progress-info">
+        Used: {participantsCreated}, out of Maximum Usage: {maxCandidateCount}
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar" style={progressWidth}></div>
+        </div>
+        <div class="progress-info">
+            <span>{participantsCreated}</span> / <span>{maxCandidateCount}</span>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,19 @@
+.bold{
+    font-weight: 500;
+}
+.plain{
+    font-weight: 450;
+}
+.maxHeight{
+    max-height: 25rem;
+    overflow-y:auto;
+}
+.slds-modal__content{
+    padding: 1rem;
+    height: 22rem;
+    overflow: auto;
+}
+.slds-modal__container{
+    width: 50% !important;
+    max-width: 50% !important;   
+}

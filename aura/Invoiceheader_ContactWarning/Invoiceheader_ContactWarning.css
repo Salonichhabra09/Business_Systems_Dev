@@ -1,0 +1,8 @@
+.THIS .uiMessage h4 {
+    font-weight: bold;
+    font-size: 16px;
+    color: red;
+}
+.THIS .uiMessage.warning {
+    border-color: red;
+}

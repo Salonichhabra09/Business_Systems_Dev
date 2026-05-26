@@ -1,0 +1,237 @@
+.contHierarchy {
+    background-color: white;
+    min-width: max-content;
+}
+
+.zoomBtns {
+    display: inline-flex;
+    margin-top: 10px;
+    padding: 0.5em 0.75em;
+}
+
+ul {
+    position: relative;
+    white-space: nowrap;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.resize {
+    min-width: max-content;
+    width: 100%;
+}
+
+.dragContainer {
+    /*overflow: auto;*/
+    padding: 1.5rem;
+    padding-bottom: 4rem;
+}
+
+ul:after {
+    content: '';
+    display: table;
+    clear: both
+}
+
+li {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 6em .5em 0 .5em
+}
+
+li:before,
+li:after {
+    content: '';
+    position: absolute;
+    top: 4em;
+    right: 50%;
+    border-top: 1px solid #ccc;
+    width: 50%;
+    height: 4em
+}
+
+li:after {
+    right: auto;
+    left: 50%;
+    border-left: 1px solid #ccc
+}
+
+li:only-child:after,
+li:only-child:before {
+    display: none
+}
+
+li:only-child {
+    padding: 2em;
+}
+
+li:first-child:before,
+li:last-child:after {
+    border: 0 none
+}
+
+li:last-child:before {
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 0 0
+}
+
+li:first-child:after {
+    border-radius: 5px 0 0 0
+}
+
+ul:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 6em
+}
+
+.account-url {
+    font-size: x-large;
+    color: black;
+    text-decoration: none;
+}
+
+.account-url-layout {
+    margin-top: 0.7rem;
+    /*margin-left: 3rem;*/
+}
+
+.action-space {
+    border: solid;
+    margin-left: 13rem;
+    border-color: darkgray;
+    border-radius: 2.5rem;
+    background: #f4f6f9;
+}
+
+.action-close-icon {
+    float: right;
+    padding: 5px;
+}
+
+.hierarchy-name {
+    font-size: large;
+    color: black;
+    text-decoration: none;
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;*/
+}
+
+.legend-container {
+    display: flex;
+    /*gap: 15px;
+    align-items: center;*/
+    padding: 10px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.coach-icon {
+    --slds-c-icon-color-foreground-default: #ce8946;
+}
+
+.champion-icon {
+    --slds-c-icon-color-foreground-default: #FFD700;
+    --slds-c-icon-color-foreground: #FFD700;
+}
+
+.economic-buyer {
+    --slds-c-icon-color-background: #33b020;
+    --slds-c-icon-radius-border: 48px;
+}
+
+.note-not-added-icon {
+    --slds-c-icon-color-background: grey;
+}
+
+.note-added-icon {
+    --slds-c-icon-color-background: #3320ad;
+}
+
+.linked-to-closed-lost-opportunity {
+    --slds-c-icon-color-background: grey;
+}
+
+.linked-to-closed-won-opportunity {
+    --slds-c-icon-color-background: #14F144;
+}
+
+.activeContacts {
+    width: 120px;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-top: 4px solid palegreen;
+}
+
+.notActiveContacts {
+    width: 120px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-top: 4px solid grey;
+}
+
+.reduce-size {
+    zoom: .5;
+    /*transform: scale(0.5);*/
+}
+
+.enlargeIcon {
+    transition: all .2s ease-in-out;
+}
+
+.connections {
+    position: absolute;
+    top: -175px;
+    left: -12px;
+    width: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+line {
+    stroke: #3498db;
+    stroke-width: 2;
+}
+
+.line-toggle {
+    display: flex;
+    margin-right: 1rem;
+    margin-left: 6rem;
+}
+
+.contact-display{
+    margin-left: 4.8rem;
+}
+
+.clickable-path {
+    cursor: pointer;
+    /* Makes cursor indicate it's clickable */
+    pointer-events: all;
+}
+
+.prod-fix {
+    padding-top: 60px;
+    /* For Production Only */
+}
+
+.io-psychologist{
+    --slds-c-icon-color-background: #9719b3;
+    --slds-c-icon-radius-border: 48px;
+}

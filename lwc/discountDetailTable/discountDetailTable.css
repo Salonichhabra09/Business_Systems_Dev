@@ -1,0 +1,11 @@
+.lightning-card-grey .slds-card__header {
+    background-color: #f3f3f3; /* Standard related list grey */
+    border-bottom: 1px solid #d8d8d8; /* Slight border like related lists */
+    padding-top: 0.50rem;
+    padding-bottom: 0.50rem;
+}
+
+.max-height{
+    max-height: 15rem;
+    overflow-y:auto;
+}

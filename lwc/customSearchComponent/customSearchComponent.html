@@ -1,0 +1,31 @@
+<template>
+    <div>
+        <div class="slds-form-element">
+            <div class="slds-form-element__control">
+                <div class="slds-combobox_container">
+                    <div id="box" class={boxClass} aria-expanded="true" aria-haspopup="listbox" role="combobox">
+                        <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                                <div class="slds-p-top_none">
+                                    <lightning-input class={inputClassFromParent} data-id="inputBox" label={label} type="text" id="input" value={selectedName}
+                                                     onclick={handleClick} onblur={onBlur} onchange={onChange}
+                                                    autocomplete="off" placeholder={searchPlaceholder} required={isRequired} variant="label-hidden">
+                                    </lightning-input>
+                                </div>
+                        </div>
+                        <div data-id="listbox-id-1" class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid slds-scrollable" style="height:7rem" role="listbox" onblur={onBlur} onmouseenter={handleMouseEnter} onmouseleave={handleMouseLeave}>
+                            <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                                <template for:each={picklistToUse} for:item="picklist">
+                                    <li key={picklist.value} onclick={onSelect} data-id={picklist.value} role="presentation" data-name={picklist.value}>
+                                        <span class="slds-lookup__item-action slds-lookup__item-action--label" role="option">
+                                            <span class="slds-truncate">{picklist.label}</span>
+                                        </span>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

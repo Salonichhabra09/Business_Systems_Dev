@@ -1,0 +1,140 @@
+<aura:component implements="lightningsnapin:prechatUI,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="dependentPicklist_UpdateCtrl">
+    <!-- You must implement "lightningsnapin:prechatUI" for this component to appear in the "Prechat Component" customization dropdown in the Snapins setup. -->
+    
+    <!-- Prechat field components to render. -->
+    <aura:attribute name="prechatFieldComponents" type="List" description="An array ofobjects representing the prechat fields specified in prechat setup."/>
+    <!--Attributes Created to cater the Logic-->
+    <aura:attribute name="SlctdLanOnPrCht" type="string"/>
+    <aura:attribute name="BtnId" type="string"/>
+    <aura:attribute name="EnqType" type="string"/>
+    <aura:attribute name="PrChtCountry" type="string"/>
+    <aura:attribute name="CountryAbrvtd" type="string"/>
+    <aura:attribute name="dataProtectn" type="Boolean"/>
+    <aura:attribute name="cndtPg" type="Boolean"/>
+    <aura:attribute name="clntPg" type="Boolean"/>
+    <aura:attribute name="fieldChk" type="Boolean" default="false"/>
+    <aura:attribute name="fieldChk1" type="Boolean" default="false"/>
+    <aura:attribute name="fieldChk2" type="Boolean" default="false"/>
+    <aura:attribute name="fieldChk3" type="Boolean" default="false"/>
+    <aura:attribute name="EnqTypoptions" type="String[]" access="PRIVATE"/>
+    
+    
+    <!-- aura attributes for dependent fields-->  
+    <aura:attribute name="listControllingValues" type="list" default="[]" description="to store controller field values"/>
+    <aura:attribute name="listDependingValues" type="list" default="['--- None ---']" description="to store dependent field values"/>
+    <aura:attribute name="depnedentFieldMap" type="map" description="map to store dependent values with controlling value"/>
+    <aura:attribute name="bDisabledDependentFld" type="boolean" default="true"/> 
+    <aura:attribute name="objDetail" type="case" default="{'sobjectType' : 'case'}"/>
+    <aura:attribute name="controllingFieldAPI" type="string" default="PreChatCountry__c" description="store field API name of Controller field"/>
+    <aura:attribute name="dependingFieldAPI" type="string" default="PreChatLanguage__c" description="store field API name of dependent field"/>
+    
+    <!-- Handler for when this component is initialized. -->
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
+    <!-- For Aura performance. -->
+    <aura:locator target="startButton" description="Prechat form submit button."/>
+    <!-- Contains methods for getting prechat fields, starting a chat, and validating fields. -->
+    <br/>
+    <center><img src="{!$Resource.SHLLogo}"/></center>
+    <lightningsnapin:prechatAPI aura:id="prechatAPI"/>
+    <div class="prechatUI">
+        <div class="embeddedServiceSidebarFormField">
+            <table cellpadding="2" cellspacing="2">
+                <tr> <td>{!v.prechatFieldComponents[0]}</td>
+                    <td>{!v.prechatFieldComponents[1]}</td>
+                </tr>
+                <tr><td colspan="2">{!v.prechatFieldComponents[2]}</td></tr>
+                
+            </table>
+        </div>
+        
+        <div>
+            <table>
+                
+                <tr>
+                    <td width="350px">
+                        <label style="color:#c23934;font-size:12px;width:auto;">*</label>
+                        <label style="font-size:12px;display:inline;">{!$Label.c.Please_select_type_of_enquiry_you_have}</label>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td width="350px">
+                        <lightning:select name="EnqId" aura:id="EnqId" onchange="{!c.enquiryOnChange}">
+                            <aura:iteration items="{!v.EnqTypoptions}" var="option">
+                                <option text="{!option}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td width="175px">
+                        <label style="color:#c23934;font-size:12px;width:auto;">*</label>
+                        <label style="font-size:12px;width:auto;">{!$Label.c.KB_Country}</label>
+                    </td>
+                    <td width="175px">
+                        <label style="color:#c23934;font-size:12px;width:auto;">*</label>
+                        <label style="font-size:12px;width:auto;">{!$Label.c.KB_Preferred_Language}</label>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td width="175px">
+                        <lightning:select aura:id="countryfld"
+                                          name="controllerFld" 
+                                          value="{!v.objDetail.Country__c}"                          
+                                          onchange="{!c.onControllerFieldChange}">
+                            <aura:iteration items="{!v.listControllingValues}" var="val"  >
+                                <option value="{!val}">{!val}</option>
+                            </aura:iteration>
+                        </lightning:select>
+                    </td>
+                    <td width="175px">
+                        <lightning:select aura:id="dependentFld"
+                                          name="dependentFld"
+                                          value="{!v.objDetail.City__c}"
+                                          disabled="{!v.bDisabledDependentFld}" onchange="{!c.catchDependent}">
+                            <aura:iteration items="{!v.listDependingValues}" var="val">
+                                <option value="{!val}">{!val}</option>
+                            </aura:iteration>
+                        </lightning:select>
+                    </td>
+                </tr>
+            </table>
+            <div class="embeddedServiceSidebarFormField">
+                <!--<aura:if isTrue="{!v.cndtPg}">-->
+                    <table width="100%">
+                        <tr><td>{!v.prechatFieldComponents[7]}</td></tr>
+                    </table>
+                <!--</aura:if>-->
+                
+            </div>
+            <table width="100%">
+                <tr>
+                    <td width="100%">
+                        <lightning:input type="tel" aura:id="PhoneField" label="{!$Label.c.PreChatForm_Phone}" placeholder="{!$Label.c.PreChatForm_PhoneMessage}"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--<lightning:input type="checkbox" name="ProofDisclaimer" label="{!$Label.c.PreChatDisclaimerMsg}" aura:id="ProofDisclaimer" checked="{!v.dataProtectn}" onchange="{!c.catchChkBox}"/>-->
+    </div>
+    <p style="font-size: 12px;
+              color: #A9A9A9;
+              cursor: pointer;"><lightning:formattedText aura:id="ProofDisclaimer" value="{!$Label.c.PreChatDisclaimerMsg}" onclick="{!c.catchChkBox }"/></p>
+    <br/>
+    
+    <!--Dependent List Component Section Ends here-->
+    <!--Chat Button Enable/Disable Logic-->
+    <aura:if isTrue="{!and(v.dataProtectn,and(and(v.fieldChk1,v.fieldChk2),v.fieldChk3))}">
+        <div class="uiCSSCls2">
+            <ui:button aura:id="startButton" class="embeddedServiceSidebarButton" label="{!$Label.c.LA_PreChat_Base_StartChat_04I4G0000008OIP_8181350}" press="{!c.handleStartButtonClick}"/> <!--{!$Label.LiveAgentPrechat.StartChat}-->
+        </div>
+        <aura:set attribute="else">
+            <div class="uiCSSCls2">
+                <ui:button aura:id="startButton" class="embeddedServiceSidebarButton" label="{!$Label.c.LA_PreChat_Base_StartChat_04I4G0000008OIP_8181350}" disabled="true" press="{!c.handleStartButtonClick}"/> <!--{!$Label.LiveAgentPrechat.StartChat}-->
+            </div>
+        </aura:set>
+    </aura:if>
+</aura:component>

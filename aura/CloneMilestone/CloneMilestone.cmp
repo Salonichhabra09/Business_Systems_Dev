@@ -1,0 +1,16 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="MilestoneRecord" type="Object"/>
+    <aura:attribute name="MilestoneRecordToUse" type="List"/>
+    <aura:attribute name="recordLoadError" type="String"/>
+    <aura:attribute name="recordId" type="Id" />
+    <!--<aura:handler name="init" action="{!c.doInit}" value="{!this}" /> -->
+
+    <force:recordData aura:id="recordLoader"
+    recordId="{!v.recordId}"
+    fields="Service_Type2__c,Milestone_Owner__c,Cross_Border_BU__c,Milestone_Description__c,CurrencyIsoCode,Project__c,BU__c,Milestone_Period__c,Amount__c,Practice_Area__c,Milestone_Risk__c"
+    targetFields="{!v.MilestoneRecord}"
+    targetError="{!v.recordLoadError}"
+    recordUpdated="{! c.navigatetoNewMilestone }"
+    /> 
+	
+</aura:component>

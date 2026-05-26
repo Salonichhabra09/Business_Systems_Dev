@@ -1,0 +1,27 @@
+<aura:documentation>
+    
+    <aura:example name="ExampleName" ref="c:FooterCustomLinks" label="Footer Section">
+        Footer Description
+    </aura:example>
+    <aura:description>
+        <p style="line-height: normal;"><strong><span style="font-family: 'Arial',sans-serif; color: #080707;">Overview:</span></strong></p>
+        <ul>
+            <li style="margin-left: 21.3pt; text-indent: -.25in; line-height: normal; tab-stops: list -5.75in -4.25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">This component was created in Lightning as a replacement to the existing &lsquo;Custom Links&rsquo;, &lsquo;Recent items&rsquo;, etc, on salesforce classic.</span></li>
+            <li style="margin-left: 21.3pt; text-indent: -.25in; line-height: normal; tab-stops: list -5.75in -4.25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">This component has been made available as a collapsible menu on the global footer that is constant on all application pages and user can expand/collapse it as required. </span></li>
+            <li style="margin-left: 21.3pt; text-indent: -.25in; line-height: normal; tab-stops: list -5.75in -4.25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">It contains following sub-menus:</span>
+                <ul>
+                    <li style="margin-left: 56.7pt; text-indent: -.25in; line-height: normal; tab-stops: list -5.25in -3.75in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Custom Links: External links to the other related resources &amp; applications.</span></li>
+                    <li style="margin-left: 56.7pt; text-indent: -.25in; line-height: normal; tab-stops: list -5.25in -3.75in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Recent Items: That holds the list of the recent items (salesforce records) visited by the user.</span></li>
+                    <li style="margin-left: 56.7pt; text-indent: -.25in; line-height: normal; tab-stops: list -5.25in -3.75in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Notes: To create New Notes.</span></li>
+                    <li style="margin-left: 56.7pt; text-indent: -.25in; line-height: normal; tab-stops: list -5.25in -3.75in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">List Views: The option to access the User&rsquo;s personalized list views.</span></li>
+                </ul>
+            </li>
+        </ul>
+        <p style="line-height: normal;"><strong><span style="font-family: 'Arial',sans-serif; color: #080707;">For the Developers:</span></strong></p>
+        <ul>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">The component is being initialized at the time of loading a page, a handler is defined in a component to handle the system event.</span></li>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">The handler is calling an controller action, &ldquo;doInit&rdquo;, where the userId of logged in user is captured, &amp; URL for Commercial reporting is defined.</span></li>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in; border: none; padding: 0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">The external web links are defined using HTML-Markup inside the component &amp; those are being displayed, under Custom Links tab.</span></li>
+        </ul>
+    </aura:description>
+</aura:documentation>

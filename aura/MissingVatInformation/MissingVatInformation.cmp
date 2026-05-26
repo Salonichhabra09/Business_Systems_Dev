@@ -1,0 +1,8 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName" access="global" >
+ 
+    <ui:message  severity="error" class="uiMessage">
+        <div class="slds-text-heading_small"><b>Please be aware that the account linked to this order is missing VAT information. Please remember to correct this information prior to invoicing to prevent the need for crediting and reissuing invoices   
+            </b> </div> 
+    </ui:message>
+     
+</aura:component>

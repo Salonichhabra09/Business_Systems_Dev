@@ -1,0 +1,163 @@
+<aura:component controller="MilestoneBulkController" implements= "force:hasRecordId,lightning:actionOverride" access="global">
+    <aura:attribute name="MilestoneList" type="Milestone__c[]"/>
+    <aura:attribute name="ProjectRecord" type="ProjectObject__c"/>
+    <aura:attribute name="ProjectId" type="String" access="global" description="Used to Hold the Id of record in Context"/>
+    <aura:attribute name="recordId" type="String" access="global" description="Used to Hold the Id of record in Context"/>
+    <aura:attribute name="ShowDetails" type="Boolean" default="False"/>
+    <aura:attribute name="CurrentMilestoneValue" type="Decimal" />
+    <aura:attribute name="spinner" type="boolean" default="FALSE"/>
+    <aura:handler name="init" value="this" action="{!c.onPageReferenceChange}"/>
+    <aura:if isTrue="{!v.spinner}">
+        <div aura:id="spinnerId" class="slds-spinner_container">
+            <div class="slds-spinner--brand  slds-spinner slds-spinner--large slds-is-relative" role="alert">
+                <span class="slds-assistive-text">Loading...</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </aura:if>
+    
+    <aura:if isTrue="{!v.ShowDetails}">
+        <lightning:recordViewForm recordId="{!v.ProjectRecord.Id}" objectApiName="ProjectObject__c" density="comfy">
+            <lightning:card title="Project Details">
+                <lightning:layout multipleRows="true">
+                    <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                        <lightning:outputField fieldName="Project_Name__c"/>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                        <lightning:outputField fieldName="LBU__c" />
+                    </lightning:layoutItem>
+                    <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                        <lightning:outputField fieldName="Project_Health_Detail__c" />
+                    </lightning:layoutItem>                  
+                    <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                        <lightning:outputField fieldName="Milestone_Status__c" />
+                    </lightning:layoutItem>
+                    <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                        <lightning:outputField fieldName="Milestones_Value__c" />
+                    </lightning:layoutItem>                  
+                    <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                        <lightning:outputField fieldName="Total_Orderline_Value_RollUp__c" />
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </lightning:card>
+        </lightning:recordViewForm>
+    </aura:if>
+    <div class="slds-page-header">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media" style="padding: 8px;">
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate" title="Create Milestones">Create Milestones</span>
+                                </h1>
+                            </div>
+                        </div>
+                        
+                        <div align="center">
+                            <lightning:button variant="Brand" label="Save" onclick="{!c.save}"/>  &nbsp;
+                            <lightning:button variant="Brand" label="Cancel" onclick="{!c.cancel}"/>
+                           <div style="display:inline;padding-left: 50px;">
+                               <b>  Current Milestone Value : <lightning:formattedNumber value="{!v.CurrentMilestoneValue}" style="currency" currencyCode="{!v.ProjectRecord.CurrencyIsoCode}" maximumFractionDigits="2"/> </b>
+                            </div>
+                            <div style="display:inline" class="slds-float_right">
+                                <lightning:button label="ADD ROW" iconName="utility:add" iconPosition="left"  variant="" onclick="{!c.addRow}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <lightning:card>
+        <table>
+            <thead>
+                <tr>
+                    <div>
+                        <th style="width:30px;padding-left: 25px;">S#</th>
+                        <th style="width:150px;">Project<p style="display: inline;color:red;">*</p></th>
+                        <th style="width:165px;">BU</th>
+                        <th style="width:165px">Service Type<p style="display: inline;color:red;">*</p></th>
+                        <th style="width:165px">Milestone Period<p style="display: inline;color:red;">*</p></th>
+                        <th style="width:165px">Amount<p style="display: inline;color:red;">*</p></th>
+                        <th style="width:165px">Practice Area</th>  
+                        <th style="width:165px">Milestone Description<p style="display: inline;color:red;">*</p></th>
+                        <!--Added by Prachi as part of SSE-22281-->
+                        <th style="width:165px">Milestone Risk</th> 
+                        <th style="width:165px">Track Change</th> 
+                        <!--Changes End as part of SSE-22281-->
+                        <th style="width:100px">Is Signed</th>
+                    </div>
+                </tr>
+            </thead>
+        </table>
+        
+        <table>
+            <thead>     
+                <aura:iteration items="{!v.MilestoneList}" var="Milestone" indexVar="index">
+                    <lightning:recordEditForm aura:id="Milestoneform" objectApiName="Milestone__c" >                    
+                        <tr>
+                            <div>
+                                <td style="width:30px;padding-left: 25px;"> 
+                                    {!index + 1}
+                                </td>
+                                <td style="width:150px">
+                                    <lightning:inputField aura:id="fieldId" fieldName="Project__c" value="{!Milestone.Project__c}"  variant="label-hidden" required="true" disabled="true"></lightning:inputField>
+                                </td>
+                                <td style="width:165px">
+                                    <lightning:inputField aura:id="fieldId" fieldName="BU__c" value="{!Milestone.BU__c}"  variant="label-hidden" required="true" disabled="true"></lightning:inputField>
+                                </td>
+                                <td style="width:165px">
+                                    <lightning:inputField aura:id="fieldId" fieldName="Service_Type2__c" value="{!Milestone.Service_Type2__c}"  variant="label-hidden" required="true"></lightning:inputField>
+                                </td>
+                                <td style="width:165px">
+                                    <lightning:inputField aura:id="fieldId"  fieldName="Milestone_Period__c" value="{!Milestone.Milestone_Period__c}"  variant="label-hidden" required="true"></lightning:inputField>
+                                </td>
+                                <td style="width:165px">
+                                    <lightning:input aura:id="fieldId" type="number" formatter="decimal"  value="{!Milestone.Amount__c}" step="0.01"  variant="label-hidden" required="true" onchange="{!c.updateMilestoneValue}"/>
+                                    <!--   <lightning:inputField  fieldName="Amount__c" formatter="decimal" value="{!Milestone.Amount__c}" label='' required="true"></lightning:inputField> -->
+                                </td>
+                               <td style="width:165px">
+                                    <lightning:inputField aura:id="fieldId" fieldName="Practice_Area__c" value="{!Milestone.Practice_Area__c}"  variant="label-hidden" required="false" />
+                                </td> 
+                                <td style="width:165px">
+                                    <lightning:inputField aura:id="fieldId" fieldName="Milestone_Description__c" value="{!Milestone.Milestone_Description__c}"  variant="label-hidden" required="true"/>
+                                </td>
+                                  <!--Added by Prachi as part of SSE-22281-->
+                        <td style="width:165px">
+                                    <lightning:inputField aura:id="fieldId" fieldName="Milestone_Risk__c" value="{!Milestone.Milestone_Risk__c}"  variant="label-hidden" required="false" />
+                                </td> 
+                        <td style="width:165px">
+                                    <lightning:inputField aura:id="fieldId" fieldName="Track_change__c" value="{!Milestone.Track_change__c}"  variant="label-hidden" required="false" />
+                                </td>
+                        <!--Changes End as part of SSE-22281-->
+                                <td style="width:50px;padding-left:40px">
+                                    <!--  <lightning:inputField aura:id="chkbox" fieldName="Is_Signed__c" checked="{!Milestone.Is_Signed__c}" value="{!Milestone.Is_Signed__c}" required="false" onchange="{!c.testfunction}"/> --> 
+                                    <lightning:input type="checkbox" aura:id="fieldId" name="Is_Signed" checked="{!Milestone.Is_Signed__c}" value="{!Milestone.Is_Signed__c}"  variant="label-hidden"/> 
+                                </td>
+                                
+                                <td style="padding-top: 27px;padding-left: 48px;">
+                                    <a onclick="{!c.removeRow}" data-record="{!index}">
+                                        <lightning:icon iconName="utility:delete" size="small" alternativeText="Delete"/>
+                                        <span class="slds-assistive-text">Delete</span>
+                                    </a>&nbsp;
+                                    <a onclick="{!c.clonerow}" data-record="{!index}">
+                                        <lightning:icon iconName="utility:copy" size="small" alternativeText="Clone"/>
+                                        <span class="slds-assistive-text">Clone</span>
+                                    </a>
+                                </td>
+                            </div> 
+                        </tr>
+                    </lightning:recordEditForm>
+                </aura:iteration>
+                
+                
+            </thead>
+        </table>
+    </lightning:card>
+    
+    
+</aura:component>

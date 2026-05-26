@@ -1,0 +1,18 @@
+<template>
+    <div class="slds-m-around_small slds-p-top_medium margin-bottom">
+        <div class="slds-accordion__summary accordion_class slds-border_left slds-border_right slds-border_top slds-border_bottom">
+            <h2 class="slds-accordion__summary-heading">
+            <lightning-icon icon-name={iconName} size="small" onclick={handleDashboardVisibility}></lightning-icon>
+            <!-- Updated the header as part of SSE-22553-->
+                <span class="slds-accordion__summary-content slds-m-left_medium slds-m-top_xx-small"><a class="link-color" onclick={handleDashboardVisibility}>Usage & Commercial KPIs</a></span>
+            </h2>
+            <a href={tableauDashboardUrl} target="_blank" class="link-color slds-float_right slds-p-right_medium slds-m-top_xx-small">Click to open in Tableau</a>
+        </div>
+    </div>
+    <template if:true={showDashboard}>
+        <div class="slds-p-top_xx-small">
+            <c-tableau-viz viz-url={tableauDashboardUrl} height="1000" hide-tabs hide-toolbar width="600" ></c-tableau-viz>
+        </div>
+    </template>
+
+</template>

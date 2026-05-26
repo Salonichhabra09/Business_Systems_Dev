@@ -1,0 +1,266 @@
+<template>
+    <div>
+        <!-- Header Section-->
+        <header class="image-container">
+            <img src={imageUrl} alt="Header Image" />
+            <h1 class="overlay-heading">{heading}</h1>
+        </header>
+    </div>
+
+    <!--Priyank Code Start-->
+    <template lwc:if={showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+    </template>
+    <template if:true={readonlyMode}>
+        <c-client-response custom-fields={customFields} account-logo={AccountLogo}
+            client-name={wrfClientName}></c-client-response>
+    </template>
+
+    <template if:false={readonlyMode}>
+        <template if:false={isActive}>
+            <div class="slds-notify slds-notify_alert slds-theme_info">
+                <span class="slds-assistive-text">info</span>
+                <span>THIS LINK IS DEACTIVATED NOW. PLEASE CONTACT SHL MS TEAM(managedservices@shl.com) FOR FURTHER ASSISTANCE.</span>
+            </div>
+
+        </template>
+        <template if:true={isActive}>
+            <div lwc:if={isAuthenticationUI}>
+                <c-contact-authentication onauthentication={handleVisibility} record-id={RN}></c-contact-authentication>
+            </div>
+            <div lwc:else>
+                <template if:false={isGCSC}>
+                    <template if:true={limitReached}>
+                        <div class="slds-notify slds-notify_alert slds-theme_info">
+                            <span class="slds-assistive-text">info</span>
+                            <span>You have consumed your maximum limit of {maxCandidateCount} candidates. For more usage
+                                Please contact SHL MS Team(managedservices@shl.com).</span>
+                        </div>
+                    </template>
+                </template>
+                <template if:false={limitReached}>
+                    <template if:false={isGCSC}>
+                        <template if:false={isSubmitUI}>
+                       <!-- <div class="progress-info">
+                            Your maximum usage is {maxCandidateCount} Candidates out of which you have used
+                            {participantCreated}.
+                        </div> -->
+                        <div class="progress-container">
+                            <div class="progress-bar" style={progressWidth}></div>
+                        </div>
+                        <div class="progress-info">
+                            <span>Current Usage is {participantCreated} out of Maximum Limit of {maxCandidateCount}</span>
+                        
+                        </div>
+                    </template>
+                    </template>
+                    <div lwc:if={isCRF}>
+                        <div lwc:if={isDynamicForm}>
+                           
+                            <lightning-card title={wrfClientName}>
+                                <!--   <c-client-Form  form-fields={customFields} account-id={accountId} onclientsubmit={handleClientSubmit}></c-client-Form> -->
+                                <div class="slds-grid slds-wrap">
+                                    <div class="slds-col slds-size_1-of-3">
+                                        <span>
+                                            <lightning-card>
+                                                <div style="align-content: center;padding-left: 10px;">
+                                                    <img src={AccountLogo}>
+                                                </div>
+                                                <div style="padding-left: 10px;">
+                                                    <lightning-formatted-rich-text
+                                                        value={textUnderLogo}></lightning-formatted-rich-text>
+                                                </div>
+                                            </lightning-card>
+                                        </span>
+                                    </div>
+                                    <div class="slds-col slds-size_2-of-3">
+                                        <div class="slds-m-horizontal_small">
+                                            <div class="slds-grid slds-wrap">
+                                                <lightning-layout multiple-rows>
+                                                    <template for:each={customFields} for:item="acc">
+                                                        <lightning-layout-item size="12" key={acc.Id}>
+                                                            <div if:true={acc.issection} style="padding:around-small"
+                                                                class="slds-text-heading_small">
+                                                                <br>
+                                                                <strong>{acc.fieldLabel}</strong>
+                                                                <hr class="solid">
+                                                            </div>
+                                                            <!--  <lightning-input if:true={acc.isnormal} type={acc.fieldtype}
+                                                        label={acc.fieldLabel} required={acc.isRequired} data-index={acc.index}
+                                                        value={acc.value} onchange={handleInputChange}
+                                                        field-level-help={acc.helpText} checked={acc.value}
+                                                        class="slds-p-top_x-small">
+                                                    </lightning-input> -->
+                                                            <div if:true={acc.isnormal} class={acc.cssClass}>
+                                                                <lightning-input if:true={acc.isMandatory}
+                                                                    type={acc.fieldtype} label={acc.fieldLabel}
+                                                                    data-index={acc.index} onchange={handleInputChange}
+                                                                    value={acc.value} field-level-help={acc.helpText}
+                                                                    disabled=true>
+                                                                </lightning-input>
+                                                                <div if:false={acc.isMandatory}>
+                                                                    <lightning-input if:false={acc.isDate}
+                                                                        type={acc.fieldtype} label={acc.fieldLabel}
+                                                                        data-index={acc.index}
+                                                                        onchange={handleInputChange} value={acc.value}
+                                                                        field-level-help={acc.helpText}
+                                                                        required={acc.isRequired}
+                                                                        checked={acc.value}>
+                                                                    </lightning-input>
+                                                                    <lightning-input if:true={acc.isDate}
+                                                                        type={acc.fieldtype} label={acc.fieldLabel}
+                                                                        data-index={acc.index}
+                                                                        onchange={handleInputChange} value={acc.value}
+                                                                        field-level-help={acc.helpText}
+                                                                        required={acc.isRequired} min={todaysDate}>
+                                                                    </lightning-input>
+                                                                </div>
+                                                            </div>
+                                                            <lightning-textarea if:true={acc.istextarea} name="input1"
+                                                                label={acc.fieldLabel} required={acc.isRequired}
+                                                                data-index={acc.index} value={acc.value}
+                                                                onchange={handleInputChange}
+                                                                field-level-help={acc.helpText}
+                                                                class="slds-p-top_x-small"></lightning-textarea>
+                                                            <lightning-input-rich-text if:true={acc.isrichtexarea}
+                                                                label={acc.fieldLabel} required={acc.isRequired}
+                                                                data-index={acc.index} value={acc.value}
+                                                                onchange={handleInputChange}
+                                                                field-level-help={acc.helpText}
+                                                                class="slds-p-top_x-small">
+                                                            </lightning-input-rich-text>
+                                                            <lightning-combobox if:true={acc.ispicklist} name="progress"
+                                                                label={acc.fieldLabel} value={acc.value}
+                                                                placeholder="Select a Value" options={acc.options}
+                                                                onchange={handleInputChange} required={acc.isRequired}
+                                                                data-index={acc.index} field-level-help={acc.helpText}
+                                                                class="slds-p-top_x-small">
+                                                            </lightning-combobox>
+                                                            <div if:true={acc.ischeckboxgroup}
+                                                                class="slds-grid slds-gutters slds-var-p-vertical_medium">
+                                                                <div class="slds-col slds-grid">
+                                                                    <lightning-checkbox-group name={acc.fieldLabel}
+                                                                        label={acc.fieldLabel} options={acc.options}
+                                                                        value={acc.value} required={acc.isRequired}
+                                                                        data-index={acc.index}
+                                                                        class="slds-p-top_x-small"
+                                                                        onchange={handleInputChange}>
+                                                                    </lightning-checkbox-group>
+                                                                    <lightning-helptext if:true={acc.helpText}
+                                                                        content={acc.helpText}></lightning-helptext>
+                                                                </div>
+                                                            </div>
+                                                            <div if:true={acc.isradiogroup}
+                                                                class="slds-grid slds-gutters slds-var-p-vertical_medium">
+                                                                <div class="slds-col slds-grid">
+                                                                    <lightning-radio-group name={acc.fieldLabel}
+                                                                        label={acc.fieldLabel} options={acc.options}
+                                                                        value={acc.value} type="radio"
+                                                                        required={acc.isRequired} data-index={acc.index}
+                                                                        onchange={handleInputChange}
+                                                                        class="slds-p-top_x-small"></lightning-radio-group>
+                                                                    <lightning-helptext if:true={acc.helpText}
+                                                                        content={acc.helpText}></lightning-helptext>
+                                                                </div>
+                                                            </div>
+                                                        </lightning-layout-item>
+                                                    </template>
+                                                </lightning-layout>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </lightning-card>
+                        </div>
+                    </div>
+
+                    <div lwc:if={showCandidateScreen}>
+                        <c-crf-f-client-file-upload record-id={RN} oncandidatedetails={handleCandidateDetails}
+                            onscreen={getScreenInfo} document-name={documentName} onparse={getCandidateCount}
+                            oncreate={getCandidateData} candidate-data={candidateData}
+                            candidates-list={candidatesToPass}></c-crf-f-client-file-upload>
+                    </div>
+
+                    <div lwc:if={isSubmitUI} class="page-background">
+                        <div class="slds-align_absolute-center">
+                            <lightning-icon icon-name="standard:task2" class="icon-size"> </lightning-icon>
+                        </div>
+                        <p class="thank-you slds-align_absolute-center">Thank you ! </p>
+                        <p class="success-message slds-align_absolute-center">{successMessage}</p>
+                    </div>
+                    <!-- <div lwc:else class="slds-m-vertical_x-large slds-float_right"> -->
+                        <div lwc:else class="slds-m-vertical_x-large button-alignment">
+
+                        <lightning-button lwc:if={isCRF} class="slds-m-right_small" label="Candidate Template"
+                            onclick={handleDownloadTemplate} variant="brand"
+                            icon-name="utility:download"></lightning-button>
+                        <lightning-button lwc:if={isCRF} class="slds-m-right_small" onclick={handleCancel}
+                            label="Start Over"></lightning-button>
+                        <lightning-button lwc:if={isCRF} variant="brand" onclick={handleNext}
+                            label="Proceed to candidate upload"></lightning-button>
+                        <lightning-button lwc:else class="slds-m-right_small" variant="brand" onclick={handleBack}
+                            label="Back"></lightning-button>
+                        <template lwc:if={bulkScreen}>
+                            <lightning-button lwc:if={showSubmit} variant="brand" onclick={handleSubmit} label="Submit"
+                                disabled={disableSubmit}></lightning-button>
+                        </template>
+                    </div>
+                </template>
+            </div>
+
+            <!--Priyank Code End-->
+            <!--  <lightning-layout>
+            <lightning-layout-item size="2">
+                <div class="slds-text-heading_small slds-m-vertical_medium slds-m-left_small">Candidates
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="4" padding="horizontal-medium">
+                <lightning-combobox class="slds-m-top_medium" name="candidate" label="Candidate"
+                    placeholder="Select number of candidates" options={numberOfCandidates} variant="label-hidden"
+                    onchange={setNumberOfCandidates} value={candidates}></lightning-combobox></lightning-layout-item>
+        </lightning-layout> -->
+            <!-- <table class="slds-table slds-table_bordered slds-no-row-hover slds-table_cell-buffer" role="grid"
+            lwc:if={listOfCandidates}>
+            <thead>
+                <tr>
+                    <th scope="col" height="22" style="width: 3rem">Sr.</th>
+                    <th scope="col" height="22">First Name</th>
+                    <th scope="col" height="22">Last Name</th>
+                    <th scope="col" height="22">Email</th>
+                    <th scope="col" height="22">Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={listOfCandidates} for:item="rec">
+                    <tr key={rec} class="slds-hint-parent">
+                        <td style="font-weight: bold">
+                            <lightning-formatted-number value={rec.index}></lightning-formatted-number>.
+                        </td>
+                        <td>
+                            <lightning-input type="text" variant="label-hidden" label="" data-id={rec.index}
+                                name="firstName" value={rec.firstName} onchange={handleInputChange}></lightning-input>
+                        </td>
+                        <td>
+                            <lightning-input type="text" variant="label-hidden" label="" data-id={rec.index}
+                                name="lastName" value={rec.lastName} onchange={handleInputChange}></lightning-input>
+                        </td>
+                        <td>
+                            <lightning-input type="text" variant="label-hidden" label="" data-id={rec.index}
+                                name="email" value={rec.email} onchange={handleInputChange}></lightning-input>
+                        </td>
+                        <td>
+                            <lightning-input type="text" variant="label-hidden" label="" data-id={rec.index}
+                                name="phone" value={rec.phone} onchange={handleInputChange}></lightning-input>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table> -->
+        </template>
+    </template>
+
+    <footer>
+        <!--<p slot="footer" class="slds-text-align_center">{label.WRF_Footer}</p> -->
+        <p slot="footer" class="slds-text-align_center"> © {currentYear} SHL and its affiliates. All rights reserved.</p>
+      </footer>
+</template>

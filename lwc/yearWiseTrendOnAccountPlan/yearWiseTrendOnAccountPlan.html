@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="History Trend (USD)" icon-name="standard:metrics">
+        <div class="tempdiv" data-id="data">
+            <template if:true={chartConfigurationForYearWise}>
+                <c-custom-dashboard-component
+                    chart-config={chartConfigurationForYearWise} ></c-custom-dashboard-component>
+            </template>
+        </div>
+        <!-- <div class='box blue slds-float_right slds-m-around_small'></div> -->
+        <lightning-layout horizontal-align="spread" class="slds-p-horizontal_x-small">
+            <lightning-layout-item>
+                <div class="slds-align_absolute-center">
+                    <a onclick={navigateToReport}>View Report</a>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <lightning-layout>
+                    <lightning-layout-item>
+                        <div class="box blue slds-float_right slds-m-horizontal_small slds-m-top_xx-small"></div>
+                    </lightning-layout-item>
+                    <lightning-layout-item>
+                        <p>Amount</p>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+    
+</template>

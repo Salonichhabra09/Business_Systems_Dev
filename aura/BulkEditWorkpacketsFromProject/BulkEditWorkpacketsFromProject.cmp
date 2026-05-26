@@ -1,0 +1,137 @@
+<aura:component controller="WorkpacketBulkController" implements= "lightning:isUrlAddressable" access="global">
+    <aura:attribute name="WorkpacketList" type="Workpacket__c[]"/>
+     <aura:attribute name="SelectedWorkpackets" type="String"/>
+    <aura:attribute name="ProjectId" type="String" access="global" description="Used to Hold the Id of record in Context"/>
+    <aura:attribute name="recordId" type="String" access="global" description="Used to Hold the Id of record in Context"/>
+    <aura:attribute name="ProjectRecord" type="ProjectObject__c"/>
+    <aura:attribute name="ShowDetails" type="Boolean" default="False"/>
+    <aura:handler name="init" value="this" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.doInit}"/>
+    <aura:if isTrue="{!v.ShowDetails}">
+    <lightning:recordViewForm recordId="{!v.ProjectRecord.Id}" objectApiName="ProjectObject__c" density="comfy">
+        <lightning:card title="CPS Project Details">
+            <lightning:layout multipleRows="true">
+                <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                    <lightning:outputField fieldName="Project_Name__c"/>
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                    <lightning:outputField fieldName="LBU__c" />
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                    <lightning:outputField fieldName="Project_Health_Detail__c" />
+                </lightning:layoutItem>                  
+                <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                    <lightning:outputField fieldName="Milestone_Status__c" />
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                    <lightning:outputField fieldName="Total_Orderline_Value_RollUp__c" />
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                    <lightning:outputField fieldName="Milestones_Value__c" />
+                </lightning:layoutItem>                  
+                
+            </lightning:layout>
+        </lightning:card>
+    </lightning:recordViewForm>
+    </aura:if>
+    
+    
+    
+    <div class="slds-page-header">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media" style="padding: 8px;">
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate" title="Update Workpackets">Update Workpackets</span>
+                                </h1>
+                            </div>
+                        </div>
+                        
+                        <div align="center">
+                            <aura:if isTrue="{!notequals(v.SelectedWorkpackets,'')}">
+                            <lightning:button variant="Brand" label="Save" onclick="{!c.save}"/>  &nbsp;
+                            </aura:if>
+                            <lightning:button variant="Brand" label="Cancel" onclick="{!c.cancel}"/>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <aura:if isTrue="{!notequals(v.SelectedWorkpackets,'')}">
+    <lightning:card>
+        <table>
+            <thead>
+                <tr>
+                    <div class="slds-card__header slds-grid">
+                        <th style="width:30px">S#</th>
+                        <th style="width:165px;">CPS Project<p style="display: inline;color:red;">*</p></th>
+                        <th style="width:180px;">Workpacket Number<p style="display: inline;color:red;">*</p></th>
+                        <th style="width:165px">Solution Type<p style="display: inline;color:red;">*</p></th>
+                        <th style="width:165px">Status<p style="display: inline;color:red;">*</p></th>
+                        <th style="width:165px">Agreed Delivery</th>
+                        <th style="width:165px">Actual Delivery</th>
+                        <th style="width:200px">Delivery variance Comment</th>
+                        <th style="width:250px">Reasons For Changed Delivery Date</th>                        
+                    </div>
+                </tr>
+            </thead>
+        </table>
+        
+        
+        
+        
+        <table>
+            <thead>     
+                <aura:iteration items="{!v.WorkpacketList}" var="Workpacket" indexVar="index">
+                    <lightning:recordEditForm aura:id="Workpacketform" objectApiName="Workpacket__c" >                    
+                        <tr>
+                            <td style="width:30px;padding-left: 25px;"> 
+                                {!index + 1}
+                            </td>
+                            <td style="width:165px">
+                                <lightning:inputField fieldName="CPS_Project_Number__c" value="{!Workpacket.CPS_Project_Number__c}" variant="label-hidden" required="true" disabled="true"></lightning:inputField>
+                            </td>
+                            <td style="width:180px;padding-left: 40px;">
+                                <lightning:inputField fieldName="Name" value="{!Workpacket.Name}" variant="label-hidden" required="true" style="text-align:center"></lightning:inputField>
+                            </td>
+                            <td style="width:165px">
+                                <lightning:inputField fieldName="Solution_Type__c" value="{!Workpacket.Solution_Type__c}" variant="label-hidden" required="true"></lightning:inputField>
+                            </td>
+                            <td style="width:165px">
+                                <lightning:inputField  fieldName="Status__c" value="{!Workpacket.Status__c}" variant="label-hidden" required="true"></lightning:inputField>
+                            </td>
+                            <td style="width:165px">
+                                <lightning:inputField fieldName="Agreed_Delivery__c" value="{!Workpacket.Agreed_Delivery__c}" variant="label-hidden" required="false"/>
+                            </td>
+                            <td style="width:165px">
+                                <lightning:inputField fieldName="Actual_Delivery__c" value="{!Workpacket.Actual_Delivery__c}" variant="label-hidden" required="false"/>
+                            </td>
+                            <td style="width:200px">
+                                <lightning:inputField fieldName="Delivery_Variance_Comment__c" value="{!Workpacket.Delivery_Variance_Comment__c}" variant="label-hidden" required="false"/>
+                            </td> 
+                             <td style="width:250px">
+                                <lightning:inputField fieldName="Reasons_For_Changed_Delivery_Date__c" value="{!Workpacket.Reasons_For_Changed_Delivery_Date__c}" variant="label-hidden" required="false"/>
+                            </td> 
+                           
+                        </tr>
+                    </lightning:recordEditForm>
+                </aura:iteration>
+                
+                
+            </thead>
+        </table>
+    </lightning:card>
+     <aura:set attribute="else">
+            <ui:message title="Error" severity="error" closable="true">
+                No Workpackets were selected to update. Please go back and select workpackets to udpate.
+            </ui:message>
+            
+        </aura:set>
+    </aura:if>
+    
+</aura:component>

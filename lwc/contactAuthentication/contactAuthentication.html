@@ -1,0 +1,40 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-26-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+
+<template>
+  <lightning-card class="slds-card" >
+    <!--<h1 slot="title" class="slds-card__header" >Work Request Authentication</h1>-->
+         <template lwc:if={showSpinner}>
+          <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+      </template>
+      <div style="background-color:rgb(236, 234, 234);"><br><br>
+        <lightning-layout horizontal-align="center"	multiple-rows >
+          <lightning-layout-item flexibility="auto"  class="slds-text-align_left">
+            <p class="slds-text-title" style="font-weight: bold;">Please enter your Name and Email to get started </p><br>
+            <div>
+              <lightning-input data-id="Submittername" type="text" label= "Name" value={Submittername} required="true"></lightning-input> <br>
+            </div>
+            <div>
+              <lightning-input data-id="Submitteremail" type="Email" label="Email" value={Submitteremail} required="true"  placeholder="username@example.com" ></lightning-input> <br><br>
+            </div>
+            <div>
+              <lightning-button variant="brand" stretch="true"  label="Verify"  onclick={handleClick} class="slds-m-right_small"></lightning-button>
+            </div><br>
+            <div>
+              <p style="color:red"><b>{errorMsg}</b></p>
+              <p style="color:rgb(45, 239, 64)"><b>{successMSG}</b></p>
+            </div>
+          </lightning-layout-item><br><br>
+        </lightning-layout> <br><br> 
+      </div>
+   </lightning-card ><br>
+ <!--  <footer>
+    <p slot="footer" class="slds-text-align_center">{label.WRF_Footer}</p>
+  </footer>
+-->
+</template>

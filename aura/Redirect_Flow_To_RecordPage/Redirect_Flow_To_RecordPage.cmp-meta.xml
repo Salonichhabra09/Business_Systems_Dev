@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuraDefinitionBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <description>Component to be called on Flow Core Action to automatically redirect the flow on Finish to a Record Page</description>
+</AuraDefinitionBundle>

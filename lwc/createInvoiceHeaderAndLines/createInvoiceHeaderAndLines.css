@@ -1,0 +1,6 @@
+.no-wrap {
+    white-space: normal;
+}
+:host {
+    --sds-c-card-color-background: #FFFFCC;
+}

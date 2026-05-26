@@ -1,0 +1,534 @@
+<template>
+    <div class="slds-is-relative">
+        <lightning-quick-action-panel header={header}>
+            <template if:true={showSpinner}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </template>
+            <template if:true={showMessage}>
+                <div class="slds-p-around_medium">
+                    <h2 class="slds-text-heading--medium">This button should not be used to create new contacts. Before
+                        saving your changes, please make sure you update the Account and E-mail Address. Check the
+                        qualifications are showing on the new record.</h2>
+                </div>
+            </template>
+            <template if:true={showContactForm}>
+                <lightning-record-edit-form object-api-name="Contact" onsuccess={handleSuccess} onerror={handleError}>
+                    <template if:true={showErrorMessage}>
+                        <div class="slds-notify slds-notify_toast slds-theme_error slds-align_absolute-center"
+                            role="status" data-id="error-message">
+                            <span class="slds-assistive-text">error</span>
+                            <div class="slds-notify__content">
+                                <h2 class="slds-text-heading_small ">Please Resolve Errors</h2>
+                                <p>{errorMessage}</p>
+                            </div>
+                        </div>
+                    </template>
+                    <lightning-messages></lightning-messages>
+                    <div class="slds-p-around_medium" style="max-height: 390px;">
+                        <div class="slds-float_right">* = Required Information</div>
+                        <h3 class="slds-section-title--divider slds-m-top_x-large">Contact Information</h3>
+                        <lightning-layout class="slds-p-right_small slds-p-top_small">
+                            <lightning-layout-item size="6">
+                                <lightning-layout>
+                                    <lightning-layout-item size="3">
+                                        <p style="font-weight: bold;font-size:12px">*Name</p>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="9">
+                                        <lightning-input-field field-name="Salutation"
+                                            value={contact.fields.Salutation.value} variant="label-stacked"
+                                            style="margin-left: 1.89rem;padding-right:2.15rem;"></lightning-input-field>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <lightning-layout>
+                                    <lightning-input-field field-name="FirstName" value={contact.fields.FirstName.value}
+                                        variant="label-stacked" style="padding-left: 8.8rem;"></lightning-input-field>
+                                </lightning-layout>
+                                <lightning-layout>
+                                    <lightning-input-field field-name="LastName" value={contact.fields.LastName.value}
+                                        class="required-fields" variant="label-stacked"
+                                        style="padding-left: 8.8rem;"></lightning-input-field>
+                                </lightning-layout>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Contact_Status__c"
+                                    value={contact.fields.Contact_Status__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="AccountId" required
+                                    class="required-fields"></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Job_Function__c"
+                                    value={contact.fields.Job_Function__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Title"
+                                    value={contact.fields.Title.value}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Job_Level__c"
+                                    value={contact.fields.Job_Level__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Area_of_Interest__c"
+                                    value={contact.fields.Area_of_Interest__c.value}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="LID__No_longer_at_Company__c"
+                                    value={contact.fields.LID__No_longer_at_Company__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <template if:false={isGcscGeneral}>
+                                    <lightning-input-field field-name="ReportsToId"
+                                        value={contact.fields.ReportsToId.value}></lightning-input-field>
+                                </template>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Advocacy_Level__c"
+                                    value={contact.fields.Advocacy_Level__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Notes__c"
+                                    value={contact.fields.Notes__c.value}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <h3 class="slds-section-title--divider slds-m-top_medium">Communications and Marketing</h3>
+                        <lightning-layout class="slds-m-top_small slds-p-right_small">
+                            <!-- <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Double_Opted_In__c"
+                                    value={contact.fields.Double_Opted_In__c.value}></lightning-input-field>
+                            </lightning-layout-item>-->
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Do_Not_Contact__c"
+                                    value={contact.fields.Do_Not_Contact__c.value}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="LeadSource" value={contact.fields.LeadSource.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <!--<lightning-layout-item size="6">
+                                <lightning-input-field field-name="Email_Opted_In__c"
+                                    value={contact.fields.Email_Opted_In__c.value}></lightning-input-field>
+                            </lightning-layout-item>-->
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Date_of_Do_not_Contact_entry__c"
+                                    value={contact.fields.Date_of_Do_not_Contact_entry__c.value}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Eloqua_Description__c"
+                                    value={contact.fields.Eloqua_Description__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Do_Not_Contact_Reason__c"
+                                    value={contact.fields.Do_Not_Contact_Reason__c.value}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Contact_language__c"
+                                    value={contact.fields.Contact_language__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+
+                            <!--<lightning-layout-item size="6">
+                                <lightning-input-field field-name="Email_Undeliverable__c"
+                                    value={contact.fields.Email_Undeliverable__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>-->
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+
+                            <!-- <lightning-layout-item size="6">
+                    <lightning-input-field field-name="Inactive_in_Eloqua__c" value={contact.fields.Inactive_in_Eloqua__c.value} class="slds-m-left_medium"></lightning-input-field>
+                </lightning-layout-item> -->
+                        </lightning-layout>
+                        <!-- <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                <lightning-layout-item size="6">
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name="Business_Defined_Attribute__c" value={contact.fields.Business_Defined_Attribute__c.value} class="slds-m-left_medium"></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout> -->
+                        <h3 class="slds-section-title--divider slds-m-top_medium">Contact and Address Information</h3>
+                        <lightning-layout class="slds-m-top_small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Email" required
+                                    class="required-fields"></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Same_As_The_Account_Billing_Address__c"
+                                    value={contact.fields.Same_As_The_Account_Billing_Address__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Phone" value={contact.fields.Phone.value} required
+                                    class="required-fields"></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Mailing_Address_Line_1__c"
+                                    value={contact.fields.Mailing_Address_Line_1__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="MobilePhone"
+                                    value={contact.fields.MobilePhone.value}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Mailing_Address_Line_2__c"
+                                    value={contact.fields.Mailing_Address_Line_2__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Fax"
+                                    value={contact.fields.Fax.value}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Mailing_Address_Line_3__c"
+                                    value={contact.fields.Mailing_Address_Line_3__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Assistant_Name__c"
+                                    value={contact.fields.Assistant_Name__c.value}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Mailing_Address_Line_4__c"
+                                    value={contact.fields.Mailing_Address_Line_4__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Contact_changed_Account__c"
+                                    value={contact.fields.Contact_changed_Account__c.value}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Mailing_City__c"
+                                    value={contact.fields.Mailing_City__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Previous_A_C_No_D_No_from_prev_A_C__c"
+                                    value={contact.fields.Previous_A_C_No_D_No_from_prev_A_C__c.value}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Mailing_State_County__c"
+                                    value={contact.fields.Mailing_State_County__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <template if:true={isGcscGeneral}>
+                                    <lightning-input-field field-name="GCSC_Support_Contact__c"
+                                        value={contact.fields.GCSC_Support_Contact__c.value}
+                                        class="slds-m-left_medium"></lightning-input-field>
+                                </template>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Mailing_ZIP_Postal_Code__c"
+                                    value={contact.fields.Mailing_ZIP_Postal_Code__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Global_Mailing_Country__c"
+                                    value={contact.fields.Global_Mailing_Country__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <template if:true={isGcscGeneral}>
+                            <h3 class="slds-section-title--divider slds-m-top_medium">Contacting Information</h3>
+                            <lightning-layout class="slds-m-top_small slds-p-right_small">
+                                <lightning-layout-item size="6">
+                                </lightning-layout-item>
+                                <lightning-layout-item size="6">
+                                    <lightning-input-field field-name="Contact_Data_Checked__c"
+                                        value={contact.fields.Contact_Data_Checked__c.value}
+                                        class="slds-m-left_medium"></lightning-input-field>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </template>
+                        <h3 class="slds-section-title--divider slds-m-top_medium">Licence and Qualifications Information
+                        </h3>
+                        <lightning-layout class="slds-m-top_small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Qualifications__c"
+                                    value={contact.fields.Qualifications__c.value} class="slds-m-left_medium"
+                                    disabled={isOtherProfile}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="HPCSA__c" value={contact.fields.HPCSA__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_small slds-p-right_x-small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="A_C_Ex_Exempt__c"
+                                    value={contact.fields.A_C_Ex_Exempt__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <!-- <template if:true={isGcscGeneral}> -->
+                        <h3 class="slds-section-title--divider slds-m-top_medium">Dates Training Completed</h3>
+                        <lightning-layout class="slds-m-top_small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="X360__c" value={contact.fields.X360__c.value}
+                                    disabled={isOtherProfile}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="JACD__c" value={contact.fields.JACD__c.value}
+                                    class="slds-m-left_medium" disabled={isOtherProfile}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="MAS_training_date__c"
+                                    value={contact.fields.MAS_training_date__c.value}
+                                    disabled={isOtherProfile}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="MFS_training_date__c"
+                                    value={contact.fields.MFS_training_date__c.value} class="slds-m-left_medium"
+                                    disabled={isOtherProfile}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Ability_tests_training_date__c"
+                                    value={contact.fields.Ability_tests_training_date__c.value}
+                                    disabled={isOtherProfile}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="MQ_training_date__c"
+                                    value={contact.fields.MQ_training_date__c.value} class="slds-m-left_medium"
+                                    disabled={isOtherProfile}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="ASST__c" value={contact.fields.ASST__c.value}
+                                    disabled={isOtherProfile}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="OPQ_training_date__c"
+                                    value={contact.fields.OPQ_training_date__c.value} class="slds-m-left_medium"
+                                    disabled={isOtherProfile}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Interview_training_date__c"
+                                    value={contact.fields.Interview_training_date__c.value}
+                                    disabled={isOtherProfile}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="PC_Expert__c"
+                                    value={contact.fields.PC_Expert__c.value} class="slds-m-left_medium"
+                                    disabled={isOtherProfile}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Product_Workshop__c"
+                                    value={contact.fields.Product_Workshop__c.value} class="slds-m-left_medium"
+                                    disabled={isOtherProfile}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="SAT__c" value={contact.fields.SAT__c.value}
+                                    class="slds-m-left_medium" disabled={isOtherProfile}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="TA_Online__c"
+                                    value={contact.fields.TA_Online__c.value} class="slds-m-left_medium"
+                                    disabled={isOtherProfile}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Test_admin_training_date__c"
+                                    value={contact.fields.Test_admin_training_date__c.value} class="slds-m-left_medium"
+                                    disabled={isOtherProfile}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Soda__c" value={contact.fields.Soda__c.value}
+                                    class="slds-m-left_medium" disabled={isOtherProfile}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <!-- </template> -->
+                        <h3 class="slds-section-title--divider slds-m-top_medium">Finance</h3>
+                        <lightning-layout class="slds-m-top_small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-output-field field-name="Registration_Number__c"
+                                    class="slds-m-left_medium"></lightning-output-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Registration_Number_legacy__c"
+                                    value={contact.fields.Registration_Number_legacy__c.value}
+                                    class="slds-m-left_medium" disabled></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <h3 class="slds-section-title--divider slds-m-top_medium">Sales & Partner Information</h3>
+                        <lightning-layout class="slds-m-top_small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Independent_Consultant__c"
+                                    value={contact.fields.Independent_Consultant__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <h3 class="slds-section-title--divider slds-m-top_medium">Additional Information</h3>
+                        <lightning-layout class="slds-m-top_small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Description" value={contact.fields.Description.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="AdditionalContactNotes__c"
+                                    value={contact.fields.AdditionalContactNotes__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <template if:true={isGcscGeneral}>
+                                    <lightning-input-field field-name="Eloqua_Lead_Rating__c"
+                                        value={contact.fields.Eloqua_Lead_Rating__c.value}
+                                        class="slds-m-left_medium"></lightning-input-field>
+                                </template>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="LegacyRegistrationNumber__c"
+                                    value={contact.fields.LegacyRegistrationNumber__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <!-- <lightning-output-field field-name="OwnerId" class="slds-m-left_medium"></lightning-input-field> -->
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Contact_Priority__c"
+                                    value={contact.fields.Contact_Priority__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-top_x-small slds-p-right_small">
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="AM_SFDC_Contact_Record_ID__c"
+                                    value={contact.fields.AM_SFDC_Contact_Record_ID__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="AM_Contact__c"
+                                    value={contact.fields.AM_Contact__c.value}
+                                    class="slds-m-left_medium"></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                </lightning-record-edit-form>
+
+            </template>
+            <template if:true={showCreatedContactInfo}>
+                <lightning-layout class="slds-m-top_small slds-p-horizontal_small">
+                    <lightning-layout-item size="6">
+                        <h3 class="slds-section-title--divider">Contact marked as Left Institution</h3>
+                        <template lwc:if={errorInFlow}>
+                            <p class="slds-m-top_medium slds-m-left_x-small" style="color: red;">An error occurred while
+                                marking the old contact as Left Institution.Please contact System Administrator</p>
+                        </template>
+                        <template lwc:else>
+                            <p class="slds-m-top_medium slds-m-left_x-small">Contact Name : <a data-id={oldContactId}
+                                    onclick={handleNavigateToContact}>{oldContactName}</a></p>
+                            <p class="slds-m-top_small slds-m-left_x-small">Email : {oldContactEmail}</p>
+                            <p class="slds-m-top_small slds-m-left_x-small">Account : {oldContactAccount}</p>
+                        </template>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" class="slds-m-left_small">
+                        <h3 class="slds-section-title--divider">New Contact Details</h3>
+                        <p class="slds-m-top_medium slds-m-left_x-small">Contact Name : <a data-id={newContactId}
+                                onclick={handleNavigateToContact}>{newContactName}</a></p>
+                        <p class="slds-m-top_small slds-m-left_x-small">Email : {newContactEmail}</p>
+                        <p class="slds-m-top_small slds-m-left_x-small">Account : {newContactAccount}</p>
+                    </lightning-layout-item>
+                </lightning-layout>
+
+            </template>
+            <div slot="footer">
+                <template if:true={showMessage}>
+                    <lightning-button variant="brand" onclick={openContactForm} label="OK"></lightning-button>
+                </template>
+                <template if:true={showContactForm}>
+                    <button class="slds-button slds-button_neutral" onclick={closeModal} type="Cancel"
+                        title="Cancel">Cancel</button>
+                    <button class="slds-button slds-button_brand" type="submit" title="Save"
+                        onclick={handleSave}>Save</button>
+                </template>
+                <template if:true={showCreatedContactInfo}>
+                    <lightning-button variant="brand" onclick={handleFinish} label="Finish"></lightning-button>
+                </template>
+            </div>
+        </lightning-quick-action-panel>
+    </div>
+    <template if:true={renderFlow}>
+        <lightning-flow flow-api-name="Move_to_Another_Account_Old_Contact" flow-input-variables={inputVariables}
+            onstatuschange={handleStatusChange}>
+        </lightning-flow>
+    </template>
+</template>

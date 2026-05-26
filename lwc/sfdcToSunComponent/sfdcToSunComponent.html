@@ -1,0 +1,44 @@
+<template>
+    <div class="slds-p-top_medium slds-p-bottom_x-large slds-is-relative">
+    <lightning-card title="Salesforce to Sun" icon-name="standard:product_transfer">
+        <template lwc:if={showSpinner}>
+            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+        </template>
+        <!--<div lwc:if={isContact}>
+        </div> -->
+        <lightning-button lwc:if={isButtonVisible} variant="brand" label={buttonLabel} title="Transfer" onclick={handleStatusUpdate} slot="actions"></lightning-button>
+        <div class="slds-m-vertical_medium warning-box" lwc:if={isNotReadyToTransfer}>
+            <lightning-layout class="slds-p-around_x-small">
+                <lightning-layout-item>
+                    <lightning-icon icon-name="utility:info_alt" class="slds-m-right_x-small" size="xx-small"></lightning-icon>
+                </lightning-layout-item>
+                <lightning-layout-item>
+                    <h2 class="warning-message">{warningMessage}</h2>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+        <div class="slds-m-vertical_medium warning-box" lwc:if={isNotTransferred}>
+            <h2 class="warning-message slds-p-around_x-small"><lightning-icon icon-name="utility:warning" class="slds-m-right_x-small" size="xx-small"></lightning-icon>Last attempt to transfer this {objectApiName} failed. Please view the transfer history to get more information on this.</h2>
+        </div>
+        <lightning-record-view-form object-api-name={objectApiName} record-id={recordId}>
+            <lightning-layout>
+                <lightning-layout-item size="6">
+                    <div>
+                        <lightning-output-field field-name="SFDC2SUN_TransferStatus__c" class="slds-m-top_medium"></lightning-output-field>
+                        <lightning-output-field field-name="SFDC2SUN_TransferredOn__c" class="slds-m-top_medium"></lightning-output-field>
+                        <lightning-output-field field-name="SFDC2SUN_TransferredBy__c" class="slds-m-top_medium"></lightning-output-field>
+                        <lightning-output-field field-name="SFDC2SUN_SunVersion__c" class="slds-m-top_medium"></lightning-output-field>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <div>
+                        <lightning-output-field field-name="SFDC2SUN_SyncedOn__c" class="slds-m-top_medium"></lightning-output-field>
+                        <lightning-output-field field-name="SFDC2SUN_SyncedBy__c" class="slds-m-top_medium"></lightning-output-field>
+                        <lightning-output-field field-name="SFDC2SUN_SyncStatus__c" class="slds-m-top_medium"></lightning-output-field>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-record-view-form>
+    </lightning-card>
+</div>
+</template>

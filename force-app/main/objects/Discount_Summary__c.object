@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Discount_Summary_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Discount_Amount__c</fullName>
+        <label>Discount Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Discount_Applied_On__c</fullName>
+        <label>Discount Applied On</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Discount_Percentage__c</fullName>
+        <label>Discount Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Discount_Summary_ID__c</fullName>
+        <displayFormat>FD-{00000}</displayFormat>
+        <externalId>true</externalId>
+        <label>Discount Summary ID</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Discount_Type__c</fullName>
+        <label>Discount Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Deal Length</fullName>
+                    <default>false</default>
+                    <label>Deal Length</label>
+                </value>
+                <value>
+                    <fullName>Cross Sell</fullName>
+                    <default>false</default>
+                    <label>Cross Sell</label>
+                </value>
+                <value>
+                    <fullName>Customer Type</fullName>
+                    <default>false</default>
+                    <label>Customer Type</label>
+                </value>
+                <value>
+                    <fullName>Discretionary</fullName>
+                    <default>false</default>
+                    <label>Discretionary</label>
+                </value>
+                <value>
+                    <fullName>Volume</fullName>
+                    <default>false</default>
+                    <label>Volume</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Level__c</fullName>
+        <label>Level/Type/Years</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Discount_Type__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>Target Customer</fullName>
+                    <default>false</default>
+                    <label>Target Customer</label>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
+                </value>
+                <value>
+                    <fullName>&lt;1</fullName>
+                    <default>false</default>
+                    <label>&lt;1</label>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>3+</fullName>
+                    <default>false</default>
+                    <label>3+</label>
+                </value>
+                <value>
+                    <fullName>Level I - Commercial/ Market Director</fullName>
+                    <default>false</default>
+                    <label>Level I - Commercial/ Market Director</label>
+                </value>
+                <value>
+                    <fullName>Level II - Managing Director</fullName>
+                    <default>false</default>
+                    <label>Level II - Managing Director</label>
+                </value>
+                <value>
+                    <fullName>Level III - Chief Operating Officer</fullName>
+                    <default>false</default>
+                    <label>Level III - Chief Operating Officer</label>
+                </value>
+                <value>
+                    <fullName>Level IV - CEO/ CFO</fullName>
+                    <default>false</default>
+                    <label>Level IV - CEO/ CFO</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Deal Length</controllingFieldValue>
+                <valueName>&lt;1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Deal Length</controllingFieldValue>
+                <valueName>1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Deal Length</controllingFieldValue>
+                <valueName>2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Deal Length</controllingFieldValue>
+                <valueName>3+</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cross Sell</controllingFieldValue>
+                <controllingFieldValue>Volume</controllingFieldValue>
+                <valueName>Yes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Customer Type</controllingFieldValue>
+                <valueName>Target Customer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Customer Type</controllingFieldValue>
+                <valueName>N/A</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Discretionary</controllingFieldValue>
+                <valueName>Level I - Commercial/ Market Director</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Discretionary</controllingFieldValue>
+                <valueName>Level II - Managing Director</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Discretionary</controllingFieldValue>
+                <valueName>Level III - Chief Operating Officer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Discretionary</controllingFieldValue>
+                <valueName>Level IV - CEO/ CFO</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Discount Summary</relationshipLabel>
+        <relationshipName>Discount_Summaries</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Product_Discount__c</fullName>
+        <description>This field gets the average value of discount given on products, when uploaded from Pricing Configurator</description>
+        <label>Product Discount %</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Reason_for_the_Discretionary_Discount__c</fullName>
+        <label>Discount Reason</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Budget constraints - contacts not having sign-off over a certain amount</fullName>
+                    <default>false</default>
+                    <label>Budget constraints - contacts not having sign-off over a certain amount</label>
+                </value>
+                <value>
+                    <fullName>Budget constraints - client has specific limit</fullName>
+                    <default>false</default>
+                    <label>Budget constraints - client has specific limit</label>
+                </value>
+                <value>
+                    <fullName>Bundling to make overall price look cheaper for the client</fullName>
+                    <default>false</default>
+                    <label>Bundling to make overall price look cheaper for the client</label>
+                </value>
+                <value>
+                    <fullName>Client not seeing full value - needing to make the offer more attractive</fullName>
+                    <default>false</default>
+                    <label>Client not seeing full value - needing to make the offer more attractive</label>
+                </value>
+                <value>
+                    <fullName>Competitors offering something cheaper so we need to price match</fullName>
+                    <default>false</default>
+                    <label>Competitors offering something cheaper so we need to price match</label>
+                </value>
+                <value>
+                    <fullName>End of month</fullName>
+                    <default>false</default>
+                    <label>End of month</label>
+                </value>
+                <value>
+                    <fullName>End of quarter</fullName>
+                    <default>false</default>
+                    <label>End of quarter</label>
+                </value>
+                <value>
+                    <fullName>New business - discounts on trials / first-time buyers</fullName>
+                    <default>false</default>
+                    <label>New business - discounts on trials / first-time buyers</label>
+                </value>
+                <value>
+                    <fullName>Pilot projects - discounting on the expectation or promise of future work</fullName>
+                    <default>false</default>
+                    <label>Pilot projects - discounting on the expectation or promise of future work</label>
+                </value>
+                <value>
+                    <fullName>Renewals - underusing in their contract</fullName>
+                    <default>false</default>
+                    <label>Renewals - underusing in their contract</label>
+                </value>
+                <value>
+                    <fullName>Renewals - price comparative to previous year</fullName>
+                    <default>false</default>
+                    <label>Renewals - price comparative to previous year</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Client able to pay above List Price</fullName>
+                    <default>false</default>
+                    <label>Client able to pay above List Price</label>
+                </value>
+                <value>
+                    <fullName>Agreed in Master Standard Agreement</fullName>
+                    <default>false</default>
+                    <label>Agreed in Master Standard Agreement</label>
+                </value>
+                <value>
+                    <fullName>Improvement on previous contract</fullName>
+                    <default>false</default>
+                    <label>Improvement on previous contract</label>
+                </value>
+                <value>
+                    <fullName>Competitor offering similar terms</fullName>
+                    <default>false</default>
+                    <label>Competitor offering similar terms</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Service_Discount__c</fullName>
+        <description>This field gets the average value of discount given on services, when uploaded from Pricing Configurator</description>
+        <label>Service Discount %</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <label>Discount Summary</label>
+    <nameField>
+        <displayFormat>FD{00000}</displayFormat>
+        <label>Discount Summary Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Discount Summaries</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

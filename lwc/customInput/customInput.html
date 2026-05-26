@@ -1,0 +1,10 @@
+<template>
+    <template lwc:if={isTopUp}>
+        <lightning-input class="slds-m-around_x-small" type="text" value={value} variant="label-hidden"
+            onchange={handleChangeTopUp} disabled={isDisabled}></lightning-input>
+    </template>
+    <template lwc:else>
+        <lightning-input class="slds-m-around_x-small" type="number" value={value} step={step} variant="label-hidden"
+            onchange={handleChange} disabled={isDisabled}></lightning-input>
+    </template>
+</template>

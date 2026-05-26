@@ -1,0 +1,10 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <div class="athena">
+        <p>
+            <!--<lightning:icon iconName="utility:announcement" alternativeText="Announcement" title="Announcement"/>-->
+            <!--<img src="{!$Resource.athenaLogo}"/> -->
+            <center> Upcoming Changes in SFDC <br></br>Some enhancements related to few modules are going Live on 5th May 2025.<br></br>You may experience some disruptions in the system. </center>
+        </p>
+        
+    </div>
+</aura:component>

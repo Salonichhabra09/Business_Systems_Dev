@@ -1,0 +1,32 @@
+.THIS .grid-container > div {
+    background-color: rgb(255, 255, 255);
+    outline-style: solid;
+    outline-color: green;
+    padding-left: 10px;
+    font-size: 1em;
+}
+
+.THIS .hov:hover {
+     font-size: 2em;
+    
+ }
+
+.THIS.c-container {
+    border: 1px solid #d8dde6;
+    margin: 10px 0 20px 0;
+}
+
+.THIS .custom-box {
+    text-align: center;
+    background-color: #18A300;
+    color: white;
+    padding: 1rem;
+    border: 1px solid #d8dde6;
+    line-height:0;
+        margin:-7px
+}
+
+.THIS .slds-card__header{
+    
+    margin:-6px;
+}

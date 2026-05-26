@@ -1,0 +1,3 @@
+<apex:page standardController="RevenueAttribution__c" sidebar="false" showHeader="false">
+ Only few fields are available to be edited on this record as associated milestone period is closed. 
+ </apex:page>

@@ -1,0 +1,258 @@
+:host {
+  display: block;
+}
+
+/* Wrapper around datatable to prevent horizontal scroll while allowing vertical */
+.table-wrapper {
+  width: 100%;
+  overflow-x: hidden; /* no horizontal scroll */
+  overflow-y: auto;   /* allow vertical scroll if needed */
+  max-height: 25rem;  /* preserve existing intent from .maxHeight */
+  border-left: 1px solid var(--lwc-colorBorder, #dddbda);
+  border-right: 1px solid var(--lwc-colorBorder, #dddbda);
+  border-top: 1px solid var(--lwc-colorBorder, #dddbda);
+  border-bottom: 1px solid var(--lwc-colorBorder, #dddbda);
+  box-sizing: border-box;
+}
+
+/* Ensure lightning-datatable stretches and wraps content */
+:host lightning-datatable {
+  width: 100%;
+  /* Let internal table compute widths predictably */
+}
+
+:host lightning-datatable .slds-table {
+  table-layout: fixed; /* predictable column widths to avoid overflow */
+  width: 100%;
+  font-size: 0.95rem; /* slightly smaller for dense data */
+}
+
+/* Make header and cell content wrap instead of forcing horizontal scroll */
+:host lightning-datatable .slds-table th,
+:host lightning-datatable .slds-table td {
+  white-space: normal;
+  overflow-wrap: anywhere; /* break long tokens like long names/URLs */
+  word-break: break-word;
+  line-height: 1.25;
+  padding: 0.4rem 0.5rem;
+  box-sizing: border-box;
+}
+
+/* Column width guidance using data-column-key that matches column 'fieldName' or 'label' keys
+   Update selectors below to match your actual column fieldNames (e.g., stageName, ownerName, oppCount, amount, closeDate, actions) */
+:host lightning-datatable td[data-column-key="stageName"],
+:host lightning-datatable th[data-column-key="stageName"] {
+  width: 22%;
+  min-width: clamp(90px, 18vw, 260px);
+}
+
+:host lightning-datatable td[data-column-key="ownerName"],
+:host lightning-datatable th[data-column-key="ownerName"] {
+  width: 18%;
+  min-width: clamp(80px, 14vw, 220px);
+}
+
+:host lightning-datatable td[data-column-key="oppCount"],
+:host lightning-datatable th[data-column-key="oppCount"] {
+  width: 10%;
+  min-width: 64px;
+  text-align: right;
+}
+
+:host lightning-datatable td[data-column-key="amount"],
+:host lightning-datatable th[data-column-key="amount"] {
+  width: 20%;
+  min-width: clamp(90px, 16vw, 240px);
+  text-align: right;
+}
+
+:host lightning-datatable td[data-column-key="closeDate"],
+:host lightning-datatable th[data-column-key="closeDate"] {
+  width: 14%;
+  min-width: clamp(80px, 12vw, 180px);
+}
+
+:host lightning-datatable td[data-column-key="actions"],
+:host lightning-datatable th[data-column-key="actions"] {
+  width: 10%;
+  min-width: 60px;
+}
+
+/* Tablet breakpoint: rebalance widths */
+@media (max-width: 1023px) {
+  :host lightning-datatable .slds-table {
+    font-size: 0.93rem;
+  }
+
+  :host lightning-datatable td[data-column-key="stageName"],
+  :host lightning-datatable th[data-column-key="stageName"] {
+    width: 26%;
+  }
+
+  :host lightning-datatable td[data-column-key="ownerName"],
+  :host lightning-datatable th[data-column-key="ownerName"] {
+    width: 20%;
+  }
+
+  :host lightning-datatable td[data-column-key="amount"],
+  :host lightning-datatable th[data-column-key="amount"] {
+    width: 22%;
+  }
+
+  :host lightning-datatable td[data-column-key="closeDate"],
+  :host lightning-datatable th[data-column-key="closeDate"] {
+    width: 12%;
+  }
+
+  :host lightning-datatable td[data-column-key="oppCount"],
+  :host lightning-datatable th[data-column-key="oppCount"] {
+    width: 10%;
+  }
+
+  :host lightning-datatable td[data-column-key="actions"],
+  :host lightning-datatable th[data-column-key="actions"] {
+    width: 10%;
+  }
+
+  :host lightning-datatable .slds-table th,
+  :host lightning-datatable .slds-table td {
+    padding: 0.35rem 0.45rem;
+  }
+}
+
+/* Mobile breakpoint: compress less-critical columns and ensure wrap */
+@media (max-width: 599px) {
+  :host lightning-datatable .slds-table {
+    font-size: 0.9rem;
+  }
+
+  :host lightning-datatable td[data-column-key="stageName"],
+  :host lightning-datatable th[data-column-key="stageName"] {
+    width: 30%;
+    min-width: 88px;
+  }
+
+  :host lightning-datatable td[data-column-key="ownerName"],
+  :host lightning-datatable th[data-column-key="ownerName"] {
+    width: 22%;
+    min-width: 72px;
+  }
+
+  :host lightning-datatable td[data-column-key="amount"],
+  :host lightning-datatable th[data-column-key="amount"] {
+    width: 20%;
+    min-width: 80px;
+  }
+
+  :host lightning-datatable td[data-column-key="closeDate"],
+  :host lightning-datatable th[data-column-key="closeDate"] {
+    width: 12%;
+    min-width: 70px;
+  }
+
+  :host lightning-datatable td[data-column-key="oppCount"],
+  :host lightning-datatable th[data-column-key="oppCount"] {
+    width: 8%;
+    min-width: 58px;
+  }
+
+  :host lightning-datatable td[data-column-key="actions"],
+  :host lightning-datatable th[data-column-key="actions"] {
+    width: 8%;
+    min-width: 56px;
+  }
+
+  :host lightning-datatable .slds-table th,
+  :host lightning-datatable .slds-table td {
+    padding: 0.3rem 0.4rem;
+  }
+}
+
+/* Keep original .maxHeight behavior available for reuse elsewhere if needed */
+.maxHeight {
+  max-height: 25rem;
+  overflow-y: auto;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.custom-table th,
+.custom-table td {
+    border: 1px solid #d8dde6;
+    padding: 8px;
+    /*text-align: center;*/
+    vertical-align: middle;
+}
+
+.custom-table th {
+    background-color: #f3f3f3;
+    /*text-align: center;*/
+}
+
+/* Dim the card content when global spinner is visible */
+.dim-card {
+  filter: grayscale(0.2);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Ensure any absolute spinner overlay positions correctly inside the card root */
+:host {
+  position: relative;
+  display: block;
+}
+
+.highlight {
+    background-color: #BA0517;
+    color: white;
+    font-weight: bold;
+}
+
+/* Keep red even when hovering over the red row itself (TR carries .highlight) */
+:host lightning-datatable .slds-table tr.highlight,
+:host lightning-datatable .slds-table tr.highlight:hover,
+:host lightning-datatable .slds-table tr.highlight:focus,
+:host lightning-datatable .slds-table tr.highlight.slds-hint-parent,
+:host lightning-datatable .slds-table tr.highlight.slds-hint-parent:hover,
+:host lightning-datatable .slds-table tr.highlight.slds-hint-parent:focus {
+    background-color: #BA0517 !important;
+    color: #ffffff !important;
+    font-weight: bold !important;
+}
+
+/* Ensure all cells inside the red row remain red on row hover */
+:host lightning-datatable .slds-table tr.highlight > td,
+:host lightning-datatable .slds-table tr.highlight:hover > td,
+:host lightning-datatable .slds-table tr.highlight:focus > td {
+    background-color: #BA0517 !important;
+    color: #ffffff !important;
+    font-weight: bold !important;
+}
+
+/* Preserve red row background on any hover state (cell or row) - TR has .highlight */
+:host lightning-datatable .slds-table tr.slds-hint-parent.highlight:hover > td,
+:host lightning-datatable .slds-table tr.slds-hint-parent.highlight > td,
+:host lightning-datatable .slds-table tr.highlight:hover > td,
+:host lightning-datatable .slds-table tr.highlight > td {
+    background-color: #BA0517 !important;
+    color: #ffffff !important;
+    font-weight: bold !important;
+}
+
+/* Also neutralize default SLDS hover effect which applies on siblings */
+:host lightning-datatable .slds-table tr.slds-hint-parent:hover > td {
+    /* Only apply default hover if row is NOT red */
+}
+:host lightning-datatable .slds-table tr.slds-hint-parent.highlight:hover > td {
+    background-color: #BA0517 !important;
+    color: #ffffff !important;
+}
+
+/* Override SLDS row hover background that typically applies via tr.slds-hint-parent:hover > td */
+:host lightning-datatable .slds-table tr.slds-hint-parent:hover > td.highlight {
+    box-shadow: inset 0 0 0 9999px #BA0517 !important; /* guard against layered backgrounds */
+    background-clip: padding-box;
+}

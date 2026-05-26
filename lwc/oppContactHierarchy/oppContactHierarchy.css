@@ -1,0 +1,115 @@
+.contHierarchy{
+    background-color: white;
+}
+
+.zoomBtns {
+    display: inline-flex;
+    margin-top: 10px;
+    padding: 0.5em 0.75em;
+}
+
+ul {
+    position: relative;
+    white-space: nowrap;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.resize{
+    min-width: max-content;
+    width: 100%;
+}
+
+.dragContainer{
+    overflow: auto;
+    padding: 1.5rem;
+    padding-bottom: 4rem;
+}
+
+ul:after {
+    content: '';
+    display: table;
+    clear: both
+}
+
+li {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 1em .5em 0 .5em
+}
+
+li:before,
+li:after {
+    content: '';
+    position: absolute;
+    top: 2em;
+    right: 50%;
+    border-top: 1px solid #ccc;
+    width: 50%;
+    height: 1em
+}
+
+li:after {
+    right: auto;
+    left: 50%;
+    border-left: 1px solid #ccc
+}
+
+li:only-child:after,
+li:only-child:before {
+    display: none
+}
+
+li:only-child {
+    padding: 0;
+}
+
+li:first-child:before,
+li:last-child:after {
+    border: 0 none
+}
+
+li:last-child:before {
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 0 0
+}
+
+li:first-child:after {
+    border-radius: 5px 0 0 0
+}
+
+ul:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 4em
+}
+
+.opportunity-url{
+    font-size: x-large;
+    color:black;
+    text-decoration: none;
+}
+
+.opportunity-url-layout{
+    margin-top: 0.7rem;
+    margin-left: 3rem;
+}
+
+.action-space{
+    border: solid;
+    margin-left: 13rem;
+    border-color: whitesmoke;
+    border-radius: 2.5rem;
+    background: #f4f6f9;
+}
+
+.action-close-icon{
+    float: right;
+    padding: 5px;
+}

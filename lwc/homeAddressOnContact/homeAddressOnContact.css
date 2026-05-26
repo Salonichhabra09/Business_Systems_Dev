@@ -1,0 +1,15 @@
+.message-margin{
+    margin-top:0.5rem;
+}
+.address-inline{
+    display: flex;
+}
+.address-font-size{
+    font-size: 0.9rem;
+}
+.address-font-weight-label{
+    font-weight: 650;
+}
+.address-font-weight-value{
+    font-weight: 600;
+}

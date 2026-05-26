@@ -1,0 +1,16 @@
+<template>
+    <div class="slds-is-relative">
+    <lightning-quick-action-panel header="Deactivate Address and Tax record">
+        <template lwc:if={showSpinner}>
+            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+        </template>
+        <div class="slds-p-around_medium">
+            <div class="slds-text-heading--medium slds-align_absolute-center">{message}</div>
+        </div>
+    <div slot="footer">
+            <lightning-button class="slds-m-right_small" onclick={handleClose} label="Cancel"></lightning-button> 
+            <lightning-button variant="brand" onclick={handleMarkInactive} label="Yes, Go ahead"></lightning-button>                     
+    </div>
+    </lightning-quick-action-panel>
+    </div>
+</template>

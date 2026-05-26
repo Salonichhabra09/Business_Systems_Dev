@@ -1,0 +1,13 @@
+<template>
+    <lightning-quick-action-panel header="Status Update" if:true={showModal}>
+        <template if:true={errorMessage}>
+            <div class="slds-text-color_error">{errorMessage}</div>
+        </template>
+        <template if:true={successMessage}>
+            <div class="slds-text-color_success">{successMessage}</div>
+        </template>
+        <div slot="footer">
+            <lightning-button variant="brand" label="Close" onclick={closeModal}></lightning-button>
+        </div>
+    </lightning-quick-action-panel>
+</template>

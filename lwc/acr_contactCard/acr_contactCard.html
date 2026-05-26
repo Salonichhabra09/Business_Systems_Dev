@@ -1,0 +1,607 @@
+<template>
+    <template if:false={isRootLevel}>
+        <div class="placeholder-card" lwc:if={contact.IsPlaceholder} draggable={isNotSelectionMode}
+            ondragstart={handleDragStart} ondragover={handleDragOver} ondrop={handleDrop} ondragleave={handleDragLeave}
+            ondragend={handleDragEnd} data-id={contact.Id}>
+            <div class="placeholder-action" lwc:if={isNotSelectionMode}>
+                <lightning-button-menu menu-alignment="right" alternative-text="Show menu" variant="container"
+                    icon-name="utility:threedots_vertical" onselect={handleActionSelect}>
+                    <lightning-menu-item value="Edit" label="Edit"></lightning-menu-item>
+                    <lightning-menu-item value="Reparent" label="Reparent"></lightning-menu-item>
+                    <lightning-menu-item value="Delete" label="Delete"></lightning-menu-item>
+                </lightning-button-menu>
+            </div>
+            <div class="card">
+                <div class="placeholder-title-div">
+                    <p class="placeholder-title">
+                        {contact.Name}
+                    </p>
+                </div>
+                <div>
+                    <lightning-button-icon class="assign-icon" icon-name="standard:assigned_resource" size="large"
+                        variant="bare" title="Assign" onclick={convertPlaceholderToContact}></lightning-button-icon>
+                </div>
+                <div>
+                    <lightning-button-icon icon-name="utility:switch" variant="border-filled" onclick={hideChildren}
+                        alternative-text="Switch" title="Switch" size="xx-small" icon-class="dark"
+                        class={switchBehaviourClass}></lightning-button-icon>
+                </div>
+                <div>
+                    <lightning-button-icon class="add-icon" icon-name="utility:add" variant="border-filled"
+                        alternative-text="Add" title="Add" size="xx-small" icon-class="dark"
+                        onclick={handleOpenAddPopup}></lightning-button-icon>
+                </div>
+            </div>
+        </div>
+
+        <template lwc:else>
+            <lightning-button-menu lwc:if={isNotSelectionMode} menu-alignment="right" alternative-text="Show menu"
+                variant="container" icon-name="utility:threedots_vertical" onselect={handleActionSelect}
+                class="action-dropdown">
+                <lightning-menu-item lwc:if={contact.IsEconomicBuyer} value="Remove as Economic Buyer"
+                    label="Remove as Economic Buyer"></lightning-menu-item>
+                <lightning-menu-item lwc:else value="Make Economic Buyer"
+                    label="Make Economic Buyer"></lightning-menu-item>
+                 <lightning-menu-item lwc:if={contact.IsIOPsychologist} value="Remove as IO Psychologist"
+                    label="Remove as IO Psychologist"></lightning-menu-item>
+                <lightning-menu-item lwc:else value="Make IO Psychologist"
+                    label="Make IO Psychologist"></lightning-menu-item>
+                <lightning-menu-item value="Draw Influence Line" label="Draw Influence Line"></lightning-menu-item>
+                <lightning-menu-item value="Draw Conflict Line" label="Draw Conflict Line"></lightning-menu-item>
+                <lightning-menu-item value="Replace" label="Replace"></lightning-menu-item>
+                <lightning-menu-item value="Delete" label="Delete"></lightning-menu-item>
+                <lightning-menu-item value="Reparent" label="Reparent"></lightning-menu-item>
+            </lightning-button-menu>
+            <c-acr_manage-advocacy-level class="advocacy-icon" contact-data={contact}
+                advocacy-level={contact.AdvocacyLevel}
+                onupdateadvocacylevel={handleUpdateAdvocacyLevelOnContact}></c-acr_manage-advocacy-level>
+
+            <div class={contactCardClass} draggable={isNotSelectionMode} ondragstart={handleDragStart}
+                ondragover={handleDragOver} ondrop={handleDrop} ondragleave={handleDragLeave} ondragend={handleDragEnd}
+                data-id={contact.Id} onclick={handleNodeSelection}>
+                <div class="card">
+
+                    <div class="slds-grid">
+                        <div class="details box2">
+                            <!-- Contacted icon -->
+
+                            <!-- Contact name -->
+                            <lightning-layout>
+                                <lightning-layout-item size="2" class="roles-icon-section">
+                                    <!-- <div class="decision-maker-icon slds-p-top_x-small" lwc:if={showDecisionMakerIcon}>
+                                    <lightning-icon icon-name="custom:custom11" size="medium"
+                                        alternative-text="Decision Maker" title="Decision Maker">
+                                    </lightning-icon>
+                                </div>
+                                <div class="influencer-icon slds-p-top_x-small" lwc:if={showInfluencerIcon}>
+                                    <lightning-icon icon-name="action:new_lead" size="x-small"
+                                        alternative-text="Influencer" title="Influencer">
+                                    </lightning-icon>
+                                </div>
+                                <div class="blocker-icon slds-p-top_x-small" lwc:if={showBlockerIcon}>
+                                    <lightning-icon icon-name="action:close" size="x-small" alternative-text="Blocker"
+                                        title="Blocker">
+                                    </lightning-icon>
+                                </div> -->
+
+                                </lightning-layout-item>
+                                <lightning-layout-item size="8">
+                                    <div class="contact-info">
+                                        <div class="slds-text-heading_small wrapText slds-align_absolute-center contact-name"
+                                            onclick={openContact}>
+                                            <a class="contact-link"
+                                                onclick={handleOpenContactViewCard}>{contact.Name}</a>
+                                        </div>
+                                        <!-- Contact title if available, Display 'No Title' if contact title is not available -->
+                                        <!--<template lwc:if={contact.Persona}>-->
+                                        <template lwc:if={contactTitleValueToDisplay}>
+                                            <div
+                                                class="slds-text-title wrapText slds-align_absolute-center contact-persona">
+                                                {contactTitleValueToDisplay}<!--{contact.Persona}-->
+                                            </div>
+                                            <div data-id={contact.Id} class="line-point slds-align_absolute-center">
+                                            </div>
+                                        </template>
+                                        <template lwc:else>
+                                            <div class="slds-text-title wrapText slds-align_absolute-center"> -----
+                                            </div>
+                                        </template>
+                                        </br>
+                                    </div>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="2">
+                                    <div lwc:if={isCloseSelectionMode}>
+                                        <lightning-icon icon-name="utility:close" size="small"
+                                            alternative-text="Exit Selection Mode" title="Exit Selection Mode"
+                                            onclick={requestRemoveSelectionMode}>
+                                        </lightning-icon>
+                                    </div>
+                                </lightning-layout-item>
+
+                            </lightning-layout>
+                            <lightning-layout vertical-align="center" class="icon-container">
+                                <lightning-layout-item size="2">
+
+                                </lightning-layout-item>
+                                <lightning-layout-item size="2">
+                                    <div lwc:if={isLinkedToOpenAndClosedWonOpportunity}>
+                                        <img src={linkedToOpenAndClosedWonOpportunityIcon}
+                                            alt={contact.OpportunityLinkedStatus} tabindex="0"
+                                            title={contact.OpportunityLinkedStatus} />
+                                    </div>
+                                    <div lwc:else class={opportunityLinkedStatus}>
+                                        <lightning-icon icon-name="action:new_opportunity" size="x-small"
+                                            alternative-text={contact.OpportunityLinkedStatus}
+                                            title={contact.OpportunityLinkedStatus}>
+                                        </lightning-icon>
+                                    </div>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="2">
+                                    <lightning-icon lwc:if={contact.IsEconomicBuyer} icon-name="custom:custom17"
+                                        size="medium" alternative-text="Economic Buyer" title="Economic Buyer"
+                                        class="economic-buyer">
+                                    </lightning-icon>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="2">
+                                    <lightning-icon lwc:if={contact.IsIOPsychologist} icon-name="custom:custom101"
+                                        size="medium" alternative-text="IO Psychologist" title="IO Psychologist"
+                                        class="io-psychologist">
+                                    </lightning-icon>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="2">
+                                    <lightning-icon icon-name="action:new_note" size="x-small" alternative-text="Notes"
+                                        title="Notes" class={noteIconClass} onclick={handleOpenAddNoteInViewCard}>
+                                    </lightning-icon>
+                                </lightning-layout-item>
+                                <!--<lightning-layout-item size="2">
+                            <lightning-icon icon-name="action:goal" size="x-small" alternative-text="Line of Influence"
+                                title="Line of Influence" class="influence-icon" onclick={handleTargetAction}
+                                data-id={contact.Id}>
+                            </lightning-icon>
+                            </lightning-layout-item>-->
+                            </lightning-layout>
+                        </div>
+                    </div>
+                    <!-- show the button arrow down to expande the tree of subordinate contacts under a specific contact card.
+                    If the contact has children the button is visible, if not the button is hidden. Visibility is controlled by class switchBehaviourClass
+                    -->
+                    <div class="switch-icon-contact">
+                        <lightning-button-icon icon-name="utility:switch" variant="border-filled" onclick={hideChildren}
+                            alternative-text="Switch" title="Switch" size="xx-small" icon-class="dark"
+                            class={switchBehaviourClass}></lightning-button-icon>
+                    </div>
+                    <div>
+                        <lightning-button-icon class="add-icon" icon-name="utility:add" variant="border-filled"
+                            alternative-text="Add" title="Add" size="xx-small" icon-class="dark"
+                            onclick={handleOpenAddPopup}></lightning-button-icon>
+                    </div>
+
+                </div>
+            </div>
+        </template>
+    </template>
+    <template if:true={isRootLevel}><!--Changes By Jai start-->
+        <div class="aLinkForOpportunityCard" draggable={isNotSelectionMode} ondragstart={handleDragStart}
+            ondragover={handleDragOver} ondrop={handleDrop} ondragleave={handleDragLeave}>
+            <div class="card">
+                <div class="slds-text-heading_small conName wrapText slds-align_absolute-center" onclick={openContact}>
+                    <a href="javascript:void(0);" class="link-color">{contact.Name}</a>
+                </div>
+                <div class="switch-rootlevel">
+                    <lightning-button-icon icon-name="utility:switch" variant="border-filled" onclick={hideChildren}
+                        alternative-text="Switch" title="Switch" size="xx-small" icon-class="dark"
+                        class={switchBehaviourClass}></lightning-button-icon>
+                </div>
+                <div>
+                    <lightning-button-icon class="add-icon" icon-name="utility:add" variant="border-filled"
+                        alternative-text="Add" title="Add" size="xx-small" icon-class="dark"
+                        onclick={handleOpenAddPopup}></lightning-button-icon>
+                </div>
+            </div>
+        </div>
+    </template> <!--Changes By Jai end-->
+
+    <!--Render the child layer component for contact hierarchy
+        Pass the current contact object
+        Pass the list of contacts
+        Handle the event when child contacts are present
+        Pass the record ID
+        Pass the zoom level -->
+    <template if:true={showKids}><!--Changes By Jai -->
+        <div data-id="contactChildren" class={hideTheKidsClass}>
+            <c-acr_contact-card-child-layer contact={contact} contacts={contacts} onhaskidsevent={handleHasKids}
+                record-id={recordId} zoom-level={zoomLevel} filters={filters} all-contacts-list={allContactsList}
+                total-placeholders={totalPlaceholders} hierarchy-information-id={hierarchyInformationId}
+                contact-title-to-display={contactTitleToDisplay}>
+            </c-acr_contact-card-child-layer>
+        </div>
+    </template>
+
+
+    <template if:true={isAddSelectionPopup}>
+        <div style={modalresize}>
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+                class="slds-modal slds-fade-in-open slds-modal_small">
+                <div class="slds-modal__container">
+                    <!-- Close button -->
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={handleCloseAddPopup}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                            size="small">
+                        </lightning-icon>
+                        <span class="slds-assistive-text">Cancel and close</span>
+                    </button>
+                    <div class="slds-modal__header">
+                        <!-- Modal title -->
+                        <h1 id="modal-heading-03" class="slds-modal__title slds-hyphenate">Choose one of the following
+                        </h1>
+                    </div>
+                    <div class="slds-modal__content slds-p-around_small" id="modal-content-id-3">
+
+                        <div class="slds-align_absolute-center">
+                            <div class="slds-col slds-p-horizontal_small">
+                                <button class="slds-button slds-button_brand button_class"
+                                    onclick={handleAddPlaceholder} style="margin-left:81px;">Add Placeholder </button>
+                            </div>
+
+                            <div class="slds-col slds-p-horizontal_small">
+                                <button class="slds-button slds-button_brand button_class" style="margin-right:81px;"
+                                    onclick={handleContactChoose}>Add Contact
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="slds-modal__footer">
+                        <!-- Cancel and Save buttons -->
+                        <button class="slds-button slds-button_neutral" aria-label="Cancel and close"
+                            onclick={handleCloseAddPopup}>Cancel</button>
+                    </div>
+                </div>
+            </section>
+            <!-- Modal backdrop -->
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </div>
+    </template>
+
+    <!--<template lwc:if={showChooseContactModal}>
+        <c-create-contact-in-hierarchy contact-hierarchy-id={recordId} modalresize={modalresize}
+            show-choose-contact-modal={showChooseContactModal} parent-node={contact} all-nodes={allContactsList}
+            onbackfromchoosecontactpopup={handleBackEventFromChooseContactPopup}
+            onclosefromcontactpopup={handleCloseFromContactPopup} onrefreshhierarchy={handleRefreshHierarchy}
+            ontriggercontacthierarchyspinner={handleSpinnerToggle}
+            is-not-replace={isNotReplace}></c-create-contact-in-hierarchy>
+    </template>-->
+    <div lwc:if={isOpenAddPlaceholder}>
+        <c-acr_create-placeholder-in-relationships parent-node={contact} modalresize={modalresize}
+            all-nodes={allContactsList} onbacktoselectionpopup={handleBackToSelectionPopup}
+            oncloseaddplaceholderpopup={handleCloseAddPlaceholderPopup} onrefreshhierarchy={handleRefreshHierarchy}
+            total-placeholders={totalPlaceholders} hierarchy-information-id={hierarchyInformationId}
+            ontoastmessagefromexistingcontactsave={handletoastmessagefromexistingcontactsave}
+            is-not-replace={isNotReplace} action-type={actionType}>
+        </c-acr_create-placeholder-in-relationships>
+    </div>
+
+    <div lwc:if={isOpenReparentPopup}>
+        <c-acr_reparent-node-in-relationship-map current-node={contact} modalresize={modalresize}
+            all-eligible-nodes={availableNodesToReparent} all-nodes={contacts}
+            onclosereparentpopup={handleCloseReparentPopup} onrefreshhierarchy={handleRefreshHierarchy}
+            hierarchy-information-id={hierarchyInformationId}></c-acr_reparent-node-in-relationship-map>
+    </div>
+
+    <div lwc:if={isOpenPopup} style={modalresize}>
+        <section role="dialog" tabindex="-1" aria-labelledby="contact-edit-modal" aria-modal="true"
+            aria-describedby="contact-edit-modal" class="slds-modal slds-fade-in-open custom-alignment">
+            <div class="slds-modal__container slds-is-relative">
+
+                <!-- Modal/Popup Box LWC header here -->
+                <div class="slds-is-relative custom-width">
+                    <template lwc:if={isShowSpinner}>
+                        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                    </template>
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close" onclick={handleClosePopup}>
+                            <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                                size="small"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h3 id="modal-heading-06" class="slds-text-heading_medium slds-hyphenate">{popupTitle}</h3>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-4">
+                        <p lwc:if={isDelete} class="delete-message slds-align_absolute-center">Are you sure you want to
+                            delete the current
+                            node?</p>
+                        <div lwc:if={isPlaceholderEdit}>
+                            <p class="edit-placeholder-label">Placeholder Name :</p>
+                            <lightning-input type="text" label="Placholder Name" value={contact.Name}
+                                onchange={handlePlaceholderNameChange} variant="label-hidden"></lightning-input>
+                        </div>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral" onclick={handleClosePopup} type="Cancel"
+                            title="Cancel">Cancel</button>
+                        <button lwc:if={isDelete} class="slds-button slds-button_brand" onclick={handleDeleteNode}
+                            type="submit" title="Save">Delete</button>
+                        <button lwc:if={isPlaceholderEdit} class="slds-button slds-button_brand"
+                            onclick={handlePlaceholderEdit} type="submit" title="Save"
+                            disabled={isSaveDisabled}>Save</button>
+                    </footer>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+
+    <template lwc:if={showChooseContactModal}>
+        <div style={modalresize}>
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-10"
+                class="slds-modal slds-fade-in-open slds-modal_small">
+                <div class="slds-modal__container">
+                    <!-- Close button -->
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={handleCloseChooseContactModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                            size="small">
+                        </lightning-icon>
+                        <span class="slds-assistive-text">Cancel and close</span>
+                    </button>
+                    <div class="slds-modal__header">
+                        <!-- Modal title -->
+                        <h1 id="modal-heading-11" class="slds-modal__title slds-hyphenate">Choose Contact</h1>
+                    </div>
+                    <div class="slds-modal__content slds-p-around_small" id="modal-content-id-14">
+                        <div class="slds-align_absolute-center">
+                            <div class="slds-col slds-p-horizontal_small">
+                                <button class="slds-button slds-button_brand button_class"
+                                    onclick={handleChooseExistingContact} style="margin-left:81px;">Choose Existing
+                                    Contact
+                                </button>
+                            </div>
+                            <div class="slds-col slds-p-horizontal_small">
+                                <button class="slds-button slds-button_brand button_class"
+                                    style="margin-right:81px; margin-left:50px;" onclick={handleChooseNewContact}>Create
+                                    New Contact
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral" onclick={handleBackChooseContact}
+                            lwc:if={isNotPlaceholderConversion}>Back</button>
+                        <button class="slds-button slds-button_neutral" aria-label="Cancel and close"
+                            onclick={handleCloseChooseContactModal}>Cancel</button>
+                    </div>
+                </div>
+            </section>
+            <!-- Modal backdrop -->
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </div>
+    </template>
+
+    <template lwc:if={showPlaceholderOptions}>
+        <div style={modalresize}>
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-10"
+                class="slds-modal slds-fade-in-open slds-modal_small">
+                <div class="slds-modal__container">
+                    <!-- Close button -->
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={handleClosePlaceholderOptions}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                            size="small">
+                        </lightning-icon>
+                        <span class="slds-assistive-text">Cancel and close</span>
+                    </button>
+                    <div class="slds-modal__header">
+                        <!-- Modal title -->
+                        <h1 id="modal-heading-12" class="slds-modal__title slds-hyphenate">Choose Placeholder</h1>
+                    </div>
+                    <div class="slds-modal__content slds-p-around_small" id="modal-content-id-15">
+                        <div class="slds-align_absolute-center">
+                            <div class="slds-col slds-p-horizontal_small">
+                                <button class="slds-button slds-button_brand button_class"
+                                    onclick={handleChooseExistingPlaceholder} style="margin-left:81px;">Choose Existing
+                                    Placeholder
+                                </button>
+                            </div>
+                            <div class="slds-col slds-p-horizontal_small">
+                                <button class="slds-button slds-button_brand button_class"
+                                    style="margin-right:81px; margin-left:50px;"
+                                    onclick={handleCreateNewPlaceholder}>Create
+                                    New Placeholder
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-modal__footer">
+                        <!--<template lwc:if={isNotReplace}>-->
+                        <button class="slds-button slds-button_neutral"
+                            onclick={handleBackPlaceholderOptions}>Back</button>
+                        <!--</template>-->
+                        <button class="slds-button slds-button_neutral" aria-label="Cancel and close"
+                            onclick={handleClosePlaceholderOptions}>Cancel</button>
+                    </div>
+                </div>
+            </section>
+            <!-- Modal backdrop -->
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </div>
+    </template>
+
+    <!-- Create New Contact Modal Pop up -->
+    <template lwc:if={showNewContactModal}>
+        <div style={modalresize}>
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-20"
+                class="slds-modal slds-fade-in-open slds-modal_large">
+
+                <div class="slds-modal__container slds-is-relative" onclick={closeEditOnBlur}>
+                    <div class="slds-is-relative">
+                        <template lwc:if={isShowSpinner}>
+                            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                        </template>
+                        <div class="slds-modal__header">
+                            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                title="Close" onclick={handleNewContactCancel}>
+                                <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                                    size="small">
+                                </lightning-icon>
+                                <span class="slds-assistive-text">Cancel and close</span>
+                            </button>
+                            <h1 id="modal-heading-25" class="slds-modal__title slds-hyphenate">Create New Contact
+                            </h1>
+                        </div>
+                        <div class="slds-modal__content slds-p-around_small slds-scrollable " id="modal-content-id-30"
+                            style="max-height:400px">
+                            <lightning-card class="slds-scrollable">
+                                <h3 slot="title">
+                                    <lightning-icon icon-name="standard:contact" alternative-text="Contact"
+                                        size="small"></lightning-icon>
+                                    &nbsp; Create New Contact
+                                </h3>
+                                <lightning-button slot="actions" label="Add Row" onclick={addRow}
+                                    lwc:if={isNotReplace}></lightning-button>
+                                <div class="slds-grid slds-grid_align-spread slds-m-bottom_small">
+                                    <div class="slds-col slds-size_1-of-10">
+                                        #
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-12 slds-clearfix">
+                                        <span style="color:red">*</span>First Name
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-12">
+                                        <span style="color:red">*</span>Last Name
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-12">
+                                        Account Name
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-12">
+                                        <span style="color:red">*</span>Email
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-12">
+                                        <span style="color:red">*</span>Job Title
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-12">
+                                        Advocacy Level
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-12">
+                                        <span style="color:red">*</span>Area of Interest
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-12">
+                                        <span style="color:red">*</span>Persona
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-12">
+                                        Phone
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-12">
+
+                                    </div>
+                                </div>
+                                <template for:each={contactList} for:item="contact" for:index="index">
+                                    <lightning-record-edit-form key={contact.index} object-api-name="Contact"
+                                        onload={handleFieldsLoad}>
+                                        <div class="slds-grid slds-grid_align-spread" data-key={contact.index}>
+                                            <div class="slds-col slds-size_1-of-10">
+                                                {contact.index}
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-12">
+                                                <lightning-input-field field-name="FirstName" variant="label-hidden"
+                                                    accesskey={contact.index} value={contact.FirstName}
+                                                    onchange={handleInputChange} data-name="firstName" required
+                                                    class="required-fields">
+                                                </lightning-input-field>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-12">
+                                                <lightning-input-field field-name="LastName" variant="label-hidden"
+                                                    onchange={handleInputChange} value={contact.LastName}
+                                                    accesskey={contact.index} class="required-fields"
+                                                    data-name="lastName" required>
+                                                </lightning-input-field>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-12">
+                                                <lightning-input-field field-name="AccountId" variant="label-hidden"
+                                                    value={recordId} accesskey={contact.index} disabled="true">
+                                                </lightning-input-field>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-12">
+                                                <lightning-input-field field-name="Email" variant="label-hidden"
+                                                    onchange={handleInputChange} value={contact.Email}
+                                                    accesskey={contact.index} class="required-fields" required>
+                                                </lightning-input-field>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-12">
+                                                <lightning-input-field field-name="Title" accesskey={contact.index}
+                                                    variant="label-hidden" value={contact.Title}
+                                                    class="required-fields title-helptext" required>
+                                                </lightning-input-field>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-12">
+                                                <!--<lightning-input-field field-name="Advocacy_Level__c"
+                                                    variant="label-hidden" onchange={handleInputChange}
+                                                    value={contact.Advocacy_Level__c} accesskey={contact.index}
+                                                    class="required-fields">
+                                                </lightning-input-field>-->
+                                                <lightning-combobox name="advocacyLevelField"
+                                                    data-name="advocacyLevelField" variant="label-hidden" label="Status"
+                                                    placeholder="--None--" value={contact.Advocacy_Level__c}
+                                                    accesskey={contact.index} onchange={handleInputChange}
+                                                    options={advocacyLevelOptions} class="required-fields">
+                                                </lightning-combobox>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-12">
+                                                <lightning-input-field field-name="Area_of_Interest__c"
+                                                    variant="label-hidden" onchange={handleInputChange}
+                                                    value={contact.Area_of_Interest__c} accesskey={contact.index}
+                                                    class="required-fields" required>
+                                                </lightning-input-field>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-12">
+                                                <lightning-input-field field-name="Contact_Persona__c"
+                                                    variant="label-hidden" onchange={handleInputChange}
+                                                    value={contact.Contact_Persona__c} accesskey={contact.index}
+                                                    class="required-fields" data-name="persona" required>
+                                                </lightning-input-field>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-12">
+                                                <lightning-input-field field-name="Phone" variant="label-hidden"
+                                                    onchange={handleInputChange} value={contact.Phone}
+                                                    accesskey={contact.index}>
+                                                </lightning-input-field>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-12">
+                                                <lightning-button-icon icon-name="utility:delete"
+                                                    accesskey={contact.index} variant="bare" onclick={removeRow}
+                                                    size="large" lwc:if={isNotReplace}></lightning-button-icon>
+                                                <lightning-button-icon icon-name="utility:add" accesskey={contact.index}
+                                                    variant="bare" onclick={addRow} size="large"
+                                                    lwc:if={isNotReplace}></lightning-button-icon>
+                                            </div>
+                                        </div>
+                                    </lightning-record-edit-form>
+                                </template>
+                            </lightning-card>
+                        </div>
+                        <div class="slds-modal__footer">
+                            <button class="slds-button slds-button_neutral" onclick={handleBackNewContact}>Back</button>
+                            <button class="slds-button slds-button_neutral" aria-label="Cancel and close"
+                                onclick={handleNewContactCancel}>Cancel</button>
+                            <button class="slds-button slds-button_brand" onclick={handleSaveNewContact}>Save</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </div>
+    </template>
+
+    <!-- Add Existing Contact Modal Pop up -->
+    <template lwc:if={showChooseExistingContactModal}>
+        <c-acr_add-existing-contact-in-relationships contact-hierarchy-id={hierarchyInformationId}
+            modalresize={modalresize} show-choose-contact-modal={showChooseContactModal} parent-node={contact}
+            all-nodes={allContactsList} onbackfromchoosecontactpopup={handleBackEventFromChooseContactPopup}
+            onclosefromcontactpopup={handleCloseFromContactPopup} onrefreshhierarchy={handleRefreshHierarchy}
+            ontriggercontacthierarchyspinner={handleSpinnerToggle} is-not-replace={isNotReplace}
+            onbackfromexistingcontactscreen={handleBackFromExistingContactScreen}
+            ontoastmessagefromexistingcontactsave={handletoastmessagefromexistingcontactsave} account-id={recordId}>
+        </c-acr_add-existing-contact-in-relationships>
+    </template>
+</template>

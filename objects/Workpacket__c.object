@@ -1,0 +1,1955 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>WorkpacketsFromProject</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>LightningComponent</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Workpacket_Compact_layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Workpacket_Compact_layout</fullName>
+        <fields>Agreed_Delivery__c</fields>
+        <fields>LBU__c</fields>
+        <fields>Solution_Type__c</fields>
+        <fields>CPS_Project_Number__c</fields>
+        <fields>CPS_Project_Manager__c</fields>
+        <fields>CPS_Project_Manager_New__c</fields>
+        <label>Workpacket Compact layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>A_O_Lead__c</fullName>
+        <label>A&amp;O Lead</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Andrew Speer</fullName>
+                    <default>false</default>
+                    <label>Andrew Speer</label>
+                </value>
+                <value>
+                    <fullName>Brian Roote</fullName>
+                    <default>false</default>
+                    <label>Brian Roote</label>
+                </value>
+                <value>
+                    <fullName>Courtney Van Overberghe</fullName>
+                    <default>false</default>
+                    <label>Courtney Van Overberghe</label>
+                </value>
+                <value>
+                    <fullName>Ian Smith</fullName>
+                    <default>false</default>
+                    <label>Ian Smith</label>
+                </value>
+                <value>
+                    <fullName>Jay Janovics</fullName>
+                    <default>false</default>
+                    <label>Jay Janovics</label>
+                </value>
+                <value>
+                    <fullName>Joel Butler</fullName>
+                    <default>false</default>
+                    <label>Joel Butler</label>
+                </value>
+                <value>
+                    <fullName>Kimberly Wrenn</fullName>
+                    <default>false</default>
+                    <label>Kimberly Wrenn</label>
+                </value>
+                <value>
+                    <fullName>Nick Zarns</fullName>
+                    <default>false</default>
+                    <label>Nick Zarns</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Account_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>CPS_Project_Number__r.Account_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Delivery__c</fullName>
+        <label>Actual Delivery</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Agreed_Delivery__c</fullName>
+        <label>Agreed Delivery</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CPS_Project_Manager_New__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>CPS Project Manager</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>User.Is_CPS_Project_Manager__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Workpackets3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CPS_Project_Manager__c</fullName>
+        <label>CPS Project Manager</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Abhishek Yadav</fullName>
+                    <default>false</default>
+                    <label>Abhishek Yadav</label>
+                </value>
+                <value>
+                    <fullName>Akhil Aggarwal</fullName>
+                    <default>false</default>
+                    <label>Akhil Aggarwal</label>
+                </value>
+                <value>
+                    <fullName>Amandeepti</fullName>
+                    <default>false</default>
+                    <label>Amandeepti</label>
+                </value>
+                <value>
+                    <fullName>Anmol Kaul Dembi</fullName>
+                    <default>false</default>
+                    <label>Anmol Kaul Dembi</label>
+                </value>
+                <value>
+                    <fullName>Brian Swords</fullName>
+                    <default>false</default>
+                    <label>Brian Swords</label>
+                </value>
+                <value>
+                    <fullName>Carmen Tillman</fullName>
+                    <default>false</default>
+                    <label>Carmen Tillman</label>
+                </value>
+                <value>
+                    <fullName>Cathy Agnew</fullName>
+                    <default>false</default>
+                    <label>Cathy Agnew</label>
+                </value>
+                <value>
+                    <fullName>Clay Ferrell</fullName>
+                    <default>false</default>
+                    <label>Clay Ferrell</label>
+                </value>
+                <value>
+                    <fullName>Daniel Adeline</fullName>
+                    <default>false</default>
+                    <label>Daniel Adeline</label>
+                </value>
+                <value>
+                    <fullName>Debbie Determan</fullName>
+                    <default>false</default>
+                    <label>Debbie Determan</label>
+                </value>
+                <value>
+                    <fullName>Deede Fulton</fullName>
+                    <default>false</default>
+                    <label>Deede Fulton</label>
+                </value>
+                <value>
+                    <fullName>Dimple</fullName>
+                    <default>false</default>
+                    <label>Dimple</label>
+                </value>
+                <value>
+                    <fullName>Ellie Mullins</fullName>
+                    <default>false</default>
+                    <label>Ellie Mullins</label>
+                </value>
+                <value>
+                    <fullName>Giampaolo Squadroni</fullName>
+                    <default>false</default>
+                    <label>Giampaolo Squadroni</label>
+                </value>
+                <value>
+                    <fullName>Hernan De Armas</fullName>
+                    <default>false</default>
+                    <label>Hernan De Armas</label>
+                </value>
+                <value>
+                    <fullName>Jaishree Medepalli</fullName>
+                    <default>false</default>
+                    <label>Jaishree Medepalli</label>
+                </value>
+                <value>
+                    <fullName>Jamie Bullyan</fullName>
+                    <default>false</default>
+                    <label>Jamie Bullyan</label>
+                </value>
+                <value>
+                    <fullName>Jayant Yadav</fullName>
+                    <default>false</default>
+                    <label>Jayant Yadav</label>
+                </value>
+                <value>
+                    <fullName>Jennifer Blamey</fullName>
+                    <default>false</default>
+                    <label>Jennifer Blamey</label>
+                </value>
+                <value>
+                    <fullName>Jennifer Skavnak</fullName>
+                    <default>false</default>
+                    <label>Jennifer Skavnak</label>
+                </value>
+                <value>
+                    <fullName>Julia Endersby</fullName>
+                    <default>false</default>
+                    <label>Julia Endersby</label>
+                </value>
+                <value>
+                    <fullName>Katie Ohland</fullName>
+                    <default>false</default>
+                    <label>Katie Ohland</label>
+                </value>
+                <value>
+                    <fullName>Kerry Moechnig-Studer</fullName>
+                    <default>false</default>
+                    <label>Kerry Moechnig-Studer</label>
+                </value>
+                <value>
+                    <fullName>Kim Havelund</fullName>
+                    <default>false</default>
+                    <label>Kim Havelund</label>
+                </value>
+                <value>
+                    <fullName>Kylie Angell</fullName>
+                    <default>false</default>
+                    <label>Kylie Angell</label>
+                </value>
+                <value>
+                    <fullName>Laura Ruttle</fullName>
+                    <default>false</default>
+                    <label>Laura Ruttle</label>
+                </value>
+                <value>
+                    <fullName>Lauren Kerns</fullName>
+                    <default>false</default>
+                    <label>Lauren Kerns</label>
+                </value>
+                <value>
+                    <fullName>Leanna Myers</fullName>
+                    <default>false</default>
+                    <label>Leanna Myers</label>
+                </value>
+                <value>
+                    <fullName>Leila Zid</fullName>
+                    <default>false</default>
+                    <label>Leila Zid</label>
+                </value>
+                <value>
+                    <fullName>Lesley-Ann Jones</fullName>
+                    <default>false</default>
+                    <label>Lesley-Ann Jones</label>
+                </value>
+                <value>
+                    <fullName>Linda Redgate</fullName>
+                    <default>false</default>
+                    <label>Linda Redgate</label>
+                </value>
+                <value>
+                    <fullName>Louis Lu</fullName>
+                    <default>false</default>
+                    <label>Louis Lu</label>
+                </value>
+                <value>
+                    <fullName>Marcy Keltai</fullName>
+                    <default>false</default>
+                    <label>Marcy Keltai</label>
+                </value>
+                <value>
+                    <fullName>Marek Badowski</fullName>
+                    <default>false</default>
+                    <label>Marek Badowski</label>
+                </value>
+                <value>
+                    <fullName>Matthew Lee</fullName>
+                    <default>false</default>
+                    <label>Matthew Lee</label>
+                </value>
+                <value>
+                    <fullName>Matt Rogers</fullName>
+                    <default>false</default>
+                    <label>Matt Rogers</label>
+                </value>
+                <value>
+                    <fullName>Mayur Sharma</fullName>
+                    <default>false</default>
+                    <label>Mayur Sharma</label>
+                </value>
+                <value>
+                    <fullName>Meenakshi Sharma</fullName>
+                    <default>false</default>
+                    <label>Meenakshi Sharma</label>
+                </value>
+                <value>
+                    <fullName>Michael Cassel</fullName>
+                    <default>false</default>
+                    <label>Michael Cassel</label>
+                </value>
+                <value>
+                    <fullName>Mike Mason</fullName>
+                    <default>false</default>
+                    <label>Mike Mason</label>
+                </value>
+                <value>
+                    <fullName>Nikita Kumar</fullName>
+                    <default>false</default>
+                    <label>Nikita Kumar</label>
+                </value>
+                <value>
+                    <fullName>Nikki Zenga</fullName>
+                    <default>false</default>
+                    <label>Nikki Zenga</label>
+                </value>
+                <value>
+                    <fullName>Paige Jenkins</fullName>
+                    <default>false</default>
+                    <label>Paige Jenkins</label>
+                </value>
+                <value>
+                    <fullName>Prayas Chanchawat</fullName>
+                    <default>false</default>
+                    <label>Prayas Chanchawat</label>
+                </value>
+                <value>
+                    <fullName>Rachelle Visser</fullName>
+                    <default>false</default>
+                    <label>Rachelle Visser</label>
+                </value>
+                <value>
+                    <fullName>RaeAnn Ristow</fullName>
+                    <default>false</default>
+                    <label>RaeAnn Ristow</label>
+                </value>
+                <value>
+                    <fullName>Sahil Kuckreja</fullName>
+                    <default>false</default>
+                    <label>Sahil Kuckreja</label>
+                </value>
+                <value>
+                    <fullName>Sarah Fritz</fullName>
+                    <default>false</default>
+                    <label>Sarah Fritz</label>
+                </value>
+                <value>
+                    <fullName>Sharmistha Banerjee</fullName>
+                    <default>false</default>
+                    <label>Sharmistha Banerjee</label>
+                </value>
+                <value>
+                    <fullName>Shweta Gola</fullName>
+                    <default>false</default>
+                    <label>Shweta Gola</label>
+                </value>
+                <value>
+                    <fullName>Sonam Rawat</fullName>
+                    <default>false</default>
+                    <label>Sonam Rawat</label>
+                </value>
+                <value>
+                    <fullName>Stephen John Gilbert</fullName>
+                    <default>false</default>
+                    <label>Stephen John Gilbert</label>
+                </value>
+                <value>
+                    <fullName>Tiffany Hoff</fullName>
+                    <default>false</default>
+                    <label>Tiffany Hoff</label>
+                </value>
+                <value>
+                    <fullName>Tom Roerig</fullName>
+                    <default>false</default>
+                    <label>Tom Roerig</label>
+                </value>
+                <value>
+                    <fullName>Udita Chaudhary</fullName>
+                    <default>false</default>
+                    <label>Udita Chaudhary</label>
+                </value>
+                <value>
+                    <fullName>Usman Khan</fullName>
+                    <default>false</default>
+                    <label>Usman Khan</label>
+                </value>
+                <value>
+                    <fullName>William Macadam</fullName>
+                    <default>false</default>
+                    <label>William Macadam</label>
+                </value>
+                <value>
+                    <fullName>Xiuzhu Lin</fullName>
+                    <default>false</default>
+                    <label>Xiuzhu Lin</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CPS_Project_Number__c</fullName>
+        <label>CPS Project Number</label>
+        <referenceTo>ProjectObject__c</referenceTo>
+        <relationshipLabel>Workpackets</relationshipLabel>
+        <relationshipName>Workpackets</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>CS_Final_Test_Date__c</fullName>
+        <label>CS Final Test Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CS_Final_Test_Name__c</fullName>
+        <label>CS Final Test Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Alison Hollamby</fullName>
+                    <default>false</default>
+                    <label>Alison Hollamby</label>
+                </value>
+                <value>
+                    <fullName>Bahareh (Berry) Soltani</fullName>
+                    <default>false</default>
+                    <label>Bahareh (Berry) Soltani</label>
+                </value>
+                <value>
+                    <fullName>Claire Fix</fullName>
+                    <default>false</default>
+                    <label>Claire Fix</label>
+                </value>
+                <value>
+                    <fullName>Darya Mishyna</fullName>
+                    <default>false</default>
+                    <label>Darya Mishyna</label>
+                </value>
+                <value>
+                    <fullName>Emma Lee</fullName>
+                    <default>false</default>
+                    <label>Emma Lee</label>
+                </value>
+                <value>
+                    <fullName>Ena Sawhney</fullName>
+                    <default>false</default>
+                    <label>Ena Sawhney</label>
+                </value>
+                <value>
+                    <fullName>Hannah Ablitt</fullName>
+                    <default>false</default>
+                    <label>Hannah Ablitt</label>
+                </value>
+                <value>
+                    <fullName>Helen Gordon</fullName>
+                    <default>false</default>
+                    <label>Helen Gordon</label>
+                </value>
+                <value>
+                    <fullName>Kylie Angell</fullName>
+                    <default>false</default>
+                    <label>Kylie Angell</label>
+                </value>
+                <value>
+                    <fullName>Lucy Gordon</fullName>
+                    <default>false</default>
+                    <label>Lucy Gordon</label>
+                </value>
+                <value>
+                    <fullName>Michael Sweeney</fullName>
+                    <default>false</default>
+                    <label>Michael Sweeney</label>
+                </value>
+                <value>
+                    <fullName>Olivia Smith</fullName>
+                    <default>false</default>
+                    <label>Olivia Smith</label>
+                </value>
+                <value>
+                    <fullName>Pauline Campbell</fullName>
+                    <default>false</default>
+                    <label>Pauline Campbell</label>
+                </value>
+                <value>
+                    <fullName>Rosie Gibbs</fullName>
+                    <default>false</default>
+                    <label>Rosie Gibbs</label>
+                </value>
+                <value>
+                    <fullName>Sarah Giordano</fullName>
+                    <default>false</default>
+                    <label>Sarah Giordano</label>
+                </value>
+                <value>
+                    <fullName>Sian Hughes</fullName>
+                    <default>false</default>
+                    <label>Sian Hughes</label>
+                </value>
+                <value>
+                    <fullName>Temi Duro-Emmanuel</fullName>
+                    <default>false</default>
+                    <label>Temi Duro-Emmanuel</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CS_Lead__c</fullName>
+        <label>I/O Lead</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Alison Hollamby</fullName>
+                    <default>false</default>
+                    <label>Alison Hollamby</label>
+                </value>
+                <value>
+                    <fullName>Anthony Spencer</fullName>
+                    <default>false</default>
+                    <label>Anthony Spencer</label>
+                </value>
+                <value>
+                    <fullName>Chloe Gabriel</fullName>
+                    <default>false</default>
+                    <label>Chloe Gabriel</label>
+                </value>
+                <value>
+                    <fullName>Daniel Adeline</fullName>
+                    <default>false</default>
+                    <label>Daniel Adeline</label>
+                </value>
+                <value>
+                    <fullName>Elizabeth Antoniou</fullName>
+                    <default>false</default>
+                    <label>Elizabeth Antoniou</label>
+                </value>
+                <value>
+                    <fullName>Ellie Mullins</fullName>
+                    <default>false</default>
+                    <label>Ellie Mullins</label>
+                </value>
+                <value>
+                    <fullName>Harpreet Dhami</fullName>
+                    <default>false</default>
+                    <label>Harpreet Dhami</label>
+                </value>
+                <value>
+                    <fullName>Krutika Peres da Silva</fullName>
+                    <default>false</default>
+                    <label>Krutika Peres da Silva</label>
+                </value>
+                <value>
+                    <fullName>Laura Ruttle</fullName>
+                    <default>false</default>
+                    <label>Laura Ruttle</label>
+                </value>
+                <value>
+                    <fullName>Leila Zid</fullName>
+                    <default>false</default>
+                    <label>Leila Zid</label>
+                </value>
+                <value>
+                    <fullName>Louis Lu</fullName>
+                    <default>false</default>
+                    <label>Louis Lu</label>
+                </value>
+                <value>
+                    <fullName>Matthew Rogers</fullName>
+                    <default>false</default>
+                    <label>Matthew Rogers</label>
+                </value>
+                <value>
+                    <fullName>Michael Lippstreu</fullName>
+                    <default>false</default>
+                    <label>Michael Lippstreu</label>
+                </value>
+                <value>
+                    <fullName>Rachelle Visser</fullName>
+                    <default>false</default>
+                    <label>Rachelle Visser</label>
+                </value>
+                <value>
+                    <fullName>Sharmistha Banerjee</fullName>
+                    <default>false</default>
+                    <label>Sharmistha Banerjee</label>
+                </value>
+                <value>
+                    <fullName>Tunrea Khaira</fullName>
+                    <default>false</default>
+                    <label>Tunrea Khaira</label>
+                </value>
+                <value>
+                    <fullName>Udita Chaudhary</fullName>
+                    <default>false</default>
+                    <label>Udita Chaudhary</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Change_Request__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Change Request</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Client_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>CPS_Project_Number__r.Client_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Client Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comment__c</fullName>
+        <label>Comment</label>
+        <length>32500</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DTO_Publish__c</fullName>
+        <label>DTO Publish</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DTO_Sign_off__c</fullName>
+        <label>DTO Sign off</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Delivery_Variance_Comment__c</fullName>
+        <label>Delivery Variance Comment</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Extract_Client__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Extract Client</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Workpackets</relationshipLabel>
+        <relationshipName>Workpackets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Field_Sign_Off_Date__c</fullName>
+        <label>Field Sign Off Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Field_Sign_Off_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Field Sign Off Name</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Workpackets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Handover_to_QA_Date__c</fullName>
+        <label>Handover to QA Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Handover_to_QA_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Handover to QA From</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Workpackets1</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>I_O_Lead_New__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>I/O Lead</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>User.Is_I_O_Lead__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Workpackets4</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Integration_Partner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Integration Partner</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.Name</field>
+                <operation>contains</operation>
+                <value>(Alliance)</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Workpackets (Integration Partner)</relationshipLabel>
+        <relationshipName>Workpackets1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LBU__c</fullName>
+        <externalId>false</externalId>
+        <formula>CPS_Project_Number__r.LBU_CPS__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LBU</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Live_Publish__c</fullName>
+        <label>Live Publish</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Localisation_Lead_New__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Localisation Lead</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>User.Is_Localisation_Lead__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Workpackets6</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>MIT_Lead__c</fullName>
+        <label>Localisation Lead</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Avril Peryer</fullName>
+                    <default>false</default>
+                    <label>Avril Peryer</label>
+                </value>
+                <value>
+                    <fullName>Fei Liu</fullName>
+                    <default>false</default>
+                    <label>Fei Liu</label>
+                </value>
+                <value>
+                    <fullName>Lucy Burgess</fullName>
+                    <default>false</default>
+                    <label>Lucy Burgess</label>
+                </value>
+                <value>
+                    <fullName>Paige Jenkins</fullName>
+                    <default>false</default>
+                    <label>Paige Jenkins</label>
+                </value>
+                <value>
+                    <fullName>Samantha Lonigro</fullName>
+                    <default>false</default>
+                    <label>Samantha Lonigro</label>
+                </value>
+                <value>
+                    <fullName>Tomasz Raczka</fullName>
+                    <default>false</default>
+                    <label>Tomasz Raczka</label>
+                </value>
+                <value>
+                    <fullName>William Pearce</fullName>
+                    <default>false</default>
+                    <label>William Pearce</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Number_of_integration_projects__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of integration projects</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>CPS_Project_Number__r.Opportunity_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PS_Project_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>CPS_Project_Number__r.PS_Project_Number__r.Project_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PS Project Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PS_Project_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>CPS_Project_Number__r.PS_Project_Number__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PS Project Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_PS__c</fullName>
+        <label>Product/PS</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Product Support</fullName>
+                    <default>false</default>
+                    <label>Product Support</label>
+                </value>
+                <value>
+                    <fullName>PS Revenue</fullName>
+                    <default>false</default>
+                    <label>PS Revenue</label>
+                </value>
+                <value>
+                    <fullName>FOC</fullName>
+                    <default>false</default>
+                    <label>FOC</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>QA_Final_Test_Date__c</fullName>
+        <label>QA Final Test Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>QA_Final_Test_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>QA Final Test Name</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Workpackets2</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Reasons_For_Changed_Delivery_Date__c</fullName>
+        <label>Reasons For Changed Delivery Date</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Solution_Type__c</fullName>
+        <label>Solution Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>360</fullName>
+                    <default>false</default>
+                    <label>360</label>
+                </value>
+                <value>
+                    <fullName>Advisory Services</fullName>
+                    <default>false</default>
+                    <label>Advisory Services</label>
+                </value>
+                <value>
+                    <fullName>APTA</fullName>
+                    <default>false</default>
+                    <label>APTA</label>
+                </value>
+                <value>
+                    <fullName>Aspiring Minds</fullName>
+                    <default>false</default>
+                    <label>Aspiring Minds</label>
+                </value>
+                <value>
+                    <fullName>BOS / Validation</fullName>
+                    <default>false</default>
+                    <label>BOS / Validation</label>
+                </value>
+                <value>
+                    <fullName>Branding</fullName>
+                    <default>false</default>
+                    <label>Branding</label>
+                </value>
+                <value>
+                    <fullName>Configurable Grad SJT</fullName>
+                    <default>false</default>
+                    <label>Configurable Grad SJT</label>
+                </value>
+                <value>
+                    <fullName>Custom Assessment</fullName>
+                    <default>false</default>
+                    <label>Custom Assessment</label>
+                </value>
+                <value>
+                    <fullName>Custom Norm</fullName>
+                    <default>false</default>
+                    <label>Custom Norm</label>
+                </value>
+                <value>
+                    <fullName>Custom Report - Complex</fullName>
+                    <default>false</default>
+                    <label>Custom Report - Complex</label>
+                </value>
+                <value>
+                    <fullName>Custom Report - TCR</fullName>
+                    <default>false</default>
+                    <label>Custom Report - TCR</label>
+                </value>
+                <value>
+                    <fullName>Custom Scale</fullName>
+                    <default>false</default>
+                    <label>Custom Scale</label>
+                </value>
+                <value>
+                    <fullName>Data Extract</fullName>
+                    <default>false</default>
+                    <label>Data Extract</label>
+                </value>
+                <value>
+                    <fullName>DPN Changes</fullName>
+                    <default>false</default>
+                    <label>DPN Changes</label>
+                </value>
+                <value>
+                    <fullName>Group Report</fullName>
+                    <default>false</default>
+                    <label>Group Report</label>
+                </value>
+                <value>
+                    <fullName>Integration – Production Additional Stream(s)</fullName>
+                    <default>false</default>
+                    <label>Integration – Production Additional Stream(s)</label>
+                </value>
+                <value>
+                    <fullName>Integration - Production Build</fullName>
+                    <default>false</default>
+                    <label>Integration - Production Build</label>
+                </value>
+                <value>
+                    <fullName>Integration – UAT Additional Stream(s)</fullName>
+                    <default>false</default>
+                    <label>Integration – UAT Additional Stream(s)</label>
+                </value>
+                <value>
+                    <fullName>Integration - UAT Build</fullName>
+                    <default>false</default>
+                    <label>Integration - UAT Build</label>
+                </value>
+                <value>
+                    <fullName>Internal</fullName>
+                    <default>false</default>
+                    <label>Internal</label>
+                </value>
+                <value>
+                    <fullName>JFA</fullName>
+                    <default>false</default>
+                    <label>JFA</label>
+                </value>
+                <value>
+                    <fullName>Localisation</fullName>
+                    <default>false</default>
+                    <label>Localisation</label>
+                </value>
+                <value>
+                    <fullName>MCP</fullName>
+                    <default>false</default>
+                    <label>MCP</label>
+                </value>
+                <value>
+                    <fullName>Migration</fullName>
+                    <default>false</default>
+                    <label>Migration</label>
+                </value>
+                <value>
+                    <fullName>Multimedia – Other</fullName>
+                    <default>false</default>
+                    <label>Multimedia – Other</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Precise Fit</fullName>
+                    <default>false</default>
+                    <label>Precise Fit</label>
+                </value>
+                <value>
+                    <fullName>RJP Multimedia</fullName>
+                    <default>false</default>
+                    <label>RJP Multimedia</label>
+                </value>
+                <value>
+                    <fullName>RJP Text</fullName>
+                    <default>false</default>
+                    <label>RJP Text</label>
+                </value>
+                <value>
+                    <fullName>Security Monitoring</fullName>
+                    <default>false</default>
+                    <label>Security Monitoring</label>
+                </value>
+                <value>
+                    <fullName>SHL Experiences</fullName>
+                    <default>false</default>
+                    <label>SHL Experiences</label>
+                </value>
+                <value>
+                    <fullName>SJT Multimedia</fullName>
+                    <default>false</default>
+                    <label>SJT Multimedia</label>
+                </value>
+                <value>
+                    <fullName>SJT Text - Complex</fullName>
+                    <default>false</default>
+                    <label>SJT Text - Complex</label>
+                </value>
+                <value>
+                    <fullName>SJT Text - Configured</fullName>
+                    <default>false</default>
+                    <label>SJT Text - Configured</label>
+                </value>
+                <value>
+                    <fullName>Sub Support Analysis</fullName>
+                    <default>false</default>
+                    <label>Sub Support Analysis</label>
+                </value>
+                <value>
+                    <fullName>Tailored Job Focused Assessment</fullName>
+                    <default>false</default>
+                    <label>Tailored Job Focused Assessment</label>
+                </value>
+                <value>
+                    <fullName>Talent Analytics</fullName>
+                    <default>false</default>
+                    <label>Talent Analytics</label>
+                </value>
+                <value>
+                    <fullName>Talent Audit</fullName>
+                    <default>false</default>
+                    <label>Talent Audit</label>
+                </value>
+                <value>
+                    <fullName>VADC</fullName>
+                    <default>false</default>
+                    <label>VADC</label>
+                </value>
+                <value>
+                    <fullName>Video Feedback</fullName>
+                    <default>false</default>
+                    <label>Video Feedback</label>
+                </value>
+                <value>
+                    <fullName>Video Interview</fullName>
+                    <default>false</default>
+                    <label>Video Interview</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Planning</fullName>
+                    <default>false</default>
+                    <label>Planning</label>
+                </value>
+                <value>
+                    <fullName>Executing</fullName>
+                    <default>false</default>
+                    <label>Executing</label>
+                </value>
+                <value>
+                    <fullName>Closing</fullName>
+                    <default>false</default>
+                    <label>Closing</label>
+                </value>
+                <value>
+                    <fullName>Closed/Delivered</fullName>
+                    <default>false</default>
+                    <label>Closed/Delivered</label>
+                </value>
+                <value>
+                    <fullName>Closed/Cancelled</fullName>
+                    <default>false</default>
+                    <label>Closed/Cancelled</label>
+                </value>
+                <value>
+                    <fullName>On Hold</fullName>
+                    <default>false</default>
+                    <label>On Hold</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Technology_Final_Test_Date__c</fullName>
+        <label>Technology Final Test Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Technology_Final_Test_Name__c</fullName>
+        <label>Technology Final Test Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Ahsin Niazi</fullName>
+                    <default>false</default>
+                    <label>Ahsin Niazi</label>
+                </value>
+                <value>
+                    <fullName>Aidan Pugh</fullName>
+                    <default>false</default>
+                    <label>Aidan Pugh</label>
+                </value>
+                <value>
+                    <fullName>Cosy Quarters</fullName>
+                    <default>false</default>
+                    <label>Cosy Quarters</label>
+                </value>
+                <value>
+                    <fullName>Edward Butler</fullName>
+                    <default>false</default>
+                    <label>Edward Butler</label>
+                </value>
+                <value>
+                    <fullName>Gemma Townsend</fullName>
+                    <default>false</default>
+                    <label>Gemma Townsend</label>
+                </value>
+                <value>
+                    <fullName>Inna Hodges</fullName>
+                    <default>false</default>
+                    <label>Inna Hodges</label>
+                </value>
+                <value>
+                    <fullName>Jason Pilbrow</fullName>
+                    <default>false</default>
+                    <label>Jason Pilbrow</label>
+                </value>
+                <value>
+                    <fullName>John Daniel</fullName>
+                    <default>false</default>
+                    <label>John Daniel</label>
+                </value>
+                <value>
+                    <fullName>John Duncan</fullName>
+                    <default>false</default>
+                    <label>John Duncan</label>
+                </value>
+                <value>
+                    <fullName>Kamil Stanczuk</fullName>
+                    <default>false</default>
+                    <label>Kamil Stanczuk</label>
+                </value>
+                <value>
+                    <fullName>Maria Tafaro</fullName>
+                    <default>false</default>
+                    <label>Maria Tafaro</label>
+                </value>
+                <value>
+                    <fullName>Naushil Sures</fullName>
+                    <default>false</default>
+                    <label>Naushil Sures</label>
+                </value>
+                <value>
+                    <fullName>Pavenjit Sodhi</fullName>
+                    <default>false</default>
+                    <label>Pavenjit Sodhi</label>
+                </value>
+                <value>
+                    <fullName>Ravi Prajapati</fullName>
+                    <default>false</default>
+                    <label>Ravi Prajapati</label>
+                </value>
+                <value>
+                    <fullName>Robert Prehn</fullName>
+                    <default>false</default>
+                    <label>Robert Prehn</label>
+                </value>
+                <value>
+                    <fullName>Robert Watts</fullName>
+                    <default>false</default>
+                    <label>Robert Watts</label>
+                </value>
+                <value>
+                    <fullName>Usman Khan</fullName>
+                    <default>false</default>
+                    <label>Usman Khan</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Technology_Lead_New__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Technology Lead</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>User.Is_Technology_Lead__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Workpackets5</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Technology_Lead__c</fullName>
+        <label>Technology Lead</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Aaron Porter</fullName>
+                    <default>false</default>
+                    <label>Aaron Porter</label>
+                </value>
+                <value>
+                    <fullName>Adam Du-Lieu</fullName>
+                    <default>false</default>
+                    <label>Adam Du-Lieu</label>
+                </value>
+                <value>
+                    <fullName>Agam Bhardwaj</fullName>
+                    <default>false</default>
+                    <label>Agam Bhardwaj</label>
+                </value>
+                <value>
+                    <fullName>Agris Fridvalds</fullName>
+                    <default>false</default>
+                    <label>Agris Fridvalds</label>
+                </value>
+                <value>
+                    <fullName>Ahsin Niazi</fullName>
+                    <default>false</default>
+                    <label>Ahsin Niazi</label>
+                </value>
+                <value>
+                    <fullName>Aidan Pugh</fullName>
+                    <default>false</default>
+                    <label>Aidan Pugh</label>
+                </value>
+                <value>
+                    <fullName>Aimee Goldschmidt</fullName>
+                    <default>false</default>
+                    <label>Aimee Goldschmidt</label>
+                </value>
+                <value>
+                    <fullName>Ashley Caskey</fullName>
+                    <default>false</default>
+                    <label>Ashley Caskey</label>
+                </value>
+                <value>
+                    <fullName>Camilla Perera</fullName>
+                    <default>false</default>
+                    <label>Camilla Perera</label>
+                </value>
+                <value>
+                    <fullName>Conor Comerford</fullName>
+                    <default>false</default>
+                    <label>Conor Comerford</label>
+                </value>
+                <value>
+                    <fullName>Cosy Quarters</fullName>
+                    <default>false</default>
+                    <label>Cosy Quarters</label>
+                </value>
+                <value>
+                    <fullName>Dan Lund</fullName>
+                    <default>false</default>
+                    <label>Dan Lund</label>
+                </value>
+                <value>
+                    <fullName>David Egerton-Smith</fullName>
+                    <default>false</default>
+                    <label>David Egerton-Smith</label>
+                </value>
+                <value>
+                    <fullName>Dean Easton</fullName>
+                    <default>false</default>
+                    <label>Dean Easton</label>
+                </value>
+                <value>
+                    <fullName>Dragan Dragas</fullName>
+                    <default>false</default>
+                    <label>Dragan Dragas</label>
+                </value>
+                <value>
+                    <fullName>Edward Butler</fullName>
+                    <default>false</default>
+                    <label>Edward Butler</label>
+                </value>
+                <value>
+                    <fullName>Edward Ford</fullName>
+                    <default>false</default>
+                    <label>Edward Ford</label>
+                </value>
+                <value>
+                    <fullName>Gavin Grover</fullName>
+                    <default>false</default>
+                    <label>Gavin Grover</label>
+                </value>
+                <value>
+                    <fullName>Gemma Townsend</fullName>
+                    <default>false</default>
+                    <label>Gemma Townsend</label>
+                </value>
+                <value>
+                    <fullName>George Tsiatsis</fullName>
+                    <default>false</default>
+                    <label>George Tsiatsis</label>
+                </value>
+                <value>
+                    <fullName>Hernan De Armas</fullName>
+                    <default>false</default>
+                    <label>Hernan De Armas</label>
+                </value>
+                <value>
+                    <fullName>Jason Pilbrow</fullName>
+                    <default>false</default>
+                    <label>Jason Pilbrow</label>
+                </value>
+                <value>
+                    <fullName>John Daniel</fullName>
+                    <default>false</default>
+                    <label>John Daniel</label>
+                </value>
+                <value>
+                    <fullName>John Duncan</fullName>
+                    <default>false</default>
+                    <label>John Duncan</label>
+                </value>
+                <value>
+                    <fullName>Jolene Meyer</fullName>
+                    <default>false</default>
+                    <label>Jolene Meyer</label>
+                </value>
+                <value>
+                    <fullName>Kamil Stanczuk</fullName>
+                    <default>false</default>
+                    <label>Kamil Stanczuk</label>
+                </value>
+                <value>
+                    <fullName>Kimberly Havelund</fullName>
+                    <default>false</default>
+                    <label>Kimberly Havelund</label>
+                </value>
+                <value>
+                    <fullName>Kim Havelund</fullName>
+                    <default>false</default>
+                    <label>Kim Havelund</label>
+                </value>
+                <value>
+                    <fullName>Leanna Myers</fullName>
+                    <default>false</default>
+                    <label>Leanna Myers</label>
+                </value>
+                <value>
+                    <fullName>Louis Lu</fullName>
+                    <default>false</default>
+                    <label>Louis Lu</label>
+                </value>
+                <value>
+                    <fullName>Marian Youssef</fullName>
+                    <default>false</default>
+                    <label>Marian Youssef</label>
+                </value>
+                <value>
+                    <fullName>Maria Tafaro</fullName>
+                    <default>false</default>
+                    <label>Maria Tafaro</label>
+                </value>
+                <value>
+                    <fullName>Maryanna Baston</fullName>
+                    <default>false</default>
+                    <label>Maryanna Baston</label>
+                </value>
+                <value>
+                    <fullName>Niat Bereket</fullName>
+                    <default>false</default>
+                    <label>Niat Bereket</label>
+                </value>
+                <value>
+                    <fullName>Paige Jenkins</fullName>
+                    <default>false</default>
+                    <label>Paige Jenkins</label>
+                </value>
+                <value>
+                    <fullName>Robert Watts</fullName>
+                    <default>false</default>
+                    <label>Robert Watts</label>
+                </value>
+                <value>
+                    <fullName>Salman Suja</fullName>
+                    <default>false</default>
+                    <label>Salman Suja</label>
+                </value>
+                <value>
+                    <fullName>Sandra Eibele</fullName>
+                    <default>false</default>
+                    <label>Sandra Eibele</label>
+                </value>
+                <value>
+                    <fullName>Shufei Xie</fullName>
+                    <default>false</default>
+                    <label>Shufei Xie</label>
+                </value>
+                <value>
+                    <fullName>Shyam Vithlani</fullName>
+                    <default>false</default>
+                    <label>Shyam Vithlani</label>
+                </value>
+                <value>
+                    <fullName>Steven Prakope</fullName>
+                    <default>false</default>
+                    <label>Steven Prakope</label>
+                </value>
+                <value>
+                    <fullName>Usman Khan</fullName>
+                    <default>false</default>
+                    <label>Usman Khan</label>
+                </value>
+                <value>
+                    <fullName>Whitney Smith</fullName>
+                    <default>false</default>
+                    <label>Whitney Smith</label>
+                </value>
+                <value>
+                    <fullName>Will Macadam</fullName>
+                    <default>false</default>
+                    <label>Will Macadam</label>
+                </value>
+                <value>
+                    <fullName>Zach Sulflow</fullName>
+                    <default>false</default>
+                    <label>Zach Sulflow</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_Changes_found_QA_Test__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Changes found - QA Test</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Defects_found_QA_Test__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Defects found - QA Test</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Track_History_For_Changed_Delivery_Date__c</fullName>
+        <label>Track History For Changed Delivery Date</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Track_History_for_Delivery_Variance_Comm__c</fullName>
+        <label>Track History for Delivery Variance Comm</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>Workpacket</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>WP-{00000000}</displayFormat>
+        <label>Workpacket Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Workpackets</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Solution_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Agreed_Delivery__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Client_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LBU__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CPS_Project_Number__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Solution_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Agreed_Delivery__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Client_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LBU__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CPS_Project_Number__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>ActualDeliveryIsMandatory</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(ISNEW(),AND( ISPICKVAL( Status__c ,&apos;Closed/Delivered&apos;) ,ISBLANK( Actual_Delivery__c )),AND(ISCHANGED( Status__c),ISPICKVAL( Status__c ,&apos;Closed/Delivered&apos;),ISBLANK(Actual_Delivery__c )))</errorConditionFormula>
+        <errorMessage>If status is Closed/Delivered then Actual Delivery must be filled in</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ActualdeliveryIsgreaterthanAgreeddeliver</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(ISNEW(),
+   AND
+   ( Agreed_Delivery__c  &lt;  Actual_Delivery__c  ,
+     ISBLANK(  Delivery_Variance_Comment__c  )
+	), 
+      AND(
+	      OR(
+		      ISCHANGED(Agreed_Delivery__c),ISCHANGED(Actual_Delivery__c )
+			  ),
+			  ( Agreed_Delivery__c  &lt;  Actual_Delivery__c ),
+			  ISBLANK( Delivery_Variance_Comment__c )
+		)
+	)</errorConditionFormula>
+        <errorMessage>If actual delivery date is greater than agreed delivery date then “Delivery Variance Comments” is compulsory</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Handover_to_QA_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(NOT(ISBLANK(  Handover_to_QA_Date__c )),  ISBLANK(  Handover_to_QA_Name__c))</errorConditionFormula>
+        <errorDisplayField>Handover_to_QA_Name__c</errorDisplayField>
+        <errorMessage>Please provide the name of the person who the QA handover has come from</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>HandoversAndQAareMandatory</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+		ISPICKVAL( Status__c ,&apos;Closed/Delivered&apos;) ,
+		OR(
+			ISPICKVAL( Solution_Type__c ,&apos;Custom Report Type 1&apos;),
+			ISPICKVAL( Solution_Type__c ,&apos;Custom Report Type 2&apos;),
+			ISPICKVAL( Solution_Type__c ,&apos;Custom Report Type 3&apos;),
+			ISPICKVAL( Solution_Type__c ,&apos;Custom Report Bespoke&apos;),
+			ISPICKVAL( Solution_Type__c ,&apos;SJT Multimedia&apos;),
+			ISPICKVAL( Solution_Type__c ,&apos;SJT Text Type 1&apos;),
+			ISPICKVAL( Solution_Type__c ,&apos;SJT Text Type 2&apos;),
+ISPICKVAL( Solution_Type__c ,&apos;S2P Instrument&apos;),
+ISPICKVAL( Solution_Type__c ,&apos;S2P Integration (stub)&apos;)
+		),	
+			OR(
+				ISBLANK( Handover_to_QA_Date__c ),
+				ISBLANK( Handover_to_QA_Name__c ),
+				ISBLANK( QA_Final_Test_Date__c ),
+				ISBLANK( QA_Final_Test_Name__c)
+			)
+				
+	)</errorConditionFormula>
+        <errorMessage>Please complete the QA fields for this workpacket</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Name_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISBLANK( CPS_Project_Manager_New__c ),
+ISBLANK( Technology_Lead_New__c),ISBLANK( I_O_Lead_New__c),
+ISBLANK( Localisation_Lead_New__c)
+,NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;))
+)</errorConditionFormula>
+        <errorMessage>Must be a name in one of these (CPS Project Manager, CS Lead, Tech Lead, A&amp;O Lead, MIT Lead)</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>QA_Final_Test_Name_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(NOT(ISBLANK(   QA_Final_Test_Date__c )),  ISBLANK(   QA_Final_Test_Name__c ))</errorConditionFormula>
+        <errorDisplayField>QA_Final_Test_Name__c</errorDisplayField>
+        <errorMessage>Please provide the name of the person who completed the final testing</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ReasonsForReasonsForChangedtMandatory</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISCHANGED( Agreed_Delivery__c ),  ISBLANK( Reasons_For_Changed_Delivery_Date__c) )</errorConditionFormula>
+        <errorMessage>Reasons For Changed Delivery Date is Mandatory If Agreed Delivery Date is changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Restrict_Workpacket_Status_Move</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(  NOT($Permission.CPS_Workpacket_closed_delivered_edit_rights), 
+AND( 
+ISPICKVAL(PRIORVALUE(Status__c),&quot;closed/delivered&quot;), 
+OR( 
+ISPICKVAL( Status__c,&quot;Planning&quot;), 
+ISPICKVAL( Status__c,&quot;Executing&quot;), 
+ISPICKVAL( Status__c,&quot;Closing&quot;), 
+ISPICKVAL( Status__c,&quot;Closed/Cancelled&quot;), 
+ISPICKVAL( Status__c,&quot;On Hold&quot;), 
+ISPICKVAL( Status__c,&quot;closed/delivered&quot;) 
+)	
+) 
+)</errorConditionFormula>
+        <errorMessage>You do not have permissions to edit Closed/Delivered Workpackets.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Update_Workpackets</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Update Workpackets</masterLabel>
+        <openType>sidebar</openType>
+        <page>BulkEditWorkpacketProjectVF</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+</CustomObject>

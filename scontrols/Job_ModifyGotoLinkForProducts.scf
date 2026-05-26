@@ -1,0 +1,18 @@
+<html>
+<head>
+<script>
+modifyGoToListLink();
+
+function modifyGoToListLink() 
+{
+var jobid='{!Job__c.Id}';
+var pbBodyDiv = parent.window.document.getElementById(jobid+'_00N20000002BnoC_body');
+var pShowMoreDiv = pbBodyDiv.childNodes[1];
+var goToListLink = pShowMoreDiv.childNodes[2];
+goToListLink.href += '&lsi=5';
+}
+</script>
+</head>
+<body>
+ </body> 
+</html>

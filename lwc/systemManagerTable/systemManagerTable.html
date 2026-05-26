@@ -1,0 +1,62 @@
+<template>
+    <div class="filter-panel slds-var-p-around_x-small">
+        <br/>
+        <div class="slds-clearfix">
+            <div class="slds-float_left">
+                <lightning-icon class="slds-var-m-horizontal_x-small" 
+                icon-name="standard:nft_settings" 
+                alternative-text="System" 
+                title="System"
+                style="margin-left: 20px;"></lightning-icon>
+                <b class="slds-text-heading_small">Project's Systems</b>
+            </div>
+            <div class="slds-float_right">
+                <lightning-layout>
+                    <lightning-layout-item>
+                        <lightning-button-icon style="margin-right:10px" 
+                        icon-name="utility:refresh" 
+                        variant="border-filled" 
+                        alternative-text="Refresh List" 
+                        title="Refresh List" 
+                        onclick={getBureauSystemDetails}></lightning-button-icon>
+                    </lightning-layout-item>
+                    <lightning-layout-item>
+                        <template if:true={showManageButton}>
+                        <lightning-button
+                label="Manage Systems" 
+                onclick={manageSystemfun} 
+                variant="brand"
+                style="margin-right: 20px;">
+                </lightning-button>
+            </template>
+                    </lightning-layout-item>
+                </lightning-layout>
+                
+            </div>
+          </div>
+          <br/>
+    </div>
+    <!--div class="slds-var-m-around_small" style="height:500px">
+        <lightning-datatable key-field="id" 
+                                        data={data} 
+                                        columns={tableColumns} 
+                                        onrowaction={handleRowAction} 
+                                        hide-checkbox-column 
+                                        enable-infinite-loading
+                                        onloadmore={loadData}>
+                </lightning-datatable>
+            </div-->
+            <div class="table-container slds-var-m-around_small" style="height:500px">
+                <div style="height:100%">
+                <c-custom-edit-table-helper 
+                key-field="id" 
+                data={data} 
+                columns={tableColumns}
+                onrowaction={handleRowAction} 
+                hide-checkbox-column 
+                enable-infinite-loading
+                onloadmore={loadMoreData}>
+                </c-custom-edit-table-helper>
+            </div>
+        </div>
+</template>

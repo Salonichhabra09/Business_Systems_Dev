@@ -1,0 +1,26 @@
+<apex:page >
+
+
+
+<!-- this empty page simply invokes the KB site template and gives us a page to set the Site homepage to -->
+        <!--<apex:composition template="Kb_Template">
+            <apex:define name="body"></apex:define>
+            <apex:define name="catDetail">
+                <div class="home-block-container">
+                    <div style="float:left;width:698px;">
+                    <c:Kb_CategoryDetail rendered="{!!searchExecuted}" kbCon="{!kbCon}" />
+                    <c:Kb_ArticleList kbCon="{!kbCon}" rendered="{!searchExecuted}" showHeaderInfo="false" />
+                    <apex:outputText rendered="{!viewingArticle}">
+                        <div id="articleView" style="float:left;">
+                          <c:pkb_articleview kbCon="{!kbCon}" showFeedbackYesNo="true"/>
+                        </div>
+                    </apex:outputText>
+                    </div>
+                    <div class="home-block home-block-last">
+                        <c:KB_ContactUsComponent kbCon="{!kbCon}" displayOn="true" />
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </apex:define>
+        </apex:composition>-->
+</apex:page>

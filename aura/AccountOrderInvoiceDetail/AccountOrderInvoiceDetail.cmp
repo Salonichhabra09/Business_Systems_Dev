@@ -1,0 +1,40 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName" access="global" >
+    <aura:attribute name="record" type="Object"
+                    description="The record object to be displayed"/>
+    <aura:attribute name="OppOrderRecord" type="Object"
+                    description="A simplified view record object to be displayed"/>
+    <aura:attribute name="recordError" type="String"
+                    description="An error message bound to force:recordData"/>
+    
+    <ui:message  severity="error" >
+        <strong>CAUTION! This client has complained about invoicing accuracy. Please take extra care in providing accurate and comprehensive information.</strong>
+        <br/>
+         <br/>
+        <aura:if isTrue="{!(v.sObjectName == 'Opportunity')}">       
+            <force:recordData aura:id="OppRecord"                     
+                              recordId="{!v.recordId}"  
+                              layoutType="FULL"
+                              targetError="{!v.recordError}"
+                              targetRecord="{!v.record}"
+                              targetFields="{!v.OppOrderRecord}"
+                              mode="VIEW"
+                              fields = "Opp_Invoicing_Quality_Details__c"
+                              />          
+            {!v.OppOrderRecord.Opp_Invoicing_Quality_Details__c}        
+            
+        <aura:set attribute="else">               
+            <force:recordData aura:id="OrderRecord"                     
+                              recordId="{!v.recordId}"  
+                              layoutType="FULL"
+                              targetError="{!v.recordError}"
+                              targetRecord="{!v.record}"
+                              targetFields="{!v.OppOrderRecord}"
+                              mode="VIEW"
+                              fields = "Order_Invoicing_Quality_Details__c"
+                              />               
+            {!v.OppOrderRecord.Order_Invoicing_Quality_Details__c}    
+        </aura:set>
+        </aura:if>
+    </ui:message>
+            
+</aura:component>

@@ -1,0 +1,89 @@
+<template>
+    <template lwc:if={showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </template>
+    <div lwc:if={showHierarchy} class="contHierarchy">
+        <lightning-layout>
+            <lightning-layout-item size="3">
+                <div class="zoomBtns slds-no-print">
+                    <!-- Zoom Out button -->
+                    <lightning-button-icon icon-name="utility:zoomout" variant="border-filled" onclick={zoomOut}
+                        alternative-text="Zoom Out" title="Zoom Out">
+                    </lightning-button-icon>
+                    <div class="slider"></div>
+
+                    <!-- Slider for zoom level -->
+                    <lightning-slider class="slider" max="100" min={minimum} step="1" value={zoomLevel}
+                        onchange={handleZoom}>
+                    </lightning-slider>
+
+                    <!-- Zoom In button -->
+                    <lightning-button-icon icon-name="utility:zoomin" variant="border-filled" onclick={zoomIn}
+                        alternative-text="Zoom In" title="Zoom In">
+                    </lightning-button-icon>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="1">
+
+            </lightning-layout-item>
+            <lightning-layout-item size="8" class="opportunity-url-layout">
+                <a class="opportunity-url" href={opportunityUrl} target="_blank">{opportunityName} <lightning-icon class="slds-m-left_medium" icon-name="utility:new_window" size="small"></lightning-icon></a>
+            </lightning-layout-item>
+        </lightning-layout>
+        <div class="dragContainer">
+        <lightning-layout>
+            <lightning-layout-item size={hierarchySize}>
+                <template lwc:if={showContacts}>
+        
+                        <!-- Scrollable container for contact hierarchy -->
+                        <div class="resize" onmousedown={mouseDownHandler} onmousemove={mouseMoveHandler}
+                            onmouseup={mouseUpHandler}>
+                            <ul class="map-class">
+                                <!-- Iterate through contacts -->
+                                <template for:each={contacts} for:item='cont'>
+                                    <!-- Checks if the Contact Reporst to Id is null (it's a top level contact) -->
+                                    <template lwc:if={cont.condition}>
+                                        <!-- Contact card component for each contact -->
+                                        <li key={cont.Id} data-id="liResize" class="level-2">
+                                            <c-opp-contact-hierarchy-card contact={cont} contacts={contacts}
+                                                record-id={recordId} zoom-level={zoomLevel}
+                                                onrefreshhierarchy={handleRefreshHierarchy} all-contacts-list={allContactsList}
+                                                ontriggercontacthierarchyspinner={handleSpinnerToggle}
+                                                total-placeholders={totalPlaceholders} hierarchy-information-id={recordId}
+                                                onviewcontact={handleViewContact}>
+                                            </c-opp-contact-hierarchy-card>
+                                        </li>
+                                    </template>
+                                </template>
+                            </ul>
+                            <!-- </div> -->
+                        </div>
+                        <template if:true={showErrorMessage}>
+                            <div class="slds-align_absolute-center slds-text-heading_small"
+                                style="height: 150px!important; text-align: center; padding-left:240px;">
+                                <lightning-formatted-text value={errorGettingContacts}></lightning-formatted-text>
+                            </div>
+                        </template>
+                </template>
+            </lightning-layout-item>
+            <lightning-layout-item lwc:if={isAction} size="3" class="action-space slds-is-relative">
+                <lightning-button-icon icon-name="utility:close" variant="container" onclick={handleActionClose} class="action-close-icon"></lightning-button-icon>
+                <div lwc:if={isView} class="slds-m-vertical_x-large slds-m-horizontal_medium">
+                    <c-edit-contact-on-opp-hierarchy contact={contact} onrefreshhierarchy={handleRefreshHierarchy} oncloseaction={handleActionClose}></c-edit-contact-on-opp-hierarchy>
+                </div>
+            
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+    </div>
+    <!-- Display error message if no contacts available -->
+    <div lwc:if={showErrorMessage}>
+        <lightning-card>
+            <div class="slds-align_absolute-center slds-text-heading_small"
+                style="height: 150px!important; text-align: center;">
+                <lightning-formatted-text value={errorGettingContacts}></lightning-formatted-text>
+            </div>
+        </lightning-card>
+    </div>
+
+</template>

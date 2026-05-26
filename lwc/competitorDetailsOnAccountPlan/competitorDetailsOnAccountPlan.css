@@ -1,0 +1,16 @@
+.max-height{
+    max-height: 80%;
+}
+.slds-modal__container{
+    max-width: 44rem;
+}
+
+.slds-modal__content{
+    padding: 1rem;
+    height: 22rem;
+    overflow: auto;
+}
+.max-height-datatable{
+    max-height: 30rem;
+    overflow: auto;
+}

@@ -1,0 +1,67 @@
+<template>
+    
+    <lightning-card icon-name="utility:warning" variant="Narrow">
+        <h1 slot="title" class="no-wrap">Please Click 'Create Invoice' button to create Invoice Header and Invoice Lines before Activating an Order</h1>
+        <div class="slds-var-m-around_medium">
+            <lightning-button label="Create Invoice" onclick={showConfirmationBox} variant="brand"></lightning-button>
+        </div>         
+    </lightning-card>
+
+    <!-- Normal/Variation Order -->      
+   <template if:true={isConfirmationBox}>
+
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+    <div class="slds-modal__container">
+    <!-- modal header start -->
+    <header class="slds-modal__header">
+        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideConfirmationBox}>
+            <lightning-icon icon-name="utility:close"
+            alternative-text="close"
+            variant="inverse"
+            size="small" ></lightning-icon>
+            <span class="slds-assistive-text">Close</span>
+        </button>
+        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Please review below field values before creating invoice</h2>
+    </header>
+
+    <!-- modal body start -->
+    <div class="slds-modal__content slds-var-p-around_medium" id="modal-content-id-1">
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" variant="brand"></lightning-spinner>
+        </template>
+        <!-- <lightning-input type="text" label="Product Billing Frequency" value={ProductBillingFrequencyValue} disabled></lightning-input>
+        <lightning-input type="text" label="Service Billing Frequency" value={ServiceBillingFrequencyValue} disabled></lightning-input> -->
+
+        <lightning-combobox
+            name="Product Billing Frequency"
+            label="Product Billing Frequency"
+            value={ProductBillingFrequencyValue}
+            options={ProductBillingFrequencyValues}
+            onchange={productBillingFrequencyChangeValue}
+            disabled={isPicklistDisabled} ></lightning-combobox>
+
+        <lightning-combobox
+            name="Service Billing Frequency"
+            label="Service Billing Frequency"
+            value={ServiceBillingFrequencyValue}
+            options={ServiceBillingFrequencyValues}
+            onchange={serviceBillingFrequencyChangeValue}
+            disabled={isPicklistDisabled} ></lightning-combobox>
+
+    </div>
+
+    <!-- modal footer start-->
+    <footer class="slds-modal__footer">
+        <lightning-button variant="brand" label="Proceed" onclick={handle_CreateInvoice}></lightning-button>
+    </footer>
+
+    </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    <!-- modal end -->
+
+</template>
+<!-- <div class="slds-var-p-around_medium">Please review below fields before proceeding with invoice creation</div>
+<lightning-input type="text" label="Product Billing Frequency" value={ProductBillingFrequency} disabled></lightning-input>
+<lightning-input type="text" label="Service Billing Frequency" value={ServiceBillingFrequency} disabled></lightning-input> -->

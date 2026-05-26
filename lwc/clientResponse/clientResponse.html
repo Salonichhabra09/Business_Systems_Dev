@@ -1,0 +1,75 @@
+<template>
+    <lightning-card title={clientName} >
+        <!--   <c-client-Form  form-fields={customFields} account-id={accountId} onclientsubmit={handleClientSubmit}></c-client-Form> -->
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-3">
+                <span>
+                    <lightning-card>
+                        <div style="align-content: center;">
+                            <img src={accountLogo}>
+                        </div>
+                    <!--    <div style="padding-left: 10px;">
+                            <lightning-formatted-rich-text
+                                value={textUnderLogo}></lightning-formatted-rich-text>
+                        </div> -->
+                    </lightning-card>
+                </span>
+            </div>
+            <div class="slds-col slds-size_2-of-3">
+                <div class="slds-m-horizontal_small">
+                    <div class="slds-grid slds-wrap">
+                        <lightning-layout multiple-rows>
+                            <template for:each={customFields} for:item="acc">
+                                <lightning-layout-item size="12" key={acc.Id}>
+                                    <div if:true={acc.issection} style="padding:around-small"
+                                        class="slds-text-heading_small">
+                                        <br>
+                                        <strong>{acc.fieldLabel}</strong>
+                                        <hr class="solid">
+                                    </div>
+                                     <lightning-input if:true={acc.isnormal} type={acc.fieldtype}
+                                            label={acc.fieldLabel} data-index={acc.index}
+                                            value={acc.value} 
+                                            field-level-help={acc.helpText} checked={acc.value}
+                                            class="slds-p-top_x-small"
+                                            disabled=true>
+                                        </lightning-input> 
+                                    <lightning-textarea if:true={acc.istextarea} name="input1"
+                                        label={acc.fieldLabel}
+                                        data-index={acc.index} value={acc.value}
+                                        field-level-help={acc.helpText}
+                                        class="slds-p-top_x-small"
+                                        disabled=true></lightning-textarea>
+                                    <lightning-input-rich-text if:true={acc.isrichtexarea}
+                                        label={acc.fieldLabel} 
+                                        data-index={acc.index} value={acc.value}
+                                        field-level-help={acc.helpText}
+                                        class="slds-p-top_x-small"
+                                        disabled=true>
+                                    </lightning-input-rich-text>
+                                    <lightning-combobox if:true={acc.ispicklist} name="progress"
+                                        label={acc.fieldLabel} value={acc.value} options={acc.options}
+                                        data-index={acc.index} field-level-help={acc.helpText}
+                                        class="slds-p-top_x-small"
+                                        disabled=true>
+                                    </lightning-combobox>
+                                    <lightning-checkbox-group if:true={acc.ischeckboxgroup}
+                                        name={acc.fieldLabel} label={acc.fieldLabel}  options={acc.options}
+                                        value={acc.value}  data-index={acc.index}
+                                        class="slds-p-top_x-small"
+                                        disabled=true>
+                                    </lightning-checkbox-group>
+                                    <lightning-radio-group if:true={acc.isradiogroup} name={acc.fieldLabel}
+                                        label={acc.fieldLabel}  value={acc.value} options={acc.options}
+                                        type="radio"  data-index={acc.index}
+                                        class="slds-p-top_x-small"
+                                        disabled=true></lightning-radio-group>
+                                </lightning-layout-item>
+                            </template>
+                        </lightning-layout>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

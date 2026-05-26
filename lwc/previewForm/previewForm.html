@@ -1,0 +1,86 @@
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-3">
+            <span>
+                <lightning-card style="text-align: center">
+                    <img src={AccountLogo}>
+                    <lightning-formatted-rich-text value={textUnderLogo}></lightning-formatted-rich-text>
+                </lightning-card>
+            </span>
+        </div>
+        <div class="slds-col slds-size_2-of-3">
+            <div class="slds-m-horizontal_small">
+                <div class="slds-grid slds-wrap">
+                    <lightning-layout multiple-rows>
+                        <template for:each={allvalue} for:item="acc">
+                            <lightning-layout-item size={colamsize}  key={acc.Id}>
+                                            <div if:true={acc.issection} style="padding:around-small" class="slds-text-heading_small">
+                                                <br>
+                                                <strong>{acc.fieldLabel}</strong>
+                                             <hr class="solid">
+                                            </div>
+                                          <!--  <lightning-input if:true={acc.isnormal} type={acc.fieldtype} label={acc.fieldLabel} required={acc.isRequired}
+                                                data-index={acc.index} value={acc.value}
+                                                field-level-help={acc.helpText} checked={acc.value} class="slds-p-top_x-small">
+                                            </lightning-input> -->
+                                            <div if:true={acc.isnormal} class={acc.cssClass}>
+                                                <lightning-input if:true={acc.isMandatory} type={acc.fieldtype} label={acc.fieldLabel} data-index={acc.index}
+                                                    onchange={handleInputChange} value={acc.value} field-level-help={acc.helpText}
+                                                    disabled=true>
+                                                </lightning-input>
+                                                <lightning-input if:false={acc.isMandatory} type={acc.fieldtype} label={acc.fieldLabel} data-index={acc.index}
+                                                    onchange={handleInputChange} value={acc.value} field-level-help={acc.helpText}
+                                                    required={acc.isRequired} checked={acc.value} class="slds-p-top_x-small" message-when-value-missing=" "
+                                                    >
+                                                </lightning-input>
+                                            </div>
+                                            <div if:true={acc.istextarea}>
+                                            <lightning-textarea name="input1" label={acc.fieldLabel} required={acc.isRequired}
+                                                data-index={acc.index} value={acc.value}
+                                                field-level-help={acc.helpText} class="slds-p-top_x-small"></lightning-textarea>
+                                            </div>
+                                            <div if:true={acc.isrichtexarea}>
+                                                <lightning-input-rich-text label={acc.fieldLabel} required={acc.isRequired}
+                                                data-index={acc.index} value={acc.value}
+                                                field-level-help={acc.helpText} class="slds-p-top_x-small">
+                                            </lightning-input-rich-text>
+                                        </div>
+                                        <div if:true={acc.ispicklist}>
+                                            <lightning-combobox  name="progress" label={acc.fieldLabel} value={acc.value}
+                                                placeholder="Select a Value" options={acc.options}
+                                                required={acc.isRequired} data-index={acc.index} field-level-help={acc.helpText} class="slds-p-top_x-small">
+                                            </lightning-combobox >
+                                        </div>
+                                            <div if:true={acc.ischeckboxgroup} class="slds-grid slds-gutters slds-var-p-vertical_medium">
+                                            <div class="slds-col slds-grid">
+                                            <lightning-checkbox-group name={acc.fieldLabel}
+                                                    label={acc.fieldLabel}
+                                                    options={acc.options} value={acc.value}
+                                                    required={acc.isRequired} data-index={acc.index}
+                                                    class="slds-p-top_x-small"
+                                                    >
+                                                </lightning-checkbox-group>
+                                                <lightning-helptext if:true={acc.helpText} content={acc.helpText}></lightning-helptext>
+                                                </div>
+                                                </div>
+                                                <div if:true={acc.isradiogroup} class="slds-grid slds-gutters slds-var-p-vertical_medium">
+                                                    <div class="slds-col slds-grid">
+                                       <lightning-radio-group  name={acc.fieldLabel}
+                                                label={acc.fieldLabel}
+                                                options={acc.options}
+                                                value={acc.value}
+                                                type="radio"
+                                                required={acc.isRequired}
+                                                data-index={acc.index}
+                                                class="slds-p-top_x-small"></lightning-radio-group>
+                                                <lightning-helptext if:true={acc.helpText} content={acc.helpText}></lightning-helptext>        
+                                            </div>
+                                            </div>
+                                            </lightning-layout-item>
+                        </template>
+                    </lightning-layout>
+                </div>
+            </div>
+        </div>
+    </div>   
+</template>

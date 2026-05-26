@@ -1,0 +1,2090 @@
+<template>
+
+    <!-- This is the section for creating custom Highlight Panel-->
+    
+
+    <div class="slds-page-header slds-page-header_record-home">
+        <div class="slds-page-header__row">
+
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name="standard:account_info" size="medium"
+                            alternative-text="Account Plan"></lightning-icon>
+                    </div>
+
+                    <div class="slds-media__body" style="line-height: 13px;">
+                        <span>Account Plan {addReadOnly}</span>
+                        <span class="slds-page-header__title" title={nameField}>{nameField}</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- This is the logic to show the button in Highlight Pannel(on basis of Account Status) -->
+            <div class="slds-page-header__col-actions">
+                <div class="slds-page-header__controls">
+                    <div class="slds-page-header__control">
+                        <lightning-button-group class="slds-m-top_small">
+                            <div style="padding-left:10px">
+
+                                <template if:true={showEditbutton}>
+                                    <lightning-button label="Edit" onclick={handleEdit}></lightning-button>
+                                </template>
+                            </div>
+                            <template if:true={checkUnapprovedStrat}>
+                                <lightning-button label="Submit For Review"
+                                    onclick={handleapproval} disabled={isFieldsChanged}></lightning-button></template>
+                            <template if:true={checkStatus}>
+                                <lightning-button label="Generate PDF"
+                                    onclick={handleGeneratePDF} disabled={isFieldsChanged}></lightning-button>
+                            </template>
+                            <!--<lightning-button label="Clone" onclick={handleClone}></lightning-button>-->
+
+                            <!-- This is the logic to show the button as drop arrow in Highlight Pannel -->
+                            <template if:true={checkStatus}>
+                                <lightning-button-menu alternative-text="Show menu" variant="border-filled"
+                                    menu-alignment="right">
+                                    <!--<lightning-menu-item label="Generate PDF" value="Generate"
+                                        onclick={handleGeneratePDF} disabled={isFieldsChanged}></lightning-menu-item>-->
+                                    <lightning-menu-item label="Print PDF" value="Print"
+                                        onclick={handlePrintPDF}  disabled={isFieldsChanged}></lightning-menu-item>
+
+                                </lightning-button-menu></template>
+                            <template if:false={checkStatus}>
+                                <lightning-button label="Print PDF" value="Print"
+                                    onclick={handlePrintPDF}></lightning-button>
+                            </template>
+
+                        </lightning-button-group>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- This is the logic to show the data in highlight panel -->
+
+        <div class="slds-page-header__row slds-page-header__row_gutters">
+            <div class="slds-page-header__col-details">
+                <lightning-record-view-form record-id={recordId} object-api-name={objectApiName}>
+
+
+                    <div class="slds-page-header__detail-row" style="padding-left: 12px;padding-right: 12px;">
+                        <template for:each={fieldList} for:item="field" for:index="index">
+
+                            <div key={field} class="slds-col slds-size_1-of-5">
+                                <span>{field.name}</span>
+                                <lightning-output-field field-name={field.apiname} variant="label-hidden"
+                                    style="padding:0;">
+
+                                </lightning-output-field>
+                            </div>
+
+                        </template>
+                    </div>
+
+                </lightning-record-view-form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logic for Custom Highlight PAnel ends-->
+
+    <!-- This part adds little space between highlight panel and record form-->
+    <div class="slds-m-top_small"></div>
+
+    <!-- This section is used to create custom record view of Account Plan-->
+
+    <lightning-card>
+        <div class="slds-box box_class">
+
+            <!-- Logic for Account Plan Tab Starts -->
+            <lightning-tabset active-tab-value={activeTab}>
+                <lightning-tab label="Account Plan Information" value="Account Plan" onactive={handleTabChange}>
+
+                    <!-- This is the logic to show the form in view/read only mode on click of edit button -->
+
+                    <template if:true={showEdit}>
+                        <lightning-record-view-form record-id={recordId} object-api-name={objectApiName}>
+
+
+                            <div style="margin-right:10px">
+                                <lightning-layout>
+                                    <lightning-layout-item size='2'>
+                                        <div style="margin-left:10px;">
+
+                                            <span>Account Name</span>
+                                        </div>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+
+                                        <lightning-output-field field-name="Account_Name__c" variant="label-hidden">
+
+                                        </lightning-output-field>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='2'>
+
+                                        <div style="margin-left:10px;">
+                                            <span>Account Manager</span>
+                                        </div>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+                                        <lightning-output-field field-name="Account_Manager__c" variant="label-hidden">
+                                        </lightning-output-field>
+
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <div class="slds-align_absolute-center">
+                                    <div class="widthLine ">
+                                        <div class="span_Class_Left"></div>
+                                    </div>
+                                    <div class="widthLineRight ">
+                                        <div class="span_Class_Left"></div>
+                                    </div>
+                                </div>
+
+                                <lightning-layout>
+                                    <lightning-layout-item size='2'>
+                                        <div style="margin-left:10px;">
+
+
+                                            <span>Sales Manager</span>
+
+                                        </div>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+
+                                        <lightning-output-field field-name="Sales_Manager__c" variant="label-hidden">
+                                        </lightning-output-field>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='2'>
+                                        <div style="margin-left:10px;">
+                                            <span>SHL BU Region</span>
+
+                                        </div>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+                                        <lightning-output-field field-name="SHL_BU_Region__c" variant="label-hidden">
+                                        </lightning-output-field>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+
+                                <div class="slds-align_absolute-center">
+                                    <div class="widthLine ">
+                                        <div class="span_Class_Left"></div>
+                                    </div>
+                                    <div class="widthLineRight ">
+                                        <div class="span_Class_Left"></div>
+                                    </div>
+                                </div>
+<!--Added by Prachi as part of Phase 4-->
+                                <lightning-layout>
+                                    <lightning-layout-item size='2'>
+                                        <div style="margin-left:10px;">
+
+
+                                            <span>D Number</span>
+
+                                        </div>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+
+                                        <lightning-output-field field-name="D_Number__c" variant="label-hidden">
+                                        </lightning-output-field>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='2'>
+                                        <div style="margin-left:10px;">
+                                            <span>Buying Centre Id</span>
+
+                                        </div>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+                                        <lightning-output-field field-name="Buying_Centre_Id__c" variant="label-hidden">
+                                        </lightning-output-field>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+
+                                <div class="slds-align_absolute-center">
+                                    <div class="widthLine ">
+                                        <div class="span_Class_Left"></div>
+                                    </div>
+                                    <div class="widthLineRight ">
+                                        <div class="span_Class_Left"></div>
+                                    </div>
+                                </div>
+<!--Changes end Prachi as part of Phase 4-->
+                                <lightning-layout>
+                                    <lightning-layout-item size='2'>
+                                        <div style="margin-left:10px;">
+
+                                            <span>Territory Type</span>
+                                        </div>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+
+                                        <lightning-output-field field-name="Territory_Type__c" variant="label-hidden">
+
+                                        </lightning-output-field>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='2'>
+
+                                        <div style="margin-left:10px;">
+                                            <span>RAD Strategy</span>
+                                        </div>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+                                        <lightning-output-field field-name="RAD_Strategy__c" variant="label-hidden">
+                                        </lightning-output-field>
+
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <div class="slds-align_absolute-center">
+                                    <div class="widthLine ">
+                                        <div class="span_Class_Left"></div>
+                                    </div>
+                                    <div class="widthLineRight ">
+                                        <div class="span_Class_Left"></div>
+                                    </div>
+                                </div>
+
+                                <lightning-layout>
+                                    <lightning-layout-item size='2'>
+                                        <div style="margin-left:10px;">
+
+                                            <span>Segment</span>
+                                        </div>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+
+                                        <lightning-output-field field-name="Segment__c" variant="label-hidden">
+
+                                        </lightning-output-field>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='2'>
+
+                                        <div style="margin-left:10px;">
+                                            <span>Location of Global HQ</span>
+                                        </div>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+                                        <lightning-output-field field-name="Location_of_Global_HQ_Picklist__c"
+                                            variant="label-hidden">
+                                        </lightning-output-field>
+
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <div class="slds-align_absolute-center">
+                                    <div class="widthLine ">
+                                        <div class="span_Class_Left"></div>
+                                    </div>
+                                    <div class="widthLineRight ">
+                                        <div class="span_Class_Left"></div>
+                                    </div>
+                                </div>
+
+                                <lightning-layout>
+                                    <lightning-layout-item size = '2'>
+                                        <div style="margin-left:10px;" >
+
+                                            <span>Target Tier</span>
+                                        </div>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size = '4' style="margin-left:10px;">
+
+                                        <lightning-output-field field-name="Target_Tier__c" variant="label-hidden">
+                                            
+                                        </lightning-output-field>
+
+                                    </lightning-layout-item>
+
+                                    <lightning-layout-item size = '2'>
+                                        <div style="margin-left:10px;" >
+
+                                            <span>Account Plan Status</span>
+                                        </div>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size = '4' style="margin-left:10px;">
+
+                                        <lightning-output-field field-name="Account_Plan_Status__c" variant="label-hidden">
+                                            
+                                        </lightning-output-field>
+
+                                    </lightning-layout-item>
+                                   
+                                </lightning-layout>
+                                <div class="slds-align_absolute-center">
+                                    <div class="widthLine " >
+                                        <div class="span_Class_Left" ></div>
+                                    </div>
+                                    <div class="widthLineRight " >
+                                        <div class="span_Class_Left" ></div>
+                                    </div></div>
+                                    
+                            
+                                <lightning-layout>
+                                    <lightning-layout-item size='2'>
+                                        <div style="margin-left:10px;">
+
+                                            <span>Date Plan Last Updated</span>
+                                            <lightning-helptext
+                                                content="Will auto stamp the date when new strategy is added or any existing is updated. "
+                                                style="margin-left:10px"></lightning-helptext>
+                                        </div>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+
+                                        <lightning-output-field field-name="Date_Plan_Last_Updated__c"
+                                            variant="label-hidden">
+
+                                        </lightning-output-field>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='2'>
+
+                                        <div style="margin-left:10px;">
+                                           <!-- Commented By Prachi as part of SSE-21598 <span>Date of Last Plan Review</span> -->
+                                           <span>Sub Status</span><!--Added by Prachi SSE-21598 -->
+                                           
+                                        </div>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+                                       <!-- Commented By Prachi as part of SSE-21598  
+                                        <lightning-output-field field-name="Date_of_Last_Plan_Review__c"
+                                            variant="label-hidden">
+                                        </lightning-output-field>-->
+
+                                        <!--Added by Prachi SSE-21598-->
+                                        <lightning-output-field field-name="Sub_Status__c"
+                                        variant="label-hidden">
+                                    </lightning-output-field>
+
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <div class="slds-align_absolute-center">
+                                    <div class="widthLine ">
+                                        <div class="span_Class_Left"></div>
+                                    </div>
+                                    <div class="widthLineRight ">
+                                        <div class="span_Class_Left"></div>
+                                    </div>
+                                </div>
+
+                                <lightning-layout>
+                                    <lightning-layout-item size='2'>
+                                        <div style="margin-left:10px;">
+
+                                            <span>Date for last Plan Review</span>
+                                            <lightning-helptext
+                                            content="Will auto stamp the date every time when Account Plan is Approved by manager."
+                                            style="margin-left:10px"></lightning-helptext>
+                                            
+                                        </div>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+
+                                        <lightning-output-field field-name="Date_of_Last_Plan_Review__c"
+                                            variant="label-hidden">
+
+                                        </lightning-output-field>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='2'>
+
+                                        <div style="margin-left:10px;">
+                                            <!-- Commented By Prachi as part of SSE-21598
+                                            <span>Business Defined Attribute </span> -->
+                                            <span>Date for next Plan Review </span> 
+                                            <lightning-helptext
+                                                content="Will auto stamp the date with Date of Last Plan Review + 90 days"
+                                                style="margin-left:10px"></lightning-helptext>
+                                        </div>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+                                        <!-- Commented By Prachi as part of SSE-21598
+                                        <lightning-output-field field-name="Business_Defined_Attribute__c"
+                                            variant="label-hidden">
+                                        </lightning-output-field>-->
+                                        <lightning-output-field field-name="Date_for_next_Plan_Review__c"
+                                        variant="label-hidden">
+
+                                    </lightning-output-field>
+
+
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <div class="slds-align_absolute-center">
+                                    <div class="widthLine ">
+                                        <div class="span_Class_Left"></div>
+                                    </div>
+                                    <div class="widthLineRight ">
+                                        <div class="span_Class_Left"></div>
+                                    </div>
+                                </div>
+                                <!-- change by Joana related to feedback -> Remove Summary of Current SHL Relationship on Account Information and PDF as well. -->
+                                <!-- <lightning-layout>
+                                    <lightning-layout-item size='2'>
+                                        <div style="margin-left:10px;">
+
+                                            <span>Summary of Current SHL Relationship</span>
+                                        </div>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='10' style="margin-left:10px;">
+
+                                        <lightning-output-field field-name="Summary_of_Current_SHL_Relationship__c"
+                                            title='Please include any issue impacting current relationship'
+                                            variant="label-hidden">
+
+                                        </lightning-output-field>
+
+                                    </lightning-layout-item>
+
+
+                                </lightning-layout> 
+
+                                <div class="widthLine ">
+                                    <div class="span_Class_Left"></div>
+                                </div>
+                                -->
+
+
+                            </div>
+
+
+                             <!--Added by Prachi as part of Account Plan phase 4-->
+                        <lightning-layout>
+                            <lightning-layout-item size="2">
+                                <div style="margin-left:10px;">
+                                    <span>Account Plan Type</span>
+                                </div>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="4" style="margin-left:10px;">
+                                <lightning-output-field field-name="Account_Plan_Type__c" variant="label-hidden"
+                                    onchange={handleFieldChange}>
+        
+                                </lightning-output-field>
+                            </lightning-layout-item>
+
+                            <lightning-layout-item size='2'>
+
+                                        <div style="margin-left:5px;">
+                                           
+                                            <span>Business Defined Attribute </span> 
+                                            
+                                        </div>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+                                       
+                                        <lightning-output-field field-name="Business_Defined_Attribute__c"
+                                            variant="label-hidden">
+                                        </lightning-output-field>
+                                      
+
+
+                                    </lightning-layout-item>
+                        </lightning-layout>
+                        <div class="slds-align_absolute-center">
+                            <div class="widthLine ">
+                                <div class="span_Class_Left"></div>
+                            </div>
+                            <div class="widthLineRight ">
+                                <div class="span_Class_Left"></div>
+                            </div>
+                        </div> 
+
+                        <template if:true={showActiveAPField}>
+                        <lightning-layout>
+                            <lightning-layout-item size="2">
+                                <div style="margin-left:10px;">
+                                    <span>Active Account Plan</span>
+                                </div>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="4" style="margin-left:10px;">
+                                <lightning-output-field field-name="Active_Account_Plan__c" variant="label-hidden"
+                                   >
+        
+                                </lightning-output-field>
+                            </lightning-layout-item>
+
+                        </lightning-layout>
+                        <div class="slds-align_absolute-center">
+                            <div class="widthLine ">
+                                <div class="span_Class_Left"></div>
+                                        
+                            </div>
+                            <div class="widthLineRight ">
+                                <div class="span_Class_NotVisible"></div>
+                            </div>
+                            
+                        </div> 
+                    </template>
+                        <!--Changes ended as part of Account Plan phase 4-->
+                        <!--Changes done for ITSD-191887 (Removed onsectiontoggle below)-->
+                            <lightning-accordion allow-multiple-sections-open
+                                active-section-name={activeSections}>
+
+                                <lightning-accordion-section label="Organisation Overview" name="Organisation Overview"
+                                    class="accordion_class">
+
+                                    <div style="margin-right:10px; margin-top:10px;">
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div style="margin-left:10px;">
+
+                                                    <span>Website</span>
+                                                </div>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+
+                                                <lightning-output-field field-name="Website__c" variant="label-hidden">
+
+                                                </lightning-output-field>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='2'>
+
+                                                <div style="margin-left:10px;">
+                                                    <span>Industry</span>
+                                                </div>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+                                                <lightning-output-field field-name="Industry__c" variant="label-hidden">
+                                                </lightning-output-field>
+
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_Left"></div>
+                                            </div>
+                                            <div class="widthLineRight ">
+                                                <div class="span_Class_Left"></div>
+                                            </div>
+                                        </div>
+
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div style="margin-left:10px;">
+
+                                                    <span>Global # FTEs</span>
+                                                </div>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+                                              <!--Change  SSE-21115 Account Plan Phase3-->
+                                                <lightning-output-field field-name="Global_FTE_Number__c"
+                                                    variant="label-hidden">
+                                                     <!--Change End SSE-21115 Account Plan Phase3-->
+
+                                                </lightning-output-field>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='2'>
+
+                                                <div style="margin-left:10px;">
+                                                    <span>Regional # FTEs</span>
+                                                </div>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+                                                 <!--Change  SSE-21115 Account Plan Phase3-->
+                                                <lightning-output-field field-name="Regional_FTE_Number__c"
+                                                    variant="label-hidden">
+                                                     <!--Change End SSE-21115 Account Plan Phase3-->
+                                                </lightning-output-field>
+
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_Left"></div>
+                                            </div>
+                                            <div class="widthLineRight ">
+                                                <div class="span_Class_Left"></div>
+                                            </div>
+                                        </div>
+
+                                        <lightning-layout>
+                                            <lightning-layout-item size="2">
+                                                <div style="margin-left:10px;">
+                                                    <span>Fiscal Year End</span>
+                                                </div>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="4" style="margin-left:10px;">
+                                                <lightning-output-field field-name="Fiscal_Year_End__c"
+                                                    variant="label-hidden">
+
+                                                </lightning-output-field>
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_Left"></div>
+                                            </div>
+                                            <div class="widthLineRight ">
+                                                <div class="span_Class_NotVisible"></div>
+                                            </div>
+                                        </div>
+
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div style="margin-left:10px;">
+
+                                                    <span>Overview of Business</span>
+                                                </div>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='10' style="margin-left:10px;">
+
+                                                <lightning-output-field field-name="Overview_of_Business__c"
+                                                    variant="label-hidden">
+
+                                                </lightning-output-field>
+
+                                            </lightning-layout-item>
+
+
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_Left"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                </lightning-accordion-section>
+
+                                <lightning-accordion-section label="Salesforce Overview" name="Salesforce Overview"
+                                    class="accordion_class margin_class ">
+
+                                    <div style="margin-right:10px; margin-top:10px;">
+
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div style="margin-left:10px;">
+
+                                                    <span>Contacts at this Account</span>
+                                                </div>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+
+                                                <lightning-output-field field-name="Contacts_at_this_Account__c"
+                                                    variant="label-hidden">
+
+                                                </lightning-output-field>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='2'>
+
+                                                <div style="margin-left:10px;">
+                                                    <span>Contacts Created Last 12 mths</span>
+                                                    <lightning-helptext
+                                                        content="This count only includes Active Contact records"
+                                                        style="margin-left:10px"></lightning-helptext>
+                                                </div>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+                                                <lightning-output-field field-name="Contacts_Created_Last_12_Months__c"
+                                                    variant="label-hidden">
+                                                </lightning-output-field>
+
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_Left"></div>
+                                            </div>
+                                            <div class="widthLineRight ">
+                                                <div class="span_Class_Left"></div>
+                                            </div>
+                                        </div>
+
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div style="margin-left:10px;">
+
+                                                    <span> Open Opportunities</span>
+                                                </div>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+
+                                                <lightning-output-field field-name="Open_Opportunities__c"
+                                                    variant="label-hidden">
+
+                                                </lightning-output-field>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='2'>
+
+                                                <div style="margin-left:10px;">
+                                                    <span>Open Opportunity Value(USD)</span>
+                                                </div>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+                                                <lightning-output-field field-name="Open_Opportunity_Value__c"
+                                                    variant="label-hidden">
+                                                </lightning-output-field>
+
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_Left"></div>
+                                            </div>
+                                            <div class="widthLineRight ">
+                                                <div class="span_Class_Left"></div>
+                                            </div>
+                                        </div>
+
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div style="margin-left:10px;">
+
+                                                    <span>Contacts Created since last review</span>
+                                                </div>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+
+                                                <lightning-output-field
+                                                    field-name="Contacts_Created_since_last_review__c"
+                                                    variant="label-hidden">
+
+                                                </lightning-output-field>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='2'>
+
+                                                <div style="margin-left:10px;">
+                                                    <span>Opportunities Created since last Review</span>
+                                                </div>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+                                                <lightning-output-field
+                                                    field-name="Opportunities_Created_since_last_Review__c"
+                                                    variant="label-hidden">
+                                                </lightning-output-field>
+
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_Left"></div>
+                                            </div>
+                                            <div class="widthLineRight ">
+                                                <div class="span_Class_Left"></div>
+                                            </div>
+                                        </div>
+
+
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div style="margin-left:10px;">
+
+                                                    <span>Open Support Cases</span>
+                                                    <lightning-helptext
+                                                        content="These are all open support tickets regardless of priority or severity"
+                                                        style="margin-left:10px"></lightning-helptext>
+                                                </div>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+
+                                                <lightning-output-field field-name="Open_Cases__c"
+                                                    variant="label-hidden">
+
+                                                </lightning-output-field>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='2'>
+
+                                                <div style="margin-left:10px;">
+                                                    <span>All Cases Last 12 mths</span>
+                                                </div>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+                                                <lightning-output-field field-name="Cases_Last_12_Months_open_closed__c"
+                                                    variant="label-hidden">
+                                                </lightning-output-field>
+
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_Left"></div>
+                                            </div>
+                                            <div class="widthLineRight ">
+                                                <div class="span_Class_Left"></div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+
+                                </lightning-accordion-section>
+
+                                <lightning-accordion-section label="Customer Profile" name="Customer Profile"
+                                    class="accordion_class margin_class ">
+
+                                    <div style="margin-right:10px; margin-top:10px;">
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div style="margin-left:10px;">
+
+                                                    <span>Client’s Strategy</span>
+                                                </div>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='10' style="margin-left:10px;">
+
+                                                <lightning-output-field field-name="Client_s_Strategy__c"
+                                                    variant="label-hidden">
+
+                                                </lightning-output-field>
+
+                                            </lightning-layout-item>
+
+
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_Left"></div>
+                                            </div>
+                                        </div>
+
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div style="margin-left:10px;">
+
+                                                    <span>Our Current Situation & Outlook</span>
+                                                </div>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='10' style="margin-left:10px;">
+
+                                                <lightning-output-field field-name="Our_Current_Situation_Outlook__c"
+                                                    variant="label-hidden">
+
+                                                </lightning-output-field>
+
+                                            </lightning-layout-item>
+
+
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_Left"></div>
+                                            </div>
+                                        </div>
+
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div style="margin-left:10px;">
+
+                                                    <span>Risk & Exposure</span>
+                                                </div>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='10' style="margin-left:10px;">
+
+                                                <lightning-output-field field-name="Risk_Exposure__c"
+                                                    variant="label-hidden">
+
+                                                </lightning-output-field>
+
+                                            </lightning-layout-item>
+
+
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_Left"></div>
+                                            </div>
+                                        </div>
+
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div style="margin-left:10px;">
+
+                                                    <span>Relationship History</span>
+                                                </div>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='10' style="margin-left:10px;">
+
+                                                <lightning-output-field field-name="Relationship_History__c"
+                                                    variant="label-hidden">
+
+                                                </lightning-output-field>
+
+                                            </lightning-layout-item>
+
+
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_Left"></div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </lightning-accordion-section>
+
+                                <!--<lightning-accordion-section label="Usage Details" name="Usage Details"
+                                    class="accordion_class">
+                                    <div style="margin-right:10px; margin-top:10px;">
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+
+                                                <div style="margin-left:10px;">
+                                                    <span>Usage Details</span>
+                                                </div>
+                                            </lightning-layout-item>
+
+                                            <lightning-layout-item size='10'>
+
+                                                <lightning-formatted-url
+                                                    value="https://businessanalytics.shl.com/#/views/Customer360_16819046704030/SingleCustomerView"
+                                                    tooltip="Omit leading slash" target="_blank">
+
+                                                </lightning-formatted-url>
+
+                                            </lightning-layout-item>
+
+
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_Left"></div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </lightning-accordion-section>-->
+
+                             <!--   <lightning-accordion-section label="History of Total Spend with SHL ($K)"
+                                    name="History of Total Spend" class="accordion_class">
+
+                                    <div style="margin-right:10px; margin-top:10px;">
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div style="margin-left:10px;">
+
+                                                    <span>History Trend Screenshot</span>
+                                                </div>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='10' style="margin-left:10px;">
+
+                                                <lightning-output-field field-name="History_trend_Screenshot__c"
+                                                    variant="label-hidden">
+
+                                                </lightning-output-field>
+
+                                            </lightning-layout-item>
+
+
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_Left"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+                                </lightning-accordion-section>
+                                <lightning-accordion-section label="Contacts Relationship" name="Contacts Relationship"
+                                    class="accordion_class">
+
+                                    <div style="margin-right:10px; margin-top:10px;">
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div style="margin-left:10px;">
+
+                                                    <span>Contact Relationship Screenshot</span>
+                                                </div>
+
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='10' style="margin-left:10px;">
+
+                                                <lightning-output-field field-name="Contact_Relationship_Screenshot__c"
+                                                    variant="label-hidden">
+
+                                                </lightning-output-field>
+
+                                            </lightning-layout-item>
+
+
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_Left"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+                                </lightning-accordion-section>-->
+                            </lightning-accordion>
+
+
+                        </lightning-record-view-form>
+                    </template>
+
+                    <!-- This is the logic to show the form in edit mode on click of edit button -->
+                    <template if:false={showEdit}>
+                        <lightning-record-edit-form record-id={recordId} object-api-name={objectApiName} onsubmit={handleEditAP}
+                            onsuccess={handleSuccess}>
+                            <template if:true={showSpinner}>
+                                <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+                            </template>
+                            <div style="margin-right:10px">
+                                <lightning-layout>
+                                    <lightning-layout-item size='2'>
+                                        <div style="margin-left:10px;">                       
+                                            <span>Account Name</span>
+                                        </div>
+                                    </lightning-layout-item>
+
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+                                        <lightning-output-field field-name="Account_Name__c" variant="label-hidden">
+                                        </lightning-output-field>
+                                    </lightning-layout-item>
+
+                                    <lightning-layout-item size='2'>
+                                        <div style="margin-left:10px;">
+                                            <span>Account Manager</span>
+                                        </div>
+                                    </lightning-layout-item>
+
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+                                        <lightning-output-field field-name="Account_Manager__c" variant="label-hidden">
+                                        </lightning-output-field>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+
+                                <div class="slds-align_absolute-center">
+                                    <div class="widthLine ">
+                                        <div class="span_Class_NotVisible"></div>
+                                    </div>
+                                    <div class="widthLineRight ">
+                                        <div class="span_Class_NotVisible"></div>
+                                    </div>
+                                </div>
+                        
+                                <lightning-layout>
+                                    <lightning-layout-item size='2'>
+                                        <div style="margin-left:10px;">
+                                            <span>Sales Manager</span>
+                                        </div>
+                                    </lightning-layout-item>
+
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+                                        <lightning-output-field field-name="Sales_Manager__c" variant="label-hidden">
+                                        </lightning-output-field>
+                                    </lightning-layout-item>
+
+                                    <lightning-layout-item size='2'>
+                                        <div style="margin-left:10px;">
+                                            <span>SHL BU Region</span>
+                                        </div>                       
+                                    </lightning-layout-item>
+
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+                                        <lightning-output-field field-name="SHL_BU_Region__c" variant="label-hidden">
+                                        </lightning-output-field>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                        
+                                <div class="slds-align_absolute-center">
+                                    <div class="widthLine ">
+                                        <div class="span_Class_NotVisible"></div>
+                                    </div>
+                                    <div class="widthLineRight ">
+                                        <div class="span_Class_NotVisible"></div>
+                                    </div>
+                                </div>
+                        <!--Added by Prachi as part of Phase 4-->
+                        <lightning-layout>
+                            <lightning-layout-item size='2'>
+                                <div style="margin-left:10px;">
+
+
+                                    <span>D Number</span>
+
+                                </div>
+
+                            </lightning-layout-item>
+                            <lightning-layout-item size='4' style="margin-left:10px;">
+
+                                <lightning-output-field field-name="D_Number__c" variant="label-hidden">
+                                </lightning-output-field>
+
+                            </lightning-layout-item>
+                            <lightning-layout-item size='2'>
+                                <div style="margin-left:10px;">
+                                    <span>Buying Centre Id</span>
+
+                                </div>
+
+                            </lightning-layout-item>
+                            <lightning-layout-item size='4' style="margin-left:10px;">
+                                <lightning-output-field field-name="Buying_Centre_Id__c" variant="label-hidden">
+                                </lightning-output-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+
+                        <div class="slds-align_absolute-center">
+                            <div class="widthLine ">
+                                <div class="span_Class_NotVisible"></div>
+                            </div>
+                            <div class="widthLineRight ">
+                                <div class="span_Class_NotVisible"></div>
+                            </div>
+                        </div>
+<!--Changes end Prachi as part of Phase 4-->
+                                <lightning-layout>
+                                    <lightning-layout-item size='2'>
+                                        <div style="margin-left:10px;">
+                        
+                                            <span>Territory Type</span>
+                                        </div>
+                        
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+                        
+                                        <lightning-output-field field-name="Territory_Type__c" variant="label-hidden">
+                        
+                                        </lightning-output-field>
+                        
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='2'>
+                        
+                                        <div style="margin-left:10px;">
+                                            <span>RAD Strategy</span>
+                                        </div>
+                        
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+                                        <lightning-output-field field-name="RAD_Strategy__c" variant="label-hidden">
+                                        </lightning-output-field>
+                        
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <div class="slds-align_absolute-center">
+                                    <div class="widthLine ">
+                                        <div class="span_Class_NotVisible"></div>
+                                    </div>
+                                    <div class="widthLineRight ">
+                                        <div class="span_Class_NotVisible"></div>
+                                    </div>
+                                </div>
+                        
+                                <lightning-layout>
+                                    <lightning-layout-item size='2'>
+                                        <div style="margin-left:10px;">
+                        
+                                            <span>Segment</span>
+                                        </div>
+                        
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+                        
+                                        <lightning-output-field field-name="Segment__c" variant="label-hidden">
+                        
+                                        </lightning-output-field>
+                        
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='2'>
+                        
+                                        <div style="margin-left:10px;">
+                                            <span>Location of Global HQ</span>
+                                        </div>
+                        
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+                                        <lightning-input-field field-name="Location_of_Global_HQ_Picklist__c" variant="label-hidden"
+                                            onchange={handleFieldChange}>
+                                        </lightning-input-field>
+                        
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                        
+                                <div style="width:50%">
+                                    <div class="span_Class_NotVisible"></div>
+                                </div>
+                        
+                        
+                                <lightning-layout>
+                                    <lightning-layout-item size='2'>
+                                        <div style="margin-left:10px;">
+                        
+                                            <span>Target Tier</span>
+                                        </div>
+                        
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+                        
+                                        <lightning-output-field field-name="Target_Tier__c" variant="label-hidden">
+                        
+                                        </lightning-output-field>
+                        
+                                    </lightning-layout-item>
+
+                                    <lightning-layout-item size = '2'>
+                                        <div style="margin-left:10px;" >
+
+                                            <span>Account Plan Status</span>
+                                        </div>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size = '4' style="margin-left:10px;">
+
+                                        <lightning-output-field field-name="Account_Plan_Status__c" variant="label-hidden">
+                                            
+                                        </lightning-output-field>
+
+                                    </lightning-layout-item>
+                        
+                                </lightning-layout>
+                                <div class="slds-align_absolute-center">
+                                    <div class="widthLine ">
+                                        <div class="span_Class_NotVisible"></div>
+                                    </div>
+                                    <div class="widthLineRight ">
+                                        <div class="span_Class_NotVisible"></div>
+                                    </div>
+                                </div>
+                        
+                                <lightning-layout>
+                                    <lightning-layout-item size='2'>
+                                        <div style="margin-left:10px;">
+                      
+                                            <span>Date Plan Last Updated</span>
+                                            <lightning-helptext
+                                                content="Will auto stamp the date when new strategy is added or any existing is updated."
+                                                style="margin-left:10px"></lightning-helptext>
+                                        </div>
+                        
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+                        
+                                        <lightning-output-field field-name="Date_Plan_Last_Updated__c" variant="label-hidden">
+                        
+                                        </lightning-output-field>
+                        
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='2'>
+                        
+                                        <div style="margin-left:10px;">
+                                              <!--  Comment by Prachi as part of SSE-21598
+                                            <span>Date of Last Plan Review</span>
+                                            <lightning-helptext
+                                                content="Will auto stamp the date every time when Account Plan is Approved by manager."
+                                                style="margin-left:10px"></lightning-helptext>-->
+
+                                                <!--Added By PRachi SSE-21598-->
+                                                <span>Sub Status</span>
+                                        </div>
+                        
+                        
+                        
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+                                        <!--  Comment by Prachi as part of SSE-21598
+                                        <lightning-output-field field-name="Date_of_Last_Plan_Review__c" variant="label-hidden">
+                                        </lightning-output-field>-->
+                                        
+                                                <!--Added By PRachi SSE-21598-->
+                                        <lightning-output-field field-name="Sub_Status__c" variant="label-hidden">
+                                        </lightning-output-field>
+                        
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                        
+                        
+                        
+                                <div class="slds-align_absolute-center">
+                                    <div class="widthLine ">
+                                        <div class="span_Class_NotVisible"></div>
+                                    </div>
+                                    <div class="widthLineRight ">
+                                        <div class="span_Class_NotVisible"></div>
+                                    </div>
+                                </div>
+                        
+                        
+                                <lightning-layout>
+                                    <lightning-layout-item size='2'>
+                                        <div style="margin-left:10px;">
+                         <!--  Comment by Prachi as part of SSE-21598
+                                            <span>Date for next Plan Review</span>
+                                            <lightning-helptext content="Will auto stamp the date with Date of Last Plan Review + 90 days"
+                                                style="margin-left:10px"></lightning-helptext>-->
+
+
+                                                <!-- Added By Prachi SSE-21598-->
+                                                <span>Date of Last Plan Review</span>
+                                            <lightning-helptext
+                                                content="Will auto stamp the date every time when Account Plan is Approved by manager."
+                                                style="margin-left:10px"></lightning-helptext>
+                                        </div>
+                        
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+                                    <!--  Comment by Prachi as part of SSE-21598
+                                        <lightning-output-field field-name="Date_for_next_Plan_Review__c" variant="label-hidden">
+                        
+                                        </lightning-output-field>-->
+
+                                           <!-- Added By Prachi SSE-21598-->
+
+                                        <lightning-output-field field-name="Date_of_Last_Plan_Review__c" variant="label-hidden">
+                        
+                                        </lightning-output-field>
+                        
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='2'>
+                        
+                                        <div style="margin-left:10px;">
+                                             <!--  Comment by Prachi as part of SSE-21598 
+                                            <span>Business Defined Attribute</span>-->
+
+                                            <span>Date for next Plan Review</span>
+                                            <lightning-helptext content="Will auto stamp the date with Date of Last Plan Review + 90 days"
+                                                style="margin-left:10px"></lightning-helptext>
+
+                                        </div>
+                        
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size='4' style="margin-left:10px;">
+                                         <!--  Comment by Prachi as part of SSE-21598
+                                        <lightning-output-field field-name="Business_Defined_Attribute__c" variant="label-hidden">
+                                        </lightning-output-field>-->
+                                        <!--SSE-21598-->
+                                        <lightning-output-field field-name="Date_for_next_Plan_Review__c" variant="label-hidden">
+                        
+                                        </lightning-output-field>
+                        
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <div class="slds-align_absolute-center">
+                                    <div class="widthLine ">
+                        
+                                    </div>
+                                    <div class="widthLineRight ">
+                                        <div class="span_Class_NotVisible"></div>
+                                    </div>
+                                </div>
+                              
+                   
+                            </div>
+                        
+                        <!--Added by Prachi as part of Account Plan phase 4-->
+                        <lightning-layout>
+                            <lightning-layout-item size="2">
+                                <div style="margin-left:10px;">
+                                    <span>Account Plan Type</span>
+                                </div>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="4" style="margin-left:10px;">
+                                <lightning-output-field field-name="Account_Plan_Type__c" variant="label-hidden"
+                                    onchange={handleFieldChange}>
+        
+                                </lightning-output-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size='2'>
+                        
+                                <div style="margin-left:5px;">
+                                  
+                                    <span>Business Defined Attribute</span>
+             
+                                </div>
+                
+                            </lightning-layout-item>
+                            <lightning-layout-item size='4' style="margin-left:10px;">
+                               
+                                <lightning-output-field field-name="Business_Defined_Attribute__c" variant="label-hidden">
+                                </lightning-output-field>
+                               
+                
+                                
+                
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <div class="slds-align_absolute-center">
+                            <div class="widthLine ">
+                                <div class="span_Class_NotVisible"></div>
+                            </div>
+                            <div class="widthLineRight ">
+                                <div class="span_Class_NotVisible"></div>
+                            </div>
+                        </div>
+
+                        <!--Changes ended as part of Account Plan phase 4-->
+                        <!--Changes done for ITSD-191887 (Removed onsectiontoggle below)-->
+                            <lightning-accordion allow-multiple-sections-open
+                                active-section-name={activeSections}>
+                        
+                                <lightning-accordion-section label="Organisation Overview" name="Organisation Overview" class="accordion_class">
+                        
+                                    <div style="margin-right:10px; margin-top:10px;">
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div style="margin-left:10px;">
+                        
+                                                    <span>Website</span>
+                                                </div>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+                        
+                                                <lightning-output-field field-name="Website__c" variant="label-hidden">
+                        
+                                                </lightning-output-field>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='2'>
+                        
+                                                <div style="margin-left:10px;">
+                                                    <span>Industry</span>
+                                                </div>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+                                                <lightning-output-field field-name="Industry__c" variant="label-hidden">
+                                                </lightning-output-field>
+                        
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_NotVisible"></div>
+                                            </div>
+                                            <div class="widthLineRight ">
+                                                <div class="span_Class_NotVisible"></div>
+                                            </div>
+                                        </div>
+                        
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div style="margin-left:10px;">
+                        
+                                                    <span>Global # FTEs</span>
+                                                </div>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+                                            <!-- SSE-21115 Account Plan Phase3-->
+                                                <lightning-input-field field-name="Global_FTE_Number__c" variant="label-hidden">
+                        
+                                                </lightning-input-field> 
+                                                 <!--Change End SSE-21115 Account Plan Phase3-->
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='2'>
+                        
+                                                <div style="margin-left:10px;">
+                                                    <span>Regional # FTEs</span>
+                                                </div>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+                                                 <!-- SSE-21115 Account Plan Phase3-->
+                                                <lightning-output-field field-name="Regional_FTE_Number__c" variant="label-hidden">
+                                                     <!--Change End SSE-21115 Account Plan Phase3-->
+                                                </lightning-output-field>
+                        
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_NotVisible"></div>
+                                            </div>
+                                            <div class="widthLineRight ">
+                                                <div class="span_Class_NotVisible"></div>
+                                            </div>
+                                        </div>
+                        
+                                        <lightning-layout>
+                                            <lightning-layout-item size="2">
+                                                <div style="margin-left:10px;">
+                                                    <span>Fiscal Year End</span>
+                                                </div>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="4" style="margin-left:10px;">
+                                                <lightning-input-field field-name="Fiscal_Year_End__c" variant="label-hidden"
+                                                    onchange={handleFieldChange}>
+                        
+                                                </lightning-input-field>
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_NotVisible"></div>
+                                            </div>
+                                            <div class="widthLineRight ">
+                                                <div class="span_Class_NotVisible"></div>
+                                            </div>
+                                        </div>
+                        
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div style="margin-left:10px;">
+                        
+                                                    <span>Overview of Business</span>
+                                                </div>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='10' style="margin-left:10px;">
+                        
+                                                <lightning-input-field field-name="Overview_of_Business__c" variant="label-hidden"
+                                                    onchange={handleFieldChange}>
+                        
+                                                </lightning-input-field>
+                        
+                                            </lightning-layout-item>
+                        
+                        
+                                        </lightning-layout>
+                        
+                                    </div>
+                        
+                                </lightning-accordion-section>
+                        
+                                <lightning-accordion-section label="Salesforce Overview" name="Salesforce Overview"
+                                    class="accordion_class margin_class ">
+                        
+                        
+                                    <div style="margin-right:10px; margin-top:10px;">
+                        
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div style="margin-left:10px;">
+                        
+                                                    <span>Contacts at this Account</span>
+                                                </div>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+                        
+                                                <lightning-output-field field-name="Contacts_at_this_Account__c" variant="label-hidden">
+                        
+                                                </lightning-output-field>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='2'>
+                        
+                                                <div style="margin-left:10px;">
+                                                    <span>Contacts Created Last 12 mths</span>
+                                                    <lightning-helptext content="This count only includes Active Contact records"
+                                                        style="margin-left:10px"></lightning-helptext>
+                                                </div>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+                                                <lightning-output-field field-name="Contacts_Created_Last_12_Months__c" variant="label-hidden">
+                                                </lightning-output-field>
+                        
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_NotVisible"></div>
+                                            </div>
+                                            <div class="widthLineRight ">
+                                                <div class="span_Class_NotVisible"></div>
+                                            </div>
+                                        </div>
+                        
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div style="margin-left:10px;">
+                        
+                                                    <span> Open Opportunities</span>
+                                                </div>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+                        
+                                                <lightning-output-field field-name="Open_Opportunities__c" variant="label-hidden">
+                        
+                                                </lightning-output-field>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='2'>
+                        
+                                                <div style="margin-left:10px;">
+                                                    <span>Open Opportunity Value(USD)</span>
+                                                </div>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+                                                <lightning-output-field field-name="Open_Opportunity_Value__c" variant="label-hidden">
+                                                </lightning-output-field>
+                        
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_NotVisible"></div>
+                                            </div>
+                                            <div class="widthLineRight ">
+                                                <div class="span_Class_NotVisible"></div>
+                                            </div>
+                                        </div>
+                        
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div style="margin-left:10px;">
+                        
+                                                    <span>Contacts Created since last review</span>
+                                                </div>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+                        
+                                                <lightning-output-field field-name="Contacts_Created_since_last_review__c"
+                                                    variant="label-hidden">
+                        
+                                                </lightning-output-field>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='2'>
+                        
+                                                <div style="margin-left:10px;">
+                                                    <span>Opportunities Created since last Review</span>
+                                                </div>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+                                                <lightning-output-field field-name="Opportunities_Created_since_last_Review__c"
+                                                    variant="label-hidden">
+                                                </lightning-output-field>
+                        
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_NotVisible"></div>
+                                            </div>
+                                            <div class="widthLineRight ">
+                                                <div class="span_Class_NotVisible"></div>
+                                            </div>
+                                        </div>
+                        
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div style="margin-left:10px;" class="lgc-bg">
+                        
+                                                    <span>Open Support Cases</span>
+                                                    <lightning-helptext
+                                                        content="These are all open support tickets regardless of priority or severity"
+                                                        style="margin-left:10px"></lightning-helptext>
+                                                </div>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+                        
+                                                <lightning-output-field field-name="Open_Cases__c" variant="label-hidden">
+                        
+                                                </lightning-output-field>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='2'>
+                        
+                                                <div style="margin-left:10px;">
+                                                    <span>All Cases Last 12 mths</span>
+                                                </div>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='4' style="margin-left:10px;">
+                        
+                                                <lightning-output-field field-name="Cases_Last_12_Months_open_closed__c" variant="label-hidden">
+                                                </lightning-output-field>
+                        
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_NotVisible"></div>
+                                            </div>
+                                            <div class="widthLineRight ">
+                                                <div class="span_Class_NotVisible"></div>
+                                            </div>
+                                        </div>
+                        
+                        
+                        
+                                    </div>
+                        
+                                </lightning-accordion-section>
+                        
+                                <lightning-accordion-section label="Customer Profile" name="Customer Profile"
+                                    class="accordion_class margin_class ">
+                        
+                                    <div style="margin-right:10px; margin-top:10px;">
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div class="slds-clearfix" style="margin-left:10px;">
+                                                    <div class="slds-float_left" style="margin-right:2px">
+                                                        <span style="color:red">*</span>
+                                                    </div>
+                                                    <span>Client’s Strategy</span>
+                        
+                                                </div>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='10' style="margin-left:10px;">
+                        
+                                                <lightning-input-field field-name="Client_s_Strategy__c" variant="label-hidden" required
+                                                    onchange={handleFieldChange}>
+                        
+                                                </lightning-input-field>
+                        
+                                            </lightning-layout-item>
+                        
+                        
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_NotVisible"></div>
+                                            </div>
+                                        </div>
+                        
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div class="slds-clearfix" style="margin-left:10px;">
+                                                    <div class="slds-float_left" style="margin-right:2px">
+                                                        <span style="color:red">*</span>
+                                                    </div>
+                                                    <span>Our Current Situation & Outlook</span>
+                                                </div>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='10' style="margin-left:10px;">
+                        
+                                                <lightning-input-field field-name="Our_Current_Situation_Outlook__c" variant="label-hidden"
+                                                    required onchange={handleFieldChange}>
+                        
+                                                </lightning-input-field>
+                        
+                                            </lightning-layout-item>
+                        
+                        
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_NotVisible"></div>
+                                            </div>
+                                        </div>
+                        
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div class="slds-clearfix" style="margin-left:10px;">
+                                                    <div class="slds-float_left" style="margin-right:2px">
+                                                        <span style="color:red">*</span>
+                                                    </div>
+                        
+                                                    <span>Risk & Exposure</span>
+                                                </div>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='10' style="margin-left:10px;">
+                        
+                                                <lightning-input-field field-name="Risk_Exposure__c" variant="label-hidden" required
+                                                    onchange={handleFieldChange}>
+                        
+                                                </lightning-input-field>
+                        
+                                            </lightning-layout-item>
+                        
+                        
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_NotVisible"></div>
+                                            </div>
+                                        </div>
+                        
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                                                <div class="slds-clearfix" style="margin-left:10px;">
+                                                    <div class="slds-float_left" style="margin-right:2px">
+                                                        <span style="color:red">*</span>
+                                                    </div>
+                        
+                        
+                                                    <span>Relationship History</span>
+                                                </div>
+                        
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size='10' style="margin-left:10px;">
+                        
+                                                <lightning-input-field field-name="Relationship_History__c" variant="label-hidden" required
+                                                    onchange={handleFieldChange}>
+                        
+                                                </lightning-input-field>
+                        
+                                            </lightning-layout-item>
+                        
+                        
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_NotVisible"></div>
+                                            </div>
+                                        </div>
+                        
+                        
+                        
+                        
+                                    </div>
+                        
+                        
+                                </lightning-accordion-section>
+                        
+                                <!--<lightning-accordion-section label="Usage Details" name="Usage Details" class="accordion_class">
+                                    <div style="margin-right:10px; margin-top:10px;">
+                                        <lightning-layout>
+                                            <lightning-layout-item size='2'>
+                        
+                                                <div style="margin-left:10px;">
+                                                    <span>Usage Details</span>
+                                                </div>
+                                            </lightning-layout-item>
+                        
+                                            <lightning-layout-item size='10'>
+                        
+                                                <lightning-formatted-url
+                                                    value="https://businessanalytics.shl.com/#/views/Customer360_16819046704030/SingleCustomerView"
+                                                    tooltip="Omit leading slash" target="_blank">
+                        
+                                                </lightning-formatted-url>
+                        
+                                            </lightning-layout-item>
+                        
+                        
+                                        </lightning-layout>
+                                        <div class="slds-align_absolute-center">
+                                            <div class="widthLine ">
+                                                <div class="span_Class_NotVisible"></div>
+                                            </div>
+                                        </div>
+                        
+                        
+                                    </div>
+                        
+                                </lightning-accordion-section>-->
+                        
+                                <!--<lightning-accordion-section label="History of Total Spend with SHL ($K)" name="History of Total Spend"
+                                    class="accordion_class">
+                                    <div style="margin-right:10px; margin-top:10px;">
+                                        <lightning-layout>
+                        
+                                            <lightning-layout-item size='10'>
+                        
+                                                <lightning-input-field field-name="History_trend_Screenshot__c" variant="label-inline"
+                                                    onchange={handleFieldChange}>
+                        
+                                                </lightning-input-field>
+                        
+                                            </lightning-layout-item>
+                        
+                        
+                                        </lightning-layout>
+                        
+                        
+                                    </div>
+                        
+                                </lightning-accordion-section>
+                                <lightning-accordion-section label="Contacts Relationship" name="Contacts Relationship" class="accordion_class">
+                        
+                                    <div style="margin-right:10px; margin-top:10px;">
+                                        <lightning-layout>
+                        
+                                            <lightning-layout-item size='10'>
+                        
+                                                <lightning-input-field field-name="Contact_Relationship_Screenshot__c" variant="label-inline"
+                                                    onchange={handleFieldChange}>
+                        
+                                                </lightning-input-field>
+                        
+                                            </lightning-layout-item>
+                        
+                        
+                                        </lightning-layout>
+                        
+                        
+                                    </div>
+                        
+                                </lightning-accordion-section>-->
+                            </lightning-accordion>
+                        
+                            <!-- Buttons for Record Edit Form-->
+                            <div class="slds-align_absolute-center">
+                                <lightning-button variant="brand" type="submit" label="Save" class='buttoncss' disabled={isDisabled}>
+                                </lightning-button>
+                                <lightning-button variant="Neutral" label="Cancel" onclick={handleCancel} class='buttoncss'
+                                    disabled={isDisabled}>
+                                </lightning-button>
+                            </div>
+                        </lightning-record-edit-form>
+
+                    </template>
+                </lightning-tab>
+
+                <!-- Logic for Account Plan Tab Ends -->
+
+                <lightning-tab label="Strategy and Goals" value="Strategy and Goals"  onactive={handleTabChange}>
+                    <c-strategy-custom-table-component record-id={accplanId} oncreation={handleStrategyCreated}
+                        is-account-plan-under-review={isStatusUnderReview} is-acc-plan-retired={isAccPlanRetired}></c-strategy-custom-table-component >
+                    <!--<c-strategies-and-goals-on-account-plan record-id={accplanId} oncreation={handleStrategyCreated}
+                        is-account-plan-under-review={isStatusUnderReview}></c-strategies-and-goals-on-account-plan>-->
+
+                </lightning-tab>
+
+                <lightning-tab label="White Space Opportunity" value="White Space" onactive={handleTabChange}>
+                    <c-white-space-opportunities-on-account-plan
+                        record-id={accplanId} is-acc-plan-retired={isAccPlanRetired}></c-white-space-opportunities-on-account-plan>
+                </lightning-tab>
+
+                <lightning-tab label="Current Pipeline" value="Current Pipeline" onactive={handleTabChange}>
+                    <c-current-opportunities-pipeline record-id={accplanId} is-acc-plan-retired={isAccPlanRetired}
+                        is-account-plan-under-review={isStatusUnderReview}></c-current-opportunities-pipeline>
+                </lightning-tab>
+
+                <lightning-tab label="Competitor Details" value="Competitor Details" onactive={handleTabChange}>
+                   
+                        <c-competitor-details-custom-tableon-a-p record-id={accId}
+                        ap-type={apType} is-retired={showActiveAPField}
+                        is-account-plan-under-review={isStatusUnderReview}></c-competitor-details-custom-tableon-a-p>
+                </lightning-tab>
+
+                <lightning-tab label="Account Intelligence" value="Account Intelligence" onactive={handleTabChange}>
+                    <c-create-account-intelligence record-id={accplanId} is-retired={showActiveAPField}></c-create-account-intelligence>
+                </lightning-tab>
+
+                <lightning-tab label="Account Plan Team" value="Account Plan Team" onactive={handleTabChange}>
+                    <c-account-plan-team record-id={accplanId}
+                    is-retired={showActiveAPField}></c-account-plan-team>
+                </lightning-tab>
+
+                <lightning-tab label="Contact Relationship" value="Contact Relationship" onactive={handleTabChange}>
+                    <template if:false={showContactHierarckyModal}>
+                       
+                                   <lightning-button-icon
+                            icon-name="utility:expand"
+                            alternative-text="Expand Contact Hierarcky"
+                            variant="border-filled"
+                            onclick={handleExpandContactHierarckyModal}
+                            title="Expand Contact Hierarcky" 
+                            style="float: right; padding-top: 16px;">
+                           </lightning-button-icon> 
+                           
+                     
+                        <c-contact-hierarchy-l-w-c record-id={accId} accountplan-id={recordId} current-account-from-parent={currentAccountFromParent}
+                        onrefreshhierarckyonparent={handleRefreshOnParent} filters-from-parent={filtersForContactHeirarchy}
+                        onfiltertoparent={handleFiltersForContactHeirarchy} 
+                        oncurrentaccounttoparent={handleSelectionForContactHeirarchy}
+                        is-status-under-review = {isStatusUnderReview}
+                        is-acc-plan-retired={isAccPlanRetired}></c-contact-hierarchy-l-w-c>
+                    </template>
+                </lightning-tab>
+
+               
+            </lightning-tabset>
+        </div>
+    </lightning-card>
+
+    <template if:true={GeneratePDF}>
+        <c-create-account-plan-p-d-f record-id={recordId} pdf-from-button={pdfButton}>
+        </c-create-account-plan-p-d-f>
+    </template>
+
+    <!-- <template if:true={isBulkTaskPopup}>
+        <c-bulk-task-creation-on-account-plan account-plan-id={accplanId} onclosebulkpopup={closeBulkTaskPopup}></c-bulk-task-creation-on-account-plan>
+    </template> -->
+
+    <template lwc:if={showPrintPdf}>
+        <c-print-account-plan record-id={accplanId} oncloseprintpdfpopup={handleClosPrintPDF}> </c-print-account-plan>
+    </template>
+
+    <template lwc:if={showContactHierarckyModal}>
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-02"
+                class="slds-modal slds-fade-in-open slds-modal_large">
+                <div class="slds-modal__container" style="width: 98%;">
+                    <!-- Close button -->
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={closeExpandContactHierarckyModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                            size="small">
+                        </lightning-icon>
+                        <span class="slds-assistive-text">Cancel and close</span>
+                    </button>
+                    <!-- <div class="slds-modal__header">
+                    </div> -->
+                    <div class="slds-modal__content slds-p-around_x-small" id="modal-content-id-2">
+                        <template if:true={showContactHierarchyModal}>
+                            <c-contact-hierarchy-l-w-c record-id={accId} accountplan-id={recordId} current-account-from-parent={currentAccountFromParent}
+                        onrefreshhierarckyonparent={handleRefreshOnParent} filters-from-parent={filtersForContactHeirarchy}
+                        onfiltertoparent={handleFiltersForContactHeirarchy} oncurrentaccounttoparent={handleSelectionForContactHeirarchy}
+                        is-acc-plan-retired={isAccPlanRetired} is-expanded={showContactHierarchyModal}></c-contact-hierarchy-l-w-c>
+                        </template>
+                    </div>
+
+                    <!-- <div class="slds-modal__footer">
+                    </div> -->
+
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>
+</template>

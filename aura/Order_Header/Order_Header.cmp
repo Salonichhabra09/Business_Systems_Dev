@@ -1,0 +1,23 @@
+<aura:component extends="c:GenericBase" implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+    <aura:attribute name="recordId" type="id" access="global" description="Used to Hold the Id of record in Context"/>
+    <aura:attribute name="record" type="Object" access="global" description="To hold the object type variable" />
+    <aura:attribute name="simplerecord" type="Object" access="global" description="To hold the object type variable"/>
+    <aura:attribute name="disable" type="Boolean" default="false" description="To hold boolean value for disabling button" />
+    <force:recordData aura:id="OppRecordLoader"
+                       layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      fields="Total_Product_Count__c,Account.Status__c,Account_Number__c"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.simplerecord}"
+                      targetError="{!v.recordError}"                       
+                      /> 
+     <lightning:card>    
+      
+        <ui:message title="Warning! This Opportunity does not have an Order associated with it." severity="warning" >
+			Please click the 'Make Order Header' button to create the Order.
+            <span class="leftPadBut"><lightning:button variant="brand" onclick="{!c.echo}" label="Make Order Header" disabled="{!v.disable}"/></span>
+           
+         </ui:message> 
+        
+    </lightning:card>
+</aura:component>

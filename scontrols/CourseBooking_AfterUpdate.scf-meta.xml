@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scontrol xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contentSource>HTML</contentSource>
+    <description>Displays Waiting Message if any waiting booking is linked to the Course and displays Cancellation fee message if status is changed to Cancelled and Course start date is within 21 days.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>CourseBooking_AfterUpdate</name>
+    <supportsCaching>true</supportsCaching>
+</Scontrol>

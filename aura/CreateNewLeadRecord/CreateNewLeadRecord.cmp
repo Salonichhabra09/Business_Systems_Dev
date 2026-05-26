@@ -1,0 +1,8 @@
+<aura:component implements="force:appHostable,lightning:isUrlAddressable,lightning:actionOverride,force:hasRecordId,force:hasSObjectName" access="global">
+    <lightning:workspaceAPI aura:id="workspace" />
+    <aura:handler name="render" value="{!this}" action="{!c.onRender}"/>
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.onPageReferenceChanged}" />
+    <aura:attribute name="recordId" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <c:createLeadRecord recordId="{!v.recordId}" oncloseTab="{!c.handleEvent}" onsetTabName="{!c.handleTabNameEvent}"/>
+</aura:component>

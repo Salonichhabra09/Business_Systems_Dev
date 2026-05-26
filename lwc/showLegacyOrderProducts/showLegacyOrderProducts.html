@@ -1,0 +1,33 @@
+<template>
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Id">Order Product Name</div>  
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="LegacyStartDate">Legacy Start Date</div> 
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="LegacyEndDate">Legacy End Date</div> 
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={OrderProducts} for:item="Prod">
+                <tr key={Prod.Id}>
+                    <th scope="col">
+                        <div>{Prod.Product2.Name}</div>
+                    </th>
+                    <th scope="col">
+                        <div>{Prod.Legacy_Start_Date__c}</div>
+                    </th>
+                    <th scope="col">
+                        <div>{Prod.Legacy_End_Date__c}</div>
+                    </th>
+                   
+                </tr>
+            </template>
+        </tbody>
+    </table>
+</template>

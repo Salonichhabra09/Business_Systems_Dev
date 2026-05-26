@@ -1,0 +1,71 @@
+<apex:page standardController="Order" showChat="false" showHeader="false" sidebar="false">
+ 
+     <apex:form rendered="{!Order.LegacyOrder__c ==true}">
+        <apex:pageblock title="Legacy Information" rendered="{!Order.Contract.RecordTypeId ==null}">
+      
+              <!--  <div style="display:{!IF(Order.Contract.RecordType == 'LEX Contract','block','none')};overflow: hidden;">
+                    <div style="width:100%; float:left;margin-left: 50px;">
+                        <br></br>
+                      <apex:outputText value="Total Contract Value" style="font-size:bold, color:#4a4a56" />
+                    &nbsp;&nbsp;<apex:OutputField value="{!Order.Contract.TCV__c}"/><br></br>
+              <apex:outputText value="Booking Date 1" style="font-weight:bold,color:#4a4a56"/>
+            &nbsp;&nbsp; <apex:OutputField value="{!Order.Contract.Booking_Date_New__c}"/><br></br>
+              <apex:outputText value="Booking Date 2" style="font-weight:bold , color:#4a4a56"/>
+         &nbsp;&nbsp; <apex:OutputField value="{!Order.Contract.Booking_Date_2__c}"/><br></br>
+              <apex:outputText value="Booking Date 3" style="font-weight:bold, color:#4a4a56"/>
+    &nbsp;&nbsp; <apex:OutputField value="{!Order.Contract.Booking_Date_3__c}"/><br></br>
+</div>
+<div style="width:50%; float:left;">
+    <br></br>
+  <apex:outputText value="Contract Number" style="font-weight:bold, color:#4a4a56"/>
+    &nbsp;&nbsp;<apex:OutputField value="{!Order.Contract.ContractNumber}"/><br></br>
+              <apex:outputText value="ACV 1" style="font-weight:bold, color:#4a4a56"/>
+&nbsp;&nbsp; <apex:OutputField value="{!Order.Contract.Annual_Contract_Value__c}"/><br></br>
+              <apex:outputText value="ACV 2" style="font-weight:bold ,color:#4a4a56 "/>
+&nbsp;&nbsp; <apex:OutputField value="{!Order.Contract.ACV_2__c}"/><br></br>
+              <apex:outputText value="ACV 3" style="font-weight:bold, color:#4a4a56"/>
+&nbsp;&nbsp;<apex:OutputField value="{!Order.Contract.ACV_3__c}"/><br></br>
+            
+</div>-->
+         <!--   </div>-->
+
+ <apex:outputPanel style="Color:Black">
+    <table style="width:100%;border: 1px solid #C0C0C0;" border="1" cellspacing="0" cellpadding="4">
+        <tr>
+            <th width="24%">Total Contract Value</th>
+            <td width="24%"><apex:OutputField value="{!Order.Contract.TCV__c}"/></td> 
+            <th width="4%"> </th> 
+            <th width="24%">Contract Number</th>
+            <td width="24%"><apex:OutputField value="{!Order.Contract.ContractNumber}"/></td>
+        </tr>
+                
+                 <tr>
+            <th width="24%">Booking Date 1</th>
+            <td width="24%"><apex:OutputField value="{!Order.Contract.Booking_Date_New__c}"/></td> 
+            <th width="4%"> </th> 
+            <th width="24%">ACV 1</th>
+            <td width="24%"><apex:OutputField value="{!Order.Contract.Annual_Contract_Value__c}"/></td>
+        </tr>
+       
+        <tr>
+            <th width="24%">Booking Date 2</th>
+            <td width="24%"><apex:OutputField value="{!Order.Contract.Booking_Date_2__c}"/></td> 
+            <th width="4%"> </th> 
+            <th width="24%">ACV 2</th>
+            <td width="24%"><apex:OutputField value="{!Order.Contract.ACV_2__c}"/></td>
+        </tr>
+       
+        <tr>
+            <th width="24%">Booking Date 3</th>
+            <td width="24%"><apex:OutputField value="{!Order.Contract.Booking_Date_3__c}"/></td> 
+            <th width="4%"> </th> 
+            <th width="24%">ACV 3</th>
+            <td width="24%"><apex:OutputField value="{!Order.Contract.ACV_3__c}"/></td>
+        </tr>
+          
+    </table>
+    </apex:outputPanel>
+         </apex:pageblock>
+    </apex:form>
+   
+</apex:page>

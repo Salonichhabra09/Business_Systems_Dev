@@ -1,0 +1,3371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Expense_Compact_layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Expense_Compact_layout</fullName>
+        <fields>Name</fields>
+        <fields>Project__c</fields>
+        <fields>Date_Incurred__c</fields>
+        <fields>Expense_Type__c</fields>
+        <fields>LBU__c</fields>
+        <fields>Value__c</fields>
+        <fields>Total_in_Home_currency__c</fields>
+        <label>Expense Compact layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Approved_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Approved By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Expenses1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Business_Meals_Details__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter purpose and attendees.</inlineHelpText>
+        <label>Business Meals Details</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Business_Meals__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Business Meals</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Car_Travel_From__c</fullName>
+        <externalId>false</externalId>
+        <label>Car Travel From</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Car_Travel_To__c</fullName>
+        <externalId>false</externalId>
+        <label>Car Travel To</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Car_Type__c</fullName>
+        <label>Car Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Private</fullName>
+                    <default>false</default>
+                    <label>Private</label>
+                </value>
+                <value>
+                    <fullName>Lease</fullName>
+                    <default>false</default>
+                    <label>Lease</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Certify_Expense_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Certify Expense ID</label>
+        <length>8</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cost_Center__c</fullName>
+        <description>Copied from Invoice.Dept Code - 20080731 MB.</description>
+        <inlineHelpText>Please enter the Cost Center Code for this expense.</inlineHelpText>
+        <label>Cost Center</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>LBU__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DLYLOCL</fullName>
+                    <default>false</default>
+                    <label>DLYLOCL</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>China - CN1</controllingFieldValue>
+                <controllingFieldValue>Belgium SPS - BE5</controllingFieldValue>
+                <controllingFieldValue>Philippines - PH1</controllingFieldValue>
+                <controllingFieldValue>UK - UK1</controllingFieldValue>
+                <controllingFieldValue>France SPS - FR5</controllingFieldValue>
+                <controllingFieldValue>Germany SPS - DE5</controllingFieldValue>
+                <controllingFieldValue>Netherlands SPS - NL5</controllingFieldValue>
+                <controllingFieldValue>South Africa - ZA1</controllingFieldValue>
+                <controllingFieldValue>Italy - IT1</controllingFieldValue>
+                <controllingFieldValue>Canada - CA1</controllingFieldValue>
+                <controllingFieldValue>Australia - AU1</controllingFieldValue>
+                <controllingFieldValue>New Zealand - NZ1</controllingFieldValue>
+                <controllingFieldValue>India - IN1</controllingFieldValue>
+                <controllingFieldValue>Denmark - DK1</controllingFieldValue>
+                <controllingFieldValue>Sweden - SE1</controllingFieldValue>
+                <controllingFieldValue>Hong Kong - HK1</controllingFieldValue>
+                <controllingFieldValue>Finland - FI1</controllingFieldValue>
+                <controllingFieldValue>Norway - NO1</controllingFieldValue>
+                <controllingFieldValue>US - US5</controllingFieldValue>
+                <controllingFieldValue>Switzerland - CH1</controllingFieldValue>
+                <controllingFieldValue>Abu Dhabi - AD1</controllingFieldValue>
+                <controllingFieldValue>Singapore - SG1</controllingFieldValue>
+                <controllingFieldValue>Middle East - ME1</controllingFieldValue>
+                <controllingFieldValue>Saudi Arabia - SA5</controllingFieldValue>
+                <valueName>DLYLOCL</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Country_Incurred__c</fullName>
+        <label>Country Incurred</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Australia</fullName>
+                    <default>false</default>
+                    <label>Australia</label>
+                </value>
+                <value>
+                    <fullName>Belgium</fullName>
+                    <default>false</default>
+                    <label>Belgium</label>
+                </value>
+                <value>
+                    <fullName>Canada</fullName>
+                    <default>false</default>
+                    <label>Canada</label>
+                </value>
+                <value>
+                    <fullName>Czech Republic</fullName>
+                    <default>false</default>
+                    <label>Czech Republic</label>
+                </value>
+                <value>
+                    <fullName>Denmark</fullName>
+                    <default>false</default>
+                    <label>Denmark</label>
+                </value>
+                <value>
+                    <fullName>Egypt</fullName>
+                    <default>false</default>
+                    <label>Egypt</label>
+                </value>
+                <value>
+                    <fullName>Finland</fullName>
+                    <default>false</default>
+                    <label>Finland</label>
+                </value>
+                <value>
+                    <fullName>France</fullName>
+                    <default>false</default>
+                    <label>France</label>
+                </value>
+                <value>
+                    <fullName>Georgia</fullName>
+                    <default>false</default>
+                    <label>Georgia</label>
+                </value>
+                <value>
+                    <fullName>Germany</fullName>
+                    <default>false</default>
+                    <label>Germany</label>
+                </value>
+                <value>
+                    <fullName>Hong Kong</fullName>
+                    <default>false</default>
+                    <label>Hong Kong</label>
+                </value>
+                <value>
+                    <fullName>India</fullName>
+                    <default>false</default>
+                    <label>India</label>
+                </value>
+                <value>
+                    <fullName>Ireland</fullName>
+                    <default>false</default>
+                    <label>Ireland</label>
+                </value>
+                <value>
+                    <fullName>Italy</fullName>
+                    <default>false</default>
+                    <label>Italy</label>
+                </value>
+                <value>
+                    <fullName>Netherlands</fullName>
+                    <default>false</default>
+                    <label>Netherlands</label>
+                </value>
+                <value>
+                    <fullName>New Zealand</fullName>
+                    <default>false</default>
+                    <label>New Zealand</label>
+                </value>
+                <value>
+                    <fullName>Norway</fullName>
+                    <default>false</default>
+                    <label>Norway</label>
+                </value>
+                <value>
+                    <fullName>Poland</fullName>
+                    <default>false</default>
+                    <label>Poland</label>
+                </value>
+                <value>
+                    <fullName>Singapore</fullName>
+                    <default>false</default>
+                    <label>Singapore</label>
+                </value>
+                <value>
+                    <fullName>South Africa</fullName>
+                    <default>false</default>
+                    <label>South Africa</label>
+                </value>
+                <value>
+                    <fullName>Spain</fullName>
+                    <default>false</default>
+                    <label>Spain</label>
+                </value>
+                <value>
+                    <fullName>Sweden</fullName>
+                    <default>false</default>
+                    <label>Sweden</label>
+                </value>
+                <value>
+                    <fullName>Switzerland</fullName>
+                    <default>false</default>
+                    <label>Switzerland</label>
+                </value>
+                <value>
+                    <fullName>Thailand</fullName>
+                    <default>false</default>
+                    <label>Thailand</label>
+                </value>
+                <value>
+                    <fullName>UK</fullName>
+                    <default>false</default>
+                    <label>UK</label>
+                </value>
+                <value>
+                    <fullName>United Arab Emirates</fullName>
+                    <default>false</default>
+                    <label>United Arab Emirates</label>
+                </value>
+                <value>
+                    <fullName>US</fullName>
+                    <default>false</default>
+                    <label>US</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Date_Incurred__c</fullName>
+        <label>Date Incurred</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Invoiced__c</fullName>
+        <label>Date Invoiced</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Description of the Expense</description>
+        <inlineHelpText>The Expense Description displays on your Individual Expense Reclaim Report. Please make sure that sufficient information has been entered to enable you manager to approve your claim</inlineHelpText>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Distance_Travelled__c</fullName>
+        <externalId>false</externalId>
+        <label>Distance Travelled</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Exchange_rate__c</fullName>
+        <defaultValue>1</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter the currency exchange rate for converting the expense value to the Home Currency.</inlineHelpText>
+        <label>Exchange rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expense_Type_Certify__c</fullName>
+        <label>Expense Type (Certify)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Airfares</fullName>
+                    <default>false</default>
+                    <label>Airfares</label>
+                </value>
+                <value>
+                    <fullName>Bank Charges - Account Charges</fullName>
+                    <default>false</default>
+                    <label>Bank Charges - Account Charges</label>
+                </value>
+                <value>
+                    <fullName>Business Ent Deductible</fullName>
+                    <default>false</default>
+                    <label>Business Ent Deductible</label>
+                </value>
+                <value>
+                    <fullName>Business Ent Non Deductible</fullName>
+                    <default>false</default>
+                    <label>Business Ent Non Deductible</label>
+                </value>
+                <value>
+                    <fullName>Business Meals</fullName>
+                    <default>false</default>
+                    <label>Business Meals</label>
+                </value>
+                <value>
+                    <fullName>Business Meals - Alcohol</fullName>
+                    <default>false</default>
+                    <label>Business Meals - Alcohol</label>
+                </value>
+                <value>
+                    <fullName>Car Rental</fullName>
+                    <default>false</default>
+                    <label>Car Rental</label>
+                </value>
+                <value>
+                    <fullName>Charitable Donations &amp; Gifts</fullName>
+                    <default>false</default>
+                    <label>Charitable Donations &amp; Gifts</label>
+                </value>
+                <value>
+                    <fullName>Corporate Card Accruals</fullName>
+                    <default>false</default>
+                    <label>Corporate Card Accruals</label>
+                </value>
+                <value>
+                    <fullName>Couriers</fullName>
+                    <default>false</default>
+                    <label>Couriers</label>
+                </value>
+                <value>
+                    <fullName>Events</fullName>
+                    <default>false</default>
+                    <label>Events</label>
+                </value>
+                <value>
+                    <fullName>Fuel costs</fullName>
+                    <default>false</default>
+                    <label>Fuel costs</label>
+                </value>
+                <value>
+                    <fullName>Gifts</fullName>
+                    <default>false</default>
+                    <label>Gifts</label>
+                </value>
+                <value>
+                    <fullName>Gift Vouchers (Employee)</fullName>
+                    <default>false</default>
+                    <label>Gift Vouchers (Employee)</label>
+                </value>
+                <value>
+                    <fullName>Gift Vouchers (Non SHL)</fullName>
+                    <default>false</default>
+                    <label>Gift Vouchers (Non SHL)</label>
+                </value>
+                <value>
+                    <fullName>Hotels</fullName>
+                    <default>false</default>
+                    <label>Hotels</label>
+                </value>
+                <value>
+                    <fullName>Legal - Other</fullName>
+                    <default>false</default>
+                    <label>Legal - Other</label>
+                </value>
+                <value>
+                    <fullName>Legal - Staff Related</fullName>
+                    <default>false</default>
+                    <label>Legal - Staff Related</label>
+                </value>
+                <value>
+                    <fullName>Meal Allowance</fullName>
+                    <default>false</default>
+                    <label>Meal Allowance</label>
+                </value>
+                <value>
+                    <fullName>Medical</fullName>
+                    <default>false</default>
+                    <label>Medical</label>
+                </value>
+                <value>
+                    <fullName>Mileage ROW</fullName>
+                    <default>false</default>
+                    <label>Mileage ROW</label>
+                </value>
+                <value>
+                    <fullName>Mileage UK</fullName>
+                    <default>false</default>
+                    <label>Mileage UK</label>
+                </value>
+                <value>
+                    <fullName>Mileage US</fullName>
+                    <default>false</default>
+                    <label>Mileage US</label>
+                </value>
+                <value>
+                    <fullName>Mobiles/Internet</fullName>
+                    <default>false</default>
+                    <label>Mobiles/Internet</label>
+                </value>
+                <value>
+                    <fullName>Office supplies</fullName>
+                    <default>false</default>
+                    <label>Office supplies</label>
+                </value>
+                <value>
+                    <fullName>Other Benefits</fullName>
+                    <default>false</default>
+                    <label>Other Benefits</label>
+                </value>
+                <value>
+                    <fullName>Parking Tolls</fullName>
+                    <default>false</default>
+                    <label>Parking Tolls</label>
+                </value>
+                <value>
+                    <fullName>Postage</fullName>
+                    <default>false</default>
+                    <label>Postage</label>
+                </value>
+                <value>
+                    <fullName>Printing</fullName>
+                    <default>false</default>
+                    <label>Printing</label>
+                </value>
+                <value>
+                    <fullName>Professional Subscriptions</fullName>
+                    <default>false</default>
+                    <label>Professional Subscriptions</label>
+                </value>
+                <value>
+                    <fullName>Public Transport (not Taxi)</fullName>
+                    <default>false</default>
+                    <label>Public Transport (not Taxi)</label>
+                </value>
+                <value>
+                    <fullName>Relocation</fullName>
+                    <default>false</default>
+                    <label>Relocation</label>
+                </value>
+                <value>
+                    <fullName>Small IT Purchases</fullName>
+                    <default>false</default>
+                    <label>Small IT Purchases</label>
+                </value>
+                <value>
+                    <fullName>Small Purchases</fullName>
+                    <default>false</default>
+                    <label>Small Purchases</label>
+                </value>
+                <value>
+                    <fullName>Staff Entertainment</fullName>
+                    <default>false</default>
+                    <label>Staff Entertainment</label>
+                </value>
+                <value>
+                    <fullName>Taxi</fullName>
+                    <default>false</default>
+                    <label>Taxi</label>
+                </value>
+                <value>
+                    <fullName>Technical/Skills Training</fullName>
+                    <default>false</default>
+                    <label>Technical/Skills Training</label>
+                </value>
+                <value>
+                    <fullName>Training - Conference Attendance</fullName>
+                    <default>false</default>
+                    <label>Training - Conference Attendance</label>
+                </value>
+                <value>
+                    <fullName>Training - Lunches etc. Deductible</fullName>
+                    <default>false</default>
+                    <label>Training - Lunches etc. Deductible</label>
+                </value>
+                <value>
+                    <fullName>Training - Other Training</fullName>
+                    <default>false</default>
+                    <label>Training - Other Training</label>
+                </value>
+                <value>
+                    <fullName>Venue hire</fullName>
+                    <default>false</default>
+                    <label>Venue hire</label>
+                </value>
+                <value>
+                    <fullName>Visa</fullName>
+                    <default>false</default>
+                    <label>Visa</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Expense_Type__c</fullName>
+        <label>Expense Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Airfares - 651110 / 751110</fullName>
+                    <default>false</default>
+                    <label>Airfares - 651110 / 751110</label>
+                </value>
+                <value>
+                    <fullName>Books &amp; Periodicals - 783100</fullName>
+                    <default>false</default>
+                    <label>Books &amp; Periodicals - 783100</label>
+                </value>
+                <value>
+                    <fullName>Business Ent Deductible - 751340</fullName>
+                    <default>false</default>
+                    <label>Business Ent Deductible - 751340</label>
+                </value>
+                <value>
+                    <fullName>Business Meals Deductible - 651320 / 751320</fullName>
+                    <default>false</default>
+                    <label>Business Meals Deductible - 651320 / 751320</label>
+                </value>
+                <value>
+                    <fullName>Car Travel - 651200 / 751200</fullName>
+                    <default>false</default>
+                    <label>Car Travel - 651200 / 751200</label>
+                </value>
+                <value>
+                    <fullName>Fuel Costs - 603322</fullName>
+                    <default>false</default>
+                    <label>Fuel Costs - 603322</label>
+                </value>
+                <value>
+                    <fullName>Gifts Deductible - 751350</fullName>
+                    <default>false</default>
+                    <label>Gifts Deductible - 751350</label>
+                </value>
+                <value>
+                    <fullName>Hotels - 651310 / 751310</fullName>
+                    <default>false</default>
+                    <label>Hotels - 651310 / 751310</label>
+                </value>
+                <value>
+                    <fullName>International Airfares - 651115</fullName>
+                    <default>false</default>
+                    <label>International Airfares - 651115</label>
+                </value>
+                <value>
+                    <fullName>Internet - 651440</fullName>
+                    <default>false</default>
+                    <label>Internet - 651440</label>
+                </value>
+                <value>
+                    <fullName>Meal Allowance - 603410 / 703410</fullName>
+                    <default>false</default>
+                    <label>Meal Allowance - 603410 / 703410</label>
+                </value>
+                <value>
+                    <fullName>Medical - 603120 / 703120</fullName>
+                    <default>false</default>
+                    <label>Medical - 603120 / 703120</label>
+                </value>
+                <value>
+                    <fullName>Minor Non-IT Equip - 784200</fullName>
+                    <default>false</default>
+                    <label>Minor Non-IT Equip - 784200</label>
+                </value>
+                <value>
+                    <fullName>Mobile Devices - 742310</fullName>
+                    <default>false</default>
+                    <label>Mobile Devices - 742310</label>
+                </value>
+                <value>
+                    <fullName>Other Benefits - 603412 / 703412</fullName>
+                    <default>false</default>
+                    <label>Other Benefits - 603412 / 703412</label>
+                </value>
+                <value>
+                    <fullName>Other - Complete Description field</fullName>
+                    <default>false</default>
+                    <label>Other - Complete Description field</label>
+                </value>
+                <value>
+                    <fullName>Parking Tolls - 651230</fullName>
+                    <default>false</default>
+                    <label>Parking Tolls - 651230</label>
+                </value>
+                <value>
+                    <fullName>Postage - 782000</fullName>
+                    <default>false</default>
+                    <label>Postage - 782000</label>
+                </value>
+                <value>
+                    <fullName>Public Transport (not Taxi) - 651130 / 751130</fullName>
+                    <default>false</default>
+                    <label>Public Transport (not Taxi) - 651130 / 751130</label>
+                </value>
+                <value>
+                    <fullName>Relocation - 604710 / 704710</fullName>
+                    <default>false</default>
+                    <label>Relocation - 604710 / 704710</label>
+                </value>
+                <value>
+                    <fullName>Small IT Purchases - 744440</fullName>
+                    <default>false</default>
+                    <label>Small IT Purchases - 744440</label>
+                </value>
+                <value>
+                    <fullName>Small Purchases - 651510</fullName>
+                    <default>false</default>
+                    <label>Small Purchases - 651510</label>
+                </value>
+                <value>
+                    <fullName>Staff Ent Deductible - 651330 / 751330</fullName>
+                    <default>false</default>
+                    <label>Staff Ent Deductible - 651330 / 751330</label>
+                </value>
+                <value>
+                    <fullName>Stationery - 784300</fullName>
+                    <default>false</default>
+                    <label>Stationery - 784300</label>
+                </value>
+                <value>
+                    <fullName>Taxi - 651120 / 751120</fullName>
+                    <default>false</default>
+                    <label>Taxi - 651120 / 751120</label>
+                </value>
+                <value>
+                    <fullName>Training - Lunches etc. Deductible - 635170</fullName>
+                    <default>false</default>
+                    <label>Training - Lunches etc. Deductible - 635170</label>
+                </value>
+                <value>
+                    <fullName>Training Products COS - 635130</fullName>
+                    <default>false</default>
+                    <label>Training Products COS - 635130</label>
+                </value>
+                <value>
+                    <fullName>Vending Supplies - 704760</fullName>
+                    <default>false</default>
+                    <label>Vending Supplies - 704760</label>
+                </value>
+                <value>
+                    <fullName>Venue hire - 651415</fullName>
+                    <default>false</default>
+                    <label>Venue hire - 651415</label>
+                </value>
+                <value>
+                    <fullName>Visa - 651140</fullName>
+                    <default>false</default>
+                    <label>Visa - 651140</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Foreign_Currency__c</fullName>
+        <externalId>false</externalId>
+        <label>Foreign Currency</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Request__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The invoice in which the amount against this expense has
+			been included.</description>
+        <inlineHelpText>The invoice in which the amount against this expense has
+			been included.</inlineHelpText>
+        <label>Invoice Request</label>
+        <referenceTo>Project_Invoice__c</referenceTo>
+        <relationshipLabel>Expenses</relationshipLabel>
+        <relationshipName>Expenses</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LBU__c</fullName>
+        <label>LBU</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Abu Dhabi - AD1</fullName>
+                    <default>false</default>
+                    <label>Abu Dhabi - AD1</label>
+                </value>
+                <value>
+                    <fullName>Australia - AU1</fullName>
+                    <default>false</default>
+                    <label>Australia - AU1</label>
+                </value>
+                <value>
+                    <fullName>Belgium SPS - BE5</fullName>
+                    <default>false</default>
+                    <label>Belgium SPS - BE5</label>
+                </value>
+                <value>
+                    <fullName>Canada - CA1</fullName>
+                    <default>false</default>
+                    <label>Canada - CA1</label>
+                </value>
+                <value>
+                    <fullName>China - CN1</fullName>
+                    <default>false</default>
+                    <label>China - CN1</label>
+                </value>
+                <value>
+                    <fullName>Denmark - DK1</fullName>
+                    <default>false</default>
+                    <label>Denmark - DK1</label>
+                </value>
+                <value>
+                    <fullName>Finland - FI1</fullName>
+                    <default>false</default>
+                    <label>Finland - FI1</label>
+                </value>
+                <value>
+                    <fullName>France SPS - FR5</fullName>
+                    <default>false</default>
+                    <label>France SPS - FR5</label>
+                </value>
+                <value>
+                    <fullName>Germany SPS - DE5</fullName>
+                    <default>false</default>
+                    <label>Germany SPS - DE5</label>
+                </value>
+                <value>
+                    <fullName>Hong Kong - HK1</fullName>
+                    <default>false</default>
+                    <label>Hong Kong - HK1</label>
+                </value>
+                <value>
+                    <fullName>India - IN1</fullName>
+                    <default>false</default>
+                    <label>India - IN1</label>
+                </value>
+                <value>
+                    <fullName>Italy - IT1</fullName>
+                    <default>false</default>
+                    <label>Italy - IT1</label>
+                </value>
+                <value>
+                    <fullName>Middle East - ME1</fullName>
+                    <default>false</default>
+                    <label>Middle East - ME1</label>
+                </value>
+                <value>
+                    <fullName>Netherlands SPS - NL5</fullName>
+                    <default>false</default>
+                    <label>Netherlands SPS - NL5</label>
+                </value>
+                <value>
+                    <fullName>New Zealand - NZ1</fullName>
+                    <default>false</default>
+                    <label>New Zealand - NZ1</label>
+                </value>
+                <value>
+                    <fullName>Norway - NO1</fullName>
+                    <default>false</default>
+                    <label>Norway - NO1</label>
+                </value>
+                <value>
+                    <fullName>Philippines - PH1</fullName>
+                    <default>false</default>
+                    <label>Philippines - PH1</label>
+                </value>
+                <value>
+                    <fullName>Saudi Arabia - SA5</fullName>
+                    <default>false</default>
+                    <label>Saudi Arabia - SA5</label>
+                </value>
+                <value>
+                    <fullName>Singapore - SG1</fullName>
+                    <default>false</default>
+                    <label>Singapore - SG1</label>
+                </value>
+                <value>
+                    <fullName>South Africa - ZA1</fullName>
+                    <default>false</default>
+                    <label>South Africa - ZA1</label>
+                </value>
+                <value>
+                    <fullName>Sweden - SE1</fullName>
+                    <default>false</default>
+                    <label>Sweden - SE1</label>
+                </value>
+                <value>
+                    <fullName>Switzerland - CH1</fullName>
+                    <default>false</default>
+                    <label>Switzerland - CH1</label>
+                </value>
+                <value>
+                    <fullName>UK - UK1</fullName>
+                    <default>false</default>
+                    <label>UK - UK1</label>
+                </value>
+                <value>
+                    <fullName>US - US5</fullName>
+                    <default>false</default>
+                    <label>US - US5</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Measurement__c</fullName>
+        <inlineHelpText>Please enter the unit of measurement for the Distance Travelled field.</inlineHelpText>
+        <label>Measurement</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Miles</fullName>
+                    <default>false</default>
+                    <label>Miles</label>
+                </value>
+                <value>
+                    <fullName>Kilometers</fullName>
+                    <default>false</default>
+                    <label>Kilometers</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Mileage_Rate_In_Project_Currency__c</fullName>
+        <description>This shows the value in Project Currency</description>
+        <formula>Value__c  /  Distance_Travelled__c</formula>
+        <label>Mileage Rate (In Project Currency)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Mileage_Rate__c</fullName>
+        <inlineHelpText>Please enter your mileage rate per unit of distance travelled.</inlineHelpText>
+        <label>Mileage Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Net_Value__c</fullName>
+        <formula>(Value__c) -( VAT_Amount__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Net Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Method__c</fullName>
+        <description>Specify the method in which the payment for the expenses was
+			made</description>
+        <label>Payment Method</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Paid cash</fullName>
+                    <default>false</default>
+                    <label>Paid cash</label>
+                </value>
+                <value>
+                    <fullName>Paid with company credit card</fullName>
+                    <default>false</default>
+                    <label>Paid with company credit card</label>
+                </value>
+                <value>
+                    <fullName>Paid directly by SHL</fullName>
+                    <default>false</default>
+                    <label>Paid directly by SHL</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Processed_Date__c</fullName>
+        <label>Processed Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Project_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Project Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Expenses2</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <label>Project</label>
+        <referenceTo>ProjectObject__c</referenceTo>
+        <relationshipLabel>Expenses</relationshipLabel>
+        <relationshipName>Expenses</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Receipt_Available__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Receipt Available</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Rechargeable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Rechargeable</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ReportFilterByOwner__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Resource__c  = $User.Id ,1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ReportFilterByOwner</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Resource__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Resource</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Expenses</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Resource_s_Home_Currency__c</fullName>
+        <inlineHelpText>Please enter the home currency of the resource.</inlineHelpText>
+        <label>Resource&apos;s Home Currency</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>AUD</fullName>
+                    <default>false</default>
+                    <label>AUD</label>
+                </value>
+                <value>
+                    <fullName>CAD</fullName>
+                    <default>false</default>
+                    <label>CAD</label>
+                </value>
+                <value>
+                    <fullName>CHF</fullName>
+                    <default>false</default>
+                    <label>CHF</label>
+                </value>
+                <value>
+                    <fullName>CNY</fullName>
+                    <default>false</default>
+                    <label>CNY</label>
+                </value>
+                <value>
+                    <fullName>DKK</fullName>
+                    <default>false</default>
+                    <label>DKK</label>
+                </value>
+                <value>
+                    <fullName>EUR</fullName>
+                    <default>false</default>
+                    <label>EUR</label>
+                </value>
+                <value>
+                    <fullName>GBP</fullName>
+                    <default>false</default>
+                    <label>GBP</label>
+                </value>
+                <value>
+                    <fullName>HKD</fullName>
+                    <default>false</default>
+                    <label>HKD</label>
+                </value>
+                <value>
+                    <fullName>INR</fullName>
+                    <default>false</default>
+                    <label>INR</label>
+                </value>
+                <value>
+                    <fullName>NOK</fullName>
+                    <default>false</default>
+                    <label>NOK</label>
+                </value>
+                <value>
+                    <fullName>NZD</fullName>
+                    <default>false</default>
+                    <label>NZD</label>
+                </value>
+                <value>
+                    <fullName>PHP</fullName>
+                    <default>false</default>
+                    <label>PHP</label>
+                </value>
+                <value>
+                    <fullName>SEK</fullName>
+                    <default>false</default>
+                    <label>SEK</label>
+                </value>
+                <value>
+                    <fullName>SGD</fullName>
+                    <default>false</default>
+                    <label>SGD</label>
+                </value>
+                <value>
+                    <fullName>USD</fullName>
+                    <default>false</default>
+                    <label>USD</label>
+                </value>
+                <value>
+                    <fullName>ZAR</fullName>
+                    <default>false</default>
+                    <label>ZAR</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Role_of_Requestor__c</fullName>
+        <inlineHelpText>Please enter the role of the requestor.</inlineHelpText>
+        <label>Role of Requestor</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Business Support</fullName>
+                    <default>false</default>
+                    <label>Business Support</label>
+                </value>
+                <value>
+                    <fullName>Delivery</fullName>
+                    <default>false</default>
+                    <label>Delivery</label>
+                </value>
+                <value>
+                    <fullName>Operations or Sales</fullName>
+                    <default>false</default>
+                    <label>Operations or Sales</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Submitted for Approval</fullName>
+                    <default>false</default>
+                    <label>Submitted for Approval</label>
+                </value>
+                <value>
+                    <fullName>Processed</fullName>
+                    <default>false</default>
+                    <label>Processed</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>true</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Submitted for Processing</fullName>
+                    <default>false</default>
+                    <label>Submitted for Processing</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_in_Home_currency__c</fullName>
+        <description>Changed to Number type otherwise reporting as same currency as value.</description>
+        <externalId>false</externalId>
+        <formula>IF(Exchange_rate__c&gt;0, Value__c * Exchange_rate__c, Value__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This is the value of the expense in the owner&apos;s home currency (Value x Exchange Rate).</inlineHelpText>
+        <label>Total in Home currency</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_s_Company_BU__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE($User.Company_BU__c,
+&quot;Abu Dhabi - AD1&quot;,&quot;Abu Dhabi - AD1&quot;,
+&quot;AP Region - P10&quot;, &quot;AP Region - P10&quot;,
+ &quot;Australia - AU1&quot;,&quot;Australia - AU1&quot;,
+&quot;Belgium - BE1&quot;,&quot;Belgium - BE1&quot;,
+&quot;Belgium SPS - BE5&quot;,&quot;Belgium SPS - BE5&quot;,
+&quot;Canada - CA1&quot;,&quot;Canada - CA1&quot;,
+&quot;Denmark - DK1&quot;,&quot;Denmark - DK1&quot;,
+&quot;Denmark SPS - DK5&quot;,&quot;Denmark SPS - DK5&quot;,
+&quot;EU Region - E50&quot;,&quot;EU Region - E50&quot;,
+&quot;Finland - FI1&quot;,&quot;Finland - FI1&quot;,
+&quot;France - FR1&quot;,&quot;France - FR1&quot;,
+&quot;France SPS - FR5&quot;,&quot;France SPS - FR5&quot;,
+&quot;Germany - DE1&quot;,&quot;Germany - DE1&quot;,
+&quot;Germany SPS - DE5&quot;,&quot;Germany SPS - DE5&quot;,
+&quot;Hong Kong - HK1&quot;,&quot;Hong Kong - HK1&quot;,
+&quot;India - IN1&quot;,&quot;India - IN1&quot;,&quot;Ireland - IE1&quot;,
+&quot;Ireland - IE1&quot;,&quot;Italy - IT1&quot;,&quot;Italy - IT1&quot;,
+&quot;Netherlands - NL1&quot;,&quot;Netherlands - NL1&quot;,
+&quot;Netherlands SPS - NL5&quot;,&quot;Netherlands SPS - NL5&quot;,
+&quot;New Zealand - NZ1&quot;,&quot;New Zealand - NZ1&quot;,
+&quot;Norway - NO1&quot;,&quot;Norway - NO1&quot;,
+&quot;Poland - PL1&quot;,&quot;Poland - PL1&quot;,
+&quot;Saudi Arabia - SA5&quot;,&quot;Saudi Arabia - SA5&quot;,
+&quot;Singapore - SG1&quot;,&quot;Singapore - SG1&quot;,
+&quot;South Africa - ZA1&quot;,&quot;South Africa - ZA1&quot;,
+&quot;Spain - ES1&quot;,&quot;Spain - ES1&quot;,
+&quot;Sweden - SE1&quot;,&quot;Sweden - SE1&quot;,
+&quot;Sweden SPS - SE5&quot;,&quot;Sweden SPS - SE5&quot;,
+&quot;Switzerland - CH1&quot;,&quot;Switzerland - CH1&quot;,
+&quot;UK SCS - UK5&quot;,&quot;UK SCS - UK5&quot;,
+&quot;UK - UK1&quot;,&quot;UK - UK1&quot;,
+&quot;US - US1&quot;,&quot;US - US1&quot;,
+&quot;none&quot;)</formula>
+        <label>User&apos;s Company BU</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VAT_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This field should contain all VAT or other Sales Taxes. Only enter these values if they are shown on your receipt.</inlineHelpText>
+        <label>VAT Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VAT_Applicable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Specify whether VAT is application for this expense</description>
+        <label>VAT Applicable</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VAT_Rate__c</fullName>
+        <description>Specify the VAT rate for the expense</description>
+        <inlineHelpText>This field should contain all VAT or other Sales Taxes. Only enter these values if they are shown on your receipt</inlineHelpText>
+        <label>VAT Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Value__c</fullName>
+        <inlineHelpText>Please enter the currency and value of the cost incurred.</inlineHelpText>
+        <label>Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Expense</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Project__c</columns>
+        <columns>Value__c</columns>
+        <columns>Resource__c</columns>
+        <columns>Date_Incurred__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterThan</operation>
+            <value>1/1/2022 12:00 AM</value>
+        </filters>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>E{000000}</displayFormat>
+        <label>Expense Ref</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Expenses</pluralLabel>
+    <recordTypes>
+        <fullName>Car_Travel_Expense</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>Expense_Compact_layout</compactLayoutAssignment>
+        <label>Car Travel Expense</label>
+        <picklistValues>
+            <picklist>Car_Type__c</picklist>
+            <values>
+                <fullName>Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Private</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Cost_Center__c</picklist>
+            <values>
+                <fullName>DLYLOCL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Country_Incurred__c</picklist>
+            <values>
+                <fullName>Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belgium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Czech Republic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denmark</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Egypt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>France</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Georgia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Germany</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hong Kong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>India</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ireland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Italy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Netherlands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Zealand</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Norway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Poland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Singapore</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Africa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spain</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sweden</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Switzerland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Thailand</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>United Arab Emirates</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Expense_Type_Certify__c</picklist>
+            <values>
+                <fullName>Airfares</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bank Charges - Account Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Ent Deductible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Ent Non Deductible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Meals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Meals - Alcohol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Car Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Charitable Donations %26 Gifts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Couriers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fuel costs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gift Vouchers %28Employee%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gift Vouchers %28Non SHL%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gifts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotels</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal - Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal - Staff Related</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meal Allowance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mileage ROW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mileage UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mileage US</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobiles%2FInternet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office supplies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parking Tolls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Postage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Printing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Professional Subscriptions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Transport %28not Taxi%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relocation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small IT Purchases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Purchases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staff Entertainment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Taxi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical%2FSkills Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training - Conference Attendance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training - Lunches etc%2E Deductible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training - Other Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Venue hire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Expense_Type__c</picklist>
+            <values>
+                <fullName>Car Travel - 651200 %2F 751200</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LBU__c</picklist>
+            <values>
+                <fullName>Abu Dhabi - AD1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia - AU1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belgium SPS - BE5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada - CA1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China - CN1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denmark - DK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finland - FI1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>France SPS - FR5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Germany SPS - DE5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hong Kong - HK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>India - IN1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Italy - IT1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Middle East - ME1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Netherlands SPS - NL5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Zealand - NZ1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Norway - NO1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Philippines - PH1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saudi Arabia - SA5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Singapore - SG1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Africa - ZA1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sweden - SE1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Switzerland - CH1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK - UK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - US5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Measurement__c</picklist>
+            <values>
+                <fullName>Kilometers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Miles</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Method__c</picklist>
+            <values>
+                <fullName>Paid cash</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid directly by SHL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid with company credit card</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Resource_s_Home_Currency__c</picklist>
+            <values>
+                <fullName>AUD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CNY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DKK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GBP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HKD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NOK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NZD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PHP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SEK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SGD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZAR</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Role_of_Requestor__c</picklist>
+            <values>
+                <fullName>Business Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operations or Sales</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Processed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted for Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted for Processing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Certify_Expenses</fullName>
+        <active>true</active>
+        <label>Certify Expenses</label>
+        <picklistValues>
+            <picklist>Car_Type__c</picklist>
+            <values>
+                <fullName>Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Private</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Cost_Center__c</picklist>
+            <values>
+                <fullName>DLYLOCL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Country_Incurred__c</picklist>
+            <values>
+                <fullName>Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belgium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Czech Republic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denmark</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Egypt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>France</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Georgia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Germany</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hong Kong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>India</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ireland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Italy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Netherlands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Zealand</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Norway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Poland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Singapore</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Africa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spain</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sweden</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Switzerland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Thailand</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>United Arab Emirates</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Expense_Type_Certify__c</picklist>
+            <values>
+                <fullName>Airfares</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bank Charges - Account Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Ent Deductible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Ent Non Deductible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Meals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Meals - Alcohol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Car Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Charitable Donations %26 Gifts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate Card Accruals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Couriers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Events</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fuel costs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gift Vouchers %28Employee%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gift Vouchers %28Non SHL%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gifts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotels</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal - Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal - Staff Related</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meal Allowance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mileage ROW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mileage UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mileage US</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobiles%2FInternet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office supplies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parking Tolls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Postage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Printing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Professional Subscriptions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Transport %28not Taxi%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relocation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small IT Purchases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Purchases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staff Entertainment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Taxi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical%2FSkills Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training - Conference Attendance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training - Lunches etc%2E Deductible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training - Other Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Venue hire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Expense_Type__c</picklist>
+            <values>
+                <fullName>Airfares - 651110 %2F 751110</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Books %26 Periodicals - 783100</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Ent Deductible - 751340</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Meals Deductible - 651320 %2F 751320</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Car Travel - 651200 %2F 751200</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fuel Costs - 603322</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gifts Deductible - 751350</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotels - 651310 %2F 751310</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>International Airfares - 651115</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internet - 651440</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meal Allowance - 603410 %2F 703410</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical - 603120 %2F 703120</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Minor Non-IT Equip - 784200</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Devices - 742310</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other - Complete Description field</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Benefits - 603412 %2F 703412</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parking Tolls - 651230</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Postage - 782000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Transport %28not Taxi%29 - 651130 %2F 751130</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relocation - 604710 %2F 704710</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small IT Purchases - 744440</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Purchases - 651510</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staff Ent Deductible - 651330 %2F 751330</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stationery - 784300</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Taxi - 651120 %2F 751120</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training - Lunches etc%2E Deductible - 635170</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Products COS - 635130</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vending Supplies - 704760</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Venue hire - 651415</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visa - 651140</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LBU__c</picklist>
+            <values>
+                <fullName>Abu Dhabi - AD1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia - AU1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belgium SPS - BE5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada - CA1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China - CN1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denmark - DK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finland - FI1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>France SPS - FR5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Germany SPS - DE5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hong Kong - HK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>India - IN1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Italy - IT1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Middle East - ME1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Netherlands SPS - NL5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Zealand - NZ1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Norway - NO1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Philippines - PH1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saudi Arabia - SA5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Singapore - SG1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Africa - ZA1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sweden - SE1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Switzerland - CH1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK - UK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - US5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Measurement__c</picklist>
+            <values>
+                <fullName>Kilometers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Miles</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Method__c</picklist>
+            <values>
+                <fullName>Paid cash</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid directly by SHL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid with company credit card</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Resource_s_Home_Currency__c</picklist>
+            <values>
+                <fullName>AUD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CNY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DKK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GBP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HKD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NOK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NZD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PHP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SEK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SGD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZAR</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Role_of_Requestor__c</picklist>
+            <values>
+                <fullName>Business Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operations or Sales</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Processed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted for Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted for Processing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>General_Expenses</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>Expense_Compact_layout</compactLayoutAssignment>
+        <label>General Expenses</label>
+        <picklistValues>
+            <picklist>Car_Type__c</picklist>
+            <values>
+                <fullName>Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Private</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Cost_Center__c</picklist>
+            <values>
+                <fullName>DLYLOCL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Country_Incurred__c</picklist>
+            <values>
+                <fullName>Australia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belgium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Czech Republic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denmark</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Egypt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>France</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Georgia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Germany</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hong Kong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>India</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ireland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Italy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Netherlands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Zealand</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Norway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Poland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Singapore</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Africa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spain</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sweden</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Switzerland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Thailand</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>United Arab Emirates</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Expense_Type_Certify__c</picklist>
+            <values>
+                <fullName>Airfares</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bank Charges - Account Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Ent Deductible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Ent Non Deductible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Meals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Meals - Alcohol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Car Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Charitable Donations %26 Gifts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Couriers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fuel costs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gift Vouchers %28Employee%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gift Vouchers %28Non SHL%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gifts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotels</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal - Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal - Staff Related</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meal Allowance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mileage ROW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mileage UK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mileage US</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobiles%2FInternet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office supplies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parking Tolls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Postage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Printing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Professional Subscriptions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Transport %28not Taxi%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relocation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small IT Purchases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Purchases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staff Entertainment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Taxi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical%2FSkills Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training - Conference Attendance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training - Lunches etc%2E Deductible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training - Other Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Venue hire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Expense_Type__c</picklist>
+            <values>
+                <fullName>Airfares - 651110 %2F 751110</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Books %26 Periodicals - 783100</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Ent Deductible - 751340</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Meals Deductible - 651320 %2F 751320</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fuel Costs - 603322</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gifts Deductible - 751350</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotels - 651310 %2F 751310</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>International Airfares - 651115</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internet - 651440</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meal Allowance - 603410 %2F 703410</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical - 603120 %2F 703120</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Minor Non-IT Equip - 784200</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Devices - 742310</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other - Complete Description field</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Benefits - 603412 %2F 703412</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parking Tolls - 651230</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Postage - 782000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Transport %28not Taxi%29 - 651130 %2F 751130</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relocation - 604710 %2F 704710</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small IT Purchases - 744440</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Purchases - 651510</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staff Ent Deductible - 651330 %2F 751330</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stationery - 784300</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Taxi - 651120 %2F 751120</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training - Lunches etc%2E Deductible - 635170</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Products COS - 635130</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vending Supplies - 704760</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Venue hire - 651415</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visa - 651140</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LBU__c</picklist>
+            <values>
+                <fullName>Abu Dhabi - AD1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia - AU1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belgium SPS - BE5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada - CA1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China - CN1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denmark - DK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finland - FI1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>France SPS - FR5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Germany SPS - DE5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hong Kong - HK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>India - IN1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Italy - IT1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Middle East - ME1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Netherlands SPS - NL5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Zealand - NZ1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Norway - NO1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Philippines - PH1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saudi Arabia - SA5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Singapore - SG1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Africa - ZA1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sweden - SE1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Switzerland - CH1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK - UK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - US5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Measurement__c</picklist>
+            <values>
+                <fullName>Kilometers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Miles</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Method__c</picklist>
+            <values>
+                <fullName>Paid cash</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid directly by SHL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid with company credit card</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Resource_s_Home_Currency__c</picklist>
+            <values>
+                <fullName>AUD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CNY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DKK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GBP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HKD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NOK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NZD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PHP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SEK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SGD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZAR</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Role_of_Requestor__c</picklist>
+            <values>
+                <fullName>Business Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operations or Sales</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Processed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted for Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted for Processing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Project__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Date_Incurred__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Expense_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Value__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Resource__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Date_Invoiced__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Rechargeable__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Resource__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Value__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Date_Invoiced__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Rechargeable__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Resource__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Project__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Date_Incurred__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Date_Invoiced__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Expense_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Resource__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Rechargeable__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Field_Required_for_Car_Expense</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL( Expense_Type__c, &quot;Car Travel - 651200 / 751200&quot;),
+OR(IF( Car_Travel_From__c=&quot;&quot;,TRUE,FALSE ),IF( Car_Travel_To__c=&quot;&quot;,TRUE,FALSE ),ISPICKVAL( Car_Type__c ,&quot;&quot;),ISNULL( Distance_Travelled__c ),ISPICKVAL( Measurement__c ,&quot;&quot;),ISNULL( Mileage_Rate__c )))</errorConditionFormula>
+        <errorMessage>Please complete all fields in the Car Information section for an Expense Type of &apos;Car Travel&apos;.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>New_Expense_for_Lex</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New Expense</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/lightning/cmp/c__NewExpense?c__id={!ProjectObject__c.Id},Resource__c={!User.Id},CurrencyIsoCode={!ProjectObject__c.CurrencyIsoCode}&amp;
+backgroundContext=/lightning/r/ProjectObject__c/{!ProjectObject__c.Id}/view</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Test</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Test</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>alert(&quot;ttsts&quot;);</url>
+    </webLinks>
+</CustomObject>

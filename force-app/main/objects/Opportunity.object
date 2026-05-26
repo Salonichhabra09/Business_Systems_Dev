@@ -1,0 +1,4180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Account_Approval_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Account.Status__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Approval Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_LBU__c</fullName>
+        <externalId>false</externalId>
+        <formula>RIGHT(TEXT( Account.BU__c ), 3)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account LBU</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Number__c</fullName>
+        <description>This field displays Account Number of Account linked to</description>
+        <externalId>false</externalId>
+        <formula>Account.Account_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Territory_Region__c</fullName>
+        <description>Field created to get territory Region</description>
+        <externalId>false</externalId>
+        <formula>IF(
+    CONTAINS(TEXT(Account.Territory__r.Region__c), &quot;-&quot;),
+    TRIM(
+        LEFT(
+            TEXT(Account.Territory__r.Region__c),
+            FIND(&quot;-&quot;, TEXT(Account.Territory__r.Region__c)) - 1
+        )
+    ),
+    TEXT(Account.Territory__r.Region__c)
+)</formula>
+        <label>Account Territory : Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Contract_Duration__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Contract Duration</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Record_Type_Name__c</fullName>
+        <label>Actual Record Type Name</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Configurator Opportunity</fullName>
+                    <default>false</default>
+                    <label>Configurator Opportunity</label>
+                </value>
+                <value>
+                    <fullName>GCSC Opportunity</fullName>
+                    <default>false</default>
+                    <label>GCSC Opportunity</label>
+                </value>
+                <value>
+                    <fullName>Standard Opportunity</fullName>
+                    <default>false</default>
+                    <label>Standard Opportunity</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Allow_Closed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>To create a checkbox &quot;Allow Closed?&quot;field so as to check if status is chenged to Closed/Won manually or by functionality(trigger).</description>
+        <label>Allow Closed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Annual_Contract_Value__c</fullName>
+        <label>Annual Contract Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Apply_Price_Increase_Switch__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Apply Price Increase Switch</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>At_Risk_Reason__c</fullName>
+        <label>At Risk Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Forecast_Category__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Renewal Value</fullName>
+                    <default>false</default>
+                    <label>Renewal Value</label>
+                </value>
+                <value>
+                    <fullName>Verbal Cancellation</fullName>
+                    <default>false</default>
+                    <label>Verbal Cancellation</label>
+                </value>
+                <value>
+                    <fullName>Written Cancellation</fullName>
+                    <default>false</default>
+                    <label>Written Cancellation</label>
+                </value>
+                <value>
+                    <fullName>Bad Debt</fullName>
+                    <default>false</default>
+                    <label>Bad Debt</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Renewal at Risk</controllingFieldValue>
+                <valueName>Renewal Value</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal at Risk</controllingFieldValue>
+                <valueName>Verbal Cancellation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal at Risk</controllingFieldValue>
+                <valueName>Written Cancellation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal at Risk</controllingFieldValue>
+                <valueName>Bad Debt</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal at Risk</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Auto_Close_Date__c</fullName>
+        <label>Auto Close Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Auto_Created_Renewal__c</fullName>
+        <formula>Renewal_Opportunity__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This Renewal Opportunity has been auto-created by SFDC as the Original Opportunity was a multi year deal</inlineHelpText>
+        <label>Auto-Created Renewal</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AutomationBypassDateTime__c</fullName>
+        <label>AutomationBypassDateTime</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Billing_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Billing Contact</label>
+        <lookupFilter>
+            <active>false</active>
+            <errorMessage>Billing Contact should be part of the account linked to the opportunity.</errorMessage>
+            <filterItems>
+                <field>$Source.AccountId</field>
+                <operation>equals</operation>
+                <valueField>Contact.AccountId</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Opportunities</relationshipLabel>
+        <relationshipName>Opportunities</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Business_Type__c</fullName>
+        <description>Choose the Opportunity Type that best describes the type of business pursued.  
+Reboost should only be used with In-Advance clients. 
+Cross-sell is simply New Business with a client that has a current commercial relationship.</description>
+        <label>Opportunity Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Expansion</fullName>
+                    <default>false</default>
+                    <label>Expansion</label>
+                </value>
+                <value>
+                    <fullName>Renewal</fullName>
+                    <default>false</default>
+                    <label>Renewal</label>
+                </value>
+                <value>
+                    <fullName>Debooking</fullName>
+                    <default>false</default>
+                    <label>Debooking / Adjustment</label>
+                </value>
+                <value>
+                    <fullName>Extension</fullName>
+                    <default>false</default>
+                    <label>Extension</label>
+                </value>
+                <value>
+                    <fullName>In Arrears</fullName>
+                    <default>false</default>
+                    <label>In Arrears</label>
+                </value>
+                <value>
+                    <fullName>In Advance</fullName>
+                    <default>false</default>
+                    <label>In Advance</label>
+                </value>
+                <value>
+                    <fullName>Managed Services</fullName>
+                    <default>false</default>
+                    <label>Managed Services</label>
+                </value>
+                <value>
+                    <fullName>Professional Services: non-subscription</fullName>
+                    <default>false</default>
+                    <label>Professional Services: non-subscription</label>
+                </value>
+                <value>
+                    <fullName>Top Up / Addition</fullName>
+                    <default>false</default>
+                    <label>Top Up / Addition</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CLM_Contract_Status__c</fullName>
+        <label>CLM Contract Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Waiting for OATS</fullName>
+                    <default>false</default>
+                    <label>Waiting for OATS</label>
+                </value>
+                <value>
+                    <fullName>Waiting for Sales Feedback</fullName>
+                    <default>false</default>
+                    <label>Waiting for Sales Feedback</label>
+                </value>
+                <value>
+                    <fullName>Waiting for External Review to Complete</fullName>
+                    <default>false</default>
+                    <label>Waiting for External Review to Complete</label>
+                </value>
+                <value>
+                    <fullName>Preparing for Signatures</fullName>
+                    <default>false</default>
+                    <label>Preparing for Signatures</label>
+                </value>
+                <value>
+                    <fullName>Sent for Signatures</fullName>
+                    <default>false</default>
+                    <label>Sent for Signatures</label>
+                </value>
+                <value>
+                    <fullName>Not Activated (Help Required)</fullName>
+                    <default>false</default>
+                    <label>Not Activated (Help Required)</label>
+                </value>
+                <value>
+                    <fullName>Activated</fullName>
+                    <default>false</default>
+                    <label>Activated</label>
+                </value>
+                <value>
+                    <fullName>Duplicate Flow - Killed</fullName>
+                    <default>false</default>
+                    <label>Duplicate Flow - Killed</label>
+                </value>
+                <value>
+                    <fullName>Duplicate Flow Killed – Closed/Lost</fullName>
+                    <default>false</default>
+                    <label>Duplicate Flow Killed – Closed/Lost</label>
+                </value>
+                <value>
+                    <fullName>Query raised to Sales</fullName>
+                    <default>false</default>
+                    <label>Query raised to Sales</label>
+                </value>
+                <value>
+                    <fullName>Auto-Activated by Salesforce</fullName>
+                    <default>false</default>
+                    <label>Auto-Activated by Salesforce</label>
+                </value>
+                <value>
+                    <fullName>Waiting for Requester to Review Contract</fullName>
+                    <default>false</default>
+                    <label>Waiting for Requester to Review Contract</label>
+                </value>
+                <value>
+                    <fullName>Waiting for Metadata Review</fullName>
+                    <default>false</default>
+                    <label>Waiting for Metadata Review</label>
+                </value>
+                <value>
+                    <fullName>Waiting for Start Date</fullName>
+                    <default>false</default>
+                    <label>Waiting for Start Date</label>
+                </value>
+                <value>
+                    <fullName>CLM process Initiated</fullName>
+                    <default>false</default>
+                    <label>CLM process Initiated</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CLM_Line_Information__c</fullName>
+        <description>This fields holds the information about opportunity lines like if it includes products or services etc.</description>
+        <label>CLM Line Information</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Includes Product</fullName>
+                    <default>false</default>
+                    <label>Includes Product</label>
+                </value>
+                <value>
+                    <fullName>Includes Service</fullName>
+                    <default>false</default>
+                    <label>Includes Service</label>
+                </value>
+                <value>
+                    <fullName>Includes In Arrears</fullName>
+                    <default>false</default>
+                    <label>Includes In Arrears</label>
+                </value>
+                <value>
+                    <fullName>Includes In Advance</fullName>
+                    <default>false</default>
+                    <label>Includes In Advance</label>
+                </value>
+                <value>
+                    <fullName>SOW Required</fullName>
+                    <default>false</default>
+                    <label>SOW Required</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Can_be_Auto_renewed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>This field is populated by the associated contract information linked to the original opportunity</inlineHelpText>
+        <label>Can be Auto-renewed?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Cancellation_Notice_Received__c</fullName>
+        <label>Cancellation Notice Received</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Cancellation_Rescind_Notice_Received__c</fullName>
+        <label>Cancellation Rescind Notice Received</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Central_PS_Attributed_to__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Central PS Attributed to</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunities3</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Challenger_opportunity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Challenger opportunity</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Change_Currency__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Change Currency?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Client_Business_Function__c</fullName>
+        <inlineHelpText>Select the client business function(s) where the talent level sits.</inlineHelpText>
+        <label>Function</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Finance</fullName>
+                    <default>false</default>
+                    <label>Finance</label>
+                </value>
+                <value>
+                    <fullName>HR</fullName>
+                    <default>false</default>
+                    <label>HR</label>
+                </value>
+                <value>
+                    <fullName>IT / Technology</fullName>
+                    <default>false</default>
+                    <label>IT / Technology</label>
+                </value>
+                <value>
+                    <fullName>Legal</fullName>
+                    <default>false</default>
+                    <label>Legal</label>
+                </value>
+                <value>
+                    <fullName>Customer Service / Call Center</fullName>
+                    <default>false</default>
+                    <label>Customer Service / Call Center</label>
+                </value>
+                <value>
+                    <fullName>Sales</fullName>
+                    <default>false</default>
+                    <label>Sales</label>
+                </value>
+                <value>
+                    <fullName>Marketing</fullName>
+                    <default>false</default>
+                    <label>Marketing</label>
+                </value>
+                <value>
+                    <fullName>Procurement &amp; Ops</fullName>
+                    <default>false</default>
+                    <label>Procurement &amp; Ops</label>
+                </value>
+                <value>
+                    <fullName>R&amp;D</fullName>
+                    <default>false</default>
+                    <label>R&amp;D</label>
+                </value>
+                <value>
+                    <fullName>Corporate Office</fullName>
+                    <default>false</default>
+                    <label>Corporate Office</label>
+                </value>
+                <value>
+                    <fullName>Enterprise Wide</fullName>
+                    <default>false</default>
+                    <label>Enterprise Wide</label>
+                </value>
+                <value>
+                    <fullName>Manufacturing</fullName>
+                    <default>false</default>
+                    <label>Manufacturing</label>
+                </value>
+                <value>
+                    <fullName>Store Front</fullName>
+                    <default>false</default>
+                    <label>Store Front</label>
+                </value>
+                <value>
+                    <fullName>Logistics &amp; warehouse</fullName>
+                    <default>false</default>
+                    <label>Logistics &amp; warehouse</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>7</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Closed_Lost_Reason_Additional_Details__c</fullName>
+        <label>Closed Won/Lost Reason Comments</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Closed_Lost_Reason__c</fullName>
+        <label>Closed Won/Lost Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>StageName</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Budget Limitations</fullName>
+                    <default>false</default>
+                    <label>Budget Limitations</label>
+                </value>
+                <value>
+                    <fullName>Contact Turnover</fullName>
+                    <default>false</default>
+                    <label>Contact Turnover</label>
+                </value>
+                <value>
+                    <fullName>Incorrect Contact</fullName>
+                    <default>false</default>
+                    <label>Incorrect Contact</label>
+                </value>
+                <value>
+                    <fullName>M&amp;A Activity</fullName>
+                    <default>false</default>
+                    <label>M&amp;A Activity</label>
+                </value>
+                <value>
+                    <fullName>Value Concerns</fullName>
+                    <default>false</default>
+                    <label>Value Concerns</label>
+                </value>
+                <value>
+                    <fullName>Finance Drop</fullName>
+                    <default>false</default>
+                    <label>Finance Drop</label>
+                </value>
+                <value>
+                    <fullName>Duplicate Opportunity</fullName>
+                    <default>false</default>
+                    <label>Duplicate Opportunity</label>
+                </value>
+                <value>
+                    <fullName>Invalid/market definitions</fullName>
+                    <default>false</default>
+                    <label>Invalid/market definitions</label>
+                </value>
+                <value>
+                    <fullName>Cannot meet requirements</fullName>
+                    <default>false</default>
+                    <label>Cannot meet requirements</label>
+                </value>
+                <value>
+                    <fullName>Cannot meet timescales</fullName>
+                    <default>false</default>
+                    <label>Cannot meet timescales</label>
+                </value>
+                <value>
+                    <fullName>Qualified Out</fullName>
+                    <default>false</default>
+                    <label>Qualified Out</label>
+                </value>
+                <value>
+                    <fullName>Opportunity clean up</fullName>
+                    <default>false</default>
+                    <label>Opportunity clean up</label>
+                </value>
+                <value>
+                    <fullName>Expertise</fullName>
+                    <default>false</default>
+                    <label>Expertise</label>
+                </value>
+                <value>
+                    <fullName>Solution</fullName>
+                    <default>false</default>
+                    <label>Solution</label>
+                </value>
+                <value>
+                    <fullName>Commercials</fullName>
+                    <default>false</default>
+                    <label>Commercials</label>
+                </value>
+                <value>
+                    <fullName>Service Failure</fullName>
+                    <default>false</default>
+                    <label>Service Failure</label>
+                </value>
+                <value>
+                    <fullName>Debooking</fullName>
+                    <default>false</default>
+                    <label>Debooking</label>
+                </value>
+                <value>
+                    <fullName>RFP - SHL Qualified Out</fullName>
+                    <default>false</default>
+                    <label>RFP - SHL Qualified Out</label>
+                </value>
+                <value>
+                    <fullName>Account Management / Client Relationship</fullName>
+                    <default>false</default>
+                    <label>Account Management / Client Relationship</label>
+                </value>
+                <value>
+                    <fullName>Duplicate / Data clean</fullName>
+                    <default>false</default>
+                    <label>Duplicate / Data clean</label>
+                </value>
+                <value>
+                    <fullName>Lost to Competitor</fullName>
+                    <default>false</default>
+                    <label>Lost to Competitor</label>
+                </value>
+                <value>
+                    <fullName>Customer Restructure</fullName>
+                    <default>false</default>
+                    <label>Customer Restructure</label>
+                </value>
+                <value>
+                    <fullName>Customer No Interest   - Other</fullName>
+                    <default>false</default>
+                    <label>Customer No Interest   - Other</label>
+                </value>
+                <value>
+                    <fullName>Customer Requirements</fullName>
+                    <default>false</default>
+                    <label>Customer Requirements</label>
+                </value>
+                <value>
+                    <fullName>Customer Budget Limitations</fullName>
+                    <default>false</default>
+                    <label>Customer Budget Limitations</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Contract Extension Requested</fullName>
+                    <default>false</default>
+                    <label>Contract Extension Requested</label>
+                </value>
+                <value>
+                    <fullName>Sanctioned Account</fullName>
+                    <default>false</default>
+                    <label>Sanctioned Account</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Budget Limitations</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Contact Turnover</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Incorrect Contact</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>M&amp;A Activity</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Value Concerns</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Finance Drop</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Duplicate Opportunity</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Invalid/market definitions</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Cannot meet requirements</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Cannot meet timescales</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Qualified Out</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Opportunity clean up</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <controllingFieldValue>Closed/Won</controllingFieldValue>
+                <valueName>Expertise</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <controllingFieldValue>Closed/Won</controllingFieldValue>
+                <valueName>Solution</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <controllingFieldValue>Closed/Won</controllingFieldValue>
+                <valueName>Commercials</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Service Failure</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Debooking</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>RFP - SHL Qualified Out</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Account Management / Client Relationship</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Duplicate / Data clean</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Lost to Competitor</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Customer Restructure</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Customer No Interest   - Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Customer Requirements</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Customer Budget Limitations</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed Lost</controllingFieldValue>
+                <valueName>Sanctioned Account</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Closed_Won_Lost_Reason_Sub_Type__c</fullName>
+        <label>Closed Won/Lost Sub Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Closed_Lost_Reason__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Capability</fullName>
+                    <default>false</default>
+                    <label>Capability</label>
+                </value>
+                <value>
+                    <fullName>Functionality</fullName>
+                    <default>false</default>
+                    <label>Functionality</label>
+                </value>
+                <value>
+                    <fullName>ROI realized</fullName>
+                    <default>false</default>
+                    <label>ROI realized</label>
+                </value>
+                <value>
+                    <fullName>Timescales</fullName>
+                    <default>false</default>
+                    <label>Timescales</label>
+                </value>
+                <value>
+                    <fullName>Content</fullName>
+                    <default>false</default>
+                    <label>Content</label>
+                </value>
+                <value>
+                    <fullName>Price</fullName>
+                    <default>false</default>
+                    <label>Price</label>
+                </value>
+                <value>
+                    <fullName>Contract</fullName>
+                    <default>false</default>
+                    <label>Contract</label>
+                </value>
+                <value>
+                    <fullName>Billing</fullName>
+                    <default>false</default>
+                    <label>Billing</label>
+                </value>
+                <value>
+                    <fullName>Payment Terms</fullName>
+                    <default>false</default>
+                    <label>Payment Terms</label>
+                </value>
+                <value>
+                    <fullName>GDPR</fullName>
+                    <default>false</default>
+                    <label>GDPR</label>
+                </value>
+                <value>
+                    <fullName>Reason</fullName>
+                    <default>false</default>
+                    <label>Reason</label>
+                </value>
+                <value>
+                    <fullName>Duplicate</fullName>
+                    <default>false</default>
+                    <label>Duplicate</label>
+                </value>
+                <value>
+                    <fullName>Created in error</fullName>
+                    <default>false</default>
+                    <label>Created in error</label>
+                </value>
+                <value>
+                    <fullName>M&amp;A</fullName>
+                    <default>false</default>
+                    <label>M&amp;A</label>
+                </value>
+                <value>
+                    <fullName>Contact Churn</fullName>
+                    <default>false</default>
+                    <label>Contact Churn</label>
+                </value>
+                <value>
+                    <fullName>New contact</fullName>
+                    <default>false</default>
+                    <label>New contact</label>
+                </value>
+                <value>
+                    <fullName>Dept Closure</fullName>
+                    <default>false</default>
+                    <label>Dept Closure</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Solution</controllingFieldValue>
+                <valueName>Capability</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Solution</controllingFieldValue>
+                <valueName>Functionality</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Solution</controllingFieldValue>
+                <valueName>ROI realized</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Solution</controllingFieldValue>
+                <valueName>Timescales</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Solution</controllingFieldValue>
+                <valueName>Content</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Commercials</controllingFieldValue>
+                <valueName>Price</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Commercials</controllingFieldValue>
+                <valueName>Contract</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Commercials</controllingFieldValue>
+                <valueName>Billing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Commercials</controllingFieldValue>
+                <valueName>Payment Terms</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Commercials</controllingFieldValue>
+                <valueName>GDPR</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Debooking</controllingFieldValue>
+                <valueName>Reason</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Duplicate / Data clean</controllingFieldValue>
+                <valueName>Duplicate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Duplicate / Data clean</controllingFieldValue>
+                <valueName>Created in error</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Customer Restructure</controllingFieldValue>
+                <valueName>M&amp;A</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Customer Restructure</controllingFieldValue>
+                <valueName>Contact Churn</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Customer Restructure</controllingFieldValue>
+                <valueName>New contact</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Customer Restructure</controllingFieldValue>
+                <valueName>Dept Closure</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Competitor_winner__c</fullName>
+        <inlineHelpText>These field needs to be filled out when an Opportunity is lost to a Competitor.</inlineHelpText>
+        <label>Competitor winner</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>A&amp;DC</fullName>
+                    <default>false</default>
+                    <label>A&amp;DC</label>
+                </value>
+                <value>
+                    <fullName>Aon</fullName>
+                    <default>false</default>
+                    <label>Aon</label>
+                </value>
+                <value>
+                    <fullName>APT</fullName>
+                    <default>false</default>
+                    <label>APT</label>
+                </value>
+                <value>
+                    <fullName>Assess-Systems</fullName>
+                    <default>false</default>
+                    <label>Assess-Systems</label>
+                </value>
+                <value>
+                    <fullName>Axiometrics</fullName>
+                    <default>false</default>
+                    <label>Axiometrics</label>
+                </value>
+                <value>
+                    <fullName>Batrus Hollweg International (BHI)</fullName>
+                    <default>false</default>
+                    <label>Batrus Hollweg International (BHI)</label>
+                </value>
+                <value>
+                    <fullName>BayState</fullName>
+                    <default>false</default>
+                    <label>BayState</label>
+                </value>
+                <value>
+                    <fullName>Bernard Hodes</fullName>
+                    <default>false</default>
+                    <label>Bernard Hodes</label>
+                </value>
+                <value>
+                    <fullName>Caliper</fullName>
+                    <default>false</default>
+                    <label>Caliper</label>
+                </value>
+                <value>
+                    <fullName>Censeo</fullName>
+                    <default>false</default>
+                    <label>Censeo</label>
+                </value>
+                <value>
+                    <fullName>Chandler MacLeod</fullName>
+                    <default>false</default>
+                    <label>Chandler MacLeod</label>
+                </value>
+                <value>
+                    <fullName>Corvirtus</fullName>
+                    <default>false</default>
+                    <label>Corvirtus</label>
+                </value>
+                <value>
+                    <fullName>CPP</fullName>
+                    <default>false</default>
+                    <label>CPP</label>
+                </value>
+                <value>
+                    <fullName>Criteria Corp</fullName>
+                    <default>false</default>
+                    <label>Criteria Corp</label>
+                </value>
+                <value>
+                    <fullName>DDI</fullName>
+                    <default>false</default>
+                    <label>DDI</label>
+                </value>
+                <value>
+                    <fullName>Emergentics</fullName>
+                    <default>false</default>
+                    <label>Emergentics</label>
+                </value>
+                <value>
+                    <fullName>Employtest</fullName>
+                    <default>false</default>
+                    <label>Employtest</label>
+                </value>
+                <value>
+                    <fullName>eSkills</fullName>
+                    <default>false</default>
+                    <label>eSkills</label>
+                </value>
+                <value>
+                    <fullName>ETC</fullName>
+                    <default>false</default>
+                    <label>ETC</label>
+                </value>
+                <value>
+                    <fullName>Evolv OnDemand</fullName>
+                    <default>false</default>
+                    <label>Evolv OnDemand</label>
+                </value>
+                <value>
+                    <fullName>FindingPotential</fullName>
+                    <default>false</default>
+                    <label>FindingPotential</label>
+                </value>
+                <value>
+                    <fullName>FirstAdvantage</fullName>
+                    <default>false</default>
+                    <label>FirstAdvantage</label>
+                </value>
+                <value>
+                    <fullName>FurstPerson</fullName>
+                    <default>false</default>
+                    <label>FurstPerson</label>
+                </value>
+                <value>
+                    <fullName>Gallup</fullName>
+                    <default>false</default>
+                    <label>Gallup</label>
+                </value>
+                <value>
+                    <fullName>Gartner</fullName>
+                    <default>false</default>
+                    <label>Gartner</label>
+                </value>
+                <value>
+                    <fullName>Gettinghired.com</fullName>
+                    <default>false</default>
+                    <label>Gettinghired.com</label>
+                </value>
+                <value>
+                    <fullName>Hogan</fullName>
+                    <default>false</default>
+                    <label>Hogan</label>
+                </value>
+                <value>
+                    <fullName>Hudson</fullName>
+                    <default>false</default>
+                    <label>Hudson</label>
+                </value>
+                <value>
+                    <fullName>Inscape</fullName>
+                    <default>false</default>
+                    <label>Inscape</label>
+                </value>
+                <value>
+                    <fullName>Internal Resources</fullName>
+                    <default>false</default>
+                    <label>Internal Resources</label>
+                </value>
+                <value>
+                    <fullName>JobApp Network</fullName>
+                    <default>false</default>
+                    <label>JobApp Network</label>
+                </value>
+                <value>
+                    <fullName>Kenexa</fullName>
+                    <default>false</default>
+                    <label>Kenexa</label>
+                </value>
+                <value>
+                    <fullName>Knowlagent</fullName>
+                    <default>false</default>
+                    <label>Knowlagent</label>
+                </value>
+                <value>
+                    <fullName>Kronos</fullName>
+                    <default>false</default>
+                    <label>Kronos</label>
+                </value>
+                <value>
+                    <fullName>LIMRA/LOMA</fullName>
+                    <default>false</default>
+                    <label>LIMRA/LOMA</label>
+                </value>
+                <value>
+                    <fullName>Onetest</fullName>
+                    <default>false</default>
+                    <label>Onetest</label>
+                </value>
+                <value>
+                    <fullName>PageUpPeople</fullName>
+                    <default>false</default>
+                    <label>PageUpPeople</label>
+                </value>
+                <value>
+                    <fullName>Pearson</fullName>
+                    <default>false</default>
+                    <label>Pearson</label>
+                </value>
+                <value>
+                    <fullName>PeopleAnswers</fullName>
+                    <default>false</default>
+                    <label>PeopleAnswers</label>
+                </value>
+                <value>
+                    <fullName>Peter Berry (Hogan Reseller)</fullName>
+                    <default>false</default>
+                    <label>Peter Berry (Hogan Reseller)</label>
+                </value>
+                <value>
+                    <fullName>Predictive Index</fullName>
+                    <default>false</default>
+                    <label>Predictive Index</label>
+                </value>
+                <value>
+                    <fullName>Profiles Int&apos;l</fullName>
+                    <default>false</default>
+                    <label>Profiles Int&apos;l</label>
+                </value>
+                <value>
+                    <fullName>PSI</fullName>
+                    <default>false</default>
+                    <label>PSI</label>
+                </value>
+                <value>
+                    <fullName>Psychometrics</fullName>
+                    <default>false</default>
+                    <label>Psychometrics</label>
+                </value>
+                <value>
+                    <fullName>Roundpegg</fullName>
+                    <default>false</default>
+                    <label>Roundpegg</label>
+                </value>
+                <value>
+                    <fullName>Saville</fullName>
+                    <default>false</default>
+                    <label>Saville</label>
+                </value>
+                <value>
+                    <fullName>Select International</fullName>
+                    <default>false</default>
+                    <label>Select International</label>
+                </value>
+                <value>
+                    <fullName>Selection Advantage</fullName>
+                    <default>false</default>
+                    <label>Selection Advantage</label>
+                </value>
+                <value>
+                    <fullName>Shaker Consulting</fullName>
+                    <default>false</default>
+                    <label>Shaker Consulting</label>
+                </value>
+                <value>
+                    <fullName>SHL</fullName>
+                    <default>false</default>
+                    <label>SHL</label>
+                </value>
+                <value>
+                    <fullName>South Management Group (SMG)</fullName>
+                    <default>false</default>
+                    <label>South Management Group (SMG)</label>
+                </value>
+                <value>
+                    <fullName>Talent2</fullName>
+                    <default>false</default>
+                    <label>Talent2</label>
+                </value>
+                <value>
+                    <fullName>TalentLens</fullName>
+                    <default>false</default>
+                    <label>TalentLens</label>
+                </value>
+                <value>
+                    <fullName>Talx PAN</fullName>
+                    <default>false</default>
+                    <label>Talx PAN</label>
+                </value>
+                <value>
+                    <fullName>TestGrid</fullName>
+                    <default>false</default>
+                    <label>TestGrid</label>
+                </value>
+                <value>
+                    <fullName>Testsource</fullName>
+                    <default>false</default>
+                    <label>Testsource</label>
+                </value>
+                <value>
+                    <fullName>Total Testing</fullName>
+                    <default>false</default>
+                    <label>Total Testing</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+                <value>
+                    <fullName>Valtera</fullName>
+                    <default>false</default>
+                    <label>Valtera</label>
+                </value>
+                <value>
+                    <fullName>Vangent</fullName>
+                    <default>false</default>
+                    <label>Vangent</label>
+                </value>
+                <value>
+                    <fullName>Wonderlic</fullName>
+                    <default>false</default>
+                    <label>Wonderlic</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Content_Groups__c</fullName>
+        <label>Content Groups</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ABC Safety Series</fullName>
+                    <default>false</default>
+                    <label>ABC Safety Series</label>
+                </value>
+                <value>
+                    <fullName>Accounting and Finance</fullName>
+                    <default>false</default>
+                    <label>Accounting and Finance</label>
+                </value>
+                <value>
+                    <fullName>Admin-Clerical</fullName>
+                    <default>false</default>
+                    <label>Admin-Clerical</label>
+                </value>
+                <value>
+                    <fullName>Aptitude</fullName>
+                    <default>false</default>
+                    <label>Aptitude</label>
+                </value>
+                <value>
+                    <fullName>Assessment Series</fullName>
+                    <default>false</default>
+                    <label>Assessment Series</label>
+                </value>
+                <value>
+                    <fullName>BBIT</fullName>
+                    <default>false</default>
+                    <label>BBIT</label>
+                </value>
+                <value>
+                    <fullName>Beavioral</fullName>
+                    <default>false</default>
+                    <label>Beavioral</label>
+                </value>
+                <value>
+                    <fullName>Beta</fullName>
+                    <default>false</default>
+                    <label>Beta</label>
+                </value>
+                <value>
+                    <fullName>Business Skills</fullName>
+                    <default>false</default>
+                    <label>Business Skills</label>
+                </value>
+                <value>
+                    <fullName>CAB</fullName>
+                    <default>false</default>
+                    <label>CAB</label>
+                </value>
+                <value>
+                    <fullName>Call Center</fullName>
+                    <default>false</default>
+                    <label>Call Center</label>
+                </value>
+                <value>
+                    <fullName>Call Center Scenario</fullName>
+                    <default>false</default>
+                    <label>Call Center Scenario</label>
+                </value>
+                <value>
+                    <fullName>CPQ</fullName>
+                    <default>false</default>
+                    <label>CPQ</label>
+                </value>
+                <value>
+                    <fullName>Customer Service Attitude</fullName>
+                    <default>false</default>
+                    <label>Customer Service Attitude</label>
+                </value>
+                <value>
+                    <fullName>Demo</fullName>
+                    <default>false</default>
+                    <label>Demo</label>
+                </value>
+                <value>
+                    <fullName>Entry-Level Solutions</fullName>
+                    <default>false</default>
+                    <label>Entry-Level Solutions</label>
+                </value>
+                <value>
+                    <fullName>Executive Solutions</fullName>
+                    <default>false</default>
+                    <label>Executive Solutions</label>
+                </value>
+                <value>
+                    <fullName>Global Cognitive Index</fullName>
+                    <default>false</default>
+                    <label>Global Cognitive Index</label>
+                </value>
+                <value>
+                    <fullName>Healthcare</fullName>
+                    <default>false</default>
+                    <label>Healthcare</label>
+                </value>
+                <value>
+                    <fullName>Healthcare Suite</fullName>
+                    <default>false</default>
+                    <label>Healthcare Suite</label>
+                </value>
+                <value>
+                    <fullName>Human Resources</fullName>
+                    <default>false</default>
+                    <label>Human Resources</label>
+                </value>
+                <value>
+                    <fullName>Indutrial</fullName>
+                    <default>false</default>
+                    <label>Indutrial</label>
+                </value>
+                <value>
+                    <fullName>Informaiton Technology</fullName>
+                    <default>false</default>
+                    <label>Informaiton Technology</label>
+                </value>
+                <value>
+                    <fullName>Intermediate Solutions</fullName>
+                    <default>false</default>
+                    <label>Intermediate Solutions</label>
+                </value>
+                <value>
+                    <fullName>Interview</fullName>
+                    <default>false</default>
+                    <label>Interview</label>
+                </value>
+                <value>
+                    <fullName>Job Performance &amp; Fit</fullName>
+                    <default>false</default>
+                    <label>Job Performance &amp; Fit</label>
+                </value>
+                <value>
+                    <fullName>Legal</fullName>
+                    <default>false</default>
+                    <label>Legal</label>
+                </value>
+                <value>
+                    <fullName>Manager Solutions</fullName>
+                    <default>false</default>
+                    <label>Manager Solutions</label>
+                </value>
+                <value>
+                    <fullName>Multimedia &amp; Web Design</fullName>
+                    <default>false</default>
+                    <label>Multimedia &amp; Web Design</label>
+                </value>
+                <value>
+                    <fullName>Personality</fullName>
+                    <default>false</default>
+                    <label>Personality</label>
+                </value>
+                <value>
+                    <fullName>Qwiz Primary Skills</fullName>
+                    <default>false</default>
+                    <label>Qwiz Primary Skills</label>
+                </value>
+                <value>
+                    <fullName>Retail Suite</fullName>
+                    <default>false</default>
+                    <label>Retail Suite</label>
+                </value>
+                <value>
+                    <fullName>Safety</fullName>
+                    <default>false</default>
+                    <label>Safety</label>
+                </value>
+                <value>
+                    <fullName>Sales Suite</fullName>
+                    <default>false</default>
+                    <label>Sales Suite</label>
+                </value>
+                <value>
+                    <fullName>Software Skills</fullName>
+                    <default>false</default>
+                    <label>Software Skills</label>
+                </value>
+                <value>
+                    <fullName>Solution Series 1</fullName>
+                    <default>false</default>
+                    <label>Solution Series 1</label>
+                </value>
+                <value>
+                    <fullName>Solution Series 2</fullName>
+                    <default>false</default>
+                    <label>Solution Series 2</label>
+                </value>
+                <value>
+                    <fullName>Solution Series 3</fullName>
+                    <default>false</default>
+                    <label>Solution Series 3</label>
+                </value>
+                <value>
+                    <fullName>Solution Series 4</fullName>
+                    <default>false</default>
+                    <label>Solution Series 4</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contract_Number_System_Use__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contract.ContractNumber</formula>
+        <label>Contract Number(System Use)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cross_Border_Opportunity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Cross Border Opportunity</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Custom_Contract_Duration__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If standard contract duration is other, this field requires value (in months)</inlineHelpText>
+        <label>Custom Contract Duration (In Months)</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_left_to_Auto_Close__c</fullName>
+        <description>Used to Calculate the number of days which are left to auto close an opportunity</description>
+        <externalId>false</externalId>
+        <formula>Auto_Close_Date__c - TODAY()</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days left to Auto Close</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_left_to_Close_Opp__c</fullName>
+        <description>This field is used on back end to check number of days left to close the opportunity.</description>
+        <externalId>false</externalId>
+        <formula>CloseDate  - TODAY()</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This field is used on back end to check number of days left to close the opportunity.</inlineHelpText>
+        <label>Days left to Close Opp</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_remaining_from_annual_subscription__c</fullName>
+        <externalId>false</externalId>
+        <label>Days remaining from annual subs (Legacy)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Discount_Approval_Status__c</fullName>
+        <label>Discount Approval Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Applicable for Approval</fullName>
+                    <default>false</default>
+                    <label>Applicable for Approval</label>
+                </value>
+                <value>
+                    <fullName>Submitted for Approval</fullName>
+                    <default>false</default>
+                    <label>Submitted for Approval</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Recalled</fullName>
+                    <default>false</default>
+                    <label>Recalled</label>
+                </value>
+                <value>
+                    <fullName>Escalated Level 1</fullName>
+                    <default>false</default>
+                    <label>Escalated Level 1</label>
+                </value>
+                <value>
+                    <fullName>Escalated Level 2</fullName>
+                    <default>false</default>
+                    <label>Escalated Level 2</label>
+                </value>
+                <value>
+                    <fullName>Re-Approval Required</fullName>
+                    <default>false</default>
+                    <label>Re-Approval Required</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Discount_Reason_Code__c</fullName>
+        <label>Discount Reason Code</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Competitive Pressure</fullName>
+                    <default>false</default>
+                    <label>Competitive Pressure</label>
+                </value>
+                <value>
+                    <fullName>Strategic Deal</fullName>
+                    <default>false</default>
+                    <label>Strategic Deal</label>
+                </value>
+                <value>
+                    <fullName>Customer Retention</fullName>
+                    <default>false</default>
+                    <label>Customer Retention</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Discount_Reason_Justification__c</fullName>
+        <label>Discount Reason/Justification</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EACV_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>EACV__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>EACV Formula (Legacy)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EACV__c</fullName>
+        <formula>IF(RecordType.DeveloperName = &apos;Configurator_Opportunity&apos;,IF(Total_Product_Count__c==0,Amount,  RAG_Indicator_Amber__c + RAG_Indicator_Green__c),Running_total_of_subscription_amount__c + Running_total_of_non_subscription_amount__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Estimated Annual Contract Value – first year value where subscriptions are prorated to 1 year. For Ignite Opportunities this will equal Total Sales Price until Product and Assessment is uploaded.</inlineHelpText>
+        <label>EACV (Legacy)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Earliest_Start_Date_Plus_Leap_Year__c</fullName>
+        <label>Earliest Start Date Plus Leap Year</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Earliest_Start_Date__c</fullName>
+        <label>Earliest Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Eligible_for_Auto_Close__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Eligible for Auto-Close?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Forecast_Category__c</fullName>
+        <inlineHelpText>Please select “Commit” if you want this opportunity to be counted in your Forecast number. Please select Pipeline or Renewal at Risk if you do not want it to be included.</inlineHelpText>
+        <label>Forecast Category</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Business_Type__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Commit</fullName>
+                    <default>false</default>
+                    <label>Commit</label>
+                </value>
+                <value>
+                    <fullName>Pipeline</fullName>
+                    <default>true</default>
+                    <label>Pipeline</label>
+                </value>
+                <value>
+                    <fullName>Renewal at Risk</fullName>
+                    <default>false</default>
+                    <label>Renewal at Risk</label>
+                </value>
+                <value>
+                    <fullName>Forecast</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Forecast</label>
+                </value>
+                <value>
+                    <fullName>Parked</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Parked</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Professional Services: non-subscription</controllingFieldValue>
+                <controllingFieldValue>Top Up / Addition</controllingFieldValue>
+                <controllingFieldValue>Renewal</controllingFieldValue>
+                <controllingFieldValue>Extension</controllingFieldValue>
+                <controllingFieldValue>Debooking</controllingFieldValue>
+                <controllingFieldValue>Expansion</controllingFieldValue>
+                <controllingFieldValue>In Arrears</controllingFieldValue>
+                <controllingFieldValue>In Advance</controllingFieldValue>
+                <controllingFieldValue>Managed Services</controllingFieldValue>
+                <valueName>Commit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Professional Services: non-subscription</controllingFieldValue>
+                <controllingFieldValue>Top Up / Addition</controllingFieldValue>
+                <controllingFieldValue>Renewal</controllingFieldValue>
+                <controllingFieldValue>Extension</controllingFieldValue>
+                <controllingFieldValue>Debooking</controllingFieldValue>
+                <controllingFieldValue>Expansion</controllingFieldValue>
+                <controllingFieldValue>In Arrears</controllingFieldValue>
+                <controllingFieldValue>In Advance</controllingFieldValue>
+                <controllingFieldValue>Managed Services</controllingFieldValue>
+                <valueName>Pipeline</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal</controllingFieldValue>
+                <controllingFieldValue>Debooking</controllingFieldValue>
+                <valueName>Renewal at Risk</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FormalTender__c</fullName>
+        <description>Earlier this field was a Checkbox. For SSE-22566 we are re-using this field and changed its data type to picklist
+This field will be marked as &apos;Renewal Created&apos; on cloning PH Opportunity from Auto Closed Closed Lost Oppty and will be marked as &apos;Cloned&apos; for new cloned PH Oppty (System Used Only)</description>
+        <label>Renewal Created/ Cloned?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cloned</fullName>
+                    <default>false</default>
+                    <label>Cloned</label>
+                </value>
+                <value>
+                    <fullName>Renewal Created</fullName>
+                    <default>false</default>
+                    <label>Renewal Created</label>
+                </value>
+                <value>
+                    <fullName>Extension Created</fullName>
+                    <default>false</default>
+                    <label>Extension Created</label>
+                </value>
+                <value>
+                    <fullName>Synced Variation</fullName>
+                    <default>false</default>
+                    <label>Synced Variation</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Future_Product_Total_Price__c</fullName>
+        <label>Future Product Total Price</label>
+        <summarizedField>Future_Product__c.Total_Price__c</summarizedField>
+        <summaryForeignKey>Future_Product__c.Opportunity__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>GCSC__c</fullName>
+        <label>GCSC Method</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Phone</fullName>
+                    <default>false</default>
+                    <label>Phone</label>
+                </value>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>false</default>
+                    <label>Email</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Includes_Central_Professional_Services__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Includes Central Professional Services</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Includes_Managed_Services__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Includes Managed Services</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Includes_Multimedia_Services__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>Multimedia services include custom(bespoke) animation, video, and/or simulations.</inlineHelpText>
+        <label>Includes Multimedia Services</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Integrated_Solution__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>Tick if an Integrated solution (e.g. with Taleo) is in some way part of this opportunity</inlineHelpText>
+        <label>Integrated Solution?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Subsrciption__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Field will get checked when ever a renewal opportunity is created from an order with subscription order line.</description>
+        <label>Is Subscription?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Consultant__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Lead Consultant</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunities1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Stage__c</fullName>
+        <label>Lead Stage</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>SAO</fullName>
+                    <default>false</default>
+                    <label>SAO</label>
+                </value>
+                <value>
+                    <fullName>SGO</fullName>
+                    <default>true</default>
+                    <label>SGO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Legal_Owner__c</fullName>
+        <inlineHelpText>To be completed by the Legal team</inlineHelpText>
+        <label>Legal Opportunity Owner</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Emmy Hackett</fullName>
+                    <default>false</default>
+                    <label>Emmy Hackett</label>
+                </value>
+                <value>
+                    <fullName>Tyson Wilson</fullName>
+                    <default>false</default>
+                    <label>Tyson Wilson</label>
+                </value>
+                <value>
+                    <fullName>Paul Hudson</fullName>
+                    <default>false</default>
+                    <label>Paul Hudson</label>
+                </value>
+                <value>
+                    <fullName>Rachel Short</fullName>
+                    <default>false</default>
+                    <label>Rachel Short</label>
+                </value>
+                <value>
+                    <fullName>Kanu Datha</fullName>
+                    <default>false</default>
+                    <label>Kanu Datha</label>
+                </value>
+                <value>
+                    <fullName>Pippa Smith</fullName>
+                    <default>false</default>
+                    <label>Pippa Smith</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Likelihood__c</fullName>
+        <label>Likelihood</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0%</fullName>
+                    <default>false</default>
+                    <label>0%</label>
+                </value>
+                <value>
+                    <fullName>30%</fullName>
+                    <default>false</default>
+                    <label>30%</label>
+                </value>
+                <value>
+                    <fullName>70%</fullName>
+                    <default>true</default>
+                    <label>70%</label>
+                </value>
+                <value>
+                    <fullName>90%</fullName>
+                    <default>false</default>
+                    <label>90%</label>
+                </value>
+                <value>
+                    <fullName>100%</fullName>
+                    <default>false</default>
+                    <label>100%</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>MMS_Next_Step_Description__c</fullName>
+        <label>MMS Next Step Description</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>MMS_Next_Step_Due_Date__c</fullName>
+        <label>MMS Next Step Due Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>MMS_Next__c</fullName>
+        <label>MMS Next Step</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Prospecting</fullName>
+                    <default>false</default>
+                    <label>Prospecting</label>
+                </value>
+                <value>
+                    <fullName>01 Initial Presentation</fullName>
+                    <default>false</default>
+                    <label>01 Initial Presentation</label>
+                </value>
+                <value>
+                    <fullName>02 Investigation</fullName>
+                    <default>false</default>
+                    <label>02 Investigation</label>
+                </value>
+                <value>
+                    <fullName>03 Justification</fullName>
+                    <default>false</default>
+                    <label>03 Justification</label>
+                </value>
+                <value>
+                    <fullName>04 Very important presentation</fullName>
+                    <default>false</default>
+                    <label>04 Very important presentation</label>
+                </value>
+                <value>
+                    <fullName>05 Proposal</fullName>
+                    <default>false</default>
+                    <label>05 Proposal</label>
+                </value>
+                <value>
+                    <fullName>06 Budget</fullName>
+                    <default>false</default>
+                    <label>06 Budget</label>
+                </value>
+                <value>
+                    <fullName>07 Close</fullName>
+                    <default>false</default>
+                    <label>07 Close</label>
+                </value>
+                <value>
+                    <fullName>Closed-Lost</fullName>
+                    <default>false</default>
+                    <label>Closed-Lost</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>MS_Opportunity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field helps to Identify if the Opportunity is created by MS user</description>
+        <label>MS Opportunity</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MS_Value_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity_MS_Value__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MS Value Formula</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Manager_s_Notes__c</fullName>
+        <label>Manager&apos;s Notes</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Marketing_Attribution__c</fullName>
+        <label>Marketing Attribution</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Generated</fullName>
+                    <default>false</default>
+                    <label>Generated</label>
+                </value>
+                <value>
+                    <fullName>Influenced</fullName>
+                    <default>false</default>
+                    <label>Influenced</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Multi_YearDeal__c</fullName>
+        <defaultValue>TEXT(1)</defaultValue>
+        <description>Describes length of Contract signed</description>
+        <label>Contract length (In Month)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>true</default>
+                    <label>0 - 12</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>13 - 24</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>25 - 36</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>37 - 48</label>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>49 - 60</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>NVM_Credit_Card_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>NVM Payment ID</label>
+        <length>11</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Next_Step_Manager_Notes_Tracking__c</fullName>
+        <label>Next Step/ Manager Notes Tracking</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>NoOfProducts__c</fullName>
+        <label>NoOfProducts</label>
+        <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Non_Standard_T_s_C_s__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Non Standard T&apos;s &amp; C&apos;s</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Offering__c</fullName>
+        <description>This field has been created as a part of Nomenclature (SSE--113)</description>
+        <inlineHelpText>Select the Offering(s) or Solution(s) that best define the product the client is buying.</inlineHelpText>
+        <label>Offerings</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cognitive (Verify, G+ etc)</fullName>
+                    <default>false</default>
+                    <label>Cognitive (Verify, G+ etc)</label>
+                </value>
+                <value>
+                    <fullName>Cognitive Interactive (Verify Interactive)</fullName>
+                    <default>false</default>
+                    <label>Cognitive Interactive (Verify Interactive)</label>
+                </value>
+                <value>
+                    <fullName>OPQ</fullName>
+                    <default>false</default>
+                    <label>OPQ</label>
+                </value>
+                <value>
+                    <fullName>APTA</fullName>
+                    <default>false</default>
+                    <label>APTA</label>
+                </value>
+                <value>
+                    <fullName>MQ</fullName>
+                    <default>false</default>
+                    <label>MQ</label>
+                </value>
+                <value>
+                    <fullName>PJM</fullName>
+                    <default>false</default>
+                    <label>PJM</label>
+                </value>
+                <value>
+                    <fullName>Language</fullName>
+                    <default>false</default>
+                    <label>Language</label>
+                </value>
+                <value>
+                    <fullName>Skills: Technology</fullName>
+                    <default>false</default>
+                    <label>Skills: Technology</label>
+                </value>
+                <value>
+                    <fullName>Skills: non-Technology</fullName>
+                    <default>false</default>
+                    <label>Skills: non-Technology</label>
+                </value>
+                <value>
+                    <fullName>JFA Standard</fullName>
+                    <default>false</default>
+                    <label>JFA Standard</label>
+                </value>
+                <value>
+                    <fullName>JFA Custom</fullName>
+                    <default>false</default>
+                    <label>JFA Custom</label>
+                </value>
+                <value>
+                    <fullName>SJT Standard</fullName>
+                    <default>false</default>
+                    <label>SJT Standard</label>
+                </value>
+                <value>
+                    <fullName>SJT Custom</fullName>
+                    <default>false</default>
+                    <label>SJT Custom</label>
+                </value>
+                <value>
+                    <fullName>Remote WorkQ</fullName>
+                    <default>false</default>
+                    <label>Remote WorkQ</label>
+                </value>
+                <value>
+                    <fullName>Coding Simulation (Automata)</fullName>
+                    <default>false</default>
+                    <label>Coding Simulation (Automata)</label>
+                </value>
+                <value>
+                    <fullName>Contact Center Simulation</fullName>
+                    <default>false</default>
+                    <label>Contact Center Simulation</label>
+                </value>
+                <value>
+                    <fullName>Simulation - Others</fullName>
+                    <default>false</default>
+                    <label>Simulation - Others</label>
+                </value>
+                <value>
+                    <fullName>Smart Interview: On Demand (Async Video Interview, AutoView)</fullName>
+                    <default>false</default>
+                    <label>Smart Interview: On Demand (Async Video Interview, AutoView)</label>
+                </value>
+                <value>
+                    <fullName>Smart Interview: Live (Smart Meet, Live Interview)</fullName>
+                    <default>false</default>
+                    <label>Smart Interview: Live (Smart Meet, Live Interview)</label>
+                </value>
+                <value>
+                    <fullName>Smart Interview: Live Coding</fullName>
+                    <default>false</default>
+                    <label>Smart Interview: Live Coding</label>
+                </value>
+                <value>
+                    <fullName>SHL Experiences</fullName>
+                    <default>false</default>
+                    <label>SHL Experiences</label>
+                </value>
+                <value>
+                    <fullName>Candidate Engagement Portal</fullName>
+                    <default>false</default>
+                    <label>Candidate Engagement Portal</label>
+                </value>
+                <value>
+                    <fullName>In person Assessment Centre</fullName>
+                    <default>false</default>
+                    <label>In person Assessment Centre</label>
+                </value>
+                <value>
+                    <fullName>In person Development Centre</fullName>
+                    <default>false</default>
+                    <label>In person Development Centre</label>
+                </value>
+                <value>
+                    <fullName>Virtual Assessment Centre</fullName>
+                    <default>false</default>
+                    <label>Virtual Assessment Centre</label>
+                </value>
+                <value>
+                    <fullName>Virtual Development Centre</fullName>
+                    <default>false</default>
+                    <label>Virtual Development Centre</label>
+                </value>
+                <value>
+                    <fullName>HiPo</fullName>
+                    <default>false</default>
+                    <label>HiPo</label>
+                </value>
+                <value>
+                    <fullName>Leader Edge</fullName>
+                    <default>false</default>
+                    <label>Leader Edge</label>
+                </value>
+                <value>
+                    <fullName>360</fullName>
+                    <default>false</default>
+                    <label>360</label>
+                </value>
+                <value>
+                    <fullName>Surveys</fullName>
+                    <default>false</default>
+                    <label>Surveys</label>
+                </value>
+                <value>
+                    <fullName>Talent Audit Internal Benchmarking</fullName>
+                    <default>false</default>
+                    <label>Talent Audit Internal Benchmarking</label>
+                </value>
+                <value>
+                    <fullName>Talent Audit External Benchmarking</fullName>
+                    <default>false</default>
+                    <label>Talent Audit External Benchmarking</label>
+                </value>
+                <value>
+                    <fullName>Talent Analytics</fullName>
+                    <default>false</default>
+                    <label>Talent Analytics</label>
+                </value>
+                <value>
+                    <fullName>Job Analysis</fullName>
+                    <default>false</default>
+                    <label>Job Analysis</label>
+                </value>
+                <value>
+                    <fullName>Consulting Services (Competency Design, Validation, Business outcome, Advisory)</fullName>
+                    <default>false</default>
+                    <label>Consulting Services (Competency Design, Validation, Business outcome, Advisory)</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+                <value>
+                    <fullName>Managed Services</fullName>
+                    <default>false</default>
+                    <label>Managed Services</label>
+                </value>
+                <value>
+                    <fullName>Royalty</fullName>
+                    <default>false</default>
+                    <label>Royalty</label>
+                </value>
+                <value>
+                    <fullName>Wardhead: Skills</fullName>
+                    <default>false</default>
+                    <label>Wardhead: Skills</label>
+                </value>
+                <value>
+                    <fullName>Wardhead: Hourly Roles</fullName>
+                    <default>false</default>
+                    <label>Wardhead: Hourly Roles</label>
+                </value>
+                <value>
+                    <fullName>Wardhead: Manag. &amp; Prof.</fullName>
+                    <default>false</default>
+                    <label>Wardhead: Manag. &amp; Prof.</label>
+                </value>
+                <value>
+                    <fullName>Wardhead: Executive</fullName>
+                    <default>false</default>
+                    <label>Wardhead: Executive</label>
+                </value>
+                <value>
+                    <fullName>Others</fullName>
+                    <default>false</default>
+                    <label>Others</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>7</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OppUpdatedByOrderOn__c</fullName>
+        <description>Created this field just to avoid unnecessary trigger fire because of allowClosed field update .
+Doing so because Old Map and Old List in trigger is not updated when trigger is fired because of field update. This field can be deleted once there is a solution of this issue.</description>
+        <label>OppUpdatedByOrderOn</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Opp_Invoicing_Quality_Details__c</fullName>
+        <label>Opp Invoicing Quality Details</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>OpportunityAmountMappedWithLead__c</fullName>
+        <description>As there is another standard field Amount exist on Opp but we can not map it with a custom field Opportunity Amount on lead during lead convert. So we are creating this custom filed only to map it with its correspondent on lead. This field will not be added on page layout.</description>
+        <label>OpportunityAmountMappedWithLead</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OpportunityId__c</fullName>
+        <displayFormat>Opp{00000}</displayFormat>
+        <externalId>true</externalId>
+        <label>Opportunity ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>OpportunityTypeMappedWithLead__c</fullName>
+        <description>As there is another standard field Type exist on Opp but we can not map it with a custom field Opportunity Type on lead during lead convert. So we are creating this custom filed only to map it with its correspondent on lead. This field will not be added on page layout.</description>
+        <label>OpportunityTypeMappedWithLead</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Existing Business</fullName>
+                    <default>false</default>
+                    <label>Existing Business</label>
+                </value>
+                <value>
+                    <fullName>New Business</fullName>
+                    <default>false</default>
+                    <label>New Business</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>OpportunityType__c</fullName>
+        <label>Estimated Opportunity Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Consultancy</fullName>
+                    <default>false</default>
+                    <label>Consultancy</label>
+                </value>
+                <value>
+                    <fullName>In Company Training</fullName>
+                    <default>false</default>
+                    <label>In Company Training</label>
+                </value>
+                <value>
+                    <fullName>MC Lettings</fullName>
+                    <default>false</default>
+                    <label>MC Lettings</label>
+                </value>
+                <value>
+                    <fullName>Product</fullName>
+                    <default>false</default>
+                    <label>Product</label>
+                </value>
+                <value>
+                    <fullName>Public Training</fullName>
+                    <default>false</default>
+                    <label>Public Training</label>
+                </value>
+                <value>
+                    <fullName>Existing Business – Growth</fullName>
+                    <default>false</default>
+                    <label>Existing Business – Growth</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Amount_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>Amount</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Amount Formula</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Deal_Year__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>Current Deal Year of Opportunity</description>
+        <externalId>false</externalId>
+        <label>Opportunity Year</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_ID18__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(Id)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity ID18</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_MS_Value__c</fullName>
+        <description>This field is used on MS Pipeline Job Card</description>
+        <label>Opportunity MS Value</label>
+        <summarizedField>OpportunityLineItem.TotalPrice</summarizedField>
+        <summaryFilterItems>
+            <field>OpportunityLineItem.Is_MS_Product__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Nickname__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Free text field for user specific reporting</inlineHelpText>
+        <label>Opportunity Nickname</label>
+        <length>120</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Submitted__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>to replace Opportunity Submitted By</description>
+        <label>Opportunity Submitted</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunity2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Order_Number__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Order Number (Legacy)</label>
+        <referenceTo>Contract</referenceTo>
+        <relationshipLabel>Opportunities</relationshipLabel>
+        <relationshipName>Opportunities</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Order_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(TEXT(Contract.Status) = &apos;Accepted&apos;,&apos;Client Accepted&apos;,TEXT(Contract.Status))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contract Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order_activated_and_greater_than_zero__c</fullName>
+        <defaultValue>&quot;False&quot;</defaultValue>
+        <description>This field is a backend field that updates opportunity if the related order&apos;s status is changed to activated and it&apos;s order year is not equal to 0.</description>
+        <label>Order is activated and year &gt; 0?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>True</fullName>
+                    <default>false</default>
+                    <label>True</label>
+                </value>
+                <value>
+                    <fullName>False</fullName>
+                    <default>false</default>
+                    <label>False</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Original_Opportunity__c</fullName>
+        <businessStatus>Active</businessStatus>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Original Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Variation / Renewal Opportunities</relationshipLabel>
+        <relationshipName>Opportunities</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Package_Level__c</fullName>
+        <label>Package Level</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Basic</fullName>
+                    <default>false</default>
+                    <label>Basic</label>
+                </value>
+                <value>
+                    <fullName>Standard</fullName>
+                    <default>false</default>
+                    <label>Standard</label>
+                </value>
+                <value>
+                    <fullName>Plus</fullName>
+                    <default>false</default>
+                    <label>Plus</label>
+                </value>
+                <value>
+                    <fullName>Premium</fullName>
+                    <default>false</default>
+                    <label>Premium</label>
+                </value>
+                <value>
+                    <fullName>Mixed</fullName>
+                    <default>false</default>
+                    <label>Mixed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Previous_Price__c</fullName>
+        <inlineHelpText>Annual value of all recurring products from the original Opportunity</inlineHelpText>
+        <label>Previous Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Previous_Record_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Record Type Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Price_Increase_Percentage__c</fullName>
+        <label>Price Increase Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Price_Notification_Email_Bounced__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Price Notification Email Bounced</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Primary Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Opportunities (Primary Contact)</relationshipLabel>
+        <relationshipName>Opportunities1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Products_Discount__c</fullName>
+        <label>Contract Product Discount</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Project_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Project Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunities2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Proposition_Detail__c</fullName>
+        <label>Solution</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Call Centre/Customer Service</fullName>
+                    <default>false</default>
+                    <label>Call Centre/Customer Service</label>
+                </value>
+                <value>
+                    <fullName>Clerical Skills</fullName>
+                    <default>false</default>
+                    <label>Clerical Skills</label>
+                </value>
+                <value>
+                    <fullName>Essential [Business] Skills</fullName>
+                    <default>false</default>
+                    <label>Essential [Business] Skills</label>
+                </value>
+                <value>
+                    <fullName>Front Line Manager/Supervisors</fullName>
+                    <default>false</default>
+                    <label>Front Line Manager/Supervisors</label>
+                </value>
+                <value>
+                    <fullName>IT Skills</fullName>
+                    <default>false</default>
+                    <label>IT Skills</label>
+                </value>
+                <value>
+                    <fullName>Other (to cover generic/custom ones)</fullName>
+                    <default>false</default>
+                    <label>Other (to cover generic/custom ones)</label>
+                </value>
+                <value>
+                    <fullName>Retail</fullName>
+                    <default>false</default>
+                    <label>Retail</label>
+                </value>
+                <value>
+                    <fullName>SHL Volume Recruitment Solution</fullName>
+                    <default>false</default>
+                    <label>SHL Volume Recruitment Solution</label>
+                </value>
+                <value>
+                    <fullName>Previsor Volume Recruitment Solution</fullName>
+                    <default>false</default>
+                    <label>Previsor Volume Recruitment Solution</label>
+                </value>
+                <value>
+                    <fullName>Leadership</fullName>
+                    <default>false</default>
+                    <label>Leadership</label>
+                </value>
+                <value>
+                    <fullName>Business Transformation</fullName>
+                    <default>false</default>
+                    <label>Business Transformation</label>
+                </value>
+                <value>
+                    <fullName>Review</fullName>
+                    <default>false</default>
+                    <label>Review</label>
+                </value>
+                <value>
+                    <fullName>Director</fullName>
+                    <default>false</default>
+                    <label>Director</label>
+                </value>
+                <value>
+                    <fullName>Senior Manager</fullName>
+                    <default>false</default>
+                    <label>Senior Manager</label>
+                </value>
+                <value>
+                    <fullName>Front Line Manager</fullName>
+                    <default>false</default>
+                    <label>Front Line Manager</label>
+                </value>
+                <value>
+                    <fullName>Professional</fullName>
+                    <default>false</default>
+                    <label>Professional</label>
+                </value>
+                <value>
+                    <fullName>Graduate</fullName>
+                    <default>false</default>
+                    <label>Graduate</label>
+                </value>
+                <value>
+                    <fullName>Call Centre</fullName>
+                    <default>false</default>
+                    <label>Call Centre</label>
+                </value>
+                <value>
+                    <fullName>Bank Teller</fullName>
+                    <default>false</default>
+                    <label>Bank Teller</label>
+                </value>
+                <value>
+                    <fullName>HiPo</fullName>
+                    <default>false</default>
+                    <label>HiPo</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Leadership Audit</fullName>
+                    <default>false</default>
+                    <label>Leadership Audit</label>
+                </value>
+                <value>
+                    <fullName>Leadership Readiness</fullName>
+                    <default>false</default>
+                    <label>Leadership Readiness</label>
+                </value>
+                <value>
+                    <fullName>Enterprise Leadership</fullName>
+                    <default>false</default>
+                    <label>Enterprise Leadership</label>
+                </value>
+                <value>
+                    <fullName>Sales Audit</fullName>
+                    <default>false</default>
+                    <label>Sales Audit</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Proposition__c</fullName>
+        <inlineHelpText>Select the closest use-case(s) that best defines client requirements.</inlineHelpText>
+        <label>Use-case</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <controllingField>TM_Phase__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Early Careers Hiring</fullName>
+                    <default>false</default>
+                    <label>Early Careers Hiring</label>
+                </value>
+                <value>
+                    <fullName>Graduate Hiring</fullName>
+                    <default>false</default>
+                    <label>Graduate Hiring</label>
+                </value>
+                <value>
+                    <fullName>Volume Hiring</fullName>
+                    <default>false</default>
+                    <label>Volume Hiring</label>
+                </value>
+                <value>
+                    <fullName>Apprentice Hiring</fullName>
+                    <default>false</default>
+                    <label>Apprentice Hiring</label>
+                </value>
+                <value>
+                    <fullName>Technology Hiring</fullName>
+                    <default>false</default>
+                    <label>Technology Hiring</label>
+                </value>
+                <value>
+                    <fullName>Sales Transformation Hiring</fullName>
+                    <default>false</default>
+                    <label>Sales Transformation Hiring</label>
+                </value>
+                <value>
+                    <fullName>Managerial Hiring</fullName>
+                    <default>false</default>
+                    <label>Managerial Hiring</label>
+                </value>
+                <value>
+                    <fullName>Senior Leadership / Executive  Hiring</fullName>
+                    <default>false</default>
+                    <label>Senior Leadership / Executive  Hiring</label>
+                </value>
+                <value>
+                    <fullName>Professional</fullName>
+                    <default>false</default>
+                    <label>Professional</label>
+                </value>
+                <value>
+                    <fullName>Mobilize: Leadership &amp; Succession Planning</fullName>
+                    <default>false</default>
+                    <label>Mobilize: Leadership &amp; Succession Planning</label>
+                </value>
+                <value>
+                    <fullName>Mobilize: Potential</fullName>
+                    <default>false</default>
+                    <label>Mobilize: Potential</label>
+                </value>
+                <value>
+                    <fullName>Sales Transformation Review</fullName>
+                    <default>false</default>
+                    <label>Sales Transformation Review</label>
+                </value>
+                <value>
+                    <fullName>Review: Digital Readiness</fullName>
+                    <default>false</default>
+                    <label>Review: Digital Readiness</label>
+                </value>
+                <value>
+                    <fullName>Review: Remote Work</fullName>
+                    <default>false</default>
+                    <label>Review: Remote Work</label>
+                </value>
+                <value>
+                    <fullName>Review: Custom / Others</fullName>
+                    <default>false</default>
+                    <label>Review: Custom / Others</label>
+                </value>
+                <value>
+                    <fullName>Develop Talent</fullName>
+                    <default>false</default>
+                    <label>Develop Talent</label>
+                </value>
+                <value>
+                    <fullName>TMReview</fullName>
+                    <default>false</default>
+                    <label>TMReview</label>
+                </value>
+                <value>
+                    <fullName>TMMobilise</fullName>
+                    <default>false</default>
+                    <label>TMMobilise</label>
+                </value>
+                <value>
+                    <fullName>Talent Management</fullName>
+                    <default>false</default>
+                    <label>Talent Management</label>
+                </value>
+                <value>
+                    <fullName>Professional Hiring</fullName>
+                    <default>false</default>
+                    <label>Professional Hiring</label>
+                </value>
+                <value>
+                    <fullName>HiPo</fullName>
+                    <default>false</default>
+                    <label>HiPo</label>
+                </value>
+                <value>
+                    <fullName>Enterprise Leadership</fullName>
+                    <default>false</default>
+                    <label>Enterprise Leadership</label>
+                </value>
+                <value>
+                    <fullName>Succession Planning</fullName>
+                    <default>false</default>
+                    <label>Succession Planning</label>
+                </value>
+                <value>
+                    <fullName>Manager Development</fullName>
+                    <default>false</default>
+                    <label>Manager Development</label>
+                </value>
+                <value>
+                    <fullName>Sales Transformation</fullName>
+                    <default>false</default>
+                    <label>Sales Transformation</label>
+                </value>
+                <value>
+                    <fullName>Skills Development</fullName>
+                    <default>false</default>
+                    <label>Skills Development</label>
+                </value>
+                <value>
+                    <fullName>Talent Mobility</fullName>
+                    <default>false</default>
+                    <label>Talent Mobility</label>
+                </value>
+                <value>
+                    <fullName>Manager Development &amp; Sales Transformation &amp; HiPo</fullName>
+                    <default>false</default>
+                    <label>Manager Development &amp; Sales Transformation &amp; HiPo</label>
+                </value>
+                <value>
+                    <fullName>HiPo &amp; Succession Planning &amp; ELD</fullName>
+                    <default>false</default>
+                    <label>HiPo &amp; Succession Planning &amp; ELD</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <controllingFieldValue>TAandTMCombined</controllingFieldValue>
+                <valueName>Talent Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>TAandTMCombined</controllingFieldValue>
+                <controllingFieldValue>Talent Acquisition</controllingFieldValue>
+                <valueName>Early Careers Hiring</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>TAandTMCombined</controllingFieldValue>
+                <controllingFieldValue>Talent Acquisition</controllingFieldValue>
+                <valueName>Volume Hiring</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>TAandTMCombined</controllingFieldValue>
+                <controllingFieldValue>Talent Acquisition</controllingFieldValue>
+                <valueName>Technology Hiring</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>TAandTMCombined</controllingFieldValue>
+                <controllingFieldValue>Talent Acquisition</controllingFieldValue>
+                <valueName>Managerial Hiring</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>TAandTMCombined</controllingFieldValue>
+                <controllingFieldValue>Talent Acquisition</controllingFieldValue>
+                <valueName>Senior Leadership / Executive  Hiring</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>TAandTMCombined</controllingFieldValue>
+                <controllingFieldValue>Talent Acquisition</controllingFieldValue>
+                <valueName>Professional Hiring</valueName>
+            </valueSettings>
+        </valueSet>
+        <visibleLines>7</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Qualified_for_Auto_Close__c</fullName>
+        <description>This formula describes, which all records are ready to update &quot;Eligible for Auto Close&quot; field on Opp</description>
+        <formula>AND(
+    NOT(IsClosed),
+    Can_be_Auto_renewed__c = TRUE,
+    ISPICKVAL(Business_Type__c, &quot;Renewal&quot;),
+    ISPICKVAL(Account.Status__c, &quot;Approved&quot;),
+    Eligible_for_Auto_Close__c = FALSE,
+    Renewal_Opportunity__c = TRUE,
+    Opportunity_Deal_Year__c = 1,
+    NOT(ISBLANK(Original_Opportunity__c)),
+    ISPICKVAL(Actual_Record_Type_Name__c, &quot;Configurator Opportunity&quot;),
+    ISBLANK(Rejected_Order_IDs__c),
+    Total_Product_Count__c &gt; 0,
+    ISBLANK(TEXT(CLM_Contract_Status__c)),
+    NOT(ISBLANK(Renewal_Date__c)),
+    Days_left_to_Close_Opp__c&gt; 31,
+    Days_left_to_Close_Opp__c&lt; 365
+)</formula>
+        <label>Qualified for Auto Close?</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RAG_Indicator_Amber__c</fullName>
+        <description>Used to count Medium product on opportunity</description>
+        <label>RAG Indicator Count Amber</label>
+        <summaryFilterItems>
+            <field>OpportunityLineItem.RAG_Option_Value__c</field>
+            <operation>equals</operation>
+            <value>Medium</value>
+        </summaryFilterItems>
+        <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>RAG_Indicator_Green__c</fullName>
+        <label>RAG Indicator Count Green</label>
+        <summaryFilterItems>
+            <field>OpportunityLineItem.RAG_Option_Value__c</field>
+            <operation>equals</operation>
+            <value>Light</value>
+        </summaryFilterItems>
+        <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>RFP_Status__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to track if Opportunities have an RFP Status</description>
+        <inlineHelpText>This field is managed by Client Solutions.</inlineHelpText>
+        <label>RFP Status</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ReasonforlostOpportunity__c</fullName>
+        <label>Reason for lost Opportunity</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Availability of SHL personnel</fullName>
+                    <default>false</default>
+                    <label>Availability of SHL personnel</label>
+                </value>
+                <value>
+                    <fullName>Bad credit</fullName>
+                    <default>false</default>
+                    <label>Bad credit</label>
+                </value>
+                <value>
+                    <fullName>Client changed requirements</fullName>
+                    <default>false</default>
+                    <label>Client changed requirements</label>
+                </value>
+                <value>
+                    <fullName>Client Terms unacceptable</fullName>
+                    <default>false</default>
+                    <label>Client Terms unacceptable</label>
+                </value>
+                <value>
+                    <fullName>Client went out of business</fullName>
+                    <default>false</default>
+                    <label>Client went out of business</label>
+                </value>
+                <value>
+                    <fullName>Competitor</fullName>
+                    <default>false</default>
+                    <label>Competitor</label>
+                </value>
+                <value>
+                    <fullName>Lack of acceptable data/benchmark</fullName>
+                    <default>false</default>
+                    <label>Lack of acceptable data/benchmark</label>
+                </value>
+                <value>
+                    <fullName>Lack of innovation/creativity</fullName>
+                    <default>false</default>
+                    <label>Lack of innovation/creativity</label>
+                </value>
+                <value>
+                    <fullName>Opportunity gone</fullName>
+                    <default>false</default>
+                    <label>Opportunity gone</label>
+                </value>
+                <value>
+                    <fullName>Price</fullName>
+                    <default>false</default>
+                    <label>Price</label>
+                </value>
+                <value>
+                    <fullName>Quality</fullName>
+                    <default>false</default>
+                    <label>Quality</label>
+                </value>
+                <value>
+                    <fullName>Risk</fullName>
+                    <default>false</default>
+                    <label>Risk</label>
+                </value>
+                <value>
+                    <fullName>SHL could not match full requirements</fullName>
+                    <default>false</default>
+                    <label>SHL could not match full requirements</label>
+                </value>
+                <value>
+                    <fullName>SHL could not meet timescales</fullName>
+                    <default>false</default>
+                    <label>SHL could not meet timescales</label>
+                </value>
+                <value>
+                    <fullName>Terms &amp; Conditions</fullName>
+                    <default>false</default>
+                    <label>Terms &amp; Conditions</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Reasons_for_lost_Opportunity__c</fullName>
+        <label>Reasons for Lost Opportunity</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Bad credit</fullName>
+                    <default>false</default>
+                    <label>Bad credit</label>
+                </value>
+                <value>
+                    <fullName>Client changed requirements</fullName>
+                    <default>false</default>
+                    <label>Client changed requirements</label>
+                </value>
+                <value>
+                    <fullName>Client terms unacceptable</fullName>
+                    <default>false</default>
+                    <label>Client terms unacceptable</label>
+                </value>
+                <value>
+                    <fullName>Lack of acceptable data/benchmark</fullName>
+                    <default>false</default>
+                    <label>Lack of acceptable data/benchmark</label>
+                </value>
+                <value>
+                    <fullName>Lack of innovation/creativity</fullName>
+                    <default>false</default>
+                    <label>Lack of innovation/creativity</label>
+                </value>
+                <value>
+                    <fullName>Price</fullName>
+                    <default>false</default>
+                    <label>Price</label>
+                </value>
+                <value>
+                    <fullName>Quality</fullName>
+                    <default>false</default>
+                    <label>Quality</label>
+                </value>
+                <value>
+                    <fullName>SHL cannot match requirements</fullName>
+                    <default>false</default>
+                    <label>SHL cannot match requirements</label>
+                </value>
+                <value>
+                    <fullName>SHL cannot meet timescales</fullName>
+                    <default>false</default>
+                    <label>SHL cannot meet timescales</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Recurring_Products_value__c</fullName>
+        <inlineHelpText>Sum of all Recurring products that will form part of ARR and appear on the subsequent renewal Opportunity</inlineHelpText>
+        <label>Recurring Products value</label>
+        <summarizedField>OpportunityLineItem.TotalPrice</summarizedField>
+        <summaryFilterItems>
+            <field>OpportunityLineItem.RenewableNew__c</field>
+            <operation>equals</operation>
+            <value>Ongoing</value>
+        </summaryFilterItems>
+        <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Rejected_Order_IDs__c</fullName>
+        <externalId>false</externalId>
+        <label>Rejected Order IDs</label>
+        <length>200</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Renewal_Date__c</fullName>
+        <inlineHelpText>This date is calculated from the Contract End Date + 1 day and signifies the true date that the next Renewal is due to start on.</inlineHelpText>
+        <label>Renewal Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Notification_Sent_On__c</fullName>
+        <inlineHelpText>This field shows the date/time of the renewal notification email sent to client.</inlineHelpText>
+        <label>Renewal Notification Sent On</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Opportunity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Auto-Created Renewal</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Running_total_of_non_subscription_amount__c</fullName>
+        <label>Running total of non-subs amount(Legacy)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Running_total_of_subscription_amount__c</fullName>
+        <label>Running total of subs amount (Legacy)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Price_in_USD__c</fullName>
+        <description>Used in Account Plan to show USD vaue on contract details.</description>
+        <externalId>false</externalId>
+        <formula>IF(
+TEXT(CurrencyIsoCode) = &apos;USD&apos;, Amount,
+Amount / CURRENCYRATE(TEXT(CurrencyIsoCode))*CURRENCYRATE(&apos;USD&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sales Price in USD</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Services_Discount__c</fullName>
+        <label>Contract Service Discount</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>SkipValidationLeadConversion__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>SkipValidationLeadConversion</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Skip_Client_Needs_Validation__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>This is for escaping the Validation Rule for Hiring Need, Package Level, Talent Level. During Creation this will be checked for Ignite Opportunity, after the products added this will be marked as false.</description>
+        <label>Skip Client Needs Validation?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Skip_Validation_Auto_Renewal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checkbox for skipping validations while creating Auto Renewal Opportunities</description>
+        <label>Skip Validation Auto Renewal</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Skip_Validation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field has been created to skip the validation &apos;PriceBookentry_Required_OppMakingContact&apos; while Deleting the OpporunityLineItems in the class &quot;CurrencyChangeOpportunity&quot;.</description>
+        <label>Skip Validation</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SmartSheetField__c</fullName>
+        <description>This field is used to store comma seprated list of PS Products related to an opportunity. This is field is being used to send information to Smartsheet.</description>
+        <label>Smartsheet Product ID</label>
+        <length>4000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Standard_Contract_Duration__c</fullName>
+        <inlineHelpText>Defines the standard duration of the contract</inlineHelpText>
+        <label>Standard Contract Duration (In Months)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>12</fullName>
+                    <default>false</default>
+                    <label>12</label>
+                </value>
+                <value>
+                    <fullName>24</fullName>
+                    <default>false</default>
+                    <label>24</label>
+                </value>
+                <value>
+                    <fullName>36</fullName>
+                    <default>false</default>
+                    <label>36</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Strategy_and_Goals__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Strategy and Goals</label>
+        <referenceTo>Strategy_and_Goal__c</referenceTo>
+        <relationshipLabel>Opportunities</relationshipLabel>
+        <relationshipName>Opportunities</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>TM_Phase__c</fullName>
+        <description>This field is used to replace the existing proposition field.</description>
+        <inlineHelpText>Select the Client Interest that best defines the scope of the client’s project, or Combined if the project is mixed.</inlineHelpText>
+        <label>Client Interest</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Talent Acquisition</fullName>
+                    <default>false</default>
+                    <label>Talent Acquisition</label>
+                </value>
+                <value>
+                    <fullName>Talent Management</fullName>
+                    <default>false</default>
+                    <label>Talent Management</label>
+                </value>
+                <value>
+                    <fullName>TAandTMCombined</fullName>
+                    <default>false</default>
+                    <label>TAandTMCombined</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Talent_Level__c</fullName>
+        <description>This field is created as a part of Nomenclature(SSE--113)</description>
+        <inlineHelpText>Select the level(s) of employee that best defines the scope of the client’s project.</inlineHelpText>
+        <label>Talent Level</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Vocational</fullName>
+                    <default>false</default>
+                    <label>Vocational</label>
+                </value>
+                <value>
+                    <fullName>Entry Level / Associate</fullName>
+                    <default>false</default>
+                    <label>Entry Level / Associate</label>
+                </value>
+                <value>
+                    <fullName>Graduate and Intern</fullName>
+                    <default>false</default>
+                    <label>Graduate and Intern</label>
+                </value>
+                <value>
+                    <fullName>Professional / Individual Contributor</fullName>
+                    <default>false</default>
+                    <label>Professional / Individual Contributor</label>
+                </value>
+                <value>
+                    <fullName>Supervisor</fullName>
+                    <default>false</default>
+                    <label>Supervisor</label>
+                </value>
+                <value>
+                    <fullName>Manager</fullName>
+                    <default>false</default>
+                    <label>Manager</label>
+                </value>
+                <value>
+                    <fullName>Individual Contributor Leader</fullName>
+                    <default>false</default>
+                    <label>Individual Contributor Leader</label>
+                </value>
+                <value>
+                    <fullName>Senior leadership</fullName>
+                    <default>false</default>
+                    <label>Senior leadership</label>
+                </value>
+                <value>
+                    <fullName>All Levels</fullName>
+                    <default>false</default>
+                    <label>All Levels</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>7</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Talent_Segment__c</fullName>
+        <description>This is new field, created as a part of nomenclature change(SSE--113)</description>
+        <inlineHelpText>Select the overall talent segment or population that the client is focused on.</inlineHelpText>
+        <label>Talent Segment</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Graduate / Apprentice</fullName>
+                    <default>false</default>
+                    <label>Graduate / Apprentice</label>
+                </value>
+                <value>
+                    <fullName>High Potential</fullName>
+                    <default>false</default>
+                    <label>High Potential</label>
+                </value>
+                <value>
+                    <fullName>Functional / Professional</fullName>
+                    <default>false</default>
+                    <label>Functional / Professional</label>
+                </value>
+                <value>
+                    <fullName>Manager / Leader</fullName>
+                    <default>false</default>
+                    <label>Manager / Leader</label>
+                </value>
+                <value>
+                    <fullName>Volume</fullName>
+                    <default>false</default>
+                    <label>Volume</label>
+                </value>
+                <value>
+                    <fullName>Other / Unknown</fullName>
+                    <default>false</default>
+                    <label>Other / Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Target_Program__c</fullName>
+        <inlineHelpText>This field is to track our 2025 target programs. Please select the appropriate program(s) appropriate for this opportunity</inlineHelpText>
+        <label>Target Program</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>2025 - Smart Interview Professional</fullName>
+                    <default>false</default>
+                    <label>2025 - Smart Interview Professional</label>
+                </value>
+                <value>
+                    <fullName>2025 - Talent Mobility</fullName>
+                    <default>false</default>
+                    <label>2025 - Talent Mobility</label>
+                </value>
+                <value>
+                    <fullName>2025 - BPO</fullName>
+                    <default>false</default>
+                    <label>2025 - BPO</label>
+                </value>
+                <value>
+                    <fullName>2025 - Competitor Displacement</fullName>
+                    <default>false</default>
+                    <label>2025 - Competitor Displacement</label>
+                </value>
+                <value>
+                    <fullName>Not in a target program</fullName>
+                    <default>false</default>
+                    <label>Not in a target program</label>
+                </value>
+                <value>
+                    <fullName>AMS: 360</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>AMS: 360</label>
+                </value>
+                <value>
+                    <fullName>AMS: BPO</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>AMS: BPO</label>
+                </value>
+                <value>
+                    <fullName>AMS: Energy &amp; Utilities</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>AMS: Energy &amp; Utilities</label>
+                </value>
+                <value>
+                    <fullName>AMS: Finance and Insurance</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>AMS: Finance and Insurance</label>
+                </value>
+                <value>
+                    <fullName>AMS: Fuel50</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>AMS: Fuel50</label>
+                </value>
+                <value>
+                    <fullName>AMS: Gloat</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>AMS: Gloat</label>
+                </value>
+                <value>
+                    <fullName>AMS: Harver</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>AMS: Harver</label>
+                </value>
+                <value>
+                    <fullName>AMS: Hogan</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>AMS: Hogan</label>
+                </value>
+                <value>
+                    <fullName>AMS: Modern Hire</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>AMS: Modern Hire</label>
+                </value>
+                <value>
+                    <fullName>AMS: SVAR</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>AMS: SVAR</label>
+                </value>
+                <value>
+                    <fullName>ESA: Competitor Displacement - AON</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>ESA: Competitor Displacement - AON</label>
+                </value>
+                <value>
+                    <fullName>ESA: Competitor Displacement - Capp</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>ESA: Competitor Displacement - Capp</label>
+                </value>
+                <value>
+                    <fullName>ESA: Competitor Displacement - KornFerry</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>ESA: Competitor Displacement - KornFerry</label>
+                </value>
+                <value>
+                    <fullName>ESA: Competitor Displacement - Sova</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>ESA: Competitor Displacement - Sova</label>
+                </value>
+                <value>
+                    <fullName>ESA: Upsell Essential to Advanced</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>ESA: Upsell Essential to Advanced</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Total_Extension_Length__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Extension Length</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Product_Count__c</fullName>
+        <description>Total number of products, for average discount calculation.</description>
+        <label>Total Product Count</label>
+        <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Sales_Price__c</fullName>
+        <inlineHelpText>This is Total Sales Price per unit.</inlineHelpText>
+        <label>Total Sales Price</label>
+        <summarizedField>OpportunityLineItem.UnitPrice</summarizedField>
+        <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Solution_Cap__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Solution Cap</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Transition_related__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Transition related?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Unconfirmed_Sun_Order_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Unconfirmed Sun Order Number</label>
+        <length>11</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>For Opp Owner to assign more than 1 sales person to the opportunity</description>
+        <label>Pre-Sales Attributed to (2)</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunity1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>For opportunity owners to assign a primary and secondary sales person to an opportunity</description>
+        <label>Pre-Sales Attributed to (1)</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunity</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Variation_Opportunity__c</fullName>
+        <label>Variation Opportunity</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Variation_Reason__c</fullName>
+        <label>Variation/ Extension Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Addition to order</fullName>
+                    <default>false</default>
+                    <label>Addition to order</label>
+                </value>
+                <value>
+                    <fullName>Reduction of order</fullName>
+                    <default>false</default>
+                    <label>Reduction of order</label>
+                </value>
+                <value>
+                    <fullName>Adjustment to order</fullName>
+                    <default>false</default>
+                    <label>Adjustment to order</label>
+                </value>
+                <value>
+                    <fullName>Change to legal terms &amp; conditions</fullName>
+                    <default>false</default>
+                    <label>Change to legal terms &amp; conditions</label>
+                </value>
+                <value>
+                    <fullName>Change to payment terms</fullName>
+                    <default>false</default>
+                    <label>Change to payment terms</label>
+                </value>
+                <value>
+                    <fullName>Change to SoW</fullName>
+                    <default>false</default>
+                    <label>Change to SoW</label>
+                </value>
+                <value>
+                    <fullName>Co-Terminating Cross Sell</fullName>
+                    <default>false</default>
+                    <label>Co-Terminating Cross Sell</label>
+                </value>
+                <value>
+                    <fullName>Correction</fullName>
+                    <default>false</default>
+                    <label>Correction</label>
+                </value>
+                <value>
+                    <fullName>Debooking</fullName>
+                    <default>false</default>
+                    <label>Debooking</label>
+                </value>
+                <value>
+                    <fullName>Excess Usage</fullName>
+                    <default>false</default>
+                    <label>Excess Usage</label>
+                </value>
+                <value>
+                    <fullName>In Arrears</fullName>
+                    <default>false</default>
+                    <label>In Arrears</label>
+                </value>
+                <value>
+                    <fullName>Price List / Standing Order</fullName>
+                    <default>false</default>
+                    <label>Price List / Standing Order</label>
+                </value>
+                <value>
+                    <fullName>Paid Subscription Extension</fullName>
+                    <default>false</default>
+                    <label>Paid Subscription Extension</label>
+                </value>
+                <value>
+                    <fullName>Service Delay – No Charge</fullName>
+                    <default>false</default>
+                    <label>Service Delay – No Charge</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Won_LossReason_Influencer__c</fullName>
+        <description>Select One of the Options from the List that best explains   why the Opportunity was Won or Loss.</description>
+        <inlineHelpText>Select One of the Options from the List that best explains why the Opportunity was Won or Loss.</inlineHelpText>
+        <label>Won/Loss reason (Legacy)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Assessment Catalog</fullName>
+                    <default>false</default>
+                    <label>Assessment Catalog</label>
+                </value>
+                <value>
+                    <fullName>Assessment Methodology/Approach</fullName>
+                    <default>false</default>
+                    <label>Assessment Methodology/Approach</label>
+                </value>
+                <value>
+                    <fullName>Company Reputation/Experience</fullName>
+                    <default>false</default>
+                    <label>Company Reputation/Experience</label>
+                </value>
+                <value>
+                    <fullName>Company Size</fullName>
+                    <default>false</default>
+                    <label>Company Size</label>
+                </value>
+                <value>
+                    <fullName>Ease of Doing Business</fullName>
+                    <default>false</default>
+                    <label>Ease of Doing Business</label>
+                </value>
+                <value>
+                    <fullName>Existing Relationship with Other Vendor</fullName>
+                    <default>false</default>
+                    <label>Existing Relationship with Other Vendor</label>
+                </value>
+                <value>
+                    <fullName>Integration</fullName>
+                    <default>false</default>
+                    <label>Integration</label>
+                </value>
+                <value>
+                    <fullName>International Capabilities</fullName>
+                    <default>false</default>
+                    <label>International Capabilities</label>
+                </value>
+                <value>
+                    <fullName>Level of Service/Support</fullName>
+                    <default>false</default>
+                    <label>Level of Service/Support</label>
+                </value>
+                <value>
+                    <fullName>Market Messaging</fullName>
+                    <default>false</default>
+                    <label>Market Messaging</label>
+                </value>
+                <value>
+                    <fullName>PreVisor Pro Order</fullName>
+                    <default>false</default>
+                    <label>PreVisor Pro Order</label>
+                </value>
+                <value>
+                    <fullName>Price &amp; Terms</fullName>
+                    <default>false</default>
+                    <label>Price &amp; Terms</label>
+                </value>
+                <value>
+                    <fullName>References</fullName>
+                    <default>false</default>
+                    <label>References</label>
+                </value>
+                <value>
+                    <fullName>Reporting</fullName>
+                    <default>false</default>
+                    <label>Reporting</label>
+                </value>
+                <value>
+                    <fullName>Sales Team/Sales Process Execution</fullName>
+                    <default>false</default>
+                    <label>Sales Team/Sales Process Execution</label>
+                </value>
+                <value>
+                    <fullName>Technology Platform</fullName>
+                    <default>false</default>
+                    <label>Technology Platform</label>
+                </value>
+                <value>
+                    <fullName>Timing</fullName>
+                    <default>false</default>
+                    <label>Timing</label>
+                </value>
+                <value>
+                    <fullName>Validation Evidence/ROI</fullName>
+                    <default>false</default>
+                    <label>Validation Evidence/ROI</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+                <value>
+                    <fullName>Sim Player Issue</fullName>
+                    <default>false</default>
+                    <label>Sim Player Issue</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Won_Loss_Explanation__c</fullName>
+        <description>More details on why opportunity was won/loss</description>
+        <inlineHelpText>Text field to give details about the Reason for Won/Loss</inlineHelpText>
+        <label>Won/Loss Explanation (Legacy)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>X60_Day_Check_for_Price_Uplift_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Renewal_Date__c - Today()</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>60 Day Check for Price Uplift Email</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>last_Forecast_category_field_change__c</fullName>
+        <label>last Forecast category field change</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+</CustomObject>

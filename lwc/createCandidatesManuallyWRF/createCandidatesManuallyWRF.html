@@ -1,0 +1,136 @@
+<template>
+    <div class="slds-card" style="font-family: 'Open Sans', sans-serif">
+        <header class="slds-card__header slds-media slds-media_center">
+            <div class="slds-media__figure">
+             <!--   <lightning-icon icon-name="action:info" size="small"></lightning-icon> -->
+            </div>
+            <div class="slds-media__body slds-card__header-title slds-text-title_bold" style="font-size: 14px">
+                Candidate Creation
+            </div>
+        </header>
+        <template if:false={isGCSC}>
+            <template if:true={limitReached}>
+                <div class="slds-notify slds-notify_alert slds-theme_info">
+                    <span class="slds-assistive-text">info</span>
+                    <span>You have reached your maximum limit of {maxCandidateCount} candidates. For more usage
+                        please connect with SHL MS Team.</span>
+                </div>
+            </template>
+        </template>
+        <div class="slds-scrollable container">
+            <table class="slds-table slds-table_bordered slds-no-row-hover slds-table_cell-buffer " role="grid">
+                <thead>
+                    <tr>
+                        <th scope="col">S No.</th>
+                        <template for:each={candidateData} for:item="currentItem" for:index="index">
+                            <th key={currentItem.index} scope="col">{currentItem.Label__c}
+                                <abbr title="required" class="slds-required">*</abbr>
+                            </th>
+                        </template>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={candidatesListToUse} for:item="row">
+                        <tr key={row.index} class="slds-hint-parent">
+                            <td style="font-weight: bold">
+                                <lightning-layout-item size="12" small-device-size="6" medium-device-size="4"
+                                    large-device-size="2" padding="around-small">
+                                    <lightning-formatted-number value={row.index}></lightning-formatted-number>.
+                                </lightning-layout-item>
+                            </td>
+                            <template for:each={row.columnJson} for:item="acc">
+                                <td key={acc.index}>
+                                    <lightning-layout-item size="12" small-device-size="6" medium-device-size="4"
+                                        large-device-size="2" class="input-element" padding="around-small">
+                                        <div if:true={acc.isnormal}>
+                                            <lightning-input type={acc.fieldtype} label={acc.fieldLabel}
+                                                data-index={row.index} data-api={acc.API_Name__c} data-row={row}
+                                                onchange={handleInputChange} value={acc.valueData}
+                                                variant="label-hidden" required>
+                                            </lightning-input>
+                                        </div>
+                                        <div if:true={acc.istextarea}>
+                                            <lightning-textarea name="input1" label={acc.fieldLabel} required
+                                                data-index={row.index} data-api={acc.API_Name__c}
+                                                onchange={handleInputChange} value={acc.value}
+                                                variant="label-hidden"></lightning-textarea>
+                                        </div>
+                                        <div if:true={acc.isrichtexarea}>
+                                            <lightning-input-rich-text label={acc.fieldLabel} required
+                                                data-index={row.index} data-api={acc.API_Name__c}
+                                                onchange={handleInputChange} value={acc.value} variant="label-hidden">
+                                            </lightning-input-rich-text>
+                                        </div>
+                                        <div if:true={acc.ispicklist} class="slds-form-element__control">
+                                            <lightning-combobox name={acc.fieldLabel} label={acc.fieldLabel}
+                                                value={acc.value} variant="label-hidden" placeholder="Select a Value"
+                                                options={acc.options} onchange={handleInputChange} required
+                                                data-index={row.index} data-api={acc.API_Name__c}
+                                                dropdown-alignment="auto">
+                                            </lightning-combobox>
+                                        </div>
+                                        <div if:true={acc.ischeckboxgroup}
+                                            class="slds-grid slds-gutters slds-var-p-vertical_medium">
+                                            <div class="slds-col slds-grid">
+                                                <lightning-checkbox-group name={acc.fieldLabel} label={acc.fieldLabel}
+                                                    options={acc.options} value={acc.value} variant="label-hidden"
+                                                    onchange={handleInputChange} required data-index={row.index}
+                                                    data-api={acc.API_Name__c}>
+                                                </lightning-checkbox-group>
+                                            </div>
+                                        </div>
+                                        <div if:true={acc.isradiogroup}
+                                            class="slds-grid slds-gutters slds-var-p-vertical_medium">
+                                            <div class="slds-col slds-grid">
+                                                <lightning-radio-group name={acc.fieldLabel} label={acc.fieldLabel}
+                                                    options={acc.options} value={acc.value} variant="label-hidden"
+                                                    type="radio" required onchange={handleInputChange}
+                                                    data-index={row.index}
+                                                    data-api={acc.API_Name__c}></lightning-radio-group>
+                                            </div>
+                                        </div>
+                                    </lightning-layout-item>
+                                </td>
+                            </template>
+                            <td>
+                                <lightning-layout-item flexibility="auto, no-grow"
+                                    style="display: flex; align-items: center;">
+                                    <lightning-icon icon-name="utility:delete" alternative-text="Remove" title="Remove"
+                                        name={row.index} size="small"
+                                        class="slds-var-m-horizontal_x-small cursor-pointer"
+                                        onclick={removeRow}></lightning-icon>
+                                    <lightning-icon icon-name="utility:new" alternative-text="Add" title="Add"
+                                        name={row.index} size="small"
+                                        class="slds-var-m-horizontal_x-small cursor-pointer"
+                                        onclick={addNewRow}></lightning-icon>
+                                </lightning-layout-item>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+        <div class="slds-grid slds-grid_align-spread slds-p-vertical_small">
+            <div class="slds-p-left_small">
+                <lightning-button class="slds-p-right_small" variant="destructive" label="Delete all rows"
+                    title="Delete all rows" icon-name="utility:recycle_bin_full"
+                    onclick={removeAllRows}></lightning-button>
+                <lightning-button variant="neutral" label="Add Row" title="Add Row" icon-name="utility:add"
+                    onclick={addNewRow}></lightning-button>
+            </div>
+            <div class="slds-p-right_small  slds-float_right">
+                <lightning-button lwc:if={showSave} variant="brand" label="Save" title="Save"
+                    onclick={createCandidates}></lightning-button>
+            </div>
+        </div>
+        <div lwc:if={showErrorMessage} class="slds-p-left_small" style="color:red">
+            <template for:each={errorMessage} for:item="error" for:index="indexind">
+                <div key={error.indexind}>
+                    {error}
+                </div>
+            </template>
+        </div>
+
+    </div>
+
+</template>

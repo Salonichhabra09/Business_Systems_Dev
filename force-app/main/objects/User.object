@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Allow_C_B_Price_Change__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Allow C&amp;B Price Change</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Approve_CB_Discounts__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>Check this box if this user has rights to approve C&amp;B discounts</inlineHelpText>
+        <label>Approve C&amp;B Discounts</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Approve_TE_Discounts__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>Check this box if this user has rights to approve T&amp;E discounts</inlineHelpText>
+        <label>Approve T&amp;E Discounts</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Case_Teams__c</fullName>
+        <label>Case Teams</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>AM APAC Technical Support</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>AM APAC Technical Support</label>
+                </value>
+                <value>
+                    <fullName>AM China Technical Support</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>AM China Technical Support</label>
+                </value>
+                <value>
+                    <fullName>AM EMEA Technical Support</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>AM EMEA Technical Support</label>
+                </value>
+                <value>
+                    <fullName>AM India Customer Success</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>AM India Customer Success</label>
+                </value>
+                <value>
+                    <fullName>AM US Technical Support</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>AM US Technical Support</label>
+                </value>
+                <value>
+                    <fullName>APAC Customer Experience</fullName>
+                    <default>false</default>
+                    <label>APAC Customer Experience</label>
+                </value>
+                <value>
+                    <fullName>APAC Customer Success</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>APAC Customer Success</label>
+                </value>
+                <value>
+                    <fullName>APAC Technical Support</fullName>
+                    <default>false</default>
+                    <label>APAC Technical Support</label>
+                </value>
+                <value>
+                    <fullName>China Customer Experience</fullName>
+                    <default>false</default>
+                    <label>China Customer Experience</label>
+                </value>
+                <value>
+                    <fullName>China Customer Success</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>China Customer Success</label>
+                </value>
+                <value>
+                    <fullName>China Technical Support</fullName>
+                    <default>false</default>
+                    <label>China Technical Support</label>
+                </value>
+                <value>
+                    <fullName>CPS</fullName>
+                    <default>false</default>
+                    <label>CPS</label>
+                </value>
+                <value>
+                    <fullName>CSIT</fullName>
+                    <default>false</default>
+                    <label>CSIT</label>
+                </value>
+                <value>
+                    <fullName>EMEA Customer Experience</fullName>
+                    <default>false</default>
+                    <label>EMEA Customer Experience</label>
+                </value>
+                <value>
+                    <fullName>EMEA Customer Success</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>EMEA Customer Success</label>
+                </value>
+                <value>
+                    <fullName>EMEA Technical Support</fullName>
+                    <default>false</default>
+                    <label>EMEA Technical Support</label>
+                </value>
+                <value>
+                    <fullName>GCSC Operations</fullName>
+                    <default>false</default>
+                    <label>GCSC Operations</label>
+                </value>
+                <value>
+                    <fullName>India Chat</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>India Chat</label>
+                </value>
+                <value>
+                    <fullName>India Customer Experience</fullName>
+                    <default>false</default>
+                    <label>India Customer Experience</label>
+                </value>
+                <value>
+                    <fullName>AM India Technical Support</fullName>
+                    <default>false</default>
+                    <label>India Technical Support</label>
+                </value>
+                <value>
+                    <fullName>LPS</fullName>
+                    <default>false</default>
+                    <label>LPS</label>
+                </value>
+                <value>
+                    <fullName>Managed Services</fullName>
+                    <default>false</default>
+                    <label>Managed Services</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+                <value>
+                    <fullName>US Customer Experience</fullName>
+                    <default>false</default>
+                    <label>US Customer Experience</label>
+                </value>
+                <value>
+                    <fullName>US Customer Success</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>US Customer Success</label>
+                </value>
+                <value>
+                    <fullName>US Technical Support</fullName>
+                    <default>false</default>
+                    <label>US Technical Support</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Company_BU__c</fullName>
+        <label>Company BU</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Abu Dhabi - AD1</fullName>
+                    <default>false</default>
+                    <label>Abu Dhabi - AD1</label>
+                </value>
+                <value>
+                    <fullName>AP Region - P10</fullName>
+                    <default>false</default>
+                    <label>AP Region - P10</label>
+                </value>
+                <value>
+                    <fullName>Australia - AU1</fullName>
+                    <default>false</default>
+                    <label>Australia - AU1</label>
+                </value>
+                <value>
+                    <fullName>Belgium - BE1</fullName>
+                    <default>false</default>
+                    <label>Belgium - BE1</label>
+                </value>
+                <value>
+                    <fullName>Belgium SPS - BE5</fullName>
+                    <default>false</default>
+                    <label>Belgium SPS - BE5</label>
+                </value>
+                <value>
+                    <fullName>Canada - CA1</fullName>
+                    <default>false</default>
+                    <label>Canada - CA1</label>
+                </value>
+                <value>
+                    <fullName>China - CN1</fullName>
+                    <default>false</default>
+                    <label>China - CN1</label>
+                </value>
+                <value>
+                    <fullName>Denmark - DK1</fullName>
+                    <default>false</default>
+                    <label>Denmark - DK1</label>
+                </value>
+                <value>
+                    <fullName>Denmark SPS - DK5</fullName>
+                    <default>false</default>
+                    <label>Denmark SPS - DK5</label>
+                </value>
+                <value>
+                    <fullName>EU Region - E50</fullName>
+                    <default>false</default>
+                    <label>EU Region - E50</label>
+                </value>
+                <value>
+                    <fullName>Finland - FI1</fullName>
+                    <default>false</default>
+                    <label>Finland - FI1</label>
+                </value>
+                <value>
+                    <fullName>France - FR1</fullName>
+                    <default>false</default>
+                    <label>France - FR1</label>
+                </value>
+                <value>
+                    <fullName>France SPS - FR5</fullName>
+                    <default>false</default>
+                    <label>France SPS - FR5</label>
+                </value>
+                <value>
+                    <fullName>Germany - DE1</fullName>
+                    <default>false</default>
+                    <label>Germany - DE1</label>
+                </value>
+                <value>
+                    <fullName>Germany SPS - DE5</fullName>
+                    <default>false</default>
+                    <label>Germany SPS - DE5</label>
+                </value>
+                <value>
+                    <fullName>Hong Kong - HK1</fullName>
+                    <default>false</default>
+                    <label>Hong Kong - HK1</label>
+                </value>
+                <value>
+                    <fullName>India - IN1</fullName>
+                    <default>false</default>
+                    <label>India - IN1</label>
+                </value>
+                <value>
+                    <fullName>Ireland - IE1</fullName>
+                    <default>false</default>
+                    <label>Ireland - IE1</label>
+                </value>
+                <value>
+                    <fullName>Italy - IT1</fullName>
+                    <default>false</default>
+                    <label>Italy - IT1</label>
+                </value>
+                <value>
+                    <fullName>Middle East - ME1</fullName>
+                    <default>false</default>
+                    <label>Middle East - ME1</label>
+                </value>
+                <value>
+                    <fullName>Netherlands - NL1</fullName>
+                    <default>false</default>
+                    <label>Netherlands - NL1</label>
+                </value>
+                <value>
+                    <fullName>Netherlands SPS - NL5</fullName>
+                    <default>false</default>
+                    <label>Netherlands SPS - NL5</label>
+                </value>
+                <value>
+                    <fullName>New Zealand - NZ1</fullName>
+                    <default>false</default>
+                    <label>New Zealand - NZ1</label>
+                </value>
+                <value>
+                    <fullName>Norway - NO1</fullName>
+                    <default>false</default>
+                    <label>Norway - NO1</label>
+                </value>
+                <value>
+                    <fullName>Poland - PL1</fullName>
+                    <default>false</default>
+                    <label>Poland - PL1</label>
+                </value>
+                <value>
+                    <fullName>Saudi Arabia - SA5</fullName>
+                    <default>false</default>
+                    <label>Saudi Arabia - SA5</label>
+                </value>
+                <value>
+                    <fullName>Singapore - SG1</fullName>
+                    <default>false</default>
+                    <label>Singapore - SG1</label>
+                </value>
+                <value>
+                    <fullName>South Africa - ZA1</fullName>
+                    <default>false</default>
+                    <label>South Africa - ZA1</label>
+                </value>
+                <value>
+                    <fullName>Spain - ES1</fullName>
+                    <default>false</default>
+                    <label>Spain - ES1</label>
+                </value>
+                <value>
+                    <fullName>Sweden - SE1</fullName>
+                    <default>false</default>
+                    <label>Sweden - SE1</label>
+                </value>
+                <value>
+                    <fullName>Sweden SPS - SE5</fullName>
+                    <default>false</default>
+                    <label>Sweden SPS - SE5</label>
+                </value>
+                <value>
+                    <fullName>Switzerland - CH1</fullName>
+                    <default>false</default>
+                    <label>Switzerland - CH1</label>
+                </value>
+                <value>
+                    <fullName>UK SPS - UK5</fullName>
+                    <default>false</default>
+                    <label>UK SPS - UK5</label>
+                </value>
+                <value>
+                    <fullName>UK - UK1</fullName>
+                    <default>false</default>
+                    <label>UK - UK1</label>
+                </value>
+                <value>
+                    <fullName>US - US1</fullName>
+                    <default>false</default>
+                    <label>US - US1</label>
+                </value>
+                <value>
+                    <fullName>US - US5</fullName>
+                    <default>false</default>
+                    <label>US - US5</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Is_Bureau_Service_Manager__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used to identify the Bureau Service Job Manager</description>
+        <label>Is Managed Services Standard Manager</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_CPS_Project_Manager__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Is CPS Project Manager?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_I_O_Lead__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Is I/O Lead?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Job_Manager__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Is Job Manager</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Localisation_Lead__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Is Localisation Lead?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Managed_Service_Manager__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used to identify Managed Service Job Project Manager</description>
+        <label>Is Managed Service Manager</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Project_Co_ordinator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Is Project Co-ordinator</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Project_Manager__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Is Project Manager</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Technology_Lead__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Is Technology Lead?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MS_LOB__c</fullName>
+        <description>This field defines the MS Team user belongs to &amp; controls the names appearing in Project Manager lookup on Job</description>
+        <label>MS LOB</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>TA - Corporate</fullName>
+                    <default>false</default>
+                    <label>TA - Corporate</label>
+                </value>
+                <value>
+                    <fullName>TA - Credentialing</fullName>
+                    <default>false</default>
+                    <label>TA - Credentialing</label>
+                </value>
+                <value>
+                    <fullName>Talent Management</fullName>
+                    <default>false</default>
+                    <label>Talent Management</label>
+                </value>
+                <value>
+                    <fullName>Talent Management (Dashboards)</fullName>
+                    <default>false</default>
+                    <label>Talent Management (Dashboards)</label>
+                </value>
+                <value>
+                    <fullName>TA - Vocational (Analytics)</fullName>
+                    <default>false</default>
+                    <label>TA - Vocational (Analytics)</label>
+                </value>
+                <value>
+                    <fullName>TA - Vocational (Batch)</fullName>
+                    <default>false</default>
+                    <label>TA - Vocational (Batch)</label>
+                </value>
+                <value>
+                    <fullName>TA - Vocational (School)</fullName>
+                    <default>false</default>
+                    <label>TA - Vocational (School)</label>
+                </value>
+                <value>
+                    <fullName>TA - Corporate &amp; TA - Credentialing</fullName>
+                    <default>false</default>
+                    <label>TA - Corporate &amp; TA - Credentialing</label>
+                </value>
+                <value>
+                    <fullName>TA - Corporate &amp; Talent Management</fullName>
+                    <default>false</default>
+                    <label>TA - Corporate &amp; Talent Management</label>
+                </value>
+                <value>
+                    <fullName>TA - Vocational (Analytics) &amp; Talent Management</fullName>
+                    <default>false</default>
+                    <label>TA - Vocational (Analytics) &amp; Talent Management</label>
+                </value>
+                <value>
+                    <fullName>TA - Vocational (Batch) &amp; Talent Management</fullName>
+                    <default>false</default>
+                    <label>TA - Vocational (Batch) &amp; Talent Management</label>
+                </value>
+                <value>
+                    <fullName>TA - Vocational (School) &amp; Talent Management</fullName>
+                    <default>false</default>
+                    <label>TA - Vocational (School) &amp; Talent Management</label>
+                </value>
+                <value>
+                    <fullName>TA - Vocational (Analytics) &amp; TA - Corporate</fullName>
+                    <default>false</default>
+                    <label>TA - Vocational (Analytics) &amp; TA - Corporate</label>
+                </value>
+                <value>
+                    <fullName>TA - Vocational (Batch) &amp; TA - Corporate</fullName>
+                    <default>false</default>
+                    <label>TA - Vocational (Batch) &amp; TA - Corporate</label>
+                </value>
+                <value>
+                    <fullName>TA - Vocational (School) &amp; TA - Corporate</fullName>
+                    <default>false</default>
+                    <label>TA - Vocational (School) &amp; TA - Corporate</label>
+                </value>
+                <value>
+                    <fullName>TA - Corporate, TA - Credentialing, Talent Management, TA - Vocational (Batch) &amp; TA - Vocational (School)</fullName>
+                    <default>false</default>
+                    <label>TA - Corporate, TA - Credentialing, Talent Management, TA - Vocational (Batch) &amp; TA - Vocational (School)</label>
+                </value>
+                <value>
+                    <fullName>TA - Vocational (Batch), TA - Vocational (School) &amp; TA - Vocational (Analytics)</fullName>
+                    <default>false</default>
+                    <label>TA - Vocational (Batch), TA - Vocational (School) &amp; TA - Vocational (Analytics)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PSA_Role__c</fullName>
+        <description>This specifies the role that the user should be assigned as per the PSA Securit y Model.</description>
+        <inlineHelpText>Specify the role that the user should be assigned as per the PSA Securit y Model.</inlineHelpText>
+        <label>PSA Role</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>User</fullName>
+                    <default>false</default>
+                    <label>User</label>
+                </value>
+                <value>
+                    <fullName>Project Manager</fullName>
+                    <default>false</default>
+                    <label>Project Manager</label>
+                </value>
+                <value>
+                    <fullName>PSA Lead</fullName>
+                    <default>true</default>
+                    <label>PSA Lead</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project_BU__c</fullName>
+        <externalId>false</externalId>
+        <label>Project BU</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Superuser_BU__c</fullName>
+        <description>Selected BU comma seperated for which user is a super user</description>
+        <externalId>false</externalId>
+        <label>Superuser BU</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_Rate_Cost__c</fullName>
+        <label>Time Rate Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Utilisation_Function__c</fullName>
+        <label>Utilisation Function</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Admin</fullName>
+                    <default>false</default>
+                    <label>Admin</label>
+                </value>
+                <value>
+                    <fullName>PS</fullName>
+                    <default>false</default>
+                    <label>PS</label>
+                </value>
+                <value>
+                    <fullName>Sales</fullName>
+                    <default>false</default>
+                    <label>Sales</label>
+                </value>
+                <value>
+                    <fullName>SPS</fullName>
+                    <default>false</default>
+                    <label>SPS</label>
+                </value>
+                <value>
+                    <fullName>TS</fullName>
+                    <default>false</default>
+                    <label>TS</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+</CustomObject>

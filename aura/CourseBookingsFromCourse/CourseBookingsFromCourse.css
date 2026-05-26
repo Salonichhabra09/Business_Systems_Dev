@@ -1,0 +1,48 @@
+.THIS .slds-page-header {
+    border-bottom: none;
+    box-shadow: none;
+    border: none;
+    background-color: white;
+}
+                    
+.THIS.customSize {
+    min-height: 100vh;
+    background: white;
+    border-bottom: var(--lwc-borderWidthThin,1px) solid var(--lwc-pageHeaderColorBorder,rgb(201, 201, 201));
+    border-radius: var(--lwc-pageHeaderBorderRadius,0.25rem);
+    background-clip: padding-box;
+    box-shadow: var(--lwc-pageHeaderShadow,0 2px 2px 0 rgba(0, 0, 0, 0.10));
+    border: var(--lwc-borderWidthThin,1px) solid var(--lwc-pageHeaderColorBorder,rgb(201, 201, 201));                     
+}
+.THIS .slds-table_bordered {
+    border-bottom: none;
+}
+  
+
+.THIS .slds-button_icon-brand{
+    margin-right: 2px;
+}
+.THIS .slds-page-header__title {
+    padding-right: 4px;
+    display: inline;
+}/*
+
+.THIS th{
+    padding:4px;
+    text-align:center;
+}
+.THIS td{
+    padding:4px;
+    text-align:left;
+}
+.slds-card.THIS {
+    overflow-x:auto;
+    height:500px;
+}
+.THIS .slds-card__body {
+    width:max-content;
+}*/
+.THIS.slds-spinner_container {  
+  z-index: 10000;
+  position: fixed;   
+}

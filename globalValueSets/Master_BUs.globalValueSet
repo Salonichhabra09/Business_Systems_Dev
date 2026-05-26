@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Abu Dhabi - AD1</fullName>
+        <default>false</default>
+        <label>Abu Dhabi - AD1</label>
+    </customValue>
+    <customValue>
+        <fullName>Australia - AU1</fullName>
+        <default>false</default>
+        <label>Australia - AU1</label>
+    </customValue>
+    <customValue>
+        <fullName>Belgium SPS - BE5</fullName>
+        <default>false</default>
+        <label>Belgium SPS - BE5</label>
+    </customValue>
+    <customValue>
+        <fullName>Canada - CA1</fullName>
+        <default>false</default>
+        <label>Canada - CA1</label>
+    </customValue>
+    <customValue>
+        <fullName>China - CN1</fullName>
+        <default>false</default>
+        <label>China - CN1</label>
+    </customValue>
+    <customValue>
+        <fullName>Denmark - DK1</fullName>
+        <default>false</default>
+        <label>Denmark - DK1</label>
+    </customValue>
+    <customValue>
+        <fullName>Finland - FI1</fullName>
+        <default>false</default>
+        <label>Finland - FI1</label>
+    </customValue>
+    <customValue>
+        <fullName>France SPS - FR5</fullName>
+        <default>false</default>
+        <label>France SPS - FR5</label>
+    </customValue>
+    <customValue>
+        <fullName>Germany SPS - DE5</fullName>
+        <default>false</default>
+        <label>Germany SPS - DE5</label>
+    </customValue>
+    <customValue>
+        <fullName>Hong Kong - HK1</fullName>
+        <default>false</default>
+        <label>Hong Kong - HK1</label>
+    </customValue>
+    <customValue>
+        <fullName>India - IN1</fullName>
+        <default>false</default>
+        <label>India - IN1</label>
+    </customValue>
+    <customValue>
+        <fullName>Italy - IT1</fullName>
+        <default>false</default>
+        <label>Italy - IT1</label>
+    </customValue>
+    <customValue>
+        <fullName>Middle East - ME1</fullName>
+        <default>false</default>
+        <label>Middle East - ME1</label>
+    </customValue>
+    <customValue>
+        <fullName>Netherlands SPS - NL5</fullName>
+        <default>false</default>
+        <label>Netherlands SPS - NL5</label>
+    </customValue>
+    <customValue>
+        <fullName>New Zealand - NZ1</fullName>
+        <default>false</default>
+        <label>New Zealand - NZ1</label>
+    </customValue>
+    <customValue>
+        <fullName>Norway - NO1</fullName>
+        <default>false</default>
+        <label>Norway - NO1</label>
+    </customValue>
+    <customValue>
+        <fullName>Philippines - PH1</fullName>
+        <default>false</default>
+        <label>Philippines - PH1</label>
+    </customValue>
+    <customValue>
+        <fullName>Saudi Arabia - SA5</fullName>
+        <default>false</default>
+        <label>Saudi Arabia - SA5</label>
+    </customValue>
+    <customValue>
+        <fullName>Singapore - SG1</fullName>
+        <default>false</default>
+        <label>Singapore - SG1</label>
+    </customValue>
+    <customValue>
+        <fullName>South Africa - ZA1</fullName>
+        <default>false</default>
+        <label>South Africa - ZA1</label>
+    </customValue>
+    <customValue>
+        <fullName>Sweden - SE1</fullName>
+        <default>false</default>
+        <label>Sweden - SE1</label>
+    </customValue>
+    <customValue>
+        <fullName>Switzerland - CH1</fullName>
+        <default>false</default>
+        <label>Switzerland - CH1</label>
+    </customValue>
+    <customValue>
+        <fullName>UK - UK1</fullName>
+        <default>false</default>
+        <label>UK - UK1</label>
+    </customValue>
+    <customValue>
+        <fullName>US - US5</fullName>
+        <default>false</default>
+        <label>US - US5</label>
+    </customValue>
+    <customValue>
+        <fullName>Indonesia - ID1</fullName>
+        <default>false</default>
+        <label>Indonesia - ID1</label>
+    </customValue>
+    <customValue>
+        <fullName>Asia Pac	India</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Asia Pac	India</label>
+    </customValue>
+    <customValue>
+        <fullName>Asia Pac	Singapore</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Asia Pac	Singapore</label>
+    </customValue>
+    <customValue>
+        <fullName>Asia Pac	AP Region</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Asia Pac	AP Region</label>
+    </customValue>
+    <customValue>
+        <fullName>UK	  - UK1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>UK	  - UK1</label>
+    </customValue>
+    <customValue>
+        <fullName>Head Office  - H50</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Head Office  - H50</label>
+    </customValue>
+    <customValue>
+        <fullName>Ireland	  - IE1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Ireland	  - IE1</label>
+    </customValue>
+    <customValue>
+        <fullName>South Africa  - ZA1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>South Africa  - ZA1</label>
+    </customValue>
+    <customValue>
+        <fullName>Sweden	  - SE1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Sweden	  - SE1</label>
+    </customValue>
+    <customValue>
+        <fullName>Finland	  - N10</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Finland	  - N10</label>
+    </customValue>
+    <customValue>
+        <fullName>Norway	  - NO1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Norway	  - NO1</label>
+    </customValue>
+    <customValue>
+        <fullName>Denmark	  - DK1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Denmark	  - DK1</label>
+    </customValue>
+    <customValue>
+        <fullName>Netherlands - NL1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Netherlands - NL1</label>
+    </customValue>
+    <customValue>
+        <fullName>Belgium	  - BE1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Belgium	  - BE1</label>
+    </customValue>
+    <customValue>
+        <fullName>France	  - FR1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>France	  - FR1</label>
+    </customValue>
+    <customValue>
+        <fullName>Germany	  - DE1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Germany	  - DE1</label>
+    </customValue>
+    <customValue>
+        <fullName>Switzerland	  - CH1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Switzerland	  - CH1</label>
+    </customValue>
+    <customValue>
+        <fullName>Italy	  - IT1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Italy	  - IT1</label>
+    </customValue>
+    <customValue>
+        <fullName>Europe Region - E10</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Europe Region - E10</label>
+    </customValue>
+    <customValue>
+        <fullName>US	  - US1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>US	  - US1</label>
+    </customValue>
+    <customValue>
+        <fullName>Canada	  - CA1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Canada	  - CA1</label>
+    </customValue>
+    <customValue>
+        <fullName>US region	  - A10</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>US region	  - A10</label>
+    </customValue>
+    <customValue>
+        <fullName>Australia	   - AU1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Australia	   - AU1</label>
+    </customValue>
+    <customValue>
+        <fullName>Hong Kong	   - HK1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Hong Kong	   - HK1</label>
+    </customValue>
+    <customValue>
+        <fullName>India	   - IN1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>India	   - IN1</label>
+    </customValue>
+    <customValue>
+        <fullName>Singapore	   - SG1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Singapore	   - SG1</label>
+    </customValue>
+    <customValue>
+        <fullName>AP Region	   - P10</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>AP Region	   - P10</label>
+    </customValue>
+    <customValue>
+        <fullName>Poland - PL1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Poland - PL1</label>
+    </customValue>
+    <customValue>
+        <fullName>Ireland - IE1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Ireland - IE1</label>
+    </customValue>
+    <customValue>
+        <fullName>France - FR1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>France - FR1</label>
+    </customValue>
+    <customValue>
+        <fullName>Finland - N10</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Finland - N10</label>
+    </customValue>
+    <customValue>
+        <fullName>Germany - DE1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Germany - DE1</label>
+    </customValue>
+    <customValue>
+        <fullName>Belgium - BE1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Belgium - BE1</label>
+    </customValue>
+    <customValue>
+        <fullName>Head Office - H50</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Head Office - H50</label>
+    </customValue>
+    <customValue>
+        <fullName>US - US1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>US - US1</label>
+    </customValue>
+    <customValue>
+        <fullName>Finland-N10</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Finland-N10</label>
+    </customValue>
+    <customValue>
+        <fullName>EU Region - E50</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>EU Region - E50</label>
+    </customValue>
+    <customValue>
+        <fullName>Norway- NO1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Norway- NO1</label>
+    </customValue>
+    <customValue>
+        <fullName>Spain - ES1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Spain - ES1</label>
+    </customValue>
+    <customValue>
+        <fullName>Belgium – BE1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Belgium – BE1</label>
+    </customValue>
+    <customValue>
+        <fullName>Denmark – DK1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Denmark – DK1</label>
+    </customValue>
+    <customValue>
+        <fullName>Finland – N10</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Finland – N10</label>
+    </customValue>
+    <customValue>
+        <fullName>France – FR1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>France – FR1</label>
+    </customValue>
+    <customValue>
+        <fullName>Germany – DE1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Germany – DE1</label>
+    </customValue>
+    <customValue>
+        <fullName>Italy – IT1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Italy – IT1</label>
+    </customValue>
+    <customValue>
+        <fullName>Netherlands – NL1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Netherlands – NL1</label>
+    </customValue>
+    <customValue>
+        <fullName>Norway – NO1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Norway – NO1</label>
+    </customValue>
+    <customValue>
+        <fullName>Sweden – SE1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Sweden – SE1</label>
+    </customValue>
+    <customValue>
+        <fullName>Switzerland – CH1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Switzerland – CH1</label>
+    </customValue>
+    <customValue>
+        <fullName>UK</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>UK</label>
+    </customValue>
+    <customValue>
+        <fullName>Canada</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Canada</label>
+    </customValue>
+    <customValue>
+        <fullName>Australia</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Australia</label>
+    </customValue>
+    <customValue>
+        <fullName>Belgium</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Belgium</label>
+    </customValue>
+    <customValue>
+        <fullName>Denmark</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Denmark</label>
+    </customValue>
+    <customValue>
+        <fullName>Germany</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Germany</label>
+    </customValue>
+    <customValue>
+        <fullName>Finland</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Finland</label>
+    </customValue>
+    <customValue>
+        <fullName>France</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>France</label>
+    </customValue>
+    <customValue>
+        <fullName>Hong Kong</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Hong Kong</label>
+    </customValue>
+    <customValue>
+        <fullName>India</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>India</label>
+    </customValue>
+    <customValue>
+        <fullName>Italy</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Italy</label>
+    </customValue>
+    <customValue>
+        <fullName>Netherlands</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Netherlands</label>
+    </customValue>
+    <customValue>
+        <fullName>New Zealand</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>New Zealand</label>
+    </customValue>
+    <customValue>
+        <fullName>Norway</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Norway</label>
+    </customValue>
+    <customValue>
+        <fullName>APAC</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>APAC</label>
+    </customValue>
+    <customValue>
+        <fullName>Singapore</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Singapore</label>
+    </customValue>
+    <customValue>
+        <fullName>South Africa</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>South Africa</label>
+    </customValue>
+    <customValue>
+        <fullName>Sweden</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Sweden</label>
+    </customValue>
+    <customValue>
+        <fullName>Switzerland</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Switzerland</label>
+    </customValue>
+    <customValue>
+        <fullName>Germany -DE1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Germany -DE1</label>
+    </customValue>
+    <customValue>
+        <fullName>Finland – FI1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Finland – FI1</label>
+    </customValue>
+    <customValue>
+        <fullName>Poland – PL1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Poland – PL1</label>
+    </customValue>
+    <customValue>
+        <fullName>Spain - SP1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Spain - SP1</label>
+    </customValue>
+    <customValue>
+        <fullName>USA - US1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>USA - US1</label>
+    </customValue>
+    <customValue>
+        <fullName>SHL Previsor - P10</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>SHL Previsor - P10</label>
+    </customValue>
+    <customValue>
+        <fullName>UK SCS - UK5</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>UK SCS - UK5</label>
+    </customValue>
+    <customValue>
+        <fullName>TEST BU - DO NOT USE THIS ACCOUNT</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>TEST BU - DO NOT USE THIS ACCOUNT</label>
+    </customValue>
+    <customValue>
+        <fullName>UK  SPS - UK5</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>UK  SPS - UK5</label>
+    </customValue>
+    <customValue>
+        <fullName>UK SPS - UK5</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>UK SPS - UK5</label>
+    </customValue>
+    <customValue>
+        <fullName>SPS - UK5</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>SPS - UK5</label>
+    </customValue>
+    <customValue>
+        <fullName>Denmark SPS - DK5</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Denmark SPS - DK5</label>
+    </customValue>
+    <customValue>
+        <fullName>Sweden SPS - SE5</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Sweden SPS - SE5</label>
+    </customValue>
+    <customValue>
+        <fullName>Belgium - BE5</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Belgium - BE5</label>
+    </customValue>
+    <customValue>
+        <fullName>Denmark - DK5</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Denmark - DK5</label>
+    </customValue>
+    <customValue>
+        <fullName>France - FR5</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>France - FR5</label>
+    </customValue>
+    <customValue>
+        <fullName>Germany - DE5</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Germany - DE5</label>
+    </customValue>
+    <customValue>
+        <fullName>Netherlands - NL5</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Netherlands - NL5</label>
+    </customValue>
+    <customValue>
+        <fullName>Sweden - SE5</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Sweden - SE5</label>
+    </customValue>
+    <customValue>
+        <fullName>UK - UK5</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>UK - UK5</label>
+    </customValue>
+    <customValue>
+        <fullName>US-US5</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>US-US5</label>
+    </customValue>
+    <customValue>
+        <fullName>ME1 - Middle East</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>ME1 - Middle East</label>
+    </customValue>
+    <customValue>
+        <fullName>United States</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>United States</label>
+    </customValue>
+    <customValue>
+        <fullName>Poland</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Poland</label>
+    </customValue>
+    <customValue>
+        <fullName>EU</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>EU</label>
+    </customValue>
+    <customValue>
+        <fullName>Meridian</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Meridian</label>
+    </customValue>
+    <customValue>
+        <fullName>USA</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>USA</label>
+    </customValue>
+    <customValue>
+        <fullName>Meridian	UK</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Meridian	UK</label>
+    </customValue>
+    <customValue>
+        <fullName>Meridian	Head Office</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Meridian	Head Office</label>
+    </customValue>
+    <customValue>
+        <fullName>Meridian	Ireland</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Meridian	Ireland</label>
+    </customValue>
+    <customValue>
+        <fullName>Meridian	South Africa</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Meridian	South Africa</label>
+    </customValue>
+    <customValue>
+        <fullName>Europe	Sweden</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Europe	Sweden</label>
+    </customValue>
+    <customValue>
+        <fullName>Europe	Finland</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Europe	Finland</label>
+    </customValue>
+    <customValue>
+        <fullName>Europe	Norway</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Europe	Norway</label>
+    </customValue>
+    <customValue>
+        <fullName>Europe	Denmark</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Europe	Denmark</label>
+    </customValue>
+    <customValue>
+        <fullName>Europe	Netherlands</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Europe	Netherlands</label>
+    </customValue>
+    <customValue>
+        <fullName>Europe	Belgium</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Europe	Belgium</label>
+    </customValue>
+    <customValue>
+        <fullName>Europe	France</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Europe	France</label>
+    </customValue>
+    <customValue>
+        <fullName>Europe	Germany</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Europe	Germany</label>
+    </customValue>
+    <customValue>
+        <fullName>Europe	Switzerland</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Europe	Switzerland</label>
+    </customValue>
+    <customValue>
+        <fullName>Europe	Italy</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Europe	Italy</label>
+    </customValue>
+    <customValue>
+        <fullName>Europe	Europe Region</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Europe	Europe Region</label>
+    </customValue>
+    <customValue>
+        <fullName>USA	US</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>USA	US</label>
+    </customValue>
+    <customValue>
+        <fullName>USA	Canada</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>USA	Canada</label>
+    </customValue>
+    <customValue>
+        <fullName>USA	US region</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>USA	US region</label>
+    </customValue>
+    <customValue>
+        <fullName>Asia Pac	New Zealand</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Asia Pac	New Zealand</label>
+    </customValue>
+    <customValue>
+        <fullName>Asia Pac	Australia</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Asia Pac	Australia</label>
+    </customValue>
+    <customValue>
+        <fullName>Asia Pac	Hong Kong</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Asia Pac	Hong Kong</label>
+    </customValue>
+    <masterLabel>Master BUs</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

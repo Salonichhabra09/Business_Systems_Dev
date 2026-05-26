@@ -1,0 +1,50 @@
+<aura:documentation>
+    
+    <aura:example name="ExampleName" ref="c:Opportunity_OrderSection" label="Save and Update Order">
+    </aura:example> 
+    
+    <aura:description>
+        <p style="line-height: normal;"><strong><span style="font-family: 'Arial',sans-serif; color: #080707;">Overview:</span></strong></p>
+        <ul>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">A new component, &lsquo;Opportunity_OrderSection&rsquo; has been created to accommodate the necessary controls for the user to update the order from the opportunity record detail page when the opportunity and order fields are not in Sync.</span></li>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">This component resides on top of details component of an opportunity record and it&rsquo;s visibility is dependent on the user profiles and some other variables as mentioned below:</span>
+                <ul>
+                    <li style="margin-left: 1.5in; text-indent: -.25in; line-height: normal; tab-stops: list -.5in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Rest of the users:</span>
+                        <ul>
+                            <li style="margin-left: 0in; text-indent: 125.9pt; line-height: normal;"><span style="font-family: 'Arial',sans-serif; color: #080707;">The opportunity and order fields are not in Sync.</span></li>
+                            <li style="margin-left: 0in; text-indent: 125.9pt; line-height: normal;"><span style="font-family: 'Arial',sans-serif; color: #080707;">AND there is an order record associated with the opportunity record</span></li>
+                            <li style="margin-left: 0in; text-indent: 125.9pt; line-height: normal;"><span style="font-family: 'Arial',sans-serif; color: #080707;">AND the profile is not Commercial.</span></li>
+                        </ul>
+                    </li>
+                    <li style="margin-left: 1.5in; text-indent: -.25in; line-height: normal; tab-stops: list -.5in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Commercial Profile users:</span>
+                        <ul>
+                            <li style="margin-left: 0in; text-indent: 125.9pt; line-height: normal;"><span style="font-family: 'Arial',sans-serif; color: #080707;">The opportunity and order fields are not in Sync.</span></li>
+                            <li style="margin-left: 0in; text-indent: 125.9pt; line-height: normal;"><span style="font-family: 'Arial',sans-serif; color: #080707;">AND there is an order record associated with the opportunity record</span></li>
+                            <li style="margin-left: 0in; text-indent: 125.9pt; line-height: normal;"><span style="font-family: 'Arial',sans-serif; color: #080707;">AND the profile is Commercial.</span></li>
+                            <li style="margin-left: 0in; text-indent: 125.9pt; line-height: normal;"><span style="font-family: 'Arial',sans-serif; color: #080707;">AND the order status is Draft or Rejected.</span></li>
+                        </ul>
+                    </li>
+                    <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">This component will appear with following details:</span>
+                        <ul>
+                            <li style="margin-left: 1.5in; text-indent: -.25in; line-height: normal; tab-stops: list -.5in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Heading: WARNING! The Order associated with this opportunity is not in sync.</span></li>
+                            <li style="margin-left: 1.5in; text-indent: -.25in; line-height: normal; tab-stops: list -.5in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Body Text: Please click the 'Save and Update Order' button below to bring the order in sync.</span></li>
+                            <li style="margin-left: 1.5in; text-indent: -.25in; line-height: normal; tab-stops: list -.5in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Button, labelled as &ndash; Save and Update Order</span></li>
+                        </ul>
+                    </li>
+                    <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Functionality: The behaviour of component functions as below:</span>
+                        <ul>
+                            <li style="margin-left: 2.0in; text-indent: -.25in; line-height: normal; tab-stops: list 0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">This component will be available on all the opportunities record page when the aforementioned criteria is met.</span></li>
+                            <li style="margin-left: 2.0in; text-indent: -.25in; line-height: normal; tab-stops: list 0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">On clicking the &lsquo;Save and Update Order&rsquo; button, all the out of sync field information (E.g. Billing contact, Account, Close Date, etc) will be copied over from opportunity to the order.</span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p style="line-height: normal;"><span style="font-family: 'Arial',sans-serif; color: #080707;">&nbsp;<strong>For the Developers:</strong></span></p>
+        <ul>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">On Clicking "Save and Update Order" a controller method is called, which in result call a helper method.</span></li>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">The helper method calls a "GenericBase"-helper which calls the class method.</span></li>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in; border: none; padding: 0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">The class method checks if the set of fileds(as per story) are same on opportunity and order, if yes it will return success to the "GenericBase"-helper and than it returns the same response to JS Controller.</span></li>
+        </ul>
+    </aura:description>
+</aura:documentation>

@@ -1,0 +1,140 @@
+<template>
+    
+<lightning-card>
+   <!-- <h3 class="slds-var-p-around_x-small" slot="title">
+        <lightning-icon icon-name="standard:task2" size="small"></lightning-icon>
+        <span class="slds-var-p-horizontal_small">Task Creation</span>
+    </h3> -->
+    <div class="container slds-var-p-around_x-small">
+        <lightning-spinner if:true={showSpinner} alternative-text = 'Please wait...' variant="brand">
+        </lightning-spinner>
+           
+    <!-- Table -->
+
+    <table class="slds-table slds-table_bordered slds-no-row-hover slds-table_cell-buffer" role="grid">
+        <thead>
+            <tr class="slds-line-height_reset">
+            <th class="" scope="col">
+                <div class="slds-truncate" title="S.No">#</div>
+            </th>
+            <template for:each={columns} for:item="col">
+                <template if:true={col.adjustWidth}>
+                    <th key={col.label} style="width:300px" scope="col">
+                        <div class="slds-truncate" title={col.label}>{col.label}
+                            <template if:true={col.required}>
+                            <label style="color:#ed150d;font-size:15px;width:auto;"> *</label>
+                        </template>
+                        </div>
+                        </th>
+                </template>
+                <template if:false={col.adjustWidth}>
+                    <th key={col.label} class="" scope="col">
+                        <div class="slds-truncate" title={col.label}>{col.label}
+                            <template if:true={col.required}>
+                                <label style="color:#ed150d;font-size:15px;width:auto;"> *</label>
+                            </template>
+                        </div>
+                        </th>
+                </template>
+            </template>
+            </tr>
+        </thead>
+        <tbody>
+        <template for:each={listOfTasks} for:item="rec">
+            <tr key={rec} class="slds-hint-parent">
+                <td style="font-weight: bold">
+                    <lightning-formatted-number value={rec.index}></lightning-formatted-number>.
+                </td>
+
+                <td>
+                    <!-- <lightning-input type="text" variant="label-hidden" label="" data-id={rec.index} name="taskOwner" value={rec.Name} onchange={handleInputChange}></lightning-input> -->
+                    <lightning-combobox
+                        name="ownerId"
+                        data-id={rec.index}
+                        label=""
+                        value={rec.ownerId}
+                        variant="label-hidden"
+                        placeholder="Select Owner"
+                        options={bureauUserOptions}
+                        onchange={handleInputChange}
+                        required="true" >
+                    </lightning-combobox>
+                </td>
+
+                <td>
+                    <!-- <lightning-input type="text" variant="label-hidden" label="" data-id={rec.index} name="Website" value={rec.Website} onchange={handleInputChange}></lightning-input> -->
+                    <lightning-combobox
+                        name="Task_Category__c"
+                        data-id={rec.index}
+                        label=""
+                        value={rec.Task_Category__c}
+                        variant="label-hidden"
+                        placeholder="Select Category"
+                        options={taskCategoryOptions}
+                        onchange={handleTaskCategoryChange}
+                        required="true" >
+                    </lightning-combobox> 
+                 <!--   <lightning-record-edit-form object-api-name="MS_Task__c" record-type-id ={recordTypeId}>
+                        <lightning-input-field field-name="Task_Category__c" value={rec.Task_Category__c}
+                        variant="label-hidden"></lightning-input-field>
+                    </lightning-record-edit-form> -->
+                </td>
+
+                <td>
+                    <lightning-combobox
+                        name="Task_Type__c"
+                        data-id={rec.index}
+                        label=""
+                        value={rec.Task_Type__c}
+                        variant="label-hidden"
+                        placeholder="Select Type"
+                        options={rec.taskTypeOptions}
+                        onchange={handleInputChange}
+                        required="true" >
+                    </lightning-combobox>
+                  <!--  <lightning-record-edit-form object-api-name="MS_Task__c" >
+                        <template if:true={hideField}>
+                        <lightning-input-field field-name="Task_Category__c" value={rec.Task_Category__c}
+                        variant="label-hidden"></lightning-input-field>
+                        </template>
+                        <lightning-input-field field-name="Task_Type__c" value={rec.Task_Type__c}
+                        variant="label-hidden"></lightning-input-field>
+                    </lightning-record-edit-form> -->
+                </td>
+
+                <td>
+                    <lightning-input type="date" class='dateField' variant="label-hidden" label="" data-id={rec.index} name="Task_Date__c" value={rec.Task_Date__c} onchange={handleInputChange} required="true"></lightning-input>
+                </td>
+
+                <td>
+                    <lightning-input type="time" variant="label-hidden" label="" data-id={rec.index} name="Scheduled_Time__c" value={rec.Scheduled_Time__c} onchange={handleInputChange} placeholder="HH:MM"></lightning-input>
+                </td>
+                <td>
+                    <lightning-input type="number" variant="label-hidden" label="" data-id={rec.index} name="Estimated_Time_Required__c" value={rec.Estimated_Time_Required__c} onchange={handleInputChange} placeholder="In Minutes" required="true"></lightning-input>
+                </td>
+                <td>
+                    <lightning-textarea variant="label-hidden" label="" data-id={rec.index} name="Comments__c" value={rec.Comments__c} onchange={handleInputChange}></lightning-textarea>
+                </td>
+
+                <td>
+                    <lightning-button-icon icon-name="utility:delete" alternative-text="Remove" title="Remove" name={rec.index} onclick={removeRow}></lightning-button-icon>
+                    &nbsp;
+                    <lightning-button-icon icon-name="utility:add" alternative-text="Add" title="Add" name={rec.index} onclick={addNewRow}></lightning-button-icon>
+                    &nbsp;
+                    <lightning-button-icon icon-name="action:clone" alternative-text="Clone" title="Clone" name={rec.index} onclick={CloneRow}></lightning-button-icon>
+                </td>
+            </tr>
+        </template>
+        </tbody>
+    </table>
+    <div class="slds-var-p-left_small slds-var-p-vertical_small">
+        <lightning-button variant="neutral" label="ADD ROW" title="add additional row" icon-name="utility:add" onclick={addNewRow}></lightning-button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="slds-modal__footer" style="padding: 0.50rem 1rem;">
+        <lightning-button variant="brand" label="Save" title="Create Tasks" onclick={createTasks}></lightning-button>
+    </footer>
+</div>
+</lightning-card>
+</template>

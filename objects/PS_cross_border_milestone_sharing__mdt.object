@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Metadata structure to store structure of cross border BU and group mapping for professional services mielstone sharing</description>
+    <fields>
+        <fullName>Cross_Border_BU__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Cross Border BU</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Public_Group__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Public Group</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>PS cross  border milestone sharing</label>
+    <listViews>
+        <fullName>All_values</fullName>
+        <columns>MasterLabel</columns>
+        <columns>Cross_Border_BU__c</columns>
+        <columns>Public_Group__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All values</label>
+        <language>en_US</language>
+    </listViews>
+    <pluralLabel>PS cross  border milestone sharings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

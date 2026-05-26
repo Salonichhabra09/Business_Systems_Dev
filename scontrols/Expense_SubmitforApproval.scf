@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <script type="text/javascript" src="/js/functions.js"></script>
+    <script src="/soap/ajax/12.0/connection.js"></script>
+    <script type="text/javascript" src="/soap/ajax/12.0/apex.js"></script>
+    <script type="text/javascript">
+    function Page_OnLoad()
+	{
+    	var expense="{!Expense__c.Id}";
+    
+    	if("{!Expense__c.Status__c}"=="In Progress")
+    	{
+    		
+    		var Answer=confirm("This Expense has not been submitted yet.Do you want to submit it?");
+    		if(Answer)
+			{
+				var result = sforce.apex.execute("Expense_Manager","submitExpense",{expenseId: expense});
+				alert ("Submitted Successfully");
+				top.window.location.href = top.window.location.href;
+			}
+			
+    	}
+    	else
+    	{
+    		//alert(parent.document.getElementByName('submit').value);
+    	}
+	}
+    </script>
+</head>
+<body onload="Page_OnLoad();">
+</body>
+</html>

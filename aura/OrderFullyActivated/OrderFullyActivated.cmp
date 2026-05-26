@@ -1,0 +1,24 @@
+<aura:component controller="UpdateOrderFullyActivated" implements="flexipage:availableForAllPageTypes,force:appHostable,force:hasRecordId" access="global">
+   <!--Component Start-->
+    <lightning:card title="" > 
+        <lightning:spinner aura:id="mySpinner" class="slds-hide" variant="brand"  />
+    	 <table>
+            <tr>
+                <td>
+                    <center>
+                        <div style="font-size:15px">
+                          Once PS have notified that the product subscription is live this order should be marked as Fully Activated. 
+                        </div>
+                        <div style="font-size:15px">
+                         Please ensure that the correct product subscription start date is entered on the contract before marking this order as fully activated. 
+                        </div>
+                    </center>
+                </td>
+                <td>
+                    <lightning:button variant="brand" label="Fully Activate" title="Brand action" onclick="{! c.handleOrderUpdate }"  />
+                </td>
+            </tr>
+        </table>
+    </lightning:card>
+    <!--Component End-->
+</aura:component>

@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Graduate Essential</fullName>
+        <default>false</default>
+        <label>Graduate Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>Graduate Advanced</fullName>
+        <default>false</default>
+        <label>Graduate Advanced</label>
+    </customValue>
+    <customValue>
+        <fullName>Graduate Ultimate</fullName>
+        <default>false</default>
+        <label>Graduate Ultimate</label>
+    </customValue>
+    <customValue>
+        <fullName>Volume Essential</fullName>
+        <default>false</default>
+        <label>Volume Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>Volume Advanced</fullName>
+        <default>false</default>
+        <label>Volume Advanced</label>
+    </customValue>
+    <customValue>
+        <fullName>Apprentice Essential</fullName>
+        <default>false</default>
+        <label>Apprentice Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>Tech Essential</fullName>
+        <default>false</default>
+        <label>Technology Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>Tech Advanced</fullName>
+        <default>false</default>
+        <label>Technology Advanced</label>
+    </customValue>
+    <customValue>
+        <fullName>Technology Ultimate</fullName>
+        <default>false</default>
+        <label>Technology Ultimate</label>
+    </customValue>
+    <customValue>
+        <fullName>Managerial Essential</fullName>
+        <default>false</default>
+        <label>Managerial Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>Managerial Advanced</fullName>
+        <default>false</default>
+        <label>Managerial Advanced</label>
+    </customValue>
+    <customValue>
+        <fullName>Managerial Ultimate</fullName>
+        <default>false</default>
+        <label>Managerial Ultimate</label>
+    </customValue>
+    <customValue>
+        <fullName>Video Essential</fullName>
+        <default>false</default>
+        <label>Video Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>Video Advanced</fullName>
+        <default>false</default>
+        <label>Video Advanced</label>
+    </customValue>
+    <customValue>
+        <fullName>Video Ultimate</fullName>
+        <default>false</default>
+        <label>Video Ultimate</label>
+    </customValue>
+    <customValue>
+        <fullName>Professional Essential</fullName>
+        <default>false</default>
+        <label>Professional Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>Professional Advanced</fullName>
+        <default>false</default>
+        <label>Professional Advanced</label>
+    </customValue>
+    <customValue>
+        <fullName>Professional Ultimate</fullName>
+        <default>false</default>
+        <label>Professional Ultimate</label>
+    </customValue>
+    <customValue>
+        <fullName>Core Essential</fullName>
+        <default>false</default>
+        <label>Core Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>Core Advanced</fullName>
+        <default>false</default>
+        <label>Core Advanced</label>
+    </customValue>
+    <customValue>
+        <fullName>Core Unit Essential</fullName>
+        <default>false</default>
+        <label>Core Unit Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>Review Essential</fullName>
+        <default>false</default>
+        <label>Review Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>Review Advanced</fullName>
+        <default>false</default>
+        <label>Review Advanced</label>
+    </customValue>
+    <customValue>
+        <fullName>Review Ultimate</fullName>
+        <default>false</default>
+        <label>Review Ultimate</label>
+    </customValue>
+    <customValue>
+        <fullName>Mobilize Essential</fullName>
+        <default>false</default>
+        <label>Mobilize Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>Mobilize Advanced</fullName>
+        <default>false</default>
+        <label>Mobilize Advanced</label>
+    </customValue>
+    <customValue>
+        <fullName>Mobilize Ultimate</fullName>
+        <default>false</default>
+        <label>Mobilize Ultimate</label>
+    </customValue>
+    <customValue>
+        <fullName>Product</fullName>
+        <default>false</default>
+        <label>Product</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales Transformation Review Essential</fullName>
+        <default>false</default>
+        <label>Sales Transformation Review Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales Transformation Review Advanced</fullName>
+        <default>false</default>
+        <label>Sales Transformation Review Advanced</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales Transformation Review Ultimate</fullName>
+        <default>false</default>
+        <label>Sales Transformation Review Ultimate</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales Transformation Hiring Essential</fullName>
+        <default>false</default>
+        <label>Sales Transformation Hiring Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales Transformation Hiring Advanced</fullName>
+        <default>false</default>
+        <label>Sales Transformation Hiring Advanced</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales Transformation Hiring Ultimate</fullName>
+        <default>false</default>
+        <label>Sales Transformation Hiring Ultimate</label>
+    </customValue>
+    <customValue>
+        <fullName>Service</fullName>
+        <default>false</default>
+        <label>Service</label>
+    </customValue>
+    <customValue>
+        <fullName>OA 1:1 Essential</fullName>
+        <default>false</default>
+        <label>OA 1:1 Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>OA 1:1 Advanced</fullName>
+        <default>false</default>
+        <label>OA 1:1 Advanced</label>
+    </customValue>
+    <customValue>
+        <fullName>OA 1:1 Ultimate</fullName>
+        <default>false</default>
+        <label>OA 1:1 Ultimate</label>
+    </customValue>
+    <customValue>
+        <fullName>OA 1:Many Essential</fullName>
+        <default>false</default>
+        <label>OA 1:Many Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>OA 1:Many Advanced</fullName>
+        <default>false</default>
+        <label>OA 1:Many Advanced</label>
+    </customValue>
+    <customValue>
+        <fullName>OA 1:Many Ultimate</fullName>
+        <default>false</default>
+        <label>OA 1:Many Ultimate</label>
+    </customValue>
+    <customValue>
+        <fullName>TMReview Essential</fullName>
+        <default>false</default>
+        <label>TMReview Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>TMReview Advanced</fullName>
+        <default>false</default>
+        <label>TMReview Advanced</label>
+    </customValue>
+    <customValue>
+        <fullName>TMReview Ultimate</fullName>
+        <default>false</default>
+        <label>TMReview Ultimate</label>
+    </customValue>
+    <customValue>
+        <fullName>OA 1:1 Recruitment Essential</fullName>
+        <default>false</default>
+        <label>OA 1:1 Recruitment Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>OA 1:1 Recruitment Advanced</fullName>
+        <default>false</default>
+        <label>OA 1:1 Recruitment Advanced</label>
+    </customValue>
+    <customValue>
+        <fullName>OA 1:1 Recruitment Ultimate</fullName>
+        <default>false</default>
+        <label>OA 1:1 Recruitment Ultimate</label>
+    </customValue>
+    <customValue>
+        <fullName>OA 1:1 Development Essential</fullName>
+        <default>false</default>
+        <label>OA 1:1 Development Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>OA 1:1 Development Advanced</fullName>
+        <default>false</default>
+        <label>OA 1:1 Development Advanced</label>
+    </customValue>
+    <customValue>
+        <fullName>OA 1:1 Development Ultimate</fullName>
+        <default>false</default>
+        <label>OA 1:1 Development Ultimate</label>
+    </customValue>
+    <customValue>
+        <fullName>TM Senior Leadership Essential</fullName>
+        <default>false</default>
+        <label>TM Senior Leadership Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>TM Senior Leadership Advanced</fullName>
+        <default>false</default>
+        <label>TM Senior Leadership Advanced</label>
+    </customValue>
+    <customValue>
+        <fullName>TM Senior Leadership Ultimate</fullName>
+        <default>false</default>
+        <label>TM Senior Leadership Ultimate</label>
+    </customValue>
+    <customValue>
+        <fullName>TM Managerial Development Advanced</fullName>
+        <default>false</default>
+        <label>TM Managerial Development Advanced</label>
+    </customValue>
+    <customValue>
+        <fullName>TM Managerial Development Essential</fullName>
+        <default>false</default>
+        <label>TM Managerial Development Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>TM Skills Development Advanced</fullName>
+        <default>false</default>
+        <label>TM Skills Development Advanced</label>
+    </customValue>
+    <customValue>
+        <fullName>TM Skills Development Essential</fullName>
+        <default>false</default>
+        <label>TM Skills Development Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>Smart Interview Professional Essential</fullName>
+        <default>false</default>
+        <label>Smart Interview Professional Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>Smart Interview Professional Advanced</fullName>
+        <default>false</default>
+        <label>Smart Interview Professional Advanced</label>
+    </customValue>
+    <customValue>
+        <fullName>SME Skills and Ability</fullName>
+        <default>false</default>
+        <label>SME Skills and Ability</label>
+    </customValue>
+    <customValue>
+        <fullName>SME Professional</fullName>
+        <default>false</default>
+        <label>SME Professional</label>
+    </customValue>
+    <customValue>
+        <fullName>SME Leadership</fullName>
+        <default>false</default>
+        <label>SME Leadership</label>
+    </customValue>
+    <customValue>
+        <fullName>Talent Mobility essential</fullName>
+        <default>false</default>
+        <label>Talent Mobility essential</label>
+    </customValue>
+    <customValue>
+        <fullName>Talent Mobility advanced</fullName>
+        <default>false</default>
+        <label>Talent Mobility advanced</label>
+    </customValue>
+    <customValue>
+        <fullName>Leadership Suite Essential</fullName>
+        <default>false</default>
+        <label>Leadership Suite Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>Manager Suite Essential</fullName>
+        <default>false</default>
+        <label>Manager Suite Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>Capability Digital Training</fullName>
+        <default>false</default>
+        <label>Capability Digital Training</label>
+    </customValue>
+    <masterLabel>Offering Details</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,99 @@
+<aura:component controller="CourseCertificatesController" implements="force:lightningQuickActionWithoutHeader,flexipage:availableForAllPageTypes,force:hasRecordId">
+    <ltng:require scripts="{!$Resource.jsPDF}" afterScriptsLoaded="{!c.init}" /> 
+    
+    <aura:html tag="style">.toastMessage.forceActionsText{
+    white-space : pre-line !important;
+    }</aura:html>
+    
+    <force:recordData
+                  aura:id="forceRecord"
+                  recordId="{!v.recordId}"
+                  fields=" Course_Name_on_Certificate__c, Delivery_Mode__c, Delivery_Language__c, Send_Certificates_in_English__c, Course_Partner_Logo__c, CPD_CEU_Points__c, Course_End_Date__c, Profit_Centre__c"
+                  recordUpdated="{!c.recordUpdated}" />
+    
+ 	<lightning:workspaceAPI aura:id="workspace"/> 
+
+    <aura:attribute name="displayIframe" type="String" default="display: none"/>
+    
+    <aura:attribute name="sendListSize_onInit" type="Integer" />
+    <aura:attribute name="downloadListSize_onInit" type="Integer" />
+    
+    <aura:attribute name="loadImageError" type="Boolean" default="false"/>
+    <aura:attribute name="courseNameError" type="Boolean" default="false"/>
+    <aura:attribute name="imageError" type="Boolean" default="false"/>
+    
+    <aura:attribute name="disabledSend" type="Boolean" default="false"/>
+    <aura:attribute name="disabledDownloadAll" type="Boolean" default="false"/>
+    <aura:attribute name="disabledInputCBNumber" type="Boolean" default="false"/>
+    <aura:attribute name="disabledPreview" type="Boolean" default="false"/>
+    <aura:attribute name="disabledRefreshData" type="Boolean" default="false"/> 
+    <aura:attribute name="disabledRemovePartnerLogo" type="Boolean" default="false"/>
+    <aura:attribute name="disabledSavePartnerLogo" type="Boolean" default="false"/>
+    
+    <aura:attribute name="displayButtons" type="String" default="display: none"/>
+    <aura:attribute name="showPreview" type="Boolean" default="false"/>
+    
+	<aura:attribute name="logoErrorMessage" type="String" default = ''/>
+    
+    <aura:attribute name="displayLogoErrorMessage" type="String" default="display: none"/>  
+    <aura:attribute name="courseNameErrorMessage" type="String" default = ''/>
+    <aura:attribute name="displayCourseNameErrorMessage" type="String" default="display: none"/> 
+    
+    <aura:attribute name="showSpinner" type="Boolean" default="false" />
+    <aura:attribute name="pdf" type="String"/>
+    <aura:attribute name="imageUrl" type="String"/>
+
+    <aura:attribute name="recordId" type="String" />
+    
+    <aura:attribute name="filetype" type="List" default="['.png', '.jpg', '.jpeg']" />
+    <aura:attribute name="multiple" type="Boolean" default="false" />
+    <aura:attribute name="disabled" type="Boolean" default="false" />
+
+    
+
+
+   
+    <lightning:notificationsLibrary aura:id="notify"/>
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+    
+    <aura:if isTrue="{! v.showSpinner }">
+    	<lightning:spinner size="medium" alternativeText='Loading...'/>
+    </aura:if>
+
+    <div style="padding: 5px 0px 35px 0px; margin-bottom: 30px;">
+        <lightning:button class='slds-float_right' label="Download All" variant="brand" disabled = '{!v.disabledDownloadAll}' 
+                          iconName="utility:download" iconPosition="right"  onclick="{! c.handleDownloadAll }" />
+        
+        <lightning:input class='slds-float_right slds-m-right_medium' aura:id="inputCbNumber" disabled="{!v.disabledInputCBNumber}"
+                          name="inputCBNumber"  placeholder="Preview by CB Number..."/>
+        
+        <lightning:button class='slds-float_right' label="Preview" iconName="action:preview"  disabled = '{!v.disabledPreview}'
+                          iconPosition="right" variant="brand" onclick="{! c.handlePreview }" />
+        
+        <lightning:button class='slds-float_right slds-m-right_medium' label="Send" disabled = '{!v.disabledSend}'
+                          iconName="utility:send" iconPosition="right" variant="brand" onclick="{! c.handleSend }"/>
+        
+        <lightning:button class='slds-float_left slds-m-right_medium'  label="Refresh Data" iconName="utility:refresh" disabled = '{!v.disabledRefreshData}'
+                          iconPosition="right"  onclick="{! c.handleRefreshData }"/>
+        
+        <lightning:input class='slds-float_left' name="file1" type="file" label="Certificate Partner Logo" multiple="false" 
+                         accept="{!v.filetype}" disabled= '{!v.disabledSavePartnerLogo}' onchange="{! c.handleFilesChange }"/>  
+        
+        <lightning:button class='slds-float_left slds-m-right_medium'  label="Remove Partner Logo" iconName="utility:delete" disabled = '{!v.disabledRemovePartnerLogo}'
+                          iconPosition="right"  onclick="{! c.handleRemovePartnerLogo }"/>
+    </div>
+
+    <div style="{!'padding: 5px 0px 35px 0px; height:900px;width:auto;' + v.displayIframe}" > 
+        <h2 style="{! 'background-color: rgb(234 0 30 / 10%);border: 2px solid rgb(234 0 30); padding: 5px 15px 5px 15px;margin-bottom: 15px;margin-top: 5px; border-radius: 5px;' + v.displayLogoErrorMessage}">
+            {!v.logoErrorMessage}
+        </h2>
+        <h2 style="{! 'background-color: rgb(234 0 30 / 10%);border: 2px solid rgb(234 0 30); padding: 5px 15px 5px 15px;margin-bottom: 15px;margin-top: 5px; border-radius: 5px;' + v.displayCourseNameErrorMessage}">
+            {!v.courseNameErrorMessage}
+        </h2>
+        
+        <lightning:button class='slds-float_left' label="Close Preview" iconName="utility:close" iconPosition="right" onclick="{! c.handleClosePreview }"/>
+       <!-- <lightning:button class='slds-float_left' label="Download Preview" iconName="utility:download" iconPosition="right" onclick="{! c.handleDownloadSingle }" />-->
+        <iframe id="iframe" title="certificate" src="{!v.pdf}" style="border:none; height:100%;width:100%;"></iframe>
+    </div>
+
+</aura:component>

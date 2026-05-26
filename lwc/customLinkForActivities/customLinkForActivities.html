@@ -1,0 +1,27 @@
+<template>
+    <lightning-layout>
+        <template if:true={taskEvent}>
+            <lightning-layout-item class="slds-m-right_x-small">
+                <div class="slds-m-bottom_x-small">
+                    <lightning-icon icon-name="standard:task"
+                     alternative-text="Task" title="Task" 
+                     size="xx-small" class="iconClass"></lightning-icon>
+                </div>
+            </lightning-layout-item>
+        </template>
+        <template if:false={taskEvent}>
+            <lightning-layout-item class="slds-m-right_x-small">
+                <div class="slds-m-bottom_x-small">
+                    <lightning-icon icon-name="standard:event" 
+                    alternative-text="Event" title="Event" size="xx-small" class="iconClass" >
+                        
+                    </lightning-icon>
+                </div>
+            </lightning-layout-item>
+        </template>
+        <lightning-layout-item class="slds-p-top_xx-small">
+            <a href={linkUrl} target="_blank">{label}</a>
+        </lightning-layout-item>
+    
+    </lightning-layout>
+</template>

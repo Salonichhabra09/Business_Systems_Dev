@@ -1,0 +1,26 @@
+<template>
+    <div class="slds-p-around_small" onclick={closeEditOnBlur}>
+      <template if:true={isEdit}>
+    <c-multi-select-combobox
+      label="Options"
+      name="options"
+      options={options}
+      onchange={handleChange}
+      onclose={handleClose}
+      pre-selected-options={selectedRoles}
+    ></c-multi-select-combobox>
+  </template>
+  <template if:false={isEdit}>
+    <lightning-layout>
+      <lightning-layout-item size="9" class="slds-p-right_medium">
+        <p>{updatedSelectedRoles}</p>
+      </lightning-layout-item>
+      <lightning-layout-item size="3">
+        <lightning-icon icon-name="utility:edit"
+        size="xx-small" onclick={handleEdit}></lightning-icon>
+      </lightning-layout-item>
+    </lightning-layout>
+  </template>
+</div>
+
+  </template>

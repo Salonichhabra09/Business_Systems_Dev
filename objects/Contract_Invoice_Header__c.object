@@ -1,0 +1,2884 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>Invoice_header_new_override</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Invoice_Header_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Invoice_Header_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Invoice_Header_Compact_Layout</fullName>
+        <fields>Invoice_Name__c</fields>
+        <fields>Invoice_Contact__c</fields>
+        <fields>Order__c</fields>
+        <fields>Invoice_Status__c</fields>
+        <fields>Invoice_Total__c</fields>
+        <fields>Service_Start_Date__c</fields>
+        <fields>Process_Date__c</fields>
+        <label>Invoice Header Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Invoice Header on Contract Object</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fieldSets>
+        <fullName>Infor10_Integration</fullName>
+        <description>Infor10 Integration</description>
+        <displayedFields>
+            <field>SFDC2SUN_Transfer_Status__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SFDC2SUN_Transferred_By__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SFDC2SUN_Transferred_On__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Infor10 Integration</label>
+    </fieldSets>
+    <fields>
+        <fullName>Account_Number_From_Contract__c</fullName>
+        <description>Account Number from Account on Contract Header</description>
+        <externalId>false</externalId>
+        <formula>Order__r.Account.Account_Number__c</formula>
+        <label>Account Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Order Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Invoice Headers</relationshipLabel>
+        <relationshipName>Invoice_Headers</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Action__c</fullName>
+        <description>Dependent field on Escalation Stage</description>
+        <externalId>false</externalId>
+        <label>Action</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Alert_10_minutes__c</fullName>
+        <description>Used in Alert Corp Systems workflow.</description>
+        <label>Alert 10 minutes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Alternative_Responsible_Code_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Alternative Responsible Code</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Invoice_Headers</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AutomationBypassDateTime__c</fullName>
+        <label>AutomationBypassDateTime</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Awaiting_PO_Notification_Sent_On__c</fullName>
+        <label>Awaiting PO Notification Sent On</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>BU_From_Contract_Header__c</fullName>
+        <description>BU from Account that is on the Contract Header</description>
+        <externalId>false</externalId>
+        <formula>Order__r.BU__c</formula>
+        <label>BU</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BU__c</fullName>
+        <label>BU</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>BU</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Billing_Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Order__r.Account.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Order Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_Contact_Registration_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Contact__r.Registration_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Registration Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Order Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Invoice Headers</relationshipLabel>
+        <relationshipName>Invoice_Headers</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Client_Display__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF((Order__r.Opportunity.MS_Opportunity__c = true),&apos;Detailed Pricing&apos;,TEXT(Order__r.Contract.Client_Display__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Client Display</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contract_Line__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup Reltionship to Help pull fields over from Contract Line to Invoice Header</description>
+        <label>Order Line</label>
+        <referenceTo>Contract_Line__c</referenceTo>
+        <relationshipLabel>Invoice Headers</relationshipLabel>
+        <relationshipName>Invoice_Headers</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contract__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Order (Legacy)</label>
+        <referenceTo>Contract</referenceTo>
+        <relationshipLabel>Invoice Headers</relationshipLabel>
+        <relationshipName>Invoice_Headers</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Course_Booking__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Course Booking</label>
+        <referenceTo>Course_Booking__c</referenceTo>
+        <relationshipLabel>Invoice Headers</relationshipLabel>
+        <relationshipName>Invoice_Headers</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Credit_Note__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Credit Note?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Credit_Reason_Code__c</fullName>
+        <description>List of Reason Codes from SunSystems</description>
+        <label>Credit Reason Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>R01 - TAX</fullName>
+                    <default>false</default>
+                    <label>R01 - TAX</label>
+                </value>
+                <value>
+                    <fullName>R02 - Aged Debt Recovery</fullName>
+                    <default>false</default>
+                    <label>R02 - Aged Debt Recovery</label>
+                </value>
+                <value>
+                    <fullName>R03 - Contract Change</fullName>
+                    <default>false</default>
+                    <label>R03 - Contract Change</label>
+                </value>
+                <value>
+                    <fullName>R04 - Client Request</fullName>
+                    <default>false</default>
+                    <label>R04 - Client Request</label>
+                </value>
+                <value>
+                    <fullName>R05 - SHL Error</fullName>
+                    <default>false</default>
+                    <label>R05 - SHL Error</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Debt_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Unpaid_Amount__c &lt;= 0 || ISNULL(Payment_Due_Date__c) ,IMAGE(&quot;/resource/1753334831000/Green_Status_Icon?&quot; , &quot;Green&quot; , 18, 19), IF(TODAY() -  Payment_Due_Date__c &lt; 45,IMAGE(&quot;/resource/1753334831000/Green_Status_Icon?&quot; , &quot;Green&quot; , 18, 19),IF(TODAY() - Payment_Due_Date__c &gt; 60,IMAGE(&quot;/resource/1753334831000/Red_Status_Icon?&quot; , &quot;Red&quot; , 18, 19),IMAGE(&quot;/resource/1753334831000/Amber_Status_Icon?&quot; , &quot;Amber&quot; , 18, 19))))</formula>
+        <label>Debt Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Dependent field on the Esclation Stage</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employee_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>Alternative_Responsible_Code_1__r.EmployeeNumber</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Employee Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Escalation_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Escalation_Start_Date__c  - Today()</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Escalation End Date</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Escalation_Prior_Date__c</fullName>
+        <description>USed in backend</description>
+        <label>Escalation Prior Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Escalation_Stage_Prior_Value__c</fullName>
+        <description>Used at backend</description>
+        <externalId>false</externalId>
+        <label>Escalation Stage Prior Value</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Escalation_Stage__c</fullName>
+        <description>New field created use to check where an invoice header is pending when the stage is awaiting PO</description>
+        <label>Escalation Stage</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Level 0 - Not Due</fullName>
+                    <default>false</default>
+                    <label>Level 0 - Not Due</label>
+                </value>
+                <value>
+                    <fullName>Level 1 - Release Invoice</fullName>
+                    <default>false</default>
+                    <label>Level 1 - Release Invoice</label>
+                </value>
+                <value>
+                    <fullName>Level 2 - No Response</fullName>
+                    <default>false</default>
+                    <label>Level 2 - No Response</label>
+                </value>
+                <value>
+                    <fullName>Level 3 - OTC Team Lead</fullName>
+                    <default>false</default>
+                    <label>Level 3 - OTC Team Lead</label>
+                </value>
+                <value>
+                    <fullName>Level 4 - Head of OTC</fullName>
+                    <default>false</default>
+                    <label>Level 4 - Head of OTC</label>
+                </value>
+                <value>
+                    <fullName>Level 5 - Group FC</fullName>
+                    <default>false</default>
+                    <label>Level 5 - Group FC</label>
+                </value>
+                <value>
+                    <fullName>Level 6 - Business Senior</fullName>
+                    <default>false</default>
+                    <label>Level 6 - Business Senior</label>
+                </value>
+                <value>
+                    <fullName>Level 7 - Leadership</fullName>
+                    <default>false</default>
+                    <label>Level 7 - Leadership</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Escalation_Start_Date__c</fullName>
+        <label>Escalation Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Escalation_Status_Progress__c</fullName>
+        <label>Escalation Status Progress</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>7</visibleLines>
+    </fields>
+    <fields>
+        <fullName>GSSC_Email_Combined__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( Order__r.BU__c 
+,&quot;China - CN1&quot;,&quot;HK.SOE@shl.com&quot;                    
+,&quot;EU Region - E50&quot;,&quot;UK1SOE@shl.com&quot;                                                              
+,&quot;Italy - IT1&quot;,&quot;ItalySOE@shl.com&quot;                                                                
+,&quot;Middle East - ME1&quot;,&quot;UK1SOE@shl.com&quot;                                                            
+,&quot;SHL Previsor - P10&quot;,&quot;UK1SOE@shl.com&quot;                                                           
+,&quot;UK - UK1&quot;,&quot;UK1SOE@shl.com&quot;      
+,&quot;US - US5&quot;,&quot;US5.SOE@shl.com&quot;                                                                   
+,MID(Order__r.BU__c, (LEN(Order__r.BU__c)-2), 2)  &amp; &quot;.SOE@shl.com&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>GSSC Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GSSC_Instructions__c</fullName>
+        <inlineHelpText>Enter instructions to the SOP team who will be raising the invoice. These will not print on the Sales Invoice sent to the customer.</inlineHelpText>
+        <label>Special Invoicing Instructions</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>GST_Identification_Number__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>GST Identification Number</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 AND (2 OR 3 OR 4) AND 5 AND 6</booleanFilter>
+            <errorMessage>Value does not exist or does not match filter criteria</errorMessage>
+            <filterItems>
+                <field>$Source.Invoice_Account__c</field>
+                <operation>notEqual</operation>
+                <value></value>
+            </filterItems>
+            <filterItems>
+                <field>India_GST__c.Account__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Invoice_Account__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>India_GST__c.Name</field>
+                <operation>equals</operation>
+                <value>Outside of India</value>
+            </filterItems>
+            <filterItems>
+                <field>India_GST__c.Name</field>
+                <operation>equals</operation>
+                <value>URP</value>
+            </filterItems>
+            <filterItems>
+                <field>India_GST__c.Is_Active__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <filterItems>
+                <field>India_GST__c.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Tax</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>India_GST__c</referenceTo>
+        <relationshipLabel>Invoice Headers</relationshipLabel>
+        <relationshipName>Invoice_Headers</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>GST_Transfer_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(GST_Identification_Number__r.Transfer_Status__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>GST Transfer Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Invoice Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Invoice Headers (Invoice Account)</relationshipLabel>
+        <relationshipName>Invoice_Headers1</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Comments__c</fullName>
+        <label>Printable Note</label>
+        <length>550</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Invoice_Contact_Registration_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Invoice_Contact__r.Registration_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Invoice Contact Registration Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Invoice Contact</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>(1 AND 2) OR 3</booleanFilter>
+            <errorMessage>Either Invoice and it&apos;s Invoice Contact are not from the same Account OR Invoice Contact is Inactive.</errorMessage>
+            <filterItems>
+                <field>Contact.AccountId</field>
+                <operation>equals</operation>
+                <valueField>$Source.Invoice_Account__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>Contact.Contact_Status__c</field>
+                <operation>equals</operation>
+                <value>Active</value>
+            </filterItems>
+            <filterItems>
+                <field>$Profile.Name</field>
+                <operation>contains</operation>
+                <value>System Administrator</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Invoice Headers (Invoice Contact)</relationshipLabel>
+        <relationshipName>Invoice_Headers1</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_D_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Invoice_Account__r.Account_Number__c</formula>
+        <label>Invoice D Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Date__c</fullName>
+        <inlineHelpText>refers to the date invoice is raised to the client in SUN Systems</inlineHelpText>
+        <label>Sun Invoice Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Due_Date__c</fullName>
+        <description>This field tells the due date of invoice, based on the invoice date &amp; payement terms.</description>
+        <formula>IF(
+    ISBLANK(Invoice_Date__c),
+    IF(
+        ISBLANK(Parent_Invoice_header__r.Invoice_Date__c),
+        NULL,
+        IF(
+            ISBLANK(Non_Default_Payment_Term_Formula__c),
+            NULL,
+            Parent_Invoice_header__r.Invoice_Date__c + 
+            VALUE(
+                LEFT(
+                    Non_Default_Payment_Term_Formula__c,
+                    FIND(&quot;D&quot;, Non_Default_Payment_Term_Formula__c) - 1
+                )
+            )
+        )
+    ),
+    IF(
+        ISBLANK(Non_Default_Payment_Term_Formula__c),
+        NULL,
+        Invoice_Date__c + 
+        VALUE(
+            LEFT(
+                Non_Default_Payment_Term_Formula__c,
+                FIND(&quot;D&quot;, Non_Default_Payment_Term_Formula__c) - 1
+            )
+        )
+    )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sun Invoice Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Gross_Amount__c</fullName>
+        <description>Keeps the gross invoice amount from SUN Infor10 System</description>
+        <label>Sun Invoice Gross Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Header_Comments__c</fullName>
+        <description>Comments that will appear on the Invoice</description>
+        <inlineHelpText>This field should be used for large amounts of text to be added to invoices and should be created manually in Sun.</inlineHelpText>
+        <label>Extended Comments</label>
+        <length>9999</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Invoice_Name__c</fullName>
+        <description>Name field for Invoice Header</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter a short description to remember this Invoice by e.g. May PayGo for 2011</inlineHelpText>
+        <label>Invoice Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Net_Amount__c</fullName>
+        <description>Keeps the net invoice amount from SUN Infor10 System</description>
+        <label>Sun Invoice Net Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Request_Reference__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoice Request Reference</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Request__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Invoice Request</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Project_Invoice__c.Status__c</field>
+                <operation>equals</operation>
+                <value>Submitted for Processing, Processed</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Project_Invoice__c</referenceTo>
+        <relationshipLabel>Invoice Headers</relationshipLabel>
+        <relationshipName>Invoice_Headers</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Status__c</fullName>
+        <description>Invoice status. This includes all invoice lines below.</description>
+        <label>Invoice Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Draft</fullName>
+                    <default>true</default>
+                    <label>Draft</label>
+                </value>
+                <value>
+                    <fullName>Draft - awaiting milestones</fullName>
+                    <default>false</default>
+                    <label>Draft - awaiting milestones</label>
+                </value>
+                <value>
+                    <fullName>On Hold for Payment Milestone</fullName>
+                    <default>false</default>
+                    <label>On Hold for Payment Milestone</label>
+                </value>
+                <value>
+                    <fullName>Cross Border</fullName>
+                    <default>false</default>
+                    <label>Cross Border</label>
+                </value>
+                <value>
+                    <fullName>Queried</fullName>
+                    <default>false</default>
+                    <label>Queried</label>
+                </value>
+                <value>
+                    <fullName>Awaiting PO</fullName>
+                    <default>false</default>
+                    <label>Awaiting PO</label>
+                </value>
+                <value>
+                    <fullName>Awaiting GST/VAT Info</fullName>
+                    <default>false</default>
+                    <label>Awaiting GST/VAT Info</label>
+                </value>
+                <value>
+                    <fullName>Awaiting Chop</fullName>
+                    <default>false</default>
+                    <label>Awaiting Chop</label>
+                </value>
+                <value>
+                    <fullName>No Usage</fullName>
+                    <default>false</default>
+                    <label>No Usage</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Ready to Invoice</fullName>
+                    <default>false</default>
+                    <label>Ready to Invoice</label>
+                </value>
+                <value>
+                    <fullName>Ready for SOE Review</fullName>
+                    <default>false</default>
+                    <label>Ready for SOE Review</label>
+                </value>
+                <value>
+                    <fullName>Ready for Sun Transfer</fullName>
+                    <default>false</default>
+                    <label>Ready for Sun Transfer</label>
+                </value>
+                <value>
+                    <fullName>Transferring to Sun</fullName>
+                    <default>false</default>
+                    <label>Transferring to Sun</label>
+                </value>
+                <value>
+                    <fullName>Sun Order Complete</fullName>
+                    <default>false</default>
+                    <label>Sun Order Complete</label>
+                </value>
+                <value>
+                    <fullName>Sun Invoice Complete</fullName>
+                    <default>false</default>
+                    <label>Sun Invoice Complete</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Invoice_Total__c</fullName>
+        <label>Invoice Total</label>
+        <summarizedField>Contract_Invoice_Line__c.Discounted_Invoice_Line_Total__c</summarizedField>
+        <summaryFilterItems>
+            <field>Contract_Invoice_Line__c.IM_Lookup_Code_For_Filter__c</field>
+            <operation>notEqual</operation>
+            <value>Freight</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Contract_Invoice_Line__c.IM_Lookup_Code_For_Filter__c</field>
+            <operation>notEqual</operation>
+            <value>Expenses</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Contract_Invoice_Line__c.Invoice_Header_ID__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Transaction_Amount__c</fullName>
+        <label>Sun Invoice Transaction Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_total_value__c</fullName>
+        <formula>Invoice_Total__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Invoice total value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>IsAutomationBypassed__c</fullName>
+        <formula>AutomationBypassDateTime__c &gt; (NOW() -0.00069444444)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>IsAutomationBypassed?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Auto_Created__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Is Auto Created</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Job_Number__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Job Number</label>
+        <referenceTo>Job__c</referenceTo>
+        <relationshipLabel>Invoice Headers</relationshipLabel>
+        <relationshipName>Invoice_Headers</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Manual_Transfer_Reason__c</fullName>
+        <inlineHelpText>Please mention the reason for manual transfer of this invoice.</inlineHelpText>
+        <label>Manual Transfer Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Manual_Transfer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Manual Transfer</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>No_of_Invoice_Line__c</fullName>
+        <description>This has been created to calculate the number of invoice line created against invoice header. And to be used to validate the Invoice Header while moving to different status from Draft.</description>
+        <label>No. of Invoice Line</label>
+        <summaryForeignKey>Contract_Invoice_Line__c.Invoice_Header_ID__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Non_Default_Payment_Term_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Order__r.RecordTypeId=&apos;0124G000000Bj14&apos;,
+IF((Order__r.Opportunity.MS_Opportunity__c = true),&apos;30D&apos;,&apos;&apos;),
+IF( ISBLANK(TEXT(Order__r.Contract.Payment_terms__c)) ,
+&apos;60D&apos;,
+LEFT(TEXT(Order__r.Contract.Payment_terms__c),Find(&quot; &quot;, TEXT(Order__r.Contract.Payment_terms__c))-1)&amp; &apos;D&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Non Default Payment Term</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Non_Default_Payment_Term__c</fullName>
+        <label>Non Default Payment Term(Legacy)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>30D</fullName>
+                    <default>false</default>
+                    <label>30D</label>
+                </value>
+                <value>
+                    <fullName>60D</fullName>
+                    <default>false</default>
+                    <label>60D</label>
+                </value>
+                <value>
+                    <fullName>90D</fullName>
+                    <default>false</default>
+                    <label>90D</label>
+                </value>
+                <value>
+                    <fullName>30NM</fullName>
+                    <default>false</default>
+                    <label>30NM</label>
+                </value>
+                <value>
+                    <fullName>45D</fullName>
+                    <default>false</default>
+                    <label>45D</label>
+                </value>
+                <value>
+                    <fullName>60NM</fullName>
+                    <default>false</default>
+                    <label>60NM</label>
+                </value>
+                <value>
+                    <fullName>60NM + 5 DAYS</fullName>
+                    <default>false</default>
+                    <label>60NM + 5 DAYS</label>
+                </value>
+                <value>
+                    <fullName>90NM</fullName>
+                    <default>false</default>
+                    <label>90NM</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>OAT_Email2__c</fullName>
+        <externalId>false</externalId>
+        <label>OAT Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Order__r.Opportunity.OpportunityType__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order_Method__c</fullName>
+        <label>Order Method</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>SOE</fullName>
+                    <default>false</default>
+                    <label>SOE</label>
+                </value>
+                <value>
+                    <fullName>T&amp;E</fullName>
+                    <default>false</default>
+                    <label>T&amp;E</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Order_Total_diff_from_invoice_total__c</fullName>
+        <formula>IF( ROUND(Invoice_Total__c,2)  &lt;&gt;   ROUND(Order__r.TotalAmount,2) , True, False)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Order Total diff from invoice total</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Order__c</fullName>
+        <label>Order</label>
+        <referenceTo>Order</referenceTo>
+        <relationshipLabel>Invoice Headers</relationshipLabel>
+        <relationshipName>Invoice_Headers</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>PO_number__c</fullName>
+        <externalId>false</externalId>
+        <label>PO number</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Invoice_header__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Parent Invoice header mapped as Invoice Header from which credit/reissue is created.</description>
+        <label>Parent Invoice header</label>
+        <referenceTo>Contract_Invoice_Header__c</referenceTo>
+        <relationshipLabel>Invoice Headers</relationshipLabel>
+        <relationshipName>Invoice_Headers</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Due_Date__c</fullName>
+        <description>Keeps the Invoice Payment Due Date from SUN Infor10 System</description>
+        <inlineHelpText>Keeps the Invoice Payment Due Date from SUN Infor10 System</inlineHelpText>
+        <label>Sun Payment Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR(ISNULL(Invoice_Gross_Amount__c), Invoice_Gross_Amount__c =0), &apos;&apos;,IF(Unpaid_Amount__c &lt;= 0, &apos;Fully Paid&apos;, IF( Unpaid_Amount__c = Invoice_Gross_Amount__c ,&apos;Unpaid&apos;,&apos;Partially Paid&apos;)))</formula>
+        <label>Payment Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Process_Date__c</fullName>
+        <description>Shows the date that invoice will be raised on</description>
+        <inlineHelpText>Enter date that invoice needs to be created on.</inlineHelpText>
+        <label>Date invoice to be processed by SOP</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Product_Billing_Frequency__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Order__r.Contract.Product_Billing_Frequency__c )</formula>
+        <label>Product Billing Frequency</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Lookup__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Project Lookup</label>
+        <referenceTo>ProjectObject__c</referenceTo>
+        <relationshipLabel>Invoice Headers</relationshipLabel>
+        <relationshipName>Invoice_Headers</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Number</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rejection_Notes__c</fullName>
+        <label>Rejection Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>SFDC2SUN_Log__c</fullName>
+        <description>This field contains the success and failure logs of the Header during transfer process to Sun Systems</description>
+        <inlineHelpText>Header transfer logs</inlineHelpText>
+        <label>SFDC2SUN: Log</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SFDC2SUN_SFDC_Version__c</fullName>
+        <description>This field indicate the required version of the Invoice Header in Sun Systems.</description>
+        <externalId>false</externalId>
+        <label>SFDC2SUN: SFDC Version</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SFDC2SUN_Transfer_Status__c</fullName>
+        <description>It indicates the Invoice Header status whether it has been transferred to Sun or not.</description>
+        <inlineHelpText>The status of the last transfer attempt from SFDC to Sun.</inlineHelpText>
+        <label>SFDC2SUN: Transfer Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Transferred</fullName>
+                    <default>false</default>
+                    <label>Not Transferred</label>
+                </value>
+                <value>
+                    <fullName>Transferred</fullName>
+                    <default>false</default>
+                    <label>Transferred</label>
+                </value>
+                <value>
+                    <fullName>Ready for Transfer</fullName>
+                    <default>false</default>
+                    <label>Ready for Transfer</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SFDC2SUN_Transferred_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field indicates the salesforce.com user who transferred the Invoice header in Sun Systems</description>
+        <inlineHelpText>The user who last transferred the record from SFDC to Sun.</inlineHelpText>
+        <label>SFDC2SUN: Transferred By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>InvoiceHeaders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SFDC2SUN_Transferred_On__c</fullName>
+        <description>This field indicates the date when the Invoice header was transferred in Sun Systems</description>
+        <inlineHelpText>The date of the last transfer attempt from SFDC to Sun.</inlineHelpText>
+        <label>SFDC2SUN: Transferred On</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SSC_Email__c</fullName>
+        <description>Automatically updated with a workflow field update.</description>
+        <externalId>false</externalId>
+        <label>SSC Email</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Type__c</fullName>
+        <label>Sales Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>SFSOLSPLIT</fullName>
+                    <default>false</default>
+                    <label>SFSOLSPLIT</label>
+                </value>
+                <value>
+                    <fullName>SFSOLSPLITCN</fullName>
+                    <default>false</default>
+                    <label>SFSOLSPLITCN</label>
+                </value>
+                <value>
+                    <fullName>SFSOLUTION</fullName>
+                    <default>false</default>
+                    <label>SFSOLUTION</label>
+                </value>
+                <value>
+                    <fullName>SFSOLUTIONCN</fullName>
+                    <default>false</default>
+                    <label>SFSOLUTIONCN</label>
+                </value>
+                <value>
+                    <fullName>SFSOL27</fullName>
+                    <default>false</default>
+                    <label>SFSOL27</label>
+                </value>
+                <value>
+                    <fullName>SFSOL27CN</fullName>
+                    <default>false</default>
+                    <label>SFSOL27CN</label>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>1</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>4</label>
+                </value>
+                <value>
+                    <fullName>RISOLUTION</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>RISOLUTION</label>
+                </value>
+                <value>
+                    <fullName>RISOLUTIONCN</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>RISOLUTIONCN</label>
+                </value>
+                <value>
+                    <fullName>RISOLUTIONCR</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>RISOLUTIONCR</label>
+                </value>
+                <value>
+                    <fullName>RISUBS</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>RISUBS</label>
+                </value>
+                <value>
+                    <fullName>RISUBSCN</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>RISUBSCN</label>
+                </value>
+                <value>
+                    <fullName>S1NINV</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>S1NINV</label>
+                </value>
+                <value>
+                    <fullName>S1RIC</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>S1RIC</label>
+                </value>
+                <value>
+                    <fullName>S1RII</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>S1RII</label>
+                </value>
+                <value>
+                    <fullName>SFBANG</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFBANG</label>
+                </value>
+                <value>
+                    <fullName>SFBANGCN</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFBANGCN</label>
+                </value>
+                <value>
+                    <fullName>SFBUNDLED</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFBUNDLED</label>
+                </value>
+                <value>
+                    <fullName>SFBUNDLEDAED</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFBUNDLEDAED</label>
+                </value>
+                <value>
+                    <fullName>SFBUNDLEDCN</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFBUNDLEDCN</label>
+                </value>
+                <value>
+                    <fullName>SFBUNDLEDCNAED</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFBUNDLEDCNAED</label>
+                </value>
+                <value>
+                    <fullName>SFBUNDLEDTAX</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFBUNDLEDTAX</label>
+                </value>
+                <value>
+                    <fullName>SFBUNDLEDTAXCN</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFBUNDLEDTAXCN</label>
+                </value>
+                <value>
+                    <fullName>SFGURG</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFGURG</label>
+                </value>
+                <value>
+                    <fullName>SFGURGCN</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFGURGCN</label>
+                </value>
+                <value>
+                    <fullName>SFSOE</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFSOE</label>
+                </value>
+                <value>
+                    <fullName>SFSOEAED</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFSOEAED</label>
+                </value>
+                <value>
+                    <fullName>SFSOECN</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFSOECN</label>
+                </value>
+                <value>
+                    <fullName>SFSOECNAED</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFSOECNAED</label>
+                </value>
+                <value>
+                    <fullName>SFSOEEUR</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFSOEEUR</label>
+                </value>
+                <value>
+                    <fullName>SFSOEUSD</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFSOEUSD</label>
+                </value>
+                <value>
+                    <fullName>SFSOLSPLITCR</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFSOLSPLITCR</label>
+                </value>
+                <value>
+                    <fullName>SFSOLUTIONCR</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFSOLUTIONCR</label>
+                </value>
+                <value>
+                    <fullName>SFSOLUTIONEUR</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFSOLUTIONEUR</label>
+                </value>
+                <value>
+                    <fullName>SFSOLUTIONSPLIT</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFSOLUTIONSPLIT</label>
+                </value>
+                <value>
+                    <fullName>SFSOLUTIONSPLITCN</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFSOLUTIONSPLITCN</label>
+                </value>
+                <value>
+                    <fullName>SFSPLIT</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFSPLIT</label>
+                </value>
+                <value>
+                    <fullName>SFSPLITCN</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFSPLITCN</label>
+                </value>
+                <value>
+                    <fullName>SFSUBS</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFSUBS</label>
+                </value>
+                <value>
+                    <fullName>SFSUBSCN</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SFSUBSCN</label>
+                </value>
+                <value>
+                    <fullName>SGSTRI</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SGSTRI</label>
+                </value>
+                <value>
+                    <fullName>SGSTRICN</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SGSTRICN</label>
+                </value>
+                <value>
+                    <fullName>SOE</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SOE</label>
+                </value>
+                <value>
+                    <fullName>SalesType1</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SalesType1</label>
+                </value>
+                <value>
+                    <fullName>SalesType2</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SalesType2</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Service_End_Date__c</fullName>
+        <label>Service End Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Service_Start_Date__c</fullName>
+        <label>Service Start Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Service_billing_frequency__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Order__r.Contract.Service_billing_frequency__c)</formula>
+        <label>Service billing frequency</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SunSystems_Order_Reference__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Once the order has been raised in SunSystems enter the Order Reference here</inlineHelpText>
+        <label>Sun Order Reference</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sun_Invoice_Date__c</fullName>
+        <description>Backend field to capture the date string from PA Stream</description>
+        <externalId>false</externalId>
+        <label>Sun Invoice Date</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sun_Invoice_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Sun Invoice Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sun_Payment_Due_Date__c</fullName>
+        <description>Backend field to capture the date string from PA Stream</description>
+        <externalId>false</externalId>
+        <label>Sun Payment Due Date</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Timing__c</fullName>
+        <description>Dependent field on Escalation Stage</description>
+        <externalId>false</externalId>
+        <label>Timing</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unconfirmed_Sun_Order_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS(Order__r.Unconfirmed_Sun_Order_Number__c, &apos;NA&apos;) || 
+			CONTAINS(Order__r.Unconfirmed_Sun_Order_Number__c, &apos;N/A&apos;) ||
+			CONTAINS(Order__r.Unconfirmed_Sun_Order_Number__c, &apos;na&apos;) ||
+			CONTAINS(Order__r.Unconfirmed_Sun_Order_Number__c, &apos;n/a&apos;) ||
+			CONTAINS(Order__r.Unconfirmed_Sun_Order_Number__c, &apos;nA&apos;) ||
+			CONTAINS(Order__r.Unconfirmed_Sun_Order_Number__c, &apos;Na&apos;) ||
+			CONTAINS(Order__r.Unconfirmed_Sun_Order_Number__c, &apos;n/A&apos;) ||
+			CONTAINS(Order__r.Unconfirmed_Sun_Order_Number__c, &apos;N/a&apos;) ,
+			&apos;&apos;,
+			Order__r.Unconfirmed_Sun_Order_Number__c
+		)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Unconfirmed Sun Order Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unpaid_Amount__c</fullName>
+        <formula>IF(Invoice_Gross_Amount__c = null,0,Invoice_Gross_Amount__c) - IF(Invoice_Transaction_Amount__c = null,0,Invoice_Transaction_Amount__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Unpaid Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>X30_Days_before_SOP_Date_for_PO__c</fullName>
+        <formula>IF(Process_Date__c &lt; DATEVALUE(&apos;2023-08-01&apos;) , false, IF(Process_Date__c - TODAY() &lt;= 30, TRUE, FALSE))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>30 Days before SOP Date for PO</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>X7_Day_Check_for_PO_Number_Email__c</fullName>
+        <description>This field returns TRUE if TODAY - Awaiting PO Date = 7</description>
+        <formula>IF( TODAY() - Awaiting_PO_Notification_Sent_On__c = 7, TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>7 Day Check for PO Number Email</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Invoice Header</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Account_Number_From_Contract__c</columns>
+        <columns>Billing_Account_Name__c</columns>
+        <columns>BU_From_Contract_Header__c</columns>
+        <columns>Contract__c</columns>
+        <columns>Contract_Line__c</columns>
+        <columns>Invoice_Name__c</columns>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>E047733</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Invoice_Headers</fullName>
+        <columns>NAME</columns>
+        <columns>Invoice_Status__c</columns>
+        <columns>BU_From_Contract_Header__c</columns>
+        <columns>Account_Number_From_Contract__c</columns>
+        <columns>Billing_Account_Name__c</columns>
+        <columns>Sun_Invoice_Number__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Invoice_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Sun Order Complete</value>
+        </filters>
+        <filters>
+            <field>Invoice_Status__c</field>
+            <operation>equals</operation>
+            <value>Sun Invoice Complete</value>
+        </filters>
+        <label>All Invoice Headers</label>
+    </listViews>
+    <listViews>
+        <fullName>RI_Invoice_Header</fullName>
+        <columns>NAME</columns>
+        <columns>Invoice_Status__c</columns>
+        <columns>Billing_Account_Name__c</columns>
+        <columns>Sales_Type__c</columns>
+        <columns>SunSystems_Order_Reference__c</columns>
+        <columns>Sun_Invoice_Number__c</columns>
+        <columns>Unconfirmed_Sun_Order_Number__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Contract_Invoice_Header__c.Invoice_Header</value>
+        </filters>
+        <filters>
+            <field>Invoice_Status__c</field>
+            <operation>equals</operation>
+            <value>Ready for SOE Review</value>
+        </filters>
+        <filters>
+            <field>Order_Method__c</field>
+            <operation>equals</operation>
+            <value>RI</value>
+        </filters>
+        <label>RI Invoice Header</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CIH{0000000}</displayFormat>
+        <label>Invoice Header ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Invoice Headers</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Invoice_Header</fullName>
+        <active>true</active>
+        <label>Invoice Header</label>
+        <picklistValues>
+            <picklist>BU__c</picklist>
+            <values>
+                <fullName>Abu Dhabi - AD1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia - AU1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belgium SPS - BE5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada - CA1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China - CN1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denmark - DK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finland - FI1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>France SPS - FR5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Germany SPS - DE5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hong Kong - HK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>India - IN1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indonesia - ID1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Italy - IT1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Middle East - ME1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Netherlands SPS - NL5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Zealand - NZ1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Norway - NO1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Philippines - PH1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saudi Arabia - SA5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Singapore - SG1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Africa - ZA1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sweden - SE1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Switzerland - CH1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK - UK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - US5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Credit_Reason_Code__c</picklist>
+            <values>
+                <fullName>R01 - TAX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R02 - Aged Debt Recovery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R03 - Contract Change</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R04 - Client Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R05 - SHL Error</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Escalation_Stage__c</picklist>
+            <values>
+                <fullName>Level 0 - Not Due</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 1 - Release Invoice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 2 - No Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 3 - OTC Team Lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 4 - Head of OTC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 5 - Group FC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 6 - Business Senior</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 7 - Leadership</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Invoice_Status__c</picklist>
+            <values>
+                <fullName>Awaiting Chop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting GST%2FVAT Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting PO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cross Border</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Draft - awaiting milestones</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Usage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold for Payment Milestone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queried</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for SOE Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Sun Transfer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready to Invoice</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Non_Default_Payment_Term__c</picklist>
+            <values>
+                <fullName>30D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30NM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60NM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60NM %2B 5 DAYS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90NM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Order_Method__c</picklist>
+            <values>
+                <fullName>SOE</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>T%26E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SFDC2SUN_Transfer_Status__c</picklist>
+            <values>
+                <fullName>Not Transferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transferred</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Type__c</picklist>
+            <values>
+                <fullName>SFSOL27</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFSOL27CN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFSOLSPLIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFSOLSPLITCN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFSOLUTION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFSOLUTIONCN</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Read_Only</fullName>
+        <active>true</active>
+        <label>Read Only</label>
+        <picklistValues>
+            <picklist>BU__c</picklist>
+            <values>
+                <fullName>Abu Dhabi - AD1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia - AU1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belgium SPS - BE5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada - CA1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China - CN1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denmark - DK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finland - FI1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>France SPS - FR5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Germany SPS - DE5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hong Kong - HK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>India - IN1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indonesia - ID1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Italy - IT1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Middle East - ME1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Netherlands SPS - NL5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Zealand - NZ1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Norway - NO1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Philippines - PH1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saudi Arabia - SA5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Singapore - SG1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Africa - ZA1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sweden - SE1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Switzerland - CH1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK - UK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - US5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Credit_Reason_Code__c</picklist>
+            <values>
+                <fullName>R01 - TAX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R02 - Aged Debt Recovery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R03 - Contract Change</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R04 - Client Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R05 - SHL Error</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Escalation_Stage__c</picklist>
+            <values>
+                <fullName>Level 0 - Not Due</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 1 - Release Invoice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 2 - No Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 3 - OTC Team Lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 4 - Head of OTC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 5 - Group FC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 6 - Business Senior</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 7 - Leadership</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Invoice_Status__c</picklist>
+            <values>
+                <fullName>Awaiting Chop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting GST%2FVAT Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting PO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cross Border</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Draft - awaiting milestones</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Usage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold for Payment Milestone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queried</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for SOE Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Sun Transfer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready to Invoice</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Non_Default_Payment_Term__c</picklist>
+            <values>
+                <fullName>30D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30NM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60NM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60NM %2B 5 DAYS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90NM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Order_Method__c</picklist>
+            <values>
+                <fullName>SOE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T%26E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SFDC2SUN_Transfer_Status__c</picklist>
+            <values>
+                <fullName>Not Transferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transferred</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Type__c</picklist>
+            <values>
+                <fullName>SFSOL27</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFSOL27CN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFSOLSPLIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFSOLSPLITCN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFSOLUTION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFSOLUTIONCN</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Billing_Account_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Billing_Contact__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Account_Number_From_Contract__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Invoice_Status__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Billing_Contact__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Billing_Account_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Contract__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Account_Number_From_Contract__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Invoice_Status__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>Contract__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Account_Number_From_Contract__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Billing_Account_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Billing_Contact__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Invoice_Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>BillingContact_as_OrderAccountcontact</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)),
+Billing_Contact__r.AccountId &lt;&gt;   Order__r.AccountId ,false)</errorConditionFormula>
+        <errorDisplayField>Billing_Contact__c</errorDisplayField>
+        <errorMessage>Order Contact must belong to the selected Order&apos;s Account</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cannot_Select_Ready_for_SOE</fullName>
+        <active>false</active>
+        <description>SSE-6455,6456 
+if Order Method = RI or Extended comment is not blank invoice status can not 
+moved to Ready for SOE Review.</description>
+        <errorConditionFormula>AND(ISPICKVAL(Invoice_Status__c ,&quot;Ready for SOE review&quot;),OR( NOT(ISBLANK(Invoice_Header_Comments__c )),ISPICKVAL(Order_Method__c,&apos;RI&apos;)))</errorConditionFormula>
+        <errorDisplayField>Invoice_Status__c</errorDisplayField>
+        <errorMessage>Invoice status can not be moved to Ready for SOE review,if there is value in extended comments or Order Method is RI</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_CreditNote_On_NegativeInvoiceTotal</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( OR(ISPICKVAL( Invoice_Status__c, &apos;Ready to Invoice&apos;),ISPICKVAL( Invoice_Status__c, &apos;Ready for SOE Review&apos;)),Invoice_Total__c &lt; 0,NOT(Credit_Note__c = true), NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)))</errorConditionFormula>
+        <errorMessage>On the invoice header, &apos;Credit Note&apos; checkbox must be checked if &apos;Invoice Total&apos; is negative</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_Invoice_Total</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( OR(ISPICKVAL( Invoice_Status__c, &apos;Ready to Invoice&apos;),ISPICKVAL( Invoice_Status__c, &apos;Ready for SOE Review&apos;)), Credit_Note__c = true, NOT(Invoice_Total__c &lt;= 0),NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)))</errorConditionFormula>
+        <errorMessage>On the Invoice Header, &apos;Invoice Total&apos; must be negative when &apos;Credit Note&apos; checkbox is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_if_PO_is_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)),
+OR(AND(NOT(Order__r.Account.PurchaseOrderRequired__c),ISNULL(PO_number__c ),NOT(ISPICKVAL(Invoice_Status__c, &apos;Draft&apos;))) 
+,AND(NOT(Order__r.Account.PurchaseOrderRequired__c),ISBLANK(PO_number__c ),NOT(ISPICKVAL(Invoice_Status__c, &apos;Draft&apos;)))),
+false)</errorConditionFormula>
+        <errorMessage>This Account requires a PO on the invoice header</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CreditReasonCodeRequired</fullName>
+        <active>true</active>
+        <description>SSE-6173</description>
+        <errorConditionFormula>AND( NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)),TEXT(Credit_Reason_Code__c)=&quot;&quot;,OR(Credit_Note__c = true, CONTAINS(TEXT(Sales_Type__c ), &quot;CN&quot;) ) ) &amp;&amp; IsAutomationBypassed__c = false</errorConditionFormula>
+        <errorDisplayField>Credit_Reason_Code__c</errorDisplayField>
+        <errorMessage>Credit Reason Code is required if Sales Type is Credit Note or Credit Note is checked</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Currency_Should_Match_Order_Currency</fullName>
+        <active>true</active>
+        <description>Invoice header currency must be same as related order currency.</description>
+        <errorConditionFormula>IF(NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)),IF(TEXT(CurrencyIsoCode) = TEXT( Order__r.CurrencyIsoCode   ),false,true),false)</errorConditionFormula>
+        <errorDisplayField>CurrencyIsoCode</errorDisplayField>
+        <errorMessage>Invoice header currency must be same as related order currency.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ExtendedCommentsCheckforManualProcess</fullName>
+        <active>true</active>
+        <description>Recent change done for SSE-13135
+SSE-6455,6456:if Extended Comments field is populated and Manual is not ticked the user cannot process through the automatic process- 
+the header cannot moved to Ready for SOE Review.</description>
+        <errorConditionFormula>AND(NOT(ISBLANK(Invoice_Header_Comments__c)),Manual_Transfer__c =false, ISBLANK(Unconfirmed_Sun_Order_Number__c ))  &amp;&amp; IsAutomationBypassed__c = false</errorConditionFormula>
+        <errorMessage>All orders with Extended Comments must be processed manually.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>GST_Identification_Number_is_mandatory</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL(BU__c , &apos;India - IN1&apos;) ,OR(ISPICKVAL(Invoice_Status__c, &apos;Ready to Invoice&apos;),ISPICKVAL(Invoice_Status__c, &apos;Ready for Sun Transfer&apos;),ISPICKVAL(Invoice_Status__c, &apos;Ready for SOE Review&apos;)), ISBLANK( GST_Identification_Number__c ),
+Invoice_Account__r.Exempt_GST__c = False
+)</errorConditionFormula>
+        <errorDisplayField>GST_Identification_Number__c</errorDisplayField>
+        <errorMessage>The GST Identification number is mandatory when the BU on Invoice Header equals India - IN1 and  Invoice Status is Ready to Invoice/Ready for SOE Review/Ready for Sun Transfer</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>InvoiceAccountBUShouldBeSameAsInvHeadBU</fullName>
+        <active>true</active>
+        <description>Validation rule to prevent Invoice Account BU from being different from the Invoice Header BU</description>
+        <errorConditionFormula>IF(NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)),
+IF(AND(TEXT(Invoice_Account__r.BU__c ) &lt;&gt; BU_From_Contract_Header__c,NOT(ISBLANK(Invoice_Account__c))),true,false),false)</errorConditionFormula>
+        <errorDisplayField>Invoice_Account__c</errorDisplayField>
+        <errorMessage>Invoice Account&apos;s  BU Should be same as the Invoice Header&apos;s BU.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>InvoiceContactShouldBeOfInvoiceAccount</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)),Invoice_Contact__r.AccountId &lt;&gt;  Invoice_Account__r.Id,false)</errorConditionFormula>
+        <errorDisplayField>Invoice_Contact__c</errorDisplayField>
+        <errorMessage>Invoice Contact must belong to the selected Invoice Account.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>InvoiceHeader_Cannot_Move_Out_from_Draft</fullName>
+        <active>true</active>
+        <description>Invoice Header cannot be moved to any other status value unless it has an invoice line added to the related list.</description>
+        <errorConditionFormula>IF(AND(ISPICKVAL(PRIORVALUE(Invoice_Status__c),&apos;Draft&apos;), No_of_Invoice_Line__c = 0,NOT(OR(ISPICKVAL(Invoice_Status__c,&apos;Cancelled&apos;),ISPICKVAL(Invoice_Status__c,&apos;No Usage&apos;))),NOT(ISNEW()),ISCHANGED(Invoice_Status__c)),true,false)</errorConditionFormula>
+        <errorDisplayField>Invoice_Status__c</errorDisplayField>
+        <errorMessage>Invoice Header cannot be moved to another status unless it has an invoice line added.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>InvoiceStatusCheckPriorValue</fullName>
+        <active>true</active>
+        <description>User cannot change ready for sun transfer if the prior value is not ready for SOE review</description>
+        <errorConditionFormula>AND(NOT($Permission.OATs), OR(ISCHANGED(Invoice_Status__c),ISNEW()) , NOT(ISPICKVAL(PRIORVALUE(Invoice_Status__c),&quot;Ready for SOE Review&quot;)),
+ISPICKVAL(Invoice_Status__c,&apos;Ready for Sun Transfer&apos;))</errorConditionFormula>
+        <errorDisplayField>Invoice_Status__c</errorDisplayField>
+        <errorMessage>Please update Invoice status to &apos;Ready for SOE Review&apos; before changing it to &apos;Ready for Sun Transfer&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>InvoiceStatusDependsOnOrdersStatus</fullName>
+        <active>true</active>
+        <description>Invoice Header status cannot be set to &apos;Ready to Invoice&apos; or &apos;Ready for SOE Review&apos; or &apos;Ready for Sun Transfer&apos; unless the related Order Header status is Completed, Approved, Awaiting PO or Awaiting GST/VAT Info</description>
+        <errorConditionFormula>IF(NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)),
+AND(
+OR(ISCHANGED(Invoice_Status__c), ISNEW()),
+OR(ISPICKVAL(Invoice_Status__c,&apos;Ready for SOE Review&apos;),ISPICKVAL(Invoice_Status__c,&apos;Ready to Invoice&apos;),ISPICKVAL(Invoice_Status__c,&apos;Ready for Sun Transfer&apos;)),
+NOT(OR(ISPICKVAL(Order__r.Oats_Status__c,&quot;Completed&quot; ),
+ISPICKVAL(Order__r.Oats_Status__c,&quot;Approved&quot; ),
+ISPICKVAL(Order__r.Oats_Status__c,&quot;Awaiting PO&quot; ), ISPICKVAL(Order__r.Oats_Status__c,&quot;Awaiting GST/VAT Info&quot;)))
+),false)</errorConditionFormula>
+        <errorMessage>Invoice Header status cannot be set to &apos;Ready to Invoice&apos; or &apos;Ready for SOE Review&apos; or &apos;Ready for Sun Transfer&apos; unless the related Order OAT status is &apos;Awaiting PO&apos; or &apos;Awaiting GST/VAT Info&apos; or &apos;Completed&apos; or &apos;Approved&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>InvoiceStatusUpdateValidationGST</fullName>
+        <active>true</active>
+        <description>SSE-6023: User should ONLY be allowed to mark Invoice Status as &apos;Ready for SOE Review&apos; OR &apos;Ready to Invoice&apos; if associated GST record&apos;s (&apos;Automatic Transfer Status&apos; = Transferred OR &apos;Manual Transfer&apos; = YES).</description>
+        <errorConditionFormula>AND(if( TEXT(GST_Identification_Number__r.Manual_Transfer__c) = &apos;Yes&apos;, false ,
+TEXT(GST_Identification_Number__r.Transfer_Status__c)!=&quot;Transferred&quot;),NOT(!ISNULL(GST_Identification_Number__c)),
+OR(ISPICKVAL( Invoice_Status__c ,&apos;Ready for SOE Review&apos;),ISPICKVAL( Invoice_Status__c ,&apos;Ready to Invoice&apos;),ISPICKVAL(BU__c, &apos;India - IN1&apos;) ))</errorConditionFormula>
+        <errorMessage>You cannot proceed further if linked GST record is not transferred to SUN.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Invoice_Cannot_Be_Created_VOpp_Is_yes</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(
+NOT(CONTAINS( $Profile.Name, &quot;System Administrator&quot; )),
+IF(ISPICKVAL( Order__r.Opportunity.Variation_Opportunity__c , &apos;Yes&apos;),true,false ))</errorConditionFormula>
+        <errorMessage>Invoice Header Cannot Be Created If Variation Opportunity Is &apos;YES&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Invoice_Contact_MustBe_TransferToInfor10</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND 
+( 
+NOT(ISBLANK(Invoice_Contact__c)), 
+NOT(ISPICKVAL(Invoice_Contact__r.SFDC2SUN_TransferStatus__c , &apos;Transferred&apos;)), 
+NOT(ISPICKVAL(BU__c, &apos;South Africa - ZA1&apos;)),
+OR(ISPICKVAL(Invoice_Status__c, &apos;Ready to Invoice&apos;),ISPICKVAL(Invoice_Status__c, &apos;Ready for SOE Review&apos;))
+)</errorConditionFormula>
+        <errorMessage>The invoice contact related to this Invoice header record is not yet transferred to Infor10. Please transfer it first before setting Invoice Status is Ready to Invoice or Ready for SOE Review</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Invoice_Header_Can_Only_Move_To_Draft</fullName>
+        <active>true</active>
+        <description>Invoice Header can only be moved to &quot;Draft&quot; from &quot;Cancelled&quot; or &quot;No Usage&quot; Invoice Status.</description>
+        <errorConditionFormula>IF(
+    AND(
+        ISPICKVAL(Invoice_Status__c, &apos;Draft&apos;),
+        NOT(
+            OR(
+                ISPICKVAL(PRIORVALUE(Invoice_Status__c), &apos;Cancelled&apos;),
+                ISPICKVAL(PRIORVALUE(Invoice_Status__c), &apos;No Usage&apos;)
+            )
+        ),
+        ISCHANGED(Invoice_Status__c)
+    ),
+    true,
+    false
+)</errorConditionFormula>
+        <errorDisplayField>Invoice_Status__c</errorDisplayField>
+        <errorMessage>Invoice Header can only move to Draft from Cancelled or No Usage.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Job_Number_is_Required_for_MS_Invoice</fullName>
+        <active>true</active>
+        <description>Job Number is Required for MS Invoice</description>
+        <errorConditionFormula>IF(AND(NOT(ISNEW()),Order__r.Opportunity.MS_Opportunity__c = true, ISCHANGED(Process_Date__c), ISNULL(PRIORVALUE(Process_Date__c)), NOT(ISNULL(Process_Date__c)), Job_Number__c = NULL),true, IF(AND(NOT(ISNEW()),Order__r.Opportunity.MS_Opportunity__c = true, ISCHANGED(Job_Number__c), NOT(PRIORVALUE(Job_Number__c) = NULL),Job_Number__c = NULL),true, false))</errorConditionFormula>
+        <errorMessage>Job Number is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>MentionReasonwhenManualTransferChecked</fullName>
+        <active>true</active>
+        <description>Reason field is mandatory when manual transfer checkbox is checked</description>
+        <errorConditionFormula>AND(PRIORVALUE(Manual_Transfer__c)= False, ISCHANGED(Manual_Transfer__c), ISBLANK( Manual_Transfer_Reason__c ))</errorConditionFormula>
+        <errorDisplayField>Manual_Transfer_Reason__c</errorDisplayField>
+        <errorMessage>Reason is mandatory when manual transfer is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Order_number_added_before_invoice_num</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(
+				NOT(
+								CONTAINS($Profile.Name,&apos;System Admin&apos;)
+				) &amp;&amp; 
+    NOT($Permission.Invoice_Header_Edit_fields) ,
+				AND ( 
+								NOT(
+												ISBLANK(Sun_Invoice_Number__c )
+								),
+								ISBLANK(SunSystems_Order_Reference__c )
+				),
+				false
+)</errorConditionFormula>
+        <errorDisplayField>Sun_Invoice_Number__c</errorDisplayField>
+        <errorMessage>&apos;Sun Invoice Number&apos; field cannot have a value until the &apos;SUN Order Reference&apos; field has a value added to it.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PO_Mandatory_on_Credit_Note_True</fullName>
+        <active>true</active>
+        <description>SSE-6700</description>
+        <errorConditionFormula>AND(NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)),Credit_Note__c = true,PO_number__c = &apos;&apos;)  &amp;&amp; IsAutomationBypassed__c = false</errorConditionFormula>
+        <errorDisplayField>PO_number__c</errorDisplayField>
+        <errorMessage>Original Sales Invoice Number is required if Credit Note is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prevent_Invoice_status_from_changing</fullName>
+        <active>true</active>
+        <description>Prevent Invoice Status on Invoice Header from being changed to Ready for SOE or Ready for SUN Transfer if the related Invoice Account has an Account Approval Status of Unapproved or Submitted for Approval.</description>
+        <errorConditionFormula>IF(NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)),AND(NOT (ISPICKVAL(Invoice_Account__r.Status__c , &apos;Approved&apos;)),OR(ISPICKVAL(Invoice_Status__c, &apos;Ready for SOE Review&apos;) ,ISPICKVAL(Invoice_Status__c, &apos;Ready for Sun Transfer&apos;))),false)</errorConditionFormula>
+        <errorMessage>Invoice header can not be selected as ready for SOE or ready for SUN transfer as Account Approval Status is Unapproved or Submitted for Approval</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Restrict_credit_note_checkbox</fullName>
+        <active>true</active>
+        <description>SSE-6851:Restrict sales type to be used when credit note box is ticked</description>
+        <errorConditionFormula>AND(NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)), Credit_Note__c =false, CONTAINS(TEXT( Sales_Type__c), &apos;CN&apos;))</errorConditionFormula>
+        <errorDisplayField>Credit_Note__c</errorDisplayField>
+        <errorMessage>The credit note checkbox should be checked if a credit sales type is selected.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Restrict_credit_note_sales_type</fullName>
+        <active>true</active>
+        <description>SSE-13096 : recent change
+SSE-6851:Restrict sales type to be used when credit note box is ticked</description>
+        <errorConditionFormula>AND(
+NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)),
+Credit_Note__c =true,
+Manual_Transfer__c =false,
+OR(
+AND(NOT( CONTAINS(TEXT( Sales_Type__c), &apos;CN&apos;)),
+NOT( CONTAINS(TEXT( Sales_Type__c), &apos;CR&apos;)),
+NOT(ISPICKVAL(Sales_Type__c,&apos;S1RIC&apos;))),
+ISPICKVAL(Sales_Type__c,&apos;&apos;) )
+)  &amp;&amp; IsAutomationBypassed__c = false</errorConditionFormula>
+        <errorDisplayField>Sales_Type__c</errorDisplayField>
+        <errorMessage>You cannot choose a non credit sales type if credit note checkbox is true.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Restrict_specific_fields_edition</fullName>
+        <active>true</active>
+        <errorConditionFormula>RecordType.Name = &apos;Read Only&apos; &amp;&amp;  NOT(ISCHANGED(RecordTypeId)) &amp;&amp; 
+NOT($Permission.Invoice_Header_Edit_fields) &amp;&amp;
+$Profile.Name &lt;&gt; &apos;System Administrator&apos; &amp;&amp;
+$User.Id &lt;&gt; &apos;00520000000ihKr&apos; &amp;&amp;
+(ISCHANGED(Invoice_Status__c) || ISCHANGED(SunSystems_Order_Reference__c))</errorConditionFormula>
+        <errorMessage>Only authorized users can edit the fields &apos;Invoice Status&apos; and &apos;Sun Order Reference&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Restrict_value_for_Invoice_Status_Auto</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)),AND(ISPICKVAL(Invoice_Status__c , &quot;Ready to Invoice&quot;),Manual_Transfer__c = false,ISBLANK( Unconfirmed_Sun_Order_Number__c)), false)</errorConditionFormula>
+        <errorDisplayField>Invoice_Status__c</errorDisplayField>
+        <errorMessage>&apos;Ready to Invoice&apos; can only be selected when &apos;Unconfirmed SUN Order Number&apos; has a value or &apos;Manual Transfer&apos; is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Restrict_value_for_Invoice_Status_Manual</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(OR(ISPICKVAL(Invoice_Status__c , &quot;Ready for Sun Transfer&quot;), 
+ISPICKVAL(Invoice_Status__c , &quot;Ready for SOE review&quot;)),OR( Manual_Transfer__c = true,NOT(ISBLANK( Unconfirmed_Sun_Order_Number__c))))</errorConditionFormula>
+        <errorDisplayField>Invoice_Status__c</errorDisplayField>
+        <errorMessage>&apos;Ready for SOE Review&apos; cannot be selected when &apos;Unconfirmed SUN Order Number&apos; is available or &apos;Manual Transfer&apos; is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SalesTypeNotRequiredManualProcess</fullName>
+        <active>true</active>
+        <description>SSE-6711-Sales Type value should not be populated for manual orders</description>
+        <errorConditionFormula>AND(NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)), OR( Manual_Transfer__c =true, not(ISBLANK(Unconfirmed_Sun_Order_Number__c) )),TEXT(Sales_Type__c )!=&apos;&apos;)</errorConditionFormula>
+        <errorDisplayField>Sales_Type__c</errorDisplayField>
+        <errorMessage>Sales Type value should not be populated when &apos;Unconfirmed SUN Order Number&apos; is available or &apos;Manual Transfer&apos; is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SalesTypeRequired</fullName>
+        <active>true</active>
+        <description>SSE-6174
+The Sales Type field will be mandatory when the Invoice Status moves to Ready for SOE Review and the &apos;Manual Transfer&apos; is set to FALSE</description>
+        <errorConditionFormula>AND(NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)),OR(ISPICKVAL(Invoice_Status__c ,&quot;Ready for SOE review&quot;),ISPICKVAL(Invoice_Status__c ,&quot;Ready for Sun Transfer&quot;)), Manual_Transfer__c =false,TEXT(Sales_Type__c )=&apos;&apos;)</errorConditionFormula>
+        <errorDisplayField>Sales_Type__c</errorDisplayField>
+        <errorMessage>Sales Type is required when Invoice Status is &apos;Ready for SOE Review&apos; or &apos;Ready for Sun Transfer&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SunOrderRefValidationforAutomatic</fullName>
+        <active>true</active>
+        <description>SSE-6199:An error message will appear if the user tries to modify the &apos;SUN Order Reference Number&apos; when &apos;Manual Transfer&apos; = &apos;False&apos; OR Unconfirmed Sun Order Reference is &apos;Blank&apos;</description>
+        <errorConditionFormula>AND(NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)),NOT(ISNEW()),ISCHANGED(SunSystems_Order_Reference__c ) ,PRIORVALUE(SunSystems_Order_Reference__c) !=&apos;&apos;,NOT(ISBLANK(SunSystems_Order_Reference__c)),OR( Manual_Transfer__c =False,ISNULL(Unconfirmed_Sun_Order_Number__c )))</errorConditionFormula>
+        <errorDisplayField>SunSystems_Order_Reference__c</errorDisplayField>
+        <errorMessage>Since this record was automatically transferred, you are not allowed to modify the &apos;SUN Order Reference&apos;. You can delete this value to restart the transfer process.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SunOrderReference_Check_for_ManualEntry</fullName>
+        <active>true</active>
+        <description>SSE-5626:User cannot add value in the &apos;Sun Order Reference&apos; field manually until the Manual Transfer is Initiated and Invoice status is (Ready to Invoice,Transferring to SUN or SUN Order Complete)</description>
+        <errorConditionFormula>IF(NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)),
+AND(NOT(ISBLANK(SunSystems_Order_Reference__c)),
+NOT(OR(ISPICKVAL(Invoice_Status__c,&apos;Ready to Invoice&apos;),ISPICKVAL(Invoice_Status__c,&apos;Sun Invoice Complete&apos;),ISPICKVAL(Invoice_Status__c,&apos;Sun Order Complete&apos;),ISPICKVAL(Invoice_Status__c,&apos;Cross Border&apos;) ,ISPICKVAL(Invoice_Status__c,&apos;No Usage&apos;),ISPICKVAL(Invoice_Status__c,&apos;Cancelled&apos;)))),false)</errorConditionFormula>
+        <errorDisplayField>SunSystems_Order_Reference__c</errorDisplayField>
+        <errorMessage>You are allowed to supply &apos;SUN Order Reference&apos; only when the Invoice Status is &apos;Cross Border&apos;, &apos;No Usage&apos;, &apos;Cancelled&apos; or &apos;Ready to Invoice&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sun_Invoice_Sun_order_cannot_be_edited</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(
+				NOT(
+								CONTAINS($Profile.Name,&apos;System Admin&apos;)
+				) &amp;&amp;
+        NOT($Permission.Invoice_Header_Edit_fields) ,
+				AND(
+								NOT(ISBLANK(PRIORVALUE(Sun_Invoice_Number__c ))) ,
+								OR( ISCHANGED(Sun_Invoice_Number__c ),
+											ISCHANGED(SunSystems_Order_Reference__c ) 
+										)
+				),
+				false
+)</errorConditionFormula>
+        <errorMessage>SUN Invoice Number cannot be updated if Invoice Status is &apos;SUN Invoice Complete&apos;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>cannot_edit_BU</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR( ISCHANGED(BU__c ) ,IF(AND(ISNEW(),(TEXT(BU__c) &lt;&gt; (  TEXT(Order__r.Account.BU__c)  )  )), true, false))</errorConditionFormula>
+        <errorMessage>BU cannot be edited</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>New_Invoice_Header</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Invoice Header</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>//First construct the new URL 
+{!REQUIRESCRIPT(&quot;/soap/ajax/12.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/apex.js&quot;)} 
+var result = sforce.connection.query(&quot;Select Id,CurrencyIsoCode,BU__c from Account where id =&apos;{!Contract.AccountId}&apos;&quot;); 
+records = result.getArray(&quot;records&quot;); 
+var newUrl = &quot;/a0c/e?RecordType=012D0000000Nei7&amp;CF00ND0000002gkft_lkid={!Contract.Id}&amp;CF00ND0000002gkft={!Contract.ContractNumber}&amp;CF00ND0000003n4sV_lkid={!Contract.AccountId}&amp;CF00ND0000003n4sV={!Contract.Account}&amp;CurrencyIsoCode={!Contract.CurrencyIsoCode}&amp;CF00ND0000002gkgD={!Contract.Billing_Contact__c}&amp;CF00ND0000002gkgD_lkid={!Contract.Billing_ContactId__c}&amp;00ND0000006F7XZ={!Contract.BU_From_Account__c}&amp;cancelURL=%2F{!Contract.Id}&amp;retURL=%2F{!Contract.Id}&amp;nooverride=1&quot;; 
+
+
+//Then redirect the user to it 
+window.parent.location.replace(newUrl);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Super_Clone</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Super Clone</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/12.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/apex.js&quot;)} 
+var result = sforce.apex.execute(&quot;ContractInvoiceHeader_Manager&quot;, &quot;superClone&quot;, {invoiceHeaderId:&apos;{!Contract_Invoice_Header__c.Id}&apos;});
+if(result==null || result.length==0)
+  alert(&quot;Failed to Super Clone this invoice header. Error: UNKNOWN&quot;);
+else
+{
+	if(result[0] == &quot;SUCCESS&quot;)
+	{
+		if(result.length&lt;3)
+			alert(&apos;Invoice header has been cloned successfully however the new Invoice Header Id is UNKNOWN&apos;);
+		else
+		{
+			alert(&quot;Invoice header has been cloned successfully and the new Invoice Header Id is &quot; + result[2]);
+			window.parent.location.href = &quot;{!$Site.CurrentSiteUrl}/&quot; + result[1]; 
+		}
+	}
+	else if(result[0] == &quot;UNAUTHORISED&quot;)
+		alert(&quot;You are not authorized to Super Clone this invoice. Please contact your SFDC Administrator if you believe this to be incorrect.&quot;);
+	else
+		alert(&quot;Failed to Super Clone this invoice header. Error: &quot; + result[0]);
+}</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,9 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <lightning:card>
+        <ui:message title="WARNING!" severity="warning" closable="false" >           
+            <strong>CAUTION!</strong> The related GST number is not transferred to Infor10.
+            
+        </ui:message> 
+        
+    </lightning:card>
+</aura:component>

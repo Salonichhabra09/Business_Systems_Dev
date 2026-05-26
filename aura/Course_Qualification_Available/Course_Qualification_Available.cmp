@@ -1,0 +1,29 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="record" type="Object" access="global"/>
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="simplerecord" type="Object" access="global"/>
+    <aura:attribute name="listofQualification" type="String[]" access="global"/>
+    <force:recordData aura:id="OppRecordLoader"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"                      
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.simplerecord}"
+                      targetError="{!v.recordError}"
+                      recordUpdated="{!c.doInit}"
+                      /> 
+    <lightning:card class="slds-card__header">
+
+         <h3 class="slds-section-title--divider "> Qualification Available Information</h3>   
+         <div class="c-container">
+            <lightning:layout multipleRows="true">
+                <aura:iteration items="{!v.listofQualification}" var="item" indexVar="index" >
+                    <lightning:layoutItem padding="around-small">
+                        <div class="custom-box"> {!item}</div>
+                    </lightning:layoutItem>
+                </aura:iteration>   
+            </lightning:layout>
+        </div>
+        
+   </lightning:card>
+    
+</aura:component>

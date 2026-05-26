@@ -1,0 +1,125 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%; 
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.container-header {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 0;
+    background: #333;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    width: 100%; 
+}
+
+/* ✅ Combined Section Styling */
+.combined-section,
+.table-chart-wrapper {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    /*width: calc(100% - 0.5rem);*/
+    width: 100%; /* ✅ Full width */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* ✅ Combined Section Styling side by side */
+.combined-section-side,
+.table-chart-wrapper {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    width: calc(50% - 0.5rem); /* Side-by-side alignment */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* ✅ Header Styling */
+.section-header {
+    background-color: #000;
+    color: #fff;    
+    padding: 0.25rem;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* ✅ Content Wrapper */
+.content-wrapper {
+    display: flex;
+    /*gap: 1rem;*/
+    padding: 1rem;
+}
+
+/* ✅ Table and Chart Alignment */
+.table-container {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    /*height: 200px; /* ✅ Fixed height for alignment */
+    overflow: hidden;
+}
+
+/* ✅ Table and Chart Alignment */
+.table-container-single {
+    flex: 1;
+    min-width: 500px;
+    /*height: 200px; /* ✅ Fixed height for alignment */
+    overflow: hidden;
+}
+/* ✅ Remove grey background after last row */
+lightning-datatable {
+    background-color: #fff !important;
+    border: none !important;
+}
+
+/* ✅ Chart Container Alignment */
+.chart-container {
+    flex: 1;
+    min-width: 250px;
+    /*height: 200px; /* ✅ Same height as table */
+}
+
+.chart-container-single {
+    flex: 1;
+    min-width: 500px;
+    /*height: 200px; /* ✅ Same height as table */
+}
+
+/* ✅ Canvas Styling */
+/*canvas {
+    width: 100% !important;
+    height: 100% !important;
+}*/
+
+/* ✅ Responsive Handling */
+@media (max-width: 768px) {
+    .combined-section,
+    .table-chart-wrapper {
+        width: 100%; /* Stack vertically on smaller screens */
+    }
+
+    .content-wrapper {
+        flex-direction: row;
+    }
+
+    .table-container,
+    .chart-container {
+        width: 100%; /* Full width on smaller screens */
+        height: 100%;
+    }
+}
+
+/* Bold style for total row */
+.bold-row {
+    font-weight: bold !important; /* ✅ Make text bold */
+    background-color: #f4f4f4; /* ✅ Light gray background */
+    color: #000; /* ✅ Ensure text color is visible */
+}

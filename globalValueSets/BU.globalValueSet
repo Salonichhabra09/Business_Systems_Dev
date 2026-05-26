@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Abu Dhabi - AD1</fullName>
+        <default>false</default>
+        <label>Abu Dhabi - AD1</label>
+    </customValue>
+    <customValue>
+        <fullName>Australia - AU1</fullName>
+        <default>false</default>
+        <label>Australia - AU1</label>
+    </customValue>
+    <customValue>
+        <fullName>Belgium SPS - BE5</fullName>
+        <default>false</default>
+        <label>Belgium SPS - BE5</label>
+    </customValue>
+    <customValue>
+        <fullName>Canada - CA1</fullName>
+        <default>false</default>
+        <label>Canada - CA1</label>
+    </customValue>
+    <customValue>
+        <fullName>China - CN1</fullName>
+        <default>false</default>
+        <label>China - CN1</label>
+    </customValue>
+    <customValue>
+        <fullName>Denmark - DK1</fullName>
+        <default>false</default>
+        <label>Denmark - DK1</label>
+    </customValue>
+    <customValue>
+        <fullName>Finland - FI1</fullName>
+        <default>false</default>
+        <label>Finland - FI1</label>
+    </customValue>
+    <customValue>
+        <fullName>France SPS - FR5</fullName>
+        <default>false</default>
+        <label>France SPS - FR5</label>
+    </customValue>
+    <customValue>
+        <fullName>Germany SPS - DE5</fullName>
+        <default>false</default>
+        <label>Germany SPS - DE5</label>
+    </customValue>
+    <customValue>
+        <fullName>Hong Kong - HK1</fullName>
+        <default>false</default>
+        <label>Hong Kong - HK1</label>
+    </customValue>
+    <customValue>
+        <fullName>India - IN1</fullName>
+        <default>false</default>
+        <label>India - IN1</label>
+    </customValue>
+    <customValue>
+        <fullName>Italy - IT1</fullName>
+        <default>false</default>
+        <label>Italy - IT1</label>
+    </customValue>
+    <customValue>
+        <fullName>Middle East - ME1</fullName>
+        <default>false</default>
+        <label>Middle East - ME1</label>
+    </customValue>
+    <customValue>
+        <fullName>Netherlands SPS - NL5</fullName>
+        <default>false</default>
+        <label>Netherlands SPS - NL5</label>
+    </customValue>
+    <customValue>
+        <fullName>New Zealand - NZ1</fullName>
+        <default>false</default>
+        <label>New Zealand - NZ1</label>
+    </customValue>
+    <customValue>
+        <fullName>Norway - NO1</fullName>
+        <default>false</default>
+        <label>Norway - NO1</label>
+    </customValue>
+    <customValue>
+        <fullName>Philippines - PH1</fullName>
+        <default>false</default>
+        <label>Philippines - PH1</label>
+    </customValue>
+    <customValue>
+        <fullName>Saudi Arabia - SA5</fullName>
+        <default>false</default>
+        <label>Saudi Arabia - SA5</label>
+    </customValue>
+    <customValue>
+        <fullName>Singapore - SG1</fullName>
+        <default>false</default>
+        <label>Singapore - SG1</label>
+    </customValue>
+    <customValue>
+        <fullName>South Africa - ZA1</fullName>
+        <default>false</default>
+        <label>South Africa - ZA1</label>
+    </customValue>
+    <customValue>
+        <fullName>Sweden - SE1</fullName>
+        <default>false</default>
+        <label>Sweden - SE1</label>
+    </customValue>
+    <customValue>
+        <fullName>Switzerland - CH1</fullName>
+        <default>false</default>
+        <label>Switzerland - CH1</label>
+    </customValue>
+    <customValue>
+        <fullName>UK - UK1</fullName>
+        <default>false</default>
+        <label>UK - UK1</label>
+    </customValue>
+    <customValue>
+        <fullName>US - US5</fullName>
+        <default>false</default>
+        <label>US - US5</label>
+    </customValue>
+    <customValue>
+        <fullName>Indonesia - ID1</fullName>
+        <default>false</default>
+        <label>Indonesia - ID1</label>
+    </customValue>
+    <masterLabel>BU</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

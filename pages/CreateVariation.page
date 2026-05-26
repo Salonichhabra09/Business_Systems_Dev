@@ -1,0 +1,54 @@
+<apex:page standardcontroller="Opportunity" extensions="CreateVariation"  showHeader="false" sidebar="false">
+
+    <apex:includeScript value="{!URLFOR($Resource.jquery_1_8_23, 'js/jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.jquery_1_8_23, 'js/jquery-ui.custom.min.js')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.jquery_1_8_23, '/css/ui-lightness/jquery-ui.custom.css')}"  />
+       <apex:includeScript value="/soap/ajax/26.0/connection.js"/>
+<apex:includeScript value="/support/console/36.0/integration.js"/>
+
+<div id="OrderSection">
+<apex:form >
+    <script >
+  
+     function RedirtToNewOpp(){
+         var link = "/{!$CurrentPage.parameters.id}/e?clone=1&save_new_url0=006%2Fe%3Fopp7%3D0&retURL=006%2Fo%3Fopp7%3D0&CF00ND0000005EOxp=&00ND0000005EOxz=Yes&00ND0000005EOxk=0%25&CF00ND0000005EOxr_lkid={!$CurrentPage.parameters.id}&CF00ND0000005EOxr={!$CurrentPage.parameters.OppName}&opp11=New&opp3=will be autopopulated&00Nc0000001L567={!$CurrentPage.parameters.Proposition}&opp7=0&00ND0000002fuLL={!$CurrentPage.parameters.PropositionDetail}&00Nc0000001L56H={!$CurrentPage.parameters.Talentlevel}&00Nc0000001L56C={!$CurrentPage.parameters.TalentSegment}&00Nc0000001L56M={!$CurrentPage.parameters.Offerings}&00ND00000068vse={!$CurrentPage.parameters.Function}&CF00N20000001374j={!$CurrentPage.parameters.UserName}&CF00N20000001374j_lkid={!$User.Id}&00ND0000005F0Qy={}&00N4G000006C82Y={}&opp9={!$CurrentPage.parameters.CloseDate}&00ND0000003oOIa={!$CurrentPage.parameters.RFPTender}&RecordType={!$Label.StandardRecordType}";  
+
+             if(sforce.console.isInConsole()){
+                    var primaryTabId = sforce.console.getEnclosingPrimaryTabId().id;
+                    sforce.console.openSubtab(primaryTabId , link, true, 
+                    'Create Variation', null);
+                }
+                else{
+         window.top.location.href = "/{!$CurrentPage.parameters.id}/e?clone=1&save_new_url0=006%2Fe%3Fopp7%3D0&retURL=006%2Fo%3Fopp7%3D0&CF00ND0000005EOxp=&00ND0000005EOxz=Yes&00ND0000005EOxk=0%25&CF00ND0000005EOxr_lkid={!$CurrentPage.parameters.id}&CF00ND0000005EOxr={!$CurrentPage.parameters.OppName}&opp11=New&opp3=will be autopopulated&00Nc0000001L567={!$CurrentPage.parameters.Proposition}&opp7=0&00ND0000002fuLL={!$CurrentPage.parameters.PropositionDetail}&00Nc0000001L56H={!$CurrentPage.parameters.Talentlevel}&00Nc0000001L56C={!$CurrentPage.parameters.TalentSegment}&00Nc0000001L56M={!$CurrentPage.parameters.Offerings}&00ND00000068vse={!$CurrentPage.parameters.Function}&CF00N20000001374j={!$CurrentPage.parameters.UserName}&CF00N20000001374j_lkid={!$User.Id}&00ND0000005F0Q={}&00N4G000006C82Y={}&opp9={!$CurrentPage.parameters.CloseDate}&00ND0000003oOIa={!$CurrentPage.parameters.RFPTender}&RecordType={!$Label.StandardRecordType}";  
+                }
+             // window.top.location.href = "/{!$CurrentPage.parameters.id}/e?clone=1&retURL=006%2Fo%3Fopp7%3D0&CF00ND0000005EOxp=&00ND0000005EOxz=Yes&00ND0000005EOxk=0%25&CF00ND0000005EOxr_lkid={!$CurrentPage.parameters.id}&CF00ND0000005EOxr={!$CurrentPage.parameters.OppName}&opp11=Prepare&opp3=will be autopopulated&00ND0000002fuLQ={!$CurrentPage.parameters.Proposition}&opp7=0&00ND0000002fuLL={!$CurrentPage.parameters.PropositionDetail}&opp9={!$CurrentPage.parameters.CloseDate}";
+             //window.top.location.href = "/{!$CurrentPage.parameters.id}/e?clone=1&save_new_url0=006%2Fe%3Fopp7%3D0&retURL=006%2Fo%3Fopp7%3D0&CF00ND0000005EOxp=&00ND0000005EOxz=Yes&00ND0000005EOxk=0%25&CF00ND0000005EOxr_lkid={!$CurrentPage.parameters.id}&CF00ND0000005EOxr={!$CurrentPage.parameters.OppName}&opp11=Prepare&opp3=will be autopopulated&00Nc0000001L567={!$CurrentPage.parameters.Proposition}&opp7=0&00ND0000002fuLL={!$CurrentPage.parameters.PropositionDetail}&00Nc0000001L56H={!$CurrentPage.parameters.Talentlevel}&00Nc0000001L56C={!$CurrentPage.parameters.TalentSegment}&00Nc0000001L56M={!$CurrentPage.parameters.Offerings}&00ND00000068vse={!$CurrentPage.parameters.Function}&CF00N20000001374j={!$CurrentPage.parameters.UserName}&CF00N20000001374j_lkid={!$User.Id}&00ND0000005F0Qy={!$CurrentPage.parameters.BusinessType}&opp9={!$CurrentPage.parameters.CloseDate}";  
+         //   window.top.location.href = "/{!$CurrentPage.parameters.id}/e?clone=1&save_new_url0=006%2Fe%3Fopp7%3D0&retURL=006%2Fo%3Fopp7%3D0&CF00ND0000005EOxp=&00ND0000005EOxz=Yes&00ND0000005EOxk=0%25&CF00ND0000005EOxr_lkid={!$CurrentPage.parameters.id}&CF00ND0000005EOxr={!$CurrentPage.parameters.OppName}&opp11=New&opp3=will be autopopulated&00Nc0000001L567={!$CurrentPage.parameters.Proposition}&opp7=0&00ND0000002fuLL={!$CurrentPage.parameters.PropositionDetail}&00Nc0000001L56H={!$CurrentPage.parameters.Talentlevel}&00Nc0000001L56C={!$CurrentPage.parameters.TalentSegment}&00Nc0000001L56M={!$CurrentPage.parameters.Offerings}&00ND00000068vse={!$CurrentPage.parameters.Function}&CF00N20000001374j={!$CurrentPage.parameters.UserName}&CF00N20000001374j_lkid={!$User.Id}&00ND0000005F0Qy={!$CurrentPage.parameters.BusinessType}&opp9={!$CurrentPage.parameters.CloseDate}&00ND0000003oOIa={!$CurrentPage.parameters.RFPTender}&RecordType={!$CurrentPage.parameters.RecordType1}";  
+         // windows.top.location.href ="/console#/{!$CurrentPage.parameters.id}/e?clone=1&save_new_url0=006%26RecordType={!$CurrentPage.parameters.RecordType1}";
+         <!--  Changes Added by Apoorva Gautam----for SSE--113--Added TM_Phase,Talent_Level__c,Talent_Segment__c,Offering__c,Client_Business_Function__c  --->
+}
+    
+    </script>
+<apex:outputpanel rendered="{!Opportunity.StageName='Closed/Won' && Opportunity.Variation_Opportunity__c == 'No' && orderstatus == true && Opportunity.Actual_Record_Type_Name__c!='GCSC Opportunity'}" layout="none"> <!--rendered="{!ShowButton}"-->
+<apex:pageMessage title="This is an original closed/won opportunity with a related complete order therefore you may vary it if required." summary="Please click the 'Create Variation' button below to create variation Opportunity."  severity="info" strength="1">
+   
+     <apex:commandButton value="Create Variation" onclick="return RedirtToNewOpp()" />
+  
+</apex:pageMessage>
+
+</apex:outputpanel>
+</apex:form>
+<script type="text/javascript">
+             jQuery(document).ready
+                (
+                    function () {
+                        var frameHeight = document.body.offsetHeight;
+                        if({!ShowButton} && frameHeight==0)
+                            frameHeight = 200;
+                        if (!$.browser.msie) {frameHeight +=5;};
+                       $("iframe[Id=" + window.name + "]", top.document).height(frameHeight);
+                     }
+                );
+      </script>
+      </div>
+</apex:page>

@@ -1,0 +1,94 @@
+<aura:component controller="OpportunityAutoCloserDaysController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+ 
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="CountRemainingDays" type="string"/>
+    <aura:attribute name="buttonToggle" type="boolean" default="True"/>
+    <aura:attribute name="numberOfDays" default="0" type="Integer"/>
+    <aura:attribute name="numberOfDaysInitialValue" type="Integer"/>
+    <aura:attribute name="OpportunityRecord" type="Object"/>
+    <aura:attribute name="errorMessage" type="String"/>
+    <aura:attribute name="recordLoadError" type="String"/>
+    <aura:attribute name="checkUserToChangeAutoCloseDate" type="Boolean" default="false" />
+   
+    <!--component attributs -->
+    <aura:attribute name="spinner" type="boolean" default="FALSE"/>
+
+    <force:recordData aura:id="recordHandler"
+    recordId="{!v.recordId}"
+    fields="Auto_Close_Date__c,Renewal_Date__c,Days_left_to_Auto_Close__c"
+    targetFields="{!v.OpportunityRecord}"
+    targetError="{!v.recordLoadError}"
+    recordUpdated="{!c.recordUpdate}"
+    mode="EDIT"
+    />
+    
+    <div class="slds">
+         <!--loading spinner start-->
+    <aura:if isTrue="{!v.spinner}">
+        <div aura:id="spinnerId" class="slds-spinner_container">
+            <div class="slds-spinner--brand  slds-spinner slds-spinner--large slds-is-relative" role="alert">
+                <span class="slds-assistive-text">Loading...</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </aura:if>
+    <!-- Loading spinner end--> 
+        <div class="slds-page-header">
+            <lightning:icon iconName="utility:clock" alternativeText="Countdown" size="small"/>
+            &nbsp;<b>AUTO CLOSE TIMER<br/>
+            Day Remaining Before This Opportunity Will Auto Close</b>
+        </div>
+       
+            <div class="timerHolder" >
+               <br/>
+                    <div class="slds-align_absolute-center">
+                        <div id="day_holder" class="slds-align_absolute-center">
+                            <div id="daysBox" class="slds-align_absolute-center" >
+                                <div>{!v.CountRemainingDays}</div>
+                            </div>
+                        </div>
+                  </div>
+                <br/>
+            </div>
+            <div class="slds">
+            <aura:if isTrue="{!v.checkUserToChangeAutoCloseDate}">   
+            <lightning:card>
+
+            <p class="slds-align_absolute-center"><b>Set your Auto Close Date by +/- days on Renewal Date (<lightning:formattedDateTime value="{!v.OpportunityRecord.Renewal_Date__c}"/>):</b></p>
+            <br/>        
+            <div>
+                        <lightning:layout class="slds-align_absolute-center slds-p-bottom_medium">
+                            <lightning:layoutItem size="1">
+                                <lightning:buttonIcon
+                                iconName="utility:dash"
+                                variant="brand"
+                                onclick="{!c.decreaseHandleClick}"
+                                alternativeText="Decrease Counter"></lightning:buttonIcon> 
+                                </lightning:layoutItem>
+                            <lightning:layoutItem size="2">
+                                <lightning:input aura:id="IntegerInput" type="number" value="{!v.numberOfDays}" placeholder="Days" variant="label-hidden" class="slds-p-right_small" onchange="{!c.checkValidity}"></lightning:input>
+                                </lightning:layoutItem>
+                            <lightning:layoutItem size="1">
+                                <lightning:buttonIcon
+                                iconName="utility:add"
+                                variant="brand"
+                                onclick="{!c.increaseHandleClick}"
+                                alternativeText="Increase Counter"
+                               ></lightning:buttonIcon> 
+                            </lightning:layoutItem>
+                        </lightning:layout>
+                    </div>
+                    <lightning:button variant="brand" label="Change Auto Close Date" title="Add/Remove days to enable the disabled button" onclick="{!c.changeCloseDate}" class="slds-align_absolute-center" disabled="{!v.buttonToggle}"/>
+                    <br/>
+                    <aura:if isTrue="{!v.errorMessage}">
+                    <ui:message title="Error" severity="error" closable="false">
+                        {!v.errorMessage}
+                       </ui:message>
+                    </aura:if>
+                </lightning:card>
+                </aura:if>
+            </div>
+        
+    </div>
+</aura:component>

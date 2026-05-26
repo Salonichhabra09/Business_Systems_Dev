@@ -1,0 +1,12 @@
+<script src="/soap/ajax/9.0/connection.js"></script>
+<script>
+
+if ({!Courses__c.Course_Waiting_Total__c} > 0) 
+{ 
+	if("{!Course_Booking__c.Booking_Status__c}" == "Provisional" || "{!Course_Booking__c.Booking_Status__c}" == "Confirmed") 
+		alert(" Please review the course as there are bookings with Waiting status."); 
+}
+
+window.parent.location.href = "{!URLFOR( $Action.Course_Booking__c.Delete,Course_Booking__c.Id,null,true)}"; 
+
+</script>

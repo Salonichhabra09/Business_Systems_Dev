@@ -1,0 +1,145 @@
+<aura:component controller="ContactBulkController" implements="lightning:isUrlAddressable,force:lightningQuickActionwithoutHeader,force:hasRecordId,force:hasSObjectName,force:appHostable" access="global" >
+    <lightning:navigation aura:id="navigate" />
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <aura:html tag="style">.toastMessage.forceActionsText{
+    white-space : pre-line !important;
+    }</aura:html>
+    
+    <aura:attribute name="ContactList" type="Contact[]"/>
+    <aura:attribute name="coursePrice" type="Decimal"/>
+    <aura:attribute name="CurrencyIsoCode" type="String"/>
+    <aura:attribute name="courseBookingList" type="Course_Booking__c[]"/>
+    <aura:attribute name="courseCategory" type="String" default=""/>
+    <aura:attribute name="spinner" type="boolean" default="FALSE"/>
+    <aura:attribute name="accountId" type="String" default=''/>
+    <aura:attribute name="errorMessage" type="String" default=""/>
+    <aura:attribute name="spinerMessage" type="String" default=""/>
+    <aura:attribute name="true" type="boolean" default="true"/>
+    <aura:attribute name="disable" type="boolean" default="false"/> 
+	<aura:attribute name="spaces" type="Integer" />
+    <aura:attribute name="hasDuplicatesContacts" type="boolean" default="false"/>
+    <aura:attribute name="disabledWhenDuplicates" type="boolean" default="false"/>
+    <aura:attribute name="display" type="String" default="display: none;"/>
+    <aura:attribute name="width" type="String" default="20%"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.init}"/>
+    
+    <aura:if isTrue="{!v.spinner}">
+        <div aura:id="spinnerId" class="slds-spinner_container">
+            <div class="slds-spinner--brand  slds-spinner slds-spinner--large slds-is-relative" role="alert">
+                <span class="slds-assistive-text">Saving...</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+                
+                <p style="transform: translate(-32%, -50%) rotate(-90deg);width: max-content; text-align: center;">{!v.spinerMessage}</p>
+            </div>
+        </div>
+    </aura:if>
+    <div class="customSize" > 
+        <div class="highlights slds-clearfix slds-page-header slds-page-header_record-home">
+            <div class="slds-grid primaryFieldRow">
+                <div class="slds-grid slds-col slds-has-flexi-truncate">
+                    <div class="slds-media__figure">
+                        <lightning:icon iconName="standard:contact" size="small" alternativeText="Contact" title="Contact" />
+                    </div>
+                    
+                    <div class="slds-media__body">
+                        <h2 class="slds-card__header-title"> 
+                            <span class="slds-text-heading_small slds-truncate">
+                                Create Contacts and Course Bookings
+                            </span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="slds-col slds-no-flex slds-grid slds-grid_vertical-align-center horizontal slds-m-right--xx-small chatterActionContainer">
+                </div>
+                <div class="slds-col slds-no-flex slds-grid slds-grid_vertical-align-center horizontal actionsContainer">
+                    <lightning:button variant="Brand" disabled = '{!v.disabledWhenDuplicates}' title = "Save all Contacts and Course Bookings." label="Save" onclick="{!c.save}"/>
+                    <lightning:button label="Cancel" title = "Close 'Create Contacts and Course Bookings' tab." onclick="{!c.cancel}"/>
+                    <lightning:button label="Clear" title = "Remove all rows." onclick="{!c.removeAllRows}"/>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                    <aura:if isTrue="{!v.hasDuplicatesContacts}">
+                    	<lightning:button variant="Brand"  title = "Save Course Bookings for Duplicate Contacts." label="Create CB for Duplicates" onclick="{!c.saveCourseBookingsForDuplicates}"/>
+                    </aura:if>
+                    <lightning:button label="ADD ROW" disabled = '{!v.disabledWhenDuplicates}' iconName="utility:add" title = "Add 1 new row." onclick="{!c.addRow}"/>
+                    <!--<lightning:input type="file" files="{!v.fileList}" label="Upload Files" name="file" multiple="true" onchange="{!c.handleFilesChange}"/>-->
+    				
+                   <lightning:input name="file1" type="file" disabled = '{!v.disabledWhenDuplicates}' label="" multiple="false" title = "Load Contacts from CSV file." accept=".csv" onchange="{! c.handleUploadFinished }"/>
+                </div>
+            </div>
+            <div class="secondaryFields">
+                <div class="slds-grid slds-page-header__detail-row">
+                	<div>
+                        <table class="slds-table slds-table_bordered slds-table_striped slds-table_fixed-layout records-table">
+                            <thead>
+                                <tr class="slds-text-title_caps slds-text-align_left">
+                                        <th style="width:3%;">#</th>
+                                        <th style="width:20%;">Account<p style="display: inline;color:red;">*</p></th>
+                                        <th style="{! 'width:' + v.width + ';'}">First Name</th>
+                                        <th style="{! 'width:' + v.width + ';'}">Last Name<p style="display: inline;color:red;">*</p></th>
+                                        <th style="{! 'width:' + v.width + ';'}">Email<p style="display: inline;color:red;">*</p></th>
+                                        <th style="width:15%;">Phone<p style="display: inline;color:red;">*</p></th>
+                                        <th style="{! 'width:' + v.width + ';'+ v.display}">Registration Number</th>
+                                    	<th style="display: none"></th> 
+                                    	<th style="width:2%;"></th> 
+                                </tr>
+                            </thead>
+                            </table>
+                          	<table class="slds-table slds-table_bordered slds-table_striped slds-table_fixed-layout records-table">
+                            <thead> 
+                            	<aura:iteration items="{!v.ContactList}" var="Contact" indexVar="index">
+                                    <lightning:recordEditForm aura:id="Contactform" objectApiName="Contact" >
+                                    <!--<lightning:recordEditForm aura:id="Contactform" objectApiName="Contact" onerror = "{!c.handleError}" onsuccess="{!c.handleSuccess}" >
+                                        <lightning:messages />-->
+                                        <aura:if isTrue="{!v.hasDuplicatesContacts}">
+                                        	<ui:message title="" severity="error" closable="true">
+                                                <aura:unescapedHtml value="{!v.errorMessage}" />
+                                            </ui:message>
+                                        </aura:if>
+                                        <tr class="slds-text-align_left">
+                                                <td style="width:3%;"> 
+                                                    {!index + 1}
+                                                </td>
+                                                <td style="width:20%;" >
+                                                    <lightning:inputField aura:id="field" id = "fieldAccountId" disabled = "{!v.disable}" fieldName="AccountId" value="{!Contact.AccountId}"  variant="label-hidden" required="true"></lightning:inputField>
+                                                </td>
+                                                <td style="{! 'width:' + v.width + ';'}">
+                                                    <lightning:inputField fieldName="FirstName" disabled = '{!v.disabledWhenDuplicates}' value="{!Contact.FirstName}"  variant="label-hidden" required="false"></lightning:inputField>
+                                                </td>
+                                                <td style="{! 'width:' + v.width + ';'}">
+                                                    <lightning:inputField aura:id="field" disabled = '{!v.disabledWhenDuplicates}' fieldName="LastName" value="{!Contact.LastName}"  variant="label-hidden" required="true"></lightning:inputField>
+                                                </td>
+                                                <td style="{! 'width:' + v.width + ';'}">
+                                                    <lightning:inputField  aura:id="field" disabled = '{!v.disabledWhenDuplicates}' fieldName="Email" value="{!Contact.Email}"  variant="label-hidden" required="true"></lightning:inputField>
+                                                </td>
+                                               <td style="width:15%;">
+                                                    <lightning:inputField aura:id="field" disabled = '{!v.disabledWhenDuplicates}' fieldName="Phone" value="{!Contact.Phone}"  variant="label-hidden" required="true"/>
+                                                </td>
+                                                <td style="{! 'width:' + v.width + ';'+ v.display}">
+                                                    <lightning:inputField aura:id="field" disabled = '{!v.disabledWhenDuplicates}' fieldName="Registration_Number__c" value="{!'   ' + Contact.Registration_Number__c}"  variant="label-hidden"/>
+                                                </td>  
+                                                <td style="display: none">
+                                                    <lightning:inputField aura:id="field" disabled = '{!v.disabledWhenDuplicates}' fieldName="Same_As_The_Account_Billing_Address__c" value="{!true}"  variant="label-hidden"/>
+                                                </td>
+                                                <td style="width:2%;">
+                                                    <a onclick="{!c.removeRow}" data-record="{!index}" id="{!'remove'+index}">
+                                                        <lightning:icon iconName="utility:delete" size="x-small" alternativeText="Delete"/>
+                                                        <span class="slds-assistive-text">Delete</span>
+                                                    </a>
+                                                    <!--<a onclick="{!c.cloneRow}" data-record="{!index}">
+                                                        <lightning:icon iconName="utility:copy" size="x-small" alternativeText="Clone"/>
+                                                        <span class="slds-assistive-text">Clone</span>
+                                                    </a>-->
+                                            	</td>
+                                        </tr>
+                                    </lightning:recordEditForm>
+                                </aura:iteration>
+                            </thead>
+                        </table>
+                	</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

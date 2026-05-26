@@ -1,0 +1,29 @@
+<template>
+    <lightning-quick-action-panel header="Link/De-Link Opportunities">
+    <lightning-card title="Opportunities" icon-name="standard:opportunity">
+        <template if:true={showSpinner}>
+            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+        </template>
+        <template if:true={opportunityData}>
+    <div class="slds-border_left slds-border_right slds-border_top slds-border_bottom max-height">
+    <lightning-datatable
+                key-field="oppId"
+                data={opportunityData}
+                columns={opportunityColumns}
+                selected-rows={selectedRows}
+                onrowselection={handleRowSelection}
+                min-column-width="120"
+                wrap-text-max-lines="5">
+        </lightning-datatable>
+    </div>
+</template>
+    <template if:false={opportunityData}>
+        <p class="slds-align_absolute-center">No Eligble Opportunity Found!</p>
+    </template>
+<footer class="slds-float_right slds-p-top_x-large slds-p-bottom_small">
+    <button class="slds-button slds-button_neutral" onclick={closeModal} type="Cancel" title="Cancel" disabled={showSpinner}>Cancel</button>
+    <button class="slds-button slds-button_brand" title="Save" onclick={linkOrDelinkOpportunities} disabled={showSpinner}>Save</button>
+</footer>
+</lightning-card>
+</lightning-quick-action-panel>
+</template>

@@ -1,0 +1,25 @@
+trigger Course_Trigger on Courses__c (before insert, Before update, after update) {
+    if(Trigger_Activation__c.getInstance('Course_Trigger').Active__c){
+        if(Trigger.isInsert)
+        {
+            if(Trigger.isBefore)
+            {
+                CourseTriggerManager.assignCourseDirector(trigger.new);
+            }
+        }
+        if(Trigger.isUpdate)
+        {
+            if(Trigger.isBefore)
+            {
+                CourseTriggerManager.assignCourseDirector(trigger.new);
+            }
+            if(Trigger.isAfter)
+            {
+                if(TriggerContextUtility.isCourseTriggerFirstRun()){
+                	TriggerContextUtility.setCourseTriggerFirstRunFalse();
+                	CourseTriggerManager.updateDataInCourseBookings(trigger.old,trigger.new);
+                }
+            }
+        }
+    }
+}

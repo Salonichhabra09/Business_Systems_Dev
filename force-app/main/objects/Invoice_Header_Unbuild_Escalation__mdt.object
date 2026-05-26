@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>USed to map the value of description , action and timing on basis of Esclation stage in invoice headers when the status is Awaiting PO</description>
+    <fields>
+        <fullName>Action__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Action</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Body__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Body</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Description</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Escalation_Stage__c</fullName>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Escalation Stage</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Level 0 - Not Due</fullName>
+                    <default>true</default>
+                    <label>Level 0 - Not Due</label>
+                </value>
+                <value>
+                    <fullName>Level 1 - Release Invoice</fullName>
+                    <default>false</default>
+                    <label>Level 1 - Release Invoice</label>
+                </value>
+                <value>
+                    <fullName>Level 2 - No Response</fullName>
+                    <default>false</default>
+                    <label>Level 2 - No Response</label>
+                </value>
+                <value>
+                    <fullName>Level 3 - OTC Team Lead</fullName>
+                    <default>false</default>
+                    <label>Level 3 - OTC Team Lead</label>
+                </value>
+                <value>
+                    <fullName>Level 4 - Head of OTC</fullName>
+                    <default>false</default>
+                    <label>Level 4 - Head of OTC</label>
+                </value>
+                <value>
+                    <fullName>Level 5 - Group FC</fullName>
+                    <default>false</default>
+                    <label>Level 5 - Group FC</label>
+                </value>
+                <value>
+                    <fullName>Level 6 - Business Senior</fullName>
+                    <default>false</default>
+                    <label>Level 6 - Business Senior</label>
+                </value>
+                <value>
+                    <fullName>Level 7 - Leadership</fullName>
+                    <default>false</default>
+                    <label>Level 7 - Leadership</label>
+                </value>
+                <value>
+                    <fullName>Escalation Resolved</fullName>
+                    <default>false</default>
+                    <label>Escalation Resolved</label>
+                </value>
+                <value>
+                    <fullName>Level 1</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Level 1</label>
+                </value>
+                <value>
+                    <fullName>Level 2</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Level 2</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Subject__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Subject</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Timing__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Timing</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Invoice Header Unbuild Escalation</label>
+    <pluralLabel>Invoice Header Unbuild Escalations</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,117 @@
+<apex:component controller="Attribution_ListView_Controller">
+    <apex:outputPanel id="viewPanelTop">
+        <div class="filterOverview">
+        <div class="bFilterView"><span class="bFilter"> <span
+            class="fBody">
+        <h2>Year:</h2>
+        <apex:selectList id="yearList" value="{!selectYear}" size="1">
+            <apex:selectOption itemValue="0" itemLabel="All" />
+            <apex:selectOption itemValue="2007" itemLabel="2007" />
+            <apex:selectOption itemValue="2008" itemLabel="2008" />
+            <apex:selectOption itemValue="2009" itemLabel="2009" />
+            <apex:selectOption itemValue="2010" itemLabel="2010" />
+            <apex:selectOption itemValue="2011" itemLabel="2011" />
+            <apex:selectOption itemValue="2012" itemLabel="2012" />
+            <apex:selectOption itemValue="2013" itemLabel="2013" />
+            <apex:selectOption itemValue="2014" itemLabel="2014" />
+            <apex:selectOption itemValue="2015" itemLabel="2015" />
+            <apex:selectOption itemValue="2016" itemLabel="2016" />
+            <apex:selectOption itemValue="2017" itemLabel="2017" />
+            <apex:selectOption itemValue="2018" itemLabel="2018" />
+            <apex:selectOption itemValue="2019" itemLabel="2019" /> <!--added by shobhana SSE-8390 - 14/JAN/2019 -->
+            <apex:selectOption itemValue="2020" itemLabel="2020" /> <!--added by Claire Herrett SSE-10098 - 06/JAN/2020 -->
+            <apex:selectOption itemValue="2021" itemLabel="2021" /> <!--added by Sahil Chhabra SSE-12333 - 07/JAN/2021 -->
+            <apex:selectOption itemValue="2022" itemLabel="2022" /> <!--added by Sahil Chhabra SSE-14148 - 06/JAN/2022 -->
+            <apex:selectOption itemValue="2023" itemLabel="2023" /> <!--added by Sahil Chhabra SSE-14416 - 18/JAN/2023 -->
+            <apex:selectOption itemValue="2024" itemLabel="2024" /> <!--added by Sahil Chhabra SSE-19310 - 11/JAN/2024 -->
+            <apex:selectOption itemValue="2025" itemLabel="2025" /> <!--added by Sahil Chhabra SSE-23939 - 07/JAN/2025 -->
+            <apex:selectOption itemValue="2026" itemLabel="2026" /> <!--added by Sahil Chhabra SSE-27010 - 11/FEB/2026 -->
+                  
+        </apex:selectList>
+        <h2>Month:</h2>
+        <apex:selectList id="monthList" value="{!selectMonth}" size="1"
+            disabled="{!(selectYear=0)}">
+            <apex:selectOption itemValue="0" itemLabel="All" />
+            <apex:selectOption itemValue="1" itemLabel="Jan" />
+            <apex:selectOption itemValue="2" itemLabel="Feb" />
+            <apex:selectOption itemValue="3" itemLabel="Mar" />
+            <apex:selectOption itemValue="4" itemLabel="Apr" />
+            <apex:selectOption itemValue="5" itemLabel="May" />
+            <apex:selectOption itemValue="6" itemLabel="Jun" />
+            <apex:selectOption itemValue="7" itemLabel="Jul" />
+            <apex:selectOption itemValue="8" itemLabel="Aug" />
+            <apex:selectOption itemValue="9" itemLabel="Sep" />
+            <apex:selectOption itemValue="10" itemLabel="Oct" />
+            <apex:selectOption itemValue="11" itemLabel="Nov" />
+            <apex:selectOption itemValue="12" itemLabel="Dec" />
+        </apex:selectList> <apex:commandButton value="Go!" action="{!Go}" /> <span class="next">
+        <apex:commandLink style="font-size:8pt" value="Previous Page"
+            rendered="{!HasPreviousPage}" action="{!RecordSet.previous}" /> <apex:outputPanel id="topPanel" rendered="{!AND(HasPreviousPage,HasNextPage)}">&nbsp;|&nbsp;</apex:outputPanel>
+        <apex:commandLink style="display: inline; text-align:right ;font-size:8pt"
+            value="Next Page" rendered="{!HasNextPage}"
+            action="{!RecordSet.next}" /> </span> </span> </span></div>
+        </div>
+    </apex:outputPanel>
+
+    <apex:pageBlock title="Attributions">
+        <apex:pageBlockTable value="{!attributions}" var="attribution"
+            rendered="{!IF(TotalRecords==0,false,true)}">
+            <apex:column >
+                <apex:facet name="header">Attribution Id<br />&nbsp;</apex:facet>
+                <apex:outputLink value="/{!attribution.Id}">{!attribution.Name}</apex:outputLink>
+            </apex:column>
+
+            <apex:column value="{!attribution.Attribution_Year2__c}">
+                <apex:facet name="header">Year<br />&nbsp;</apex:facet>
+            </apex:column>
+
+            <apex:column value="{!attribution.Attribution_Month2__c}">
+                <apex:facet name="header">Month<br />&nbsp;</apex:facet>
+            </apex:column>
+
+            <apex:column >
+                <apex:facet name="header">Project Id<br />&nbsp;</apex:facet>
+                <apex:outputLink value="/{!attribution.Project__c}">{!attribution.Project__r.Name}</apex:outputLink>
+            </apex:column>
+
+            <apex:column value="{!attribution.Project__r.Project_Name__c}">
+                <apex:facet name="header">Project Name<br />&nbsp;</apex:facet>
+            </apex:column>
+
+            <apex:column value="{!attribution.Attribution_Days__c}">
+                <apex:facet name="header">Attribution Days<br />[Total = {!TotalAttributionDays}]</apex:facet>
+            </apex:column>
+
+            <apex:column value="{!attribution.Attribution_Rate__c}">
+                <apex:facet name="header">Attribution Rate<br />&nbsp;</apex:facet>
+            </apex:column>
+
+            <apex:column value="{!attribution.Attribution_Value__c}">
+                <apex:facet name="header">Attribution Value<br />[Total = {!user.DefaultCurrencyIsoCode} {!TotalAttributionValue}]</apex:facet>
+            </apex:column>
+
+            <apex:column >
+                <apex:facet name="header">Timesheet Hours<br />[Total = {!TotalTimesheetHours}]</apex:facet>
+                <apex:variable var="attributionKey" value="{!attribution.Attribution_Year2__c}_{!TEXT(attribution.Attribution_Month_Number__c)}_{!attribution.Project__c}"/>
+               
+            </apex:column>
+            
+       </apex:pageBlockTable>
+        <apex:outputLabel value="No records to display"
+            rendered="{!IF(TotalRecords==0,true,false)}"
+            styleClass="noRowsHeader"></apex:outputLabel>
+
+    </apex:pageBlock>
+
+    <apex:outputPanel >
+        <span class="next"> <apex:commandLink style="font-size:8pt"
+            value="Previous Page" rendered="{!HasPreviousPage}"
+            action="{!RecordSet.previous}" /> <apex:outputPanel id="bottomPanel"
+            rendered="{!AND(HasPreviousPage,HasNextPage)}">&nbsp;|&nbsp;</apex:outputPanel>
+        <apex:commandLink style="font-size:8pt" value="Next Page"
+            rendered="{!HasNextPage}" action="{!RecordSet.next}" /> </span>
+    </apex:outputPanel>
+
+    <apex:pageMessages />
+
+</apex:component>

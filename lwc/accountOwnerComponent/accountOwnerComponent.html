@@ -1,0 +1,70 @@
+<template>
+    <lightning-card title="Account Owner Details" icon-name="standard:user">
+        <template lwc:if={showSpinner}>
+            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+        </template>
+        <div lwc:if={accountRecord}>
+            <lightning-layout>
+                <lightning-layout-item>
+                    <lightning-layout>
+                        <lightning-layout-item>
+                            <lightning-input class="slds-m-left_small slds-m-vertical_small" type="checkbox" label="GCSC Owned Account" onchange={handleGcscAccountChange} checked={isGcscAccount} disabled={hasNoEditAccessOnGcscOwned}></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item class="helptext-margin">
+                            <lightning-helptext content="Accounts with this box ticked are managed by a regional GCSC Customer Experience team"></lightning-helptext>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-m-left_medium">
+                    <lightning-layout>
+                        <lightning-layout-item>
+                            <lightning-input class="slds-m-left_small slds-m-vertical_small" type="checkbox" label="Customer Connect Account" onchange={handleCustomerConnectAccountChange} checked={isCustomerConnectAccount} disabled={hasNoEditAccessOnCustomerConnect}></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item class="helptext-margin">
+                            <lightning-helptext content="Accounts with this box ticked are managed by a Customer Connect team"></lightning-helptext>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-layout-item>
+            </lightning-layout>
+        <div lwc:if={accountRecord.isGcscAccount}>
+        <p class="slds-m-left_small owner-font">GCSC Account Owner (internal use only):</p>
+        <p class="slds-m-left_small">{accountRecord.ownerDetails}</p>
+        </div>
+
+        <div lwc:elseif={accountRecord.isCustomerConnectAccount}>
+            <p class="slds-m-left_small owner-font">Customer Connect Email (internal use only):</p>
+            <p class="slds-m-left_small">{accountRecord.ownerDetails}</p>
+        </div>
+
+        <div lwc:else>
+                <lightning-record-edit-form
+                object-api-name="Account"
+                onsuccess={handleSuccess}
+                onerror={handleError}
+                onsubmit={handleAccountOwnerUpdate}
+                record-id={recordId}
+            >   
+                <!-- <lightning-messages></lightning-messages> -->
+                <div lwc:if={accountRecord.hasTransferAccess} class="slds-m-horizontal_small">
+                    <p class="slds-m-bottom_xx-small">Account Owner</p>
+                    <lightning-input-field field-name="Secondary_A_C_Owner__c" value={accountRecord.ownerDetails} variant="label-hidden" onchange={handleOwnerChange}></lightning-input-field>
+                </div>
+                <div lwc:else class="slds-m-horizontal_small">
+                    <p class="slds-m-bottom_xx-small">Account Owner</p>
+                    <p class="owner-font">{accountRecord.ownerDetails}</p>
+                </div>
+                <footer>
+                    <div lwc:if={accountRecord.hasTransferAccess} class="slds-m-top_medium slds-m-right_small slds-clearfix">
+                        <!-- <lightning-button class="slds-float_right" label="Save" type="submit" title="Save" variant="brand"></lightning-button> -->
+                    </div>
+                </footer>
+            </lightning-record-edit-form>
+            </div>
+            <footer lwc:if={accountRecord.hasEditAccess}>
+                <div class="slds-m-top_medium slds-m-right_small slds-clearfix">
+                    <lightning-button class="slds-float_right" label="Save" type="submit" title="Save" onclick={handleAccountOwnerUpdate} variant="brand"></lightning-button>
+                </div>
+            </footer>
+        </div>
+    </lightning-card>
+</template>

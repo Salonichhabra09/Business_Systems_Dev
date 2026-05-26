@@ -1,0 +1,7 @@
+.addBorder{
+    background-color: grey;
+    display : block;
+}
+.slds-card__header{
+    background-color: grey;
+}

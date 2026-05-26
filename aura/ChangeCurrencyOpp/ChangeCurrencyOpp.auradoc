@@ -1,0 +1,22 @@
+<aura:documentation>
+    
+    <aura:example name="ExampleName" ref="c:Contact_Clone" label="Change Currency">
+        
+    </aura:example>
+    <aura:description>
+        <p style="line-height: normal;"><strong><span style="font-family: 'Arial',sans-serif; color: #080707;">Overview:</span></strong></p>
+        <ul>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">A &lsquo;Change Currency&rsquo; button has been created to accommodate the &lsquo;Change Currency&rsquo; custom (VF) feature, as already designed for Salesforce Classic.</span></li>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">On Clicking Change Currency Button, a modal pop-up should appear, from which the user can select appropriate currency and click the &lsquo;Change Currency&rsquo; button provided in the modal pop-up itself.</span></li>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">A success message is displayed within the modal pop-up along with the list of products updated.</span></li>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">A &lsquo;Close&rsquo; button is also present on the modal pop-up to close it after successful currency change.&nbsp;</span></li>
+        </ul>
+        <p style="line-height: normal;"><strong><span style="font-family: 'Arial',sans-serif; color: #080707;">For the Developers:</span></strong></p>
+        <ul>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">This component is being called when a user clicks on &ldquo;Change Currency&rdquo; from an opportunity record.</span></li>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">The lightning action &ldquo;Change Currency&rdquo; is been overridden to call the lightning component, the component is using an &ldquo;iFrame&rdquo; to display the VF page as a pop up, providing the feature to change the currency.</span></li>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">On clicking the &ldquo;Change Currency&rdquo; the logic will execute as defined in VF &amp; Controller.</span></li>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in; border: none; padding: 0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">On Clicking &ldquo;Close&rdquo; button an action &ldquo;doCancel&rdquo; will be called from component&rsquo;s controller, which is using the &ldquo;dismissActionPanel&rdquo; function that helps to close down the VF pop on a page.</span></li>
+        </ul>
+    </aura:description>
+</aura:documentation>

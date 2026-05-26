@@ -1,0 +1,41 @@
+trigger Event_Trigger on Event (before insert,before update,after insert,after update,after delete) {
+    if(Trigger_Activation__c.getInstance('Event_Trigger').Active__c){  
+        if(Trigger.isInsert)
+        {
+            if(Trigger.isBefore)
+            {
+                EventTriggerManager.UpdateOpportunityStage(Trigger.new);
+                EventTriggerManager.UpdateTargetDate(Trigger.new);
+                EventTriggerManager.CheckEventCategoryAndEventTypeOnInsert(Trigger.new);
+            }
+            if(Trigger.isAfter)
+            {
+                //EventTriggerManager.SendMail(Trigger.new,Trigger.old);
+                EventTriggerManager.UpdateTotalBookedHours(Trigger.new);
+                EventTriggerManager.updateCreatedActivitiesOnStrategy(Trigger.new);
+                EventTriggerManager.UpdateContactTask(trigger.new,null);//Added by Prachi(SSE-21600)
+            }
+        }
+        if(Trigger.isUpdate)
+        {
+            if(Trigger.isBefore)
+            {
+                  EventTriggerManager.CheckEventCategoryAndEventTypeOnUpdate(Trigger.new,Trigger.old);
+            }
+            if(Trigger.isAfter)
+            {
+                EventTriggerManager.SendMail(Trigger.new,Trigger.old);
+                EventTriggerManager.UpdateTotalBookedHours(Trigger.new);
+                EventTriggerManager.updateCompletedActivitiesOnStrategy(Trigger.new,Trigger.oldmap);
+                //EventTriggerManager.UpdateCompletedEventsOnStrategy(Trigger.new,Trigger.oldmap);
+                EventTriggerManager.UpdateContactTask(trigger.new,trigger.oldMap);//Added by Prachi(SSE-21600)
+            }
+        }
+        if(Trigger.isDelete)
+        {
+            If(Trigger.isAfter){
+                EventTriggerManager.updateDeletedActivitiesOnStrategy(Trigger.old);
+            }
+        }
+    }
+}

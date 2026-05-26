@@ -1,0 +1,4 @@
+({
+    callupdateQualifications : function(component,event) {
+    }
+})

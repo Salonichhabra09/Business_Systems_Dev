@@ -1,0 +1,25 @@
+<aura:component controller="EndOfLifeProducts" implements="lightning:isUrlAddressable,lightning:availableForFlowActions" >
+    
+    <aura:attribute name="objectName" type="String"/>
+    <aura:attribute name="id" type="String"/>
+    <aura:attribute name="opportuntityName" type="String"/>
+    <aura:attribute name="accountName" type="String"/>
+    <aura:attribute name="profileName" type="String"/>
+    <aura:attribute name="billingContactStatus" type="String"/>
+    <aura:attribute name="primaryContactStatus" type="String"/>
+    <aura:attribute name="CLMContractStatus" type="String"/>
+   	<aura:attribute name="accountNumber" type="String"/>
+    
+    <aura:attribute name="oppRecord" type="Opportunity" />
+    
+    
+    
+	<lightning:navigation aura:id="navigate" />
+    <lightning:workspaceAPI aura:id="workspace"/>
+    
+    
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+    
+    
+
+</aura:component>

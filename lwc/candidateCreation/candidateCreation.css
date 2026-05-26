@@ -1,0 +1,79 @@
+article.slds-card {
+    overflow: hidden;
+}
+
+.slds-card__header-title {
+    font-size: 1rem;
+}
+
+.container {
+    /* padding-bottom:30rem;
+    margin-bottom: -30rem; */
+    /* overflow-x: scroll; */
+    padding-bottom: 4rem;
+    /* min-height: 20rem; */
+    /* height: auto; */
+}
+
+/* @media screen and (min-width: 480px) {
+    .container {
+        min-height: 20vh;
+    }    
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        min-height: 30vh;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        min-height: 40vh;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .container {
+        min-height: 50vh;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        min-height: 50vh;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        min-height: 60vh;
+    }
+} */
+
+::-webkit-scrollbar{
+    width: 18px;
+    border-radius: 20px;
+}
+  
+::-webkit-scrollbar-track{
+    background: none;
+}
+::-webkit-scrollbar-thumb{
+    width: 24px;
+    background: rgb(111,111,111);
+    border: 5px solid white;
+    border-radius: 15px;
+}
+
+.input-element {
+    max-width: 10rem;
+}
+
+.job-input-element {
+    max-width: 12rem;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

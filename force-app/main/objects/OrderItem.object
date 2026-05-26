@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Basis_of_Fees__c</fullName>
+        <label>Basis of Fees</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Applications</fullName>
+                    <default>false</default>
+                    <label>Applications</label>
+                </value>
+                <value>
+                    <fullName>Assessments and Reports</fullName>
+                    <default>false</default>
+                    <label>Assessments and Reports</label>
+                </value>
+                <value>
+                    <fullName>Candidates</fullName>
+                    <default>false</default>
+                    <label>Candidates</label>
+                </value>
+                <value>
+                    <fullName>Full-Time Equivalents (FTEs)</fullName>
+                    <default>false</default>
+                    <label>Full-Time Equivalents (FTEs)</label>
+                </value>
+                <value>
+                    <fullName>Participants</fullName>
+                    <default>false</default>
+                    <label>Participants</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Units</fullName>
+                    <default>false</default>
+                    <label>Units</label>
+                </value>
+                <value>
+                    <fullName>CPS Days</fullName>
+                    <default>false</default>
+                    <label>CPS Days</label>
+                </value>
+                <value>
+                    <fullName>LPS Days</fullName>
+                    <default>false</default>
+                    <label>LPS Days</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Client_Friendly_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Product2.Client_Friendly_Name__c</formula>
+        <label>Client Friendly Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Deployment__c</fullName>
+        <externalId>false</externalId>
+        <formula>Product2.Deployment__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Deployment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Request__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Invoice Request #</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Project__c</field>
+                <operation>equals</operation>
+                <valueField>Project_Invoice__c.Project__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Project_Invoice__c</referenceTo>
+        <relationshipLabel>Order Products</relationshipLabel>
+        <relationshipName>Order_Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_End_Date__c</fullName>
+        <label>Legacy End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_Start_Date__c</fullName>
+        <label>Legacy Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>List_Price__c</fullName>
+        <label>List Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Services__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Service Deliveries</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Product_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity Product Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order_Form_Category__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Product2.Order_Form_Category__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Order Form Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order_Status__c</fullName>
+        <description>This formula is used in OrderProduct Related List on the Project</description>
+        <externalId>false</externalId>
+        <formula>IF(TEXT(Order.Status) = &apos;In Approval&apos;, &apos;Under Review&apos;, TEXT(Order.Status))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Order Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Package__c</fullName>
+        <label>Offering Details</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Graduate Essential</fullName>
+                    <default>false</default>
+                    <label>Graduate Essential</label>
+                </value>
+                <value>
+                    <fullName>Graduate Advanced</fullName>
+                    <default>false</default>
+                    <label>Graduate Advanced</label>
+                </value>
+                <value>
+                    <fullName>Graduate Ultimate</fullName>
+                    <default>false</default>
+                    <label>Graduate Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Volume Essential</fullName>
+                    <default>false</default>
+                    <label>Volume Essential</label>
+                </value>
+                <value>
+                    <fullName>Volume Advanced</fullName>
+                    <default>false</default>
+                    <label>Volume Advanced</label>
+                </value>
+                <value>
+                    <fullName>Apprentice Essential</fullName>
+                    <default>false</default>
+                    <label>Apprentice Essential</label>
+                </value>
+                <value>
+                    <fullName>Tech Essential</fullName>
+                    <default>false</default>
+                    <label>Tech Essential</label>
+                </value>
+                <value>
+                    <fullName>Tech Advanced</fullName>
+                    <default>false</default>
+                    <label>Tech Advanced</label>
+                </value>
+                <value>
+                    <fullName>Managerial Essential</fullName>
+                    <default>false</default>
+                    <label>Managerial Essential</label>
+                </value>
+                <value>
+                    <fullName>Managerial Advanced</fullName>
+                    <default>false</default>
+                    <label>Managerial Advanced</label>
+                </value>
+                <value>
+                    <fullName>Managerial Ultimate</fullName>
+                    <default>false</default>
+                    <label>Managerial Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Video Essential</fullName>
+                    <default>false</default>
+                    <label>Video Essential</label>
+                </value>
+                <value>
+                    <fullName>Video Advanced</fullName>
+                    <default>false</default>
+                    <label>Video Advanced</label>
+                </value>
+                <value>
+                    <fullName>Video Ultimate</fullName>
+                    <default>false</default>
+                    <label>Video Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Professional Essential</fullName>
+                    <default>false</default>
+                    <label>Professional Essential</label>
+                </value>
+                <value>
+                    <fullName>Professional Advanced</fullName>
+                    <default>false</default>
+                    <label>Professional Advanced</label>
+                </value>
+                <value>
+                    <fullName>Professional Ultimate</fullName>
+                    <default>false</default>
+                    <label>Professional Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Product</fullName>
+                    <default>false</default>
+                    <label>Product</label>
+                </value>
+                <value>
+                    <fullName>Mobilize Essential</fullName>
+                    <default>false</default>
+                    <label>Mobilize Essential</label>
+                </value>
+                <value>
+                    <fullName>Mobilize Advanced</fullName>
+                    <default>false</default>
+                    <label>Mobilize Advanced</label>
+                </value>
+                <value>
+                    <fullName>Mobilize Ultimate</fullName>
+                    <default>false</default>
+                    <label>Mobilize Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Sales Transformation Hiring Essential</fullName>
+                    <default>false</default>
+                    <label>Sales Transformation Hiring Essential</label>
+                </value>
+                <value>
+                    <fullName>Sales Transformation Hiring Advanced</fullName>
+                    <default>false</default>
+                    <label>Sales Transformation Hiring Advanced</label>
+                </value>
+                <value>
+                    <fullName>Sales Transformation Hiring Ultimate</fullName>
+                    <default>false</default>
+                    <label>Sales Transformation Hiring Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Sales Transformation Review Essential</fullName>
+                    <default>false</default>
+                    <label>Sales Transformation Review Essential</label>
+                </value>
+                <value>
+                    <fullName>Sales Transformation Review Advanced</fullName>
+                    <default>false</default>
+                    <label>Sales Transformation Review Advanced</label>
+                </value>
+                <value>
+                    <fullName>Sales Transformation Review Ultimate</fullName>
+                    <default>false</default>
+                    <label>Sales Transformation Review Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Service</fullName>
+                    <default>false</default>
+                    <label>Service</label>
+                </value>
+                <value>
+                    <fullName>OA 1:1 Essential</fullName>
+                    <default>false</default>
+                    <label>OA 1:1 Essential</label>
+                </value>
+                <value>
+                    <fullName>OA 1:1 Advanced</fullName>
+                    <default>false</default>
+                    <label>OA 1:1 Advanced</label>
+                </value>
+                <value>
+                    <fullName>OA 1:1 Ultimate</fullName>
+                    <default>false</default>
+                    <label>OA 1:1 Ultimate</label>
+                </value>
+                <value>
+                    <fullName>OA 1:Many Essential</fullName>
+                    <default>false</default>
+                    <label>OA 1:Many Essential</label>
+                </value>
+                <value>
+                    <fullName>OA 1:Many Advanced</fullName>
+                    <default>false</default>
+                    <label>OA 1:Many Advanced</label>
+                </value>
+                <value>
+                    <fullName>OA 1:Many Ultimate</fullName>
+                    <default>false</default>
+                    <label>OA 1:Many Ultimate</label>
+                </value>
+                <value>
+                    <fullName>TMReview Essential</fullName>
+                    <default>false</default>
+                    <label>TMReview Essential</label>
+                </value>
+                <value>
+                    <fullName>TMReview Advanced</fullName>
+                    <default>false</default>
+                    <label>TMReview Advanced</label>
+                </value>
+                <value>
+                    <fullName>TMReview Ultimate</fullName>
+                    <default>false</default>
+                    <label>TMReview Ultimate</label>
+                </value>
+                <value>
+                    <fullName>OA 1:1 Recruitment Essential</fullName>
+                    <default>false</default>
+                    <label>OA 1:1 Recruitment Essential</label>
+                </value>
+                <value>
+                    <fullName>OA 1:1 Recruitment Advanced</fullName>
+                    <default>false</default>
+                    <label>OA 1:1 Recruitment Advanced</label>
+                </value>
+                <value>
+                    <fullName>OA 1:1 Recruitment Ultimate</fullName>
+                    <default>false</default>
+                    <label>OA 1:1 Recruitment Ultimate</label>
+                </value>
+                <value>
+                    <fullName>OA 1:1 Development Essential</fullName>
+                    <default>false</default>
+                    <label>OA 1:1 Development Essential</label>
+                </value>
+                <value>
+                    <fullName>OA 1:1 Development Advanced</fullName>
+                    <default>false</default>
+                    <label>OA 1:1 Development Advanced</label>
+                </value>
+                <value>
+                    <fullName>OA 1:1 Development Ultimate</fullName>
+                    <default>false</default>
+                    <label>OA 1:1 Development Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Technology Ultimate</fullName>
+                    <default>false</default>
+                    <label>Technology Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Core Essential</fullName>
+                    <default>false</default>
+                    <label>Core Essential</label>
+                </value>
+                <value>
+                    <fullName>Core Advanced</fullName>
+                    <default>false</default>
+                    <label>Core Advanced</label>
+                </value>
+                <value>
+                    <fullName>Core Unit Essential</fullName>
+                    <default>false</default>
+                    <label>Core Unit Essential</label>
+                </value>
+                <value>
+                    <fullName>TMReview Talent Advanced</fullName>
+                    <default>false</default>
+                    <label>TMReview Talent Advanced</label>
+                </value>
+                <value>
+                    <fullName>TMReview Talent Essential</fullName>
+                    <default>false</default>
+                    <label>TMReview Talent Essential</label>
+                </value>
+                <value>
+                    <fullName>TM Skills Development Advanced</fullName>
+                    <default>false</default>
+                    <label>TM Skills Development Advanced</label>
+                </value>
+                <value>
+                    <fullName>TM Skills Development Essential</fullName>
+                    <default>false</default>
+                    <label>TM Skills Development Essential</label>
+                </value>
+                <value>
+                    <fullName>TM Senior Leadership Essential</fullName>
+                    <default>false</default>
+                    <label>TM Senior Leadership Essential</label>
+                </value>
+                <value>
+                    <fullName>TM Senior Leadership Advanced</fullName>
+                    <default>false</default>
+                    <label>TM Senior Leadership Advanced</label>
+                </value>
+                <value>
+                    <fullName>TM Senior Leadership Ultimate</fullName>
+                    <default>false</default>
+                    <label>TM Senior Leadership Ultimate</label>
+                </value>
+                <value>
+                    <fullName>TM Managerial Development Advanced</fullName>
+                    <default>false</default>
+                    <label>TM Managerial Development Advanced</label>
+                </value>
+                <value>
+                    <fullName>TM Managerial Development Essential</fullName>
+                    <default>false</default>
+                    <label>TM Managerial Development Essential</label>
+                </value>
+                <value>
+                    <fullName>Smart Interview Professional Essential</fullName>
+                    <default>false</default>
+                    <label>Smart Interview Professional Essential</label>
+                </value>
+                <value>
+                    <fullName>Smart Interview Professional Advanced</fullName>
+                    <default>false</default>
+                    <label>Smart Interview Professional Advanced</label>
+                </value>
+                <value>
+                    <fullName>SME Skills and Ability</fullName>
+                    <default>false</default>
+                    <label>SME Skills and Ability</label>
+                </value>
+                <value>
+                    <fullName>SME Professional</fullName>
+                    <default>false</default>
+                    <label>SME Professional</label>
+                </value>
+                <value>
+                    <fullName>SME Leadership</fullName>
+                    <default>false</default>
+                    <label>SME Leadership</label>
+                </value>
+                <value>
+                    <fullName>Talent Mobility essential</fullName>
+                    <default>false</default>
+                    <label>Talent Mobility Essential</label>
+                </value>
+                <value>
+                    <fullName>Talent Mobility advanced</fullName>
+                    <default>false</default>
+                    <label>Talent Mobility Advanced</label>
+                </value>
+                <value>
+                    <fullName>Leadership Suite Essential</fullName>
+                    <default>false</default>
+                    <label>Leadership Suite Essential</label>
+                </value>
+                <value>
+                    <fullName>Manager Suite Essential</fullName>
+                    <default>false</default>
+                    <label>Manager Suite Essential</label>
+                </value>
+                <value>
+                    <fullName>Leadership Review Essential</fullName>
+                    <default>false</default>
+                    <label>Leadership Review Essential</label>
+                </value>
+                <value>
+                    <fullName>Leadership Review Advanced</fullName>
+                    <default>false</default>
+                    <label>Leadership Review Advanced</label>
+                </value>
+                <value>
+                    <fullName>Leadership Review Ultimate</fullName>
+                    <default>false</default>
+                    <label>Leadership Review Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Manager Review Essential</fullName>
+                    <default>false</default>
+                    <label>Manager Review Essential</label>
+                </value>
+                <value>
+                    <fullName>Manager Review Advanced</fullName>
+                    <default>false</default>
+                    <label>Manager Review Advanced</label>
+                </value>
+                <value>
+                    <fullName>Talent Review Essential</fullName>
+                    <default>false</default>
+                    <label>Talent Review Essential</label>
+                </value>
+                <value>
+                    <fullName>Talent Review Advanced</fullName>
+                    <default>false</default>
+                    <label>Talent Review Advanced</label>
+                </value>
+                <value>
+                    <fullName>Capability Digital Training</fullName>
+                    <default>false</default>
+                    <label>Capability Digital Training</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Platform__c</fullName>
+        <label>Platform</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>iAssess</fullName>
+                    <default>false</default>
+                    <label>iAssess</label>
+                </value>
+                <value>
+                    <fullName>MFS</fullName>
+                    <default>false</default>
+                    <label>MFS</label>
+                </value>
+                <value>
+                    <fullName>Talent Central</fullName>
+                    <default>false</default>
+                    <label>Talent Central</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Project</label>
+        <referenceTo>ProjectObject__c</referenceTo>
+        <relationshipLabel>Order Products</relationshipLabel>
+        <relationshipName>Order_Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Proposition__c</fullName>
+        <label>Use-case</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Volume Hiring</fullName>
+                    <default>false</default>
+                    <label>Volume Hiring</label>
+                </value>
+                <value>
+                    <fullName>Technology Hiring</fullName>
+                    <default>false</default>
+                    <label>Technology Hiring</label>
+                </value>
+                <value>
+                    <fullName>Managerial Hiring</fullName>
+                    <default>false</default>
+                    <label>Managerial Hiring</label>
+                </value>
+                <value>
+                    <fullName>Senior Leadership / Executive Hiring </fullName>
+                    <default>false</default>
+                    <label>Senior Leadership / Executive Hiring </label>
+                </value>
+                <value>
+                    <fullName>Professional Hiring</fullName>
+                    <default>false</default>
+                    <label>Professional Hiring</label>
+                </value>
+                <value>
+                    <fullName>Talent Management</fullName>
+                    <default>false</default>
+                    <label>Talent Management</label>
+                </value>
+                <value>
+                    <fullName>Early Careers Hiring</fullName>
+                    <default>false</default>
+                    <label>Early Careers Hiring</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Renewable__c</fullName>
+        <label>Renewability</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Ongoing</fullName>
+                    <default>false</default>
+                    <label>Ongoing</label>
+                </value>
+                <value>
+                    <fullName>One-off</fullName>
+                    <default>false</default>
+                    <label>One-off</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SFDC_Order_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&apos;/&apos;+Order.Id,Order.OrderNumber,&apos;_self&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Order Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Scoped_CPS_days__c</fullName>
+        <externalId>false</externalId>
+        <label>Scoped CPS days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Scoped_LPS_days__c</fullName>
+        <externalId>false</externalId>
+        <label>Scoped LPS days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_End_Date__c</fullName>
+        <label>PS Service End Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Solution_Cap__c</fullName>
+        <externalId>false</externalId>
+        <label>Solution Cap</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Solution__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Solution</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Source_of_PS_Scoping__c</fullName>
+        <label>Source of PS Scoping</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>E2E Scoping Tool</fullName>
+                    <default>false</default>
+                    <label>E2E Scoping Tool</label>
+                </value>
+                <value>
+                    <fullName>Other Existing Pricing Calculator</fullName>
+                    <default>false</default>
+                    <label>Other Existing Pricing Calculator</label>
+                </value>
+                <value>
+                    <fullName>Other Scoping Template</fullName>
+                    <default>false</default>
+                    <label>Other Scoping Template</label>
+                </value>
+                <value>
+                    <fullName>None Available</fullName>
+                    <default>false</default>
+                    <label>None Available</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_Equivalent_Units__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Equivalent Units</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Price_PS_Items__c</fullName>
+        <formula>IF(ISPICKVAL(Order.Status, &apos;Cancelled&apos;) ,0,Total_Price__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Price (PS Items)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Price__c</fullName>
+        <formula>Quantity  *  UnitPrice</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Usage_Allowance__c</fullName>
+        <label>Usage Allowance</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Capped</fullName>
+                    <default>false</default>
+                    <label>Capped</label>
+                </value>
+                <value>
+                    <fullName>Uncapped</fullName>
+                    <default>false</default>
+                    <label>Uncapped</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <webLinks>
+        <fullName>Add_Order_Products_Project</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Add/Remove Order Products</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/apex/OrderProductsOnProject?Project={!ProjectObject__c.Id}&amp;Contract={!ProjectObject__c.Order_Header_Number__c}</url>
+    </webLinks>
+</CustomObject>

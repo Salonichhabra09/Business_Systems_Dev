@@ -1,0 +1,97 @@
+<aura:component controller="Import_RateCard_Ctr_LIT" implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" access="global">
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="filetype" type="String" />
+    <aura:attribute name="record" type="Object" access="global"/> 
+    <aura:attribute name="simplerecord" type="Object" access="global"/> 
+    <aura:attribute name="ErrorMessages" type="String[]" />
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+    <aura:attribute name="Spinner" type="boolean" default="false"/>
+    <aura:if isTrue="{!v.Spinner}">
+    <div aura:id="spinnerId" class="slds-spinner_container">
+       <div class="slds-spinner--brand  slds-spinner slds-spinner--large slds-is-relative" role="alert">
+         <span class="slds-assistive-text">Loading</span>
+         <div class="slds-spinner__dot-a"></div>
+         <div class="slds-spinner__dot-b"></div>
+       </div>
+    </div>
+ </aura:if>
+    <force:recordData aura:id="OppRecordLoader"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.simplerecord}"
+                      targetError="{!v.recordError}"
+                      /> 
+   
+    <div class="slds-p-left_small"> 
+        <b>Opportunity</b><br/>
+        <a href="{!'/'+v.recordId}">{!v.simplerecord.Name}</a>
+    </div> 
+    <lightning:card variant="Narrow" title="Import Data from Rate Card " iconName="standard:opportunity">
+        <ui:message title="Please ensure that you have imported the Discount Summary CSV file which corresponds to the Pricebook Items CSV file." severity="warning" closable="false" />
+    </lightning:card>
+    <lightning:card>
+           <div class="slds-p-left_small" >  <b>Choose Pricebook Items csv File: </b></div>
+              
+            <lightning:layout horizontalAlign="spread" verticalAlign="start"  >
+                <lightning:layoutItem   flexibility="auto" padding="around-small" size="2" >
+                    <input type="file" class="file" aura:id="file" />
+                </lightning:layoutItem>
+                
+                <lightning:layoutItem flexibility="auto" padding="around-small" size="8">
+                    <lightning:button aura:id="PricebookEntry" variant="brand" label="Upload" onclick="{!c.ReadFile}" />
+                    
+                    </lightning:layoutItem>
+                    
+            </lightning:layout> 
+              
+         
+        <div class="slds-p-left_small">    
+            <b>*Note:</b><br/><!--Only .csv file is supported. <br/> -->
+            <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Pricebook Items can only be imported. <br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. To modify or delete, import new .csv file with new list of Products. -->
+            <li>Within the Rate Card go to “Final Quote” Tab.</li> 
+            <li>Press Export Pricebook Items Button..This will create a .csv file which needs to be saved to your Desktop.</li> 
+            <li>Using the Browse button above attach this file to the Opportunity.</li> 
+            <li>This import populates the “Product and Assessment” section of the Opportunity and the Final Sales Price.</li> 
+            <li>If anything changes on the quote (Discount Given / Products / Quantity sold etc.) a new Import will be required.The previous Import will be automatically deleted. </li>
+            <li>When submitting the Order for processing it is essential that the Final Sales Price on the Order Form matches the Final Sales price on the Opportunity or it will be rejected.</li>
+        </div>
+    </lightning:card>
+       <lightning:card> 
+    <div class="slds-p-left_small" >  <b>Choose Discount Summary csv File: </b></div>
+              
+            <lightning:layout horizontalAlign="spread" verticalAlign="start"  >
+                <lightning:layoutItem   flexibility="auto" padding="around-small" size="2" >
+                    <input type="file" class="file" aura:id="file1" />
+                </lightning:layoutItem>
+                
+                <lightning:layoutItem flexibility="auto" padding="around-small" size="8">
+                    <lightning:button aura:id="DiscountSummary" variant="brand" label="Upload" onclick="{!c.ReadFile}" />
+                    
+                    </lightning:layoutItem>
+                    
+            </lightning:layout> 
+    
+    <div class="slds-p-left_small">    
+        <p> <b>*Note:</b><br/> <!--Only .csv file is supported. <br/> -->
+            <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Discount Summary can only be imported. <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. To modify or delete, import new .csv file with new Discount Summary. -->
+            <li>This import is only required if discounts have been applied to the Final Quote. If ListPrice = Sales Price then this step is NOT required.</li>
+            <li>Within the Rate Card go to “Final Quote” Tab.</li>
+            <li>Press Export Discount Summary Button. This will create a .csv file which needs to be saved to your Desktop.</li> 
+            <li>Using the Browse button above attach this file to the Opportunity.</li>
+            <li>This import populates the “Discount Summary” section of the Opportunity.</li>
+            <li>If anything changes on the quote (Discount Given / Products / Quantity sold etc.) a new Import will be required. The previous Import will be automatically deleted.</li>
+            <li>Always check before submitting the Order for Processing that the Final Discount Given on the Pricebook Items matches the Discount Summary or it will be rejected.</li>
+        </p>
+    </div>
+    </lightning:card>
+    <br/>
+    <lightning:card>
+    <div class="slds-align_absolute-center">
+        <lightning:button variant="neutral" onclick="{!c.doCancel}" label="Done"></lightning:button>
+    </div>
+    </lightning:card>
+</aura:component>

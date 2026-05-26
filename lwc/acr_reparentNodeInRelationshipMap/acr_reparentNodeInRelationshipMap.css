@@ -1,0 +1,9 @@
+.max-height{
+    max-height: 23rem;
+    overflow: auto;
+}
+
+.note{
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}

@@ -1,0 +1,5 @@
+.chart {
+    width: 100vw;  /* Fixed width */
+    height: 33vh; /* Fixed height */
+    position: relative;
+}

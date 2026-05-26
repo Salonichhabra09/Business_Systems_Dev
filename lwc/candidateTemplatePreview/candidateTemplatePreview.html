@@ -1,0 +1,17 @@
+<template>
+    <h2 id="element-with-table-label" class="slds-text-heading_medium slds-m-bottom_xx-small">
+        Candidate Template Format</h2>
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered"
+        aria-labelledby="element-with-table-label other-element-with-table-label">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <template for:each={candidateExistingFields} for:item="currentItem" for:index="index">
+                    <th class="" scope="col" key={currentItem.Id}>
+                        <div class="slds-truncate" title="Opportunity Name">{currentItem.Label__c}
+                        </div>
+                    </th>
+                </template>
+            </tr>
+        </thead>
+    </table>
+</template>

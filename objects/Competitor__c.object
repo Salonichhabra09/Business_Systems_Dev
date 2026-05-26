@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Competitor_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Competitor_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>To capture additional info beyond who the competitor is &amp; linked to an Opportunity</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account__c</fullName>
+        <label>Account</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordType.Name</field>
+                <operation>notEqual</operation>
+                <value>Competitor Account</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Competitor Information</relationshipLabel>
+        <relationshipName>CompetitorOpportunities</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Any_Customer_Concerns__c</fullName>
+        <label>Any Customer Concerns?</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Auto_create_Displacement_Opportunity__c</fullName>
+        <inlineHelpText>This will automatically create a displacement Opportunity if the linked Opportunity is Closed Lost</inlineHelpText>
+        <label>Auto-create Displacement Opportunity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Competing_Solution_Area__c</fullName>
+        <label>Competing Solution Area</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Talent Acquisition - Grad</fullName>
+                    <default>false</default>
+                    <label>Talent Acquisition - Grad</label>
+                </value>
+                <value>
+                    <fullName>Talent Acquisition - Volume</fullName>
+                    <default>false</default>
+                    <label>Talent Acquisition - Volume</label>
+                </value>
+                <value>
+                    <fullName>Talent Acquisition - Tech</fullName>
+                    <default>false</default>
+                    <label>Talent Acquisition - Tech</label>
+                </value>
+                <value>
+                    <fullName>Talent Acquisition - Sales</fullName>
+                    <default>false</default>
+                    <label>Talent Acquisition - Sales</label>
+                </value>
+                <value>
+                    <fullName>Talent Acquisition - Professional</fullName>
+                    <default>false</default>
+                    <label>Talent Acquisition - Professional</label>
+                </value>
+                <value>
+                    <fullName>Talent Acquisition - Managerial</fullName>
+                    <default>false</default>
+                    <label>Talent Acquisition - Managerial</label>
+                </value>
+                <value>
+                    <fullName>Talent Management - Review</fullName>
+                    <default>false</default>
+                    <label>Talent Management - Review</label>
+                </value>
+                <value>
+                    <fullName>Talent Management - Mobilize</fullName>
+                    <default>false</default>
+                    <label>Talent Management - Mobilize</label>
+                </value>
+                <value>
+                    <fullName>Talent Management - Develop</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Talent Management - Develop</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Competitor_Account_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Competitor Account ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Competitor_Displacement_Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <inlineHelpText>This will be populated once the Opportunity is auto-created</inlineHelpText>
+        <label>Competitor Displacement Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Competitor Displacement Opportunity</relationshipLabel>
+        <relationshipName>CompetitorDisplacementOpportunity</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Competitor__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <label>Competitor</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Competitor Account</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Customer Information</relationshipLabel>
+        <relationshipName>Competitors</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Create_Displacement__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Create Displacement</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Customer_View_of_Strengths__c</fullName>
+        <label>Customer View of Strengths?</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Incumbent_Renewal_Date__c</fullName>
+        <label>Incumbent Renewal Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Incumbent_Value__c</fullName>
+        <label>Incumbent Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Incumbent_Value_in_USD__c</fullName>
+        <formula>IF(
+TEXT(CurrencyIsoCode) = &apos;USD&apos;, Incumbent_Value__c,  
+Incumbent_Value__c / CURRENCYRATE(TEXT(CurrencyIsoCode))*CURRENCYRATE(&apos;USD&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Incumbent Value(in USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Incumbent_Vendor__c</fullName>
+        <label>Incumbent Vendor</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Industry__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Account__r.Industry)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Industry</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <label>Notes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Competitors</relationshipLabel>
+        <relationshipName>Competitors</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.Region__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Competitor</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Competitor__c</columns>
+        <columns>Account__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Incumbent_Vendor__c</columns>
+        <columns>Incumbent_Value__c</columns>
+        <columns>Industry__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CMP-{0000000}</displayFormat>
+        <label>Competitor Data</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Competitors</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>AutoCreate_Displcmnt_Opp_Cant_be_blank</fullName>
+        <active>true</active>
+        <description>If the Opportunity field is populated on a competitor entry, Auto-create Displacement Opportunity cannot be blank.</description>
+        <errorConditionFormula>AND(
+Opportunity__c!=&apos;&apos;,
+ISPICKVAL(Auto_create_Displacement_Opportunity__c, &quot;&quot;),
+$Profile.Name != &apos;System Administrator&apos;
+)</errorConditionFormula>
+        <errorDisplayField>Auto_create_Displacement_Opportunity__c</errorDisplayField>
+        <errorMessage>Auto-create Displacement Opportunity cannot be blank If an Opportunity is linked to a competitor.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Create_Displacement_Opportunity</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND ( ISPICKVAL(Incumbent_Vendor__c, &quot;Yes&quot;),
+ISPICKVAL(Auto_create_Displacement_Opportunity__c, &quot;&quot;),
+NOT(ISNULL( Incumbent_Renewal_Date__c )),
+$Profile.Name != &apos;System Administrator&apos;
+)</errorConditionFormula>
+        <errorDisplayField>Auto_create_Displacement_Opportunity__c</errorDisplayField>
+        <errorMessage>Do you want to create a holding opportunity timed to displaced this competitor?</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Incumbent_Renewal_Date_Cannot_be_in_Past</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ Incumbent_Renewal_Date__c &lt;TODAY(),
+OR(
+ ISNEW(),
+ ISCHANGED(Incumbent_Renewal_Date__c)
+),
+$Profile.Name !=&apos;System Administrator&apos;)</errorConditionFormula>
+        <errorDisplayField>Incumbent_Renewal_Date__c</errorDisplayField>
+        <errorMessage>Incumbent Renewal Date cannot be in past. Please insert valid date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Incumbent_Renewal_Date_is_required</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL(Auto_create_Displacement_Opportunity__c, &quot;Yes&quot;),
+OR(ISNULL(Incumbent_Renewal_Date__c),
+ISPICKVAL( Incumbent_Vendor__c ,&apos;&apos;),
+ Opportunity__c ==&apos;&apos;
+),
+ $Profile.Name !=&apos;System Administrator&apos;)</errorConditionFormula>
+        <errorMessage>Please provide the incumbent competitor&apos;s renewal date, Incumbent vendor and opportunity  to auto create displacement opportunity.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Incumbent_Value_required</fullName>
+        <active>false</active>
+        <description>If Incumbent Vendor = TRUE and related Opportuntiy is NULL create separate validation rule to force Incumbent Value</description>
+        <errorConditionFormula>AND(
+ ISPICKVAL(Incumbent_Vendor__c,&apos;YES&apos;),
+ Opportunity__c=&apos;&apos;,
+ ISBLANK(Incumbent_Value__c),
+$Profile.Name != &apos;System Administrator&apos;
+)</errorConditionFormula>
+        <errorDisplayField>Incumbent_Value__c</errorDisplayField>
+        <errorMessage>Incumbent Value is required, if incumbent vendor is Yes and no opportunity is linked to the record.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Renewal_Date_Requird_if_Vendor_is_Yes</fullName>
+        <active>false</active>
+        <description>Incumbent renewal date should be mandatory if the Incumbent Vendor is true.</description>
+        <errorConditionFormula>AND(
+ISPICKVAL(Incumbent_Vendor__c,&apos;YES&apos;),
+ISNULL(Incumbent_Renewal_Date__c),
+$Profile.Name !=&apos;System Administrator&apos;
+)</errorConditionFormula>
+        <errorDisplayField>Incumbent_Renewal_Date__c</errorDisplayField>
+        <errorMessage>Incumbent Renewal Date is Required if Incumbent vendor is Yes</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>New_Competitor</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/lightning/o/Competitor__c/new?defaultFieldValues=Opportunity__c={!Opportunity.Id},Account__c={!Opportunity.AccountId}&amp;backgroundContext=/lightning/r/Opportunity/{!Opportunity.Id}/related/Competitors__r/view</url>
+    </webLinks>
+</CustomObject>

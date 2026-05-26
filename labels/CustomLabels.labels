@@ -1,0 +1,1135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Account_Approvers</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Account Approvers</shortDescription>
+        <value>00e4G000001VBeo</value>
+    </labels>
+    <labels>
+        <fullName>Account_EOFProducst_warning</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Account_EOFProducst_warning</shortDescription>
+        <value>This Account has a legacy product that cannot be renewed.   Please review pending renewals.</value>
+    </labels>
+    <labels>
+        <fullName>Account_Sanction_Email_Recipients</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Account Sanction Email Recipients</shortDescription>
+        <value>Andy.Louca@shl.com,Claire.Herrett@shl.com</value>
+    </labels>
+    <labels>
+        <fullName>Account_Sanction_Threshold</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Account Sanction Threshold</shortDescription>
+        <value>72</value>
+    </labels>
+    <labels>
+        <fullName>Admin_Emails_for_Failure_in_Price_Increase_Notification</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Admin Emails for Failure in Price Increase Notification</shortDescription>
+        <value>sahil.anand@shl.com,sahil.chhabra@shl.com</value>
+    </labels>
+    <labels>
+        <fullName>Billing</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing</shortDescription>
+        <value>Billing</value>
+    </labels>
+    <labels>
+        <fullName>By_submitting_this_Contact_Us_form_I_confirm_that_I_have_read_and_understood_the</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>By submitting this Contact Us form I confirm that I have read and understood the</shortDescription>
+        <value>By submitting this Contact Us form I confirm that I have read and understood the Notice.</value>
+    </labels>
+    <labels>
+        <fullName>Campaign_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Campaign Id</shortDescription>
+        <value>7012000000006S1AAI</value>
+    </labels>
+    <labels>
+        <fullName>Candidate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Candidate</shortDescription>
+        <value>Candidate</value>
+    </labels>
+    <labels>
+        <fullName>Candidate_Query</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Candidate Query</shortDescription>
+        <value>Candidate Query</value>
+    </labels>
+    <labels>
+        <fullName>Certificate_SenderEmail_Address</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Certificate_SenderEmail_Address</shortDescription>
+        <value>noreplytrainingacademy@shl.com</value>
+    </labels>
+    <labels>
+        <fullName>China_Renewal_Mail_Template</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>China Renewal Mail Template</shortDescription>
+        <value>Renewal_Price_Uplift_Email_Template_Chinese</value>
+    </labels>
+    <labels>
+        <fullName>ClientReportSystemUsedMSG</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ClientReportSystemUsedMSG</shortDescription>
+        <value>Please check the &apos;System Used&apos; field on the Job.
+At this moment, you can only select TalentCentral or MFS or Both depending on the Work Request that you have sent to the customer.</value>
+    </labels>
+    <labels>
+        <fullName>CommencedRecordTypeId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CommencedRecordTypeId</shortDescription>
+        <value>012D0000000VAaUIAW</value>
+    </labels>
+    <labels>
+        <fullName>CommercialProfileId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CommercialProfileId</shortDescription>
+        <value>00e4G000001tSxfQAE</value>
+    </labels>
+    <labels>
+        <fullName>Commercial_Analytic_user</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Commercial Analytic user</shortDescription>
+        <value>0054G00000AOE8n</value>
+    </labels>
+    <labels>
+        <fullName>ConfiguratorPricebookId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ConfiguratorPricebookId</shortDescription>
+        <value>01sD0000000Kh1pIAC</value>
+    </labels>
+    <labels>
+        <fullName>Configurator_Opportunity</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Configurator Opportunity</shortDescription>
+        <value>Configurator Opportunity</value>
+    </labels>
+    <labels>
+        <fullName>Contact_Details</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact Details</shortDescription>
+        <value>Contact Details</value>
+    </labels>
+    <labels>
+        <fullName>Contact_Tel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KB_Contact Tel</shortDescription>
+        <value>Contact Tel</value>
+    </labels>
+    <labels>
+        <fullName>ContractLine_BeforeUpdate_ModificationOnCompleteOrder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ContractLine_BeforeUpdate_ModificationOnCompleteOrder</shortDescription>
+        <value>Line Price cannot be modified.</value>
+    </labels>
+    <labels>
+        <fullName>ContractLine_beforedelete_DeleteMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ContractLine_beforedelete_DeleteMessage</shortDescription>
+        <value>You do not have sufficient privilege to Delete the record</value>
+    </labels>
+    <labels>
+        <fullName>Country</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Country</shortDescription>
+        <value>Country</value>
+    </labels>
+    <labels>
+        <fullName>Customer_Connect_Mail_Box_Address</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Customer Connect Mail Box Address</shortDescription>
+        <value>CustomerConnect@shl.com</value>
+    </labels>
+    <labels>
+        <fullName>Debooking_Warning</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Debooking Warning</shortDescription>
+        <value>Please ensure the values in the &apos;Solution Cap&apos;, &apos;Quantity&apos; and &apos;Debook Value&apos; are the exact values you want to to debook by. If you are happy with the values, please click to confirm this de-booking.</value>
+    </labels>
+    <labels>
+        <fullName>Demandbase_Sales_Intelligence_Url</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Demandbase Sales Intelligence Url</shortDescription>
+        <value>https://web.demandbase.com/sales/abx/dashboard</value>
+    </labels>
+    <labels>
+        <fullName>Disability_Query</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Disability Query</shortDescription>
+        <value>Disability Query</value>
+    </labels>
+    <labels>
+        <fullName>Email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email</shortDescription>
+        <value>Email</value>
+    </labels>
+    <labels>
+        <fullName>Email_Id_do_not_match</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Id do not match</shortDescription>
+        <value>Email Ids do not match.</value>
+    </labels>
+    <labels>
+        <fullName>End_Of_Life_Products_Eligible_for_Auto_Close_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>End Of Life Products Eligible for Auto Close Message</shortDescription>
+        <value>This Opportunity cannot be marked as Eligible for Auto-Close as there is 1 or more products that have been marked as &quot;End of Life&quot;.</value>
+    </labels>
+    <labels>
+        <fullName>End_Of_Life_Products_Validation_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>End Of Life Products Validation Message</shortDescription>
+        <value>You cannot move this opportunity to the selected Stage as there is 1 or more products that have been marked as &quot;End of Life&quot;</value>
+    </labels>
+    <labels>
+        <fullName>Error_message_for_invalid_System_Used_for_Candidate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error message for invalid System Used for Candidate</shortDescription>
+        <value>Candidates are not applicable for selected system used values, please update system used values on &quot;Job Overview&quot; tab</value>
+    </labels>
+    <labels>
+        <fullName>Error_message_for_invalid_System_Used_for_Systems</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error message for invalid System Used for Systems</shortDescription>
+        <value>Systems are not applicable for selected system used values, please update system used values on &quot;Job Overview&quot; tab</value>
+    </labels>
+    <labels>
+        <fullName>Event_SendEmailToAssignee</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Event_SendEmailToAssignee</shortDescription>
+        <value>00XD0000001WxeQMAS</value>
+    </labels>
+    <labels>
+        <fullName>ExcelConnectorUserId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ExcelConnectorUserId</shortDescription>
+        <value>0054G00000B3vrOQAR</value>
+    </labels>
+    <labels>
+        <fullName>Exception_Reporting_Mail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Exception Reporting Mail</shortDescription>
+        <value>abhijeet.hcst0812@gmail.com</value>
+    </labels>
+    <labels>
+        <fullName>ExtensionOpportunityName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ExtensionOpportunityName</shortDescription>
+        <value>Extension</value>
+    </labels>
+    <labels>
+        <fullName>ExtensionServiceDelayNoCharge</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Extension Service Delay–No Charge</shortDescription>
+        <value>Service Delay – No Charge</value>
+    </labels>
+    <labels>
+        <fullName>GCSCRecordType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GCSCRecordType</shortDescription>
+        <value>012D0000000V7opIAC</value>
+    </labels>
+    <labels>
+        <fullName>GCSC_ORDER_RECORD_TYPE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GCSC ORDER RECORD TYPE</shortDescription>
+        <value>0124G000000Bj14QAC</value>
+    </labels>
+    <labels>
+        <fullName>GCSC_Opportunity</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GCSC Opportunity</shortDescription>
+        <value>GCSC Opportunity</value>
+    </labels>
+    <labels>
+        <fullName>General_Enquiry</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>General Enquiry</shortDescription>
+        <value>General Enquiry</value>
+    </labels>
+    <labels>
+        <fullName>GenericUserContactId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GenericUserContactId</shortDescription>
+        <value>0032000000atnKFAAY</value>
+    </labels>
+    <labels>
+        <fullName>Globus_Development_User_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Globus Development User Id</shortDescription>
+        <value>00520000000ihf6AAA</value>
+    </labels>
+    <labels>
+        <fullName>History_Trend_Based_On_Client_Interest_Report_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>History_Trend_Based_On_Client_Interest_Report_Id</shortDescription>
+        <value>00O4G000008AvevUAC</value>
+    </labels>
+    <labels>
+        <fullName>IgniteRecordType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IgniteRecordType</shortDescription>
+        <value>012D0000000KN0HIAW</value>
+    </labels>
+    <labels>
+        <fullName>Import_Contact_Template</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Import Contact Template</shortDescription>
+        <value>0694G00000TrM1ZQAV</value>
+    </labels>
+    <labels>
+        <fullName>Invitation_Email_not_Received</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invitation/Email not Received</shortDescription>
+        <value>Invitation/Email not Received</value>
+    </labels>
+    <labels>
+        <fullName>KB_Additional_details_on_your_enquiry</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KB_Additional_details_on_your_enquiry</shortDescription>
+        <value>Enquiry category</value>
+    </labels>
+    <labels>
+        <fullName>KB_Case_Support_Timings</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KB_ Case_Support_Timings</shortDescription>
+        <value>Please be aware that our Technical Support teams are available during local hours.</value>
+    </labels>
+    <labels>
+        <fullName>KB_Country</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KB_Country</shortDescription>
+        <value>Country/Region</value>
+    </labels>
+    <labels>
+        <fullName>KB_Existing</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KB_Existing</shortDescription>
+        <value>Existing</value>
+    </labels>
+    <labels>
+        <fullName>KB_GDPR_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KB GDPR Label</shortDescription>
+        <value>Please read this</value>
+    </labels>
+    <labels>
+        <fullName>KB_GDPR_Label2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KB GDPR Label2</shortDescription>
+        <value>Data Protection Notice</value>
+    </labels>
+    <labels>
+        <fullName>KB_GDPR_Label3</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KB GDPR Label3</shortDescription>
+        <value>(“Notice”) to continue. It sets out how and why SHL Group Limited collect your personal information.</value>
+    </labels>
+    <labels>
+        <fullName>KB_GDPR_Label4</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KB GDPR Label4</shortDescription>
+        <value>Please read the entire Notice carefully. If you have any questions about this Notice please refer to</value>
+    </labels>
+    <labels>
+        <fullName>KB_GDPR_Label5</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KB GDPR Label5</shortDescription>
+        <value>FAQ page</value>
+    </labels>
+    <labels>
+        <fullName>KB_IndicateRequiredFields</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KB_IndicateRequiredFields</shortDescription>
+        <value>Indicates a required field.</value>
+    </labels>
+    <labels>
+        <fullName>KB_New</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KB_New</shortDescription>
+        <value>New</value>
+    </labels>
+    <labels>
+        <fullName>KB_Please_copy_and_paste_your_URL_assessment_link_or_web_address_Candidate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KB_Please copy and paste your URL, assessment link or web address-Candidate</shortDescription>
+        <value>Please copy and paste your assessment link here or the URL/web address you are having an issue with:</value>
+    </labels>
+    <labels>
+        <fullName>KB_Preferred_Language</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KB_Preferred Language</shortDescription>
+        <value>Preferred Language</value>
+    </labels>
+    <labels>
+        <fullName>KB_SubmitForm</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KB_SubmitForm</shortDescription>
+        <value>Submit Form</value>
+    </labels>
+    <labels>
+        <fullName>KB_Username_and_dnumber</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KB_Username_and_dnumber</shortDescription>
+        <value>Username/D Number</value>
+    </labels>
+    <labels>
+        <fullName>KB_What_is_your_reference_number</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KB_What is your reference number?</shortDescription>
+        <value>What is your reference number?</value>
+    </labels>
+    <labels>
+        <fullName>KB_What_platform_are_you_using</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KB_What platform are you using?</shortDescription>
+        <value>What platform are you using?</value>
+    </labels>
+    <labels>
+        <fullName>KB_new_or_existing</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KB_new_or_existing</shortDescription>
+        <value>Is this a new enquiry or an existing enquiry (e.g. you have been in contact with us in the last 30 days)?</value>
+    </labels>
+    <labels>
+        <fullName>Kb_Case_Client_Company_name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kb_Case_Client_Company_Name</shortDescription>
+        <value>Company Name</value>
+    </labels>
+    <labels>
+        <fullName>Kb_Case_Client_Query_Type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kb_Case_Client_Query_Type</shortDescription>
+        <value>Please select the type of enquiry you have</value>
+    </labels>
+    <labels>
+        <fullName>Kb_Case_Client_Query_Type_PB</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kb_Case_Client_Query_Type_PB</shortDescription>
+        <value>Product, billing or ordering query</value>
+    </labels>
+    <labels>
+        <fullName>Kb_Case_Client_Query_Type_TQ</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kb_Case_Client_Query_Type_TQ</shortDescription>
+        <value>Technology related question or issue</value>
+    </labels>
+    <labels>
+        <fullName>Kb_Case_Company_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kb_Case_Company_Name</shortDescription>
+        <value>Name of company you are taking a test for</value>
+    </labels>
+    <labels>
+        <fullName>Kb_Case_Contact_Local_SHL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kb_ Case_Contact_Local_SHL</shortDescription>
+        <value>Please complete the following form to contact your local support team.</value>
+    </labels>
+    <labels>
+        <fullName>Kb_Case_Contact_Us</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kb_Case_Contact_Us</shortDescription>
+        <value>Contact Us</value>
+    </labels>
+    <labels>
+        <fullName>Kb_Case_Country</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kb_Case_Country</shortDescription>
+        <value>The country you select will determine where the request is sent.</value>
+    </labels>
+    <labels>
+        <fullName>Kb_Case_Error_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kb_Case_Error_Message</shortDescription>
+        <value>Error Message (if visible)</value>
+    </labels>
+    <labels>
+        <fullName>Kb_Case_FL_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kb_Case_FL_Name</shortDescription>
+        <value>Your first and last name</value>
+    </labels>
+    <labels>
+        <fullName>Kb_Case_Question_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kb_Case_Question_Text</shortDescription>
+        <value>Please enter your question here or explain your problem, detailing what happens, when and how frequently (minimum of 50 characters)</value>
+    </labels>
+    <labels>
+        <fullName>Kb_Case_Re_Email_Address</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kb_Case_Re_Email_Address</shortDescription>
+        <value>Re-enter Email address</value>
+    </labels>
+    <labels>
+        <fullName>Kb_Case_Select_Country</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kb_Case_Select_Country</shortDescription>
+        <value>Select Country/Region</value>
+    </labels>
+    <labels>
+        <fullName>Kb_Case_Session_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kb_Case_Session_ID</shortDescription>
+        <value>Session ID (if applicable)</value>
+    </labels>
+    <labels>
+        <fullName>Kb_Case_Submit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kb_Case_Submit</shortDescription>
+        <value>Submit</value>
+    </labels>
+    <labels>
+        <fullName>Kb_Case_Username</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kb_Case_Username</shortDescription>
+        <value>Username</value>
+    </labels>
+    <labels>
+        <fullName>Kb_P2_Case_Client_Select_Query</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Kb_P2_Case_Client_Select_Query</shortDescription>
+        <value>Select Query Type</value>
+    </labels>
+    <labels>
+        <fullName>LA_PreChat_Base_StartChat_04I4G0000008OIP_8181350</fullName>
+        <categories>Snap-ins</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LA_PreChat_Base_StartChat_04I4G0000008OIP_8181350</shortDescription>
+        <value>Start Chatting</value>
+    </labels>
+    <labels>
+        <fullName>LegalTeam_Profiles</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LegalTeam_Profile</shortDescription>
+        <value>00eD0000001V4l1</value>
+    </labels>
+    <labels>
+        <fullName>Login_Issue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Login Issue</shortDescription>
+        <value>Login Issue</value>
+    </labels>
+    <labels>
+        <fullName>Managed_Service_Pipeline_RecordType_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Managed Service Pipeline RecordType Id</shortDescription>
+        <value>012D0000000VAaZIAW</value>
+    </labels>
+    <labels>
+        <fullName>MultiYear_Renewal_Template</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MultiYear Renewal Template</shortDescription>
+        <value>Renewal_Price_Uplift_Email_Template_for_MY</value>
+    </labels>
+    <labels>
+        <fullName>NVM_Chat_Queue_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NVM Chat Queue Id</shortDescription>
+        <value>00GQ4000001yS7J</value>
+    </labels>
+    <labels>
+        <fullName>NVM_Web_Queue_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NVM Web Queue Id</shortDescription>
+        <value>00GQ4000001yS8v</value>
+    </labels>
+    <labels>
+        <fullName>No_System_Used_selected</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No System Used selected</shortDescription>
+        <value>No &quot;System Used&quot; has been selected on the job. Please select one or more systems to link the systems here.</value>
+    </labels>
+    <labels>
+        <fullName>None</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>None</shortDescription>
+        <value>None</value>
+    </labels>
+    <labels>
+        <fullName>OAT_profile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OAT profile</shortDescription>
+        <value>00eD0000001V4l2IAC</value>
+    </labels>
+    <labels>
+        <fullName>OATsProfiles</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OATsProfiles</shortDescription>
+        <value>00eD0000001V4l2</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Cancellation_Notice_Keywords</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Cancellation Notice Keywords</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_EOFProducst_warning</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity_EOFProducst_warning</shortDescription>
+        <value>There is one or more legacy products linked to this Opportunity that needs to be migrated to an active product.</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Rescind_Notice_Keywords</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Rescind Notice Keywords</shortDescription>
+        <value>Rescind,Revoke,Risind,Riscind,Resind</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Stage_1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity_Stage_1</shortDescription>
+        <value>New</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Stage_4</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity_Stage_4</shortDescription>
+        <value>Proposal</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Stage_5</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity_Stage_5</shortDescription>
+        <value>Verbal</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Stage_6</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity_Stage_6</shortDescription>
+        <value>Closed/Won</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Stage_7</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity_Stage_7</shortDescription>
+        <value>Closed Lost</value>
+    </labels>
+    <labels>
+        <fullName>OpptyLineItemDeleteProfiles</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OpptyLineItemDeleteProfiles</shortDescription>
+        <value>00e20000000gzoS,00e20000000hiTI,00e20000000iHig,00eD0000001Udrq,00e4G0000016Ra0</value>
+    </labels>
+    <labels>
+        <fullName>Order</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order</shortDescription>
+        <value>Order</value>
+    </labels>
+    <labels>
+        <fullName>OrderContractViewAllPermissionSet</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderContractViewAllPermissionSet</shortDescription>
+        <value>0PSQ40000000zOT</value>
+    </labels>
+    <labels>
+        <fullName>Order_Line_Line_Price_Zero_On_Insert</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order Line Line Price Zero On Insert</shortDescription>
+        <value>Order Lines cannot be  created. Please  verify  the data entered.</value>
+    </labels>
+    <labels>
+        <fullName>Org_Domain_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Org Domain URL</shortDescription>
+        <value>https://shl--uat.sandbox.lightning.force.com</value>
+    </labels>
+    <labels>
+        <fullName>Others_Please_specify</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Others,Please specify</shortDescription>
+        <value>Others, Please specify</value>
+    </labels>
+    <labels>
+        <fullName>Please_check_recaptcha</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please check recaptcha</shortDescription>
+        <value>Please check recaptcha.</value>
+    </labels>
+    <labels>
+        <fullName>Please_select_an_option</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please select an option</shortDescription>
+        <value>Please select an option.</value>
+    </labels>
+    <labels>
+        <fullName>Please_select_type_of_enquiry_you_have</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please select type of enquiry you have</shortDescription>
+        <value>Please select type of enquiry you have</value>
+    </labels>
+    <labels>
+        <fullName>PreChatAlert_StartChat</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PreChatAlert_StartChat</shortDescription>
+        <value>Please provide all required info to start the Chat.</value>
+    </labels>
+    <labels>
+        <fullName>PreChatAlert_Validation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PreChatAlert_Validation</shortDescription>
+        <value>Please provide valid First Name, Last Name, E-mail, Country &amp; Preferred Language.</value>
+    </labels>
+    <labels>
+        <fullName>PreChatDisclaimerMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PreChatDisclaimerMsg</shortDescription>
+        <value>CLICK HERE to acknowledge that you have reviewed the Data Protection Notice displayed at the bottom of this page.</value>
+    </labels>
+    <labels>
+        <fullName>PreChatForm_Phone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PreChatForm_Phone</shortDescription>
+        <value>Phone number</value>
+    </labels>
+    <labels>
+        <fullName>PreChatForm_PhoneMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PreChatForm_PhoneMessage</shortDescription>
+        <value>Country Code - Phone Number</value>
+    </labels>
+    <labels>
+        <fullName>Product</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Product</shortDescription>
+        <value>Product</value>
+    </labels>
+    <labels>
+        <fullName>Project_Status_Cancelled</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Project Status Cancelled</shortDescription>
+        <value>Cancelled</value>
+    </labels>
+    <labels>
+        <fullName>Project_Status_On_Hold</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Project Status On Hold</shortDescription>
+        <value>On Hold</value>
+    </labels>
+    <labels>
+        <fullName>ReadOnlyRecordType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReadOnlyRecordType</shortDescription>
+        <value>0124G0000007YZXQA2</value>
+    </labels>
+    <labels>
+        <fullName>Registration_Issue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Registration Issue</shortDescription>
+        <value>Registration Issue</value>
+    </labels>
+    <labels>
+        <fullName>Renewal_Mail_Template</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Renewal Mail Template</shortDescription>
+        <value>Renewal_Price_Uplift_Email_Template</value>
+    </labels>
+    <labels>
+        <fullName>Renewal_Price_Uplift_Email_Chinese_Subject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Renewal Price Uplift Email Chinese Subject</shortDescription>
+        <value>Email: 关于您的账户的重要更新信息</value>
+    </labels>
+    <labels>
+        <fullName>Renewal_Price_Uplift_Email_Subject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Renewal Price Uplift Email Subject</shortDescription>
+        <value>Email: Important Update Regarding Your Account</value>
+    </labels>
+    <labels>
+        <fullName>Renewal_Price_Uplift_Email_for_MY_Subject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Renewal Price Uplift Email for MY Subject</shortDescription>
+        <value>Email: Important Update Regarding Multi-Year Agreement</value>
+    </labels>
+    <labels>
+        <fullName>Renewal_Teams_OrgWideEmailAddressId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Renewal Teams OrgWideEmailAddressId</shortDescription>
+        <value>0D24G000000bmLB</value>
+    </labels>
+    <labels>
+        <fullName>Results_Generation_Issue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Results Generation Issue</shortDescription>
+        <value>Results Generation Issue</value>
+    </labels>
+    <labels>
+        <fullName>SOE_Profile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SOE_Profile</shortDescription>
+        <value>00eD0000001V4l3</value>
+    </labels>
+    <labels>
+        <fullName>Show_Variation_Opp_for_Jo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Show Variation Opp for Jo</shortDescription>
+        <value>0054G00000Ax8vJQAR</value>
+    </labels>
+    <labels>
+        <fullName>Simple_System_Navigation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Simple System Navigation</shortDescription>
+        <value>Simple System Navigation</value>
+    </labels>
+    <labels>
+        <fullName>Skip_System_Administrator</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Skip System Administrator</shortDescription>
+        <value>System Administrator,Bullseye Project (Commercial)</value>
+    </labels>
+    <labels>
+        <fullName>StandardRecordType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StandardRecordType</shortDescription>
+        <value>012D0000000V7oqIAC</value>
+    </labels>
+    <labels>
+        <fullName>Standard_Opportunity</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Standard Opportunity</shortDescription>
+        <value>Standard Opportunity</value>
+    </labels>
+    <labels>
+        <fullName>Support_External_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Support_External_URL</shortDescription>
+        <value>https://support.shl.com</value>
+    </labels>
+    <labels>
+        <fullName>SystemAdminProfiles</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contains all system admin profile ids</shortDescription>
+        <value>00e20000000gzoS,00e20000000hiTI,00e20000000iHig,00eD0000001Udrq,00e20000000oUR3,00e4G0000016Ra0,00e4G0000012yOo</value>
+    </labels>
+    <labels>
+        <fullName>SystemAdmins_Profiles</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SystemAdmins_Profiles</shortDescription>
+        <value>00e20000000gzoS,00e20000000hiTI,00e20000000iHig,00eD0000001Udrq,00e20000000oUR3</value>
+    </labels>
+    <labels>
+        <fullName>System_Admin_Id_18_Digit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>System Admin Id 18 Digit</shortDescription>
+        <value>00e20000000gzoSAAQ</value>
+    </labels>
+    <labels>
+        <fullName>System_Administrator_Profile_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>System Administrator Profile Id</shortDescription>
+        <value>00e20000000gzoS</value>
+    </labels>
+    <labels>
+        <fullName>System_Compatibility</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>System Compatibility</shortDescription>
+        <value>System Compatibility</value>
+    </labels>
+    <labels>
+        <fullName>System_Performance</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>System Performance</shortDescription>
+        <value>System Performance</value>
+    </labels>
+    <labels>
+        <fullName>System_Used_values_for_Candidates</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>System Used values for Candidates</shortDescription>
+        <value>TalentCentral+,MFS,Insights,VADC,Dashboard,SHL ONLINE,NSDC-MIS,TalentCentral,iAssess,OFFLINE,OA</value>
+    </labels>
+    <labels>
+        <fullName>System_Used_values_for_Systems</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>System Used values for Systems</shortDescription>
+        <value>TalentCentral+,MFS,Insights,VADC,Dashboard,TalentCentral</value>
+    </labels>
+    <labels>
+        <fullName>Systems_related</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Systems related</shortDescription>
+        <value>Systems related</value>
+    </labels>
+    <labels>
+        <fullName>TA_Corporate_and_TA_Vocational_LOB_Status</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TA-Corporate and TA-Vocational LOB Status</shortDescription>
+        <value>Pass, Fail, DNA</value>
+    </labels>
+    <labels>
+        <fullName>TC_Activity_is_completed_but_system_is_not_transition</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TC Activity is completed but system is not transition</shortDescription>
+        <value>This TC record cannot be moved to Transition Activity Completed as there are related System records that are not yet transition. Please review the related System records.</value>
+    </labels>
+    <labels>
+        <fullName>Tableau_URL_for_Account_Plan</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Tableau URL for Account Plan</shortDescription>
+        <value>https://businessanalytics.shl.com/views/SingleCustomerView/SingleCustomerView</value>
+    </labels>
+    <labels>
+        <fullName>Talent_Management_LOB_Status</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Talent Management LOB Status</shortDescription>
+        <value>Completed, In Progress, Not Started</value>
+    </labels>
+    <labels>
+        <fullName>Test_Link_broken</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Test Link broken</shortDescription>
+        <value>Test Link broken</value>
+    </labels>
+    <labels>
+        <fullName>Test_Purpose_Enquiry</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Test Purpose Enquiry</shortDescription>
+        <value>Test Purpose Enquiry</value>
+    </labels>
+    <labels>
+        <fullName>Test_Status_Enquiry</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Test Status Enquiry</shortDescription>
+        <value>Test Status Enquiry</value>
+    </labels>
+    <labels>
+        <fullName>ThankYou</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ThankYou</shortDescription>
+        <value>Thank you for your query.
+
+Your request has been registered successfully and you will receive an email shortly with a case number.</value>
+    </labels>
+    <labels>
+        <fullName>Timer_Extension_Required</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Timer Extension Required</shortDescription>
+        <value>Timer Extension Required</value>
+    </labels>
+    <labels>
+        <fullName>Training</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Training</shortDescription>
+        <value>Training</value>
+    </labels>
+    <labels>
+        <fullName>UserAndProfileForAccountTransferButton</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserAndProfileForAccountTransferButton</shortDescription>
+        <value>System Administrator
+0054G00000BpEVYQA3</value>
+    </labels>
+    <labels>
+        <fullName>WRFClientReportViewURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WRFClientReportViewURL</shortDescription>
+        <value>https://shl--uat.sandbox.my.site.com/WRFClient/s/clientreportview?c__selectedFields=</value>
+    </labels>
+    <labels>
+        <fullName>WRFLinkURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WRF Link Base URL</shortDescription>
+        <value>https://shl--uat.sandbox.my.site.com/WRFClient/s/?RN=</value>
+    </labels>
+    <labels>
+        <fullName>WRF_Footer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WRF Footer</shortDescription>
+        <value>© 2025 SHL and its affiliates. All rights reserved.</value>
+    </labels>
+    <labels>
+        <fullName>Workpacket_Trigger_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Workpacket_Trigger_Label</shortDescription>
+        <value>Actual Delivery can only be edited by someone in the Workpacket Ops Users group</value>
+    </labels>
+    <labels>
+        <fullName>Year_Wise_Trend_Report_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>This label is used to store year wise trend report Id for account plan</shortDescription>
+        <value>00O4G000008AviTUAS</value>
+    </labels>
+    <labels>
+        <fullName>Your_computer_settings_which_will_include_the_operating_system_browser_type_f</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Your computer settings, which will include the operating system, browser type, f</shortDescription>
+        <value>Your computer settings, which will include the operating system, browser type, flash plugin type, ActiveX,screen resolution width and pop-ups, will automatically be sent to us. This information helps the support team to resolve your query more quickly.</value>
+    </labels>
+    <labels>
+        <fullName>kb_ask_Knowledge_Base</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>kb_Ask_Knowledge_Base</shortDescription>
+        <value>Ask Question</value>
+    </labels>
+</CustomLabels>

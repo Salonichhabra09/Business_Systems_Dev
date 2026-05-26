@@ -1,0 +1,14 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item class="slds-p-top_xx-small">
+            <a href={linkUrl} target="_blank">{label}</a>
+        </lightning-layout-item>
+        <template if:false={isApproved}>
+        <lightning-layout-item class="slds-m-right_x-small">
+            <div class="slds-m-bottom_x-small">
+                <lightning-helptext content="Strategy not approved yet" icon-variant="error" class="slds-m-left_x-small slds-m-bottom_small"></lightning-helptext>
+            </div>
+        </lightning-layout-item>
+    </template>
+    </lightning-layout>
+</template>

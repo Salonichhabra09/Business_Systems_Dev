@@ -1,0 +1,118 @@
+<template>
+        <!-- Banner Section -->
+       <!-- <div class="banner">
+            <div class="title">PROJECT DASHBOARD</div>
+            <div class="logo">
+                <img src={shlLogo} alt="SHL Logo" />
+            </div>
+        </div>-->
+
+        <!-- Overview Section -->
+
+       
+        <div class="overview">
+            <div class="overview-header">Overview</div>
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading..." size="large"></lightning-spinner>
+            </template>
+            <div class="overview-content" if:true={isGCSC}>
+                <!-- Only Show These Two Cards in Center if isGCSC is true -->
+                <div class="invisibleCard">
+
+                </div>
+                <div class="card">
+                    <div class="card-header">Project Contacts</div>
+                    <template if:true={projectContacts}>
+                        <ul class="contact-list">
+                            <template for:each={projectContacts} for:item="contact">
+                                <li key={contact.email} class="contact-item">
+                                    <div class="avatar">{contact.initials}</div>
+                                    <div class="contact-info" onmouseover={showEmail} onmouseout={hideEmail} data-email={contact.email}>
+                                        <span class="contact-name">{contact.name}</span><br>
+                                        <span class="contact-role">{contact.role}</span>
+                                    </div>
+                                    <div class="contact-actions">
+                                        <lightning-button-icon icon-name="utility:copy" alternative-text="Copy Email" 
+                                            data-email={contact.email} onclick={copyEmail} class="copy-icon">
+                                        </lightning-button-icon>
+                                    </div>
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+                </div>
+    
+                <div class="card">
+                    <div class="card-header">Links to Resources</div>
+                    <div class="resource">
+                        <lightning-icon icon-name="utility:form" size="medium"></lightning-icon>
+                        <a href={newRequestForm} target="_blank">New Request Form</a>
+                    </div>
+            
+                    <div class="resource">
+                        <lightning-icon icon-name="utility:link" size="medium"></lightning-icon>
+                        <a href={shlSupportPage} target="_blank">SHL Support Page</a>
+                    </div>
+                </div>
+                <div class="invisibleCard">
+                    
+                </div>
+            </div>
+    
+            <!-- Show All Four Cards When isGCSC is false -->
+            <div class="overview-content" if:false={isGCSC}>
+                <div class="card" if:true={contractNumber}>
+
+                    <div class="card-header">Subscription Information</div>
+                    <div class="card-body">
+                        <div class="contract-id">{contractNumber}</div>
+                        <div class="label">Contract</div>
+                        <div class="date">{startDate}</div>
+                        <div class="label">Start Date</div>
+                        <div class="date">{endDate}</div>
+                        <div class="label">End Date</div>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div class="card-header">Administered</div>
+                    <canvas class="donutChart" lwc:dom="manual"></canvas>
+                </div>
+    
+                <div class="card">
+                    <div class="card-header">Project Contacts</div>
+                    <template if:true={projectContacts}>
+                        <ul class="contact-list">
+                            <template for:each={projectContacts} for:item="contact">
+                                <li key={contact.email} class="contact-item">
+                                    <div class="avatar">{contact.initials}</div>
+                                    <div class="contact-info" onmouseover={showEmail} onmouseout={hideEmail} data-email={contact.email}>
+                                        <span class="contact-name">{contact.name}</span><br>
+                                        <span class="contact-role">{contact.role}</span>
+                                    </div>
+                                    <div class="contact-actions">
+                                        <lightning-button-icon icon-name="utility:copy" alternative-text="Copy Email" 
+                                            data-email={contact.email} onclick={copyEmail} class="copy-icon">
+                                        </lightning-button-icon>
+                                    </div>
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+                </div>
+    
+                <div class="card">
+                    <div class="card-header">Links to Resources</div>
+                    <div class="resource">
+                        <lightning-icon icon-name="utility:form" size="medium"></lightning-icon>
+                        <a href={newRequestForm} target="_blank">New Request Form</a>
+                    </div>
+            
+                    <div class="resource">
+                        <lightning-icon icon-name="utility:link" size="medium"></lightning-icon>
+                        <a href={shlSupportPage} target="_blank">SHL Support Page</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</template>

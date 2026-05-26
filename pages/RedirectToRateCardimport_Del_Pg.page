@@ -1,0 +1,8 @@
+<!--
+Created By: Prabhat Arora, for SSE-7077, 
+Purpose: Overiding the Delete Functionality on OLI & Redirecting to RateCardImport Page
+-->
+
+<apex:page standardController="OpportunityLineItem" extensions="redirect_Ext" 
+action="{!if(isIgniteOpp==TRUE,'/apex/ImportRateCard_VF?oppId='+OpptyId,URLFOR($Action.OpportunityLineItem.Delete,OpportunityLineItem.Id,[saveURL=null,retURL=OpptyId],true))}">
+</apex:page>

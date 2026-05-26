@@ -1,0 +1,36 @@
+<aura:component extends="c:GenericBase" controller='NewOpptyServer' implements="force:hasSObjectName,force:hasRecordId,force:appHostable,force:lightningQuickActionWithoutHeader,lightning:actionOverride,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="recordId" type="sObject" />
+    <aura:attribute name="acccon" type="Object"/>
+    <aura:attribute name="simpleContact" type="Object"/> 
+    <aura:attribute name="sobjecttype" type="String" default="{!v.sObjectName}"/>
+    <aura:attribute name="listOfRecordType" type="String[]" />
+    <aura:attribute name="locn" type="String" />
+    
+    <aura:attribute name="address" type="String"  />
+    <aura:attribute name="Conacc" type="String"  />
+    <!--This is the **{!v.sobjecttype} <br/>
+    This is the record ID** {!v.recordId}
+    Value is **{!v.simpleContact.CurrencyIsoCode} -->
+    <aura:handler name="init" value="{!this}" action="{!c.fetchrec}"/>
+    <div class="source-center-slds" >
+        
+        <div class="slds-p-around--x-large">
+            <lightning:select aura:id="levels"   label="{!'Select ' + 'Opportunity' +  ' Record Type: '}" >
+                <option  class="slds-select" text="Select" label="---Record Type---" />
+                <aura:iteration items="{!v.listOfRecordType}" var="item">                    
+                    <option id="op" class="slds-select" text="{!item.Id}" label="{!item.Name}" value="{!item.Id}"/>      
+                </aura:iteration> 
+            </lightning:select>  
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            
+            <div style="text-align: right">
+                <lightning:button class="slds-button slds-button--neutral" onclick="{!c.closeModal}">Cancel</lightning:button>
+                <lightning:button aura:id="disablebuttonid" class="slds-button slds-button--brand" onclick="{!c.navigate}">Next</lightning:button>
+            </div>
+        </div>      
+        
+        
+    </div>
+</aura:component>

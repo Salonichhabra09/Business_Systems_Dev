@@ -1,0 +1,51 @@
+<aura:documentation>
+    
+    <aura:example name="ExampleName" ref="c:Opp_CreateVariation" label="Create Variation">
+    </aura:example> 
+    
+    <aura:description>
+        <p><strong>Overview:</strong></p>
+<ul>
+<li style="text-indent: -18.0pt;">A new component, &lsquo;Opp_CreateVariation&rsquo; has been created to accommodate the necessary controls for the user to create a variation opportunity right from the original opportunity record detail page.</li>
+<li style="text-indent: -18.0pt;">This component resides on top of details component of an opportunity record and is only visible when:
+<ul>
+<li style="margin-left: 72.0pt; text-indent: -18.0pt;">The opportunity record has a &lsquo;Stage&rsquo; of &lsquo;Closed Won&rsquo;</li>
+<li style="margin-left: 72.0pt; text-indent: -18.0pt;">AND there is an order record associated with the opportunity record</li>
+<li style="margin-left: 72.0pt; text-indent: -18.0pt;">AND the associated order record has a &lsquo;Status&rsquo; of &lsquo;Completed&rsquo;</li>
+</ul>
+</li>
+<li style="text-indent: -18.0pt;">This component will always appear with following details:
+<ul>
+<li style="margin-left: 72.0pt; text-indent: -18.0pt;">Heading: This is an Original 'Closed/Won' Opportunity with completed Order, you may vary it, if required.</li>
+<li style="margin-left: 72.0pt; text-indent: -18.0pt;">Body Text: Please click the 'Create Variation' button to create the Variation Opportunity.</li>
+<li style="margin-left: 72.0pt; text-indent: -18.0pt;">Button, labelled as &ndash; Create Variation</li>
+</ul>
+</li>
+<li style="text-indent: -18.0pt;">Functionality: The behaviour of component is opportunity record-type dependent and functions as below:
+<ul>
+<li style="margin-left: 72.0pt; text-indent: -18.0pt;">GCSC Opportunity: This component will not be available for this opportunity record type.</li>
+<li style="margin-left: 72.0pt; text-indent: -18.0pt;">Standard Opportunity:
+<ul>
+<li style="margin-left: 108.0pt; text-indent: -18.0pt;">This component will be available on standard opportunity record page when the aforementioned criteria is met.</li>
+<li style="margin-left: 108.0pt; text-indent: -18.0pt;">On clicking the &lsquo;Create Variation&rsquo; button, user will be navigated on to new opportunity creation form with most of its field values pre-populated from original opportunity, including the record type and the &lsquo;Variation Opportunity&rsquo; picklist value will be set as &lsquo;Yes&rsquo;. Also, the &lsquo;Original Opportunity&rsquo; and &lsquo;Original Order&rsquo; field values will be populated from the original opportunity.</li>
+</ul>
+</li>
+<li style="margin-left: 72.0pt; text-indent: -18.0pt;">Ignite Opportunity:
+<ul>
+<li style="margin-left: 108.0pt; text-indent: -18.0pt;">This component will be available on Ignite opportunity record page when the aforementioned criteria is met.</li>
+<li style="margin-left: 108.0pt; text-indent: -18.0pt;">On clicking &lsquo;Create Variation&rsquo; button, user will be presented with two choices (radio buttons) to either select the record type as &lsquo;Ignite&rsquo; or &lsquo;Standard&rsquo;.</li>
+<li style="margin-left: 18.0pt; text-indent: -18.0pt; border: none; padding: 0cm;">Upon selecting a record type, user will be navigated on to new opportunity creation form with most of its field values pre-populated from original opportunity and the &lsquo;Variation Opportunity&rsquo; picklist value will be set as &lsquo;Yes&rsquo;. Also, the &lsquo;Original Opportunity&rsquo; and &lsquo;Original Order&rsquo; field values will be populated from the original opportunity.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>For the Developers:</strong></p>
+<ul>
+<li style="margin-left: 108.0pt; text-indent: -18.0pt;">On Clicking "Create Variation" button a controller action "ActionOnOptyRec" being called, which in result calls a helper's method "createOppRecord" wherein the functionality of creating a variation Opty is defined.</li>
+<li style="margin-left: 108.0pt; text-indent: -18.0pt;">The component's helper method calls a "GenericBase"-helper method(from base-parent component) which is collecting the server's response and passing that back to the helper of component.</li>
+<li style="margin-left: 108.0pt; text-indent: -18.0pt;">If the record type of the opportunity(original) in context is Ignite, this component will call another component"RecTypeSelector_Lex" which leverages the functionality of selecting recordtype for creating a variation opportunity.</li>
+</ul>
+    </aura:description>
+</aura:documentation>

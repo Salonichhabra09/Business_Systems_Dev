@@ -1,0 +1,145 @@
+<template>
+
+    <template lwc:if={showPlaceholderList}>
+        <div style={modalresize}>
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+                class="slds-modal slds-fade-in-open slds-modal_small">
+                <div class="slds-modal__container slds-is-relative">
+
+                    <div class="slds-is-relative">
+                        <template lwc:if={showSpinner}>
+                            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                        </template>
+                        <div class="slds-modal__header">
+                            <!-- Close button -->
+                            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                title="Close" onclick={handleCloseAddPlaceholderPopup}>
+                                <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                                    size="small">
+                                </lightning-icon>
+                                <span class="slds-assistive-text">Cancel and close</span>
+                            </button>
+
+                            <!-- Modal title -->
+                            <h1 id="modal-heading-04" class="slds-modal__title slds-hyphenate">Replace Contact</h1>
+                        </div>
+                        <div class="slds-modal__content slds-p-around_small" id="modal-content-id-4">
+                            <lightning-card title="Please select a placeholder for the contact"
+                                icon-name="action:change_owner">
+                                <div
+                                    class="slds-border_left slds-border_right slds-border_top slds-border_bottom max-height">
+                                    <template lwc:if={showSpinner}>
+                                        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                                    </template>
+                                    <lightning-datatable key-field="Id" data={placeholderNodes}
+                                        onrowselection={handleRowSelection} columns={columns} max-row-selection="1" lwc:if={isExistingPlaceholderAvailable}>
+                                    </lightning-datatable>
+                                    <div lwc:else>
+                                        No existing placeholders found !
+                                    </div>
+                                </div>
+                            </lightning-card>
+                        </div>
+                        <div class="slds-modal__footer">
+                            <!-- Cancel and Save buttons -->
+                            <button class="slds-button slds-button_neutral" aria-label="Cancel and close"
+                                onclick={handleCloseAddPlaceholderPopup}>Cancel</button>
+                            <!-- Save button -->
+                            <button class="slds-button slds-button_brand" disabled={isReplaceDisabled}
+                                onclick={handleReplaceExistingPlaceholder}>Replace</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Modal backdrop -->
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </div>
+    </template>
+
+    <template lwc:else>
+        <div style={modalresize}>
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+                class="slds-modal slds-fade-in-open slds-modal_small">
+                <div class="slds-modal__container">
+                    <div class="slds-is-relative">
+                        <!-- Spinner -->
+                        <template lwc:if={isShowSpinner}>
+                            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                        </template>
+
+                        <!-- Modal Header -->
+                        <div class="slds-modal__header">
+                            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                title="Close" onclick={handleCloseAddPlaceholderPopup}>
+                                <lightning-icon icon-name="utility:close" alternative-text="Close" variant="inverse"
+                                    size="small"></lightning-icon>
+                                <span class="slds-assistive-text">Cancel and close</span>
+                            </button>
+                            <h1 id="modal-heading-03" class="slds-modal__title slds-hyphenate">
+                                Create Placeholders
+                            </h1>
+                        </div>
+
+                        <!-- Modal Content -->
+                        <div class="slds-modal__content slds-p-around_small slds-is-relative" id="modal-content-id-3">
+                            <!--<template if:true={isShowSpinner}>
+                                <lightning-spinner alternative-text=" Saving..." size="small"></lightning-spinner>
+                            </template>-->
+                            <lightning-card>
+                                <lightning-button slot="actions" label="Add Row" onclick={addRow}
+                                    lwc:if={isNotReplace}></lightning-button>
+
+                                <div class="slds-grid slds-wrap slds-m-bottom_medium">
+                                    <div class="slds-col slds-size_1-of-12 slds-m-right_xx-small">
+                                        <div class="slds-truncate">#</div>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-4 slds-m-right_x-small">
+                                        <div class="slds-truncate">
+                                            Placeholder Name/Job Function
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="scrollable-card-content">
+                                    <!-- Placeholder List -->
+                                    <template for:each={placeholderList} for:item="placeholder" for:index="index">
+                                        <div class="slds-grid slds-wrap slds-m-bottom_small slds-m-left_small"
+                                            key={placeholder.index}>
+                                            <div class="slds-col slds-size_1-of-12 slds-p-right_large">
+                                                <p>{placeholder.index}</p>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-2 slds-p-right_large">
+                                                <lightning-input type="text" variant="label-hidden"
+                                                    onchange={handlePlaceholderName}
+                                                    accesskey={placeholder.index}></lightning-input>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-3 slds-p-right_large">
+                                                <lightning-button-icon icon-name="utility:delete"
+                                                    accesskey={placeholder.index} variant="bare" onclick={removeRow}
+                                                    size="large" lwc:if={isNotReplace}></lightning-button-icon>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </lightning-card>
+                        </div>
+
+                        <!-- Modal Footer -->
+                        <div class="slds-modal__footer">
+                            <button class="slds-button slds-button_neutral" aria-label="Cancel and close"
+                                onclick={handleBackToSelectionPopup}>
+                                Back
+                            </button>
+                            <button class="slds-button slds-button_brand" disabled={disableSaveChooseExisting}
+                                onclick={handleCreatePlaceholder}>
+                                Create
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Modal Backdrop -->
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </div>
+    </template>
+</template>

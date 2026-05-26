@@ -1,0 +1,61 @@
+<template>
+    <lightning-card title="Task Search Box">
+        <lightning-spinner if:true={showSpinner} alternative-text = 'Please wait...' variant="brand">
+        </lightning-spinner>
+      
+<lightning-layout class="slds-m-around_small slds-wrap" multiple-rows="true">
+    <lightning-layout-item size="4">
+        <lightning-dual-listbox name="Groups"
+        label="Select Assigned To"
+        source-label="Available"
+        selected-label="Selected"
+        field-level-help="Select your preferred groups"
+        options={lstOptions}
+        onchange={handleChange}></lightning-dual-listbox>
+        <br/>
+        <center><b>OR</b></center>
+        <label for="fieldid">Owner</label>
+        <br/>
+<lightning-record-edit-form object-api-name="MS_Task__c" id="TaskForm" >
+            <lightning-input-field field-name="User_Lookup_System_Used_Only__c" variant="label-hidden"  onchange={handleOwnerLookup} > </lightning-input-field>
+        </lightning-record-edit-form>
+      </lightning-layout-item>
+    <lightning-layout-item size="4">
+        <lightning-dual-listbox name="TaskStatus"
+        label="Select Task Status"
+        source-label="Available"
+        selected-label="Selected"
+        field-level-help="Select your preferred Task Status"
+        options={lstTaskStatusOptions}
+        onchange={handleTaskStatusChange}></lightning-dual-listbox>
+        <br/>
+     </lightning-layout-item>
+    <lightning-layout-item size="4">
+        <lightning-card >
+            <lightning-input type="date" class="StartDate" name="StartDate" label="Start Date" value={startDate} onchange={handleDateChange} style="padding-top:7px"></lightning-input>
+            <br/>
+            <lightning-input type="date" class="EndDate" name="EndDate" label="End Date" value={endDate} onchange={handleDateChange}></lightning-input>
+        <br/>
+        <lightning-input type="text" label="Job Number(s)" value={JobNumbers} onchange={handleJobNumbers} field-level-help="To enter multiple job numbers separate them with a comma"></lightning-input>  
+        <br/>  
+        </lightning-card>
+        <lightning-button variant="brand" label="Search Tasks"  icon-name="utility:search"  
+        onclick={SearchTasks} ></lightning-button>
+   </lightning-layout-item>
+</lightning-layout> 
+<template if:true={TableVisibility}>
+        <div style="height: 270px;">  
+            <lightning-datatable
+                key-field="id"
+                data={taskData}
+                columns={columns}
+                hide-checkbox-column=true
+                wrap-text-max-lines="5">
+        </lightning-datatable>
+    </div>
+         <lightning-button variant="brand" label="Export Task data" icon-name="utility:download" title="Export Task Data" onclick={exportTaskData}></lightning-button>
+        </template>
+       
+        
+    </lightning-card>
+</template>

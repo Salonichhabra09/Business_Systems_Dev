@@ -1,0 +1,92 @@
+<script src="/soap/ajax/9.0/connection.js"></script> 
+<script> 
+/**************************************************************************************
+//
+// System:   SHL, SFDC
+// Copyright (c) 2008 SHL Group Plc. All rights reserved.
+//
+// Description:	This S-Control updates the course values of the course booking while saving the course booking.
+//
+// $Workfile: $
+// $Date: $ 
+// $Revision: $
+//
+// Version History:
+// Ver   Date            Author          Comments
+// $Log: $
+*****************************************************************************/
+try 
+{ 
+   //Fetch the details of the CourseBooking.
+	var queryResult = sforce.connection.query("SELECT Id, Course_Start_Date__c, Booking_Status__c, Course_Number__r.Course_Free_Spaces__c, Course_Number__r.Course_Waiting_Total__c  FROM Course_Booking__c WHERE Id ='{!$Request.newid}'" ); 
+
+	//If query returns any details. 
+	if(queryResult.size>0)
+	{
+	
+	   var courseBookingStatus = queryResult.getArray("records")[0].Booking_Status__c;
+		
+		var courseWaitingBookings = queryResult.getArray("records")[0].Course_Number__r.Course_Waiting_Total__c;
+		
+		var courseFreeSpaces = queryResult.getArray("records")[0].Course_Number__r.Course_Free_Spaces__c;
+		
+		//If the BookingStatus of the CourseBooking is 'Confirmed' or 'Provisional'. 
+		if(courseBookingStatus == "Confirmed" || courseBookingStatus == "Provisional")
+		{
+			courseFreeSpaces++;
+			//If the Course has no free Spaces.
+			if (courseFreeSpaces<= 0)
+			{ 
+				//Show a message saying that the CourseBooking will be saved with a BookingStatus of 'Waiting'.
+				alert("This course is currently full so this booking will be saved with a status of Waiting."); 
+		
+		      //Change the BookingStatus of the CourseBooking to 'Waiting'.  
+				var courseBooking = new sforce.SObject("Course_Booking__c"); 
+				courseBooking.Id = '{!$Request.newid}'; 
+				courseBooking.Booking_Status__c = "Waiting";
+		      var result = sforce.connection.update([courseBooking]); 
+		     	if(result[0].success == "false") 
+					throw result;
+			}
+		}
+		//If the BookingStatus of the CourseBooking is 'Cancelled'. 
+		else if(courseBookingStatus == "Cancelled") 
+		{ 
+			//If the Course has any CourseBookings with the BookingStatus of 'Waiting'. 
+			if (courseWaitingBookings > 0) 
+				alert("Please review the course as there are bookings with Waiting status."); 
+			
+			//Convert the Course StartDate from SFDC format to the JavaScript format.
+			var courseStartDateInSFDCFormat = queryResult.getArray("records")[0].Course_Start_Date__c;
+			var courseStartDateArray = courseStartDateInSFDCFormat.split('-');
+			var courseStartDate = new Date(courseStartDateArray[0], courseStartDateArray[1]-1, courseStartDateArray[2]);
+		
+		  	//Get the current day's Date.
+		  	var today=new Date(); 
+			
+			//Compare the StartDate of the Course with today's date to check if the Course has not yet started.
+			if(courseStartDate.getTime()>today.getTime()) 
+			{ 
+				//Calculate the no. of days left for the start of the Course.
+				var noOfDaysLeft = Math.round(Math.abs(courseStartDate.getTime()- today.getTime())/(1000 * 60 * 60 * 24)); 
+				
+				//If the no. of days left are less than 21 then show a check cancellation fees message.
+				if(noOfDaysLeft<21) 
+					alert("The course start date is within 21 days, please ensure you check cancellation fees."); 
+			} 
+			//If the Course has already started. 
+			else 
+				alert("The course has already started, please ensure you check cancellation fees."); 
+		}
+	} 
+} 
+catch(e) 
+{ 
+	alert(e.message); 
+} 
+finally 
+{ 
+	//Redirect to detail Page
+	window.parent.location.href ='{!URLFOR($Action.Course_Booking__c.View, $Request.newid, null , true)}'; 
+} 
+</script>

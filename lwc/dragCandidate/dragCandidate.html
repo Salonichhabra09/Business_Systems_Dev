@@ -1,0 +1,134 @@
+<template>
+    <div style="background-color:#ccd1d2;">
+        <template if:true={showSpinner}>
+            <div style="z-index: 10000 !important;">
+                <lightning-spinner alternative-text="Hello" size="medium" class="spins"
+                    style="z-index: 10000 !important;">
+                </lightning-spinner>
+            </div>
+        </template>
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="4" padding="around-small">
+                <lightning-card variant="Narrow">
+                    <template lwc:if={showListofFields}>
+                        <lightning-layout>
+                            <lightning-layout-item>
+                                <div class="slds-p-around_x-small">
+                                    <h1> <b>Available Fields</b></h1>
+                                    <lightning-input type="search" onchange={handleSearchInput}
+                                        placeholder="Search Field" style="width:250px">
+                                    </lightning-input>
+                                </div>
+                            </lightning-layout-item>
+                        </lightning-layout>
+
+                        <lightning-layout multiple-rows class="limitVert">
+                            <template for:each={candidateAvailableFields} for:item="currentItem" for:index="index">
+                                <lightning-layout-item size="6" padding="around-small" key={currentItem.Id}
+                                    data-name={currentItem.Label__c} class="">
+                                    <!--<template lwc:if={showListofFields}>-->
+                                    <div data-item={currentItem.Label__c} data-type={currentItem.Data_Type__c}
+                                        data-values={currentItem.Values__c} data-name={currentItem.Label__c}
+                                        data-api={currentItem.API_Name__c} draggable="true"
+                                        ondragstart={handleDragCandidate} onmouseover={changeCursor}>
+                                        <b>{currentItem.Label__c}</b>
+                                    </div>
+                                    <!--</template>-->
+                                </lightning-layout-item>
+                            </template>
+                        </lightning-layout>
+                        <hr class="solid">
+                    </template>
+
+                    <lightning-layout>
+                        <lightning-layout-item>
+                            <div class="slds-p-bottom_x-small slds-p-left_x-small">
+                                <h1><b>New Fields</b></h1>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="6" padding="around-small">
+                            <div class="slds-p-bottom_medium" draggable="true" data-item="text"
+                                ondragstart={handleDragText} onmouseover={changeCursor}>
+                                <lightning-icon icon-name="utility:text" size="small"> </lightning-icon>
+                                <b> Text</b>
+                            </div>
+                            <div class="slds-p-bottom_medium" draggable="true" data-item="Number"
+                                ondragstart={handleDragText} onmouseover={changeCursor}>
+                                <lightning-icon icon-name="utility:number_input" size="small"> </lightning-icon>
+                                <b> Number </b>
+                            </div>
+                            <div class="slds-p-bottom_medium" draggable="true" data-item="dropdown"
+                                ondragstart={handleDragText} onmouseover={changeCursor}>
+                                <lightning-icon icon-name="utility:picklist" size="small"> </lightning-icon>
+                                <b> DropDown </b>
+                            </div>
+                                                       <!-- <div class="slds-p-bottom_medium" draggable="true" data-item="radiogroup"
+                                ondragstart={handleDragText} onmouseover={changeCursor}>
+                                <lightning-icon icon-name="utility:date_time" size="small">
+                                </lightning-icon>
+                                <b> Radiogroup </b>
+                            </div> -->
+                        </lightning-layout-item>
+                        <lightning-layout-item size="6" padding="around-small">
+                            <div class="slds-p-bottom_medium" draggable="true" data-item="email"
+                                ondragstart={handleDragText} onmouseover={changeCursor}>
+                                <lightning-icon icon-name="utility:email" size="small"></lightning-icon>
+                                <b> Email</b>
+                            </div>
+                            <div class="slds-p-bottom_medium" draggable="true" data-item="date"
+                                ondragstart={handleDragText} onmouseover={changeCursor}>
+                                <lightning-icon icon-name="utility:event" size="small"> </lightning-icon>
+                                <b> Date </b>
+                            </div>
+                            <div class="slds-p-bottom_medium" draggable="true" data-item="checkbox"
+                                ondragstart={handleDragText} onmouseover={changeCursor}>
+                                <lightning-icon icon-name="utility:check" size="small"> </lightning-icon>
+                                <b> Checkbox </b>
+                            </div>
+
+                            <!--<div class="slds-p-bottom_medium" draggable="true" data-item="time"
+                                ondragstart={handleDragText} onmouseover={changeCursor}>
+                                <lightning-icon icon-name="utility:clock" size="small"> </lightning-icon>
+                                <b> Time </b>
+                            </div>
+                            <div class="slds-p-bottom_medium" draggable="true" data-item="checkboxgroup"
+                                ondragstart={handleDragText} onmouseover={changeCursor}>
+                                <lightning-icon icon-name="utility:link" size="small"> </lightning-icon>
+                                <b> Checkbox Group</b>
+                            </div>
+                            <div class="slds-p-bottom_medium" draggable="true" data-item="Textarea"
+                                ondragstart={handleDragText} onmouseover={changeCursor}>
+                                <lightning-icon icon-name="utility:textarea" size="small">
+                                </lightning-icon>
+                                <b> Textarea </b>
+                            </div>-->
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-card>
+            </lightning-layout-item>
+            <lightning-layout-item size="8" padding="around-small">
+                <lightning-layout>
+                    <lightning-layout-item size="8">
+                        <c-drop-Candidate-Fields lwc:if={childVisible} onsubmit={getAllValue}
+                            ondelete={getDeletetedValue} ondropevent={getDropItem} existingvalues={ExistingFields}
+                            index-val={indexToStart} candidate-existing-fields={candidateExistingFields}
+                            candidate-available-fields={candidateAvailableFields} last-system-used={lastSystemUsed}
+                            system-used={systemUsed}
+                            candidate-updated-values={candidateUpdatedValues}></c-drop-Candidate-Fields>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="4" style="padding-left: 22px">
+                        <lightning-card title="Candidate Upload Instruction">
+                            <lightning-textarea class="custom-textarea slds-p-around-x_small" name="CandidateInst"
+                                label="" variant="label-hidden"
+                                placeholder="Please add any additional candidate instruction bullet points here. Press Enter to add line breaks for each new bullet point."
+                                onchange={handleCandidateInstruction} value={candidateInstruction}></lightning-textarea>
+                        </lightning-card>
+                    </lightning-layout-item>
+                </lightning-layout>
+
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>

@@ -1,0 +1,9 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <lightning:card>
+            <ui:message  severity="error" >
+            <strong>CAUTION!</strong> This client has complained about invoicing accuracy.Please take extra care in providing accurate and comprehensive information.
+            
+        </ui:message> 
+        
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,1071 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object represents a self rating or a respondent rating for a Bureau Project Job.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>This field is meant for setting the Rating as Active and Inactive.</description>
+        <inlineHelpText>Check this box to activate this Rating</inlineHelpText>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Bureau_Job__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(Participant__r.Bureau_Job__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Managed Services_Job</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Client_Name_for_Comms__c</fullName>
+        <description>Client Name to be pulled by Pendula for Candidate communications</description>
+        <externalId>false</externalId>
+        <formula>Respondent__r.Bureau_Job__r.Client_Name_Comms__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Client Name for Comms</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <label>Comments</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Convayr_Status__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is created to store temporary status of the update status from Convayr process.
+This field only gets true when a rating record is getting updated by the Convayr process.</description>
+        <label>Convayr Status</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Deadline__c</fullName>
+        <label>Deadline</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EmailType__c</fullName>
+        <defaultValue>&quot;Invite&quot;</defaultValue>
+        <description>Field to set Email type for Candidate/Participant/Rater comms.</description>
+        <label>EmailType</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Invite</fullName>
+                    <default>true</default>
+                    <label>Invite</label>
+                </value>
+                <value>
+                    <fullName>Invite with Attachment</fullName>
+                    <default>false</default>
+                    <label>Invite with Attachment</label>
+                </value>
+                <value>
+                    <fullName>Reminder</fullName>
+                    <default>false</default>
+                    <label>Reminder</label>
+                </value>
+                <value>
+                    <fullName>Reminder with Attachment</fullName>
+                    <default>false</default>
+                    <label>Reminder with Attachment</label>
+                </value>
+                <value>
+                    <fullName>Report</fullName>
+                    <default>false</default>
+                    <label>Report</label>
+                </value>
+                <value>
+                    <fullName>Notification</fullName>
+                    <default>false</default>
+                    <label>Notification</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Email_File_Name__c</fullName>
+        <description>To get actual template name</description>
+        <externalId>false</externalId>
+        <label>Email File Name</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ext_Template_Folder__c</fullName>
+        <description>To get External Template Parent Folder for Pendula Comms</description>
+        <externalId>false</externalId>
+        <formula>Respondent__r.Bureau_Job__r.Ext_Template_Folder__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ext Template Folder</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>File_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>File Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>First_Name__c</fullName>
+        <description>First Name to be used for Pendula comms</description>
+        <externalId>false</externalId>
+        <formula>Respondent__r.First_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>First Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Insights_Status__c</fullName>
+        <label>Insights Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>false</default>
+                    <label>Not Started</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Recalled</fullName>
+                    <default>false</default>
+                    <label>Recalled</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Instruments_Completed__c</fullName>
+        <description>This field shows the number of Instruments that have been completed</description>
+        <inlineHelpText>Number of Instruments that have been completed</inlineHelpText>
+        <label>Instruments Completed</label>
+        <summaryFilterItems>
+            <field>Bureau_Rating_Progress__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Bureau_Rating_Progress__c.Bureau_Rating__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Instruments_In_Progress__c</fullName>
+        <description>This field shows the number of Instruments that are presently in progress</description>
+        <inlineHelpText>Number of Instruments that are presently in progress</inlineHelpText>
+        <label>Instruments In Progress</label>
+        <summaryFilterItems>
+            <field>Bureau_Rating_Progress__c.Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Bureau_Rating_Progress__c.Bureau_Rating__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Instruments_Not_Started__c</fullName>
+        <description>This field shows the number of instruments that have not been started for this rating.</description>
+        <inlineHelpText>Number of Instruments that have not been started.</inlineHelpText>
+        <label>Instruments Not Started</label>
+        <summaryFilterItems>
+            <field>Bureau_Rating_Progress__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Not Started</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Bureau_Rating_Progress__c.Bureau_Rating__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Invite_Timestamp__c</fullName>
+        <description>Field to capture the date of last invite sent</description>
+        <label>Invite Email Timestamp</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Respondent__r.Last_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Last Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MFS_Report_Sent__c</fullName>
+        <inlineHelpText>To capture the status of MFS platform report sent to customer.</inlineHelpText>
+        <label>MFS Report Sent</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Sent</fullName>
+                    <default>false</default>
+                    <label>Not Sent</label>
+                </value>
+                <value>
+                    <fullName>Sent</fullName>
+                    <default>false</default>
+                    <label>Sent</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>MFS_Status__c</fullName>
+        <label>MFS Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>false</default>
+                    <label>Not Started</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Ready to Submit</fullName>
+                    <default>false</default>
+                    <label>Ready to Submit</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Nomination_Status__c</fullName>
+        <label>Nomination Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>false</default>
+                    <label>Not Started</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Ready to Submit</fullName>
+                    <default>false</default>
+                    <label>Ready to Submit</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <label>Notes</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Overall_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(TEXT(MFS_Status__c) = null &amp;&amp; TEXT(TC_Status__c)= null,null,
+if(TEXT(MFS_Status__c)!= null &amp;&amp; TEXT(TC_Status__c)= null,TEXT(MFS_Status__c),
+If(TEXT(MFS_Status__c)= null &amp;&amp; TEXT(TC_Status__c)!= null,TEXT(TC_Status__c),
+if(TEXT(MFS_Status__c)= &apos;Not Started&apos; &amp;&amp; TEXT(TC_Status__c)= &apos;Not Started&apos;,&apos;Not Started&apos;,
+if(TEXT(MFS_Status__c)= &apos;Not Started&apos; &amp;&amp; TEXT(TC_Status__c)= &apos;In Progress&apos;,&apos;In Progress&apos;,
+if(TEXT(MFS_Status__c)= &apos;Not Started&apos; &amp;&amp; TEXT(TC_Status__c)= &apos;Completed&apos;,&apos;In Progress&apos;,
+if(TEXT(MFS_Status__c)= &apos;In Progress&apos; &amp;&amp; TEXT(TC_Status__c)= &apos;Not Started&apos;,&apos;In Progress&apos;,
+if(TEXT(MFS_Status__c)= &apos;In Progress&apos; &amp;&amp; TEXT(TC_Status__c)= &apos;In Progress&apos;,&apos;In Progress&apos;,
+if(TEXT(MFS_Status__c)= &apos;In Progress&apos; &amp;&amp; TEXT(TC_Status__c)= &apos;Completed&apos;,&apos;In Progress&apos;,
+if(TEXT(MFS_Status__c)= &apos;Ready to Submit&apos; &amp;&amp; TEXT(TC_Status__c)= &apos;Not Started&apos;,&apos;In Progress&apos;,
+if(TEXT(MFS_Status__c)= &apos;Ready to Submit&apos; &amp;&amp; TEXT(TC_Status__c)= &apos;In Progress&apos;,&apos;In Progress&apos;,
+if(TEXT(MFS_Status__c)= &apos;Ready to Submit&apos; &amp;&amp; TEXT(TC_Status__c)= &apos;Completed&apos;,&apos;Ready to Submit&apos;,
+if(TEXT(MFS_Status__c)= &apos;Completed&apos; &amp;&amp; TEXT(TC_Status__c)= &apos;Not Started&apos;,&apos;In Progress&apos;,
+if(TEXT(MFS_Status__c)= &apos;Completed&apos; &amp;&amp; TEXT(TC_Status__c)= &apos;In Progress&apos;,&apos;In Progress&apos;,
+if(TEXT(MFS_Status__c)= &apos;Completed&apos; &amp;&amp; TEXT(TC_Status__c)= &apos;Completed&apos;,&apos;Completed&apos;,null))))))))))))))
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Overall Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Participant_Name__c</fullName>
+        <description>This field is used to capture Candidate Name where Category is Self</description>
+        <externalId>false</externalId>
+        <formula>Participant__r.Full_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Participant Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Participant__c</fullName>
+        <description>This field represents the Bureau Candidate who shall be acting as a participant and shall be rated by the Respondent.</description>
+        <inlineHelpText>Specify the Bureau Candidate to be rated</inlineHelpText>
+        <label>Participant</label>
+        <referenceTo>Bureau_Candidate__c</referenceTo>
+        <relationshipName>Bureau_Ratings_As_Participant</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Rater_Order__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(Rater_Type__c, &quot;Self&quot;,1,&quot;Manager&quot;,2,&quot;Supervisor&quot;, 2, &quot;Peer&quot;, 3, &quot;Colleague&quot;, 3, &quot;Others&quot;, 3, &quot;Direct Report&quot;, 4, &quot;Report&quot;, 4, &quot;Subordinate&quot;,4, &quot;Internal Customer&quot;, 5, &quot;External Customer&quot;, 5, &quot;Internal Client&quot;, 6, &quot;External Client&quot;, 6,&quot;Client&quot;,6, &quot;Stakeholder&quot;,7, &quot;Other&quot;,7,8)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Rater Order</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rater_String__c</fullName>
+        <label>Rater String</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Rater_Type__c</fullName>
+        <label>Rater Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Self</fullName>
+                    <default>false</default>
+                    <label>Self</label>
+                </value>
+                <value>
+                    <fullName>Manager</fullName>
+                    <default>false</default>
+                    <label>Manager</label>
+                </value>
+                <value>
+                    <fullName>Colleagues</fullName>
+                    <default>false</default>
+                    <label>Colleagues</label>
+                </value>
+                <value>
+                    <fullName>Others</fullName>
+                    <default>false</default>
+                    <label>Others</label>
+                </value>
+                <value>
+                    <fullName>Direct Reports</fullName>
+                    <default>false</default>
+                    <label>Direct Reports</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Rating_Transfer_Status__c</fullName>
+        <defaultValue>&quot;Not Transferred&quot;</defaultValue>
+        <description>This field is created to store the transfer status of rating. Transfer is related FTP</description>
+        <label>Rating Transfer Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Transferred</fullName>
+                    <default>false</default>
+                    <label>Not Transferred</label>
+                </value>
+                <value>
+                    <fullName>Transferred</fullName>
+                    <default>false</default>
+                    <label>Transferred</label>
+                </value>
+                <value>
+                    <fullName>Updated from FTP</fullName>
+                    <default>false</default>
+                    <label>Updated from FTP</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Rating_Unique_Id_Development_Use__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This field is calculated through lightning flow, it holds value of JobId+ParticipantEmail+RespondantEmail</description>
+        <externalId>false</externalId>
+        <label>Rating Unique Id (Development Use)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Ready_for_Pendula__c</fullName>
+        <formula>OR
+(
+   AND(NOT(ISBLANK(Single_Use_Link__c)),ISPICKVAL(TC_Status__c, &quot;Not Started&quot;) ),
+
+    AND(OR(ISPICKVAL(TC_Status__c, &quot;Not Started&quot;),ISPICKVAL(TC_Status__c, &quot;In Progress&quot;)),NOT(ISBLANK(Invite_Timestamp__c))),
+
+    AND(ISPICKVAL(TC_Status__c, &quot;Completed&quot;), ISBLANK(Invite_Timestamp__c))
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ready for Pendula?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Reminder_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Reminder 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reminder_Timestamp__c</fullName>
+        <description>To capture last reminder date</description>
+        <label>Reminder Email Timestamp</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Reminder__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+    TEXT(Rater_Type__c) = &apos;Self&apos;,
+    IF(
+        OR(
+            AND(ISBLANK(TEXT(MFS_Report_Sent__c)), TEXT(TC_Report_Sent__c) = &apos;Sent&apos;),
+            AND(TEXT(MFS_Report_Sent__c) = &apos;Sent&apos;, TEXT(TC_Report_Sent__c) = &apos;Sent&apos;),
+            Overall_Status__c = &apos;Completed&apos;
+        ),
+        &apos;Not Eligible&apos;,
+        &apos;Eligible&apos;
+    ),
+    Reminder_1__c
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Reminder</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Report_Ready__c</fullName>
+        <label>Report Ready</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Ready</fullName>
+                    <default>true</default>
+                    <label>Not Ready</label>
+                </value>
+                <value>
+                    <fullName>Can be Generated</fullName>
+                    <default>false</default>
+                    <label>Can be Generated</label>
+                </value>
+                <value>
+                    <fullName>Can not be generated</fullName>
+                    <default>false</default>
+                    <label>Can not be generated</label>
+                </value>
+                <value>
+                    <fullName>100% Completed</fullName>
+                    <default>false</default>
+                    <label>100% Completed</label>
+                </value>
+                <value>
+                    <fullName>Data Insufficient</fullName>
+                    <default>false</default>
+                    <label>Data Insufficient</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Report_Sent__c</fullName>
+        <externalId>false</externalId>
+        <label>Report Sent</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Report_Timestamp__c</fullName>
+        <description>To capture last report sent date</description>
+        <label>Report Email Timestamp</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Reports_Status__c</fullName>
+        <description>This field represents the status of the Reports</description>
+        <inlineHelpText>Specify the status of the Reports</inlineHelpText>
+        <label>Reports Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unsent</fullName>
+                    <default>true</default>
+                    <label>Unsent</label>
+                </value>
+                <value>
+                    <fullName>Ready to be Generated</fullName>
+                    <default>false</default>
+                    <label>Ready to be Generated</label>
+                </value>
+                <value>
+                    <fullName>Generated</fullName>
+                    <default>false</default>
+                    <label>Generated</label>
+                </value>
+                <value>
+                    <fullName>Partially Sent</fullName>
+                    <default>false</default>
+                    <label>Partially Sent</label>
+                </value>
+                <value>
+                    <fullName>Sent</fullName>
+                    <default>false</default>
+                    <label>Sent</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Respondent_Name__c</fullName>
+        <description>This field is used to capture Candidate Name where Category is not Self</description>
+        <externalId>false</externalId>
+        <formula>Respondent__r.Full_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Respondent Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Respondent__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field represents the Bureau Candidate who shall acting as a respondent and shall be rating the Participant.</description>
+        <inlineHelpText>Specify the Candidate who shall be rating the Participant</inlineHelpText>
+        <label>Respondent</label>
+        <referenceTo>Bureau_Candidate__c</referenceTo>
+        <relationshipName>Bureau_Ratings_As_Respondent</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sender_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Respondent__r.Bureau_Job__r.Sender_Email__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sender Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sender_Name__c</fullName>
+        <description>Pulling from Job to use on Pendula for Candidate comms</description>
+        <externalId>false</externalId>
+        <formula>Text(Respondent__r.Bureau_Job__r.Sender_Name__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sender Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sharepoint_File_Path__c</fullName>
+        <description>To capture sharepoint path for email template for Pendula</description>
+        <externalId>false</externalId>
+        <label>Sharepoint File Path</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Single_Use_Link__c</fullName>
+        <label>Single Use Link</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>StatusNew__c</fullName>
+        <description>This field is used to capture Rating Status - Is a Restricted set</description>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>false</default>
+                    <label>Not Started</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>This field represents the Status of the Rating</description>
+        <externalId>false</externalId>
+        <formula>IF(Total_Instruments__c== Instruments_Completed__c,&quot;Completed&quot;,IF(Instruments_Completed__c&gt;0 || Instruments_In_Progress__c&gt;0,&quot;In Progress&quot;, &quot;Not Started&quot;))</formula>
+        <inlineHelpText>This is the current status of the Rating</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TC_Report_Sent__c</fullName>
+        <inlineHelpText>To capture the status of TC platform report sent to customer.</inlineHelpText>
+        <label>TC Report Sent</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Sent</fullName>
+                    <default>false</default>
+                    <label>Not Sent</label>
+                </value>
+                <value>
+                    <fullName>Sent</fullName>
+                    <default>false</default>
+                    <label>Sent</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TC_Status__c</fullName>
+        <label>TC Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>false</default>
+                    <label>Not Started</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Recalled</fullName>
+                    <default>false</default>
+                    <label>Recalled</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Ready to Submit</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Ready to Submit</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_Instruments__c</fullName>
+        <externalId>false</externalId>
+        <formula>Instruments_Not_Started__c +  Instruments_In_Progress__c +  Instruments_Completed__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Instruments</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VADC_Status__c</fullName>
+        <label>VADC Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>false</default>
+                    <label>Not Started</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Recalled</fullName>
+                    <default>false</default>
+                    <label>Recalled</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Work_Request__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is created to link Rating with Work Request</description>
+        <label>Work Request</label>
+        <referenceTo>Work_Request__c</referenceTo>
+        <relationshipLabel>Managed Services Ratings</relationshipLabel>
+        <relationshipName>Managed_Services_Ratings</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Managed Services Rating</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>BR{000000000}</displayFormat>
+        <label>Rating Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Managed Services Ratings</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>BureauRating_OtherRaterCheck</fullName>
+        <active>true</active>
+        <description>This rule ensures that the Participant and Respondent are different if the rater type is not Self.</description>
+        <errorConditionFormula>IF(
+ISPICKVAL( Rater_Type__c,&quot;Self&quot;),
+Participant__c &lt;&gt; Respondent__c,false
+)</errorConditionFormula>
+        <errorDisplayField>Respondent__c</errorDisplayField>
+        <errorMessage>Respondent cannot not be same as the Participant unless the Rater Type is not Self.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BureauRating_SelfRaterCheck</fullName>
+        <active>true</active>
+        <description>This rule ensures that the Participant and Respondent are the same if the rater type is Self.</description>
+        <errorConditionFormula>IF(
+ISPICKVAL( Rater_Type__c,&quot;Self&quot;),
+Participant__c &lt;&gt; Respondent__c,false
+)</errorConditionFormula>
+        <errorDisplayField>Respondent__c</errorDisplayField>
+        <errorMessage>Respondent must be same as the Participant if Rater type is Self</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BureauRating_SelfRatingMustExist</fullName>
+        <active>true</active>
+        <description>If a rating is being created with this candidate as a Participant and a rater type other than Self, then it needs to check if a Self rating exists for this Candidate.</description>
+        <errorConditionFormula>AND(NOT(ISPICKVAL(Rater_Type__c,&apos;Self&apos;)),Participant__r.Self_Rating__c==0)</errorConditionFormula>
+        <errorMessage>Participant must have a Self Rating before being rated by any other Respondent.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

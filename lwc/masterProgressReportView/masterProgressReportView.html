@@ -1,0 +1,292 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 11-04-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+
+    <div class="container">
+        <template if:true={showLoadingSpinner}>
+            <div style="z-index: 10000 !important;">
+                <lightning-spinner alternative-text="Loading..." size="medium" style="z-index: 10000 !important;">
+                </lightning-spinner>
+            </div>
+        </template>
+
+        <template if:true={showExportModal}>
+            <c-export-data-from-master-view export-type={selectedItemValue} record-id={recordId}
+                onreset={resetChildComponent}></c-export-data-from-master-view>
+        </template>
+
+        <template if:true={updateCandidate}>
+            <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup header -->
+                    <header class="slds-modal__header">
+                        <h2 class="slds-text-heading_medium">Update Candidate</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <c-update-candidate-data onupdatestatus={updateDone} record-id={recordId}
+                            generated-wrf-id={generatedWRFId}> </c-update-candidate-data>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning-button variant="neutral" label="Close" onclick={closeModal}></lightning-button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+        <template if:true={updatePlatform}>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+            <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup header -->
+                    <header class="slds-modal__header">
+                        <h2 class="slds-text-heading_medium">Update Platform</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <c-update-platform-data onupdatestatus={updateDone}
+                            record-id={recordId}></c-update-platform-data>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning-button variant="neutral" label="Close" onclick={closeModal}></lightning-button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+
+        <lightning-card>
+            <!--<div class="slds-var-m-vertical_large slds-text-body_medium slds-text-color_weak"
+                style="background-color: #f0f0f0; height: 2rem">
+                <div class="slds-grid slds-align_absolute-center" style="height:100%;">
+                    <div class="slds-grid slds-align_absolute-center">
+                        <div class="slds-m-left_medium">
+                            <b>
+                                Job: <lightning-formatted-url value={recordUrl} label={jobName}
+                                    target="_blank"></lightning-formatted-url>
+                            </b>
+                        </div>
+                        <div class="slds-m-left_medium">
+                            <b>Number of Ratings: </b>{totalRatings}
+                        </div>
+                    </div>
+                    <div class="slds-align_absolute-center" style="margin-left:25rem;">
+                        <b>MASTER VIEW</b>
+                    </div>
+                </div>
+            </div>-->
+
+            <div class="slds-grid slds-grid_align-center main-container">
+                <div class="slds-col slds-size_1-of-3">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-3 slds-m-left_medium">
+                            <b>
+                                Job: <lightning-formatted-url value={recordUrl} label={jobName}
+                                    target="_blank"></lightning-formatted-url>
+                            </b>
+                        </div>
+                        <div class="slds-col slds-size_1-of-3">
+                            <b>Total Ratings: </b>{totalRatings}
+                        </div>
+                        <div class="slds-col slds-size_1-of-3">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Column (centered) -->
+                <div class="slds-col slds-size_1-of-3 center-column">
+                    <b>MASTER VIEW</b>
+                </div>
+
+                <!-- Third Column -->
+                <div class="slds-col slds-size_1-of-3">
+                    <p></p>
+                </div>
+
+            </div>
+
+
+            <!-- Client View Report-->
+            <div class="slds-var-m-left_small">
+
+            </div>
+            <template if:true={isModalOpen}>
+                <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <!-- Modal/Popup header -->
+                        <header class="slds-modal__header">
+                            <h2 class="slds-text-heading_medium">Generate Client Report</h2>
+                        </header>
+                        <!-- Modal/Popup content -->
+                        <div class="slds-modal__content slds-p-around_medium">
+                            <!-- Calling selected fields child LWC inside modal -->
+                            <c-popup message={reportlist} onsave={handleChildSave}></c-popup>
+                        </div>
+                        <!-- Modal/Popup footer -->
+                        <footer class="slds-modal__footer">
+                            <lightning-button variant="neutral" label="Next"
+                                onclick={openfilterselectorview}></lightning-button>&nbsp;
+                            <lightning-button variant="neutral" label="Close" onclick={closeModal}></lightning-button>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </template>
+
+            <template if:true={showsystemusemessage}>
+                <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <!-- Modal/Popup header -->
+                        <header class="slds-modal__header">
+                            <h2 class="slds-text-heading_medium">Generate Client Report</h2>
+                        </header>
+                        <div class="slds-modal__content slds-p-around_medium">
+                            <p>{label}</p>
+                        </div>
+                        <!-- Modal/Popup footer -->
+                        <footer class="slds-modal__footer">
+                            <lightning-button variant="neutral" label="Close" onclick={closeModal}></lightning-button>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </template>
+
+
+            <!-- Report Filter Selector-->
+            <template if:true={isFilterSelectorOpen}>
+                <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <!-- Modal/Popup header -->
+                        <header class="slds-modal__header">
+                            <h2 class="slds-text-heading_medium">Report Filter Selector</h2>
+                        </header>
+                        <!-- Modal/Popup content -->
+                        <div class="slds-modal__content slds-p-around_medium">
+                            <!-- Calling selected fields child LWC inside modal -->
+                            <div class="dashboard-container">
+                                <c-report-filter-selector message={resultFromChild} system={Systemused}
+                                    onsave={handleFilterFieldsSelection}></c-report-filter-selector>
+                            </div>
+                        </div>
+                        <!-- Modal/Popup footer -->
+                        <!--  <footer class="slds-modal__footer">
+                            <strong>If you wish to change the banner, please use the 'Client Dashboard Banner' button on the Job.</strong>
+                            <lightning-button variant="neutral" label="Back"
+                            onclick={handleBack}></lightning-button>&nbsp;
+                            <lightning-button variant="neutral" label="Submit"
+                                onclick={openclientview}></lightning-button>&nbsp;
+                            <lightning-button variant="neutral" label="Close" onclick={closeModal}></lightning-button>
+                        </footer> -->
+                        <footer
+                            class="slds-modal__footer slds-grid slds-grid_vertical-align-center slds-grid_align-spread slds-p-horizontal_medium">
+                            <!-- Left-aligned message -->
+                            <div class="slds-col slds-text-align_center slds-grow">
+                                <strong>If you wish to change the banner, please use the 'Client Dashboard Banner'
+                                    button on the Job.</strong>
+                            </div>
+
+                            <!-- Right-aligned buttons -->
+                            <div class="slds-button-group">
+                                <lightning-button variant="neutral" label="Back"
+                                    onclick={handleBack}></lightning-button>&nbsp;
+                                <lightning-button variant="neutral" label="Submit"
+                                    onclick={openclientview}></lightning-button>&nbsp;
+                                <lightning-button variant="neutral" label="Close"
+                                    onclick={closeModal}></lightning-button>
+                            </div>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </template>
+            <!-- Client View Report-->
+
+            <div class="filter-panel slds-var-p-around_x-small">
+                <lightning-layout vertical-align="center" multiple-columns>
+                    <lightning-layout-item padding="around-small" class="left-aligned">
+                        <div class="horizontal-align">
+                            <lightning-combobox name="my-combobox-TC" variant="label-hidden" label=""
+                                value={selectedTCpicklist} placeholder="TC Status" options={picklistValues}
+                                onchange={handleChange}>
+                            </lightning-combobox>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" class="left-aligned">
+                        <div class="horizontal-align">
+                            <lightning-combobox name="my-combobox-MFS" variant="label-hidden" label=""
+                                value={selectedMFSpicklist} placeholder="MFS Status" options={picklistValuesMFS}
+                                onchange={handleChangeMFS}>
+                            </lightning-combobox>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" class="left-aligned">
+                        <div class="horizontal-align">
+                            <lightning-combobox name="my-combobox-REM" variant="label-hidden" label=""
+                                value={selectedREMpicklist} placeholder="Reminder" options={picklistValuesREM}
+                                onchange={handleChangeREM}>
+                            </lightning-combobox>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" class="left-aligned">
+                        <lightning-input type="text" variant="label-hidden" label="" placeholder="Search..."
+                            value={candidateFilterValue} onchange={handleCandidateFilterValue} onkeypress={handleEnter}>
+                        </lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" class="left-aligned">
+                        <lightning-button variant="brand" label="Search"
+                            onclick={handleSearchAction}></lightning-button>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" class="left-aligned">
+                        <lightning-button-icon icon-name="utility:refresh" variant="border-filled"
+                            alternative-text="Refresh List" title="Refresh List"
+                            onclick={handleRefresh}></lightning-button-icon>
+                    </lightning-layout-item>
+
+                    <!-- Spacer to push right-aligned items to the right -->
+                    <lightning-layout-item flexibility="auto"></lightning-layout-item>
+                    <lightning-layout-item padding="around-small" class="right-aligned">
+                        <div class="horizontal-align">
+                            <lightning-button label="Update Candidates"
+                                onclick={openUpdateCandidate}></lightning-button>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" class="right-aligned">
+                        <div class="horizontal-align">
+                            <lightning-button label="Update Platform" onclick={openUpdatePlatform}></lightning-button>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" class="right-aligned">
+                        <div class="horizontal-align">
+                            <lightning-button label="Client Report" onclick={openModal}></lightning-button>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" class="right-aligned">
+                        <!-- <lightning-button label="Export" icon-name="utility:download"></lightning-button>-->
+                        <lightning-button-menu alternative-text="Export menu" variant="border-filled"
+                            onselect={handleOnselect} menu-alignment="right" icon-name="utility:download"
+                            tooltip="Export menu">
+                            <lightning-menu-item label="Master View" value="master"></lightning-menu-item>
+                            <lightning-menu-item label="Candidate Data" value="candidate"></lightning-menu-item>
+                            <lightning-menu-item label="Platform Data" value="rating"></lightning-menu-item>
+                        </lightning-button-menu>
+                    </lightning-layout-item>
+                </lightning-layout>
+
+
+            </div>
+            <div style="height: 800px;" class="myTable">
+                <lightning-datatable key-field="id" data={data} columns={column2} hide-checkbox-column
+                    enable-infinite-loading load-more-offset="2" onloadmore={loadData}>
+                </lightning-datatable>
+            </div>
+            <div
+                class="slds-align_absolute-center slds-var-m-vertical_medium slds-text-body_small slds-text-color_weak">
+                {loadMoreStatus}
+            </div>
+        </lightning-card>
+    </div>
+</template>

@@ -1,0 +1,120 @@
+<template>
+    <lightning-card ondrop={dropElement} ondragover={DragOver}>
+        <template if:false={showSubmit}>
+            <div class="slds-align_absolute-center">Drop Here</div>
+        </template>
+
+        <div if:true={textinput}>
+            <lightning-layout multiple-rows style="padding-bottom:10rem;">
+                <template for:each={candidateSelectedFields} for:item="acc" for:index="index">
+                    <lightning-layout-item size="4" padding="around-small" key={acc.Id}>
+                        <div class="slds-grid">
+                            <div class="slds-col slds-size_6-of-12">
+                                <p data-item={acc.Label__c} data-index={acc.index}>{acc.Label__c}</p>
+                            </div>
+
+                            <div class="slds-col slds-size_4-of-12">
+                                <lightning-layout>
+                                    <lightning-layout-item>
+                                        <lightning-button-icon if:false={acc.hideDelete} name={acc.Label__c}
+                                            data-name={acc.Label__c} icon-name="utility:delete"
+                                            alternative-text="Delete" class="slds-m-left_xx-small" size='x-small'
+                                            title="Delete" onclick={handleRemoveIcon}
+                                            data-index={acc.index}></lightning-button-icon>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item>
+                                        <lightning-button-icon name={acc.Label__c} data-name={acc.Label__c}
+                                            icon-name="utility:chevronleft" alternative-text="Move Left"
+                                            class="slds-m-left_xx-small" size='x-small' title="Move Left"
+                                            onclick={handleMoveUp} data-index={index}></lightning-button-icon>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item>
+                                        <lightning-button-icon name={acc.Label__c} data-name={acc.Label__c}
+                                            icon-name="utility:chevronright" alternative-text="Move Right"
+                                            class="slds-m-left_xx-small" size='x-small' title="Move Right"
+                                            onclick={handleMoveDown} data-index={index}></lightning-button-icon>
+                                    </lightning-layout-item>
+                                    <template lwc:if={acc.showEditIcon}>
+                                        <lightning-layout-item>
+                                            <lightning-button-icon name={acc.fieldLabel} data-name={acc.fieldLabel}
+                                                icon-name="utility:edit" alternative-text="Edit"
+                                                class="slds-m-left_xx-small" size='x-small' title="Edit"
+                                                onclick={handleEditIcon} data-index={acc.index}></lightning-button-icon>
+                                        </lightning-layout-item>
+                                    </template>
+                                </lightning-layout>
+                            </div>
+                        </div>
+
+                        <template lwc:if={acc.showEditFields}>
+                            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                                aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                                <div class="slds-modal__container">
+
+                                    <!--Header part of the Modal-->
+                                    <header class="slds-modal__header">
+                                        <button
+                                            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                            title="Close" data-index={acc.index} onclick={cancelPreview}>
+                                            <lightning-icon icon-name="utility:close" alternative-text="close"
+                                                variant="inverse" size="small" data-index={acc.index}
+                                                onclick={cancelPreview}></lightning-icon>
+                                            <span class="slds-assistive-text">Close</span>
+                                        </button>
+                                        <h2 id={acc.Id} class="slds-text-heading_medium slds-hyphenate">Candidate Field
+                                        </h2>
+                                    </header>
+                                    <!--Header part of the Modal Ends-->
+
+                                    <!--Body part of the Modal-->
+                                    <div class="slds-modal__content slds-p-around_medium" id={acc.Id}>
+                                        <!--<template lwc:if={acc.fieldtype}>-->
+                                        <lightning-input type="text" label="Required" data-labelname={acc.fieldtype}
+                                            name={acc.fieldtype} placeholder="Enter Label Name" value={acc.fieldLabel}
+                                            data-index={acc.index} required></lightning-input>
+
+                                        <div class="slds-p-top_x-small" style="color:#444444">Data Type:
+                                            {acc.fieldtype}</div>
+
+                                        <lightning-input type="text" data-helptextname={acc.fieldtype}
+                                            name={acc.fieldtype} placeholder="Enter Help Text" value={acc.helpText}
+                                            data-index={acc.index}></lightning-input>
+
+                                        <template lwc:if={acc.showTextFieldArea}>
+                                            <lightning-textarea data-name={acc.fieldtype} name={acc.fieldtype}
+                                                placeholder="Enter Comma Seprated Values." value={acc.Values}
+                                                class="slds-m-top_small" data-index={acc.index}
+                                                required></lightning-textarea>
+                                        </template>
+                                        <!--</template>-->
+
+                                        <!--<lightning-input class="slds-p-top_small" type="checkbox"
+                                            label="Is this field applicable for reporting?" data-index={acc.index}
+                                            onchange={handleInputChange} value={acc.isReporting}
+                                            checked={acc.isReporting}>
+                                        </lightning-input>-->
+                                    </div>
+                                    <!--Body part of the Modal ends-->
+
+                                    <!--Footer part of the Modal-->
+                                    <footer class="slds-modal__footer">
+                                        <button class="slds-button slds-button_neutral" onclick={cancelPreview}
+                                            title="Cancel" data-index={acc.index} name={acc.fieldtype}>Cancel</button>
+                                        <button class="slds-button slds-button_brand" onclick={createField} title="Save"
+                                            data-index={acc.index} name={acc.fieldtype}>Save</button>
+                                    </footer>
+                                    <!--Footer part of the Modal-->
+                                </div>
+                            </section>
+                            <div class="slds-backdrop slds-backdrop_open"></div>
+                        </template>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+            <br>
+            <br>
+            <br>
+
+        </div>
+    </lightning-card>
+</template>

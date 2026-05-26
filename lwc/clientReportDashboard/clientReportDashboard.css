@@ -1,0 +1,21 @@
+.horizontal-align {
+    display: flex;
+    justify-content: center; /* Centers the div horizontally */
+    align-items: center; /* Aligns content in the center vertically */
+}
+
+.left-aligned {
+    text-align: left;
+}
+
+.no-data-message {
+    color: #d9534f; /* Red color for emphasis */
+    font-size: 1.2rem; /* Slightly larger font size */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Center the text */
+    margin: 20px 0; /* Add vertical spacing */
+    background-color: #f8d7da; /* Light background color for contrast */
+    padding: 10px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #f5c6cb; /* Border to match the theme */
+}

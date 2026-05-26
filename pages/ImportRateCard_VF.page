@@ -1,0 +1,122 @@
+<apex:page controller="Import_RateCard_Ctr" sidebar="false" showHeader="true" tabStyle="Opportunity" lightningStylesheets="true">
+    <apex:form >
+        <!--script type = "text/javascript">           
+        function checkPDF(obj) {
+            var path = obj.value;
+            var ext = path.substring(path.lastIndexOf('.') + 1);
+            
+            if(ext !="pdf")
+            {
+                obj.value = null;
+                window.alert("Please select only pdf file while attaching Rate Card");
+                return false;
+            }               
+        }
+        
+        function checkCSV(obj1) {
+            var path1 = obj1.value;
+            var ext1 = path1.substring(path1.lastIndexOf('.') + 1);
+            
+            if(ext1 !="csv")
+            {
+                obj1.value = null;
+                window.alert("Please select only csv file while importing Pricebook Items or Discount Summary");
+                return false;
+            }
+        }     
+        </script--> 
+        
+        <b>Opportunity</b><br/> 
+        <a href="/{!opptyId}">{!opptyName}</a>
+        <apex:outputPanel rendered="{!if(opprecordtype = '012D0000000KN0H',FALSE,TRUE)}">
+                <apex:pageMessage severity="ERROR" title="Error:" strength="3"  summary="Please edit or modify products from configurator API Tool for both current period and future period on ignite opportunity" />
+        </apex:outputPanel>
+        <!--apex:outputPanel rendered="{!if(opprecordtype = '012D0000000KN0H',TRUE,FALSE)}">
+            
+        <apex:outputPanel rendered="{!if(opptyStageName = 'Closed/Won' || opptyStageName = 'Closed Lost',FALSE,TRUE)}"-->  
+        <!--Edited By Virendra Kumar as per SSE-8620 on 01/4/2019 -->
+            <!--apex:sectionHeader title="Import Data from Calculator"/-->  
+        <!--Edition Ended By Virendra Kumar as per SSE-8620 on 01/4/2019 -->
+            <!--apex:pagemessages />
+            
+            <br/>          
+            <h2 style="color:red">Please ensure that you have imported the Discount Summary CSV file which corresponds to the Pricebook Items CSV file.</h2-->  
+            
+            <!--  Component to allow user to upload Pricebook Line Items file from local machine -->
+            <!--apex:pageBlock title="Import Pricebook Item" id="Block1">      
+                <apex:pageBlockSection >
+                    <div>
+                        <ui>Choose Pricebook Items csv File:<apex:inputFile value="{!contentFile}" filename="{!nameFile}" onchange="checkCSV(this)"/></ui>
+                        <ui> <apex:commandButton action="{!ReadFileOppLineItems}" value="Upload File" id="theButton" /></ui> 
+                    </div>
+                </apex:pageBlockSection>   
+                <apex:outputPanel > 
+                    <div>    
+                        <b>*Note:</b><br/>
+                        <li>Within the Calculator Press Export Pricebook. This will create a .csv file which needs to be saved to your Desktop.</li> 
+                        <li>Using the Choose File above attach this file to the Opportunity. It will be listed with _Pricebook_ in the file name.</li> 
+                        <li>This import populates the “Product and Assessment” section of the Opportunity and the Final Sales Price.</li> 
+                        <li>If anything changes on the quote (Discount Given / Products / Quantity sold etc.) a new Import will be required. The previous Import will be automatically deleted.</li> 
+                        <li>When submitting the Order for processing it is essential that the Final Sales Price on the Order Form matches the Final Sales price on the Opportunity or it will be rejected.</li>
+                    </div>
+                </apex:outputPanel>   
+            </apex:pageBlock-->  
+            
+            <!--  Component to allow user to upload Discount Summary file from local machine -->
+            <!--apex:pageBlock title="Import Discount Summary" id="Block2">           
+                <apex:pageBlockSection > 
+                    <div>
+                        <ui>Choose Discount Summary csv File:<apex:inputFile value="{!contentFile1}" filename="{!nameFile1}" onchange="checkCSV(this)"/> </ui>                      
+                        <ui><apex:commandButton action="{!ReadFileDiscountSum}" value="Upload File" id="theButton1" /></ui>
+                        
+                    </div>
+                </apex:pageBlockSection>
+                <apex:outputPanel >
+                    <div>    
+                        <p> <b>*Note:</b><br/> 
+                            <li>Within the Calculator Press Export Discount. This will create a .csv file which needs to be saved to your Desktop</li>
+                            <li>Using the Choose File above attach this file to the Opportunity. It will be listed with _Discount_ in the file name.</li>
+                            <li>This import populates the “Discount Summary” section of the Opportunity.</li>
+                            <li>If anything changes on the quote (Discount Given / Products / Quantity sold etc.) a new Import will be required. The previous Import will be automatically deleted.</li>
+                            <li>Always check before submitting the Order for Processing that the Final Discount Given on the Pricebook Items matches the Discount Summary or it will be rejected.</li>
+                        </p>
+                    </div>
+                </apex:outputPanel>
+                
+            </apex:pageBlock-->
+            
+            <!--  Component to allow user to upload Rate Card Attachment from local machine -->
+            <!-- commented on 7 Aug 2018 <apex:pageBlock title="Attach Rate Card">       
+<apex:pageBlockSection > 
+<div>                               
+<ui>Choose Rate Card File:<apex:inputFile value="{!tAttachment.Body}" filename="{!tAttachment.Name}" filesize="{!tAttachment.BodyLength}" contentType="{!tAttachment.ContentType}" onchange="checkPDF(this)"/> </ui>
+<ui><apex:commandButton action="{!SaveRateCardAttachment}" value="Attach File" id="theButton2"/></ui> 
+</div>
+<div>    
+<p> <b>*Note:</b> Only .pdf file is supported. <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Attachment can only be uploaded <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. To Modify or delete, you need to do it via Notes and Attachment &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Section.            
+</p>
+</div>
+</apex:pageBlockSection>         
+</apex:pageBlock>    --> 
+            <!--apex:pageBlock title="" id="Block3">      
+                <apex:pageBlockSection >
+                <div>
+               <ui> <apex:commandButton action="{!cancel}" value=" Done " id="theCancelButton"/> </ui>
+                </div>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </apex:outputPanel><br/-->
+        
+        <!--apex:outputPanel rendered="{!if(opptyStageName = 'Closed/Won' || opptyStageName = 'Closed Lost',TRUE,FALSE)}" id="alertOpptySec">
+            <apex:pageBlock >
+                <center>
+                    <p style="Color:Red;font-size:150%"><b>Cannot Import File, when Opportunity Stage is Closed/Won or Closed Lost.</b></p>
+                </center> 
+            </apex:pageBlock>
+        </apex:outputPanel> 
+        </apex:outputPanel-->
+        
+    </apex:form> 
+</apex:page>
