@@ -22,7 +22,7 @@ public without sharing class AccountOwnerController {
     public static AccountDetails getAccountOwnerDetails(Id recordId){
         try {
             AccountDetails detailsToReturn = new AccountDetails();
-            List<Account> accountToQuery = [SELECT Id, OwnerId, GCSC_Owned_Account__c, GCSC_Account_Owner__c, Owner.Name, Customer_Connect_Account__c, Name, abc__c FROM Account WHERE Id = :recordId];
+            List<Account> accountToQuery = [SELECT Id, OwnerId, GCSC_Owned_Account__c, GCSC_Account_Owner__c, Owner.Name, Customer_Connect_Account__c, Name FROM Account WHERE Id = :recordId];
             if(!accountToQuery.isEmpty()){
                 UserRecordAccess access = [SELECT RecordId, HasTransferAccess, HasEditAccess FROM UserRecordAccess WHERE UserId = :UserInfo.getUserId() AND RecordId = :recordId];
 
