@@ -1,0 +1,8 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="opportunityId" type="string"/>    
+    <!--<iframe src="{! 'https://shldev.my.salesforce.com/apex/ImportRateCard_VF?oppId=' + v.opportunityId }" width="100%" height="500px;" frameBorder="0"/> 
+-->
+       
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+</aura:component>

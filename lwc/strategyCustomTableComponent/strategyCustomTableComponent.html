@@ -1,0 +1,488 @@
+<template>
+
+
+    <lightning-tabset>
+
+        <!--    This tab shows the active startegies  -->
+        <lightning-tab label="Open Strategies & Goals" value="Open" onactive={handleOpenStrategies}>
+            <lightning-card title="Strategies and Goals" icon-name="standard:strategy">
+                <lightning-button variant="brand-outline" label="New" title="New" onclick={openModalPopup}
+                    slot="actions" disabled={isDisabled}></lightning-button>
+
+                <template if:false={strategyData}>
+                    <p class="slds-align_absolute-center">No Strategy Record Found!</p>
+                </template>
+                <template if:true={strategyData}>
+
+                    <div class="slds-scrollable_x" style="height:100%;">
+                        <!--slds-table_fixed-layout -->
+                        <table class="slds-table slds-table_bordered 
+            slds-table_resizable-cols slds-border_left slds-border_right slds-border_top slds-border_bottom"
+                            style="margin-top: 15px;">
+                            <thead>
+                                <tr class="" style="margin-top:2px;margin-bottom:2px">
+                                    <th class="slds-text-align_left tableColMargin " scope="col" style="width:1.5rem">
+                                        <!--style="width:1.25rem"-->
+
+                                    </th>
+                                    <th class="slds-text-align_left tableColMargin thBorder" scope="col"
+                                        style="max-width:4.5rem">
+                                        <!-- style="width:3.25rem">-->
+                                        <div class="slds-truncate " title="Name">Name</div>
+
+                                    </th>
+                                    <th class="slds-text-align_left tableColMargin thBorder" scope="col">
+                                        <div class="slds-truncate" title=" Strategy Type">
+                                            Strategy Type</div>
+
+                                    </th>
+                                    <th class="slds-text-align_left tableColMargin thBorder" scope="col">
+                                        <div class="slds-truncate tableColMargin" title="Strategy Status">
+                                            Strategy Status
+                                        </div>
+
+                                    </th>
+
+                                    <th class="slds-text-align_left thBorder" scope="col" data-id="changeColWidth"
+                                        style={widthLength}>
+                                        <div class="slds-truncate tableColMargin" title="Solution / Product Area">
+                                            Solution / Product Area</div>
+
+                                    </th>
+
+                                    <th class="slds-text-align_left thBorder" scope="col">
+                                        <div class="slds-truncate tableColMargin" title="Key Contact Sponsor"
+                                            style={widthLength}>
+                                            Key Contact Sponsor</div>
+
+                                    </th>
+                                    <th class="slds-text-align_left thBorder" scope="col">
+                                        <div class="slds-truncate tableColMargin" title="Short / Long Term"
+                                            style={widthLength}>
+                                            Short / Long Term</div>
+
+                                    </th>
+                                    <th class="slds-text-align_left thBorder" scope="col ">
+                                        <div class="slds-truncate tableColMargin" title="Est. Completion Date">
+                                            Est. Completion Date</div>
+
+                                    </th>
+
+                                    <th class="slds-text-align_left" scope="col">
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={recordsToDisplay} for:item="mod" for:index="indexVar">
+                                    <tr key={mod.key} class="slds-hint-parent"
+                                        style="margin-top: 2px;margin-bottom:2px">
+                                        <th scope="row" class="slds-text-align_left">
+
+
+                                            <div class="slds-truncate tableColMargin" style="margin-left:1px;">
+                                                {mod.SNo}
+                                            </div>
+
+
+                                        </th>
+                                        <th scope="row" class="slds-text-align_left">
+
+                                            <div class="slds-grid slds-grid_vertical-align-center">
+                                                <template if:false={mod.isExpanded}>
+                                                    <lightning-icon icon-name='utility:right' data-id={indexVar}
+                                                        data-record-id={mod.id} size="xx-small" class='openClass'
+                                                        onclick={handleExpand}
+                                                        style="margin-right:2px"></lightning-icon>
+                                                </template>
+                                                <template if:true={mod.isExpanded}>
+                                                    <lightning-icon icon-name='utility:down' data-id={indexVar}
+                                                        data-record-id={mod.id} size="xx-small" class='openDownClass'
+                                                        onclick={handleClose} style="margin-right:2px"></lightning-icon>
+                                                </template>
+                                                <div class="slds-truncate "
+                                                    style="overflow-wrap:break-word; inline-size: 4.5rem;white-space:pre-wrap">
+
+                                                    <a href={mod.strategyUrl} target="_blank"
+                                                        tabindex="-1">{mod.strategyName}</a>
+                                                </div>
+                                                <template if:false={mod.isApproved}>
+                                                    <div style="margin-left:2px">
+                                                        <lightning-icon icon-name="utility:warning" size="xx-small"
+                                                            class='red-background-icon'
+                                                            title="Strategy is not approved yet"></lightning-icon>
+                                                    </div>
+                                                </template>
+                                            </div>
+
+
+
+                                        </th>
+                                        <th scope="row" class="slds-text-align_left">
+                                            <div class="slds-truncate" style="white-space:pre-wrap;">
+                                                {mod.type}
+                                            </div>
+                                        </th>
+                                        <th scope="row" class="slds-text-align_left">
+                                            <div class="" style="white-space:pre-wrap;">
+
+                                                {mod.status}
+                                            </div>
+                                        </th>
+                                        <th scope="row" class="slds-text-align_left">
+                                            <div class="slds-truncate" title="Name" style="white-space:pre-wrap;">
+                                                {mod.productSolution}
+                                            </div>
+                                        </th>
+                                        <th scope="row" class="slds-text-align_left">
+                                            <div class="slds-truncate" style="white-space:pre-wrap;">
+                                                <a href={mod.contactUrl} target="_blank"
+                                                    tabindex="-1">{mod.contactName}</a>
+                                            </div>
+                                        </th>
+                                        <th scope="row" class="slds-text-align_left">
+                                            <div class="slds-truncate" title="Name" style="white-space:pre-wrap;">
+                                                {mod.term}
+                                            </div>
+                                        </th>
+                                        <th scope="row" class="slds-text-align_left">
+                                            <div class="slds-truncate" title="Name" style="white-space:pre-wrap;">
+                                                {mod.estimatedCompletionDate}
+                                            </div>
+                                        </th>
+
+                                        <th class="slds-cell_action-mode slds-align_absolute-center" scope="row"
+                                            style="padding-bottom: 12px;padding-right: 5px">
+                                            <!--<template if:true={isActionVisible}>-->
+                                            <template if:false={isDisabled}>
+                                                <lightning-button-group class="slds-m-top_small">
+                                                    <lightning-button-menu alternative-text="Show menu"
+                                                        variant="border-filled" icon-size="x-small"
+                                                        menu-alignment="auto">
+                                                        <lightning-menu-item label="Link/De-link Opportunities"
+                                                            value="linkOrDelink" name="linkOrDelink"
+                                                            data-id={mod.accountId} data-record-id={mod.id}
+                                                            onclick={handleLinkOrDelink}></lightning-menu-item>
+                                                        <lightning-menu-item label="Email" value="email" name="email"
+                                                            data-id={mod.accountId} data-record-id={mod.id}
+                                                            onclick={handleLinkOrDelink}></lightning-menu-item>
+                                                        <lightning-menu-item label="New Task" value="newTask"
+                                                            name="newTask" data-id={mod.accountId}
+                                                            data-record-id={mod.id}
+                                                            onclick={handleLinkOrDelink}></lightning-menu-item>
+                                                        <lightning-menu-item label="New Event" value="newEvent"
+                                                            name="newEvent" data-id={mod.accountId}
+                                                            data-record-id={mod.id}
+                                                            onclick={handleLinkOrDelink}></lightning-menu-item>
+
+                                                    </lightning-button-menu></lightning-button-group>
+                                            </template>
+
+                                        </th>
+                                    </tr>
+                                    <template if:true={mod.isExpanded}>
+
+                                        <tr data-name="child-table" data-key={mod.id} key={mod.id} data-id={mod.id}
+                                            class="slds-p-top_small" style="background-color:rgb(234,234,234)">
+                                            <template if:true={showSpinnerforChild}
+                                                style="margin-left:10px;margin-top:10px">
+                                                <lightning-spinner alternative-text="Loading"
+                                                    size="small"></lightning-spinner>
+                                            </template>
+                                            <template if:false={showSpinnerforChild}>
+                                                <td colspan="1">
+                                                    <template if:true={ActivityRecords}>
+                                                        <div style="position: absolute;top:15px;left:5px;">
+                                                            <lightning-button-icon icon-name="utility:refresh"
+                                                                data-key={mod.id} key={mod.id} data-id={mod.id}
+                                                                alternative-text="Refresh" title="Refresh Activity Data"
+                                                                size="x-small"
+                                                                onclick={handleRefreshActivityTable}></lightning-button-icon>
+
+                                                        </div>
+                                                    </template>
+
+                                                    <template if:false={ActivityRecords}>
+                                                        <div style="position: absolute;top:6px;left:5px;">
+                                                            <lightning-button-icon icon-name="utility:refresh"
+                                                                data-key={mod.id} key={mod.id} data-id={mod.id}
+                                                                alternative-text="Refresh" title="Refresh Activity Data"
+                                                                size="x-small"
+                                                                onclick={handleRefreshActivityTable}></lightning-button-icon>
+
+                                                        </div>
+                                                    </template>
+
+
+                                                </td>
+                                                <td colspan="7">
+                                                    <template if:true={ActivityRecords}>
+                                                        <div class="slds-border_left slds-border_right slds-border_top slds-border_bottom slds-scrollable"
+                                                            style="max-height:14.1rem;margin-top:10px;margin-bottom:10px">
+
+                                                            <c-custom-datatble-for-activities key-field="id"
+                                                                data={ActivityRecords} columns={ActivityCols}
+                                                                wrap-text-max-lines="5" min-column-width="100"
+                                                                onrowaction={handleEditActivity} hide-checkbox-column>
+                                                            </c-custom-datatble-for-activities>
+                                                        </div>
+                                                    </template>
+                                                    <template if:false={ActivityRecords}>
+                                                        <div class="slds-align_absolute-center"
+                                                            style="margin-top:3px;margin-bottom:5px;"><b>No Open
+                                                                Activities Found!</b> </div>
+                                                    </template>
+
+                                                </td>
+                                                <td colspan="1"></td>
+                                            </template>
+                                        </tr>
+                                    </template>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                    <template if:true={showPagination}>
+                        <div style="margin-top:10px;margin-bottom:10px" class="slds-float_right">
+                            <c-paginator records={strategyData} total-records={strategyData.length}
+                                show-search-box="true" onpaginatorchange={handlePaginatorChange}>
+                            </c-paginator>
+                        </div>
+                    </template>
+
+                </template>
+            </lightning-card>
+        </lightning-tab>
+
+        <!--  This tab shows the closed startegies  -->
+        <lightning-tab label="Completed Strategies & Goals" value="Completed" onactive={handleCompletedStrategies}>
+            <lightning-card title="Strategies and Goals" icon-name="standard:strategy">
+                <template if:true={completedRecords}>
+
+                    <div class="slds-border_left slds-border_right slds-border_top slds-border_bottom">
+                        <lightning-datatable key-field="id" data={recordsToDisplayCompleted} columns={completedColumns}
+                            onrowtoggle={handleshowActivities} wrap-text-max-lines="5" min-column-width="120"
+                            hide-checkbox-column>
+                        </lightning-datatable>
+                        <div style="margin-top:10px;margin-bottom:10px" class="slds-float_right">
+                            <c-paginator records={completedRecords} total-records={completedRecords.length}
+                                show-search-box="true" onpaginatorchange={handleCompletedPaginatorChange}>
+                            </c-paginator>
+                        </div>
+                    </div>
+                </template></lightning-card>
+
+            <template if:false={completedRecords}>
+                <p class="slds-align_absolute-center">No Completed Strategy Record Found!</p>
+            </template>
+        </lightning-tab>
+
+        <!--  This tab shows the Archived startegies  -->
+        <lightning-tab label="Archived Strategies & Goals" value="Inactive" onactive={handldInactiveStrategies}>
+            <lightning-card title="Strategies and Goals" icon-name="standard:strategy">
+                <template if:true={inactiveRecords}>
+                    <div class="slds-border_left slds-border_right slds-border_top slds-border_bottom">
+                        <lightning-datatable key-field="id" data={recordsToDisplayInactive} columns={completedColumns}
+                            wrap-text-max-lines="5" min-column-width="120" hide-checkbox-column>
+                        </lightning-datatable>
+                        <div style="margin-top:10px;margin-bottom:10px" class="slds-float_right">
+                            <c-paginator records={inactiveRecords} total-records={inactiveRecords.length}
+                                show-search-box="true" onpaginatorchange={handleInactivePaginatorChange}>
+                            </c-paginator>
+                        </div>
+                    </div>
+                </template></lightning-card>
+            <template if:false={inactiveRecords}>
+                <p class="slds-align_absolute-center">No Archived Strategy Record Found!</p>
+            </template>
+        </lightning-tab>
+
+        <!-- Added by Prachi as part of SSE-21114 -->
+        <lightning-tab label="All Activities" value="AllActivities" onactive={handleAllActivities}>
+            <lightning-card>
+                <lightning-layout>
+                    <lightning-layout-item size="8">
+                        <lightning-card title={ActivityTitle} icon-name="standard:event">
+                        </lightning-card>
+
+                    </lightning-layout-item>
+                    <lightning-layout-item size="4">
+                        <lightning-combobox name="activityFilter" label="Show Activities" value={activityPicklistValue}
+                            options={activityPicklistoptions} onchange={handleChange}>
+
+                        </lightning-combobox></lightning-layout-item>
+                </lightning-layout>
+                <template if:true={allActivityData}>
+
+                    <div class="slds-border_left slds-border_right slds-border_top slds-border_bottom slds-m-top_large">
+                        <c-custom-datatble-for-activities key-field="id" data={activitiesRecordsToDisplay}
+                            columns={allActivityCols} wrap-text-max-lines="5" min-column-width="120"
+                            hide-checkbox-column>
+                        </c-custom-datatble-for-activities>
+
+                        <template if:true={showActivityPagination}>
+                            <div style="margin-top:10px;margin-bottom:10px" class="slds-float_right">
+
+                                <c-paginator records={allActivityData} total-records={allActivityData.length}
+                                    show-search-box="true" onpaginatorchange={handleActivitiesPaginatorChange}>
+                                </c-paginator>
+
+                            </div>
+                        </template>
+
+                    </div>
+                </template></lightning-card>
+
+            <template if:false={allActivityData}>
+                <p class="slds-align_absolute-center">No Open/Completed Activies Record Found!</p>
+            </template>
+
+
+        </lightning-tab>
+        <!--SSE-21114 chnage end-->
+
+    </lightning-tabset>
+
+
+
+    <template if:true={openModal}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open custom-alignment">
+            <div class="slds-modal__container slds-is-relative">
+
+
+                <!-- Modal/Popup Box LWC header here -->
+                <div class="slds-is-relative custom-width">
+                    <template if:true={showSpinner}>
+                        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                    </template>
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close" onclick={closeModal}>
+                            <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                                size="small"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h3 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{modalTitle}</h3>
+                    </header>
+                    <template if:false={isOpportunityModal}>
+                        <lightning-record-edit-form object-api-name={objectApiName} onsuccess={handleSuccess}
+                            onerror={handleError} record-id={fieldValues.strategyId}>
+                            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                                <template if:true={showErrorMessage}>
+                                    <div class="slds-notify slds-notify_toast slds-theme_error slds-align_absolute-center"
+                                        role="status">
+                                        <span class="slds-assistive-text">error</span>
+                                        <div class="slds-notify__content">
+                                            <h2 class="slds-text-heading_small ">Please Resolve Errors</h2>
+                                        </div>
+                                    </div>
+                                </template>
+                                <lightning-messages></lightning-messages>
+                                <lightning-layout class="slds-p-top_medium">
+                                    <lightning-layout-item size="6">
+                                        <lightning-input-field field-name={fields.NAME}
+                                            class="required-fields"></lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6">
+                                        <lightning-input-field class="required-fields"
+                                            field-name={fields.ESTIMATED_COMPLETION_DATE}></lightning-input-field>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <lightning-layout>
+                                    <lightning-layout-item size="6">
+                                        <lightning-input-field field-name={fields.ACCOUNT_PLAN} value={recordId}
+                                            disabled="true"></lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6">
+                                        <lightning-input-field class="required-fields"
+                                            field-name={fields.TYPE}></lightning-input-field>
+                                    </lightning-layout-item>
+
+                                </lightning-layout>
+                                <lightning-layout>
+                                    <lightning-layout-item size="6">
+                                        <lightning-input-field field-name={fields.CONTACT}></lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6">
+                                        <lightning-input-field class="required-fields"
+                                            field-name={fields.STATUS}></lightning-input-field>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <lightning-layout>
+                                    <lightning-layout-item size="6">
+                                        <lightning-input-field class="required-fields"
+                                            field-name={fields.SOLUTION}></lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6">
+                                        <lightning-input-field class="required-fields"
+                                            field-name={fields.BUSINESS_PROBLEM_ADDRESSED}
+                                            required></lightning-input-field>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <lightning-layout>
+                                    <lightning-layout-item size="6">
+                                        <lightning-input-field class="required-fields" field-name={fields.SOLUTION_GOAL}
+                                            required></lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6">
+                                        <lightning-input-field class="required-fields" field-name={fields.MILESTONES}
+                                            required></lightning-input-field>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <lightning-layout>
+                                    <lightning-layout-item size="6">
+                                        <lightning-input-field class="required-fields" field-name={fields.RESOURCES}
+                                            required></lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6">
+                                        <lightning-input-field class="required-fields" field-name={fields.COMMENTS}
+                                            required></lightning-input-field>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                            </div>
+                            <footer class="slds-modal__footer">
+                                <button class="slds-button slds-button_neutral" onclick={closeModal} type="Cancel"
+                                    title="Cancel">Cancel</button>
+                                <button class="slds-button slds-button_brand" type="submit" title="Save"
+                                    onclick={handleSave}>Save</button>
+                            </footer>
+                        </lightning-record-edit-form>
+                    </template>
+                    <template if:true={isOpportunityModal}>
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+                            <lightning-card title="Opportunities" icon-name="standard:opportunity">
+                                <template if:true={opportunityData}>
+                                    <div
+                                        class="slds-border_left slds-border_right slds-border_top slds-border_bottom max-height">
+                                        <template if:true={showSpinner}>
+                                            <lightning-spinner alternative-text="Loading"
+                                                size="small"></lightning-spinner>
+                                        </template>
+                                        <lightning-datatable key-field="oppId" data={opportunityData}
+                                            columns={opportunityColumns} selected-rows={selectedRows}
+                                            onrowselection={handleRowSelection} min-column-width="120"
+                                            wrap-text-max-lines="5">
+                                        </lightning-datatable>
+                                    </div>
+                                </template>
+                                <template if:false={opportunityData}>
+                                    <p class="slds-align_absolute-center">No Eligble Opportunity Found!</p>
+                                </template>
+                            </lightning-card>
+                        </div>
+                        <footer class="slds-modal__footer">
+                            <button class="slds-button slds-button_neutral" onclick={closeModal} type="Cancel"
+                                title="Cancel">Cancel</button>
+                            <button class="slds-button slds-button_brand" title="Save"
+                                onclick={linkOrDelinkOpportunities}>Save</button>
+                        </footer>
+                    </template>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+
+</template>

@@ -1,0 +1,36 @@
+<template>
+    <template if:true={showdropdown}>
+    <div class="slds-modal slds-fade-in-open slds-modal_small">  
+      <div class="slds-modal__container">  
+          <!------HEADER Section-->  
+            <lightning-button-icon icon-name="utility:close" alternative-text="Close this window" size="large"  
+              variant="bare-inverse" onclick={closeModal} class="slds-modal__close">  
+            </lightning-button-icon>  
+          <!------Body Section-->  
+        <div class="slds-modal__content slds-p-around_medium slds-p-bottom_xx-large">
+           <lightning-layout horizontal-align="Spread">
+                <lightning-layout-item size="10" small-device-size="4" medium-device-size="8" large-device-size="10" >
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <lightning-combobox name="recordTypes"
+                                                    label="Select a Record Type"
+                                                    value={selectedValue}
+                                                    options={options}
+                                                    onchange={handleChange} ></lightning-combobox>
+                            </div>
+                        </div>
+                </lightning-layout-item>
+            </lightning-layout>
+
+            <lightning-layout horizontal-align="end">
+                <lightning-layout-item >
+                    <div> 
+                    <lightning-button label="Next" variant="brand" onclick={handleNext}></lightning-button>
+                    </div>       
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+      </div>
+    </div>
+   </template>   
+</template>

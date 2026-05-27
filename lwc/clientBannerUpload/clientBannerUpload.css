@@ -1,0 +1,22 @@
+.banner-image {
+    width: 100%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: #f4f4f4;
+    border-radius: 5px;
+}
+
+.file-input {
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 5px;
+}

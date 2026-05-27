@@ -1,0 +1,6 @@
+<apex:page name="Attribution_TabePage" tabStyle="RevenueAttribution__c" title="Attributions: Home" id="AttributionPage" >
+<apex:form id="AttributionForm">
+<apex:sectionHeader title="Attributions" subTitle="{!$User.FirstName} {!$User.LastName}"/> 
+<c:Attribution_ListView id="AttributionList"></c:Attribution_ListView>
+</apex:form>
+</apex:page>

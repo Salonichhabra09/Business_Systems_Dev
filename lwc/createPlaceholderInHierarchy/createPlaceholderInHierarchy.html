@@ -1,0 +1,79 @@
+<template>
+    <div style={modalresize}>
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+            class="slds-modal slds-fade-in-open slds-modal_small">
+            <div class="slds-modal__container slds-is-relative">
+
+                <div class="slds-is-relative">
+                    <template lwc:if={showSpinner}>
+                        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                    </template>
+                    <div class="slds-modal__header">
+                <!-- Close button -->
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                    title="Close" onclick={handleCloseAddPlaceholderPopup}>
+                    <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                        size="small">
+                    </lightning-icon>
+                    <span class="slds-assistive-text">Cancel and close</span>
+                </button>
+                
+                    <!-- Modal title -->
+                    <h1 id="modal-heading-03" class="slds-modal__title slds-hyphenate">Create Placeholders</h1>
+                </div>
+                <div class="slds-modal__content slds-p-around_small" id="modal-content-id-3">
+                    <lightning-card>
+                        <lightning-button slot="actions" label="Add Row" onclick={addRow}></lightning-button>
+                    <div class="slds-grid slds-wrap slds-m-bottom_medium">
+                        <div class="slds-col slds-size_1-of-12 slds-p-right_large slds-p-left_small">
+                            <table>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Name">#</div>
+                                </th>
+                            </table>
+                        </div>
+                        <div class="slds-col slds-size_1-of-3 slds-p-right_large slds-p-left_small">
+                            <table>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Name">Placeholder Name/Job Function</div>
+                                </th>
+                            </table>
+                        </div>          
+                    </div>
+                    <template for:each={placeholderList} for:item="placeholder" for:index="index">
+                            <div class="slds-grid slds-wrap slds-m-bottom_small" key={placeholder.index}>
+                                <div class="slds-col slds-size_1-of-12 slds-p-right_large">
+                                    <p>{placeholder.index}</p>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2 slds-p-right_large">
+                                    <lightning-input type="Text" variant="label-hidden" onchange={selectName} accesskey={placeholder.index}>
+                                    </lightning-input>
+                                </div>
+                                
+                                <div class="slds-col slds-size_1-of-3 slds-p-right_large">
+                                    <div class="slds-grid slds-gutters">
+                                        <div class="slds-col slds-size_1-of-12 slds-p-left_medium">
+                                        <lightning-button-icon icon-name="utility:delete" accesskey={placeholder.index} variant="bare" onclick={removeRow} size="large"></lightning-button-icon>
+                                    </div>
+                                      </div>
+                                </div>
+                        </div>
+                    </template>
+                </lightning-card>
+                  
+                </div>
+                <div class="slds-modal__footer">
+                    <!-- Cancel and Save buttons -->
+                    <button class="slds-button slds-button_neutral" aria-label="Cancel and close"
+                        onclick={handleBackToSelectionPopup}>Back</button>
+                  <!-- Save button -->
+                    <button class="slds-button slds-button_brand" disabled={disableSaveChooseExisting}
+                    onclick={handleCreatePlaceholder}>Create</button>
+                </div>
+                </div>
+            </div>
+        </section>
+        <!-- Modal backdrop -->
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </div>
+</template>

@@ -1,0 +1,75 @@
+:host ul {
+    position: relative;
+    padding: 2em 0 0 0;
+    white-space: nowrap;
+    margin: 0 auto;
+    text-align: center
+}
+
+:host ul:after {
+    content: '';
+    display: table;
+    clear: both
+}
+
+:host li {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 1em .5em 0 .5em
+    /* padding: 2em .5em 0 .5em */
+}
+
+:host li:before,
+:host li:after {
+    content: '';
+    position: absolute;
+    top: 2em;
+    right: 50%;
+    border-top: 1px solid #ccc;
+    width: 50%;
+    height: 1em;
+    /* height: 2em */
+}
+
+:host li:after {
+    right: auto;
+    left: 50%;
+    border-left: 1px solid #ccc;
+}
+
+:host li:only-child:after,
+:host li:only-child:before {
+    display: none
+}
+
+:host li:only-child {
+    /* padding-top: 0; */
+    padding: 0;
+}
+
+:host li:first-child:before,
+:host li:last-child:after {
+    border: 0 none
+}
+
+:host li:last-child:before {
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 0 0
+}
+
+:host li:first-child:after {
+    border-radius: 5px 0 0 0
+}
+
+:host ul:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 1px solid #ccc;
+    width: 0;
+    height: 4em
+}

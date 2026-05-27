@@ -1,0 +1,2077 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Order Management</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Add_On__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Add-On</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Billing_Frequency__c</fullName>
+        <label>Billing Frequency</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Monthly</fullName>
+                    <default>false</default>
+                    <label>Monthly</label>
+                </value>
+                <value>
+                    <fullName>Quarterly</fullName>
+                    <default>false</default>
+                    <label>Quarterly</label>
+                </value>
+                <value>
+                    <fullName>Bi-annual</fullName>
+                    <default>false</default>
+                    <label>Bi-annual</label>
+                </value>
+                <value>
+                    <fullName>Annual</fullName>
+                    <default>false</default>
+                    <label>Annual</label>
+                </value>
+                <value>
+                    <fullName>One-off</fullName>
+                    <default>false</default>
+                    <label>One-off</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Contract__c</fullName>
+        <label>Order</label>
+        <referenceTo>Contract</referenceTo>
+        <relationshipName>Contract_Line_Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Discount__c</fullName>
+        <externalId>false</externalId>
+        <label>Discount</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Duration_Day_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(  ISPICKVAL(Price_per__c , &quot;One-off&quot;) , Price__c /  Duration_days__c,0 )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Duration Day Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>12</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Duration_days__c</fullName>
+        <externalId>false</externalId>
+        <formula>(End_Date__c -  Start_Date__c) + 1</formula>
+        <label>Duration days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Equivalent_Units__c</fullName>
+        <externalId>false</externalId>
+        <label>Equivalent Units</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Exclude_from_ACV__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Exclude from ACV</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IM_Lookup_Code__c</fullName>
+        <label>Order Line Item</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Order_Method__c</controllingField>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>360 Platform Set up</fullName>
+                    <default>false</default>
+                    <label>360 Platform Set up</label>
+                </value>
+                <value>
+                    <fullName>360 Subscription</fullName>
+                    <default>false</default>
+                    <label>360 Subscription</label>
+                </value>
+                <value>
+                    <fullName>Advisory Services Subscription</fullName>
+                    <default>false</default>
+                    <label>Advisory Services Subscription</label>
+                </value>
+                <value>
+                    <fullName>AM Aptitude (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>AM Aptitude (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>AM Coding (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>AM Coding (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>AM Generic (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>AM Generic (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>AM Language (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>AM Language (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>AM Personal &amp; Behavioural (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>AM Personal &amp; Behavioural (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>AM Pool Hiring (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>AM Pool Hiring (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>AM Proctoring (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>AM Proctoring (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>AM Product Subscription</fullName>
+                    <default>false</default>
+                    <label>AM Product Subscription</label>
+                </value>
+                <value>
+                    <fullName>AM Professional Services</fullName>
+                    <default>false</default>
+                    <label>AM Professional Services</label>
+                </value>
+                <value>
+                    <fullName>AM Skills: Analytics (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>AM Skills: Analytics (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>AM Skills: Banking and Financial Serv (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>AM Skills: Banking and Financial Serv (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>AM Skills: Customer Service, Contact Center and BPO (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>AM Skills: Customer Service, Contact Center and BPO (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>AM Skills: Engineering (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>AM Skills: Engineering (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>AM Skills: Finance and Accounting (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>AM Skills: Finance and Accounting (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>AM Skills: Healthcare, Pharma and Life Sciences (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>AM Skills: Healthcare, Pharma and Life Sciences (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>AM Skills: Human Resources, Marketing and Operations (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>AM Skills: Human Resources, Marketing and Operations (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>AM Skills: MS Office (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>AM Skills: MS Office (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>AM Skills: Sales and Business Development (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>AM Skills: Sales and Business Development (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>AM Skills: Sciences (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>AM Skills: Sciences (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>AM Skills: Technology (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>AM Skills: Technology (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>AM Skills: Tourism and Hospitality (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>AM Skills: Tourism and Hospitality (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>AM Video (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>AM Video (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>Application Analytics Subscription</fullName>
+                    <default>false</default>
+                    <label>Application Analytics Subscription</label>
+                </value>
+                <value>
+                    <fullName>Bureau</fullName>
+                    <default>false</default>
+                    <label>Bureau</label>
+                </value>
+                <value>
+                    <fullName>Candidate Support – Bronze</fullName>
+                    <default>false</default>
+                    <label>Candidate Support – Bronze</label>
+                </value>
+                <value>
+                    <fullName>Candidate Support for Subscription</fullName>
+                    <default>false</default>
+                    <label>Candidate Support for Subscription</label>
+                </value>
+                <value>
+                    <fullName>Candidate Support –  Gold</fullName>
+                    <default>false</default>
+                    <label>Candidate Support –  Gold</label>
+                </value>
+                <value>
+                    <fullName>Candidate Support –  Silver</fullName>
+                    <default>false</default>
+                    <label>Candidate Support –  Silver</label>
+                </value>
+                <value>
+                    <fullName>Consulting</fullName>
+                    <default>false</default>
+                    <label>Consulting</label>
+                </value>
+                <value>
+                    <fullName>Credentialing Assessments</fullName>
+                    <default>false</default>
+                    <label>Credentialing Assessments</label>
+                </value>
+                <value>
+                    <fullName>Development Coach</fullName>
+                    <default>false</default>
+                    <label>Development Coach</label>
+                </value>
+                <value>
+                    <fullName>Digital Readiness Solution</fullName>
+                    <default>false</default>
+                    <label>Digital Readiness Solution</label>
+                </value>
+                <value>
+                    <fullName>Expenses</fullName>
+                    <default>false</default>
+                    <label>Expenses</label>
+                </value>
+                <value>
+                    <fullName>Freight</fullName>
+                    <default>false</default>
+                    <label>Freight</label>
+                </value>
+                <value>
+                    <fullName>Functional Talent Assessment</fullName>
+                    <default>false</default>
+                    <label>Functional Talent Assessment</label>
+                </value>
+                <value>
+                    <fullName>Funds on Account</fullName>
+                    <default>false</default>
+                    <label>Funds on Account</label>
+                </value>
+                <value>
+                    <fullName>Leader Edge License</fullName>
+                    <default>false</default>
+                    <label>Leader Edge License</label>
+                </value>
+                <value>
+                    <fullName>Legacy Product - Licence</fullName>
+                    <default>false</default>
+                    <label>Legacy Product - Licence</label>
+                </value>
+                <value>
+                    <fullName>Legacy Product - other</fullName>
+                    <default>false</default>
+                    <label>Legacy Product - other</label>
+                </value>
+                <value>
+                    <fullName>Legacy Product - Paper &amp; Pencil</fullName>
+                    <default>false</default>
+                    <label>Legacy Product - Paper &amp; Pencil</label>
+                </value>
+                <value>
+                    <fullName>Managed Services (Fee Per Candidate)</fullName>
+                    <default>false</default>
+                    <label>Managed Services (Fee Per Candidate)</label>
+                </value>
+                <value>
+                    <fullName>Managed Services for Offline Services</fullName>
+                    <default>false</default>
+                    <label>Managed Services for Offline Services</label>
+                </value>
+                <value>
+                    <fullName>Managed Services for Subscription</fullName>
+                    <default>false</default>
+                    <label>Managed Services for Subscription</label>
+                </value>
+                <value>
+                    <fullName>Managed Services Other</fullName>
+                    <default>false</default>
+                    <label>Managed Services Other</label>
+                </value>
+                <value>
+                    <fullName>Managed Services Report</fullName>
+                    <default>false</default>
+                    <label>Managed Services Report</label>
+                </value>
+                <value>
+                    <fullName>MS Interactive Dashboard</fullName>
+                    <default>false</default>
+                    <label>MS Interactive Dashboard</label>
+                </value>
+                <value>
+                    <fullName>Precise Fit License</fullName>
+                    <default>false</default>
+                    <label>Precise Fit License</label>
+                </value>
+                <value>
+                    <fullName>Product Subscription</fullName>
+                    <default>false</default>
+                    <label>Product Subscription</label>
+                </value>
+                <value>
+                    <fullName>RemoteWorkQ - Dashboard</fullName>
+                    <default>false</default>
+                    <label>RemoteWorkQ - Dashboard</label>
+                </value>
+                <value>
+                    <fullName>RemoteWorkQ - In Advance</fullName>
+                    <default>false</default>
+                    <label>RemoteWorkQ - In Advance</label>
+                </value>
+                <value>
+                    <fullName>RemoteWorkQ - In Arrears</fullName>
+                    <default>false</default>
+                    <label>RemoteWorkQ - In Arrears</label>
+                </value>
+                <value>
+                    <fullName>RemoteWorkQ - Limited Subscription</fullName>
+                    <default>false</default>
+                    <label>RemoteWorkQ - Limited Subscription</label>
+                </value>
+                <value>
+                    <fullName>RemoteWorkQ - Unlimited Subscription</fullName>
+                    <default>false</default>
+                    <label>RemoteWorkQ - Unlimited Subscription</label>
+                </value>
+                <value>
+                    <fullName>Royalties</fullName>
+                    <default>false</default>
+                    <label>Royalties</label>
+                </value>
+                <value>
+                    <fullName>SHL Experiences Setup</fullName>
+                    <default>false</default>
+                    <label>SHL Experiences Setup</label>
+                </value>
+                <value>
+                    <fullName>SHL Experiences Subscription</fullName>
+                    <default>false</default>
+                    <label>SHL Experiences Subscription</label>
+                </value>
+                <value>
+                    <fullName>SHL ONLINE</fullName>
+                    <default>false</default>
+                    <label>SHL ONLINE</label>
+                </value>
+                <value>
+                    <fullName>Site set up</fullName>
+                    <default>false</default>
+                    <label>Site set up</label>
+                </value>
+                <value>
+                    <fullName>Technical Support Services</fullName>
+                    <default>false</default>
+                    <label>Technical Support Services</label>
+                </value>
+                <value>
+                    <fullName>Training - In company</fullName>
+                    <default>false</default>
+                    <label>Training - In company</label>
+                </value>
+                <value>
+                    <fullName>Training - Public</fullName>
+                    <default>false</default>
+                    <label>Training - Public</label>
+                </value>
+                <value>
+                    <fullName>Units in advance</fullName>
+                    <default>false</default>
+                    <label>Units in advance</label>
+                </value>
+                <value>
+                    <fullName>Units in arrears</fullName>
+                    <default>false</default>
+                    <label>Units in arrears</label>
+                </value>
+                <value>
+                    <fullName>Virtual AC/DC - Limited Subscription</fullName>
+                    <default>false</default>
+                    <label>Virtual AC/DC - Limited Subscription</label>
+                </value>
+                <value>
+                    <fullName>Vocational Assessments</fullName>
+                    <default>false</default>
+                    <label>Vocational Assessments</label>
+                </value>
+                <value>
+                    <fullName>Wardhead: Block (In Advance)</fullName>
+                    <default>false</default>
+                    <label>Wardhead: Block (In Advance)</label>
+                </value>
+                <value>
+                    <fullName>Wardhead: Capped Subscription</fullName>
+                    <default>false</default>
+                    <label>Wardhead: Capped Subscription</label>
+                </value>
+                <value>
+                    <fullName>Wardhead: Embed (In Arrears)</fullName>
+                    <default>false</default>
+                    <label>Wardhead: Embed (In Arrears)</label>
+                </value>
+                <value>
+                    <fullName>Wardhead: Site Licence</fullName>
+                    <default>false</default>
+                    <label>Wardhead: Site Licence</label>
+                </value>
+                <value>
+                    <fullName>Wardhead: Uncapped Subscription</fullName>
+                    <default>false</default>
+                    <label>Wardhead: Uncapped Subscription</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>360 Platform Set up</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>360 Subscription</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <controllingFieldValue>T&amp;E</controllingFieldValue>
+                <valueName>Advisory Services Subscription</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>AM Aptitude (In Arrears)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>AM Coding (In Arrears)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>AM Generic (In Arrears)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>AM Language (In Arrears)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>AM Personal &amp; Behavioural (In Arrears)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>AM Pool Hiring (In Arrears)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>AM Proctoring (In Arrears)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>AM Product Subscription</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>AM Skills: Analytics (In Arrears)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>AM Skills: Banking and Financial Serv (In Arrears)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>AM Skills: Customer Service, Contact Center and BPO (In Arrears)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>AM Skills: Engineering (In Arrears)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>AM Skills: Finance and Accounting (In Arrears)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>AM Skills: Healthcare, Pharma and Life Sciences (In Arrears)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>AM Skills: Human Resources, Marketing and Operations (In Arrears)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>AM Skills: MS Office (In Arrears)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>AM Skills: Sales and Business Development (In Arrears)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>AM Skills: Sciences (In Arrears)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>AM Skills: Technology (In Arrears)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>AM Skills: Tourism and Hospitality (In Arrears)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>AM Video (In Arrears)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Application Analytics Subscription</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Candidate Support – Bronze</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Candidate Support for Subscription</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Candidate Support –  Gold</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Candidate Support –  Silver</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <controllingFieldValue>T&amp;E</controllingFieldValue>
+                <valueName>Consulting</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Credentialing Assessments</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Development Coach</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Digital Readiness Solution</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <controllingFieldValue>T&amp;E</controllingFieldValue>
+                <valueName>Expenses</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Freight</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Functional Talent Assessment</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Funds on Account</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Leader Edge License</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Legacy Product - Licence</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Legacy Product - other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Legacy Product - Paper &amp; Pencil</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Managed Services (Fee Per Candidate)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Managed Services for Offline Services</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Managed Services for Subscription</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Managed Services Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Managed Services Report</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <controllingFieldValue>T&amp;E</controllingFieldValue>
+                <valueName>MS Interactive Dashboard</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Precise Fit License</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Product Subscription</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>RemoteWorkQ - Dashboard</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>RemoteWorkQ - In Advance</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>RemoteWorkQ - In Arrears</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>RemoteWorkQ - Limited Subscription</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>RemoteWorkQ - Unlimited Subscription</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Royalties</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>SHL ONLINE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Site set up</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Technical Support Services</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Training - Public</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Units in advance</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Units in arrears</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Virtual AC/DC - Limited Subscription</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Vocational Assessments</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Wardhead: Block (In Advance)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Wardhead: Capped Subscription</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Wardhead: Embed (In Arrears)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Wardhead: Site Licence</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RI</controllingFieldValue>
+                <controllingFieldValue>SOE</controllingFieldValue>
+                <valueName>Wardhead: Uncapped Subscription</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>T&amp;E</controllingFieldValue>
+                <valueName>AM Professional Services</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>T&amp;E</controllingFieldValue>
+                <valueName>SHL Experiences Setup</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>T&amp;E</controllingFieldValue>
+                <valueName>Training - In company</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Invoicing_Schedule__c</fullName>
+        <label>Invoicing Schedule</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>25% Upfront</fullName>
+                    <default>false</default>
+                    <label>25% Upfront</label>
+                </value>
+                <value>
+                    <fullName>100% Upfront</fullName>
+                    <default>false</default>
+                    <label>100% Upfront</label>
+                </value>
+                <value>
+                    <fullName>Invoice per milestone</fullName>
+                    <default>false</default>
+                    <label>Invoice per milestone</label>
+                </value>
+                <value>
+                    <fullName>Upon completion</fullName>
+                    <default>false</default>
+                    <label>Upon completion</label>
+                </value>
+                <value>
+                    <fullName>Special Invoicing Instructions</fullName>
+                    <default>false</default>
+                    <label>Special Invoicing Instructions</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Limit_Value__c</fullName>
+        <description>For Limited Subscription sales this is the value that the customer is limited to (per &apos;Price per&apos; field)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter limit applicable to Limited Subscription contracts</inlineHelpText>
+        <label>Limit Value</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Line_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Line Description</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order_Method__c</fullName>
+        <label>Order Method</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>RI</fullName>
+                    <default>false</default>
+                    <label>RI</label>
+                </value>
+                <value>
+                    <fullName>SOE</fullName>
+                    <default>false</default>
+                    <label>SOE</label>
+                </value>
+                <value>
+                    <fullName>T&amp;E</fullName>
+                    <default>false</default>
+                    <label>T&amp;E</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Original_Order_Line__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Original Order Line</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Original_Order__c</field>
+                <operation>equals</operation>
+                <valueField>Contract_Line__c.Contract__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contract_Line__c</referenceTo>
+        <relationshipLabel>Variation Order Lines</relationshipLabel>
+        <relationshipName>Order_Line</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Original_Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Original Order</label>
+        <referenceTo>Contract</referenceTo>
+        <relationshipLabel>Order Line (Original Order)</relationshipLabel>
+        <relationshipName>Order_Line</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PO_number__c</fullName>
+        <externalId>false</externalId>
+        <label>PO number</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Package__c</fullName>
+        <label>Package</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Proposition__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Graduate Essential</fullName>
+                    <default>false</default>
+                    <label>Graduate Essential</label>
+                </value>
+                <value>
+                    <fullName>Graduate Advanced</fullName>
+                    <default>false</default>
+                    <label>Graduate Advanced</label>
+                </value>
+                <value>
+                    <fullName>Graduate Ultimate</fullName>
+                    <default>false</default>
+                    <label>Graduate Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Volume Essential</fullName>
+                    <default>false</default>
+                    <label>Volume Essential</label>
+                </value>
+                <value>
+                    <fullName>Volume Advanced</fullName>
+                    <default>false</default>
+                    <label>Volume Advanced</label>
+                </value>
+                <value>
+                    <fullName>Volume Ultimate</fullName>
+                    <default>false</default>
+                    <label>Volume Ultimate</label>
+                </value>
+                <value>
+                    <fullName>HiPo</fullName>
+                    <default>false</default>
+                    <label>HiPo</label>
+                </value>
+                <value>
+                    <fullName>Digital Readiness</fullName>
+                    <default>false</default>
+                    <label>Digital Readiness</label>
+                </value>
+                <value>
+                    <fullName>Talent Audit</fullName>
+                    <default>false</default>
+                    <label>Talent Audit</label>
+                </value>
+                <value>
+                    <fullName>Technology Hiring Essential</fullName>
+                    <default>false</default>
+                    <label>Technology Hiring Essential</label>
+                </value>
+                <value>
+                    <fullName>Technology Hiring Advanced</fullName>
+                    <default>false</default>
+                    <label>Technology Hiring Advanced</label>
+                </value>
+                <value>
+                    <fullName>Technology Hiring Ultimate</fullName>
+                    <default>false</default>
+                    <label>Technology Hiring Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Talent Mobility Essential</fullName>
+                    <default>false</default>
+                    <label>Talent Mobility Essential</label>
+                </value>
+                <value>
+                    <fullName>Talent Mobility Advanced</fullName>
+                    <default>false</default>
+                    <label>Talent Mobility Advanced</label>
+                </value>
+                <value>
+                    <fullName>Talent Mobility Ultimate</fullName>
+                    <default>false</default>
+                    <label>Talent Mobility Ultimate</label>
+                </value>
+                <value>
+                    <fullName>RemoteWorkQ Essential</fullName>
+                    <default>false</default>
+                    <label>RemoteWorkQ Essential</label>
+                </value>
+                <value>
+                    <fullName>RemoteWorkQ Advanced</fullName>
+                    <default>false</default>
+                    <label>RemoteWorkQ Advanced</label>
+                </value>
+                <value>
+                    <fullName>RemoteWorkQ Ultimate</fullName>
+                    <default>false</default>
+                    <label>RemoteWorkQ Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Bespoke</fullName>
+                    <default>false</default>
+                    <label>Bespoke</label>
+                </value>
+                <value>
+                    <fullName>Not applicable – variation/royalties</fullName>
+                    <default>false</default>
+                    <label>Not applicable – variation/royalties</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Unknown</controllingFieldValue>
+                <valueName>Unknown</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Graduate Hiring</controllingFieldValue>
+                <valueName>Graduate Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Graduate Hiring</controllingFieldValue>
+                <valueName>Graduate Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Graduate Hiring</controllingFieldValue>
+                <valueName>Graduate Ultimate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Graduate Hiring</controllingFieldValue>
+                <controllingFieldValue>Mixed</controllingFieldValue>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <controllingFieldValue>Talent Transformation</controllingFieldValue>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <controllingFieldValue>Talent Mobility</controllingFieldValue>
+                <controllingFieldValue>RemoteWorkQ</controllingFieldValue>
+                <controllingFieldValue>Sales Hiring</controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <controllingFieldValue>Talent Development</controllingFieldValue>
+                <valueName>Bespoke</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <valueName>Volume Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <valueName>Volume Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <valueName>Volume Ultimate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Transformation</controllingFieldValue>
+                <valueName>HiPo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Transformation</controllingFieldValue>
+                <valueName>Digital Readiness</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Transformation</controllingFieldValue>
+                <valueName>Talent Audit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <valueName>Technology Hiring Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <valueName>Technology Hiring Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <valueName>Technology Hiring Ultimate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Mobility</controllingFieldValue>
+                <valueName>Talent Mobility Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Mobility</controllingFieldValue>
+                <valueName>Talent Mobility Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Mobility</controllingFieldValue>
+                <valueName>Talent Mobility Ultimate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RemoteWorkQ</controllingFieldValue>
+                <valueName>RemoteWorkQ Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RemoteWorkQ</controllingFieldValue>
+                <valueName>RemoteWorkQ Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RemoteWorkQ</controllingFieldValue>
+                <valueName>RemoteWorkQ Ultimate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Not applicable – variation/royalties</controllingFieldValue>
+                <valueName>Not applicable – variation/royalties</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Platform__c</fullName>
+        <label>Platform</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Brainbench</fullName>
+                    <default>false</default>
+                    <label>Brainbench</label>
+                </value>
+                <value>
+                    <fullName>iAssess</fullName>
+                    <default>false</default>
+                    <label>iAssess</label>
+                </value>
+                <value>
+                    <fullName>MFS</fullName>
+                    <default>false</default>
+                    <label>MFS</label>
+                </value>
+                <value>
+                    <fullName>MS</fullName>
+                    <default>false</default>
+                    <label>MS</label>
+                </value>
+                <value>
+                    <fullName>Nacho</fullName>
+                    <default>false</default>
+                    <label>Nacho</label>
+                </value>
+                <value>
+                    <fullName>Precise Fit Modules</fullName>
+                    <default>false</default>
+                    <label>Precise Fit Modules</label>
+                </value>
+                <value>
+                    <fullName>S2P</fullName>
+                    <default>false</default>
+                    <label>S2P</label>
+                </value>
+                <value>
+                    <fullName>SODA</fullName>
+                    <default>false</default>
+                    <label>SODA</label>
+                </value>
+                <value>
+                    <fullName>Sunstone</fullName>
+                    <default>false</default>
+                    <label>Sunstone</label>
+                </value>
+                <value>
+                    <fullName>Talent Central</fullName>
+                    <default>false</default>
+                    <label>Talent Central</label>
+                </value>
+                <value>
+                    <fullName>Valtera</fullName>
+                    <default>false</default>
+                    <label>Valtera</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Price__c</fullName>
+        <defaultValue>0</defaultValue>
+        <label>Line Price</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Price_per__c</fullName>
+        <label>Price per</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unit</fullName>
+                    <default>false</default>
+                    <label>Unit</label>
+                </value>
+                <value>
+                    <fullName>Applicant</fullName>
+                    <default>false</default>
+                    <label>Applicant</label>
+                </value>
+                <value>
+                    <fullName>Sitting</fullName>
+                    <default>false</default>
+                    <label>Sitting</label>
+                </value>
+                <value>
+                    <fullName>Job</fullName>
+                    <default>false</default>
+                    <label>Job</label>
+                </value>
+                <value>
+                    <fullName>One-off</fullName>
+                    <default>false</default>
+                    <label>One-off</label>
+                </value>
+                <value>
+                    <fullName>Assessment</fullName>
+                    <default>false</default>
+                    <label>Assessment</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Project</label>
+        <referenceTo>ProjectObject__c</referenceTo>
+        <relationshipName>Order_Line</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Proposition__c</fullName>
+        <label>Proposition</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Graduate Hiring</fullName>
+                    <default>false</default>
+                    <label>Graduate Hiring</label>
+                </value>
+                <value>
+                    <fullName>Volume Hiring</fullName>
+                    <default>false</default>
+                    <label>Volume Hiring</label>
+                </value>
+                <value>
+                    <fullName>Talent Transformation</fullName>
+                    <default>false</default>
+                    <label>Talent Transformation</label>
+                </value>
+                <value>
+                    <fullName>Technology Hiring</fullName>
+                    <default>false</default>
+                    <label>Technology Hiring</label>
+                </value>
+                <value>
+                    <fullName>Talent Mobility</fullName>
+                    <default>false</default>
+                    <label>Talent Mobility</label>
+                </value>
+                <value>
+                    <fullName>RemoteWorkQ</fullName>
+                    <default>false</default>
+                    <label>RemoteWorkQ</label>
+                </value>
+                <value>
+                    <fullName>Sales Hiring</fullName>
+                    <default>false</default>
+                    <label>Sales Hiring</label>
+                </value>
+                <value>
+                    <fullName>Managerial Hiring</fullName>
+                    <default>false</default>
+                    <label>Managerial Hiring</label>
+                </value>
+                <value>
+                    <fullName>Talent Development</fullName>
+                    <default>false</default>
+                    <label>Talent Development</label>
+                </value>
+                <value>
+                    <fullName>Not applicable – variation/royalties</fullName>
+                    <default>false</default>
+                    <label>Not applicable – variation/royalties</label>
+                </value>
+                <value>
+                    <fullName>Mixed</fullName>
+                    <default>false</default>
+                    <label>Mixed</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Related_System_Type__c</fullName>
+        <label>Related System Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Legacy Soda</fullName>
+                    <default>false</default>
+                    <label>Legacy Soda</label>
+                </value>
+                <value>
+                    <fullName>Legacy S2P</fullName>
+                    <default>false</default>
+                    <label>Legacy S2P</label>
+                </value>
+                <value>
+                    <fullName>Legacy Other</fullName>
+                    <default>false</default>
+                    <label>Legacy Other</label>
+                </value>
+                <value>
+                    <fullName>TalentCentral</fullName>
+                    <default>false</default>
+                    <label>TalentCentral</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Running_Total__c</fullName>
+        <description>This field will be sum of price on original order line and price of related/linked variation order lines.</description>
+        <label>Running Total</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>S2P_Reference__c</fullName>
+        <externalId>false</externalId>
+        <label>S2P Reference</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Scope_Management__c</fullName>
+        <label>Scope Management</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pre-hire assessments &amp; outputs</fullName>
+                    <default>false</default>
+                    <label>Pre-hire assessments &amp; outputs</label>
+                </value>
+                <value>
+                    <fullName>Post-hire assessments &amp; outputs</fullName>
+                    <default>false</default>
+                    <label>Post-hire assessments &amp; outputs</label>
+                </value>
+                <value>
+                    <fullName>Specific solutions (eg. High Potential)</fullName>
+                    <default>false</default>
+                    <label>Specific solutions (eg. High Potential)</label>
+                </value>
+                <value>
+                    <fullName>Job levels (eg.Supervisor)</fullName>
+                    <default>false</default>
+                    <label>Job levels (eg.Supervisor)</label>
+                </value>
+                <value>
+                    <fullName>Departments (eg. Call Centre)</fullName>
+                    <default>false</default>
+                    <label>Departments (eg. Call Centre)</label>
+                </value>
+                <value>
+                    <fullName>Business divisions (eg. Operations)</fullName>
+                    <default>false</default>
+                    <label>Business divisions (eg. Operations)</label>
+                </value>
+                <value>
+                    <fullName>Locations (eg. Rome office)</fullName>
+                    <default>false</default>
+                    <label>Locations (eg. Rome office)</label>
+                </value>
+                <value>
+                    <fullName>Single country / language</fullName>
+                    <default>false</default>
+                    <label>Single country / language</label>
+                </value>
+                <value>
+                    <fullName>Multiple countries / languages</fullName>
+                    <default>false</default>
+                    <label>Multiple countries / languages</label>
+                </value>
+                <value>
+                    <fullName>Global / all languages</fullName>
+                    <default>false</default>
+                    <label>Global / all languages</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Scoped_CPS_days__c</fullName>
+        <externalId>false</externalId>
+        <label>Scoped CPS days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Scoped_LPS_days__c</fullName>
+        <externalId>false</externalId>
+        <label>Scoped LPS days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Detail_ID__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Legacy cross reference only, not required for new contracts</inlineHelpText>
+        <label>Service Detail ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Source_of_PS_Scoping__c</fullName>
+        <inlineHelpText>Please use Other Existing Pricing Calculator for Enterprise Leadership, Hipo. Use None for budget dump.</inlineHelpText>
+        <label>Source of PS Scoping</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>E2E Scoping Tool</fullName>
+                    <default>false</default>
+                    <label>E2E Scoping Tool</label>
+                </value>
+                <value>
+                    <fullName>Other Existing Pricing Calculator</fullName>
+                    <default>false</default>
+                    <label>Other Existing Pricing Calculator</label>
+                </value>
+                <value>
+                    <fullName>Other Scoping Template</fullName>
+                    <default>false</default>
+                    <label>Other Scoping Template</label>
+                </value>
+                <value>
+                    <fullName>None Available</fullName>
+                    <default>false</default>
+                    <label>None Available</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>System_Client_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>System Client ID</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>System_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>text(Contract__r.S2P_Reference_Required__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>System Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Usage_Allowance__c</fullName>
+        <label>Usage Allowance</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Capped</fullName>
+                    <default>false</default>
+                    <label>Capped</label>
+                </value>
+                <value>
+                    <fullName>Uncapped</fullName>
+                    <default>false</default>
+                    <label>Uncapped</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Usage_Cap__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter defined cap limit per Basis of Fees.  If uncapped subscription, provide Annual usage estimation.</inlineHelpText>
+        <label>Usage Cap or Estimation</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Usage_Estimate_Type__c</fullName>
+        <label>Basis of Fees</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Units</fullName>
+                    <default>false</default>
+                    <label>Units</label>
+                </value>
+                <value>
+                    <fullName>Candidates</fullName>
+                    <default>false</default>
+                    <label>Candidates</label>
+                </value>
+                <value>
+                    <fullName>Assessments and Reports</fullName>
+                    <default>false</default>
+                    <label>Assessments and Reports</label>
+                </value>
+                <value>
+                    <fullName>Full-Time Equivalents (FTEs)</fullName>
+                    <default>false</default>
+                    <label>Full-Time Equivalents (FTEs)</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Usage_Estimate__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Usage Estimate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Variation_Order__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contract__r.Variation_Order__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Variation Order</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Order Line</label>
+    <listViews>
+        <fullName>All_Orders</fullName>
+        <columns>NAME</columns>
+        <columns>Order_Method__c</columns>
+        <columns>Project__c</columns>
+        <columns>Contract__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Contract__c</field>
+            <operation>equals</operation>
+            <value>00154766</value>
+        </filters>
+        <label>All Orders</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CLN{0000000}</displayFormat>
+        <label>Order Line</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Order Line</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Contract__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>End_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Start_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Price__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Project__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Contract__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Start_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>End_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Project__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Price__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Line_Description__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>Contract__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Start_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>End_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Price__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Currency_Should_Match_Order_Currency</fullName>
+        <active>true</active>
+        <description>Order Line currency must be same as related order currency.</description>
+        <errorConditionFormula>IF(
+NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)),
+NOT(TEXT(CurrencyIsoCode) = TEXT( Contract__r.CurrencyIsoCode )),
+false)</errorConditionFormula>
+        <errorDisplayField>CurrencyIsoCode</errorDisplayField>
+        <errorMessage>Order Line currency must be same as related order currency.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>EndDatePastStartDate</fullName>
+        <active>true</active>
+        <description>End Date should not be on or before Start Date.</description>
+        <errorConditionFormula>IF(NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)),IF( End_Date__c - Start_Date__c &lt;=0 , TRUE, FALSE),false)</errorConditionFormula>
+        <errorMessage>End Date should not be on or before Start Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>EndDateStartDateMandatoryonSubscription</fullName>
+        <active>true</active>
+        <description>Start Date and End Date are mandatory if the Order Line Item is Product Subscription, 360 Subscription, Advisory Services Subscription, Managed Services for Subscription, Sunstone Analytics Subscription or Candidate Support for Subscription.</description>
+        <errorConditionFormula>IF(NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)),
+IF( AND(OR(CONTAINS(Text(IM_Lookup_Code__c),&apos;Subscription&apos;),ISPICKVAL( IM_Lookup_Code__c , &quot;ODUNITSUBSCRIPT&quot;),ISPICKVAL( IM_Lookup_Code__c , &quot;Legacy Product - Licence&quot;),ISPICKVAL( IM_Lookup_Code__c , &quot;Leader Edge License&quot;),ISPICKVAL( IM_Lookup_Code__c , &quot;Precise Fit License&quot;)) , OR( ISBLANK(Start_Date__c),ISBLANK(End_Date__c))), True, False),
+false)</errorConditionFormula>
+        <errorMessage>Start Date and End Date are mandatory if the Order Line Item is a Subscription value or &apos;Legacy Product – Licence&apos; or &apos;Leader Edge License&apos; or &apos;Precise Fit License&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Leader_Edge_License_and_Precise_Fit_Lice</fullName>
+        <active>true</active>
+        <description>Leader Edge License &amp; Precise Fit License will act as subscription line items and Basis of Fees, Usage Cap or Estimation will become mandatory.</description>
+        <errorConditionFormula>(
+	ISBLANK(Usage_Estimate_Type__c) 
+	|| ISBLANK(Usage_Cap__c)
+) 
+&amp;&amp; 
+(
+	Text(IM_Lookup_Code__c) == &apos;Leader Edge License&apos; 
+	|| Text(IM_Lookup_Code__c) == &apos;Precise Fit License&apos; 
+	
+)</errorConditionFormula>
+        <errorMessage>Basis of fees &amp; Usage Cap or Estimation are mandatory if Order Line item is Leader Edge License OR Precise Fit License.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>MandatoryInvoiceschedulewithOrderMethod</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK(Text( Invoicing_Schedule__c )) &amp;&amp; Text( Order_Method__c ) == &apos;T&amp;E&apos;</errorConditionFormula>
+        <errorDisplayField>Invoicing_Schedule__c</errorDisplayField>
+        <errorMessage>&apos;Invoicing schedule’ must be selected when Order method equals &quot;T&amp;E&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandatory_5_Fields_on_OrdrLineItem_value</fullName>
+        <active>true</active>
+        <errorConditionFormula>(ISBLANK(Text(Usage_Allowance__c)) || ISBLANK( Text(Platform__c)) || ISBLANK(Usage_Estimate_Type__c) || ISBLANK(Usage_Cap__c) || ISBLANK(Equivalent_Units__c)) &amp;&amp; (Text(IM_Lookup_Code__c) == &apos;Product Subscription&apos; || Text(IM_Lookup_Code__c) == &apos;AM Product Subscription&apos; || Text(IM_Lookup_Code__c) == &apos;Units in advance&apos; || Text(IM_Lookup_Code__c) == &apos;Units in arrears&apos; || Text(IM_Lookup_Code__c) == &apos;Wardhead: Block (In Advance)&apos; || Text(IM_Lookup_Code__c) == &apos;Wardhead: Embed (In Arrears)&apos; || Text(IM_Lookup_Code__c) == &apos;Wardhead: Capped Subscription&apos; || Text(IM_Lookup_Code__c) == &apos;Wardhead: Uncapped Subscription&apos;||
+Text(IM_Lookup_Code__c) == &apos;RemoteWorkQ - In Advance&apos; || Text(IM_Lookup_Code__c) == &apos;RemoteWorkQ - Limited Subscription&apos; || Text(IM_Lookup_Code__c) == &apos;RemoteWorkQ - Unlimited Subscription&apos; || Text(IM_Lookup_Code__c) == &apos;RemoteWorkQ - In Arrears&apos; || Text(IM_Lookup_Code__c) == &apos;Virtual AC/DC - Limited Subscription&apos;||
+Text(IM_Lookup_Code__c) == &apos;SHL Experiences Subscription&apos;)</errorConditionFormula>
+        <errorMessage>Basis of fees, Usage Allowance, Usage Cap or Estimation, Platform and Equivalent Units is mandatory if Order Line item is Product Subscription OR Units In Advance OR Units In Arrears.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>OrginalOrderDoNotMatch</fullName>
+        <active>true</active>
+        <description>Selected original order do not match with order\&apos;s original order.</description>
+        <errorConditionFormula>AND( Original_Order__c !=&apos;&apos;,
+ Contract__r.Original_Order__c != Original_Order__c )</errorConditionFormula>
+        <errorDisplayField>Original_Order__c</errorDisplayField>
+        <errorMessage>Selected original order do not match with order\&apos;s original order.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Platform_Mandatory</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR(
+AND( ISPICKVAL(IM_Lookup_Code__c,&apos;Site set up&apos;),(ISPICKVAL(Platform__c,&apos;&apos;))),
+AND( ISPICKVAL(IM_Lookup_Code__c,&apos;Sunstone Analytics Subscription&apos;),(ISPICKVAL(Platform__c,&apos;&apos;)))
+)</errorConditionFormula>
+        <errorDisplayField>Platform__c</errorDisplayField>
+        <errorMessage>Platform is Mandatory for the value that you have selected in Order Line Item.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SourcePSScopingfieldMandatorywithIMcode</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK(Text(Source_of_PS_Scoping__c)) &amp;&amp; (Text(IM_Lookup_Code__c) == &apos;Consulting&apos; || Text(IM_Lookup_Code__c) == &apos;Training - In company&apos;)</errorConditionFormula>
+        <errorDisplayField>Source_of_PS_Scoping__c</errorDisplayField>
+        <errorMessage>&apos;Source of Scoping’ must be selected when Order Line Item equals “Consulting” or “Training - In company”</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Usage_Cap_or_Estimation_Mandatory</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF((ISPICKVAL(Usage_Allowance__c,&apos;Capped&apos;) &amp;&amp; (TEXT(IM_Lookup_Code__c ) &lt;&gt; &apos;Product Subscription&apos; &amp;&amp; TEXT(IM_Lookup_Code__c ) &lt;&gt; &apos;Units in advance&apos; &amp;&amp; TEXT(IM_Lookup_Code__c ) &lt;&gt; &apos;Units in arrears&apos;) &amp;&amp; ISNULL(Usage_Cap__c)), true, false)</errorConditionFormula>
+        <errorDisplayField>Usage_Cap__c</errorDisplayField>
+        <errorMessage>Please provide the usage cap or estimation</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Variationorderlinecheck</fullName>
+        <active>true</active>
+        <description>Variation order line can not be saved without linking to original order line.</description>
+        <errorConditionFormula>AND( Contract__c !=&apos;&apos;,  Contract__r.Variation_Order__c ==&apos;Yes&apos;, Original_Order_Line__c ==&apos;&apos;)</errorConditionFormula>
+        <errorDisplayField>Original_Order_Line__c</errorDisplayField>
+        <errorMessage>Variation order line can not be saved without linking to original order line.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>New_Contract_Line</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Order Line</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>//First construct the new URL
+{!REQUIRESCRIPT(&quot;/soap/ajax/12.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/apex.js&quot;)} 
+var result = sforce.connection.query(&quot;Select Id,DefaultCurrencyIsoCode from User where id =&apos;{!$User.Id}&apos;&quot;); 
+records = result.getArray(&quot;records&quot;);
+var newUrl = &quot;{!URLFOR($Action.Contract_Line__c.New, null, [CF00ND0000002gkfv_lkid= Contract.Id , CF00ND0000002gkfv=   Contract.ContractNumber,CF00ND0000005FVJE_lkid= Contract.Original_OrderId__c   ,CF00ND0000005FVJE= Contract.Original_Order__c,retURL=$Request.retURL] ,true)}&quot;;
+newUrl = newUrl+&quot;&amp;CurrencyIsoCode=&quot;+&apos;{!Contract.CurrencyIsoCode}&apos;+&quot;&quot;;
+
+var conRel=&apos;{!Contract.Related_System_type__c}&apos;; 
+conRel=escape(conRel); 
+
+var ordersystemId=&apos;{!Contract.System_Client_ID__c}&apos;; 
+ordersystemId=escape(ordersystemId); 
+
+
+newUrl = newUrl+&quot;&amp;CurrencyIsoCode=&quot;+&apos;{!Contract.CurrencyIsoCode}&apos;+&quot;&amp;00ND0000005Fo0T=&quot;+conRel+&quot;&amp;00ND0000005Fo0U=&quot;+ordersystemId+&quot;&quot;; 
+
+
+//Then redirect the user to it
+window.parent.location.replace(newUrl);</url>
+    </webLinks>
+</CustomObject>

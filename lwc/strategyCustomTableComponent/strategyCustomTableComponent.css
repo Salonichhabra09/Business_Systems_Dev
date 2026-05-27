@@ -1,0 +1,77 @@
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 10px
+  }
+
+  .tableColMargin{
+    margin-bottom: 4px;
+    margin-top: 4px;
+  }
+
+  .slds-resizable__divider{
+    position: static;
+  } 
+
+  .red-background-icon{
+    --sds-c-icon-color-foreground-default: red;
+        padding: 0.3rem;
+}
+
+.black-background-icon{
+  --sds-c-icon-color-foreground-default: black;
+      padding: 0.3rem;
+}
+
+.closeClass{
+  --sds-c-icon-color-foreground-default: black;
+  display: none;
+}
+
+.openClass{
+  --sds-c-icon-color-foreground-default: black;
+}
+
+.checkIconVisibility .openClass{
+ display: none;
+}
+.checkIconVisibility .closeClass{
+  display: inline-block;
+ }
+ .displayData{
+  display: none;
+ }
+
+ .childTableVisible{
+  display: inline-block;
+ }
+ .childTableNotVisible{
+  display: none;
+ }
+ .openDownClass{
+  --sds-c-icon-color-foreground-default:black;
+ }
+ .thBorder{
+  border-right: 1.5px solid rgb(174, 174, 174);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top:5px;
+  padding-bottom:5px;
+ }
+
+ .slds-modal__container {
+  max-width: 80rem !important;
+  width: 80% !important;
+}
+.max-height{
+  max-height: 30rem;
+  overflow: auto;
+}
+.slds-modal__content{
+  padding: 1rem;
+  height: 22rem;
+  overflow: auto;
+}

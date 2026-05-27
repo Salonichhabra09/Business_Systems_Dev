@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="User Authentication" icon-name="utility:lock">
+        <div style="background-color:rgb(236, 234, 234);"><br><br>
+            <lightning-layout horizontal-align="center"	multiple-rows >
+                <lightning-layout-item flexibility="auto"  class="slds-text-align_left">
+                  <p class="slds-text-title" style="font-weight: bold;">Please enter your Email and Password to enter report view. </p><br>
+        <div>
+            <lightning-input type="email" label="Email" value={email} onchange={handleEmailChange}></lightning-input> <br>
+        </div>
+        <div>
+            <lightning-input type="password" label="Password" value={password} onchange={handlePasswordChange}></lightning-input> <br><br>
+        </div>
+        <div>    
+            <lightning-button label="Login" variant="brand" onclick={handleLogin} stretch="true" class="slds-m-right_small"></lightning-button>
+        </div>
+            <div class="slds-m-top_medium">
+                <lightning-spinner if:true={isLoading} alternative-text="Authenticating..."></lightning-spinner>
+                
+            </div>
+
+            <template if:true={isAuthenticated}>
+                <p class="slds-text-color_success slds-m-top_medium">Welcome! Authentication Successful. ✅</p>
+            </template>
+
+            <template if:true={errorMessage}>
+                <p class="slds-text-color_error slds-m-top_medium">{errorMessage}</p>
+            </template>
+    </lightning-layout-item><br><br>
+</lightning-layout> <br><br> 
+        </div>
+
+    </lightning-card>
+</template>

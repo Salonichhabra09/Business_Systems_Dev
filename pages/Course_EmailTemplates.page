@@ -1,0 +1,88 @@
+<apex:page Controller="EmailTemplate_Selection" tabStyle="EmailTemplate" sidebar="false" showheader="false" lightningStylesheets="true">
+  <apex:includeScript value="/support/console/54.0/integration.js"/>
+
+   <apex:form >
+        <apex:actionStatus id="spinnerStatus">
+            <apex:facet name="start">
+                <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.25; z-index: 1000; background-color: black;">
+                    &nbsp;
+                </div>
+                <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+                    <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+                        <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+                        <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+                    </div>
+                </div>
+            </apex:facet>
+        </apex:actionStatus>
+        <apex:actionFunction name="changeFolder" action="{!changeFolder}" rerender="templateTable"/>
+        <apex:pageBlock >
+        <apex:pageBlockSection columns="1">
+                    <apex:outputPanel >
+                        <apex:outputText value="Folder" style="font-weight:bold;"/>&nbsp;&nbsp;&nbsp;
+                        <apex:selectList value="{!folderId}" onChange="javascript:changeFolder()" size="1">
+                            <apex:selectOptions value="{!items}"/>
+                        </apex:selectList>
+                    </apex:outputPanel>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection columns="1" id="templateTable">
+                    <apex:pageBlockTable value="{!emailTemplatesList}" var="template" rendered="{!IsTemplateExist}">
+                        <apex:Column headerValue="No SendJI Email Template exist in this Folder.">
+                        </apex:Column>
+                    </apex:pageBlockTable>
+                    <apex:pageBlockTable value="{!emailTemplatesList}" var="template" rendered="{!if(IsTemplateExist==false,true,false)}">
+                        <apex:column headerValue="Name">
+                                              
+                           <apex:commandLink onclick="OnCommandLink(); " action="{!executeAction}" value="{!template.Name}" id="theCommandLink" status="spinnerStatus" oncomplete="
+                               if('{!success}' == 'true'){
+                                	alert('{!message}');
+                                    doCloseTab();
+                                } else if('{!success}' == 'false') {
+                                    alert('{!message}');                                                                                                                       
+                               }
+                            ">
+                                <apex:param name="courseId" value="{!$CurrentPage.parameters.recordId}" assignTo="{!courseId}"/>
+                                <apex:param name="emailTemplateId" value="{!template.id}" assignTo="{!emailTemplateId}"/>
+                            </apex:commandLink>                                                         
+                         
+                        </apex:column>
+                        <apex:column value="{!template.TemplateType}"/>
+                        <apex:column value="{!template.Description}"/>
+                    </apex:pageBlockTable>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+    </apex:form>
+    
+  
+    
+    <script type="text/javascript">
+        var callback = function() {
+            if (result.error) {
+                console.error('Error message is: ' + result.error);
+            }
+        }
+        function doCloseTab() {
+            sforce.console.getEnclosingTabId(closeSubtab);
+        }
+        var closeSubtab = function closeSubtab(result) {
+            var tabId = result.id;
+            sforce.console.closeTab(tabId, callback);
+        }
+    </script>
+    
+
+	<script type="text/javascript">
+        var i=0;
+    	
+        function OnCommandLink() {
+            if(i==0){
+               i=1;
+               return true;
+            } else{
+                alert('Your previous request is in process. Please wait !');
+                return false;
+        	} 
+        }
+    </script>
+
+</apex:page>

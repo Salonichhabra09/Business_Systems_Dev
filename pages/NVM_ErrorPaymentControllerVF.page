@@ -1,0 +1,13 @@
+<apex:page controller="NVM_ErrorPaymentController" showHeader="false" sidebar="false">
+<apex:form >
+  <br/><br/>
+  <div style="font-size:15px;text-align:center">
+      <h1><span style="color:red">ERROR</span></h1>
+      {!ErrorMessage}
+  </div>
+  <!--<br/><br/>
+  
+   <apex:commandButton action="{!ReturnHome}" value="Return To Homepage" /> -->
+  
+</apex:form>
+</apex:page>

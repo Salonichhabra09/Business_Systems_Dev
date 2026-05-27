@@ -1,0 +1,56 @@
+<apex:page Controller="OrderProductsOnInvoiceRequestController" standardStylesheets="true"  >
+    <script type="text/javascript">
+    function selectAllCheckboxes(obj,receivedInputID){
+        var inputCheckBox = document.getElementsByTagName("input");
+        for(var i=0; i<inputCheckBox.length; i++){
+            if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){
+                inputCheckBox[i].checked = obj.checked;
+            }
+        }
+    }
+    function disableAllVFButtons() {
+        var jnc = jQuery.noConflict();
+        
+        jnc(".cvf_button").each(function(argIndex, argEle) {
+            jnc(this).prop('disabled', true);
+        });
+    }
+    </script>
+    <apex:form rendered="{!NOT(InvoiceRequest.Status__c='In Progress')}">
+<apex:pageMessage severity="Error" summary="You cannot Add/Remove PS Order Products as Invoice Request is Submitted for Processing or Processed " strength="1">
+<apex:commandLink value="Back" action="/{!InvoiceRequestId}"/>
+</apex:pageMessage>
+</apex:form>
+    <apex:form rendered="{!InvoiceRequest.Status__c='In Progress'}">
+     
+        <apex:pageblock title="Select Order Products">
+           
+                    <apex:pageBlockButtons styleclass="slds-button slds-button_brand">
+                        <apex:commandButton value="Save" action="{!AddProducts}" rerender="table2" onclick="this.disabled=true;" styleclass="slds-button slds-button_brand" />
+                        <apex:commandButton value="Cancel" action="/{!InvoiceRequestId}" rerender="table2" styleclass="slds-button slds-button_brand"/>
+                    </apex:pageBlockButtons>
+               
+            <apex:pageBlockTable value="{!wrapOrderItemList}" var="OrderItemWrap" id="table" title="Order Products" style="width:100%" columnsWidth="50px,200px, 100px, 100px, 100px, 150px, 100px, 100px,100px">
+                
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId')" disabled=""/>
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!OrderItemWrap.selected}" id="inputId" disabled=""/>
+                </apex:column>
+                 <apex:column value="{!OrderItemWrap.Orderitemrec.Product2.name}" />
+                     <apex:column value="{!OrderItemWrap.Orderitemrec.Quantity}" />
+                     <apex:column value="{!OrderItemWrap.Orderitemrec.UnitPrice}" />
+                     <apex:column value="{!OrderItemWrap.Orderitemrec.TotalPrice}" />
+                     <apex:column value="{!OrderItemWrap.Orderitemrec.Source_of_PS_Scoping__c}" />
+                     <apex:column value="{!OrderItemWrap.Orderitemrec.Proposition__c}"  />
+                    <apex:column value="{!OrderItemWrap.Orderitemrec.Package__c}"  />
+                    <apex:column value="{!OrderItemWrap.Orderitemrec.Service_End_Date__c}" />
+                    <apex:column value="{!OrderItemWrap.Orderitemrec.Order.OrderNumber}" />
+            </apex:pageBlockTable>
+            <!--         </apex:pageblockSection> -->
+            
+        </apex:pageblock>
+        
+    </apex:form>
+</apex:page>

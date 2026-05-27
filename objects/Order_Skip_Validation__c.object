@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Custom setting to skip validation on updating Booking date on completed order.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Skip_Validation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checkbox to skip validation rule from trigger(Contract_AfterUpdateInsert)</description>
+        <label>Skip Validation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Order Skip Validation</label>
+    <visibility>Protected</visibility>
+</CustomObject>

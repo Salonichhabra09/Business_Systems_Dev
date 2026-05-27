@@ -1,0 +1,66 @@
+<aura:component controller="GetRejectedOrders" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasRecordId" access="global" >
+    <aura:attribute name="disable" type="Boolean" default="false" description="To hold boolean value for disabling button" />
+    <aura:attribute name="recordId" type="id" access="global" />
+    <aura:attribute name="record" type="Object" access="global" description="To reference the Object"/>
+    <aura:attribute name="simplerecord" type="Object" access="global" description="To reference the Object"/>
+    <aura:attribute name="RejectedOrders" type="Order[]" />
+    <aura:attribute name="UserIsValid" type="Boolean" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />   
+    <force:recordData aura:id="OppRecordLoader"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      fields="Rejected_Order_IDs__c,OwnerId,StageName,RecordType.Name"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.simplerecord}"
+                      targetError="{!v.recordError}"
+                      />
+    <aura:if isTrue="{!v.disable}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header slds-modal__header_empty">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick="{!c.handleClose}">
+                        <lightning:icon iconName="utility:close" variant="bare"/>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning:flow aura:id="ResubmitOrderFlow" onstatuschange="{!c.statusChange}"/>
+                </div>
+                <!--footer class="slds-modal__footer">
+                    <lightning:button variant="Neutral" class="slds-button" label="Cancel" onclick="{!c.handleClose}"/>
+                </footer-->
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+    
+    <lightning:card title="Rejected Orders"> 
+        
+        <lightning:layout multipleRows="true">  
+            
+            <aura:iteration items="{!v.RejectedOrders}" var="records">
+                <lightning:layoutItem padding="around-small" size="6">  
+                    <div id="Tilu" class="slds-box" style="width: 700px;">
+                        <lightning:tile label="{!records.OrderNumber}"  href="{!'/lightning/r/Order/'+records.Id+'/view'}" >
+                            <aura:set attribute="media">
+                                <lightning:icon iconName="standard:record"/>
+                            </aura:set>
+                            <dl class="slds-dl_horizontal">
+                                <dd class="slds-dl_horizontal__detail slds-tile__meta" style="width: 1000px;">
+                                    <p class="slds-truncate">Status: {!records.Oats_Status__c}</p>
+                                </dd>
+                                <dd class="slds-dl_horizontal__detail slds-tile__meta" style="width: 1000px;">
+                                    <p class="slds-truncate">Rejection Reason: {!records.Rejection_Reason__c}</p>
+                                </dd>
+                            </dl>
+                        </lightning:tile>
+                    </div> 
+                </lightning:layoutItem>
+            </aura:iteration>
+        </lightning:layout>
+        <ui:message title="Kindly review an opportunity or a contract and rectify as part of the rejection reason. Once you are happy with the correction, you can resubmit your order by clicking Resubmit Order button" severity="warning" >
+            <span class="slds-float_right"><lightning:button variant="brand" onclick="{!c.callFlow}" label="Resubmit Order"/></span>
+        </ui:message> 
+    </lightning:card>	
+    
+</aura:component>

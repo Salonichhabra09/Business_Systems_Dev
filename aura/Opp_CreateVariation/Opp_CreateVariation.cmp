@@ -1,0 +1,111 @@
+<aura:component controller="CreateVariation_LEX" extends="c:GenericBase"
+    implements="flexipage:availableForRecordHome,flexipage:availableForAllPageTypes,lightning:isUrlAddressable,force:hasRecordId"
+    access="global">
+    <lightning:overlayLibrary aura:id="overlayLib" />
+
+    <aura:attribute name="recordId" type="id" access="global" description="Used to Hold the Id of record in Context" />
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.doInit}" />
+    <aura:attribute name="error" type="String" description="To Display the error message" />
+    <aura:attribute name="rectype" type="String[]"
+        description="To display the Opportunity record types in Record type Selector on UI" />
+    <aura:attribute name="record" type="Opportunity" description="To reference the Opportunity Object" />
+    <aura:attribute name="simpleRecord" type="Opportunity" description="To reference the Opportunity Object" />
+    <aura:attribute name="rCHK" type="Boolean" default="False"
+        description="Used to toggle between buttons on record type basis." />
+    <!-- START Changes made for SSE-18138 by Aashi -->
+    <aura:attribute name="contractDetail" type="Contract" description="Contract Information" />
+    <aura:attribute name="isContractEndDateLessThanToday" type="Boolean" default="false"
+        description="Used to disable Variation Opportunity Button based on Contract End Date" />
+    <aura:attribute name="isContractEndDateForThisYearLessThanToday" type="Boolean" default="false"
+        description="Used to disable Variation Opportunity Button based on Contract End Date for Current Year Opportunity" />
+    <aura:attribute name="isAllowCreation" type="Boolean" default="true" />
+    <aura:attribute name="contractId" type="Id" access="global" />
+    <aura:attribute name="oppName" type="String" />
+    <aura:attribute name="currentYearOpportunity" type="Opportunity" description="Current Year Opportunity" />
+    <aura:attribute name="initiateTopUp" type="Boolean" default="false" />
+    <aura:attribute name="hideInfoCard" type="Boolean" default="false" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="currentUserDetails" type="Object" />
+
+    <aura:if isTrue="{!!v.hideInfoCard}">
+        <force:recordData aura:id="userDetails" recordId="{!$SObjectType.CurrentUser.Id}"
+            fields="Name,Profile.Name,ProfileId,Id" targetFields="{!v.currentUserDetails}"
+            recordUpdated="{!c.doInit}" />
+
+        <!-- END Changes made for SSE-18138 by Aashi -->
+        <force:recordData aura:id="forceRecordCmp" recordId="{!v.recordId}" layoutType="FULL" mode="VIEW"
+            targetRecord="{!v.record}" targetFields="{!v.simpleRecord}" targetError="{!v.error}"
+            recordUpdated="{!c.CheckRecType}" />
+
+        <lightning:card>
+            <ui:message class="text-align" severity="warning">
+                <!-- START Changes made for SSE-18138 by Aashi -->
+                <!--<div><b> This is an Original 'Closed/Won' Opportunity with completed Order, you may vary it, if
+                        required.</b></div>-->
+                <aura:if isTrue="{!v.isAllowCreation}">
+                    <b>Variation and Top-up Options:</b>
+                    <br></br>
+                    Please click the 'Create Variation' button to create the Variation Opportunity or click on 'Create
+                    Top-Up' to create the Top-Up Opportunity.
+                    <aura:set attribute="else">
+                        <aura:if isTrue="{!v.isContractEndDateLessThanToday}">
+                            <br></br>
+                            <!--Please note that you can not add a Variation to an Opportunity where the Contract end date is already in the past.-->
+                            <aura:set attribute="else">
+                                <br></br>
+                                <div class="slds-grid">
+                                    <div class="slds-col">
+                                        <lightning:icon iconName="utility:warning" alternativeText="Warning!"
+                                            title="Warning" size="x-small" variant="warning" />
+                                    </div>
+                                    <div class="slds-col slds-p-horizontal_small">
+                                        This opportunity has been created in the past, please navigate to <a
+                                            data-opp-id="{!v.currentYearOpportunity.Id}" onclick="{!c.handleClick}">
+                                            {!v.oppName} </a> current year opportunity to create the variation or
+                                        top-up.
+                                    </div>
+                                </div>
+                            </aura:set>
+                        </aura:if>
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!!v.isAllowCreation}">
+                    <div class="slds-grid">
+                        <div class="slds-col">
+                            <lightning:icon iconName="utility:warning" alternativeText="Warning!" title="Warning"
+                                size="x-small" variant="warning" />
+                        </div>
+                        <div class="slds-col slds-p-horizontal_small">
+                            Only <b>Excess Usage</b> or <b>In Arrears</b> Variation is allowed in past year
+                            opportunity
+                            and
+                            Expired Contract.
+                        </div>
+                    </div>
+                </aura:if>
+                <!-- END Changes made for SSE-18138 by Aashi -->
+                <!--<br></br><aura:if isTrue="{!v.rCHK}">-->
+                <!-- Added disabled property in below button tag for SSE-18138 by Aashi -->
+                <!--<span class="rightPadBut"><lightning:button variant="brand" onclick="{!c.openModal}" label="Create Variation"/></span>
+                <aura:set attribute="else">-->
+                <div class="slds-clearfix">
+                    <div class="slds-float_right slds-p-around_medium">
+                        <lightning:button variant="brand" onclick="{!c.ActionOnOptyRec}" label="Create Variation" />
+                        <aura:if isTrue="{!v.isAllowCreation}">
+                            <lightning:button variant="brand" onclick="{!c.actionOnTopUp}" label="Create Top-Up" />
+                        </aura:if>
+                    </div>
+                </div>
+            </ui:message>
+            <!--</aura:set>
+                </aura:if>-->
+            <div aura:id="modalDiv" class="slds-hide">
+                <!--<c:RecTypeSelector_Lex childAttribute="{!v.recordId}" />-->
+            </div>
+        </lightning:card>
+    </aura:if>
+    <aura:if isTrue="{!v.initiateTopUp}">
+        <c:createTopUpOpportunity recordId="{!v.recordId}" isInsert="true" onvaluechange="{!c.getValueFromLwc}">
+        </c:createTopUpOpportunity>
+    </aura:if>
+</aura:component>

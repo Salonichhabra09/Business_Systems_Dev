@@ -1,0 +1,42 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 12-09-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <form>
+        <template if:true={showLoadingSpinner}>
+            <div style="z-index: 10000 !important;">
+                <lightning-spinner alternative-text="Loading..." size="medium" style="z-index: 10000 !important;">
+                </lightning-spinner>
+            </div>
+        </template>
+        <fieldset class="slds-box slds-theme_default fieldSetBorder">
+            <legend id="reg2" class="slds-text-heading_small slds-var-p-vertical_medium bold-legend">
+                Upload CSV File
+            </legend>
+            <label></label>
+            <div class="slds-grid slds-grid_vertical slds-box slds-theme_warning" style="outline-style: solid;">
+                <div class="slds-col">
+                    <b>Important Information - Before uploading the Platform Data:</b>
+                </div>
+                <div class="slds-col slds-var-m-left_medium">
+                    <ul style="list-style-type:disc">
+                        <li>Please ensure that there are no invalid character in your upload file like: !@#$%^&amp;*()+={}[]|\:;&quot;&lt;&gt;?/.&copy;</li>
+                        <li>Email Address column should have values as per universally accepted format.</li>
+                        <li>There should not be any extra blank spaces before or after any text.</li>
+                        <li style="color:#000080"><b>The acceptable sequence of the columns is: </b>'Id', 'Name','Participant__r.Work_Request__r.Name', 'Participant__r.Full_Name__c', 'Participant__r.Email__c', 'Respondent__r.Full_Name__c', 'Respondent__r.Email__c', 'Rater_Type__c', 'VADC_Status__c', 'Insights_Status__c', 'MFS_Status__c', 'TC_Status__c', 'Overall_Status__c', 'Rater_String__c', 'Reminder__c', 'Report_Ready__c', 'Report_Sent__c', 'MFS_Report_Sent__c', 'TC_Report_Sent__c', 'Deadline__c', 'Comments__c', 'File_Name__c', 'Single_Use_Link__c', 'EmailType__c', 'Email_File_Name__c', 'Sharepoint_File_Path__c'</li>
+                        <li>The acceptable date format is dd-MM-yyyy.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="slds-align_absolute-center slds-var-m-vertical_medium">
+                <lightning-file-upload label="Attach Platform Data File" name="fileUploader" accept={acceptedFormats}
+                        record-id={recordId} onuploadfinished={handleUploadFinished}>
+                    </lightning-file-upload>
+            </div>
+        </fieldset>
+    </form>
+</template>

@@ -1,0 +1,11 @@
+.spins::after {
+    position: fixed;
+    content: 'Hold On! Account Plan is getting generated.';
+    width: 100%;
+    text-align: center;
+    top: calc(50% + 3em);
+    font-weight: bold;
+}
+.slds-spinner_container{
+    position: fixed;
+}

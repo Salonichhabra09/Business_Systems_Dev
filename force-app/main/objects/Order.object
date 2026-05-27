@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Activation_Offset__c</fullName>
+        <externalId>false</externalId>
+        <label>Activation Offset</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BU__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Account.BU__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>BU</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Booked_Elsewhere__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Booked Elsewhere</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Booking_Date__c</fullName>
+        <label>Booking Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Cancellation_Reason_Additional_Required__c</fullName>
+        <label>Cancellation Reason Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Cancellation_Reason__c</fullName>
+        <label>Cancellation Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Budget Limitations</fullName>
+                    <default>false</default>
+                    <label>Budget Limitations</label>
+                </value>
+                <value>
+                    <fullName>Contact Turnover</fullName>
+                    <default>false</default>
+                    <label>Contact Turnover</label>
+                </value>
+                <value>
+                    <fullName>Incorrect Contact</fullName>
+                    <default>false</default>
+                    <label>Incorrect Contact</label>
+                </value>
+                <value>
+                    <fullName>M&amp;A Activity</fullName>
+                    <default>false</default>
+                    <label>M&amp;A Activity</label>
+                </value>
+                <value>
+                    <fullName>Value Concerns</fullName>
+                    <default>false</default>
+                    <label>Value Concerns</label>
+                </value>
+                <value>
+                    <fullName>Finance Drop</fullName>
+                    <default>false</default>
+                    <label>Finance Drop</label>
+                </value>
+                <value>
+                    <fullName>Duplicate Opportunity</fullName>
+                    <default>false</default>
+                    <label>Duplicate Opportunity</label>
+                </value>
+                <value>
+                    <fullName>Invalid/market definitions</fullName>
+                    <default>false</default>
+                    <label>Invalid/market definitions</label>
+                </value>
+                <value>
+                    <fullName>Cannot meet requirements</fullName>
+                    <default>false</default>
+                    <label>Cannot meet requirements</label>
+                </value>
+                <value>
+                    <fullName>Cannot meet timescales</fullName>
+                    <default>false</default>
+                    <label>Cannot meet timescales</label>
+                </value>
+                <value>
+                    <fullName>Qualified Out</fullName>
+                    <default>false</default>
+                    <label>Qualified Out</label>
+                </value>
+                <value>
+                    <fullName>Opportunity clean up</fullName>
+                    <default>false</default>
+                    <label>Opportunity clean up</label>
+                </value>
+                <value>
+                    <fullName>Expertise</fullName>
+                    <default>false</default>
+                    <label>Expertise</label>
+                </value>
+                <value>
+                    <fullName>Solution</fullName>
+                    <default>false</default>
+                    <label>Solution</label>
+                </value>
+                <value>
+                    <fullName>Commercials</fullName>
+                    <default>false</default>
+                    <label>Commercials</label>
+                </value>
+                <value>
+                    <fullName>Service Failure</fullName>
+                    <default>false</default>
+                    <label>Service Failure</label>
+                </value>
+                <value>
+                    <fullName>Debooking</fullName>
+                    <default>false</default>
+                    <label>Debooking</label>
+                </value>
+                <value>
+                    <fullName>RFP - SHL Qualified Out</fullName>
+                    <default>false</default>
+                    <label>RFP - SHL Qualified Out</label>
+                </value>
+                <value>
+                    <fullName>Account Management / Client Relationship</fullName>
+                    <default>false</default>
+                    <label>Account Management / Client Relationship</label>
+                </value>
+                <value>
+                    <fullName>Duplicate / Data clean</fullName>
+                    <default>false</default>
+                    <label>Duplicate / Data clean</label>
+                </value>
+                <value>
+                    <fullName>Customer Restructure</fullName>
+                    <default>false</default>
+                    <label>Customer Restructure</label>
+                </value>
+                <value>
+                    <fullName>Customer No Interest   - Other</fullName>
+                    <default>false</default>
+                    <label>Customer No Interest   - Other</label>
+                </value>
+                <value>
+                    <fullName>Customer Requirements</fullName>
+                    <default>false</default>
+                    <label>Customer Requirements</label>
+                </value>
+                <value>
+                    <fullName>Customer Budget Limitations</fullName>
+                    <default>false</default>
+                    <label>Customer Budget Limitations</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Contract Extension Requested</fullName>
+                    <default>false</default>
+                    <label>Contract Extension Requested</label>
+                </value>
+                <value>
+                    <fullName>Sanctioned Account</fullName>
+                    <default>false</default>
+                    <label>Sanctioned Account</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Cancellation_Sub_Reason__c</fullName>
+        <label>Cancellation Sub Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Cancellation_Reason__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Capability</fullName>
+                    <default>false</default>
+                    <label>Capability</label>
+                </value>
+                <value>
+                    <fullName>Functionality</fullName>
+                    <default>false</default>
+                    <label>Functionality</label>
+                </value>
+                <value>
+                    <fullName>ROI realized</fullName>
+                    <default>false</default>
+                    <label>ROI realized</label>
+                </value>
+                <value>
+                    <fullName>Timescales</fullName>
+                    <default>false</default>
+                    <label>Timescales</label>
+                </value>
+                <value>
+                    <fullName>Content</fullName>
+                    <default>false</default>
+                    <label>Content</label>
+                </value>
+                <value>
+                    <fullName>Price</fullName>
+                    <default>false</default>
+                    <label>Price</label>
+                </value>
+                <value>
+                    <fullName>Contract</fullName>
+                    <default>false</default>
+                    <label>Contract</label>
+                </value>
+                <value>
+                    <fullName>Billing</fullName>
+                    <default>false</default>
+                    <label>Billing</label>
+                </value>
+                <value>
+                    <fullName>Payment Terms</fullName>
+                    <default>false</default>
+                    <label>Payment Terms</label>
+                </value>
+                <value>
+                    <fullName>GDPR</fullName>
+                    <default>false</default>
+                    <label>GDPR</label>
+                </value>
+                <value>
+                    <fullName>Reason</fullName>
+                    <default>false</default>
+                    <label>Reason</label>
+                </value>
+                <value>
+                    <fullName>Duplicate</fullName>
+                    <default>false</default>
+                    <label>Duplicate Opportunity</label>
+                </value>
+                <value>
+                    <fullName>Created in error</fullName>
+                    <default>false</default>
+                    <label>Created in error</label>
+                </value>
+                <value>
+                    <fullName>M&amp;A</fullName>
+                    <default>false</default>
+                    <label>M&amp;A</label>
+                </value>
+                <value>
+                    <fullName>Contact Churn</fullName>
+                    <default>false</default>
+                    <label>Contact Churn</label>
+                </value>
+                <value>
+                    <fullName>New contact</fullName>
+                    <default>false</default>
+                    <label>New contact</label>
+                </value>
+                <value>
+                    <fullName>Dept Closure</fullName>
+                    <default>false</default>
+                    <label>Dept Closure</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Customer Restructure</controllingFieldValue>
+                <valueName>M&amp;A</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Customer Restructure</controllingFieldValue>
+                <valueName>Contact Churn</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Customer Restructure</controllingFieldValue>
+                <valueName>New contact</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Customer Restructure</controllingFieldValue>
+                <valueName>Dept Closure</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Solution</controllingFieldValue>
+                <valueName>Capability</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Solution</controllingFieldValue>
+                <valueName>Functionality</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Solution</controllingFieldValue>
+                <valueName>ROI realized</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Solution</controllingFieldValue>
+                <valueName>Timescales</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Solution</controllingFieldValue>
+                <valueName>Content</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Commercials</controllingFieldValue>
+                <valueName>Price</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Commercials</controllingFieldValue>
+                <valueName>Contract</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Commercials</controllingFieldValue>
+                <valueName>Billing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Commercials</controllingFieldValue>
+                <valueName>Payment Terms</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Commercials</controllingFieldValue>
+                <valueName>GDPR</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Debooking</controllingFieldValue>
+                <valueName>Reason</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Duplicate / Data clean</controllingFieldValue>
+                <valueName>Duplicate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Duplicate / Data clean</controllingFieldValue>
+                <valueName>Created in error</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Course_Booking__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS(Opportunity.Opportunity_Nickname__c,&apos;Opportunity for Course Booking&apos;),
+			RIGHT(Opportunity.Opportunity_Nickname__c, 9), &apos;&apos; )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Course Booking</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Daylight_End_Date_US_submission__c</fullName>
+        <formula>DATETIMEVALUE(DATE(YEAR(DATEvalue(Submitted_to_OATs__c )),11,1)
++
+( 7
+-
+CASE( MOD(DATE ( YEAR (DATEvalue(Submitted_to_OATs__c )),11,1) - DATE (1900,1,7),7) ,
+0,7,MOD(DATE ( YEAR (DATEvalue(Submitted_to_OATs__c )),11,1) - DATE (1900,1,7),7))
+)) + 6/24</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Daylight End Date US(submission)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Daylight_Start_Date_US_Submission__c</fullName>
+        <formula>DATETIMEVALUE(DATE(YEAR(DATEvalue(Submitted_to_OATs__c )),3,1)
++
+( 14
+-
+CASE( MOD(DATE ( YEAR (DATEvalue(Submitted_to_OATs__c )),3,1) - DATE (1900,1,7),7) ,
+0,7,MOD(DATE ( YEAR (DATEvalue(Submitted_to_OATs__c )),3,1) - DATE (1900,1,7),7))
+)) + 7/24</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Daylight Start Date US(Submission)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Header_Count__c</fullName>
+        <label>Invoice Header Count</label>
+        <summaryForeignKey>Contract_Invoice_Header__c.Order__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>LegacyOrder__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>LegacyOrder</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MissingInfoOrdProd__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>will be marked true from backend if info around Use Case, Platform, Renewability is missing on Order Product</description>
+        <label>MissingInfoOrdProd</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OAT_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>OAT Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Oats_Status__c</fullName>
+        <label>OAT Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Status</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                    <label>Submitted</label>
+                </value>
+                <value>
+                    <fullName>Queried</fullName>
+                    <default>false</default>
+                    <label>Queried</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Awaiting GST/VAT Info</fullName>
+                    <default>false</default>
+                    <label>Awaiting GST/VAT Info</label>
+                </value>
+                <value>
+                    <fullName>Awaiting PO</fullName>
+                    <default>false</default>
+                    <label>Awaiting PO</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Under Legal Review</fullName>
+                    <default>false</default>
+                    <label>Under Legal Review</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Draft</controllingFieldValue>
+                <valueName>None</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Draft</controllingFieldValue>
+                <valueName>Rejected</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Activated</controllingFieldValue>
+                <controllingFieldValue>Service Activated</controllingFieldValue>
+                <valueName>Awaiting GST/VAT Info</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Activated</controllingFieldValue>
+                <controllingFieldValue>Service Activated</controllingFieldValue>
+                <valueName>Awaiting PO</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Activated</controllingFieldValue>
+                <valueName>Completed</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cancelled</controllingFieldValue>
+                <valueName>Cancelled</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>In Approval</controllingFieldValue>
+                <valueName>Submitted</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>In Approval</controllingFieldValue>
+                <valueName>Queried</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>In Approval</controllingFieldValue>
+                <valueName>Under Legal Review</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Service Activated</controllingFieldValue>
+                <valueName>Approved</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Offering_SolCap_BF_UsageAll__c</fullName>
+        <description>This field on Order is Populated when an Order Item is or Updated for a change in Offering Detail, Basis of Fee, Solution Cap &amp; Usage Allowance.</description>
+        <label>Offering SolCap BF UsageAll (for TC+)</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Offering_with_Solution_Cap__c</fullName>
+        <description>This field is Populated on OrderItem Creation &amp; Update (if there is change in Offering Detail or Solution Cap for the item)</description>
+        <label>Offering with Solution Cap</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Order_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Order Year</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Original_Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Original Order</label>
+        <referenceTo>Order</referenceTo>
+        <relationshipLabel>Reduction/Variation Orders</relationshipLabel>
+        <relationshipName>OriginalOrders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Billing_Frequency__c</fullName>
+        <label>Product Billing Frequency</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Monthly</fullName>
+                    <default>false</default>
+                    <label>Monthly</label>
+                </value>
+                <value>
+                    <fullName>Quarterly</fullName>
+                    <default>false</default>
+                    <label>Quarterly</label>
+                </value>
+                <value>
+                    <fullName>Bi-annual</fullName>
+                    <default>false</default>
+                    <label>Bi-annual</label>
+                </value>
+                <value>
+                    <fullName>Annual</fullName>
+                    <default>false</default>
+                    <label>Annual</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Reduction_Order_Invoice_Created__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Reduction Order Invoice Created</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Reduction_Order__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checkbox to define whether order is reduction or not.</description>
+        <label>Reduction order</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Rejection_Reason__c</fullName>
+        <label>Rejection Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Signature lacks authority</fullName>
+                    <default>false</default>
+                    <label>Signature lacks authority</label>
+                </value>
+                <value>
+                    <fullName>Issues with SFDC Account</fullName>
+                    <default>false</default>
+                    <label>Issues with SFDC Account</label>
+                </value>
+                <value>
+                    <fullName>Incorrect evidence type</fullName>
+                    <default>false</default>
+                    <label>Incorrect evidence type</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Service_billing_frequency__c</fullName>
+        <label>Service Billing Frequency</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>25% up front, 50% on milestones, 25% on completion</fullName>
+                    <default>false</default>
+                    <label>25% up front, 50% on milestones, 25% on completion</label>
+                </value>
+                <value>
+                    <fullName>100% Upfront</fullName>
+                    <default>false</default>
+                    <label>100% Upfront</label>
+                </value>
+                <value>
+                    <fullName>Invoice per milestone</fullName>
+                    <default>false</default>
+                    <label>Invoice per milestone</label>
+                </value>
+                <value>
+                    <fullName>Upon completion</fullName>
+                    <default>false</default>
+                    <label>Upon completion</label>
+                </value>
+                <value>
+                    <fullName>Special Invoicing Instructions</fullName>
+                    <default>false</default>
+                    <label>Special Invoicing Instructions</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Skip_Validation_Auto_Renewal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Flag used to skip validations for Auto Renewal Process.</description>
+        <label>Skip Validation Auto Renewal</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Special_Account__c</fullName>
+        <formula>IF((Account.Account_Number__c==&apos;D0263803&apos; || Account.Account_Number__c==&apos;D0263804&apos; || Account.Account_Number__c==&apos;D0408140&apos; || Account.Account_Number__c==&apos;D0408138&apos;), True,False)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Special Account</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Submission_Offset__c</fullName>
+        <externalId>false</externalId>
+        <label>Submission Offset</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submitted_to_OATs__c</fullName>
+        <label>Submitted to OATs</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Unconfirmed_Sun_Order_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Unconfirmed Sun Order Number</label>
+        <length>11</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Variation_Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Opportunity.Variation_Opportunity__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Variation Order</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Variation_Reason__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Opportunity.Variation_Reason__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Variation Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

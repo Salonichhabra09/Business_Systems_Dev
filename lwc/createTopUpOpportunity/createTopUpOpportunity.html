@@ -1,0 +1,134 @@
+<template>
+
+
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+    </template>
+    <template if:false={isInsert}>
+        <lightning-quick-action-panel header="Top-Up Opportunity" if:true={isTopUpModal}>
+            <lightning-layout horizontal-align="spread">
+                <template if:true={showSpinner}>
+                    <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                </template>
+                <lightning-layout-item>
+                </lightning-layout-item>
+                <lightning-layout-item>
+                    <lightning-layout>
+                        <lightning-layout-item>
+                            <div>
+                                <p class="total-potential-value-header">Top-Up Amount</p>
+                                <p style="margin-top: 4px;color:green">{currencyIsoCode}
+                                    {topUpValueFormatted}
+                                    <lightning-icon class="slds-m-left_xx-small" icon-name="utility:arrowup"
+                                        variant="success" size="xx-small"></lightning-icon>
+                                </p>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-card title="Available Opportunity Solutions" icon-name="standard:product_item">
+                <lightning-button label="Reset All" slot="actions" onclick={handleReset}></lightning-button>
+                <div lwc:if={showOppLines}
+                    class="slds-border_left slds-border_right slds-border_top slds-border_bottom max-height">
+                    <c-custom-datatable key-field="rowNum" data={oppSolutionsAvailableToTopUp} columns={columns}
+                        onupdatevalue={handleUpdateValue} min-column-width="100" wrap-text-max-lines="5"
+                        selected-rows={currentlySelectedRows} onrowselection={handleRowSelection}
+                        onrowaction={handleRowAction} sorted-by={sortBy} sorted-direction={sortDirection}
+                        onsort={handleSort}>
+                    </c-custom-datatable>
+                </div>
+                <div lwc:else>
+                    <p class="slds-align_absolute-center slds-m-top_medium">No Solutions available to
+                        top-up!</p>
+                </div>
+            </lightning-card>
+            <div slot="footer">
+                <lightning-button onclick={closeTopUpModal} label="Cancel"></lightning-button>
+                <lightning-button variant="brand" class="slds-p-left_small" label="Confirm" onclick={handleStartTopUp}
+                    disabled={isSaveDisabled}></lightning-button>
+            </div>
+        </lightning-quick-action-panel>
+    </template>
+    <template if:true={isInsert}>
+        <template if:true={isTopUpModal}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open custom-alignment">
+                <div class="slds-modal__container slds-is-relative">
+                    <!-- Modal/Popup Box LWC header here -->
+                    <div class="slds-is-relative custom-width">
+                        <template if:true={showSpinner}>
+                            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                        </template>
+                        <header class="slds-modal__header">
+                            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                title="Close" onclick={closeTopUpModal}>
+                                <lightning-icon icon-name="utility:close" alternative-text="close"
+                                    size="small"></lightning-icon>
+                                <span class="slds-assistive-text">Close</span>
+                            </button>
+                            <h3 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Top-Up Opportunity
+                            </h3>
+                        </header>
+                        <div class="slds-modal__content slds-p-horizontal_medium slds-p-bottom_medium card-css"
+                            id="modal-content-id-2">
+                            <lightning-layout horizontal-align="spread">
+                                <lightning-layout-item>
+                                </lightning-layout-item>
+                                <lightning-layout-item>
+                                    <lightning-layout>
+                                        <!--<lightning-layout-item class="slds-m-right_small">
+                                                <div>
+                                                    <p class="total-potential-value-header">Already Top-Up Amount</p>
+                                                    <p style="margin-top: 4px;color:green">{currencyIsoCode}
+                                                        {alreadyTopUpAmount}
+                                                        <lightning-icon class="slds-m-left_xx-small" icon-name="utility:arrowup"
+                                                            variant="success" size="xx-small"></lightning-icon>
+                                                    </p>
+                                                </div>
+                                            </lightning-layout-item>-->
+                                        <lightning-layout-item>
+                                            <div>
+                                                <p class="total-potential-value-header">Top-Up Amount</p>
+                                                <p style="margin-top: 4px;color:green">{currencyIsoCode}
+                                                    {topUpValueFormatted}
+                                                    <lightning-icon class="slds-m-left_xx-small"
+                                                        icon-name="utility:arrowup" variant="success"
+                                                        size="xx-small"></lightning-icon>
+                                                </p>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                            <lightning-card title="Available Opportunity Solutions" icon-name="standard:product_item">
+                                <lightning-button label="Reset All" slot="actions"
+                                    onclick={handleReset}></lightning-button>
+                                <div lwc:if={showOppLines}
+                                    class="slds-border_left slds-border_right slds-border_top slds-border_bottom max-height">
+                                    <c-custom-datatable key-field="rowNum" data={oppSolutionsAvailableToTopUp}
+                                        columns={columns} onupdatevalue={handleUpdateValue} min-column-width="100"
+                                        wrap-text-max-lines="5" selected-rows={currentlySelectedRows}
+                                        onrowselection={handleRowSelection} onrowaction={handleRowAction}
+                                        sorted-by={sortBy} sorted-direction={sortDirection} onsort={handleSort}>
+                                    </c-custom-datatable>
+                                </div>
+                                <div lwc:else>
+                                    <p class="slds-align_absolute-center slds-m-top_medium">No Solutions available to
+                                        top-up!</p>
+                                </div>
+                            </lightning-card>
+                        </div>
+                        <footer class="slds-modal__footer">
+                            <button class="slds-button slds-button_neutral" onclick={closeTopUpModal} type="Cancel"
+                                title="Cancel">Cancel</button>
+                            <button class="slds-button slds-button_brand" title="Confirm" onclick={handleStartTopUp}
+                                disabled={isSaveDisabled}>Confirm</button>
+                        </footer>
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+    </template>
+</template>

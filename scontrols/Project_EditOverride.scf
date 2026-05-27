@@ -1,0 +1,21 @@
+<script language=javascript>
+    var allowEdit = false;
+	
+	if('{!ISPICKVAL($User.PSA_Role__c, 'PSA Lead')}' == 'true')
+		allowEdit = true;
+ 	else if('{!ISPICKVAL($User.PSA_Role__c, 'Project Manager')}' == 'true')
+	if('{!ProjectObject__c.Project_ManagerId__c}' == '{!$User.Id}')
+		allowEdit = true;
+	if('{!ProjectObject__c.RecordType}' == 'CPS Project')
+		allowEdit = true;	
+	if(allowEdit)
+		url = '{!URLFOR($Action.ProjectObject__c.Edit, ProjectObject__c.Id , [cancelURL=$Request.retURL, retURL=$Request.retURL], true)}';
+	else
+	{
+		alert("Sorry! You do not have permission to edit this project");
+		url = '{!URLFOR($Action.ProjectObject__c.View, ProjectObject__c.Id, null, false)}';
+	}
+	
+	window.parent.location.replace(url);
+
+</script>

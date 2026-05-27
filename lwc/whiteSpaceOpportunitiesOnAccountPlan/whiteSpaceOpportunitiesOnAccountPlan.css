@@ -1,0 +1,23 @@
+.max-height{
+    max-height: 23rem;
+    overflow: auto;
+}
+.accordion_class{
+    --slds-c-accordion-section-spacing-inline-end : 0.2rem;
+    --slds-c-accordion-section-spacing-inline-start : 0.2rem;
+}
+.bold{
+    font-weight: 500;
+    font-size: medium;
+}
+.total-potential-value-header{
+    font-weight: 500;
+    font-size: medium;
+}
+.total-potential-value{
+    display: inline-block;
+    text-align: center;
+}
+.total-potential-value > .total-potential-value-header{
+    display: block;
+}

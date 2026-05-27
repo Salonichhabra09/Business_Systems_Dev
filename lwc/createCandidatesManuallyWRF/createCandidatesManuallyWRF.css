@@ -1,0 +1,43 @@
+article.slds-card {
+    overflow: hidden;
+}
+
+.slds-card__header-title {
+    font-size: 1rem;
+}
+
+.container {
+    /* padding-bottom:30rem;
+    margin-bottom: -30rem; */
+    /* overflow-x: scroll; */
+    padding-bottom: 5rem;
+    /* min-height: 20rem; */
+    /* height: auto; */
+}
+
+::-webkit-scrollbar {
+    width: 18px;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 24px;
+    background: rgb(111, 111, 111);
+    border: 5px solid white;
+    border-radius: 15px;
+}
+
+.input-element {
+    max-width: 10rem;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+.slds-input {
+    width: fit-content;
+}

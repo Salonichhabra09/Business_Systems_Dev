@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">   
+    <lightning:conversationToolkitAPI aura:id="conversationKit" />
+    <lightning:workspaceAPI aura:id="workspace"/>  
+    <lightning:omniToolkitAPI aura:id="omniToolkit" />
+    <aura:attribute name="recordId"  type="String" access="global" description="Used to Hold the Id of record in Context"/> 
+    <aura:attribute name="TabId"  type="String" access="global" description="Used to Hold the Id of record in Context"/> 
+    <aura:handler event="lightning:omniChannelWorkAssigned" action="{! c.onWorkAssigned }"/>
+    <aura:handler event="lightning:tabCreated" action="{! c.onTabCreated }"/> 
+    <aura:handler event="lightning:tabFocused" action="{! c.onTabFocused }"/>
+    
+</aura:component>

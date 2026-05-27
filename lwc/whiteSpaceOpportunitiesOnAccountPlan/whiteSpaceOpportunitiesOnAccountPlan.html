@@ -1,0 +1,225 @@
+<template>
+    <template if:true={isDataLoaded}>
+    <div class={relatedListClass}>
+        <template if:true={isOnAccountPlan}>
+        <lightning-tabset>
+    
+        <lightning-tab name="Potential" label="Potential Opportunities">
+            <lightning-card>
+                <lightning-layout horizontal-align="spread" class="slds-p-horizontal_medium slds-p-bottom_x-small">
+                    <lightning-layout-item>
+                        <div>
+                        <p class="total-potential-value-header">Total Potential Value</p>
+                        <p>{totalPotentialValue}</p>
+                    </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item>
+                        <lightning-button variant="brand-outline" label="New" title="New" onclick={openModalPopup} disabled={isButtonDisabled}></lightning-button>
+                    </lightning-layout-item>
+                </lightning-layout>
+        <template if:true={wsOpportunityData}>
+        <div class="slds-border_left slds-border_right slds-border_top slds-border_bottom max-height">
+            <template if:true={showSpinner}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </template>
+        <lightning-datatable
+                    key-field="id"
+                    data={recordsToDisplay}
+                    columns={columnsToUse}
+                    onrowaction={handleConvertToOpp}
+                    wrap-text-max-lines="5"
+                    min-column-width="100"
+                    hide-checkbox-column>
+            </lightning-datatable>
+        </div>
+        <div class="slds-float_right slds-m-top_medium">
+            <template if:true={potentialPagination}>
+            <c-paginator records={wsOpportunityData}  total-records={wsOpportunityData.length} 
+            show-search-box="true" 
+            onpaginatorchange={handlePaginatorChange}>
+        </c-paginator></template></div>
+    </template>
+        <template if:false={wsOpportunityData}>
+            <p class="slds-align_absolute-center">No White Space Potential Opportunity Found!</p>
+        </template>
+    </lightning-card>
+        </lightning-tab>
+
+        <lightning-tab name="Converted" label="Converted Opportunities" onactive={handleSectionToggle}>
+            <lightning-card>
+            <lightning-layout horizontal-align="spread" class="slds-p-horizontal_medium slds-p-bottom_x-small">
+                <lightning-layout-item>
+                    <div>
+                    <p class="total-potential-value-header">Open Sales Value</p>
+                    <p>{openSalesValue}</p>
+                </div>
+                </lightning-layout-item>
+                <lightning-layout-item>
+                    <div>
+                        <p class="total-potential-value-header">Closed/won Sales Value</p>
+                        <p>{closedWonSalesValue}</p>
+                    </div>                
+                </lightning-layout-item>
+                <lightning-layout-item>
+                    <div>
+                        <p class="total-potential-value-header">Total Sales Value</p>
+                        <p>{totalSalesValue}</p>
+                    </div>                
+                </lightning-layout-item>
+            </lightning-layout>
+            <template if:true={convertedOpportunityData}>
+                <div class="slds-border_left slds-border_right slds-border_top slds-border_bottom max-height">
+                    <template if:true={showSpinner}>
+                        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                    </template>
+                <lightning-datatable
+                            key-field="id"
+                            data={recordsToDisplayConverted}
+                            columns={columnsForConverted}
+                            onrowaction={handleConvertToOpp}
+                            wrap-text-max-lines="5"
+                            min-column-width="100"
+                            hide-checkbox-column>
+                    </lightning-datatable>
+                </div>
+                <div class="slds-float_right slds-m-top_medium">
+                    <template if:true={convertedPagination}>
+                    <c-paginator records={convertedOpportunityData}  total-records={convertedOpportunityData.length} 
+                    show-search-box="true" 
+                    onpaginatorchange={handlePaginatorChangeForConverted}>
+                </c-paginator>
+            </template></div>
+            </template>
+                <template if:false={convertedOpportunityData}>
+                    <p class="slds-align_absolute-center slds-p-top_large">No Converted White Space Potential Opportunity Found!</p>
+                </template>
+            </lightning-card>
+        </lightning-tab>
+
+    </lightning-tabset>   
+</template> 
+<template if:false={isOnAccountPlan}>
+    <lightning-card title="White Space Opportunities" icon-name="custom:custom3">
+
+        <lightning-button variant="brand-outline" label="New" title="New" onclick={openModalPopup} slot="actions" disabled={isButtonDisabled}></lightning-button>
+        <template if:true={wsOpportunityData}>
+        <div class="slds-border_left slds-border_right slds-border_top slds-border_bottom max-height">
+            <template if:true={showSpinner}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </template>
+        <lightning-datatable
+                    key-field="id"
+                    data={wsOpportunityData}
+                    columns={columnsToUse}
+                    onrowaction={handleConvertToOpp}
+                    wrap-text-max-lines="5"
+                    min-column-width="100"
+                    show-row-number-column
+                    hide-checkbox-column>
+            </lightning-datatable>
+        </div>
+    </template>
+        <template if:false={wsOpportunityData}>
+            <p class="slds-align_absolute-center">No White Space Potential Opportunity Found!</p>
+        </template>
+        </lightning-card>
+</template>
+<template if:true={openModal}>
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container slds-is-relative">
+            <!-- Modal/Popup Box LWC header here -->
+            <div class="slds-is-relative">
+                <template if:true={showSpinner}>
+                    <lightning-spinner alternative-text="Loading" size="small" ></lightning-spinner>
+                </template>
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                    <lightning-icon icon-name="utility:close"
+                        alternative-text="close"
+                        variant="inverse"
+                        size="small" ></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <h3 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{modalTitle}</h3>
+            </header>
+            <lightning-record-edit-form
+                object-api-name={objectApiName}
+                onsuccess={handleSuccess}
+                onsubmit ={handleSubmit}
+                onerror ={handleError}
+                record-id={fieldValues.whiteSpaceId}
+            >
+            <div class="slds-modal__content slds-p-around_medium max-height" id="modal-content-id-1">
+                <template if:true={showErrorMessage}>
+                    <div class="slds-notify slds-notify_toast slds-theme_error slds-align_absolute-center" role="status">
+                        <span class="slds-assistive-text">error</span>
+                        <div class="slds-notify__content">
+                          <h2 class="slds-text-heading_small ">Please Resolve Errors</h2>
+                        </div>
+                    </div>
+                </template>
+            <lightning-messages></lightning-messages>
+            <lightning-layout>
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name={fields.ACCOUNT_PLAN} value={accountPlanIdFromStrategy} disabled="true"></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name={fields.STATUS} disabled="true"></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="6" class="slds-p-horizontal_xx-small">
+                    <c-custom-lookup-component object-name="Contact" search-placeholder="Search Contacts" 
+                    icon-name="standard:contact" filter={filterForContact} account-plan-id={accountPlanIdFromStrategy}
+                    label="Who do you need to speak to?" pre-selected-name={fieldValues.contactName} 
+                    onlookupselected={handleContactSelection} onlookupunselect={handleContactRemoval} input-class-from-parent="slds-has-focus input-contact" is-required="true"> </c-custom-lookup-component>
+                </lightning-layout-item >
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name={fields.POTENTIAL_VALUE} value={fieldValues.potentialValue}></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <template if:true={strategyId}>
+                <lightning-layout-item size="6">
+                        <lightning-input-field field-name={fields.STRATEGY} value={strategyId} disabled></lightning-input-field>
+                </lightning-layout-item>
+            </template>
+            <template if:false={strategyId}>
+                <lightning-layout-item size="6" class="slds-p-horizontal_xx-small">
+                    <c-custom-lookup-component object-name="Strategy_And_Goal__c" search-placeholder="Search Strategy" 
+                    icon-name="standard:strategy" filter={filterForStrategy} account-plan-id={accountPlanIdFromStrategy}
+                    label="Strategy" pre-selected-name={fieldValues.strategyName} 
+                    onlookupselected={handleStrategySelection} onlookupunselect={handleStrategyRemoval} input-class-from-parent="slds-has-focus input-strategy" is-required="true"> </c-custom-lookup-component>
+                </lightning-layout-item>
+            </template>
+                    <lightning-layout-item size="6">
+                    <lightning-input-field field-name={fields.CURRENCY} value={currencyFromAccount} disabled></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name={fields.ANY_HELP_NEEDED} value={fieldValues.helpNeeded}></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name={fields.NEXT_STEP} value={fieldValues.nextStep}></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="12">
+                    <lightning-input-field field-name={fields.SOLUTION} value={fieldValues.solution}></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout> 
+            </div>
+            <footer class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" onclick={closeModal} type="Cancel" title="Cancel">Cancel</button>
+                <button class="slds-button slds-button_brand" type="submit" title="Save">Save</button>
+            </footer>
+        </lightning-record-edit-form>
+        </div>
+    </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+</div>
+</template>
+</template>

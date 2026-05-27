@@ -1,0 +1,13 @@
+.slds-modal__container {
+    max-width: 80rem !important;
+    width: 80% !important;
+}
+.max-height{
+    max-height: 30rem;
+    overflow: auto;
+}
+.link-color{
+    font-size: 15px;
+    color:black;
+    font-weight:bold;
+}

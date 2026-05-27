@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Action Progress" icon-name="standard:metrics">
+        <lightning-helptext content="Latest completed activities will be reflected the following day" slot="actions" class="slds-m-right_x-small"></lightning-helptext>
+        <div class="slds-p-horizontal_medium slds-p-vertical_small">
+            <lightning-layout>
+                <lightning-layout-item class="completed-activities">
+                    <template if:true={isCreatedGreaterThanZero}>
+                        <div>
+                            <p title="Completed Activities">{numberOfCompletedTasks}</p>
+                        </div>
+                    </template>
+                </lightning-layout-item>
+                <lightning-layout-item class="total-value">
+                    <template if:true={isTotalExceeded}>
+                        <div>
+                                <p title="Total Activities">{numberOfTasks}</p> 
+                        </div>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+            <div class="slds-progress-bar slds-progress-bar_circular progress-bar-height" aria-valuemin="0" aria-valuemax="100" aria-valuenow={progressOnTasks} aria-labelledby="progress-bar-label-id-7" aria-label="" role="progressbar">
+                <div class="percentage">{progressOnTasks}%</div>
+                <span class="slds-progress-bar__value progress-bar">
+                <span class="slds-assistive-text">Progress: {progressOnTasks}%</span>
+              </span>
+            </div>
+        </div>
+    </lightning-card>
+</template>

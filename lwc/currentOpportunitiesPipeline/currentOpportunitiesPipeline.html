@@ -1,0 +1,108 @@
+<template>
+    <!-- <lightning-card>
+        <lightning-layout class="slds-p-horizontal_medium slds-p-bottom_medium">
+            <lightning-layout-item size="6">
+                <div>
+                <p class="total-potential-value-header">Total Sales Value</p>
+                <p>{totalSalesValue}</p>
+            </div>
+            </lightning-layout-item>
+        </lightning-layout>
+        <template if:true={opportunityData}>
+    <div class="slds-border_left slds-border_right slds-border_top slds-border_bottom max-height">
+    <lightning-datatable
+                key-field="id"
+                data={recordsToDisplay}
+                columns={columns}
+                onrowaction={handleSendEmail}
+                wrap-text-max-lines="5"
+                min-column-width="120"
+                hide-checkbox-column>
+        </lightning-datatable>
+    </div>
+    <div class="slds-float_right slds-m-top_medium">
+        <c-paginator records={opportunityData}  total-records={opportunityData.length} 
+        show-search-box="true" 
+        onpaginatorchange={handlePaginatorChange}>
+    </c-paginator>
+    </div>
+</template>
+    <template if:false={opportunityData}>
+        <p class="slds-align_absolute-center">No Open Opportunity Found!</p>
+    </template>
+</lightning-card> -->
+
+<lightning-tabset>
+    
+    <lightning-tab name="New Business/Cross Sell" label="New Business/Cross Sell" onactive={handleSectionToggle}>
+        <lightning-card>
+            <lightning-layout horizontal-align="spread" class="slds-p-horizontal_medium slds-p-bottom_x-small">
+                <lightning-layout-item>
+                    <div>
+                    <p class="total-potential-value-header">Total Sales Value</p>
+                    <p>{totalSalesValue}</p>
+                </div>
+                </lightning-layout-item>
+            </lightning-layout>
+            <template if:true={opportunityData}>
+                <div class="slds-border_left slds-border_right slds-border_top slds-border_bottom max-height">
+                <lightning-datatable
+                            key-field="id"
+                            data={recordsToDisplay}
+                            columns={columns}
+                            onrowaction={handleSendEmail}
+                            wrap-text-max-lines="5"
+                            min-column-width="120"
+                            hide-checkbox-column>
+                    </lightning-datatable>
+                </div>
+                <div class="slds-float_right slds-m-top_medium">
+                    <c-paginator records={opportunityData}  total-records={opportunityData.length} 
+                    show-search-box="true" 
+                    onpaginatorchange={handlePaginatorChange}>
+                </c-paginator>
+                </div>
+            </template>
+                <template if:false={opportunityData}>
+                    <p class="slds-align_absolute-center">No Open Cross Sell Opportunity Found!</p>
+                </template>
+</lightning-card>
+    </lightning-tab>
+    
+    <lightning-tab name="Renewal" label="Renewal" onactive={handleSectionToggle}>
+        <lightning-card>
+            <lightning-layout horizontal-align="spread" class="slds-p-horizontal_medium slds-p-bottom_x-small">
+                <lightning-layout-item>
+                    <div>
+                    <p class="total-potential-value-header">Total Sales Value</p>
+                    <p>{totalSalesValue}</p>
+                </div>
+                </lightning-layout-item>
+            </lightning-layout>
+            <template if:true={opportunityData}>
+                <div class="slds-border_left slds-border_right slds-border_top slds-border_bottom max-height">
+                <lightning-datatable
+                            key-field="id"
+                            data={recordsToDisplay}
+                            columns={columns}
+                            onrowaction={handleSendEmail}
+                            wrap-text-max-lines="5"
+                            min-column-width="120"
+                            hide-checkbox-column>
+                    </lightning-datatable>
+                </div>
+                <div class="slds-float_right slds-m-top_medium">
+                    <c-paginator records={opportunityData}  total-records={opportunityData.length} 
+                    show-search-box="true" 
+                    onpaginatorchange={handlePaginatorChange}>
+                </c-paginator>
+                </div>
+            </template>
+                <template if:false={opportunityData}>
+                    <p class="slds-align_absolute-center">No Open Renewal Opportunity Found!</p>
+                </template>
+        </lightning-card>
+    </lightning-tab>
+
+</lightning-tabset>
+</template>

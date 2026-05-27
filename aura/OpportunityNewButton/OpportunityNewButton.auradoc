@@ -1,0 +1,42 @@
+<aura:documentation>
+    
+    <aura:example name="ExampleName" ref="c:OpportunityNewButton" label="Record Type Selector">
+    </aura:example> 
+    
+    <aura:description>
+        <p style="line-height: normal;"><strong><span style="font-family: 'Arial',sans-serif; color: #080707;">Overview:</span></strong></p>
+        <ul>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">This Component is available as button, labelled as &lsquo;New Opportunity&rsquo; on Account and Contact pages to ease the process and ensure valid data.</span></li>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">On Clicking 'New opportunity' button from Account Detail Page, &lsquo;New Opportunity&rsquo; form is opened with following fields pre-populated:</span>
+                <ul>
+                    <li style="margin-left: 1.5in; text-indent: -.25in; line-height: normal; tab-stops: list -.5in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Account Name</span></li>
+                    <li style="margin-left: 1.5in; text-indent: -.25in; line-height: normal; tab-stops: list -.5in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Account's Currency</span></li>
+                    <li style="margin-left: 1.5in; text-indent: -.25in; line-height: normal; tab-stops: list -.5in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Opportunity Name -'will be auto-populated' value pre-populated in it&nbsp;</span></li>
+                    <li style="margin-left: 1.5in; text-indent: -.25in; line-height: normal; tab-stops: list -.5in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Opportunity Submitted - logged in user's name&nbsp;</span></li>
+                    <li style="margin-left: 1.5in; text-indent: -.25in; line-height: normal; tab-stops: list -.5in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Primary Campaign Source - Opportunity Not Linked to a Campaign</span></li>
+                </ul>
+            </li>
+        </ul>
+        <p style="margin-left: 1.75in; line-height: normal;"><span style="font-family: 'Arial',sans-serif; color: #080707;">&nbsp;</span></p>
+        <ul>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">On Clicking 'New opportunity' button from Account Detail Page, &lsquo;New Opportunity&rsquo; form is opened with following fields pre-populated:</span>
+                <ul>
+                    <li style="margin-left: 1.5in; text-indent: -.25in; line-height: normal; tab-stops: list -.5in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Contact Name</span></li>
+                    <li style="margin-left: 1.5in; text-indent: -.25in; line-height: normal; tab-stops: list -.5in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Account Name</span></li>
+                    <li style="margin-left: 1.5in; text-indent: -.25in; line-height: normal; tab-stops: list -.5in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Account's Currency</span></li>
+                    <li style="margin-left: 1.5in; text-indent: -.25in; line-height: normal; tab-stops: list -.5in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Opportunity Name -'will be auto-populated' value pre-populated in it&nbsp;</span></li>
+                    <li style="margin-left: 1.5in; text-indent: -.25in; line-height: normal; tab-stops: list -.5in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Opportunity Submitted - logged in user's name&nbsp;</span></li>
+                    <li style="margin-left: 1.5in; text-indent: -.25in; line-height: normal; tab-stops: list -.5in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Primary Campaign Source - Opportunity Not Linked to a Campaign</span></li>
+                </ul>
+            </li>
+        </ul>
+        <p style="margin-left: 1.75in; line-height: normal;"><span style="font-family: 'Arial',sans-serif; color: #080707;">&nbsp;</span></p>
+        <p style="line-height: normal;"><strong><span style="font-family: 'Arial',sans-serif; color: #080707;">For the Developers:</span></strong></p>
+        <ul>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">On clicking the 'New Opportunity' action button, this component gets initialized and a controller function labelled as 'fetchrec' is being called.</span></li>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">The 'fetchrec' function calls helper function 'fetchrech' which is receiving the Record Type ids from the server, which are then populated in the Record Type Selector.</span></li>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">After selecting the Record Type and clicking 'Next' button, a controller function labelled as 'navigate' is being called.</span></li>
+            <li style="margin-left: 1.0in; text-indent: -.25in; line-height: normal; tab-stops: list -1.0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">The 'navigate' function is then identifying, whether the button is being clicked from Account or Contact record page and then accordingly getting the details from the record to pre-populate in the Opportunity creation modal.</span></li>
+        </ul>
+    </aura:description>
+</aura:documentation>

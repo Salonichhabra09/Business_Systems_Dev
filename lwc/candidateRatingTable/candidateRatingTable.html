@@ -1,0 +1,39 @@
+<template>
+    <div class="container">
+        <template if:true={showLoadingSpinner}>
+            <div style="z-index: 10000 !important;">
+                <lightning-spinner alternative-text="Loading..." size="medium"
+                    style="z-index: 10000 !important;">
+                </lightning-spinner>
+            </div>
+        </template>
+    <lightning-card>
+        <div class="filter-panel slds-var-p-around_x-small">
+            <lightning-layout horizontal-align="end">
+                <lightning-layout-item padding="around-small">
+                    <lightning-button-icon icon-name="utility:refresh" variant="border-filled" alternative-text="Refresh List" title="Refresh List" onclick={handleRefresh}></lightning-button-icon>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small">
+                    <lightning-input type="text" variant="label-hidden" label="" placeholder="Search Rating..." 
+                    value={candidateFilterValue} onchange={handleCandidateFilterValue} onkeypress={handleEnter}>
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" >
+                    <lightning-button variant="brand" label="Search" onclick={handleSearchAction}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+        <div style="height: 300px;" class="myTable">
+            <lightning-datatable
+                    key-field="id" data={data}
+                    columns={columns} hide-checkbox-column enable-infinite-loading
+                    load-more-offset="2" onloadmore={loadData} >
+            </lightning-datatable>
+        </div>
+        <div
+            class="slds-align_absolute-center slds-var-m-vertical_medium slds-text-body_small slds-text-color_weak">
+            {loadMoreStatus}
+        </div>
+    </lightning-card>
+    </div>
+</template>

@@ -1,0 +1,147 @@
+<template>
+    <lightning-card title="Strategies and Goals" icon-name="standard:strategy">
+        <lightning-button variant="brand-outline" label="New" title="New" onclick={openModalPopup} slot="actions" disabled={isAccountPlanUnderReview}></lightning-button>
+        <template if:true={strategyData}>
+    <div class="slds-border_left slds-border_right slds-border_top slds-border_bottom">
+    <c-custom-datatable
+                key-field="id"
+                data={strategyData}
+                columns={columns}
+                onrowaction={handleLinkOrDelink}
+                wrap-text-max-lines="5"
+                min-column-width="120"
+                show-row-number-column
+                hide-checkbox-column>
+    </c-custom-datatable>
+    </div>
+</template>
+    <template if:false={strategyData}>
+        <p class="slds-align_absolute-center">No Strategy Record Found!</p>
+    </template>
+</lightning-card>
+<template if:true={openModal}>
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open custom-alignment">
+        <div class="slds-modal__container slds-is-relative">
+            <!-- Modal/Popup Box LWC header here -->
+            <div class="slds-is-relative custom-width">
+                <template if:true={showSpinner}>
+                    <lightning-spinner alternative-text="Loading" size="small" ></lightning-spinner>
+                </template>
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                    <lightning-icon icon-name="utility:close"
+                        alternative-text="close"
+                        variant="inverse"
+                        size="small" ></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <h3 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{modalTitle}</h3>
+            </header>
+            <template if:false={isOpportunityModal}>
+            <lightning-record-edit-form
+                object-api-name={objectApiName}
+                onsuccess={handleSuccess}
+                onerror={handleError}
+                record-id={fieldValues.strategyId}
+            >
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <template if:true={showErrorMessage}>
+                    <div class="slds-notify slds-notify_toast slds-theme_error slds-align_absolute-center" role="status">
+                        <span class="slds-assistive-text">error</span>
+                        <div class="slds-notify__content">
+                          <h2 class="slds-text-heading_small ">Please Resolve Errors</h2>
+                        </div>
+                    </div>
+                </template>
+            <lightning-messages></lightning-messages>
+            <lightning-layout class="slds-p-top_medium">
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name={fields.NAME} class="required-fields"></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <lightning-input-field class="required-fields" field-name={fields.ESTIMATED_COMPLETION_DATE} ></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name={fields.ACCOUNT_PLAN} value={recordId} disabled="true"></lightning-input-field>
+                </lightning-layout-item >
+               <lightning-layout-item size="6">
+                    <lightning-input-field class="required-fields" field-name={fields.TYPE}></lightning-input-field>
+                </lightning-layout-item>
+
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name={fields.CONTACT}></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                   <lightning-input-field class="required-fields" field-name={fields.STATUS}></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="6">
+                    <lightning-input-field  class="required-fields" field-name={fields.SOLUTION}></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <lightning-input-field class="required-fields" field-name={fields.BUSINESS_PROBLEM_ADDRESSED} required></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="6">
+                    <lightning-input-field class="required-fields" field-name={fields.SOLUTION_GOAL} required></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <lightning-input-field class="required-fields" field-name={fields.MILESTONES} required></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="6">
+                    <lightning-input-field  class="required-fields" field-name={fields.RESOURCES} required></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <lightning-input-field class="required-fields" field-name={fields.COMMENTS} required></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            </div>
+            <footer class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" onclick={closeModal} type="Cancel" title="Cancel">Cancel</button>
+                <button class="slds-button slds-button_brand" type="submit" title="Save" onclick={handleSave}>Save</button>
+            </footer>
+        </lightning-record-edit-form>
+    </template>
+    <template if:true={isOpportunityModal}>
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+        <lightning-card title="Opportunities" icon-name="standard:opportunity">
+            <template if:true={opportunityData}>
+        <div class="slds-border_left slds-border_right slds-border_top slds-border_bottom max-height">
+            <template if:true={showSpinner}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </template>
+        <lightning-datatable
+                    key-field="oppId"
+                    data={opportunityData}
+                    columns={opportunityColumns}
+                    selected-rows={selectedRows}
+                    onrowselection={handleRowSelection}
+                    min-column-width="120"
+                    wrap-text-max-lines="5">
+            </lightning-datatable>
+        </div>
+    </template>
+        <template if:false={opportunityData}>
+            <p class="slds-align_absolute-center">No Eligble Opportunity Found!</p>
+        </template>
+    </lightning-card>
+</div>
+    <footer class="slds-modal__footer">
+        <button class="slds-button slds-button_neutral" onclick={closeModal} type="Cancel" title="Cancel">Cancel</button>
+        <button class="slds-button slds-button_brand" title="Save" onclick={linkOrDelinkOpportunities}>Save</button>
+    </footer>
+    </template>
+        </div>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+</template>

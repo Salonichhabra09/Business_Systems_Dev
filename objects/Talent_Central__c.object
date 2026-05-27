@@ -1,0 +1,2957 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Talent_Central_Transition_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>TC_Transition_layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>TC_Transition_layout</fullName>
+        <fields>Name</fields>
+        <fields>Account__c</fields>
+        <fields>Phase__c</fields>
+        <fields>Target_Upgrade_Date__c</fields>
+        <fields>Site_Upgrade_Progress__c</fields>
+        <label>TC Transition layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account__c</fullName>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Talent_Central</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Actual_Upgrade_Date__c</fullName>
+        <label>Actual Upgrade Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Actual_transition_Date__c</fullName>
+        <label>Actual Transition Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Admin_Language__c</fullName>
+        <label>Admin Language</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>English International</fullName>
+                    <default>false</default>
+                    <label>English International</label>
+                </value>
+                <value>
+                    <fullName>English (US)</fullName>
+                    <default>false</default>
+                    <label>English (US)</label>
+                </value>
+                <value>
+                    <fullName>Spanish (North America)</fullName>
+                    <default>false</default>
+                    <label>Spanish (North America)</label>
+                </value>
+                <value>
+                    <fullName>Chinese Simplified</fullName>
+                    <default>false</default>
+                    <label>Chinese Simplified</label>
+                </value>
+                <value>
+                    <fullName>Greek</fullName>
+                    <default>false</default>
+                    <label>Greek</label>
+                </value>
+                <value>
+                    <fullName>Turkish</fullName>
+                    <default>false</default>
+                    <label>Turkish</label>
+                </value>
+                <value>
+                    <fullName>Italian</fullName>
+                    <default>false</default>
+                    <label>Italian</label>
+                </value>
+                <value>
+                    <fullName>Chinese Traditional</fullName>
+                    <default>false</default>
+                    <label>Chinese Traditional</label>
+                </value>
+                <value>
+                    <fullName>Dutch</fullName>
+                    <default>false</default>
+                    <label>Dutch</label>
+                </value>
+                <value>
+                    <fullName>Norwegian</fullName>
+                    <default>false</default>
+                    <label>Norwegian</label>
+                </value>
+                <value>
+                    <fullName>English</fullName>
+                    <default>false</default>
+                    <label>English</label>
+                </value>
+                <value>
+                    <fullName>Others (ZAF)</fullName>
+                    <default>false</default>
+                    <label>Others (ZAF)</label>
+                </value>
+                <value>
+                    <fullName>Finnish</fullName>
+                    <default>false</default>
+                    <label>Finnish</label>
+                </value>
+                <value>
+                    <fullName>Polish</fullName>
+                    <default>false</default>
+                    <label>Polish</label>
+                </value>
+                <value>
+                    <fullName>German</fullName>
+                    <default>false</default>
+                    <label>German</label>
+                </value>
+                <value>
+                    <fullName>Romanian</fullName>
+                    <default>false</default>
+                    <label>Romanian</label>
+                </value>
+                <value>
+                    <fullName>US</fullName>
+                    <default>false</default>
+                    <label>US</label>
+                </value>
+                <value>
+                    <fullName>Japanese</fullName>
+                    <default>false</default>
+                    <label>Japanese</label>
+                </value>
+                <value>
+                    <fullName>Serbian</fullName>
+                    <default>false</default>
+                    <label>Serbian</label>
+                </value>
+                <value>
+                    <fullName>Portuguese</fullName>
+                    <default>false</default>
+                    <label>Portuguese</label>
+                </value>
+                <value>
+                    <fullName>Czech</fullName>
+                    <default>false</default>
+                    <label>Czech</label>
+                </value>
+                <value>
+                    <fullName>Hungarian</fullName>
+                    <default>false</default>
+                    <label>Hungarian</label>
+                </value>
+                <value>
+                    <fullName>Spanish</fullName>
+                    <default>false</default>
+                    <label>Spanish</label>
+                </value>
+                <value>
+                    <fullName>French (Belgium)</fullName>
+                    <default>false</default>
+                    <label>French (Belgium)</label>
+                </value>
+                <value>
+                    <fullName>Swedish</fullName>
+                    <default>false</default>
+                    <label>Swedish</label>
+                </value>
+                <value>
+                    <fullName>Arabic</fullName>
+                    <default>false</default>
+                    <label>Arabic</label>
+                </value>
+                <value>
+                    <fullName>French</fullName>
+                    <default>false</default>
+                    <label>French</label>
+                </value>
+                <value>
+                    <fullName>Danish</fullName>
+                    <default>false</default>
+                    <label>Danish</label>
+                </value>
+                <value>
+                    <fullName>French (Canada)</fullName>
+                    <default>false</default>
+                    <label>French (Canada)</label>
+                </value>
+                <value>
+                    <fullName>Slovakian</fullName>
+                    <default>false</default>
+                    <label>Slovakian</label>
+                </value>
+                <value>
+                    <fullName>Dutch (Belgium)</fullName>
+                    <default>false</default>
+                    <label>Dutch (Belgium)</label>
+                </value>
+                <value>
+                    <fullName>Portuguese (Brazil)</fullName>
+                    <default>false</default>
+                    <label>Portuguese (Brazil)</label>
+                </value>
+                <value>
+                    <fullName>Indonesian</fullName>
+                    <default>false</default>
+                    <label>Indonesian</label>
+                </value>
+                <value>
+                    <fullName>English UK</fullName>
+                    <default>false</default>
+                    <label>English UK</label>
+                </value>
+                <value>
+                    <fullName>Korean</fullName>
+                    <default>false</default>
+                    <label>Korean</label>
+                </value>
+                <value>
+                    <fullName>Thai</fullName>
+                    <default>false</default>
+                    <label>Thai</label>
+                </value>
+                <value>
+                    <fullName>Russian</fullName>
+                    <default>false</default>
+                    <label>Russian</label>
+                </value>
+                <value>
+                    <fullName>English (AUS)</fullName>
+                    <default>false</default>
+                    <label>English (AUS)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Are_the_raised_issue_resolved__c</fullName>
+        <label>Are the raised issue resolved?</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>NA</fullName>
+                    <default>false</default>
+                    <label>NA</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Attrib_System_Revenue_L12M_USD__c</fullName>
+        <externalId>false</externalId>
+        <label>Attrib. System Revenue L12M (USD$)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BDM_CS_Client_Engagement_notes__c</fullName>
+        <label>BDM/CS Client Engagement Notes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Booked_transition_Date__c</fullName>
+        <label>Confirmed Transition Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Buyer_only_notifications__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>FOR USE BY CPS ONLY.</inlineHelpText>
+        <label>Tailored Content Migration Complete</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CSIT_owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>CSIT owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>TalentCentral_Transition</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Calling_Notes__c</fullName>
+        <inlineHelpText>Mention in case any pushbacks/concerns raised/ Calling unsuccessful</inlineHelpText>
+        <label>Calling Notes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Calling_done_if_required__c</fullName>
+        <label>Calling done, if required?</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Client_Classification__c</fullName>
+        <label>Client Classification</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Kenexa</fullName>
+                    <default>false</default>
+                    <label>Kenexa</label>
+                </value>
+                <value>
+                    <fullName>TC Pipe</fullName>
+                    <default>false</default>
+                    <label>TC Pipe</label>
+                </value>
+                <value>
+                    <fullName>TC Direct</fullName>
+                    <default>false</default>
+                    <label>TC Direct</label>
+                </value>
+                <value>
+                    <fullName>TCI</fullName>
+                    <default>false</default>
+                    <label>TCI</label>
+                </value>
+                <value>
+                    <fullName>TC Direct &amp; Integrated</fullName>
+                    <default>false</default>
+                    <label>TC Direct &amp; Integrated</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Client_Enablement_completed__c</fullName>
+        <label>Client Enablement completed?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>On Hold</fullName>
+                    <default>false</default>
+                    <label>On Hold</label>
+                </value>
+                <value>
+                    <fullName>Not Required</fullName>
+                    <default>false</default>
+                    <label>Not Required</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Client_Engagement_Status__c</fullName>
+        <label>Client Engagement  Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Prep done</fullName>
+                    <default>false</default>
+                    <label>Prep done</label>
+                </value>
+                <value>
+                    <fullName>Account clean up in progress</fullName>
+                    <default>false</default>
+                    <label>Account clean up in progress</label>
+                </value>
+                <value>
+                    <fullName>AM reach out complete</fullName>
+                    <default>false</default>
+                    <label>AM reach out complete</label>
+                </value>
+                <value>
+                    <fullName>Initial client contact complete</fullName>
+                    <default>false</default>
+                    <label>Initial client contact complete</label>
+                </value>
+                <value>
+                    <fullName>Inactive transition</fullName>
+                    <default>false</default>
+                    <label>Inactive transition</label>
+                </value>
+                <value>
+                    <fullName>Handed over to AM</fullName>
+                    <default>false</default>
+                    <label>Handed over to AM</label>
+                </value>
+                <value>
+                    <fullName>Actively contacting client</fullName>
+                    <default>false</default>
+                    <label>Actively contacting client</label>
+                </value>
+                <value>
+                    <fullName>First client call attempted</fullName>
+                    <default>false</default>
+                    <label>First client call attempted</label>
+                </value>
+                <value>
+                    <fullName>Second client call attempted</fullName>
+                    <default>false</default>
+                    <label>Second client call attempted</label>
+                </value>
+                <value>
+                    <fullName>Third client call attempted</fullName>
+                    <default>false</default>
+                    <label>Third client call attempted</label>
+                </value>
+                <value>
+                    <fullName>Fourth client call attempted</fullName>
+                    <default>false</default>
+                    <label>Fourth client call attempted</label>
+                </value>
+                <value>
+                    <fullName>Final call attempted</fullName>
+                    <default>false</default>
+                    <label>Final call attempted</label>
+                </value>
+                <value>
+                    <fullName>Final email sent</fullName>
+                    <default>false</default>
+                    <label>Final email sent</label>
+                </value>
+                <value>
+                    <fullName>Client contacted – awaiting response</fullName>
+                    <default>false</default>
+                    <label>Client contacted – awaiting response</label>
+                </value>
+                <value>
+                    <fullName>Actions complete</fullName>
+                    <default>false</default>
+                    <label>Actions complete</label>
+                </value>
+                <value>
+                    <fullName>Actions complete (fallback)</fullName>
+                    <default>false</default>
+                    <label>Actions complete (fallback)</label>
+                </value>
+                <value>
+                    <fullName>Competitor - not offering TC at this time</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Competitor - not offering TC at this time</label>
+                </value>
+                <value>
+                    <fullName>Contact away from office</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Contact away from office</label>
+                </value>
+                <value>
+                    <fullName>Contact does not wish to use CEB</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Contact does not wish to use CEB</label>
+                </value>
+                <value>
+                    <fullName>Contact no longer with organisation</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Contact no longer with organisation</label>
+                </value>
+                <value>
+                    <fullName>Contact raised commercial queries</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Contact raised commercial queries</label>
+                </value>
+                <value>
+                    <fullName>Contact requested more information</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Contact requested more information</label>
+                </value>
+                <value>
+                    <fullName>Contact requested training</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Contact requested training</label>
+                </value>
+                <value>
+                    <fullName>Contact seeking internal agreements</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Contact seeking internal agreements</label>
+                </value>
+                <value>
+                    <fullName>Engagement not started</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Engagement not started</label>
+                </value>
+                <value>
+                    <fullName>Engagement started</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Engagement started</label>
+                </value>
+                <value>
+                    <fullName>Fallen-back to Email – actions complete</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Fallen-back to Email – actions complete</label>
+                </value>
+                <value>
+                    <fullName>Has purchased NEW TC System</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Has purchased NEW TC System</label>
+                </value>
+                <value>
+                    <fullName>Inactive Client</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Inactive Client</label>
+                </value>
+                <value>
+                    <fullName>Referred to Account Manager</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Referred to Account Manager</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Client_Engagement_Type__c</fullName>
+        <label>Client Engagement Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>GCSC Engagement Team: Client call</fullName>
+                    <default>false</default>
+                    <label>GCSC Engagement Team: Client call</label>
+                </value>
+                <value>
+                    <fullName>GCSC Engagement Team: Low Touch Email fallback</fullName>
+                    <default>false</default>
+                    <label>GCSC Engagement Team: Low Touch Email fallback</label>
+                </value>
+                <value>
+                    <fullName>Account Manager Engagement</fullName>
+                    <default>false</default>
+                    <label>Account Manager Engagement</label>
+                </value>
+                <value>
+                    <fullName>Global Priority Transition</fullName>
+                    <default>false</default>
+                    <label>Global Priority Transition</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Client_Rejection_reason__c</fullName>
+        <inlineHelpText>This applies when the client does not wish to Transition at any time.</inlineHelpText>
+        <label>Client Rejection Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Going to competitor</fullName>
+                    <default>false</default>
+                    <label>Going to competitor</label>
+                </value>
+                <value>
+                    <fullName>No perceived benefit</fullName>
+                    <default>false</default>
+                    <label>No perceived benefit</label>
+                </value>
+                <value>
+                    <fullName>Client not using system</fullName>
+                    <default>false</default>
+                    <label>Client not using system</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Client_Type__c</fullName>
+        <label>Client Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>MS</fullName>
+                    <default>false</default>
+                    <label>MS</label>
+                </value>
+                <value>
+                    <fullName>Non-MS</fullName>
+                    <default>false</default>
+                    <label>Non-MS</label>
+                </value>
+                <value>
+                    <fullName>Integrated - Standard Content</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Integrated - Standard Content</label>
+                </value>
+                <value>
+                    <fullName>Integrated - Tailored Content</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Integrated - Tailored Content</label>
+                </value>
+                <value>
+                    <fullName>Standalone - Standard Content</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Standalone - Standard Content</label>
+                </value>
+                <value>
+                    <fullName>Standalone - Tailored Content</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Standalone - Tailored Content</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Cohort__c</fullName>
+        <label>Cohort</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <label>Upgrade Team Notes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Confirmation_Submitted_in_Order_Form__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>Indicates if the legacy system has been supported by Managed Services in the past</inlineHelpText>
+        <label>System supported by Managed Services</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Current_Engagement_Status__c</fullName>
+        <label>Current Engagement Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                    <label>Pending</label>
+                </value>
+                <value>
+                    <fullName>Blocked - Commercial</fullName>
+                    <default>false</default>
+                    <label>Blocked - Commercial</label>
+                </value>
+                <value>
+                    <fullName>Blocked - Content</fullName>
+                    <default>false</default>
+                    <label>Blocked - Content</label>
+                </value>
+                <value>
+                    <fullName>Blocked – Feature</fullName>
+                    <default>false</default>
+                    <label>Blocked – Feature</label>
+                </value>
+                <value>
+                    <fullName>AM Engaged</fullName>
+                    <default>false</default>
+                    <label>AM Engaged</label>
+                </value>
+                <value>
+                    <fullName>Contacting Client</fullName>
+                    <default>false</default>
+                    <label>Contacting Client</label>
+                </value>
+                <value>
+                    <fullName>Upgrade Agreed</fullName>
+                    <default>false</default>
+                    <label>Upgrade Agreed</label>
+                </value>
+                <value>
+                    <fullName>Forced Upgrade</fullName>
+                    <default>false</default>
+                    <label>Forced Upgrade</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Current_Transition_Activity__c</fullName>
+        <label>Current Transition Activity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Confirmation letter approved</fullName>
+                    <default>false</default>
+                    <label>Confirmation letter approved</label>
+                </value>
+                <value>
+                    <fullName>Confirmation letter received</fullName>
+                    <default>false</default>
+                    <label>Confirmation letter received</label>
+                </value>
+                <value>
+                    <fullName>Confirmation letter rejected</fullName>
+                    <default>false</default>
+                    <label>Confirmation letter rejected</label>
+                </value>
+                <value>
+                    <fullName>Confirmation letter sent</fullName>
+                    <default>false</default>
+                    <label>Confirmation letter sent</label>
+                </value>
+                <value>
+                    <fullName>Do Not Transition - Client Rejection</fullName>
+                    <default>false</default>
+                    <label>Do Not Transition - Client Rejection</label>
+                </value>
+                <value>
+                    <fullName>Do Not Transition - Deferred</fullName>
+                    <default>false</default>
+                    <label>Do Not Transition - Deferred</label>
+                </value>
+                <value>
+                    <fullName>Do Not Transition - Inactive Client</fullName>
+                    <default>false</default>
+                    <label>Do Not Transition - Inactive Client</label>
+                </value>
+                <value>
+                    <fullName>No confirmation letter required - client agreed</fullName>
+                    <default>false</default>
+                    <label>No confirmation letter required - client agreed</label>
+                </value>
+                <value>
+                    <fullName>Reverted to legacy system</fullName>
+                    <default>false</default>
+                    <label>Reverted to legacy system</label>
+                </value>
+                <value>
+                    <fullName>Selected for Transition</fullName>
+                    <default>false</default>
+                    <label>Selected for Transition</label>
+                </value>
+                <value>
+                    <fullName>Selected for Transition – On Hold</fullName>
+                    <default>false</default>
+                    <label>Selected for Transition – On Hold</label>
+                </value>
+                <value>
+                    <fullName>Transition Date Confirmed</fullName>
+                    <default>false</default>
+                    <label>Transition Date Confirmed</label>
+                </value>
+                <value>
+                    <fullName>Transition Activity Completed</fullName>
+                    <default>false</default>
+                    <label>Transition Activity Completed</label>
+                </value>
+                <value>
+                    <fullName>Transitioned - legacy system still active</fullName>
+                    <default>false</default>
+                    <label>Transitioned - legacy system still active</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Current_Transition_Owner__c</fullName>
+        <label>Current Upgrade Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>TC+ Program Management Team</fullName>
+                    <default>false</default>
+                    <label>TC+ Program Management Team</label>
+                </value>
+                <value>
+                    <fullName>Deployment</fullName>
+                    <default>false</default>
+                    <label>Deployment</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Custom_Content_Migration__c</fullName>
+        <label>Custom Content Migration</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>On Hold</fullName>
+                    <default>false</default>
+                    <label>On Hold</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Customer_Success_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>COO Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>TalentCentral_Transition1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date_Booking_Made__c</fullName>
+        <label>Date Booking Made</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_for_Warmup_Email__c</fullName>
+        <label>Date for Warmup Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_for_pre_migration_email__c</fullName>
+        <label>Date for pre-migration email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_for_reminder_emails__c</fullName>
+        <label>Date for reminder emails</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_completion_of_UAT__c</fullName>
+        <label>Date of completion of UAT</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_enablement_session__c</fullName>
+        <label>Date of enablement session</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Decision_Maker_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Decision Maker Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Decision_Maker_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Decision Maker Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Deferral_Date__c</fullName>
+        <label>Deferral Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Q1 2015</fullName>
+                    <default>false</default>
+                    <label>Q1 2015</label>
+                </value>
+                <value>
+                    <fullName>Q2 2015</fullName>
+                    <default>false</default>
+                    <label>Q2 2015</label>
+                </value>
+                <value>
+                    <fullName>Q3 2015</fullName>
+                    <default>false</default>
+                    <label>Q3 2015</label>
+                </value>
+                <value>
+                    <fullName>Q4 2015</fullName>
+                    <default>false</default>
+                    <label>Q4 2015</label>
+                </value>
+                <value>
+                    <fullName>Q1 2016</fullName>
+                    <default>false</default>
+                    <label>Q1 2016</label>
+                </value>
+                <value>
+                    <fullName>Q2 2016</fullName>
+                    <default>false</default>
+                    <label>Q2 2016</label>
+                </value>
+                <value>
+                    <fullName>Q3 2016</fullName>
+                    <default>false</default>
+                    <label>Q3 2016</label>
+                </value>
+                <value>
+                    <fullName>Q4 2016</fullName>
+                    <default>false</default>
+                    <label>Q4 2016</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Deferral_reason__c</fullName>
+        <inlineHelpText>Deferral applies when it is appropriate to delay the transition of an account - selecting a reason and an alternative deferral date</inlineHelpText>
+        <label>Deferral Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not convenient for client</fullName>
+                    <default>false</default>
+                    <label>Not convenient for client</label>
+                </value>
+                <value>
+                    <fullName>Defer until renewal</fullName>
+                    <default>false</default>
+                    <label>Defer until renewal</label>
+                </value>
+                <value>
+                    <fullName>Functionality/content not available</fullName>
+                    <default>false</default>
+                    <label>Functionality/content not available</label>
+                </value>
+                <value>
+                    <fullName>Relationship issue</fullName>
+                    <default>false</default>
+                    <label>Relationship issue</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Deferred_Date__c</fullName>
+        <label>Deferred Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Delegate_Confirmation_Letter__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>To delegate Confirmation Letter process to GCSC,tick the box and email TCOperationalSupport@ 
+executiveboard.com with specific details.</inlineHelpText>
+        <label>Delegate Confirmation Letter</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Delegate_Demo__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>To delegate TC Demo to GCSC, tick the box and email TCOperationalSupport@executive board.com with specific details.</inlineHelpText>
+        <label>Delegate Demo</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Delegated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>Only used when pre-agreed that Operational Support will manage the whole process.</inlineHelpText>
+        <label>Delegate Entire Transition Process</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Did_the_client_attend_the_session__c</fullName>
+        <label>Did the client attend the session?</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Do_not_hold_client_conversation_until__c</fullName>
+        <label>Do not hold client conversation until</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Email_1_Warmup_mail_rolled_out__c</fullName>
+        <label>Email 1 - Warmup mail rolled out?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Email_2_Pre_migration_Email_rolled_out__c</fullName>
+        <label>Email 2- Pre-migration Email rolled out?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Email_3_TC_read_only_email_rolled_out__c</fullName>
+        <label>Email 3- TC read only email rolled out?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Email_4_User_validation_email_rolled_ou__c</fullName>
+        <label>Email4 User validation email rolled out?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Email_5_Post_migration_Email_rolled_out__c</fullName>
+        <label>Email 5-Post-migration Email rolled out?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Emerging_Markets__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Emerging Markets</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Enablement_Reminder_Calling__c</fullName>
+        <label>Enablement Reminder Calling</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Not Needed</fullName>
+                    <default>false</default>
+                    <label>Not Needed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Enablement_Reminder_Email_sent__c</fullName>
+        <label>Enablement Reminder Email sent?</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Enter_the_reason_for_deferral_here__c</fullName>
+        <label>Enter the reason for deferral here</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Final_Cutover_Date__c</fullName>
+        <label>Final Cutover Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Final_UAT_Sign_Off__c</fullName>
+        <label>Final UAT Sign Off</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>GCSC_Call_Attempt_Threshold__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Attempt Threshold</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Identified_Issue_Details__c</fullName>
+        <label>Identified Issue Details</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Integrator_ATS__c</fullName>
+        <inlineHelpText>If integrated , mention the Integrator (ATS)</inlineHelpText>
+        <label>Integrator (ATS)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Issues_Identified__c</fullName>
+        <label>Issues Identified?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>NA</fullName>
+                    <default>false</default>
+                    <label>NA</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Legacy_Platform__c</fullName>
+        <label>Legacy Platform</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>iAssess</fullName>
+                    <default>false</default>
+                    <label>iAssess</label>
+                </value>
+                <value>
+                    <fullName>Talent Central</fullName>
+                    <default>false</default>
+                    <label>Talent Central</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Legacy_System_Close_Date__c</fullName>
+        <label>Legacy System Close Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_System_Closed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Legacy System Closed?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_System_Read_only_Date__c</fullName>
+        <label>Legacy System Read-only Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Norm_Replacement__c</fullName>
+        <label>Norm Replacement</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>On_Hold_Reason__c</fullName>
+        <label>On Hold Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Technical Holdback</fullName>
+                    <default>false</default>
+                    <label>Technical Holdback</label>
+                </value>
+                <value>
+                    <fullName>Client Pushback</fullName>
+                    <default>false</default>
+                    <label>Client Pushback</label>
+                </value>
+                <value>
+                    <fullName>Commercial Reasons</fullName>
+                    <default>false</default>
+                    <label>Commercial Reasons</label>
+                </value>
+                <value>
+                    <fullName>Moved To Another Cohort</fullName>
+                    <default>false</default>
+                    <label>Moved To Another Cohort</label>
+                </value>
+                <value>
+                    <fullName>COO Pushback</fullName>
+                    <default>false</default>
+                    <label>COO Pushback</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Operations_Recipient__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Operations Recipient</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>TalentCentral_Transition_Operations_Reci</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Orders_created__c</fullName>
+        <label>Orders Created?</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Overall_Account_Transition_progress__c</fullName>
+        <label>Overall Account Transition Progress</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No transition possible</fullName>
+                    <default>false</default>
+                    <label>No transition possible</label>
+                </value>
+                <value>
+                    <fullName>No systems or orders yet transitioned</fullName>
+                    <default>false</default>
+                    <label>No systems or orders yet transitioned</label>
+                </value>
+                <value>
+                    <fullName>Partially Transitioned</fullName>
+                    <default>false</default>
+                    <label>Partially Transitioned</label>
+                </value>
+                <value>
+                    <fullName>Fully Transitioned</fullName>
+                    <default>false</default>
+                    <label>Fully Transitioned</label>
+                </value>
+                <value>
+                    <fullName>Fully Transitioned – Legacy System Suspended</fullName>
+                    <default>false</default>
+                    <label>Fully Transitioned – Legacy System Suspended</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Phase__c</fullName>
+        <externalId>false</externalId>
+        <label>Legacy System ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Post_Migration_Email_sent_to_Commercial__c</fullName>
+        <label>Post Migration Email sent to Commercial?</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Pre_migration_reminder_email_rolled_out__c</fullName>
+        <label>Pre-migration reminder email rolled out?</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Projects_Created_if_needed__c</fullName>
+        <label>Projects Created (if needed)?</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Not Required</fullName>
+                    <default>false</default>
+                    <label>Not Required</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Deferral__c</fullName>
+        <label>Reason for Deferral</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Tech Issues</fullName>
+                    <default>false</default>
+                    <label>Tech Issues</label>
+                </value>
+                <value>
+                    <fullName>Client Pushback</fullName>
+                    <default>false</default>
+                    <label>Client Pushback</label>
+                </value>
+                <value>
+                    <fullName>Commercial Pushback</fullName>
+                    <default>false</default>
+                    <label>Commercial Pushback</label>
+                </value>
+                <value>
+                    <fullName>COO Pushback</fullName>
+                    <default>false</default>
+                    <label>COO Pushback</label>
+                </value>
+                <value>
+                    <fullName>Others</fullName>
+                    <default>false</default>
+                    <label>Others</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Report_Replacement__c</fullName>
+        <label>Report Replacement</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Requested_transition_Date__c</fullName>
+        <inlineHelpText>HIGH TOUCH: Select the transition date you provisionally agree with the client - note that transition dates will only be confirmed on receipt of a signed confirmation letter</inlineHelpText>
+        <label>Requested Transition Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SHL_Proposed_transition_Date__c</fullName>
+        <label>SHL Proposed Transition Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10/09/2014</fullName>
+                    <default>false</default>
+                    <label>10/09/2014</label>
+                </value>
+                <value>
+                    <fullName>17/09/2014</fullName>
+                    <default>false</default>
+                    <label>17/09/2014</label>
+                </value>
+                <value>
+                    <fullName>24/09/2014</fullName>
+                    <default>false</default>
+                    <label>24/09/2014</label>
+                </value>
+                <value>
+                    <fullName>08/10/2014</fullName>
+                    <default>false</default>
+                    <label>08/10/2014</label>
+                </value>
+                <value>
+                    <fullName>15/10/2014</fullName>
+                    <default>false</default>
+                    <label>15/10/2014</label>
+                </value>
+                <value>
+                    <fullName>12/11/2014</fullName>
+                    <default>false</default>
+                    <label>12/11/2014</label>
+                </value>
+                <value>
+                    <fullName>19/11/2014</fullName>
+                    <default>false</default>
+                    <label>19/11/2014</label>
+                </value>
+                <value>
+                    <fullName>10/12/2014</fullName>
+                    <default>false</default>
+                    <label>10/12/2014</label>
+                </value>
+                <value>
+                    <fullName>17/12/2014</fullName>
+                    <default>false</default>
+                    <label>17/12/2014</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Scope_Company_Projects_Candidates__c</fullName>
+        <label>Scope - Company/Projects/Candidates?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Company Settings</fullName>
+                    <default>false</default>
+                    <label>Company Settings</label>
+                </value>
+                <value>
+                    <fullName>Projects Settings</fullName>
+                    <default>false</default>
+                    <label>Projects Settings</label>
+                </value>
+                <value>
+                    <fullName>Candidate Settings</fullName>
+                    <default>false</default>
+                    <label>Candidate Settings</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Secondary_Upgrade_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Secondary Upgrade Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>TalentCentral_Transition2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Site_Upgrade_Progress__c</fullName>
+        <label>Site Upgrade Progress</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not yet upgraded</fullName>
+                    <default>false</default>
+                    <label>Not yet upgraded</label>
+                </value>
+                <value>
+                    <fullName>Fully upgraded</fullName>
+                    <default>false</default>
+                    <label>Fully upgraded</label>
+                </value>
+                <value>
+                    <fullName>On Hold</fullName>
+                    <default>false</default>
+                    <label>On Hold</label>
+                </value>
+                <value>
+                    <fullName>Reverted</fullName>
+                    <default>false</default>
+                    <label>Reverted</label>
+                </value>
+                <value>
+                    <fullName>Deferred</fullName>
+                    <default>false</default>
+                    <label>Deferred</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Slot_Description__c</fullName>
+        <label>Slot Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Specify_if_any_other_language__c</fullName>
+        <externalId>false</externalId>
+        <label>Specify, if any other language</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submit_CheckBox__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Submit_CheckBox</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>TC_System_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>TC+ System ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TC_Transition_Slot__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>TC Transition Slot</label>
+        <referenceTo>TC_Transition_Slot__c</referenceTo>
+        <relationshipName>TalentCentral_Transition</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>TalentCentral_Transition_Description__c</fullName>
+        <inlineHelpText>Describes the commercial arrangement type that is due to be migrated in this transition activity</inlineHelpText>
+        <label>TalentCentral Transition Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Target_Quarter__c</fullName>
+        <label>Target Quarter</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+                <value>
+                    <fullName>Q1 2020</fullName>
+                    <default>false</default>
+                    <label>Q1 2020</label>
+                </value>
+                <value>
+                    <fullName>Q2 2020</fullName>
+                    <default>false</default>
+                    <label>Q2 2020</label>
+                </value>
+                <value>
+                    <fullName>Q3 2020</fullName>
+                    <default>false</default>
+                    <label>Q3 2020</label>
+                </value>
+                <value>
+                    <fullName>Q4 2020</fullName>
+                    <default>false</default>
+                    <label>Q4 2020</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Target_Upgrade_Date__c</fullName>
+        <label>Target Upgrade Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Total_D_Revenue_L12M_USD__c</fullName>
+        <externalId>false</externalId>
+        <label>Total D# Revenue L12M (USD$)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Transition_Authorisation_Type__c</fullName>
+        <label>Transition Authorisation Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Low Touch - No Confirmation Letter Required</fullName>
+                    <default>false</default>
+                    <label>Low Touch - No Confirmation Letter Required</label>
+                </value>
+                <value>
+                    <fullName>High Touch - Confirmation Letter Required</fullName>
+                    <default>false</default>
+                    <label>High Touch - Confirmation Letter Required</label>
+                </value>
+                <value>
+                    <fullName>High Touch - Pre-authorisation clause in current order</fullName>
+                    <default>false</default>
+                    <label>High Touch - Pre-authorisation clause in current order</label>
+                </value>
+                <value>
+                    <fullName>Integrated Transition - SOW Required</fullName>
+                    <default>false</default>
+                    <label>Integrated Transition - SOW Required</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Transition_Booking_Status__c</fullName>
+        <label>Transition Booking Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Provisional</fullName>
+                    <default>true</default>
+                    <label>Provisional</label>
+                </value>
+                <value>
+                    <fullName>Confirmed</fullName>
+                    <default>false</default>
+                    <label>Confirmed</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>On Hold</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Suggested</fullName>
+                    <default>false</default>
+                    <label>Suggested</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Transition_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Transition Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>TalentCentral_Transition</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Transition_Engagement_Type__c</fullName>
+        <label>Transition Engagement Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Low Touch</fullName>
+                    <default>false</default>
+                    <label>Low Touch</label>
+                </value>
+                <value>
+                    <fullName>High Touch - Standard Av</fullName>
+                    <default>false</default>
+                    <label>High Touch - Standard Av</label>
+                </value>
+                <value>
+                    <fullName>High Touch - Standard High</fullName>
+                    <default>false</default>
+                    <label>High Touch - Standard High</label>
+                </value>
+                <value>
+                    <fullName>High Touch - Complex</fullName>
+                    <default>false</default>
+                    <label>High Touch - Complex</label>
+                </value>
+                <value>
+                    <fullName>Integrated Transition</fullName>
+                    <default>false</default>
+                    <label>Integrated Transition</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Transition_Jobs_Projects__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>Only used when pre-agreed that the customer&apos;s active Job / Project configurations will be migrated</inlineHelpText>
+        <label>Transition Jobs/Projects?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Transition_Slot_Date__c</fullName>
+        <formula>TC_Transition_Slot__r.Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Transition Slot Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Transition_Slot_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>text(TC_Transition_Slot__r.Transition_Slot_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Transition Slot Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Transition_Wave__c</fullName>
+        <externalId>false</externalId>
+        <label>Transition Wave</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UAT_Completed__c</fullName>
+        <label>UAT Completed</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Revalidation required(open issues)</fullName>
+                    <default>false</default>
+                    <label>Revalidation required(open issues)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UAT_Initiated__c</fullName>
+        <label>UAT Initiated</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UAT_Status__c</fullName>
+        <label>UAT Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>false</default>
+                    <label>Not Started</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Revalidation Required</fullName>
+                    <default>false</default>
+                    <label>Revalidation Required</label>
+                </value>
+                <value>
+                    <fullName>Migrated</fullName>
+                    <default>false</default>
+                    <label>Migrated</label>
+                </value>
+                <value>
+                    <fullName>Migration Failure</fullName>
+                    <default>false</default>
+                    <label>Migration Failure</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Unit_conversion_rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Unit Conversion Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Upgrade_Authorization_type__c</fullName>
+        <label>Upgrade Authorization type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Low Touch Customers</fullName>
+                    <default>false</default>
+                    <label>Low Touch Customers</label>
+                </value>
+                <value>
+                    <fullName>Mid Touch Customers</fullName>
+                    <default>false</default>
+                    <label>Mid Touch Customers</label>
+                </value>
+                <value>
+                    <fullName>High Touch Customers</fullName>
+                    <default>false</default>
+                    <label>High Touch Customers</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Upgrade_Classification__c</fullName>
+        <label>Upgrade Classification</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Standalone</fullName>
+                    <default>false</default>
+                    <label>Standalone</label>
+                </value>
+                <value>
+                    <fullName>Standalone Tailored</fullName>
+                    <default>false</default>
+                    <label>Standalone Tailored</label>
+                </value>
+                <value>
+                    <fullName>Integrated</fullName>
+                    <default>false</default>
+                    <label>Integrated</label>
+                </value>
+                <value>
+                    <fullName>SODA MS</fullName>
+                    <default>false</default>
+                    <label>SODA MS</label>
+                </value>
+                <value>
+                    <fullName>Legacy Transition</fullName>
+                    <default>false</default>
+                    <label>Legacy Transition</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Upgrade_Dependency__c</fullName>
+        <label>Upgrade Dependency</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Standalone PJM</fullName>
+                    <default>false</default>
+                    <label>Standalone PJM</label>
+                </value>
+                <value>
+                    <fullName>Extranet</fullName>
+                    <default>false</default>
+                    <label>Extranet</label>
+                </value>
+                <value>
+                    <fullName>Interoperability</fullName>
+                    <default>false</default>
+                    <label>Interoperability</label>
+                </value>
+                <value>
+                    <fullName>Integrated PJM</fullName>
+                    <default>false</default>
+                    <label>Integrated PJM</label>
+                </value>
+                <value>
+                    <fullName>Timer Extension</fullName>
+                    <default>false</default>
+                    <label>Timer Extension</label>
+                </value>
+                <value>
+                    <fullName>ATS Onboarding</fullName>
+                    <default>false</default>
+                    <label>ATS Onboarding</label>
+                </value>
+                <value>
+                    <fullName>Proctor</fullName>
+                    <default>false</default>
+                    <label>Proctor</label>
+                </value>
+                <value>
+                    <fullName>Messaging</fullName>
+                    <default>false</default>
+                    <label>Messaging</label>
+                </value>
+                <value>
+                    <fullName>2 Sitting</fullName>
+                    <default>false</default>
+                    <label>2 Sitting</label>
+                </value>
+                <value>
+                    <fullName>Custom App Form</fullName>
+                    <default>false</default>
+                    <label>Custom App Form</label>
+                </value>
+                <value>
+                    <fullName>Hurdling</fullName>
+                    <default>false</default>
+                    <label>Hurdling</label>
+                </value>
+                <value>
+                    <fullName>Copy Across Sittings</fullName>
+                    <default>false</default>
+                    <label>Copy Across Sittings</label>
+                </value>
+                <value>
+                    <fullName>Text Field Responses</fullName>
+                    <default>false</default>
+                    <label>Text Field Responses</label>
+                </value>
+                <value>
+                    <fullName>RR Across Platforms</fullName>
+                    <default>false</default>
+                    <label>RR Across Platforms</label>
+                </value>
+                <value>
+                    <fullName>Data Privacy</fullName>
+                    <default>false</default>
+                    <label>Data Privacy</label>
+                </value>
+                <value>
+                    <fullName>Multiple Colored Scorebands in a Solution</fullName>
+                    <default>false</default>
+                    <label>Multiple Colored Scorebands in a Solution</label>
+                </value>
+                <value>
+                    <fullName>CCSimsFinancial</fullName>
+                    <default>false</default>
+                    <label>CCSimsFinancial</label>
+                </value>
+                <value>
+                    <fullName>CCSims CFR</fullName>
+                    <default>false</default>
+                    <label>CCSims CFR</label>
+                </value>
+                <value>
+                    <fullName>MQ Korean</fullName>
+                    <default>false</default>
+                    <label>MQ Korean</label>
+                </value>
+                <value>
+                    <fullName>Mobile COTM</fullName>
+                    <default>false</default>
+                    <label>Mobile COTM</label>
+                </value>
+                <value>
+                    <fullName>Bilingual CCSims</fullName>
+                    <default>false</default>
+                    <label>Bilingual CCSims</label>
+                </value>
+                <value>
+                    <fullName>Skills Testing</fullName>
+                    <default>false</default>
+                    <label>Skills Testing</label>
+                </value>
+                <value>
+                    <fullName>Math Basics</fullName>
+                    <default>false</default>
+                    <label>Math Basics</label>
+                </value>
+                <value>
+                    <fullName>Sales Challenger</fullName>
+                    <default>false</default>
+                    <label>Sales Challenger</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <label>TC Upgrade</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Target_Upgrade_Date__c</columns>
+        <columns>Site_Upgrade_Progress__c</columns>
+        <columns>Email_1_Warmup_mail_rolled_out__c</columns>
+        <columns>Email_2_Pre_migration_Email_rolled_out__c</columns>
+        <columns>Email_5_Post_migration_Email_rolled_out__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>CSIT_TC_Upgrades1</fullName>
+        <columns>Cohort__c</columns>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Phase__c</columns>
+        <columns>Target_Upgrade_Date__c</columns>
+        <columns>Actual_Upgrade_Date__c</columns>
+        <columns>Admin_Language__c</columns>
+        <columns>Site_Upgrade_Progress__c</columns>
+        <columns>UAT_Initiated__c</columns>
+        <columns>Orders_created__c</columns>
+        <columns>UAT_Completed__c</columns>
+        <columns>Email_1_Warmup_mail_rolled_out__c</columns>
+        <columns>Email_2_Pre_migration_Email_rolled_out__c</columns>
+        <columns>Identified_Issue_Details__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>CSIT TC+ Upgrades</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CSIT_Case_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>CSIT_TC_Upgrades_Actioned_Trained</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Phase__c</columns>
+        <columns>TC_System_ID__c</columns>
+        <columns>Target_Upgrade_Date__c</columns>
+        <columns>Did_the_client_attend_the_session__c</columns>
+        <columns>Date_of_enablement_session__c</columns>
+        <columns>Comments__c</columns>
+        <columns>Admin_Language__c</columns>
+        <columns>Site_Upgrade_Progress__c</columns>
+        <columns>UAT_Status__c</columns>
+        <columns>Orders_created__c</columns>
+        <columns>UAT_Completed__c</columns>
+        <columns>Norm_Replacement__c</columns>
+        <columns>Report_Replacement__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Site_Upgrade_Progress__c</field>
+            <operation>equals</operation>
+            <value>Fully upgraded</value>
+        </filters>
+        <label>CSIT TC+ Upgrades Actioned/Enabled</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CSIT_Case_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>CSIT_TC_Upgrades_enabled</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Phase__c</columns>
+        <columns>TC_System_ID__c</columns>
+        <columns>Target_Upgrade_Date__c</columns>
+        <columns>Did_the_client_attend_the_session__c</columns>
+        <columns>Date_of_enablement_session__c</columns>
+        <columns>Comments__c</columns>
+        <columns>Admin_Language__c</columns>
+        <columns>Site_Upgrade_Progress__c</columns>
+        <columns>UAT_Status__c</columns>
+        <columns>Orders_created__c</columns>
+        <columns>UAT_Completed__c</columns>
+        <columns>Norm_Replacement__c</columns>
+        <columns>Report_Replacement__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>CSIT TC+ Upgrades Enablement status</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CSIT_Case_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>CSIT_TC_Upgrades_not_Fully_Upgraded</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Phase__c</columns>
+        <columns>TC_System_ID__c</columns>
+        <columns>Target_Upgrade_Date__c</columns>
+        <columns>Did_the_client_attend_the_session__c</columns>
+        <columns>Date_of_enablement_session__c</columns>
+        <columns>Comments__c</columns>
+        <columns>Admin_Language__c</columns>
+        <columns>Site_Upgrade_Progress__c</columns>
+        <columns>UAT_Status__c</columns>
+        <columns>Orders_created__c</columns>
+        <columns>UAT_Completed__c</columns>
+        <columns>Norm_Replacement__c</columns>
+        <columns>Report_Replacement__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Site_Upgrade_Progress__c</field>
+            <operation>notEqual</operation>
+            <value>Fully upgraded</value>
+        </filters>
+        <label>CSIT TC+ Upgrades not Fully Upgraded</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CSIT_Case_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>CSIT_TC_Upgrades_pilot</fullName>
+        <columns>Cohort__c</columns>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Phase__c</columns>
+        <columns>TC_System_ID__c</columns>
+        <columns>Target_Upgrade_Date__c</columns>
+        <columns>Did_the_client_attend_the_session__c</columns>
+        <columns>Date_of_enablement_session__c</columns>
+        <columns>Comments__c</columns>
+        <columns>Admin_Language__c</columns>
+        <columns>Site_Upgrade_Progress__c</columns>
+        <columns>UAT_Status__c</columns>
+        <columns>Orders_created__c</columns>
+        <columns>UAT_Completed__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Cohort__c</field>
+            <operation>equals</operation>
+            <value>Pilot</value>
+        </filters>
+        <label>CSIT TC+ Upgrades pilot</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CSIT_Case_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>CSIT_TC_Upgrades_target_date_020924</fullName>
+        <columns>Cohort__c</columns>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Phase__c</columns>
+        <columns>TC_System_ID__c</columns>
+        <columns>Target_Upgrade_Date__c</columns>
+        <columns>Did_the_client_attend_the_session__c</columns>
+        <columns>Date_of_enablement_session__c</columns>
+        <columns>Comments__c</columns>
+        <columns>Admin_Language__c</columns>
+        <columns>Site_Upgrade_Progress__c</columns>
+        <columns>UAT_Status__c</columns>
+        <columns>Orders_created__c</columns>
+        <columns>UAT_Completed__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Cohort__c</field>
+            <operation>equals</operation>
+            <value>Cohort 1</value>
+        </filters>
+        <label>CSIT TC+ Upgrades cohort 1</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CSIT_Case_Team</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>TCU-{0000}</displayFormat>
+        <label>TC Upgrade Record</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>TC Upgrade</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Target_Upgrade_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Site_Upgrade_Progress__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Email_1_Warmup_mail_rolled_out__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Email_2_Pre_migration_Email_rolled_out__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Email_5_Post_migration_Email_rolled_out__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Target_Upgrade_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Site_Upgrade_Progress__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Email_1_Warmup_mail_rolled_out__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Email_2_Pre_migration_Email_rolled_out__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Email_5_Post_migration_Email_rolled_out__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Target_Upgrade_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Site_Upgrade_Progress__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Email_1_Warmup_mail_rolled_out__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Email_2_Pre_migration_Email_rolled_out__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Email_5_Post_migration_Email_rolled_out__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Cant_choose_slot_date_within_four_weeks</fullName>
+        <active>false</active>
+        <description>User cannot book this slot as the Transition Slot Date is within four weeks of the current date</description>
+        <errorConditionFormula>AND(NOT(OR( $Permission.Access_to_urgent_TC_slots ,$Profile.Name = &apos;CT&apos;,$Profile.Name = &apos;NEW Training User&apos;,$Profile.Name = &apos;System Administrator UK Client Helpdesk&apos;,$Profile.Name = &apos;System Administrator&apos;)),OR(Text(TC_Transition_Slot__r.Transition_Slot_Type__c)=&apos;Complex&apos;,Text(TC_Transition_Slot__r.Transition_Slot_Type__c) =&apos;Integrated&apos;),TC_Transition_Slot__r.Date__c - TODAY() &lt;= 28,OR(ISNEW(),ISCHANGED(TC_Transition_Slot__c)))</errorConditionFormula>
+        <errorMessage>User cannot book this slot as the Transition Slot Date is within four weeks of the current date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cant_choose_slot_date_within_two_weeks</fullName>
+        <active>false</active>
+        <description>User cannot book this slot as the Transition Slot Date is within two weeks of the current date</description>
+        <errorConditionFormula>AND(NOT(OR( $Permission.Access_to_urgent_TC_slots ,$Profile.Name = &apos;CT&apos;,$Profile.Name = &apos;NEW Training User&apos;,$Profile.Name = &apos;System Administrator UK Client Helpdesk&apos;,$Profile.Name = &apos;System Administrator&apos;)),
+OR(Text(TC_Transition_Slot__r.Transition_Slot_Type__c) =&apos;Low Touch&apos;,Text(TC_Transition_Slot__r.Transition_Slot_Type__c) =&apos;Standalone&apos;),TC_Transition_Slot__r.Date__c - TODAY()  &lt;=  14,OR(ISNEW(),ISCHANGED(TC_Transition_Slot__c)))</errorConditionFormula>
+        <errorMessage>User cannot book this slot as the Transition Slot Date is within two weeks of the current date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Defferal_Reason_Mandatory</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(ISPICKVAL(Current_Transition_Activity__c , &apos;Do Not Transition - Deferred&apos;), ISPICKVAL( Deferral_reason__c,&apos;&apos;))</errorConditionFormula>
+        <errorDisplayField>Deferral_reason__c</errorDisplayField>
+        <errorMessage>Please provide a deferral reason</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>On_Hold_Reason_Mandatory</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(ISPICKVAL(Current_Transition_Activity__c , &apos;Selected for Transition – On Hold&apos;), ISPICKVAL( On_Hold_Reason__c,&apos;&apos;))</errorConditionFormula>
+        <errorDisplayField>On_Hold_Reason__c</errorDisplayField>
+        <errorMessage>Please provide on hold reason</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Restrictions_on_TC_booking_status</fullName>
+        <active>false</active>
+        <description>Only the CT, New Training User and System Administrator UK Client Helpdesk profile have permissions to choose a booking status value as Confirmed, On Hold and Cancelled</description>
+        <errorConditionFormula>AND(NOT(OR($Profile.Name = &apos;GCSC General&apos;,$Profile.Name = &apos;Commercial&apos;,$Profile.Name = &apos;NEW Training User&apos;,
+$Profile.Name = &apos;System Administrator UK Client Helpdesk&apos;,$Profile.Name = &apos;System Administrator&apos;)),
+OR(ISPICKVAL( Transition_Booking_Status__c,&quot;Confirmed&quot;), ISPICKVAL( Transition_Booking_Status__c,&quot;Cancelled&quot;),
+ISPICKVAL( Transition_Booking_Status__c,&quot;On Hold&quot;),ISPICKVAL( Transition_Booking_Status__c,&quot;Suggested&quot;)),OR(ISNEW(),ISCHANGED(Transition_Booking_Status__c)))</errorConditionFormula>
+        <errorDisplayField>Transition_Booking_Status__c</errorDisplayField>
+        <errorMessage>Only the TalentCentral teams are able to confirm, cancel, suggested or move a booking to on hold</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Restrictions_on_TC_slot</fullName>
+        <active>false</active>
+        <description>Only the TalentCentral teams are able to choose slot in confirm, cancel or on hold booking status.</description>
+        <errorConditionFormula>AND(NOT(OR($Profile.Name = &apos;CT&apos;,$Profile.Name = &apos;NEW Training User&apos;,$Profile.Name = &apos;System Administrator UK Client Helpdesk&apos;,$Profile.Name = &apos;System Administrator&apos;)), 
+OR(ISPICKVAL( Transition_Booking_Status__c,&quot;Confirmed&quot;), ISPICKVAL( Transition_Booking_Status__c,&quot;Cancelled&quot;),ISPICKVAL( Transition_Booking_Status__c,&quot;On Hold&quot;),ISPICKVAL( Transition_Booking_Status__c,&quot;Suggested&quot;)),
+OR(ISNEW(),ISCHANGED(TC_Transition_Slot__c)))</errorConditionFormula>
+        <errorDisplayField>TC_Transition_Slot__c</errorDisplayField>
+        <errorMessage>Please select booking status to Provisional.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Select_Customer_Success_Owner_Value</fullName>
+        <active>false</active>
+        <description>When the Current Transition Owner is set to GCSC the user must fill in the Customer Success Owner field</description>
+        <errorConditionFormula>AND(ISPICKVAL(Current_Transition_Owner__c ,&apos;GCSC&apos;), Customer_Success_Owner__c=null )</errorConditionFormula>
+        <errorDisplayField>Customer_Success_Owner__c</errorDisplayField>
+        <errorMessage>Please Select the COO Owner.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Create_Case</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Create Case</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/500/e?cas4={!Talent_Central__c.Account__c}&amp;cas4_lkid={! Talent_Central__c.AccountId__c}&amp;cas3={! Talent_Central__c.Transition_Contact__c}&amp;cas3_lkid={!Talent_Central__c.Transition_ContactId__c}&amp;CF00ND00000068vsc={!Talent_Central__c.Name}&amp;CF00ND00000068vsc_lkid={!Talent_Central__c.Id}</url>
+    </webLinks>
+</CustomObject>

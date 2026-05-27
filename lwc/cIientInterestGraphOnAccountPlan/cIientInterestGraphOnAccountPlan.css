@@ -1,0 +1,12 @@
+.box {
+    height: 15px;
+    width: 15px;
+    margin-bottom: 15px;
+    clear: both;
+}
+.blue {
+    background-color: rgba(82, 183, 216, 1);
+}
+.dark-blue{
+    background-color: rgba(32, 6, 71, 1);
+}

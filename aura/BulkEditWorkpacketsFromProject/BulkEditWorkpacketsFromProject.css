@@ -1,0 +1,39 @@
+/*.THIS .slds-button_icon-brand{
+    margin-right: 2px;
+}
+.THIS .slds-page-header__title {
+    padding-right: 4px;
+    display: inline;
+}
+
+.THIS th{
+    padding:4px;
+    text-align:center;
+}
+.THIS td{
+    padding:4px;
+    text-align:left;
+}
+.THIS table{
+     padding-right: 4px;
+}
+.slds-card.THIS {
+    overflow-x:auto;
+    height:500px;
+}
+
+.THIS.slds-spinner_container {  
+  z-index: 10000;
+  position: fixed;   
+}
+
+*/
+
+.THIS th{
+    padding:4px;
+    text-align:center;
+}
+.THIS td{
+    padding:5px;
+    text-align:center;
+}

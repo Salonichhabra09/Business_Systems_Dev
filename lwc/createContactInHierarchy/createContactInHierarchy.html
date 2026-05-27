@@ -1,0 +1,405 @@
+<template>
+    <!-- Contact Screen --> <!-- Changes by Aashi SSE-26699 -->
+    <!--<template if:true={showChooseContactModal}>
+        <div style={modalresize}>
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-10"
+                class="slds-modal slds-fade-in-open slds-modal_small">
+                <div class="slds-modal__container">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={handleCloseChooseContactModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                            size="small">
+                        </lightning-icon>
+                        <span class="slds-assistive-text">Cancel and close</span>
+                    </button>
+                    <div class="slds-modal__header">
+                        <h1 id="modal-heading-11" class="slds-modal__title slds-hyphenate">Choose Contact</h1>
+                    </div>
+                    <div class="slds-modal__content slds-p-around_small" id="modal-content-id-14">
+                        <div class="slds-align_absolute-center">
+                            <div class="slds-col slds-p-horizontal_small">
+                                <button class="slds-button slds-button_brand button_class"
+                                    onclick={handleChooseExistingContact} style="margin-left:81px;">Choose Existing
+                                    Contact
+                                </button>
+                            </div>
+                            <div class="slds-col slds-p-horizontal_small">
+                                <button class="slds-button slds-button_brand button_class"
+                                    style="margin-right:81px; margin-left:50px;" onclick={handleChooseNewContact}>Create
+                                    New Contact
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral" onclick={handleBackChooseContact}>Back</button>
+                        <button class="slds-button slds-button_neutral" aria-label="Cancel and close"
+                            onclick={handleCloseChooseContactModal}>Cancel</button>
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </div>
+    </template>-->
+
+    <!-- Create New Contact -->
+    <!--<template if:true={showNewContactModal}>
+        <div style={modalresize}>
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-20"
+                class="slds-modal slds-fade-in-open slds-modal_large">
+
+                <div class="slds-modal__container" onclick={closeEditOnBlur}>
+                    <div class="">
+                        <template lwc:if={showSpinner}>
+                            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                        </template>
+                        <div class="slds-modal__header">
+                            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                title="Close" onclick={handleNewContactCancel}>
+                                <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                                    size="small">
+                                </lightning-icon>
+                                <span class="slds-assistive-text">Cancel and close</span>
+                            </button>
+                            <h1 id="modal-heading-25" class="slds-modal__title slds-hyphenate">Create New Contact
+                            </h1>
+                        </div>
+                        <div class="slds-modal__content slds-p-around_small slds-scrollable " id="modal-content-id-30"
+                            style="max-height:400px">
+                            <lightning-card class="slds-scrollable">
+                                <div class="slds-grid slds-grid_vertical slds-box slds-theme_error"
+                                    style="outline-style: solid;" lwc:if={errorMessage}>
+                                    {errorMessage}
+                                </div>
+                                <h3 slot="title">
+                                    <lightning-icon icon-name="standard:contact" alternative-text="Contact"
+                                        size="small"></lightning-icon>
+                                    &nbsp; Create New Contact
+                                </h3>
+                                <lightning-button slot="actions" label="Add Row" onclick={addRow}
+                                    lwc:if={isNotReplace}></lightning-button>
+                                <div class="slds-grid slds-m-bottom_medium">
+                                    <div class="slds-col slds-size_1-of-10 slds-p-right_large slds-p-left_small">
+                                        <table>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="Name">#</div>
+                                            </th>
+                                        </table>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-9 slds-p-right_large slds-p-left_small">
+                                        <table>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="Name">Salutation *</div>
+                                            </th>
+                                        </table>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-9 slds-p-right_large">
+                                        <table>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="Name">First Name</div>
+                                            </th>
+                                        </table>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-9 slds-p-right_large">
+                                        <table>
+                                            <th class="" scope="col">
+                                                <div class="" title="Name">Last Name *</div>
+                                            </th>
+                                        </table>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-9 slds-p-right_large">
+                                        <table>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="Name">Account Name</div>
+                                            </th>
+                                        </table>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-9 slds-p-right_large">
+                                        <table>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="Name">Email *</div>
+                                            </th>
+                                        </table>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-9 slds-p-right_large">
+                                        <table>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="Name">Job Function *</div>
+                                            </th>
+                                        </table>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-9 slds-p-right_large">
+                                        <table>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="Name">Role *</div>
+                                            </th>
+                                        </table>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-9 slds-p-right_large">
+                                        <table>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="Name">Phone *</div>
+                                            </th>
+                                        </table>
+                                    </div>
+                                </div>
+                                <template for:each={contactList} for:item="contact" for:index="index">
+                                    <lightning-record-edit-form key={contact.index} object-api-name="Contact">
+                                        <div class="slds-grid" data-key={contact.index}>
+                                            <div
+                                                class="slds-col slds-size_1-of-10 slds-p-right_large slds-p-left_small">
+                                                <p>{contact.index}</p>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-9 slds-p-right_large slds-p-left_small">
+                                                <lightning-input-field field-name="Salutation" accesskey={contact.index}
+                                                    variant="label-hidden" value={contact.Salutation}>
+                                                </lightning-input-field>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-9 slds-p-right_large">
+                                                <lightning-input-field field-name="FirstName" variant="label-hidden"
+                                                    accesskey={contact.index} value={contact.FirstName}
+                                                    onchange={handleInputChange} data-name="firstName" required>
+                                                </lightning-input-field>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-9 slds-p-right_large">
+                                                <lightning-input-field field-name="LastName" variant="label-hidden"
+                                                    onchange={handleInputChange} value={contact.LastName}
+                                                    accesskey={contact.index} class="required-fields"
+                                                    data-name="lastName" required>
+                                                </lightning-input-field>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-9 slds-p-right_large">
+                                                <lightning-input-field field-name="AccountId" variant="label-hidden"
+                                                    value={accountId} accesskey={contact.index} disabled="true">
+                                                </lightning-input-field>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-9 slds-p-right_large">
+                                                <lightning-input-field field-name="Email" variant="label-hidden"
+                                                    onchange={handleInputChange} value={contact.Email}
+                                                    accesskey={contact.index} class="required-fields" required>
+                                                </lightning-input-field>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-9 slds-p-right_large">
+                                                <lightning-input-field field-name="Job_Function__c"
+                                                    variant="label-hidden" onchange={handleInputChange}
+                                                    value={contact.Job_Function__c} accesskey={contact.index}
+                                                    class="required-fields">
+                                                </lightning-input-field>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-9 slds-p-right_large"
+                                                accesskey={contact.index}>
+                                                <template lwc:if={contact.isEdit}>
+                                                    <c-multi-select-combobox-hierarchy label="Options" name="options"
+                                                        options={contactRoleOptions} onchange={handleInputRole}
+                                                        onclose={handleClose} accesskey={contact.index}
+                                                        pre-selected-options={contact.JobRole} class="roleField"
+                                                        value={contact.JobRole}></c-multi-select-combobox-hierarchy>
+                                                </template>
+                                                <template lwc:else>
+                                                    <div class="slds-grid slds-gutters">
+                                                        <div class="slds-col slds-size_10-of-12">
+                                                            <p style="text-wrap: auto;">{contact.JobRole}</p>
+                                                        </div>
+                                                        <div class="slds-col slds-size_2-of-12">
+                                                            <lightning-icon icon-name="utility:edit" size="xx-small"
+                                                                onclick={handleEdit}
+                                                                accesskey={contact.index}></lightning-icon>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-9 slds-p-right_large">
+                                                <div class="slds-grid slds-gutters">
+                                                    <div class="slds-col slds-size_11-of-12">
+                                                        <lightning-input-field field-name="Phone" variant="label-hidden"
+                                                            onchange={handleInputChange} value={contact.Phone}
+                                                            accesskey={contact.index} class="required-fields" required>
+                                                        </lightning-input-field>
+                                                    </div>
+                                                    <div class="slds-col slds-size_1-of-12 slds-p-left_medium">
+                                                        <lightning-button-icon icon-name="utility:delete"
+                                                            accesskey={contact.index} variant="bare" onclick={removeRow}
+                                                            size="large" lwc:if={isNotReplace}></lightning-button-icon>
+                                                        <lightning-button-icon icon-name="utility:add"
+                                                            accesskey={contact.index} variant="bare" onclick={addRow}
+                                                            size="large" lwc:if={isNotReplace}></lightning-button-icon>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </lightning-record-edit-form>
+                                </template>
+                                <div class="slds-grid slds-grid_vertical slds-box slds-theme_error"
+                                    lwc:if={errorMessage}>
+                                    {errorMessage}
+                                </div>
+                            </lightning-card>
+                        </div>
+                        <div class="slds-modal__footer">
+                            <button class="slds-button slds-button_neutral" onclick={handleBackNewContact}>Back</button>
+                            <button class="slds-button slds-button_neutral" aria-label="Cancel and close"
+                                onclick={handleNewContactCancel}>Cancel</button>
+                            <button class="slds-button slds-button_brand" onclick={handleSaveNewContact}>Save</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </div>
+    </template>-->
+
+    <!-- Choose Existing Contact -->
+    <template lwc:if={showChooseExistingContactModal}>
+        <div style={modalresize}>
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+                class="slds-modal slds-fade-in-open slds-modal_medium">
+                <div class="slds-modal__container" onclick={closeEditOnBlur}>
+                    <!-- Close button -->
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={handleCancelChooseExistingContactModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                            size="small">
+                        </lightning-icon>
+                        <span class="slds-assistive-text">Cancel and Close</span>
+                    </button>
+                    <div class="slds-modal__header">
+                        <!-- Modal title -->
+                        <h1 id="modal-heading-03" class="slds-modal__title slds-hyphenate">
+                            <div lwc:if={showNextScreen}>
+                                Add Contact Roles
+                            </div>
+                            <div lwc:else>
+                                Choose Contact
+                            </div>
+                        </h1>
+                    </div>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-3">
+                        <template if:true={showSpinner}>
+                            <lightning-spinner alternative-text=" Saving..." size="small"></lightning-spinner>
+                        </template>
+                        <template lwc:if={showNextScreen}>
+                            <table
+                                class="slds-table slds-table_cell-buffer slds-table_bordered slds-border_left slds-border_right slds-border_top slds-border_bottom">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50px;" class="" scope="col">
+                                            <div>#</div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title=""><span style="color:red">*</span>Contact
+                                            </div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title=""><span style="color:red">*</span>Role
+                                            </div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each={selectedRows} for:item="contact" for:index="index">
+                                        <tr key={contact.Id}>
+                                            <td style="width: 50px;">
+                                                <div>{contact.index}</div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-cell-wrap slds-box slds-box_x-small">{contact.Name}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-cell-wrap">
+                                                    <template lwc:if={contact.isEdit}>
+                                                        <c-multi-select-combobox-hierarchy label="Options"
+                                                            name="options" options={contactRoleOptions}
+                                                            onchange={handleInputRoleOnNextScreen}
+                                                            onclose={handleCloseOnNextScreen} accesskey={index}
+                                                            pre-selected-options={contact.JobRole} class="roleField"
+                                                            value={contact.JobRole}></c-multi-select-combobox-hierarchy>
+                                                    </template>
+                                                    <template lwc:else>
+                                                        <div
+                                                            class="slds-grid slds-grid_align-spread slds-box slds-box_x-small">
+                                                            <div class="slds-col">
+                                                                <p style="text-wrap: auto;">{contact.JobRole}</p>
+                                                            </div>
+                                                            <div class="slds-col slds-shrink-none">
+                                                                <lightning-icon icon-name="utility:edit" size="xx-small"
+                                                                    onclick={handleEditOnNextScreen}
+                                                                    accesskey={index}></lightning-icon>
+                                                            </div>
+                                                        </div>
+                                                    </template>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </template>
+                        <template lwc:else>
+                            <template lwc:if={data}>
+                                <lightning-layout>
+                                    <lightning-layout-item size="6">
+                                        <lightning-card title="Contacts" icon-name="standard:contact"></lightning-card>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="4" padding="top-small">
+                                        <lightning-input type="search" label="Search Contact"
+                                            onchange={handleSearchContact} variant="label-hidden">
+                                        </lightning-input>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="2" padding="left-small">
+                                        <lightning-button variant="brand" label="Search"
+                                            onclick={handleSearchAction}></lightning-button>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <template lwc:if={showTable}>
+                                    <div class="slds-m-top_medium slds-border_left slds-border_right slds-border_top slds-border_bottom slds-m-horizontal_small"
+                                        style="height: 300px;">
+                                        <lightning-datatable key-field="Id" data={data} columns={columns}
+                                            selected-rows={selectedRowsIds} onrowselection={handleRowSelection}
+                                            min-column-width="120" data-id="datatable" enable-infinite-loading
+                                            load-more-offset="1" onloadmore={loadData} lwc:if={isNotReplace}>
+                                        </lightning-datatable>
+                                        <lightning-datatable key-field="Id" data={data} columns={columns}
+                                            onrowselection={handleRowSelectionForReplace} max-row-selection="1"
+                                            min-column-width="120" data-id="datatable" enable-infinite-loading
+                                            load-more-offset="1" onloadmore={loadData} lwc:else>
+                                        </lightning-datatable>
+                                    </div>
+                                </template>
+                                <template lwc:if={contactExistsInHierarchy}>
+                                    <p class="slds-align_absolute-center">{errorToDisplay}</p>
+                                </template>
+                                <div
+                                    class="slds-align_absolute-center slds-var-m-vertical_medium slds-text-body_small slds-text-color_weak">
+                                    {loadMoreStatus}
+                                </div>
+                            </template>
+                            <template lwc:else>
+                                <lightning-card title="Contacts" icon-name="standard:contact">
+                                    <p class="slds-align_absolute-center">No Active Contacts Found!</p>
+                                </lightning-card>
+                            </template>
+                        </template>
+                    </div>
+                    <div class="slds-modal__footer">
+                        <!-- Back buttons -->
+                        <button class="slds-button slds-button_neutral" aria-label="Back"
+                            onclick={handleBackChooseContactModal}>Back</button>
+                        <!-- Save button -->
+                        <button lwc:if={showNextScreen} class="slds-button slds-button_brand"
+                            disabled={disableSaveChooseExisting} onclick={handleSaveChooseExistingContact}>Save</button>
+                        <!-- Next button -->
+                        <button lwc:else class="slds-button slds-button_brand" disabled={disableNextChooseExisting}
+                            onclick={handleNextChooseExistingContactModal}>Next</button>
+                        <!-- Cancel button -->
+                        <button class="slds-button slds-button_neutral" aria-label="Cancel"
+                            onclick={handleCancelChooseExistingContactModal}>Cancel</button>
+                    </div>
+                </div>
+            </section>
+            <!-- Modal backdrop -->
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </div>
+    </template>
+
+</template>

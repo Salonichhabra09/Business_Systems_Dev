@@ -1,0 +1,102 @@
+<template>
+    
+    <div class="slds-box box_class">
+    <!-- Commented as part of Account Plan Phase 4
+        
+        <template if:true={isgenerateAccountPlan}>
+       
+       
+        <div class="slds-align_absolute-center">
+       
+            <p class ="slds-text-align_center slds-text-title_bold slds-text-heading_medium "
+            style = "margin-top:25px">Are you sure you want to generate an Account Plan</p></div>
+    
+        
+        <div class="slds-align_absolute-center">
+            <div class="slds-col slds-p-horizontal_small">
+                <button class="slds-button slds-button_brand button_class"
+                onclick= {handleCreateAccPlan} style="margin-left: 229px; margin-right: -71px">YES </button> </div>
+            
+                <template if:true={showSpinner}>
+                <div> <lightning-spinner alternative-text="Loading" size="small" class="spins"></lightning-spinner>
+                </div></template>
+            <div class="slds-col slds-p-horizontal_small"  >
+                <button class="slds-button slds-button_brand button_class"
+                onclick= {handleClose}>NO
+            
+                </button>
+            </div>
+
+        </div>
+    
+
+    </template> -->
+
+    <!--Added for Account Plan Phase 4-->
+    <template if:true={isgenerateAccountPlan}>
+           
+        <div class="slds-align_absolute-center">
+       
+            <p class ="slds-text-align_center slds-text-title_bold slds-text-heading_medium "
+            style = "margin-top:25px">Select the Type of Account Plan you want to create.</p></div>
+    
+        
+        <div class="slds-align_absolute-center slds-p-around_small">
+            <div class="slds-col slds-p-horizontal_small">
+                <button class="slds-button slds-button_brand button_class"
+                onclick= {handleCreateAccPlan}  data-id="Current"
+                style={currentAccountPlan}>Current Account Plan</button> </div>
+            
+                <template if:true={showRegional}>       
+            <div class="slds-col slds-p-horizontal_small"  >
+                <button class="slds-button slds-button_brand button_class"  
+                style={regionalAccountPlan} data-id="Regional"
+                onclick= {handleCreateAccPlan} >Regional Account Plan
+            
+                </button>
+            </div>
+        </template>   
+<template if:true={showGlobal}>
+            <div class="slds-col slds-p-horizontal_small"  >
+                <button class="slds-button slds-button_brand button_class"  style={globalAccountPlan} data-id="Global"
+                onclick= {handleCreateAccPlan} >Global Account Plan
+            
+                </button>
+            </div>
+        </template>
+        </div>
+    
+
+    </template> 
+
+    <template if:true={showAPList}>
+       
+        <div class="slds-border_left slds-border_right slds-border_top slds-border_bottom">
+            <lightning-datatable
+            key-field="id"
+            data={apList}
+            columns={apColoumns}
+            wrap-text-max-lines="5"
+            min-column-width="120"
+            hide-checkbox-column
+            show-row-number-column>
+         </lightning-datatable>
+        </div>
+    </template>
+    <template if:true={showSpinner}>
+        <div> <lightning-spinner alternative-text="Loading" size="small" class="spins"></lightning-spinner>
+        </div></template>
+
+        <!--Changes End Account Plan Phase 4-->
+        <!--Added as part of SSE-23166(Data Restriction)-->
+        <template if:true={showErrorMessage}>
+            <div class="slds-align_absolute-center">
+       
+                <p class ="slds-text-align_center slds-text-title_bold slds-text-heading_medium "
+                style = "margin-top:25px;margin-bottom:25px"><b>{ErrorMessage}</b></p>
+            </div>
+            </template>
+
+
+</div>
+</template>

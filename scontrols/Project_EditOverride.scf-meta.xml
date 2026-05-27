@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scontrol xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contentSource>HTML</contentSource>
+    <description>This S-Control overrides the Edit button of the Project object.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <fileName>Project_EditOverride</fileName>
+    <name>Project_EditOverride</name>
+    <supportsCaching>true</supportsCaching>
+</Scontrol>

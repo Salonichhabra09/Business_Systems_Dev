@@ -1,0 +1,40 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 11-24-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+
+<template>
+    <lightning-card title="Discount Details" icon-name="standard:approval">
+        <div if:true={hasData} class="max-height">
+            <lightning-datatable
+                key-field="id"
+                data={rows}
+                columns={columns}
+                hide-checkbox-column>
+            </lightning-datatable>
+        </div>
+
+        <template if:true={isLoading}>
+            <div class="slds-p-around_medium slds-text-body_regular">
+                Loading discount data...
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <div class="slds-p-around_medium slds-text-color_error">
+                {error}
+            </div>
+        </template>
+
+        <template if:false={hasData}>
+            <template if:false={isLoading}>
+                <div class="slds-p-around_medium slds-text-body_small">
+                    No discount details are applicable for the deal.
+                </div>
+            </template>
+        </template>
+    </lightning-card>
+</template>

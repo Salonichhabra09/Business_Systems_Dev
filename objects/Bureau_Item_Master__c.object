@@ -1,0 +1,2020 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object represents an Item such as Instrument, Report or Service.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>BU__c</fullName>
+        <label>BU</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Abu Dhabi - AD1</fullName>
+                    <default>false</default>
+                    <label>Abu Dhabi - AD1</label>
+                </value>
+                <value>
+                    <fullName>Australia - AU1</fullName>
+                    <default>false</default>
+                    <label>Australia - AU1</label>
+                </value>
+                <value>
+                    <fullName>Belgium - BE5</fullName>
+                    <default>false</default>
+                    <label>Belgium - BE5</label>
+                </value>
+                <value>
+                    <fullName>Canada - CA1</fullName>
+                    <default>false</default>
+                    <label>Canada - CA1</label>
+                </value>
+                <value>
+                    <fullName>China - CN1</fullName>
+                    <default>false</default>
+                    <label>China - CN1</label>
+                </value>
+                <value>
+                    <fullName>Denmark - DK1</fullName>
+                    <default>false</default>
+                    <label>Denmark - DK1</label>
+                </value>
+                <value>
+                    <fullName>Finland - FI1</fullName>
+                    <default>false</default>
+                    <label>Finland - FI1</label>
+                </value>
+                <value>
+                    <fullName>France - FR1</fullName>
+                    <default>false</default>
+                    <label>France - FR1</label>
+                </value>
+                <value>
+                    <fullName>France - FR5</fullName>
+                    <default>false</default>
+                    <label>France - FR5</label>
+                </value>
+                <value>
+                    <fullName>Germany SPS - DE5</fullName>
+                    <default>false</default>
+                    <label>Germany SPS - DE5</label>
+                </value>
+                <value>
+                    <fullName>Hong Kong - HK1</fullName>
+                    <default>false</default>
+                    <label>Hong Kong - HK1</label>
+                </value>
+                <value>
+                    <fullName>India - IN1</fullName>
+                    <default>false</default>
+                    <label>India - IN1</label>
+                </value>
+                <value>
+                    <fullName>Italy - IT1</fullName>
+                    <default>false</default>
+                    <label>Italy - IT1</label>
+                </value>
+                <value>
+                    <fullName>Middle East - ME1</fullName>
+                    <default>false</default>
+                    <label>Middle East - ME1</label>
+                </value>
+                <value>
+                    <fullName>Netherlands - NL5</fullName>
+                    <default>false</default>
+                    <label>Netherlands - NL5</label>
+                </value>
+                <value>
+                    <fullName>New Zealand - NZ1</fullName>
+                    <default>false</default>
+                    <label>New Zealand - NZ1</label>
+                </value>
+                <value>
+                    <fullName>Norway - NO1</fullName>
+                    <default>false</default>
+                    <label>Norway - NO1</label>
+                </value>
+                <value>
+                    <fullName>Philippines - PH1</fullName>
+                    <default>false</default>
+                    <label>Philippines - PH1</label>
+                </value>
+                <value>
+                    <fullName>Saudi Arabia - SA5</fullName>
+                    <default>false</default>
+                    <label>Saudi Arabia - SA5</label>
+                </value>
+                <value>
+                    <fullName>Singapore - SG1</fullName>
+                    <default>false</default>
+                    <label>Singapore - SG1</label>
+                </value>
+                <value>
+                    <fullName>South Africa - ZA1</fullName>
+                    <default>false</default>
+                    <label>South Africa - ZA1</label>
+                </value>
+                <value>
+                    <fullName>Sweden - SE1</fullName>
+                    <default>false</default>
+                    <label>Sweden - SE1</label>
+                </value>
+                <value>
+                    <fullName>Switzerland - CH1</fullName>
+                    <default>false</default>
+                    <label>Switzerland - CH1</label>
+                </value>
+                <value>
+                    <fullName>UK - UK1</fullName>
+                    <default>false</default>
+                    <label>UK - UK1</label>
+                </value>
+                <value>
+                    <fullName>US - US5</fullName>
+                    <default>false</default>
+                    <label>US - US5</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <label>Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Online Admin</fullName>
+                    <default>false</default>
+                    <label>Online Admin</label>
+                </value>
+                <value>
+                    <fullName>S2P Solutions</fullName>
+                    <default>false</default>
+                    <label>S2P Solutions</label>
+                </value>
+                <value>
+                    <fullName>Online Reports</fullName>
+                    <default>false</default>
+                    <label>Online Reports</label>
+                </value>
+                <value>
+                    <fullName>S2P Tests (a – d)</fullName>
+                    <default>false</default>
+                    <label>S2P Tests (a – d)</label>
+                </value>
+                <value>
+                    <fullName>Gradu8</fullName>
+                    <default>false</default>
+                    <label>Gradu8</label>
+                </value>
+                <value>
+                    <fullName>S2P Tests (d – f)</fullName>
+                    <default>false</default>
+                    <label>S2P Tests (d – f)</label>
+                </value>
+                <value>
+                    <fullName>Online - PJM/WPS/JCF/OCP</fullName>
+                    <default>false</default>
+                    <label>Online - PJM/WPS/JCF/OCP</label>
+                </value>
+                <value>
+                    <fullName>S2P Tests (g – j)</fullName>
+                    <default>false</default>
+                    <label>S2P Tests (g – j)</label>
+                </value>
+                <value>
+                    <fullName>Offline Scoring</fullName>
+                    <default>false</default>
+                    <label>Offline Scoring</label>
+                </value>
+                <value>
+                    <fullName>S2P Tests (k – n)</fullName>
+                    <default>false</default>
+                    <label>S2P Tests (k – n)</label>
+                </value>
+                <value>
+                    <fullName>360 Services</fullName>
+                    <default>false</default>
+                    <label>360 Services</label>
+                </value>
+                <value>
+                    <fullName>S2P Tests (o – r)</fullName>
+                    <default>false</default>
+                    <label>S2P Tests (o – r)</label>
+                </value>
+                <value>
+                    <fullName>Offline Reports</fullName>
+                    <default>false</default>
+                    <label>Offline Reports</label>
+                </value>
+                <value>
+                    <fullName>S2P Tests (s – v)</fullName>
+                    <default>false</default>
+                    <label>S2P Tests (s – v)</label>
+                </value>
+                <value>
+                    <fullName>Managed Services</fullName>
+                    <default>false</default>
+                    <label>Managed Services</label>
+                </value>
+                <value>
+                    <fullName>S2P Tests (w – z)</fullName>
+                    <default>false</default>
+                    <label>S2P Tests (w – z)</label>
+                </value>
+                <value>
+                    <fullName>Offline - PJM/WPS/JCF/OCP</fullName>
+                    <default>false</default>
+                    <label>Offline - PJM/WPS/JCF/OCP</label>
+                </value>
+                <value>
+                    <fullName>Previsor Products</fullName>
+                    <default>false</default>
+                    <label>Previsor Products</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>IM_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>IM Code</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Languages__c</fullName>
+        <label>Languages</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>English (International)</fullName>
+                    <default>false</default>
+                    <label>English (International)</label>
+                </value>
+                <value>
+                    <fullName>English (United States)</fullName>
+                    <default>false</default>
+                    <label>English (United States)</label>
+                </value>
+                <value>
+                    <fullName>Arabic</fullName>
+                    <default>false</default>
+                    <label>Arabic</label>
+                </value>
+                <value>
+                    <fullName>Belgian Dutch</fullName>
+                    <default>false</default>
+                    <label>Belgian Dutch</label>
+                </value>
+                <value>
+                    <fullName>Belgian French</fullName>
+                    <default>false</default>
+                    <label>Belgian French</label>
+                </value>
+                <value>
+                    <fullName>Br. Portug.</fullName>
+                    <default>false</default>
+                    <label>Br. Portug.</label>
+                </value>
+                <value>
+                    <fullName>Can. French</fullName>
+                    <default>false</default>
+                    <label>Can. French</label>
+                </value>
+                <value>
+                    <fullName>Chinese-sim</fullName>
+                    <default>false</default>
+                    <label>Chinese-sim</label>
+                </value>
+                <value>
+                    <fullName>Chinese-trad</fullName>
+                    <default>false</default>
+                    <label>Chinese-trad</label>
+                </value>
+                <value>
+                    <fullName>Czech</fullName>
+                    <default>false</default>
+                    <label>Czech</label>
+                </value>
+                <value>
+                    <fullName>Danish</fullName>
+                    <default>false</default>
+                    <label>Danish</label>
+                </value>
+                <value>
+                    <fullName>Dutch</fullName>
+                    <default>false</default>
+                    <label>Dutch</label>
+                </value>
+                <value>
+                    <fullName>Estonian</fullName>
+                    <default>false</default>
+                    <label>Estonian</label>
+                </value>
+                <value>
+                    <fullName>Finnish</fullName>
+                    <default>false</default>
+                    <label>Finnish</label>
+                </value>
+                <value>
+                    <fullName>French</fullName>
+                    <default>false</default>
+                    <label>French</label>
+                </value>
+                <value>
+                    <fullName>German</fullName>
+                    <default>false</default>
+                    <label>German</label>
+                </value>
+                <value>
+                    <fullName>Greek</fullName>
+                    <default>false</default>
+                    <label>Greek</label>
+                </value>
+                <value>
+                    <fullName>Hungarian</fullName>
+                    <default>false</default>
+                    <label>Hungarian</label>
+                </value>
+                <value>
+                    <fullName>Icelandic</fullName>
+                    <default>false</default>
+                    <label>Icelandic</label>
+                </value>
+                <value>
+                    <fullName>Indonesian</fullName>
+                    <default>false</default>
+                    <label>Indonesian</label>
+                </value>
+                <value>
+                    <fullName>Italian</fullName>
+                    <default>false</default>
+                    <label>Italian</label>
+                </value>
+                <value>
+                    <fullName>Japanese</fullName>
+                    <default>false</default>
+                    <label>Japanese</label>
+                </value>
+                <value>
+                    <fullName>Korean</fullName>
+                    <default>false</default>
+                    <label>Korean</label>
+                </value>
+                <value>
+                    <fullName>LA Spanish</fullName>
+                    <default>false</default>
+                    <label>LA Spanish</label>
+                </value>
+                <value>
+                    <fullName>Latvian</fullName>
+                    <default>false</default>
+                    <label>Latvian</label>
+                </value>
+                <value>
+                    <fullName>Lithuanian</fullName>
+                    <default>false</default>
+                    <label>Lithuanian</label>
+                </value>
+                <value>
+                    <fullName>Norwegian</fullName>
+                    <default>false</default>
+                    <label>Norwegian</label>
+                </value>
+                <value>
+                    <fullName>Polish</fullName>
+                    <default>false</default>
+                    <label>Polish</label>
+                </value>
+                <value>
+                    <fullName>Portuguese</fullName>
+                    <default>false</default>
+                    <label>Portuguese</label>
+                </value>
+                <value>
+                    <fullName>Russian</fullName>
+                    <default>false</default>
+                    <label>Russian</label>
+                </value>
+                <value>
+                    <fullName>S. African Eng.</fullName>
+                    <default>false</default>
+                    <label>S. African Eng.</label>
+                </value>
+                <value>
+                    <fullName>Spanish</fullName>
+                    <default>false</default>
+                    <label>Spanish</label>
+                </value>
+                <value>
+                    <fullName>Swedish</fullName>
+                    <default>false</default>
+                    <label>Swedish</label>
+                </value>
+                <value>
+                    <fullName>Thai</fullName>
+                    <default>false</default>
+                    <label>Thai</label>
+                </value>
+                <value>
+                    <fullName>Turkish</fullName>
+                    <default>false</default>
+                    <label>Turkish</label>
+                </value>
+                <value>
+                    <fullName>US English</fullName>
+                    <default>false</default>
+                    <label>US English</label>
+                </value>
+                <value>
+                    <fullName>English</fullName>
+                    <default>false</default>
+                    <label>English</label>
+                </value>
+                <value>
+                    <fullName>UK English</fullName>
+                    <default>false</default>
+                    <label>UK English</label>
+                </value>
+                <value>
+                    <fullName>Australian English</fullName>
+                    <default>false</default>
+                    <label>Australian English</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>System_Type__c</fullName>
+        <description>This field represents the Systems for which this Item is available</description>
+        <inlineHelpText>This Item is available for these systems</inlineHelpText>
+        <label>System Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>SODA</fullName>
+                    <default>false</default>
+                    <label>SODA</label>
+                </value>
+                <value>
+                    <fullName>DSPS</fullName>
+                    <default>false</default>
+                    <label>DSPS</label>
+                </value>
+                <value>
+                    <fullName>MFS UCF</fullName>
+                    <default>false</default>
+                    <label>MFS UCF</label>
+                </value>
+                <value>
+                    <fullName>Nacho</fullName>
+                    <default>false</default>
+                    <label>Nacho</label>
+                </value>
+                <value>
+                    <fullName>ASO</fullName>
+                    <default>false</default>
+                    <label>ASO</label>
+                </value>
+                <value>
+                    <fullName>S2P</fullName>
+                    <default>false</default>
+                    <label>S2P</label>
+                </value>
+                <value>
+                    <fullName>BrainBench</fullName>
+                    <default>false</default>
+                    <label>BrainBench</label>
+                </value>
+                <value>
+                    <fullName>Kwiz</fullName>
+                    <default>false</default>
+                    <label>Kwiz</label>
+                </value>
+                <value>
+                    <fullName>MFS PMC</fullName>
+                    <default>false</default>
+                    <label>MFS PMC</label>
+                </value>
+                <value>
+                    <fullName>MFS</fullName>
+                    <default>false</default>
+                    <label>MFS</label>
+                </value>
+                <value>
+                    <fullName>Career Guidance</fullName>
+                    <default>false</default>
+                    <label>Career Guidance</label>
+                </value>
+                <value>
+                    <fullName>Central</fullName>
+                    <default>false</default>
+                    <label>Central</label>
+                </value>
+                <value>
+                    <fullName>JCF Creator</fullName>
+                    <default>false</default>
+                    <label>JCF Creator</label>
+                </value>
+                <value>
+                    <fullName>Manufacturing Toolbox - MTB</fullName>
+                    <default>false</default>
+                    <label>Manufacturing Toolbox - MTB</label>
+                </value>
+                <value>
+                    <fullName>Online Competency Profiler</fullName>
+                    <default>false</default>
+                    <label>Online Competency Profiler</label>
+                </value>
+                <value>
+                    <fullName>PC Expert</fullName>
+                    <default>false</default>
+                    <label>PC Expert</label>
+                </value>
+                <value>
+                    <fullName>Offline</fullName>
+                    <default>false</default>
+                    <label>Offline</label>
+                </value>
+                <value>
+                    <fullName>TalentCentral</fullName>
+                    <default>false</default>
+                    <label>TalentCentral</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Instrument</fullName>
+                    <default>false</default>
+                    <label>Instrument</label>
+                </value>
+                <value>
+                    <fullName>Report</fullName>
+                    <default>false</default>
+                    <label>Report</label>
+                </value>
+                <value>
+                    <fullName>Service</fullName>
+                    <default>false</default>
+                    <label>Service</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Item</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>BU__c</columns>
+        <columns>NAME</columns>
+        <columns>IM_Code__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Managed Services Item Master Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Items</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Instrument</fullName>
+        <active>true</active>
+        <description>This record type defines the Bureau Item as an Instrument</description>
+        <label>Instrument</label>
+        <picklistValues>
+            <picklist>BU__c</picklist>
+            <values>
+                <fullName>Abu Dhabi - AD1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia - AU1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belgium - BE5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada - CA1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China - CN1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denmark - DK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finland - FI1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>France - FR5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Germany SPS - DE5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hong Kong - HK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>India - IN1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Italy - IT1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Middle East - ME1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Netherlands - NL5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Zealand - NZ1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Norway - NO1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Philippines - PH1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saudi Arabia - SA5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Singapore - SG1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Africa - ZA1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sweden - SE1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Switzerland - CH1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK - UK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - US5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>360 Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gradu8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Managed Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offline - PJM%2FWPS%2FJCF%2FOCP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offline Reports</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offline Scoring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online - PJM%2FWPS%2FJCF%2FOCP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online Admin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online Reports</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Previsor Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Solutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Tests %28a %E2%80%93 d%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Tests %28d %E2%80%93 f%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Tests %28g %E2%80%93 j%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Tests %28k %E2%80%93 n%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Tests %28o %E2%80%93 r%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Tests %28s %E2%80%93 v%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Tests %28w %E2%80%93 z%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Languages__c</picklist>
+            <values>
+                <fullName>Arabic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australian English</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belgian Dutch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belgian French</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Br%2E Portug%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Can%2E French</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chinese-sim</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chinese-trad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Czech</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Danish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dutch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>English</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>English %28International%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>English %28United States%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estonian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finnish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>French</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>German</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Greek</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hungarian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Icelandic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indonesian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Italian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Japanese</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Korean</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LA Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Latvian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lithuanian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Norwegian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Polish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portuguese</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Russian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S%2E African Eng%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Swedish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Thai</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turkish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK English</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US English</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>System_Type__c</picklist>
+            <values>
+                <fullName>ASO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BrainBench</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Career Guidance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Central</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DSPS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JCF Creator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kwiz</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MFS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufacturing Toolbox - MTB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nacho</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offline</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online Competency Profiler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PC Expert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SODA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TalentCentral</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Instrument</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Report</fullName>
+        <active>true</active>
+        <description>This record type defines the Bureau Item as a Report</description>
+        <label>Report</label>
+        <picklistValues>
+            <picklist>BU__c</picklist>
+            <values>
+                <fullName>Abu Dhabi - AD1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia - AU1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belgium - BE5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada - CA1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China - CN1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denmark - DK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finland - FI1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>France - FR5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Germany SPS - DE5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hong Kong - HK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>India - IN1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Italy - IT1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Middle East - ME1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Netherlands - NL5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Zealand - NZ1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Norway - NO1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Philippines - PH1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saudi Arabia - SA5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Singapore - SG1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Africa - ZA1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sweden - SE1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Switzerland - CH1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK - UK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - US5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>360 Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gradu8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Managed Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offline - PJM%2FWPS%2FJCF%2FOCP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offline Reports</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offline Scoring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online - PJM%2FWPS%2FJCF%2FOCP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online Admin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online Reports</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Previsor Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Solutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Tests %28a %E2%80%93 d%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Tests %28d %E2%80%93 f%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Tests %28g %E2%80%93 j%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Tests %28k %E2%80%93 n%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Tests %28o %E2%80%93 r%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Tests %28s %E2%80%93 v%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Tests %28w %E2%80%93 z%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Languages__c</picklist>
+            <values>
+                <fullName>Arabic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australian English</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belgian Dutch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belgian French</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Br%2E Portug%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Can%2E French</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chinese-sim</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chinese-trad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Czech</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Danish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dutch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>English</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>English %28International%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>English %28United States%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estonian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finnish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>French</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>German</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Greek</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hungarian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Icelandic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indonesian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Italian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Japanese</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Korean</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LA Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Latvian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lithuanian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Norwegian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Polish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portuguese</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Russian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S%2E African Eng%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Swedish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Thai</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turkish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK English</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US English</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>System_Type__c</picklist>
+            <values>
+                <fullName>ASO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BrainBench</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Career Guidance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Central</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DSPS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JCF Creator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kwiz</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MFS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufacturing Toolbox - MTB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nacho</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offline</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online Competency Profiler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PC Expert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SODA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TalentCentral</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Report</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Service</fullName>
+        <active>true</active>
+        <description>This record type defines the Bureau Item as a Service</description>
+        <label>Service</label>
+        <picklistValues>
+            <picklist>BU__c</picklist>
+            <values>
+                <fullName>Abu Dhabi - AD1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australia - AU1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belgium - BE5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada - CA1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China - CN1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denmark - DK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finland - FI1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>France - FR5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Germany SPS - DE5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hong Kong - HK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>India - IN1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Italy - IT1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Middle East - ME1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Netherlands - NL5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Zealand - NZ1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Norway - NO1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Philippines - PH1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saudi Arabia - SA5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Singapore - SG1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Africa - ZA1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sweden - SE1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Switzerland - CH1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK - UK1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US - US5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>360 Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gradu8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Managed Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offline - PJM%2FWPS%2FJCF%2FOCP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offline Reports</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offline Scoring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online - PJM%2FWPS%2FJCF%2FOCP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online Admin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online Reports</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Previsor Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Solutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Tests %28a %E2%80%93 d%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Tests %28d %E2%80%93 f%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Tests %28g %E2%80%93 j%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Tests %28k %E2%80%93 n%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Tests %28o %E2%80%93 r%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Tests %28s %E2%80%93 v%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P Tests %28w %E2%80%93 z%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Languages__c</picklist>
+            <values>
+                <fullName>Arabic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Australian English</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belgian Dutch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belgian French</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Br%2E Portug%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Can%2E French</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chinese-sim</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chinese-trad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Czech</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Danish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dutch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>English</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>English %28International%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>English %28United States%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estonian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finnish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>French</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>German</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Greek</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hungarian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Icelandic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indonesian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Italian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Japanese</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Korean</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LA Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Latvian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lithuanian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Norwegian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Polish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portuguese</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Russian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S%2E African Eng%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spanish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Swedish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Thai</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turkish</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UK English</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US English</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>System_Type__c</picklist>
+            <values>
+                <fullName>ASO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BrainBench</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Career Guidance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Central</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DSPS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JCF Creator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kwiz</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MFS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufacturing Toolbox - MTB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nacho</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offline</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online Competency Profiler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PC Expert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S2P</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SODA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TalentCentral</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

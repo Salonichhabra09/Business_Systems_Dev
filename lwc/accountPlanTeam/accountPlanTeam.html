@@ -1,0 +1,206 @@
+<template>
+    <div class="slds-card-wrapper" style="background-color: white; padding:0px">
+
+        <!-- <div style="background-color: rgb(248, 248, 248);" class="slds-text-heading_small slds-p-vertical_small slds-align_absolute-center">
+                Account Plan Team Members
+        </div> -->
+
+        <template lwc:if={showSpinnerForCurrent}>
+            <div class="slds-align_absolute-center" style="position: relative; top: -40px;">
+                <lightning-spinner class="slds-spinner_inline" alternative-text="Loading..."></lightning-spinner>
+            </div>
+        </template>
+        
+        <template lwc:if={showCurrent}>
+
+            <lightning-layout multiple-rows>
+                <template lwc:if={showButtons}>
+                    <lightning-layout-item size="12" flexibility="auto" padding="horizontal-small"
+                        class="slds-text-align_right">
+                        <div style="margin-top: 15px; margin-bottom: 15px;">
+                            <lightning-button label="Add New" title="Add a new Team Member to the Account Plan"
+                                onclick={handleShowNew}></lightning-button>
+                            &nbsp;
+                            <lightning-button label="Link Account Team Members"
+                                title="Link an existing Account Team Member to the Account Plan"
+                                onclick={handleShowExisting}></lightning-button>
+                            &nbsp;
+                        </div>
+                    </lightning-layout-item>
+                </template>
+                <lightning-layout-item size="12" flexibility="auto" padding="horizontal-small">
+                    <div style="margin-top: 15px; margin-bottom: 30px;">
+                        <template lwc:if={hasCurrent}>
+                            <lightning-datatable key-field="id" data={accountPlanCurrentTeamMembers} 
+                                columns={columnsCurrentAccountTeam} hide-checkbox-column>
+                            </lightning-datatable>
+                        </template>
+                        <template lwc:else>
+                            <lightning-card>
+                                <div class="slds-align_absolute-center slds-text-heading_small"
+                                    style="height: 150px!important; text-align: center;">
+                                    <lightning-formatted-text value={errorMessageCurrent}></lightning-formatted-text>
+                                </div>
+                            </lightning-card>
+                        </template>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </template>
+
+        <template lwc:if={showNew}>
+            <template lwc:if={showSpinnerForNew}>
+                <div class="slds-align_absolute-center" style="position: relative; top: 20px;">
+                    <lightning-spinner class="slds-spinner_inline" alternative-text="Loading..."></lightning-spinner>
+                </div>
+            </template>
+
+            <template lwc:if={errorStartingNew}>
+                <lightning-card>
+                    <div class="slds-align_absolute-center slds-text-heading_small"
+                        style="height: 150px!important; text-align: center;">
+                        <lightning-formatted-text value={errorStartingNew}></lightning-formatted-text>
+                    </div>
+                </lightning-card>
+            </template>
+            <template lwc:else>
+                <lightning-layout multiple-rows>
+                    <lightning-layout-item size="12" flexibility="auto" padding="horizontal-small"
+                        class="slds-text-align_right">
+                        <div class="slds-text-align_right slds-float_right"
+                            style="margin-top: 10px; margin-bottom: 10px; margin-right: 20px;">
+                            <lightning-button-icon icon-name="utility:add" onclick={addRow}>
+                            </lightning-button-icon>
+                            &nbsp;
+                            <lightning-button style="margin-bottom: 1px !important;" label="Clear All"
+                                icon-name="utility:clear" onclick={clearAll}>
+                            </lightning-button>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" flexibility="auto" padding="horizontal-small">
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered"
+                            style="margin-top: 15px; margin-bottom: 30px">
+                            <thead>
+                                <tr class="">
+                                    <th class="slds-size_11-of-12 " scope="col">
+                                        <div class="slds-grid">
+                                            <div class="slds-col slds-size_6-of-12">
+                                                <div class="slds-truncate slds-align_absolute-center" title="User">
+                                                    User
+                                                </div>
+                                            </div>
+                                            <div class="slds-col slds-size_6-of-12">
+                                                <div class="slds-truncate slds-align_absolute-center" title="Team Role">
+                                                    Team Role
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </th>
+
+                                    <th class="slds-size_1-of-12 " scope="col">
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={newRecords} for:item="item" for:index="indexVar">
+                                    <tr key={item.UserId} class="slds-hint-parent">
+                                        <td class="slds-size_11-of-12" data-id={indexVar}>
+                                            <lightning-record-edit-form object-api-name={childObjectApiName}>
+                                                <div class="slds-grid">
+                                                    <div class="slds-col slds-size_6-of-12">
+                                                        <lightning-input-field id={indexVar} data-id={indexVar}
+                                                            variant="label-hidden" field-name={userLookupFieldApiName}
+                                                            value={item.UserId} required="true" data-required='Yes'
+                                                            onchange={handleUserSelected}>
+                                                        </lightning-input-field>
+                                                    </div>
+                                                    <div class="slds-col slds-size_6-of-12">
+                                                        <lightning-input-field id={indexVar} data-id={indexVar}
+                                                            variant="label-hidden" field-name={rolePicklistFieldApiName}
+                                                            value={item.TeamMemberRole} required="true"
+                                                            data-required='Yes' onchange={handleTeamRoleSelected}>
+                                                        </lightning-input-field>
+                                                    </div>
+                                                </div>
+                                            </lightning-record-edit-form>
+                                        </td>
+                                        <td class="slds-size_1-of-12 ">
+                                            <a name={indexVar} data-id={indexVar} onclick={removeRow}>
+                                                <lightning-icon icon-name="utility:delete" alternative-text="delete"
+                                                    size="xx-small">
+                                                </lightning-icon>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+
+                        <template lwc:if={userAlreadyExistsErrorMessage}>
+                            <lightning-layout-item size="12" flexibility="auto" padding="horizontal-small">
+                                <div class="slds-align_absolute-center"
+                                    style="padding: 10px; border-radius: 3px; background-color: #ff00000a; text-align: center;">
+                                    <lightning-formatted-text value={userAlreadyExistsErrorMessage}>
+                                    </lightning-formatted-text>
+                                </div>
+                            </lightning-layout-item>
+                        </template>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </template>
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="12" flexibility="auto" padding="horizontal-small">
+                    <div class="slds-align_absolute-center">
+                        <lightning-button variant="brand" disabled={disableSaveNew} label="Save"
+                            title="Create New Account Plan Team Members" onclick={handleSaveNew}>
+                        </lightning-button>
+                        &nbsp;
+                        <lightning-button label="Cancel" title="Cancel Create New Account Plan Team Members"
+                            onclick={handleCancelNew}>
+                        </lightning-button>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </template>
+
+
+        <template lwc:if={showExisting}>
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="12" flexibility="auto" padding="horizontal-small">
+
+                    <lightning-spinner class={spinnerClassExisting} data-id="mySpinner" size="large" variant="brand"
+                        alternative-text="Loading Existing Account Team Members..."> </lightning-spinner>
+
+                    <template lwc:if={accountTeamMenbersList}>
+                        <div style="margin-top: 15px; margin-bottom: 30px;">
+                            <lightning-datatable key-field="id" data={accountTeamMenbersList} min-column-width="200" class ="datatableClass"
+                                columns={columnsAccountTeam} onrowselection={handleSelected}>
+                            </lightning-datatable>
+                        </div>
+
+                    </template>
+                    <template lwc:if={accountTeamMemberError}>
+                        <lightning-card>
+                            <div class="slds-align_absolute-center slds-text-heading_small"
+                                style="height: 150px!important; text-align: center;">
+                                <lightning-formatted-text value={accountTeamMemberError}></lightning-formatted-text>
+                            </div>
+                        </lightning-card>
+                    </template>
+                    <lightning-layout-item size="12" flexibility="auto" padding="horizontal-small">
+                        <div class="slds-align_absolute-center">
+                            <lightning-button variant="brand" disabled={disableSaveExisting} label="Save"
+                                title="Link Account Team Members to Account Plan"
+                                onclick={handleSaveExisting}></lightning-button>
+                            &nbsp;
+                            <lightning-button label="Cancel" title="Cancel Link Account Team Members to Account Plan"
+                                onclick={handleCancelExisting}></lightning-button>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout-item>
+
+            </lightning-layout>
+        </template>
+    </div>
+</template>

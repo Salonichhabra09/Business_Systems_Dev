@@ -1,0 +1,76 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+    <aura:attribute name="Message" type="String" default="This is only applicable for Configurator opportunity." description="To hold the message which is to be displayed when Opportunity record type is non Ignite."/>
+    <aura:attribute name="opportunity" type="Opportunity" description="To reference the Opportunity Object"/>
+    <aura:attribute name="TotalListPrice" type="Long" description= "To hold Total List Price variable" />
+    <aura:attribute name="TotalDiscountAmount" type="Decimal" description= "To hold Total Discount Amount variable"/>
+    <aura:attribute name="TotalSalesPrice" type="Decimal" description= "To hold Total Sales Price variable" />
+    <aura:attribute name="AggregateDiscount" type="Decimal" description= "To hold Aggregate Discount variable"/>
+    <aura:attribute name="recordId" type="id" access="global" />
+    <aura:attribute name="record" type="Object" access="global" description="To reference the Object"/>
+    <aura:attribute name="simplerecord" type="Object" access="global" description="To reference the Object"/>
+    <force:recordData aura:id="OppRecordLoader"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      fields="CurrencyIsoCode,RecordTypeId,Year_1_Total_List_Price__c,Year_2_Total_List_Price__c,Year_3_Total_List_Price__c,Year_1_Total_Discount_Amount__c,Year_2_Total_Discount_Amount__c,Year_3_Total_Discount_Amount__c,Year_1_Total_Sales_Price__c,Year_2_Total_Sales_Price__c,Year_3_Total_Sales_Price__c,Year_1_Discount__c,Year_2_Discount__c,Year_3_Discount__c"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.simplerecord}"
+                      targetError="{!v.recordError}"      
+                      recordUpdated="{!c.calculations}"
+                      /> 
+    <aura:if isTrue="{!(v.simplerecord.RecordTypeId ==$Label.c.IgniteRecordType)}">
+         <table class="slds-table slds-table_cell-buffer slds-table-bordered slds-table_col-bordered" border="1" cellspacing="1" cellpadding="5">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th scope="col" width="20%"><div class="slds-truncate" title="Blank column"></div></th>
+                    <th scope="col"><div class="slds-truncate" title="Year1">Year 1</div></th>
+                    <th scope="col"><div class="slds-truncate" title="Year2">Year 2</div></th>
+                    <th scope="col"><div class="slds-truncate" title="Year3">Year 3</div></th>
+                    <th scope="col"><div class="slds-truncate" title="OverallAmount/Discount">Overall Amount / Discount</div></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th width="20%" class="slds-hint-parent" scope="col">Total List Price ({!v.simplerecord.CurrencyIsoCode})</th>
+                    <td scope="row"><div class="slds-truncate" title=""><ui:outPutNumber format="###,###,###,##0.00" value="{!v.simplerecord.Year_1_Total_List_Price__c}"/></div></td>
+                    <td scope="row"><div class="slds-truncate" title=""><ui:outPutNumber format="###,###,###,##0.00" value="{!v.simplerecord.Year_2_Total_List_Price__c}"/></div></td>
+                    <td scope="row"><div class="slds-truncate" title=""><ui:outPutNumber format="###,###,###,##0.00" value="{!v.simplerecord.Year_3_Total_List_Price__c}"/></div></td>
+                    <th scope="row"><div class="slds-truncate" title=""><ui:outPutNumber format="###,###,###,##0.00" value="{!v.TotalListPrice}"/></div></th>
+                </tr>
+                
+                <tr>
+                    <th width="20%" class="slds-hint-parent" scope="col">Total Discount %</th>
+                    <td scope="row"><div class="slds-truncate" title=""><ui:outPutNumber format="###,###,###,##0.00" value="{!v.simplerecord.Year_1_Discount__c}"/></div></td>
+                    <td scope="row"><div class="slds-truncate" title=""><ui:outPutNumber format="###,###,###,##0.00" value="{!v.simplerecord.Year_2_Discount__c}"/></div></td>
+                    <td scope="row"><div class="slds-truncate" title=""><ui:outPutNumber format="###,###,###,##0.00" value="{!v.simplerecord.Year_3_Discount__c}"/></div></td>
+                    <th scope="row"><div class="slds-truncate" title=""><ui:outPutNumber format="###,###,###,##0.00" value="{!v.AggregateDiscount}"/></div></th>
+                </tr>   
+                <tr>
+                    <th width="20%" class="slds-hint-parent" scope="col">Total Discount Amount ({!v.simplerecord.CurrencyIsoCode})</th>
+                    <td scope="row"><div class="slds-truncate" title=""><ui:outPutNumber format="###,###,###,##0.00" value="{!v.simplerecord.Year_1_Total_Discount_Amount__c}"/></div></td>
+                    <td scope="row"><div class="slds-truncate" title=""><ui:outPutNumber format="###,###,###,##0.00" value="{!v.simplerecord.Year_2_Total_Discount_Amount__c}"/></div></td>
+                    <td scope="row"><div class="slds-truncate" title=""><ui:outPutNumber format="###,###,###,##0.00" value="{!v.simplerecord.Year_3_Total_Discount_Amount__c}"/></div></td>
+                    <th scope="row"><div class="slds-truncate" title=""><ui:outPutNumber format="###,###,###,##0.00" value="{!v.TotalDiscountAmount}"/></div></th> 
+                </tr> 
+                
+                <tr>
+                    <th width="20%" class="slds-hint-parent" scope="col">Total Sales Price ({!v.simplerecord.CurrencyIsoCode})</th>
+                    <td scope="row"><div class="slds-truncate" title=""><ui:outPutNumber format="###,###,###,##0.00" value="{!v.simplerecord.Year_1_Total_Sales_Price__c}"/></div></td>
+                    <td scope="row"><div class="slds-truncate" title=""><ui:outPutNumber format="###,###,###,##0.00" value="{!v.simplerecord.Year_2_Total_Sales_Price__c}"/></div></td>
+                    <td scope="row"><div class="slds-truncate" title=""><ui:outPutNumber format="###,###,###,##0.00" value="{!v.simplerecord.Year_3_Total_Sales_Price__c}"/></div></td>
+                    <th scope="row"><div class="slds-truncate" title=""><ui:outPutNumber format="###,###,###,##0.00" value="{!v.TotalSalesPrice}"/></div></th> 
+                </tr>
+            </tbody>
+            
+        </table>
+       </aura:if>
+    <aura:if isTrue="{!(v.simplerecord.RecordTypeId !=$Label.c.IgniteRecordType)}">
+       <lightning:card>
+                <ui:message title="{!v.Message}" severity="warning" />
+            </lightning:card>
+    </aura:if>  
+    <aura:if isTrue="{!not(empty(v.recordError))}">
+        <div class="recordError">
+            {!v.recordError}</div>
+    </aura:if>
+    
+</aura:component>

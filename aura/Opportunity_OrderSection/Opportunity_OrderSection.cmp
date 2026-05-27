@@ -1,0 +1,15 @@
+<aura:component extends="c:GenericBase" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="showWarning" Type="Boolean" default="true"/>
+
+    <lightning:card>    
+      
+        <ui:message title="WARNING!  The Order associated with this opportunity is not in sync." severity="warning" closable="false" >
+		Please click the 'Save and Update Order' button below to bring the order in sync.            
+         <span class="leftPadBut">  <button class="slds-button slds-button_brand" onclick="{!c.UpdateSaveOrder1}">Save and Update Order</button>
+            </span>
+         </ui:message> 
+       
+    </lightning:card>
+
+</aura:component>

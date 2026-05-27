@@ -1,0 +1,65 @@
+<apex:page Controller="OrderProductsOnProjectController" standardStylesheets="true"  >
+    <script type="text/javascript">
+    function selectAllCheckboxes(obj,receivedInputID){
+        var inputCheckBox = document.getElementsByTagName("input");
+        for(var i=0; i<inputCheckBox.length; i++){
+            if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){
+                inputCheckBox[i].checked = obj.checked;
+            }
+        }
+    }
+    </script>
+    <apex:pageBlock rendered="{!HasAccess}">
+    <apex:form rendered="{!ISNULL(wrapOrderItemList)}">
+        <apex:pageMessage severity="Error" summary="There is no contract attached to project OR There are no PS Products present in related orders of attached contract" strength="1">
+            <apex:commandLink value="Back" action="/{!Projectid}"/>
+        </apex:pageMessage>
+    </apex:form>
+    <!-- <apex:form rendered="{!MilestoneSigned}">
+<apex:pageMessage severity="Error" summary="You cannot add/delete Order products as there are Singed Milestones attached to the Project." strength="1" >
+<apex:commandLink value="Back" action="/{!Projectid}"/>
+</apex:pageMessage> 
+</apex:form> -->
+    <apex:form rendered="{!NOT(ISNULL(wrapOrderItemList))}">
+        <apex:pageblock title="Select Order Products">
+            <apex:pageMessages id="msgid"/>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!AddProducts}" rerender="msgid"/>
+                <apex:commandButton value="Cancel" action="/{!Projectid}" rerender="table2" />
+            </apex:pageBlockButtons>
+            
+            <!--   <apex:pageblockSection title="Order Products" collapsible="false" columns="2"> -->
+            
+            <apex:pageBlockTable value="{!wrapOrderItemList}" var="OrderItemWrap" id="table" title="Order Products" style="width:100%" columnsWidth="50px,200px, 100px, 100px, 100px, 150px, 100px, 100px,100px,100px,50px">
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId')"/>
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!OrderItemWrap.selected}" id="inputId"/>
+                </apex:column>
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Product2.name}" />
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Quantity}" />
+                <!--Changes added by Prachi (SSE-SSE-17449)-->
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Number_of_Services__c}" />
+                <!--Changes Ended-->
+                <apex:column value="{!OrderItemWrap.Orderitemrec.UnitPrice}" />
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Total_Price_PS_Items__c}" />
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Source_of_PS_Scoping__c}" />
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Proposition__c}"  />
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Package__c}"  />
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Solution__c}"  /> <!--Changes added by Joana (SSE-16464)-->
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Order_Status__c}" />
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Order.OrderNumber}" />
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Order.Order_Year__c}" />
+     </apex:pageBlockTable>
+            <!--         </apex:pageblockSection> -->
+            
+        </apex:pageblock>
+    </apex:form>
+    </apex:pageBlock>
+    <apex:form rendered="{!NOT(HasAccess)}">
+        <apex:pageMessage severity="Error" summary="You don't have necessary permissions needed to update the Order Products. Kindly contact your System Administrator." strength="1">
+            <apex:commandLink value="Back" action="/{!Projectid}"/>
+        </apex:pageMessage>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,29 @@
+<aura:component controller="ContractActivationController" implements="flexipage:availableForAllPageTypes,force:appHostable,force:hasRecordId" access="global">
+    <!--lightning:button label="Toggle" variant="brand" onclick="{!c.toggle}"/-->
+    
+        	
+    
+    <!--Component Start-->
+    <lightning:card title="" > 
+        <lightning:spinner aura:id="mySpinner" class="slds-hide" variant="brand"  />
+    	
+        <table>
+            <tr>
+                <td>
+                    <center>
+                        <div style="font-size:15px">
+                            Please click the 'Activate Contract' button to mark Contract as Client Accepted 
+                        </div>
+                    </center>
+                </td>
+                <td>
+                    <lightning:button variant="brand" label="Activate Contract" title="Brand action" onclick="{! c.handleContractUpdate }"  />
+                </td>
+            </tr>
+        </table>
+    </lightning:card>
+    
+    
+    
+    <!--Component End-->
+</aura:component>

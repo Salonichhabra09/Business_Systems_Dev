@@ -1,0 +1,28 @@
+<apex:page standardController="Account" showHeader="false" sidebar="false">
+  <!-- Page Header -->
+  <apex:pageMessages ></apex:pageMessages>
+  <apex:form >
+    <apex:pageBlock mode="edit" rendered="{! $User.UIThemeDisplayed == 'Theme3' }">
+     
+      <!-- Fields -->
+      <apex:pageBlockSection columns="2" showHeader="true" rendered="{!Account.GCSC_Owned_Account__c}">
+        <apex:inputField value="{!Account.GCSC_Owned_Account__c}"/>
+        <apex:outputField value="{!Account.GCSC_Account_Owner__c }" />
+        
+       
+      </apex:pageBlockSection>
+        <apex:pageBlockSection columns="2" showHeader="true" rendered="{!!Account.GCSC_Owned_Account__c}">
+        <apex:inputField value="{!Account.GCSC_Owned_Account__c}"/>
+        <apex:inputField value="{!Account.OwnerID}" required="true"/>
+        
+       
+      </apex:pageBlockSection>
+      <!-- Button Section -->
+      <apex:pageBlockButtons location="bottom">
+         <!--apex:commandButton value="Cancel" action="{!cancel}"/-->
+        <apex:commandButton value="Save" action="{!quicksave}"/>
+       </apex:pageBlockButtons>
+    </apex:pageBlock>
+  </apex:form>
+ 
+</apex:page>

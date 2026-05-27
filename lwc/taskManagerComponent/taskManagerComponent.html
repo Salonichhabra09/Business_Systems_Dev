@@ -1,0 +1,280 @@
+<template>
+    <div class="slds-var-p-around_small">
+        <article class="slds-card">
+            <div class="container">
+                <template if:true={showSpinner}>
+                    <lightning-spinner alternative-text="Loading" variant="brand"></lightning-spinner>
+                </template>
+
+                <div class="filter-panel slds-var-p-around_x-small">
+                    <lightning-layout>
+                        <lightning-layout-item alignment-bump="right" padding="around-small" size="4">
+                            <lightning-icon class="slds-var-m-horizontal_x-small" icon-name="standard:task" alternative-text="Task" title="Task"></lightning-icon>
+                            <b class="slds-text-heading_small">Project's Tasks</b>
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="around-small">
+                            <lightning-button-icon icon-name="utility:refresh" variant="border-filled" alternative-text="Refresh List" title="Refresh List" onclick={handleRefreshList}></lightning-button-icon>
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="around-small">
+                            <lightning-combobox
+                                name="status"
+                                label="Status"
+                                value={statusFilterValue}
+                                variant="label-hidden"
+                                options={statusOptions}
+                                onchange={handleStatusChange} >
+                            </lightning-combobox>
+                        </lightning-layout-item>
+                        <template if:true={showAllTasks}>
+                            <lightning-layout-item padding="around-small">
+                                <lightning-input type="text" variant="label-hidden" label="Task Owner" placeholder="Task Owner" value={taskOwnerFilterValue} onchange={handleTaskOwnerFilterValue} onkeypress={handleEnter}></lightning-input>
+                            </lightning-layout-item>
+                            
+                            <lightning-layout-item padding="around-small" >
+                                <lightning-button variant="brand" label="Search" onclick={handleSearchAction}></lightning-button>
+                            </lightning-layout-item>
+                        </template>
+                        <template if:true={checkUserProfileAccess}>
+                            <template if:false={showNewMSTask}>
+                            <lightning-layout-item padding="around-small" >
+                                <button class="slds-button slds-button_brand" title={msTaskButtonHelpText} disabled={msTaskButtonDisabled} onclick={handleShowMSTask}>New MS Task(s)</button>
+                            </lightning-layout-item>
+                            </template>
+                            <template if:true={showNewMSTask}>
+                            <lightning-layout-item padding="around-small" >
+                                <lightning-button variant="neutral" label="Cancel" onclick={handleShowMSTask}></lightning-button>
+                            </lightning-layout-item>
+                            </template>
+                        </template>
+                    </lightning-layout>
+        </div>
+
+                <template if:true={showNewMSTask}>
+                   <div class="slds-var-p-vertical_small">
+                    <c-task-tab-l-w-c record-id={recordId}></c-task-tab-l-w-c>
+                  </div>
+                </template>
+                
+                <lightning-tabset active-tab-value="1">
+                    <lightning-tab label="All Tasks" value="1" onactive={handleActive}>
+                    </lightning-tab>
+                    <lightning-tab label="My Tasks" value="2" onactive={handleActive}>
+                    </lightning-tab>
+                </lightning-tabset>
+                <div class="table-container slds-var-p-around_x-small">
+                    <table class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_bordered" aria-label="data table for task">
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                            <template for:each={columns} for:item="col">
+                              <th key={col.label} class="" scope="col">
+                                <div class="slds-truncate table-column" title={col.label}>{col.label}</div>
+                              </th>
+                            </template>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <template if:true={taskList} for:each={taskList} for:item="taskData" for:index="index">
+                                    <tr key={taskData.Id} class="slds-hint-parent"
+                                    data-index={index}>
+                                        <th data-label="Task Priority" class="task-priority-column" scope="row">
+                                           <div class="slds-truncate" >{taskData.serialNumber}</div>
+                                        </th>
+                                        <td data-label="Actions">
+                                        <div class="slds-truncate" title="Actions">
+                                            <!-- <template if:false={isSuperUser}> -->
+                                                <template if:false={taskData.editMode}>
+                                                    <lightning-button-group>
+                                                       <template if:true={taskData.buttonStatus.showConfirmButton}>
+                                                            <lightning-button-icon onclick={handleConfirmAction} icon-name="utility:reassign" alternative-text="Assign Task" data-id={taskData.Id} title="Assign Task" ></lightning-button-icon>
+                                                        </template>
+                                                        <template if:true={taskData.buttonStatus.showPlayButton}>
+                                                            <lightning-button-icon onclick={handleTimerPlaybackAction} icon-name="utility:play" alternative-text="Play" data-id={taskData.Id} data-playback="play" title="Play" ></lightning-button-icon>
+                                                        </template>
+                                                        <template if:true={taskData.buttonStatus.showPauseButton}>
+                                                            <lightning-button-icon onclick={handleTimerPlaybackAction} icon-name="utility:pause" alternative-text="Pause" data-id={taskData.Id} data-playback="pause" title="Pause" ></lightning-button-icon>
+                                                        </template>
+                                                        <template if:true={taskData.buttonStatus.showEditButton}>
+                                                            <lightning-button-icon onclick={handleEditAction} icon-name="action:edit" alternative-text="Edit Task" data-id={taskData.Id} title="Edit Task" ></lightning-button-icon>
+                                                        </template>
+                                                        <template if:true={taskData.buttonStatus.showCloneButton}>
+                                                            <lightning-button-icon onclick={handleCloneAction} icon-name="action:clone" alternative-text="Clone Task" data-id={taskData.Id} title="Clone Task" data-index={index}></lightning-button-icon>
+                                                        </template>
+                                                        <template if:true={taskData.buttonStatus.showCompleteButton}>
+                                                            <lightning-button-icon onclick={handleCompleteAction} icon-name="action:approval" alternative-text="Complete Task" data-id={taskData.Id} data-starttime={taskData.Task_Start_Time__c} title="Complete Task" ></lightning-button-icon>
+                                                        </template>
+                                                        <template if:true={taskData.buttonStatus.showCancelButton}>
+                                                            <lightning-button-icon onclick={handleCancelAction} icon-name="utility:close" alternative-text="Cancel Task" data-id={taskData.Id} title="Cancel Task" ></lightning-button-icon>
+                                                        </template>
+                                                    </lightning-button-group>
+                                                </template>
+
+                                                <template if:true={taskData.editMode}>
+                                                    <lightning-button-group>
+                                                        <lightning-button-icon onclick={handleRowEditAction} data-action="Save" data-clonemode={taskData.cloneMode} data-index={index} data-cloneindex={taskData.cloneElementIndex} icon-name="utility:save" alternative-text="Save Task" data-id={taskData.Id} title="Save Task" ></lightning-button-icon>
+                                                        <lightning-button-icon onclick={handleRowEditAction} data-action="Discard" data-clonemode={taskData.cloneMode} data-index={index} data-cloneindex={taskData.cloneElementIndex} icon-name="utility:close" alternative-text="Discard Changes" data-id={taskData.Id} title="Discard Changes" ></lightning-button-icon>
+                                                    </lightning-button-group>
+                                                </template>
+                                        </div>
+                                        </td>
+                                        <td data-label="Task Owner" class="task-owner-column">
+                                            <template if:false={taskData.Owner__Editable}>
+                                                <div class="slds-truncate" ><a href="#">{taskData.Owner.Name}</a> </div>
+                                            </template>
+                                            <template if:true={taskData.Owner__Editable}>
+                                                    <lightning-combobox
+                                                        name="ownerId"
+                                                        data-id={taskData.Id}
+                                                        data-fieldname="OwnerId"
+                                                        value={taskData.OwnerId}
+                                                        variant="label-hidden"
+                                                        options={bureauUserOptions}
+                                                        onchange={handleTaskDataEdit}
+                                                        data-index={index}
+                                                        data-cloneindex={taskData.cloneElementIndex} >
+                                                    </lightning-combobox>
+                                            </template>
+                                        </td>
+                                        <td data-label="Task Category">
+                                            <template if:false={taskData.Task_Category__Editable}>
+                                                <div class="slds-truncate" >{taskData.Task_Category__c}</div>
+                                            </template>
+                                            <template if:true={taskData.Task_Category__Editable}>
+                                                <lightning-combobox
+                                                    name="Task_Category__c"
+                                                    data-id={taskData.Id}
+                                                    data-fieldname="Task_Category__c"
+                                                    value={taskData.Task_Category__c}
+                                                    variant="label-hidden"
+                                                    options={taskCategoryOptions}
+                                                    onchange={handleTaskDataEdit}
+                                                    data-index={index}
+                                                    data-cloneindex={taskData.cloneElementIndex} >
+                                                </lightning-combobox>
+                                            </template>
+                                        </td>
+                                        <td data-label="Task Type" class="task-type-column">
+                                            <template if:false={taskData.Task_Type__Editable}>
+                                                <div class="slds-truncate" >{taskData.Task_Type__c}</div>
+                                            </template>
+                                            <template if:true={taskData.Task_Type__Editable}>
+                                                <lightning-combobox
+                                                    name="Task_Type__c"
+                                                    data-id={taskData.Id}
+                                                    data-fieldname="Task_Type__c"
+                                                    value={taskData.Task_Type__c}
+                                                    variant="label-hidden"
+                                                    options={taskData.taskTypeOptions}
+                                                    onchange={handleTaskDataEdit}
+                                                    data-index={index}
+                                                    data-cloneindex={taskData.cloneElementIndex} >
+                                                </lightning-combobox>
+                                            </template>
+                                        </td>
+                                        <td data-label="Task Date">
+                                            <template if:false={taskData.Task_Date__Editable}>
+                                                <!-- <div class="slds-truncate task-date-column" ><lightning-formatted-date-time value={taskData.Task_Date__c}></lightning-formatted-date-time></div> -->
+                                                <div class="slds-truncate task-date-column" ><lightning-formatted-date-time value={taskData.Task_Date__c} year="numeric" month="short" day="2-digit" time-zone={timezone}></lightning-formatted-date-time></div>
+                                            </template>
+                                            <template if:true={taskData.Task_Date__Editable}>
+                                                <lightning-input class="task-date-column-edit" type="date" data-id={taskData.Id} data-index={index} data-cloneindex={taskData.cloneElementIndex} data-fieldname="Task_Date__c" name="Task_Date__c" variant="label-hidden" value={taskData.Task_Date__c} onchange={handleTaskDataEdit}></lightning-input>
+                                            </template>
+                                        </td>
+                                        <td data-label="Scheduled Time" class="scheduled-time-column">
+                                            <template if:false={taskData.Scheduled_Time__Editable}>
+                                                <div class="slds-truncate" ><lightning-formatted-time value={taskData.Scheduled_Time__c}></lightning-formatted-time></div>
+                                            </template>
+                                            <template if:true={taskData.Scheduled_Time__Editable}>
+                                                <lightning-input type="time" data-id={taskData.Id} data-index={index} data-cloneindex={taskData.cloneElementIndex} data-fieldname="Scheduled_Time__c" name="Scheduled_Time__c" variant="label-hidden" value={taskData.Scheduled_Time__c} onchange={handleTaskDataEdit}></lightning-input>
+                                            </template>
+                                        </td>
+                                        <td data-label="Estimated Time Required (In Minutes)" class="estimated-time-required-column">
+                                            <template if:false={taskData.Estimated_Time_Required__Editable}>
+                                                <div class="slds-truncate" >{taskData.Estimated_Time_Required__c}</div>
+                                            </template>
+                                            <template if:true={taskData.Estimated_Time_Required__Editable}>
+                                                <lightning-input data-id={taskData.Id} data-index={index} data-cloneindex={taskData.cloneElementIndex} data-fieldname="Estimated_Time_Required__c" type="number" step="any" max="999999999999999999" message-when-range-overflow="Number cannot exceed max length 18" variant="label-hidden" value={taskData.Estimated_Time_Required__c} onchange={handleTaskDataEdit} required="true"></lightning-input>
+                                            </template>
+                                        </td>
+                                        <td data-id="timer-component" data-label="Actual Time Taken">
+                                            <template if:false={taskData.Actual_Time_Taken__Editable}>
+                                                <template if:true={taskData.Actual_Time_Taken__c}>
+                                                    <div class="slds-truncate" >{taskData.Actual_Time_Taken__c}</div>
+                                                </template>
+                                                <template if:false={taskData.Actual_Time_Taken__c}>
+                                                    <c-task-timer-component task-id={taskData.Id} task-start-time={taskData.Task_Start_Time__c} task-end-time={taskData.Task_End_Time__c} timer-stopped-at={taskData.Timer_Stopped_At__c} timer-resumed-at={taskData.Timer_Resumed_At__c} timer-offset={taskData.Timer_Offset__c} start-or-resume-action="" ></c-task-timer-component>
+                                                </template>
+                                            </template>
+                                            <template if:true={taskData.Actual_Time_Taken__Editable}>
+                                                    <lightning-input data-id={taskData.Id} data-index={index} data-cloneindex={taskData.cloneElementIndex} data-fieldname="Actual_Time_Taken__c" type="number" step="any" max="999999999999999999" message-when-range-overflow="Number cannot exceed max length 18" variant="label-hidden" onchange={handleTaskDataEdit}></lightning-input>
+                                            </template>
+                                        </td>
+                                        <td data-label="Comments" class="slds-cell-edit task-comments-column">
+                                            <template if:false={taskData.Comments__Editable}>
+                                                <div class="text-comment" >
+                                                    <lightning-formatted-text value={taskData.Comments__c}></lightning-formatted-text>
+                                                </div>
+                                               
+                                            </template>
+                                            <template if:true={taskData.Comments__Editable}>
+                                                <lightning-textarea data-id={taskData.Id} data-index={index} data-cloneindex={taskData.cloneElementIndex} data-fieldname="Comments__c" variant="label-hidden" value={taskData.Comments_Modified__c} onchange={handleTaskDataEdit}></lightning-textarea>
+                                            </template>
+                                        </td>
+                                        <td class={taskData.statusBackgroundColor} data-label="Status">
+                                            <div class="slds-truncate" >
+                                                {taskData.StatusMessage}
+                                            </div>
+                                            <div class="slds-truncate">
+                                                <template if:true={taskData.Task_Completed_On__c}>
+                                                    <lightning-formatted-date-time value={taskData.Task_Completed_On__c} year="numeric" month="short" day="2-digit" hour="2-digit" minute="2-digit" time-zone={timezone}></lightning-formatted-date-time>
+                                                </template>
+                                                <template if:false={taskData.Task_Completed_On__c}>
+                                                    <lightning-formatted-date-time value={taskData.Task_End_Time__c} year="numeric" month="short" day="2-digit" hour="2-digit" minute="2-digit" time-zone={timezone}></lightning-formatted-date-time>
+                                                </template>
+                                            </div>
+                                        </td>
+                                        </tr>
+                               
+                            </template>
+                          </tbody>
+                    </table>
+                    <template if:false={taskList}>
+                        <div class="slds-var-p-around_small slds-align_absolute-center">No Records Found.</div>
+                    </template>
+                    </div>
+            </div>
+        </article>
+
+        <div class="slds-grid slds-grid_vertical-align-center slds-grid_align-spread slds-var-p-top_x-small">
+            <!--RECORDS PER PAGE-->
+            <div class="slds-col">
+                <div class="slds-list_inline slds-p-bottom_xx-small" style="align-items: center;">
+                    <label class="slds-text-color_weak slds-p-horizontal_x-small" for="recordsPerPage">Page Size:</label>
+                    <div class="slds-select_container">
+                        <select class="slds-select" name="recordsPerPage" onchange={handleRecordsPerPage}>
+                            <template for:each={pageSizeOptions} for:item="option">
+                                <option key={option} value={option}>{option}</option>
+                            </template>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!--PAGE NAVIGATION-->
+            <div class="slds-align_absolute-center" style="height:5rem">
+                <lightning-button disabled={disableFirst} icon-name="utility:jump_to_left" label="First" class="slds-p-horizontal_x-small" alternative-text="first page" onclick={firstPage}></lightning-button>
+                <lightning-button disabled={disableFirst} icon-name="utility:chevronleft" label="Previous" alternative-text="Previous" onclick={previousPage}></lightning-button>
+                &nbsp;
+                <span class="slds-badge">Showing {pageNumber} &nbsp;of&nbsp; {totalPages} &nbsp;&nbsp;Page(s)</span>
+                &nbsp;
+                <lightning-button disabled={disableLast} icon-name="utility:chevronright" label="Next" alternative-text="Next" onclick={nextPage} class="slds-p-right_x-small" icon-position="right"></lightning-button>
+                <lightning-button disabled={disableLast} icon-name="utility:jump_to_right" label="Last" alternative-text="last page" onclick={lastPage} icon-position="right"></lightning-button>
+            </div>
+            <!--TOTAL RECORDS-->
+            <div class="slds-clearfix">
+                <div class="slds-float_right">
+                    <span class="slds-badge"> Total Tasks: {totalRecords}</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</template>

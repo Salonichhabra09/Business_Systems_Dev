@@ -1,0 +1,11 @@
+:host {
+    display: block;
+}
+
+.slds-table th, .slds-table td {
+    text-align: center;
+}
+
+.slds-button {
+    margin-right: 5px;
+}

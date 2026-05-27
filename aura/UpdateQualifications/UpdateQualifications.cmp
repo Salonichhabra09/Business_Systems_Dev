@@ -1,0 +1,13 @@
+<aura:component controller="Course_Manager" implements="force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="CourseType" type="String"/>
+     <aura:attribute name="CourseList" type="Courses__c[]" />
+    <aura:attribute name="message" type="String"/>
+
+    <aura:handler name="init" value="this" action="{!c.validateCourse}"/>
+
+        <div style="height:218px" class="slds-align_absolute-center" >
+            Updating...
+        </div>
+  
+</aura:component>

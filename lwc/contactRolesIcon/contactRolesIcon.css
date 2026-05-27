@@ -1,0 +1,34 @@
+.icon-container {
+    display: flex;
+    flex-direction: row;/* Align items horizontally */
+    align-items: center; /* Vertically center items */
+    gap: 10px; /* Space between each role-icon pair */
+    flex-wrap: wrap; /* Wrap items if the container is too small */
+    justify-content: center;
+    min-height: 2.8rem;
+    max-height: 2.8rem;
+}
+
+.role-icon {
+    display: flex;
+    flex-direction: column; /* Icon and label stack vertically */
+    align-items: center; /* Center align within each block */
+    text-align: center;
+}
+
+.enlargeIcon {
+    transition: all .2s ease-in-out;
+}
+
+.enlargeIcon:hover {
+    transform: scale(1.5);
+}
+
+.redBackGround {
+    --slds-c-icon-color-foreground: white;
+    --slds-c-icon-color-background: red;
+}
+.greenBackGround {
+    --slds-c-icon-color-foreground: white;
+    --slds-c-icon-color-background: red;
+}

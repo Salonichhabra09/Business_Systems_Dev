@@ -1,0 +1,1706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Add_On__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Add-On</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Basis_of_Fees__c</fullName>
+        <description>Outdated helptext: Select the usage type that the subscription is based on.  If “other” is chosen, text box must be populated.</description>
+        <label>Basis of Fees</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Candidates</fullName>
+                    <default>false</default>
+                    <label>Candidates</label>
+                </value>
+                <value>
+                    <fullName>Units</fullName>
+                    <default>false</default>
+                    <label>Units</label>
+                </value>
+                <value>
+                    <fullName>Employees</fullName>
+                    <default>false</default>
+                    <label>Employees</label>
+                </value>
+                <value>
+                    <fullName>Full-Time Equivalents (FTEs)</fullName>
+                    <default>false</default>
+                    <label>Full-Time Equivalents (FTEs)</label>
+                </value>
+                <value>
+                    <fullName>Participants</fullName>
+                    <default>false</default>
+                    <label>Participants</label>
+                </value>
+                <value>
+                    <fullName>Assessments and Reports</fullName>
+                    <default>false</default>
+                    <label>Assessments and Reports</label>
+                </value>
+                <value>
+                    <fullName>CPS Days</fullName>
+                    <default>false</default>
+                    <label>CPS Days</label>
+                </value>
+                <value>
+                    <fullName>LPS Days</fullName>
+                    <default>false</default>
+                    <label>LPS Days</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Booking_Type__c</fullName>
+        <label>Business Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Renewal</fullName>
+                    <default>false</default>
+                    <label>Renewal</label>
+                </value>
+                <value>
+                    <fullName>Cross-sell: subscription</fullName>
+                    <default>false</default>
+                    <label>Cross-sell: subscription</label>
+                </value>
+                <value>
+                    <fullName>Existing customer: non-subscription</fullName>
+                    <default>false</default>
+                    <label>Existing customer: non-subscription</label>
+                </value>
+                <value>
+                    <fullName>New customer: subscription</fullName>
+                    <default>false</default>
+                    <label>New customer: subscription</label>
+                </value>
+                <value>
+                    <fullName>New customer: non-subscription</fullName>
+                    <default>false</default>
+                    <label>New customer: non-subscription</label>
+                </value>
+                <value>
+                    <fullName>Migration</fullName>
+                    <default>false</default>
+                    <label>Migration</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Renewal/Top up</fullName>
+                    <default>false</default>
+                    <label>Renewal/Top up</label>
+                </value>
+                <value>
+                    <fullName>PS: non-sub</fullName>
+                    <default>false</default>
+                    <label>PS: non-sub</label>
+                </value>
+                <value>
+                    <fullName>Expansion: New customer</fullName>
+                    <default>false</default>
+                    <label>Expansion: New customer</label>
+                </value>
+                <value>
+                    <fullName>In arrears</fullName>
+                    <default>false</default>
+                    <label>In arrears</label>
+                </value>
+                <value>
+                    <fullName>Expansion: Existing customer</fullName>
+                    <default>false</default>
+                    <label>Expansion: Existing customer</label>
+                </value>
+                <value>
+                    <fullName>Managed services</fullName>
+                    <default>false</default>
+                    <label>Managed services</label>
+                </value>
+                <value>
+                    <fullName>Expansion: New ARR subscriber</fullName>
+                    <default>false</default>
+                    <label>Expansion: New ARR subscriber</label>
+                </value>
+                <value>
+                    <fullName>New customer: professional services</fullName>
+                    <default>false</default>
+                    <label>New customer: professional services</label>
+                </value>
+                <value>
+                    <fullName>Expansion: Existing ARR subscriber</fullName>
+                    <default>false</default>
+                    <label>Expansion: Existing ARR subscriber</label>
+                </value>
+                <value>
+                    <fullName>Existing customer: professional services</fullName>
+                    <default>false</default>
+                    <label>Existing customer: professional services</label>
+                </value>
+                <value>
+                    <fullName>In advance (Existing customer)</fullName>
+                    <default>false</default>
+                    <label>In advance (Existing customer)</label>
+                </value>
+                <value>
+                    <fullName>Addition/Variation</fullName>
+                    <default>false</default>
+                    <label>Addition/Variation</label>
+                </value>
+                <value>
+                    <fullName>Renewal/Extension</fullName>
+                    <default>false</default>
+                    <label>Renewal/Extension</label>
+                </value>
+                <value>
+                    <fullName>Royalties &amp; other</fullName>
+                    <default>false</default>
+                    <label>Royalties &amp; other</label>
+                </value>
+                <value>
+                    <fullName>Other non ARR SaaS</fullName>
+                    <default>false</default>
+                    <label>Other non ARR SaaS</label>
+                </value>
+                <value>
+                    <fullName>C&amp;V</fullName>
+                    <default>false</default>
+                    <label>C&amp;V</label>
+                </value>
+                <value>
+                    <fullName>Cross Sell</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Cross Sell</label>
+                </value>
+                <value>
+                    <fullName>Cross-sell: non-subscription</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Cross-sell: non-subscription</label>
+                </value>
+                <value>
+                    <fullName>In-arrears product</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>In-arrears product</label>
+                </value>
+                <value>
+                    <fullName>New Customer</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>New Customer</label>
+                </value>
+                <value>
+                    <fullName>Non-Subscription</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Non-Subscription</label>
+                </value>
+                <value>
+                    <fullName>Repeat</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Repeat</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Contract_Value__c</fullName>
+        <label>Contract Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Year__c</fullName>
+        <label>Contract Year</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>true</default>
+                    <label>1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CurrencyChange__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>To check if opp line items created from change currency functionality or trigger. This will be true if created from change currency button otherwise false.</description>
+        <label>CurrencyChange</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Debooked_Quantity__c</fullName>
+        <externalId>false</externalId>
+        <label>Debooked Quantity</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Debooked_Sales_Price__c</fullName>
+        <label>Debooked Sales Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Debooked_Solution_Cap__c</fullName>
+        <description>This field is used to store the debooked solution cap for an opportunity line item. The value is further used in the logic to display the remaining debooking scope of the solution cap for that specific opportunity line item</description>
+        <externalId>false</externalId>
+        <label>Debooked Solution Cap</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Debooked_Total_Value__c</fullName>
+        <description>This field is used to store the debooked amount for an opportunity line item. The value is further used in the logic to display the remaining debooking scope for that specific opportunity line item.</description>
+        <externalId>false</externalId>
+        <label>Debooked Total Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Delete_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If opportunity record type changes from GCSC, Standard to Ignite, this gets checked.This is used to delete the product.</description>
+        <label>Delete Required?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Discount_Value__c</fullName>
+        <description>This captures the discount value per line, mapped from Configurator i.e the difference of List Price &amp; Sales Price</description>
+        <inlineHelpText>This field automatically reflects the discount value calculated using configurator logic or the difference between the unit price and the list price.</inlineHelpText>
+        <label>Discount Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>8</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Discount__c</fullName>
+        <description>This field captures the discount percentage based on configurator logic or the difference between the unit price and list price.</description>
+        <inlineHelpText>This field automatically reflects the discount percentage calculated using configurator logic or the difference between the unit price and the list price.</inlineHelpText>
+        <label>Discount %age</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <label>End Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Hiring_Need__c</fullName>
+        <inlineHelpText>The field value will be populated from Rate Card Import.</inlineHelpText>
+        <label>Client Interest</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Talent Acquisition</fullName>
+                    <default>false</default>
+                    <label>Talent Acquisition</label>
+                </value>
+                <value>
+                    <fullName>Talent Management</fullName>
+                    <default>false</default>
+                    <label>Talent Management</label>
+                </value>
+                <value>
+                    <fullName>TAandTMCombined</fullName>
+                    <default>false</default>
+                    <label>TAandTMCombined</label>
+                </value>
+                <value>
+                    <fullName>Mixed</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Mixed</label>
+                </value>
+                <value>
+                    <fullName>Post-Hire</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Post-Hire</label>
+                </value>
+                <value>
+                    <fullName>Pre-Hire</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Pre-Hire</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Imported_from_Rate_Card_c__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Imported from Rate Card?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Date__c</fullName>
+        <label>Invoice Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Is_MS_Product__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to Identify if the Opportunity line item belongs to MS Category of Products</description>
+        <label>Is MS Product?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Item_Added_From__c</fullName>
+        <label>Item Added From</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Original</fullName>
+                    <default>false</default>
+                    <label>Original</label>
+                </value>
+                <value>
+                    <fullName>Variation</fullName>
+                    <default>false</default>
+                    <label>Variation</label>
+                </value>
+                <value>
+                    <fullName>Extension</fullName>
+                    <default>false</default>
+                    <label>Extension</label>
+                </value>
+                <value>
+                    <fullName>Extension Variation</fullName>
+                    <default>false</default>
+                    <label>Extension Variation</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Level__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The field value will be populated from Rate Card Import.</inlineHelpText>
+        <label>Level</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>List_Price__c</fullName>
+        <description>New custom List Price field</description>
+        <label>List Price/Basis of Fees</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>8</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MS_Product__c</fullName>
+        <formula>PricebookEntry.Product2.MS_Product__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MS Product</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Services__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Service Deliveries</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Original_Opportunity_Product__c</fullName>
+        <externalId>false</externalId>
+        <label>Original Opportunity Product</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other__c</fullName>
+        <label>Basis of Fees - Other</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Package_Level__c</fullName>
+        <description>The Field value will be populated from Rate Card Import for Ignite Opportunity.</description>
+        <inlineHelpText>The Field value will be populated from Rate Card Import for Ignite Opportunity.</inlineHelpText>
+        <label>Package Level</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Basic</fullName>
+                    <default>false</default>
+                    <label>Basic</label>
+                </value>
+                <value>
+                    <fullName>Standard</fullName>
+                    <default>false</default>
+                    <label>Standard</label>
+                </value>
+                <value>
+                    <fullName>Plus</fullName>
+                    <default>false</default>
+                    <label>Plus</label>
+                </value>
+                <value>
+                    <fullName>Premium</fullName>
+                    <default>false</default>
+                    <label>Premium</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Package__c</fullName>
+        <label>Offering Details</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Proposition__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Graduate Essential</fullName>
+                    <default>false</default>
+                    <label>Graduate Essential</label>
+                </value>
+                <value>
+                    <fullName>Graduate Advanced</fullName>
+                    <default>false</default>
+                    <label>Graduate Advanced</label>
+                </value>
+                <value>
+                    <fullName>Graduate Ultimate</fullName>
+                    <default>false</default>
+                    <label>Graduate Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Volume Essential</fullName>
+                    <default>false</default>
+                    <label>Volume Essential</label>
+                </value>
+                <value>
+                    <fullName>Volume Advanced</fullName>
+                    <default>false</default>
+                    <label>Volume Advanced</label>
+                </value>
+                <value>
+                    <fullName>Apprentice Essential</fullName>
+                    <default>false</default>
+                    <label>Apprentice Essential</label>
+                </value>
+                <value>
+                    <fullName>Tech Essential</fullName>
+                    <default>false</default>
+                    <label>Technology Essential</label>
+                </value>
+                <value>
+                    <fullName>Tech Advanced</fullName>
+                    <default>false</default>
+                    <label>Technology Advanced</label>
+                </value>
+                <value>
+                    <fullName>Technology Ultimate</fullName>
+                    <default>false</default>
+                    <label>Technology Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Managerial Essential</fullName>
+                    <default>false</default>
+                    <label>Managerial Essential</label>
+                </value>
+                <value>
+                    <fullName>Managerial Advanced</fullName>
+                    <default>false</default>
+                    <label>Managerial Advanced</label>
+                </value>
+                <value>
+                    <fullName>Managerial Ultimate</fullName>
+                    <default>false</default>
+                    <label>Managerial Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Video Essential</fullName>
+                    <default>false</default>
+                    <label>Video Essential</label>
+                </value>
+                <value>
+                    <fullName>Video Advanced</fullName>
+                    <default>false</default>
+                    <label>Video Advanced</label>
+                </value>
+                <value>
+                    <fullName>Video Ultimate</fullName>
+                    <default>false</default>
+                    <label>Video Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Professional Essential</fullName>
+                    <default>false</default>
+                    <label>Professional Essential</label>
+                </value>
+                <value>
+                    <fullName>Professional Advanced</fullName>
+                    <default>false</default>
+                    <label>Professional Advanced</label>
+                </value>
+                <value>
+                    <fullName>Professional Ultimate</fullName>
+                    <default>false</default>
+                    <label>Professional Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Core Essential</fullName>
+                    <default>false</default>
+                    <label>Core Essential</label>
+                </value>
+                <value>
+                    <fullName>Core Advanced</fullName>
+                    <default>false</default>
+                    <label>Core Advanced</label>
+                </value>
+                <value>
+                    <fullName>Core Unit Essential</fullName>
+                    <default>false</default>
+                    <label>Core Unit Essential</label>
+                </value>
+                <value>
+                    <fullName>Review Essential</fullName>
+                    <default>false</default>
+                    <label>Review Essential</label>
+                </value>
+                <value>
+                    <fullName>Review Advanced</fullName>
+                    <default>false</default>
+                    <label>Review Advanced</label>
+                </value>
+                <value>
+                    <fullName>Review Ultimate</fullName>
+                    <default>false</default>
+                    <label>Review Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Mobilize Essential</fullName>
+                    <default>false</default>
+                    <label>Mobilize Essential</label>
+                </value>
+                <value>
+                    <fullName>Mobilize Advanced</fullName>
+                    <default>false</default>
+                    <label>Mobilize Advanced</label>
+                </value>
+                <value>
+                    <fullName>Mobilize Ultimate</fullName>
+                    <default>false</default>
+                    <label>Mobilize Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Product</fullName>
+                    <default>false</default>
+                    <label>Product</label>
+                </value>
+                <value>
+                    <fullName>Sales Transformation Review Essential</fullName>
+                    <default>false</default>
+                    <label>Sales Transformation Review Essential</label>
+                </value>
+                <value>
+                    <fullName>Sales Transformation Review Advanced</fullName>
+                    <default>false</default>
+                    <label>Sales Transformation Review Advanced</label>
+                </value>
+                <value>
+                    <fullName>Sales Transformation Review Ultimate</fullName>
+                    <default>false</default>
+                    <label>Sales Transformation Review Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Sales Transformation Hiring Essential</fullName>
+                    <default>false</default>
+                    <label>Sales Transformation Hiring Essential</label>
+                </value>
+                <value>
+                    <fullName>Sales Transformation Hiring Advanced</fullName>
+                    <default>false</default>
+                    <label>Sales Transformation Hiring Advanced</label>
+                </value>
+                <value>
+                    <fullName>Sales Transformation Hiring Ultimate</fullName>
+                    <default>false</default>
+                    <label>Sales Transformation Hiring Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Service</fullName>
+                    <default>false</default>
+                    <label>Service</label>
+                </value>
+                <value>
+                    <fullName>OA 1:1 Essential</fullName>
+                    <default>false</default>
+                    <label>OA 1:1 Essential</label>
+                </value>
+                <value>
+                    <fullName>OA 1:1 Advanced</fullName>
+                    <default>false</default>
+                    <label>OA 1:1 Advanced</label>
+                </value>
+                <value>
+                    <fullName>OA 1:1 Ultimate</fullName>
+                    <default>false</default>
+                    <label>OA 1:1 Ultimate</label>
+                </value>
+                <value>
+                    <fullName>OA 1:Many Essential</fullName>
+                    <default>false</default>
+                    <label>OA 1:Many Essential</label>
+                </value>
+                <value>
+                    <fullName>OA 1:Many Advanced</fullName>
+                    <default>false</default>
+                    <label>OA 1:Many Advanced</label>
+                </value>
+                <value>
+                    <fullName>OA 1:Many Ultimate</fullName>
+                    <default>false</default>
+                    <label>OA 1:Many Ultimate</label>
+                </value>
+                <value>
+                    <fullName>TMReview Essential</fullName>
+                    <default>false</default>
+                    <label>TMReview Essential</label>
+                </value>
+                <value>
+                    <fullName>TMReview Advanced</fullName>
+                    <default>false</default>
+                    <label>TMReview Advanced</label>
+                </value>
+                <value>
+                    <fullName>TMReview Ultimate</fullName>
+                    <default>false</default>
+                    <label>TMReview Ultimate</label>
+                </value>
+                <value>
+                    <fullName>OA 1:1 Recruitment Essential</fullName>
+                    <default>false</default>
+                    <label>OA 1:1 Recruitment Essential</label>
+                </value>
+                <value>
+                    <fullName>OA 1:1 Recruitment Advanced</fullName>
+                    <default>false</default>
+                    <label>OA 1:1 Recruitment Advanced</label>
+                </value>
+                <value>
+                    <fullName>OA 1:1 Recruitment Ultimate</fullName>
+                    <default>false</default>
+                    <label>OA 1:1 Recruitment Ultimate</label>
+                </value>
+                <value>
+                    <fullName>OA 1:1 Development Essential</fullName>
+                    <default>false</default>
+                    <label>OA 1:1 Development Essential</label>
+                </value>
+                <value>
+                    <fullName>OA 1:1 Development Advanced</fullName>
+                    <default>false</default>
+                    <label>OA 1:1 Development Advanced</label>
+                </value>
+                <value>
+                    <fullName>OA 1:1 Development Ultimate</fullName>
+                    <default>false</default>
+                    <label>OA 1:1 Development Ultimate</label>
+                </value>
+                <value>
+                    <fullName>TMReview Talent Advanced</fullName>
+                    <default>false</default>
+                    <label>TMReview Talent Advanced</label>
+                </value>
+                <value>
+                    <fullName>TMReview Talent Essential</fullName>
+                    <default>false</default>
+                    <label>TMReview Talent Essential</label>
+                </value>
+                <value>
+                    <fullName>TM Skills Development Advanced</fullName>
+                    <default>false</default>
+                    <label>TM Skills Development Advanced</label>
+                </value>
+                <value>
+                    <fullName>TM Skills Development Essential</fullName>
+                    <default>false</default>
+                    <label>TM Skills Development Essential</label>
+                </value>
+                <value>
+                    <fullName>TM Senior Leadership Essential</fullName>
+                    <default>false</default>
+                    <label>TM Senior Leadership Essential</label>
+                </value>
+                <value>
+                    <fullName>TM Senior Leadership Advanced</fullName>
+                    <default>false</default>
+                    <label>TM Senior Leadership Advanced</label>
+                </value>
+                <value>
+                    <fullName>TM Senior Leadership Ultimate</fullName>
+                    <default>false</default>
+                    <label>TM Senior Leadership Ultimate</label>
+                </value>
+                <value>
+                    <fullName>TM Managerial Development Advanced</fullName>
+                    <default>false</default>
+                    <label>TM Managerial Development Advanced</label>
+                </value>
+                <value>
+                    <fullName>TM Managerial Development Essential</fullName>
+                    <default>false</default>
+                    <label>TM Managerial Development Essential</label>
+                </value>
+                <value>
+                    <fullName>Smart Interview Professional Essential</fullName>
+                    <default>false</default>
+                    <label>Smart Interview Professional Essential</label>
+                </value>
+                <value>
+                    <fullName>Smart Interview Professional Advanced</fullName>
+                    <default>false</default>
+                    <label>Smart Interview Professional Advanced</label>
+                </value>
+                <value>
+                    <fullName>SME Skills and Ability</fullName>
+                    <default>false</default>
+                    <label>SME Skills and Ability</label>
+                </value>
+                <value>
+                    <fullName>SME Professional</fullName>
+                    <default>false</default>
+                    <label>SME Professional</label>
+                </value>
+                <value>
+                    <fullName>SME Leadership</fullName>
+                    <default>false</default>
+                    <label>SME Leadership</label>
+                </value>
+                <value>
+                    <fullName>Talent Mobility essential</fullName>
+                    <default>false</default>
+                    <label>Talent Mobility Essential</label>
+                </value>
+                <value>
+                    <fullName>Talent Mobility advanced</fullName>
+                    <default>false</default>
+                    <label>Talent Mobility Advanced</label>
+                </value>
+                <value>
+                    <fullName>Leadership Suite</fullName>
+                    <default>false</default>
+                    <label>Leadership Suite</label>
+                </value>
+                <value>
+                    <fullName>Manager Suite</fullName>
+                    <default>false</default>
+                    <label>Manager Suite</label>
+                </value>
+                <value>
+                    <fullName>Leadership Review Essential</fullName>
+                    <default>false</default>
+                    <label>Leadership Review Essential</label>
+                </value>
+                <value>
+                    <fullName>Leadership Review Advanced</fullName>
+                    <default>false</default>
+                    <label>Leadership Review Advanced</label>
+                </value>
+                <value>
+                    <fullName>Leadership Review Ultimate</fullName>
+                    <default>false</default>
+                    <label>Leadership Review Ultimate</label>
+                </value>
+                <value>
+                    <fullName>Manager Review Essential</fullName>
+                    <default>false</default>
+                    <label>Manager Review Essential</label>
+                </value>
+                <value>
+                    <fullName>Manager Review Advanced</fullName>
+                    <default>false</default>
+                    <label>Manager Review Advanced</label>
+                </value>
+                <value>
+                    <fullName>Talent Review Essential</fullName>
+                    <default>false</default>
+                    <label>Talent Review Essential</label>
+                </value>
+                <value>
+                    <fullName>Talent Review Advanced</fullName>
+                    <default>false</default>
+                    <label>Talent Review Advanced</label>
+                </value>
+                <value>
+                    <fullName>Capability Digital Training</fullName>
+                    <default>false</default>
+                    <label>Capability Digital Training</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <valueName>Managerial Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <valueName>Managerial Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <valueName>Managerial Ultimate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <valueName>Video Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <valueName>Video Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <valueName>Video Ultimate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>Product</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>Service</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>OA 1:1 Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>OA 1:1 Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>OA 1:1 Ultimate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>OA 1:Many Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>OA 1:Many Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>OA 1:Many Ultimate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>OA 1:1 Recruitment Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>OA 1:1 Recruitment Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>OA 1:1 Recruitment Ultimate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>OA 1:1 Development Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>OA 1:1 Development Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>OA 1:1 Development Ultimate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>Smart Interview Professional Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senior Leadership / Executive Hiring </controllingFieldValue>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <controllingFieldValue>Managerial Hiring</controllingFieldValue>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>Smart Interview Professional Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <valueName>Review Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <valueName>Review Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <valueName>Review Ultimate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <valueName>Mobilize Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <valueName>TMReview Talent Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <valueName>TMReview Talent Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <valueName>TM Skills Development Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <valueName>TM Skills Development Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <valueName>TM Senior Leadership Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <valueName>TM Senior Leadership Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <valueName>TM Senior Leadership Ultimate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <valueName>TM Managerial Development Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <valueName>TM Managerial Development Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <valueName>Talent Mobility essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Management</controllingFieldValue>
+                <valueName>Talent Mobility advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <valueName>Graduate Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <valueName>Graduate Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <valueName>Graduate Ultimate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Early Careers Hiring</controllingFieldValue>
+                <valueName>Apprentice Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <valueName>Volume Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Volume Hiring</controllingFieldValue>
+                <valueName>Volume Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <valueName>Tech Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <valueName>Tech Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Technology Hiring</controllingFieldValue>
+                <valueName>Technology Ultimate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>Professional Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>Professional Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>Professional Ultimate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>Core Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>Core Advanced</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>Core Unit Essential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Professional Hiring</controllingFieldValue>
+                <valueName>SME Professional</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Platform__c</fullName>
+        <label>Platform</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Talent Central</fullName>
+                    <default>false</default>
+                    <label>Talent Central</label>
+                </value>
+                <value>
+                    <fullName>Insights</fullName>
+                    <default>false</default>
+                    <label>Insights</label>
+                </value>
+                <value>
+                    <fullName>iAssess</fullName>
+                    <default>false</default>
+                    <label>iAssess</label>
+                </value>
+                <value>
+                    <fullName>MFS</fullName>
+                    <default>false</default>
+                    <label>MFS</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Family__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Family</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Name__c</fullName>
+        <description>This field is used to filter the rollup field Opportunity MS Value on opportunity which again is used on the MS Pipeline Job Card. We can not use formula field in filters, that is why i have created this field as text field.</description>
+        <externalId>false</externalId>
+        <label>Product Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Services_Stream__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(PricebookEntry.Product2.Revenue_Category__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product &amp; Services Stream</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Stream__c</fullName>
+        <description>This field holds the value of Stream (Revenue Category) from Product, used in Roll-Up on Opp Header</description>
+        <externalId>false</externalId>
+        <label>Product Stream</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Proposition__c</fullName>
+        <label>Use-case</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Early Careers Hiring</fullName>
+                    <default>false</default>
+                    <label>Early Careers Hiring</label>
+                </value>
+                <value>
+                    <fullName>Volume Hiring</fullName>
+                    <default>false</default>
+                    <label>Volume Hiring</label>
+                </value>
+                <value>
+                    <fullName>Technology Hiring</fullName>
+                    <default>false</default>
+                    <label>Technology Hiring</label>
+                </value>
+                <value>
+                    <fullName>Managerial Hiring</fullName>
+                    <default>false</default>
+                    <label>Managerial Hiring</label>
+                </value>
+                <value>
+                    <fullName>Senior Leadership / Executive Hiring </fullName>
+                    <default>false</default>
+                    <label>Senior Leadership / Executive Hiring </label>
+                </value>
+                <value>
+                    <fullName>Professional Hiring</fullName>
+                    <default>false</default>
+                    <label>Professional Hiring</label>
+                </value>
+                <value>
+                    <fullName>Talent Management</fullName>
+                    <default>false</default>
+                    <label>Talent Management</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RAG_Indicator__c</fullName>
+        <externalId>false</externalId>
+        <formula>PricebookEntry.Product2.RAG_Indicator__c</formula>
+        <label>RAG Indicator</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RAG_Option_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>RAG Option Value</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RenewableNew__c</fullName>
+        <label>Renewability</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Ongoing</fullName>
+                    <default>false</default>
+                    <label>Ongoing</label>
+                </value>
+                <value>
+                    <fullName>One-off</fullName>
+                    <default>false</default>
+                    <label>One-off</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Renewable__c</fullName>
+        <inlineHelpText>This is a renewable product</inlineHelpText>
+        <label>Renewable(depricated)</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SOW_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>SOW Required?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Service_End_Date__c</fullName>
+        <label>PS Service End Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Solution_Cap__c</fullName>
+        <externalId>false</externalId>
+        <label>Solution Cap</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Solution__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Solution</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <label>Start Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(PricebookEntry.Product2.Status__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Talent_Level__c</fullName>
+        <description>The Field value will be populated from Rate Card Import for Ignite Opportunity.</description>
+        <inlineHelpText>The Field value will be populated from Rate Card Import for Ignite Opportunity.</inlineHelpText>
+        <label>Talent Level</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Professional / Individual Contributor</fullName>
+                    <default>false</default>
+                    <label>Professional / Individual Contributor</label>
+                </value>
+                <value>
+                    <fullName>Manager</fullName>
+                    <default>false</default>
+                    <label>Manager</label>
+                </value>
+                <value>
+                    <fullName>Vocational</fullName>
+                    <default>false</default>
+                    <label>Vocational</label>
+                </value>
+                <value>
+                    <fullName>Entry Level / Associate</fullName>
+                    <default>false</default>
+                    <label>Entry Level / Associate</label>
+                </value>
+                <value>
+                    <fullName>Graduate and Intern</fullName>
+                    <default>false</default>
+                    <label>Graduate and Intern</label>
+                </value>
+                <value>
+                    <fullName>Supervisor</fullName>
+                    <default>false</default>
+                    <label>Supervisor</label>
+                </value>
+                <value>
+                    <fullName>Individual Contributor Leader</fullName>
+                    <default>false</default>
+                    <label>Individual Contributor Leader</label>
+                </value>
+                <value>
+                    <fullName>Senior leadership</fullName>
+                    <default>false</default>
+                    <label>Senior leadership</label>
+                </value>
+                <value>
+                    <fullName>All Levels</fullName>
+                    <default>false</default>
+                    <label>All Levels</label>
+                </value>
+                <value>
+                    <fullName>Entry Level / Apprentice</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Entry Level / Apprentice</label>
+                </value>
+                <value>
+                    <fullName>Graduate</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Graduate</label>
+                </value>
+                <value>
+                    <fullName>Leader</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Leader</label>
+                </value>
+                <value>
+                    <fullName>Mixed</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Mixed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_Discount__c</fullName>
+        <description>The Field value will be populated from Rate Card Import for Ignite Opportunity.</description>
+        <inlineHelpText>The Field value will be populated from Rate Card Import for Ignite Opportunity.</inlineHelpText>
+        <label>Total Discount %</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Total_Equivalent_Units__c</fullName>
+        <description>Outdated helptext: If Basis of Fees is Candidates, Applications, Assessments, Units - enter the usage cap or usage estimate. If FTEs - enter FTE number used in calculator</description>
+        <externalId>false</externalId>
+        <label>Total Equivalent Units</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_List_Price__c</fullName>
+        <formula>List_Price__c  *  Quantity</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Line List Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Unit_Price__c</fullName>
+        <externalId>false</externalId>
+        <formula>PricebookEntry.UnitPrice</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Unit Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Usage_Allowance__c</fullName>
+        <inlineHelpText>Select if usage is capped or uncapped.</inlineHelpText>
+        <label>Usage Allowance</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Capped</fullName>
+                    <default>false</default>
+                    <label>Capped</label>
+                </value>
+                <value>
+                    <fullName>Uncapped</fullName>
+                    <default>false</default>
+                    <label>Uncapped</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Usage_Cap_or_Estimation__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If Basis of Fees is Candidates, Applications, Assessments, Units - enter the usage cap or usage estimate.  If FTEs - enter FTE number used in calculator</inlineHelpText>
+        <label>Usage Cap or Estimation</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Volume__c</fullName>
+        <description>The Field value will be populated from Rate Card Import for Ignite Opportunity.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Field value will be populated from Rate Card Import for Ignite Opportunity.</inlineHelpText>
+        <label>Volume</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Year_1_Discount__c</fullName>
+        <description>The Field value will be populated from Rate Card Import for Ignite Opportunity.</description>
+        <inlineHelpText>The Field value will be populated from Rate Card Import for Ignite Opportunity.</inlineHelpText>
+        <label>Year 1 : Discount %</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Year_1_List_Price__c</fullName>
+        <description>The Field value will be populated from Rate Card Import for Ignite Opportunity.</description>
+        <inlineHelpText>The Field value will be populated from Rate Card Import for Ignite Opportunity.</inlineHelpText>
+        <label>Year 1 : List Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Year_1_Sales_Price__c</fullName>
+        <description>The Field value will be populated from Rate Card Import for Ignite Opportunity.</description>
+        <inlineHelpText>The Field value will be populated from Rate Card Import for Ignite Opportunity.</inlineHelpText>
+        <label>Year 1 : Sales Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Year_2_Discount__c</fullName>
+        <description>The Field value will be populated from Rate Card Import for Ignite Opportunity.</description>
+        <inlineHelpText>The Field value will be populated from Rate Card Import for Ignite Opportunity.</inlineHelpText>
+        <label>Year 2 : Discount %</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Year_2_List_Price__c</fullName>
+        <description>The Field value will be populated from Rate Card Import only for Ignite Opportunity.</description>
+        <inlineHelpText>The Field value will be populated from Rate Card Import for Ignite Opportunity.</inlineHelpText>
+        <label>Year 2 : List Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Year_2_Sales_Price__c</fullName>
+        <description>The Field value will be populated from Rate Card Import for Ignite Opportunity.</description>
+        <inlineHelpText>The Field value will be populated from Rate Card Import for Ignite Opportunity.</inlineHelpText>
+        <label>Year 2 : Sales Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Year_3_Discount__c</fullName>
+        <description>The Field value will be populated from Rate Card Import for Ignite Opportunity.</description>
+        <inlineHelpText>The Field value will be populated from Rate Card Import for Ignite Opportunity.</inlineHelpText>
+        <label>Year 3 : Discount %</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Year_3_List_Price__c</fullName>
+        <description>The Field value will be populated from Rate Card Import for Ignite Opportunity.</description>
+        <inlineHelpText>The Field value will be populated from Rate Card Import for Ignite Opportunity.</inlineHelpText>
+        <label>Year 3 : List Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Year_3_Sales_Price__c</fullName>
+        <description>The Field value will be populated from Rate Card Import for Ignite Opportunity.</description>
+        <inlineHelpText>The Field value will be populated from Rate Card Import for Ignite Opportunity.</inlineHelpText>
+        <label>Year 3 : Sales Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+</CustomObject>

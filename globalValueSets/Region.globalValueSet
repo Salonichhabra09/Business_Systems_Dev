@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>ANZ</fullName>
+        <default>false</default>
+        <label>ANZ</label>
+    </customValue>
+    <customValue>
+        <fullName>Core AMS</fullName>
+        <default>false</default>
+        <label>Core AMS</label>
+    </customValue>
+    <customValue>
+        <fullName>Core EU</fullName>
+        <default>false</default>
+        <label>Core EU</label>
+    </customValue>
+    <customValue>
+        <fullName>Core UKI</fullName>
+        <default>false</default>
+        <label>Core UKI</label>
+    </customValue>
+    <customValue>
+        <fullName>Distributors</fullName>
+        <default>false</default>
+        <label>Distributors</label>
+    </customValue>
+    <customValue>
+        <fullName>Enterprise AMS</fullName>
+        <default>false</default>
+        <label>Enterprise AMS</label>
+    </customValue>
+    <customValue>
+        <fullName>Enterprise North EU</fullName>
+        <default>false</default>
+        <label>Enterprise North EU</label>
+    </customValue>
+    <customValue>
+        <fullName>Enterprise South EU</fullName>
+        <default>false</default>
+        <label>Enterprise South EU</label>
+    </customValue>
+    <customValue>
+        <fullName>Enterprise UKI</fullName>
+        <default>false</default>
+        <label>Enterprise UKI</label>
+    </customValue>
+    <customValue>
+        <fullName>Growth UK/EU</fullName>
+        <default>false</default>
+        <label>Growth UK/EU</label>
+    </customValue>
+    <customValue>
+        <fullName>Hong Kong</fullName>
+        <default>false</default>
+        <label>Hong Kong</label>
+    </customValue>
+    <customValue>
+        <fullName>India</fullName>
+        <default>false</default>
+        <label>India</label>
+    </customValue>
+    <customValue>
+        <fullName>Middle East</fullName>
+        <default>false</default>
+        <label>Middle East</label>
+    </customValue>
+    <customValue>
+        <fullName>NB AMS</fullName>
+        <default>false</default>
+        <label>NB AMS</label>
+    </customValue>
+    <customValue>
+        <fullName>NB Core</fullName>
+        <default>false</default>
+        <label>NB Core</label>
+    </customValue>
+    <customValue>
+        <fullName>NB Enterprise</fullName>
+        <default>false</default>
+        <label>NB Enterprise</label>
+    </customValue>
+    <customValue>
+        <fullName>NB Partner</fullName>
+        <default>false</default>
+        <label>NB Partner</label>
+    </customValue>
+    <customValue>
+        <fullName>Other AMS</fullName>
+        <default>false</default>
+        <label>Other AMS</label>
+    </customValue>
+    <customValue>
+        <fullName>Partners AMS</fullName>
+        <default>false</default>
+        <label>Partners AMS</label>
+    </customValue>
+    <customValue>
+        <fullName>Philippines</fullName>
+        <default>false</default>
+        <label>Philippines</label>
+    </customValue>
+    <customValue>
+        <fullName>Singapore</fullName>
+        <default>false</default>
+        <label>Singapore</label>
+    </customValue>
+    <customValue>
+        <fullName>South Africa</fullName>
+        <default>false</default>
+        <label>South Africa</label>
+    </customValue>
+    <customValue>
+        <fullName>Strategic EU</fullName>
+        <default>false</default>
+        <label>Strategic EU</label>
+    </customValue>
+    <customValue>
+        <fullName>Strategic UKI</fullName>
+        <default>false</default>
+        <label>Strategic UKI</label>
+    </customValue>
+    <customValue>
+        <fullName>China East</fullName>
+        <default>false</default>
+        <label>China East</label>
+    </customValue>
+    <customValue>
+        <fullName>China North</fullName>
+        <default>false</default>
+        <label>China North</label>
+    </customValue>
+    <customValue>
+        <fullName>China Partner</fullName>
+        <default>false</default>
+        <label>China Partner</label>
+    </customValue>
+    <customValue>
+        <fullName>China South</fullName>
+        <default>false</default>
+        <label>China South</label>
+    </customValue>
+    <customValue>
+        <fullName>China Enterprise</fullName>
+        <default>false</default>
+        <label>China Enterprise</label>
+    </customValue>
+    <customValue>
+        <fullName>China Core</fullName>
+        <default>false</default>
+        <label>China Core</label>
+    </customValue>
+    <customValue>
+        <fullName>GCSC AMS</fullName>
+        <default>false</default>
+        <label>GCSC AMS</label>
+    </customValue>
+    <customValue>
+        <fullName>EU - Core</fullName>
+        <default>false</default>
+        <label>EU - Core</label>
+    </customValue>
+    <customValue>
+        <fullName>UK - Core</fullName>
+        <default>false</default>
+        <label>UK - Core</label>
+    </customValue>
+    <customValue>
+        <fullName>ESA - tbc</fullName>
+        <default>false</default>
+        <label>ESA - tbc</label>
+    </customValue>
+    <customValue>
+        <fullName>EU UK - Bus Dev Core</fullName>
+        <default>false</default>
+        <label>EU UK - Bus Dev Core</label>
+    </customValue>
+    <customValue>
+        <fullName>EU UK - Bus Dev 1</fullName>
+        <default>false</default>
+        <label>EU UK - Bus Dev 1</label>
+    </customValue>
+    <customValue>
+        <fullName>EU UK - Partner</fullName>
+        <default>false</default>
+        <label>EU UK - Partner</label>
+    </customValue>
+    <customValue>
+        <fullName>EU - Strategic</fullName>
+        <default>false</default>
+        <label>EU - Strategic</label>
+    </customValue>
+    <customValue>
+        <fullName>UK - Strategic</fullName>
+        <default>false</default>
+        <label>UK - Strategic</label>
+    </customValue>
+    <customValue>
+        <fullName>NA - Core</fullName>
+        <default>false</default>
+        <label>NA - Core</label>
+    </customValue>
+    <customValue>
+        <fullName>NA - Ent AM</fullName>
+        <default>false</default>
+        <label>NA - Ent AM</label>
+    </customValue>
+    <customValue>
+        <fullName>NA - Bus Dev</fullName>
+        <default>false</default>
+        <label>NA - Bus Dev</label>
+    </customValue>
+    <customValue>
+        <fullName>EU UK - Bus Dev 2</fullName>
+        <default>false</default>
+        <label>EU UK - Bus Dev 2</label>
+    </customValue>
+    <customValue>
+        <fullName>EU South - Key</fullName>
+        <default>false</default>
+        <label>EU South - Key</label>
+    </customValue>
+    <customValue>
+        <fullName>EU North UK - Key</fullName>
+        <default>false</default>
+        <label>EU North UK - Key</label>
+    </customValue>
+    <customValue>
+        <fullName>China</fullName>
+        <default>false</default>
+        <label>China</label>
+    </customValue>
+    <customValue>
+        <fullName>SME</fullName>
+        <default>false</default>
+        <label>SME</label>
+    </customValue>
+    <customValue>
+        <fullName>AMS</fullName>
+        <default>false</default>
+        <label>AMS</label>
+    </customValue>
+    <customValue>
+        <fullName>SEA</fullName>
+        <default>false</default>
+        <label>SEA</label>
+    </customValue>
+    <customValue>
+        <fullName>Europe</fullName>
+        <default>false</default>
+        <label>Europe</label>
+    </customValue>
+    <customValue>
+        <fullName>GBL</fullName>
+        <default>false</default>
+        <label>GBL</label>
+    </customValue>
+    <customValue>
+        <fullName>Europe-SME</fullName>
+        <default>false</default>
+        <label>Europe-SME</label>
+    </customValue>
+    <customValue>
+        <fullName>AMS-SME</fullName>
+        <default>false</default>
+        <label>AMS-SME</label>
+    </customValue>
+    <customValue>
+        <fullName>UNKNOWN-UNASSIGNED</fullName>
+        <default>false</default>
+        <label>UNKNOWN-UNASSIGNED</label>
+    </customValue>
+    <customValue>
+        <fullName>ANZ-SME</fullName>
+        <default>false</default>
+        <label>ANZ-SME</label>
+    </customValue>
+    <customValue>
+        <fullName>China-SME</fullName>
+        <default>false</default>
+        <label>China-SME</label>
+    </customValue>
+    <customValue>
+        <fullName>India-SME</fullName>
+        <default>false</default>
+        <label>India-SME</label>
+    </customValue>
+    <customValue>
+        <fullName>SEA-SME</fullName>
+        <default>false</default>
+        <label>SEA-SME</label>
+    </customValue>
+    <customValue>
+        <fullName>Hong Kong-SME</fullName>
+        <default>false</default>
+        <label>Hong Kong-SME</label>
+    </customValue>
+    <customValue>
+        <fullName>India-C&amp;V</fullName>
+        <default>false</default>
+        <label>India-C&amp;V</label>
+    </customValue>
+    <customValue>
+        <fullName>Indonesia</fullName>
+        <default>false</default>
+        <label>Indonesia</label>
+    </customValue>
+    <customValue>
+        <fullName>C&amp;V</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>C&amp;V</label>
+    </customValue>
+    <masterLabel>Region</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

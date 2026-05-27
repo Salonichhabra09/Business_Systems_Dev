@@ -1,0 +1,175 @@
+<template>
+    
+    <lightning-card class="page-card-css">
+        <div class="slds-is-relative">
+            <div>
+              <!-- <div class="slds-notify__content">
+                <h2 class="slds-text-heading_x-small slds-m-horizontal_large slds-m-vertical_small">
+                This is an Original 'Closed/Won' Opportunity with completed Order, you may debook it, if required.
+                </h2>
+              </div> -->
+              <div class="slds-grid">
+                <!-- <div class="slds-m-left_medium slds-m-right_x-small">
+                    <lightning-icon icon-name="utility:info" alternative-text="Warning!" size="x-small"></lightning-icon>
+                </div> -->
+                <div class="slds-col slds-m-left_small">
+                    <b>Please click on create debook to start the debooking process.</b>
+                </div>
+            </div>
+            <div class="slds-m-top_small slds-m-right_small slds-clearfix">
+                <lightning-button class="slds-float_right" label="Create Debook" type="submit" title="Create Debook" onclick={openDebookingModal} variant="brand"></lightning-button>
+            </div>
+            </div>
+          </div>
+    </lightning-card>
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading" size="medium" ></lightning-spinner>
+    </template>
+    <template if:true={isDebookingModal}>
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open custom-alignment">
+        <div class="slds-modal__container slds-is-relative">
+            <!-- Modal/Popup Box LWC header here -->
+            <div class="slds-is-relative custom-width">
+                <template if:true={showSpinner}>
+                    <lightning-spinner alternative-text="Loading" size="medium" ></lightning-spinner>
+                </template>
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeDebookingModal}>
+                    <lightning-icon icon-name="utility:close"
+                        alternative-text="close"
+                        variant="inverse"
+                        size="small" ></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <h3 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Debook Opportunity</h3>
+            </header>
+        <div class="slds-modal__content slds-p-horizontal_medium slds-p-bottom_medium card-css" id="modal-content-id-2">
+            <div class="slds-notify_container slds-is-relative slds-m-bottom_small">
+                <div class="slds-notify slds-notify_toast slds-theme_warning" role="status">
+                  <span class="slds-assistive-text">warning</span>
+                  <span class="slds-icon_container slds-icon-utility-warning slds-m-right_small slds-no-flex slds-align-top" title="Description of icon when needed">
+                    <lightning-icon icon-name="utility:warning" size="small"></lightning-icon>
+                  </span>
+                  <div class="slds-notify__content">
+                    <h3 class="slds-text-heading_x-small ">{Debooking_Warning}</h3>
+                  </div>
+                </div>
+              </div>
+            <lightning-layout horizontal-align="spread">
+                <lightning-layout-item>
+                    <!-- SSE-27840 changes start -->
+                    <!-- <fieldset class="slds-form-element">
+                        <legend class="slds-m-bottom_small radio-label-header">Please choose one of the following options :</legend>
+                        <div class="slds-form-element__control">
+                            <lightning-layout horizontal-align="spread">
+                                <lightning-layout-item class="slds-m-right_medium">
+                                    <span class="slds-radio">
+                                        <input type="radio" id="radio-61" value="radio-61" name="Quantity or Sales Price" checked={isQuantityOrSalesPriceChecked} onchange={handleChange} />
+                                        <label class="slds-radio__label" for="radio-61">
+                                          <span class="slds-radio_faux"></span>
+                                          <span class="slds-form-element__label">Quantity or Sales Price</span>
+                                        </label>
+                                      </span>
+                                </lightning-layout-item>
+                                <lightning-layout-item class="slds-m-left_xx-large">
+                                    <lightning-layout>
+                                        <lightning-layout-item>
+                                            <span class="slds-radio">
+                                                <input type="radio" id="radio-62" value="radio-62" name="Percentage" checked={isPercentageChecked} onchange={handleChange}/>
+                                                <label class="slds-radio__label" for="radio-62">
+                                                  <span class="slds-radio_faux"></span>
+                                                  <span class="slds-form-element__label">Percentage
+                                                  </span>
+                                                </label>
+                                              </span>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="4">
+                                            <lightning-input class="slds-m-left_x-small" type="number" formatter="percent-fixed" step="0.01" value={percentageValue} variant="label-hidden" onchange={handlePercentageChange} disabled={isPercentageDisabled}></lightning-input>
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </div>
+                      </fieldset>  -->
+                      <!-- SSE-27840 changes end -->
+                </lightning-layout-item>
+                <lightning-layout-item>
+                <lightning-layout>
+                <lightning-layout-item class="slds-m-right_small">
+                    <div>
+                    <p class="total-potential-value-header"><span class="slds-m-top_x-small">Inflation Amount </span> <lightning-helptext content="Inflation Amount only considers the price from the Original Opportunity line items. If inflation is applicable on Variation line items as well please adjust the debook value accordingly"></lightning-helptext></p>
+                    <p>{currencyIsoCode}  {inflationAmount}</p>
+                </div>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-m-right_small">
+                    <div>
+                    <p class="total-potential-value-header">Original Amount</p>
+                    <p style="margin-top: 4px;">{currencyIsoCode}  {totalSalesPrice}</p>
+                </div>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-m-right_small">
+                    <div>
+                    <p class="total-potential-value-header">Already Debooked Amount</p>
+                    <p style="margin-top: 4px;color:red">{currencyIsoCode}  {alreadyDebookedAmount}
+                        <!-- <lightning-dynamic-icon 
+                        type="trend" 
+                        class="slds-m-left_x-small"
+                        option="down" 
+                        alternative-text="Trending down">
+                    </lightning-dynamic-icon> -->
+                    <lightning-icon class="slds-m-left_xx-small" icon-name="utility:arrowdown"  variant="error" size="xx-small"></lightning-icon>
+                </p>
+                </div>
+                </lightning-layout-item>
+                <lightning-layout-item>
+                    <div>
+                    <p class="total-potential-value-header">Amount to be Debooked </p>
+                    <p style="margin-top: 4px;color:red">{currencyIsoCode} {debookedValueFormatted} 
+                        <!-- <lightning-dynamic-icon 
+                        lwc:if={alreadyDebookedAmountIcon}
+                        type="trend" 
+                        class="slds-m-left_x-small"
+                        option="down" 
+                        alternative-text="Trending down">
+                    </lightning-dynamic-icon> -->
+                    <lightning-icon class="slds-m-left_xx-small" icon-name="utility:arrowdown"  variant="error" size="xx-small"></lightning-icon>
+                </p>
+                </div>
+                </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+            </lightning-layout>
+        <lightning-card title="Available Opportunity Products" icon-name="standard:product_item">
+        <lightning-button label="Reset All" slot="actions" onclick={handleReset}></lightning-button>
+        <div lwc:if={showOppLines} class="slds-border_left slds-border_right slds-border_top slds-border_bottom max-height">
+        <c-custom-datatable
+                    key-field="rowNum"
+                    data={oppLinesAvailableToDebook}
+                    columns={columns}
+                    onupdatevalue={handleUpdateValue}
+                    min-column-width="100"
+                    wrap-text-max-lines="5"
+                    selected-rows={currentlySelectedRows}
+                    onrowselection={handleRowSelection}
+                    onrowaction={handleRowAction}
+                    sorted-by={sortBy}
+                    sorted-direction={sortDirection}
+                    onsort={handleSort}
+                    >
+            </c-custom-datatable>
+        </div>
+        <div lwc:else>
+            <p class="slds-align_absolute-center slds-m-top_medium">No Opportunity Line Items available to debook!</p>
+        </div>
+    </lightning-card>
+</div>
+    <footer class="slds-modal__footer">
+        <button class="slds-button slds-button_neutral" onclick={closeDebookingModal} type="Cancel" title="Cancel">Cancel</button>
+        <button class="slds-button slds-button_brand" title="Confirm" onclick={handleStartDebookingProcess} disabled={isSaveDisabled}>Confirm</button>
+    </footer>
+        </div>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+</template>

@@ -1,0 +1,15 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >	
+    <aura:attribute name="CommercialLabel" type="String" description="Attribute to store the Labels for Commercial"/>
+    <aura:attribute name="CommercialURLLabel" type="String" description="Attribute to store the URL"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <a href="http://sps.shl.com/Pages/Home2.aspx" target="_blank">Commercial Resource Centre</a><br/>
+    <a href="http://sps.shl.com/src/SitePages/Subscriptions.aspx" target="_blank">Subscription Resources</a><br/>
+    <a href="http://sps.shl.com/src/SitePages/Commercial%20Templates.aspx" target="_blank">Commercial Templates</a><br/>
+    <a href="https://www.concursolutions.com" target="_blank">Concur Expenses</a><br/>
+    <a href="http://demo.select2perform.com/default" target="_blank">S2P DEMO</a><br/>
+    <a href="http://www.select2perform.com/default" target="_blank">S2P LIVE</a><br/>
+    <a href="https://ondemand.shl.com" target="_blank">SODA Live</a><br/>
+    <a href="http://sps.shl.com/src/SitePages/PricingRegional.aspx" target="_blank">Regional Prices Lists and Calculators</a><br/>
+    <a href="http://sps.shl.com/Pages/Home.aspx" target="_blank">SHL Sharepoint</a><br/>    
+    <a href="{!v.CommercialURLLabel}" target="_blank">Commercial Reporting - On Demand</a><br/> 
+</aura:component>

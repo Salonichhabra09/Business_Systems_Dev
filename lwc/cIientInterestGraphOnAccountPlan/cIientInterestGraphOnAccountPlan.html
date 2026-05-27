@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="History Trend Based on TA/TM (USD)" icon-name="standard:metrics">
+        <div class="tempdiv" data-id="data">
+            <template if:true={chartConfigurationForYearWise}>
+                <c-custom-dashboard-component
+                    chart-config={chartConfigurationForYearWise} ></c-custom-dashboard-component>
+            </template>
+        </div>
+        <lightning-layout horizontal-align="spread" class="slds-p-horizontal_x-small">
+            <lightning-layout-item>
+                <div class="slds-align_absolute-center">
+                    <a onclick={navigateToReport}>View Report</a>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <lightning-layout>
+                    <lightning-layout-item>
+                        <div class="box blue slds-float_right slds-m-horizontal_small slds-m-top_xx-small"></div>
+                    </lightning-layout-item>
+                    <lightning-layout-item>
+                        <p>Talent Acquisition</p>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout>
+                    <lightning-layout-item>
+                        <div class="box dark-blue slds-float_right slds-m-horizontal_small slds-m-top_xx-small"></div>
+                    </lightning-layout-item>
+                    <lightning-layout-item>
+                        <p>Talent Management</p>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+    
+</template>

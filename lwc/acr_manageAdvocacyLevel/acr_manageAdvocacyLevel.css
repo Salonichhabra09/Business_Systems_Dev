@@ -1,0 +1,111 @@
+.icon-container {
+    display: flex;
+    flex-direction: row;
+    /* Align items horizontally */
+    align-items: center;
+    /* Vertically center items */
+    gap: 10px;
+    /* Space between each role-icon pair */
+    flex-wrap: wrap;
+    /* Wrap items if the container is too small */
+    justify-content: center;
+    min-height: 2.8rem;
+    max-height: 2.8rem;
+}
+
+.role-icon {
+    display: flex;
+    flex-direction: column;
+    /* Icon and label stack vertically */
+    align-items: center;
+    /* Center align within each block */
+    text-align: center;
+}
+
+.enlargeIcon {
+    transition: all .2s ease-in-out;
+}
+
+.enlargeIcon:hover {
+    transform: scale(1.5);
+}
+
+.redBackGround {
+    --slds-c-icon-color-foreground: white;
+    --slds-c-icon-color-background: red;
+}
+
+.greenBackGround {
+    --slds-c-icon-color-foreground: white;
+    --slds-c-icon-color-background: red;
+}
+
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-icon {
+    cursor: pointer;
+}
+
+.dropdown-listbox {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.dropdown-listbox ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-listbox li {
+    padding: 8px 16px;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-listbox li:hover {
+    background: #f4f4f4;
+}
+
+.option-icon {
+    margin-left: 10px;
+}
+
+.option-label {
+    flex-grow: 1;
+    text-align: left;
+    margin-right: 10px;
+}
+
+.blocker-icon {
+    --slds-c-icon-color-background: #C70306;
+}
+
+.champion-icon{
+    --slds-c-icon-color-foreground-default: #FFD700;
+    --slds-c-icon-color-foreground: #FFD700;
+}
+
+.reduce-size{
+    zoom: .5;
+}
+
+.weak-icon{
+    width: 15px;
+    height: 15px;
+}
+
+.coach-icon{
+    --slds-c-icon-color-foreground-default: #ce8946;
+}

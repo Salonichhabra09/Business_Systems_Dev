@@ -1,0 +1,120 @@
+<template>
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+            <div class="slds-media__figure">
+                <lightning-icon icon-name="standard:groups" size="medium"></lightning-icon>
+            </div>
+            <div class="slds-media__body">
+                <h2 class="slds-card__header-title">
+                    <span>Candidate Creation</span>
+                </h2>
+            </div>
+        </header>
+        </div>
+        <div class="slds-card__body slds-card__body_inner container slds-scrollable">
+        <template for:each={candidateList} for:item="candidate" for:index="index">
+            <lightning-record-edit-form key={candidate.Email__c} object-api-name="Bureau_Candidate__c">
+                <lightning-messages> </lightning-messages>
+                <lightning-layout>
+                    <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2" class="job-input-element"
+                        padding="around-small">
+                        <lightning-input-field onchange={handleInputFieldChange} value={recordId} disabled="true" access-key={index} field-name="Bureau_Job__c" variant="label-stacked" required>
+                        </lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2" class="input-element"
+                        padding="around-small">
+                        <lightning-input-field onchange={handleInputFieldChange} value={candidate.First_Name__c} access-key={index} field-name="First_Name__c" variant="label-stacked" required>
+                        </lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2" class="input-element"
+                        padding="around-small">
+                        <lightning-input-field onchange={handleInputFieldChange} value={candidate.Last_Name__c} access-key={index} field-name="Last_Name__c" variant="label-stacked">
+                        </lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2" class="input-element"
+                        padding="around-small">
+                        <lightning-input-field onchange={handleInputFieldChange} value={candidate.Email__c} access-key={index} field-name="Email__c" variant="label-stacked" required>
+                        </lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2" class="input-element"
+                        padding="around-small">
+                        <lightning-input-field onchange={handleInputFieldChange} value={candidate.Phone_Number__c} access-key={index} field-name="Phone_Number__c" variant="label-stacked">
+                        </lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2" class="input-element"
+                        padding="around-small">
+                        <lightning-input-field onchange={handleInputFieldChange} value={candidate.Gender__c} access-key={index} field-name="Gender__c" variant="label-stacked">
+                        </lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2" class="input-element"
+                        padding="around-small">
+                        <lightning-input-field onchange={handleInputFieldChange} value={candidate.Language__c} access-key={index} field-name="Language__c" variant="label-stacked">
+                        </lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2" class="input-element"
+                        padding="around-small">
+                        <lightning-input-field onchange={handleInputFieldChange} value={candidate.Country__c} access-key={index} field-name="Country__c" variant="label-stacked">
+                        </lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2" class="input-element"
+                        padding="around-small">
+                        <div class="slds-form-element__control">
+                        <lightning-combobox
+                        name="Status"
+                        label="Status"
+                        value={value}
+                        options={statusOptions}
+                        onchange={handleInputFieldChange} 
+                        access-key={index}></lightning-combobox>
+                    </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2" class="input-element"
+                        padding="around-small">
+                        <lightning-input-field onchange={handleInputFieldChange} value={candidate.Reports_Status__c} access-key={index} field-name="Reports_Status__c" variant="label-stacked">
+                        </lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2" class="input-element"
+                        padding="around-small">
+                        <lightning-input-field onchange={handleInputFieldChange} value={candidate.Username__c} access-key={index} field-name="Username__c" variant="label-stacked">
+                        </lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2" class="input-element"
+                        padding="around-small">
+                        <lightning-input-field onchange={handleInputFieldChange} value={candidate.Product_Assessment__c} access-key={index} field-name="Product_Assessment__c" variant="label-stacked">
+                        </lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2" class="input-element"
+                        padding="around-small">
+                        <lightning-input-field onchange={handleInputFieldChange} value={candidate.System_s__c} access-key={index} field-name="System_s__c" variant="label-stacked">
+                        </lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item flexibility="auto, no-grow" style="display: flex; align-items: center;">
+                        <lightning-icon class="slds-var-m-horizontal_x-small cursor-pointer" icon-name="utility:copy" access-key={index} id={index}
+                                alternative-text="Clone Row" size="small" title="Clone Row" onclick={cloneRow}>
+                            </lightning-icon>
+                            </lightning-layout-item>
+                    <lightning-layout-item flexibility="auto, no-grow" style="display: flex; align-items: center;">
+                        <lightning-icon class="slds-var-m-horizontal_x-small cursor-pointer" icon-name="utility:add" access-key={index} id={index}
+                            alternative-text="Add Row" size="small" title="Add Row" onclick={addRow}>
+                        </lightning-icon>
+                    </lightning-layout-item>
+                    <lightning-layout-item flexibility="auto, no-grow" style="display: flex; align-items: center;">
+                            <lightning-icon class="slds-var-m-horizontal_x-small cursor-pointer" icon-name="utility:delete" access-key={index} id={index}
+                                alternative-text="Delete Row" size="small" title="Delete Row" onclick={removeRow}>
+                            </lightning-icon>
+                    </lightning-layout-item>
+                </lightning-layout>
+
+            </lightning-record-edit-form>
+        </template>
+        <div>
+            <lightning-button class="slds-var-p-right_small" icon-name="utility:add" variant="neutral" label="Add Row" title="Add Row" onclick={addRow}></lightning-button>
+        </div>
+        </div>
+        <footer class="slds-modal__footer slds-align_absolute-center" style="padding: 0.50rem 1rem;">
+            <lightning-button class="slds-var-m-horizontal_x-small" icon-name="utility:close" variant="destructive" label="Cancel" title="Cancel" onclick={handleCandidateCancel}></lightning-button>
+            <lightning-button class="slds-var-m-horizontal_x-small" icon-name="utility:save" variant="brand" label="Save" title="Save" onclick={handleSubmit}></lightning-button>
+        </footer>
+    </article>
+</template>

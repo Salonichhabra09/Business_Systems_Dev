@@ -1,0 +1,6 @@
+<design:component >
+    <design:attribute name="objectName" label="Object API Name"  required="true" />
+    <design:attribute name="id" label="Account Id"  required="true"/>
+    <design:attribute name="accountName" label="Account Name"  required="true"/>
+    <design:attribute name="accountNumber" label="Account Number"  required="true"/>
+</design:component>

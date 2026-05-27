@@ -1,0 +1,35 @@
+.font-size {
+    font-size: 0.9rem;
+}
+
+.font-weight-label {
+    font-weight: 650;
+}
+
+.font-weight-value {
+    font-weight: 600;
+}
+
+.slds-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.auto-height{
+    overflow-y: auto;
+    max-height: calc(8 * 40px);
+}
+
+.map-table{
+    border: solid;
+    border-width: thin;
+}
+
+.table-column{
+    border-bottom: solid;
+    border-width: thin;
+}
+
+.blank-column{
+    width: 3.5rem;
+}

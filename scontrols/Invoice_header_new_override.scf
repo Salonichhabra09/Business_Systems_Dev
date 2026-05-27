@@ -1,0 +1,4 @@
+<script> 
+alert("Please create an invoice header from any of the Order record."); 
+top.window.location = "/a0c/o"; 
+</script>

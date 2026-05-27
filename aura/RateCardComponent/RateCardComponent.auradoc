@@ -1,0 +1,12 @@
+<aura:documentation>
+    
+    <aura:example name="ExampleName" ref="c:RateCardComponent" label="Yearly Forecast Information">
+    </aura:example> 
+    
+    <aura:description>
+        <h1 style="font-size:60px;">Overview</h1>
+        
+        <p>This Component is displaying the yearly forecast information in tabular format. </p>
+        <p>-The component is displaying table when Opportunity is Ignite and displaying a message when opportunity is not Ignite.</p>
+    </aura:description>
+</aura:documentation>

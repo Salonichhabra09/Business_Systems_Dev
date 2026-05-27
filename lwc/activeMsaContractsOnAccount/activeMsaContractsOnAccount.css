@@ -1,0 +1,10 @@
+.bold{
+    font-weight: 500;
+}
+.plain{
+    font-weight: 450;
+}
+.maxHeight{
+    max-height: 15rem;
+    overflow-y:auto;
+}

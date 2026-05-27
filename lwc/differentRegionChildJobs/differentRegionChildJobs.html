@@ -1,0 +1,17 @@
+<template>
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading" variant="brand"></lightning-spinner>
+    </template>
+    <template if:true={showTable}>
+        <lightning-card variant="Narrow" title={cardHeaderName} icon-name="custom:custom45"
+            class="slds-text-heading_small">
+            <lightning-button-icon icon-name="utility:refresh" variant="border-filled" alternative-text="Refresh List"
+                title="Refresh List" onclick={handleRefreshList} slot="actions"></lightning-button-icon>
+            <lightning-button variant="neutral" label={buttonName} title={buttonName} onclick={handleNew}
+                class="slds-m-left_x-small" slot="actions"></lightning-button>
+            <lightning-datatable key-field="id" data={jobRecords} show-row-number-column row-number-offset={rowOffset}
+                hide-checkbox-column columns={columns}>
+            </lightning-datatable>
+        </lightning-card>
+    </template>
+</template>

@@ -1,0 +1,158 @@
+<template>
+    <!-- Choose Existing Contact -->
+    <template lwc:if={showChooseExistingContactModal}>
+        <div style={modalresize}>
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+                class="slds-modal slds-fade-in-open slds-modal_medium">
+                <div class="slds-modal__container" onclick={handleCloseEditOnBlur}>
+                    <div class="slds-is-relative">
+                        <template if:true={isShowSpinner}>
+                            <lightning-spinner alternative-text=" Saving..." size="small"></lightning-spinner>
+                        </template>
+                        <!-- Modal Header -->
+                        <div class="slds-modal__header">
+                            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                title="Close" onclick={handleCancelOnAddExistingContactModal}>
+                                <lightning-icon icon-name="utility:close" alternative-text="Close" variant="inverse"
+                                    size="small"></lightning-icon>
+                                <span class="slds-assistive-text">Cancel and close</span>
+                            </button>
+                            <h1 id="modal-heading-03" class="slds-modal__title slds-hyphenate">
+                                <div lwc:if={showNextScreen}>
+                                    Add Sales Persona
+                                </div>
+                                <div lwc:else>
+                                    Choose Contact
+                                </div>
+                            </h1>
+                        </div>
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-3">
+                            <template lwc:if={showNextScreen}>
+                                <table
+                                    class="slds-table slds-table_cell-buffer slds-table_bordered slds-border_left slds-border_right slds-border_top slds-border_bottom">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 50px;" class="" scope="col">
+                                                <div>#</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title=""><span
+                                                        style="color:red">*</span>Contact
+                                                </div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="">Title
+                                                </div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title=""><span
+                                                        style="color:red">*</span>Persona
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <template for:each={selectedRows} for:item="contact" for:index="index">
+                                            <tr key={contact.Id}>
+                                                <td style="width: 50px;">
+                                                    <div>{contact.index}</div>
+                                                </td>
+                                                <td>
+                                                    <div class="slds-cell-wrap slds-box slds-box_x-small">{contact.Name}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="slds-cell-wrap slds-box slds-box_x-small">
+                                                        <template lwc:if={contact.Title}>
+                                                            {contact.Title}
+                                                        </template>
+                                                        <template lwc:else>
+                                                            --No Title--
+                                                        </template>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="slds-cell-wrap">
+                                                        <c-acr_custom-picklist-hierarhcy label="Options" name="options"
+                                                            options={personaOptions}
+                                                            onchange={handlePersonaOnNextScreen} accesskey={index}
+                                                            pre-selected-options={contact.Persona} class="roleField"
+                                                            value={contact.Persona}
+                                                            single-select="true"></c-acr_custom-picklist-hierarhcy>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </template>
+                                    </tbody>
+                                </table>
+                            </template>
+                            <template lwc:else>
+                                <template lwc:if={data}>
+                                    <lightning-layout>
+                                        <lightning-layout-item size="6">
+                                            <lightning-card title="Contacts"
+                                                icon-name="standard:contact"></lightning-card>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="4" padding="top-small">
+                                            <lightning-input type="search" label="Search Contact"
+                                                onchange={handleSearchContact} variant="label-hidden">
+                                            </lightning-input>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="2" padding="left-small">
+                                            <lightning-button variant="brand" label="Search"
+                                                onclick={handleSearchAction}></lightning-button>
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                    <template lwc:if={showTable}>
+                                        <div class="slds-m-top_medium slds-border_left slds-border_right slds-border_top slds-border_bottom slds-m-horizontal_small"
+                                            style="height: 300px;">
+                                            <lightning-datatable key-field="Id" data={data} columns={columns}
+                                                selected-rows={selectedRowsIds} onrowselection={handleRowSelection}
+                                                min-column-width="120" data-id="datatable" enable-infinite-loading
+                                                load-more-offset="1" onloadmore={loadData} lwc:if={isNotReplace}>
+                                            </lightning-datatable>
+                                            <lightning-datatable key-field="Id" data={data} columns={columns}
+                                                onrowselection={handleRowSelectionForReplace} max-row-selection="1"
+                                                min-column-width="120" data-id="datatable" enable-infinite-loading
+                                                load-more-offset="1" onloadmore={loadData} lwc:else>
+                                            </lightning-datatable>
+                                        </div>
+                                    </template>
+                                    <template lwc:if={contactExistsInHierarchy}>
+                                        <p class="slds-align_absolute-center">{errorToDisplay}</p>
+                                    </template>
+                                    <div
+                                        class="slds-align_absolute-center slds-var-m-vertical_medium slds-text-body_small slds-text-color_weak">
+                                        {loadMoreStatus}
+                                    </div>
+                                </template>
+                                <template lwc:else>
+                                    <lightning-card title="Contacts" icon-name="standard:contact">
+                                        <p class="slds-align_absolute-center">No Active Contacts Found!</p>
+                                    </lightning-card>
+                                </template>
+                            </template>
+                        </div>
+                        <div class="slds-modal__footer">
+                            <!-- Back buttons -->
+                            <button class="slds-button slds-button_neutral" aria-label="Back"
+                                onclick={handleBackAddContactModal}>Back</button>
+                            <!-- Save button -->
+                            <button lwc:if={showNextScreen} class="slds-button slds-button_brand"
+                                disabled={disableSaveChooseExisting} onclick={handleSaveAddContact}>Save</button>
+                            <!-- Next button -->
+                            <button lwc:else class="slds-button slds-button_brand" disabled={disableNextChooseExisting}
+                                onclick={handleNextOnAddContactModal}>Next</button>
+                            <!-- Cancel button -->
+                            <button class="slds-button slds-button_neutral" aria-label="Cancel"
+                                onclick={handleCancelOnAddExistingContactModal}>Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Modal backdrop -->
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </div>
+    </template>
+
+</template>

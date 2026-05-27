@@ -1,0 +1,8 @@
+<apex:page standardController="Invoice_Billing_Detail__c" extensions="InvoiceBillingDetailsOverrirdeController" action="{!if(invoice.Status__c='In Progress',URLFOR($Action.Invoice_Billing_Detail__c.Edit, Invoice_Billing_Detail__c.id, ['retURL'='/'+invoiceBillingDetail.Invoice_Request__c], true),null)}" standardStylesheets="true">
+    <apex:variable var="UserCanEditRecords" value="{!invoice.Status__c='In Progress'}" />
+    <apex:form rendered="{!NOT(UserCanEditRecords)}">
+    <apex:pageMessage severity="Error" summary="You cannot edit Invoice Billing Details as Invoice Request is Submitted for Processing or Processed" strength="1">
+<apex:commandLink value="Back" action="/{!invoice.Id}"/>
+</apex:pageMessage>
+    </apex:form>
+</apex:page>

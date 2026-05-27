@@ -1,0 +1,307 @@
+<aura:component controller="TimeSheetLogMultiProjectController"
+    implements="force:hasSObjectName,lightning:actionOverride,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction"
+    access="global">
+
+    <aura:attribute name="dataReceived" type="String" />
+
+    <aura:attribute name="currentUserName" type="String" />
+    <aura:attribute name="options" type="List" default="[
+                                                        {'label': 'Daily', 'value': '1'},
+                                                        {'label': 'Weekly', 'value': '7'},
+                                                        {'label': 'Monthly', 'value': '30'},
+                                                        ]" />
+    <aura:attribute name="DateTimeList" type="List" default="[
+                                                             {'label': 'Daily', 'value': '1'}]" />
+    <aura:attribute name="Totalhrs" type="Integer" default="0" />
+    <aura:attribute name="CurrentTimesheets" type="Timesheet_Line__c[]" />
+    <aura:attribute name="TimesheetsToDelete" type="Timesheet_Line__c[]" />
+    <aura:attribute name="DatewrapList" type="object" />
+    <aura:attribute name="DateToday" type="String" />
+    <aura:attribute name="EndOfweekDt" type="String" />
+    <aura:attribute name="StrtOfweekDt" type="String" />
+    <aura:attribute name="DayItems" type="list" />
+    <aura:attribute name="PerDayLoggedHours" type="list" />
+    <aura:attribute name="selectedView" type="String" default="Week" />
+    <aura:attribute name="curPrdStdate" type="String" />
+    <aura:attribute name="curPrdEDdate" type="String" />
+    <aura:attribute name="TimePeriod" type="String" />
+    <aura:attribute name="EditMode" type="boolean" default="true" />
+    <aura:attribute name="selectedId" type="String" default="" />
+    <aura:attribute name="returnFields" type="List" />
+    <aura:attribute name="ProjName" type="String" />
+    <aura:attribute name="TimeSheetList" type="Timesheet_Line__c[]" />
+    <aura:attribute name="TimeSheetListB" type="Timesheet_Line__c[]" />
+    <aura:attribute name="TimeSheetRow" type="Object[]" />
+    <aura:attribute name="InitialList" type="List" />
+    <aura:attribute name="Timesheetrecords" type="Timesheet_Line__c[]" />
+    <aura:attribute name="ProjectRecord" type="ProjectObject__c" />
+    <aura:attribute name="spinner" type="boolean" default="FALSE" />
+    <aura:attribute name="CurrentPeriodDate" type="Date" />
+    <!-- <aura:handler event="aura:locationChange" action="{!c.ConfirmationCheck}"/>
+     <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/> -->
+    <!--<ltng:require styles="{!$Resource.NoHeader}"/> Do NOT REMOVE-->
+    <aura:if isTrue="{!v.spinner}">
+        <div aura:id="spinnerId" class="slds-spinner_container">
+            <div class="slds-spinner--brand  slds-spinner slds-spinner--large slds-is-relative" role="alert">
+                <span class="slds-assistive-text">Loading...</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </aura:if>
+
+    <!--<div style="background-color:#ecebea;border: 1px solid rgb(8 7 7 / 12%);border-radius:3px;"> Do Not Remove-->
+    <div class="slds-page-header">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media" style="padding: 8px;">
+                    <div class="slds-media__figure">
+                        <span class="slds-icon_container standard:timesheet_entry" title="Time Sheets">
+                            <lightning:icon iconName="standard:timesheet_entry" size="large"
+                                alternativeText="Time Sheet Entries" />
+                            <span class="slds-assistive-text">Timesheet_Line__c</span>
+                        </span>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate"
+                                        title="{!v.currentUserName}">{!v.currentUserName}</span>
+                                    <p style="color:red">Please do not open Timesheet app in<b> multiple tabs</b> or on
+                                        <b>different browsers</b> concurrently. Always <b>refresh</b> before resuming
+                                        the work to avoid inconsistency in timesheet data.
+                                    </p>
+                                </h1>
+                            </div>
+                        </div>
+                        <b>
+                            <p class="slds-page-header__name-meta">Hours Logged</p>
+                        </b>
+                        <div align="center">
+                            <lightning:buttonIcon iconName="utility:dayview" value="Day" size="large" variant="brand"
+                                alternativeText="Day view" onclick="{!c.handleChange}" />
+                            <lightning:buttonIcon iconName="utility:weeklyview" value="Week" size="large"
+                                variant="brand" alternativeText="Week view" onclick="{!c.handleChange}" />
+                            <lightning:buttonIcon iconName="utility:monthlyview" value="Month" size="large"
+                                variant="brand" alternativeText="Month view" onclick="{!c.handleChange}" />
+                            &nbsp;&nbsp;
+                            <lightning:buttonIcon iconName="utility:left" value="-1" size="large" variant="brand"
+                                alternativeText="monthview" onclick="{!c.PeriodHandler}" />
+                            &nbsp;<b>
+                                <ui:outputText value="{!v.selectedView}" />:&nbsp;{!v.TimePeriod}
+                            </b>&nbsp;
+                            <lightning:buttonIcon iconName="utility:right" value="1" size="large" variant="brand"
+                                alternativeText="monthview" onclick="{!c.PeriodHandler}" />
+                            <P style="display: inline;font-weight: bold;padding-left: 15px;padding-right: 5px;">This
+                                Week</P>
+                            <lightning:buttonIcon iconName="utility:date_input" value="Month" size="large"
+                                variant="brand" alternativeText="Month view" onclick="{!c.SetCurrentWeek}" />
+                            <div style="display:inline" class="slds-float_right">
+                                <lightning:buttonGroup>
+                                    <aura:if isTrue="{!v.EditMode}">
+                                        <lightning:button variant="Neutral" label="Edit TimeSheets"
+                                            onclick="{!c.EnableEdit}" />
+                                    </aura:if>
+                                    <aura:if isTrue="{!!v.EditMode}">
+                                        <lightning:button aura:id="quicksave" variant="Neutral" label="Quick Save"
+                                            onclick="{!c.saveTimeSheets}" />
+                                        <lightning:button aura:id="save" variant="Neutral" label="Save"
+                                            onclick="{!c.saveTimeSheets}" />
+                                        <lightning:button aura:id="cancel" variant="Neutral" label="Cancel"
+                                            onclick="{!c.cancelchanges}" />
+                                        <aura:if isTrue="{!v.selectedView!='Day'}">
+                                            <lightning:buttonMenu label="Clone" alternativeText="Show menu"
+                                                class="slds-button_last" onselect="{!c.handleMenuSelect}">
+                                                <aura:if isTrue="{!v.selectedView=='Week'}">
+                                                    <lightning:menuItem label="Clone last Week"
+                                                        value="Clone last Week" />
+                                                    <lightning:menuItem label="Clone last 4 Weeks"
+                                                        value="Clone last 4 Weeks" />
+                                                </aura:if>
+                                                <aura:if isTrue="{!v.selectedView=='Month'}">
+                                                    <lightning:menuItem label="Clone last Month"
+                                                        value="Clone last Month" />
+                                                </aura:if>
+                                            </lightning:buttonMenu>
+                                        </aura:if>
+                                    </aura:if>
+
+                                </lightning:buttonGroup>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Event Handlers for Add Row-->
+    <aura:handler name="DeleteRowEvt" event="c:DeleteRowEvt" action="{!c.removeDeletedRow}" />
+    <aura:handler name="AddRowEvt" event="c:AddNewRowEvt" action="{!c.addNewRow}" />
+    <!--Declare Handler-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <!--<aura:handler event="force:refreshView" action="{!c.loadWholeWindow}" />-->
+
+    <lightning:card>
+        <table>
+            <thead>
+                <tr>
+                    <div>
+                        <th style="width:20px">S#</th>
+                        <!--<th style="width:15px;padding:0px"></th>-->
+                        <th style="width:140px;">Project<p style="display: inline;color:red;">*</p>
+                        </th>
+                        <th style="width:200px;">Project Name</th>
+                        <!-- SSE-20058 by Aashi-->
+                        <th style="width:200px;">Project Nickname</th>
+                        <th style="width:165px">Time Category<p style="display: inline;color:red;">*</p>
+                        </th>
+                        <!--<th style="width:165px">Task Category<p style="display: inline;color:red;">*</p>
+                        </th>-->
+                        <th style="width:165px">Task<p style="display: inline;color:red;">*</p>
+                        </th>
+                        <aura:iteration items="{!v.DayItems}" var="item">
+                            <th style="width:80px">{!item}</th>
+                        </aura:iteration>
+                        <th style="width:100px">Total Hours</th>
+                    </div>
+                </tr>
+            </thead>
+        </table>
+        <table aura:Id="table1">
+            <thead>
+                <aura:iteration items="{!v.TimeSheetRow}" var="Timesheet" indexVar="index">
+                    <lightning:recordEditForm aura:id="Timesheetform" objectApiName="Timesheet_Line__c">
+                        <tr>
+                            <div>
+                                <!-- Changed width from 30px to 20px -->
+                                <td style="width:20px">
+                                    {!index + 1}
+                                </td>
+                                <!--<td style="width:15px;text-align: center;padding:0px">
+                                    <lightning:icon iconName="utility:info" size="small" alternativeText="Delete Row" title="{!Timesheet.Timesheet.Project_Name__c}"/>
+                                </td>-->
+                                <!-- Changed width from 150px to 140px -->
+                                <td style="width:140px"> <!-- Changed width from 140px to 120px -->
+                                    <!-- Changes by Aashi 09 May 2024 -->
+                                    <!--<lightning:inputField id="{!index}" required="true" fieldName="Project__c"
+                                                                            value="{!Timesheet.Timesheet.Project__c}" variant="label-hidden"
+                                                                            disabled="{!v.EditMode}" onchange="{!c.GetProjectFunction}">
+                                                                        </lightning:inputField>-->
+                                    <c:customLookupComponent aura:id="customlookupcomponent"
+                                        objectName="ProjectObject__c" searchPlaceholder="Search Projects"
+                                        iconName="custom:custom11" label=""
+                                        preSelectedName="{!Timesheet.Timesheet.Project_Number__c}"
+                                        onlookupselected="{!c.handleContactSelection}"
+                                        onlookupunselect="{!c.handleContactRemoval}"
+                                        inputClassFromParent="slds-has-focus input-strategy" isRequired="true"
+                                        indexVal="{!index}" isDisabled="{!v.EditMode}">
+                                    </c:customLookupComponent>
+                                </td>
+                                <!-- SSE-20058 by Aashi: Added title attribute to display Project Name on mouse hover -->
+                                <td style="width:200px;text-align: center;padding:0px">
+                                    <!--<lightning:icon iconName="utility:info" size="small" alternativeText="Delete Row" title="{!Timesheet.Timesheet.Project_Name__c}"/>-->
+                                    <lightning:input value="{!Timesheet.Timesheet.Project_Name__c}"
+                                        variant="label-hidden" disabled="true"
+                                        title="{!Timesheet.Timesheet.Project_Name__c}"></lightning:input>
+                                </td>
+                                <!-- SSE-20058 by Aashi: Added Project Nickname column -->
+                                <td style="width:200px;text-align: center">
+                                    <lightning:input value="{!Timesheet.Timesheet.Project_Nickname__c}"
+                                        variant="label-hidden" disabled="true"
+                                        title="{!Timesheet.Timesheet.Project_Nickname__c}"></lightning:input>
+                                </td>
+                                <td style="width:165px">
+                                    <lightning:inputField required="true" fieldName="Time_Category__c"
+                                        value="{!Timesheet.Timesheet.Time_Category__c}" variant="label-hidden" label=''
+                                        disabled="{!v.EditMode}"></lightning:inputField>
+                                </td>
+                                <!--<td style="width:165px">
+                                    <lightning:inputField required="true" fieldName="Task_Category__c"
+                                        value="{!Timesheet.Timesheet.Task_Category__c}" variant="label-hidden" label=''
+                                        disabled="{!v.EditMode}"></lightning:inputField>
+                                </td>-->
+                                <td style="width:165px">
+                                    <lightning:inputField required="true" fieldName="Task__c"
+                                        value="{!Timesheet.Timesheet.Task__c}" variant="label-hidden" label=''
+                                        disabled="{!v.EditMode}" />
+                                </td>
+                                <aura:iteration items="{!Timesheet.Timesheet.DateTime}" var="item" aura:id="input2">
+                                    <td style="width:80px">
+                                        <lightning:input type="number" formatter="decimal" aura:id="input1"
+                                            variant="label-hidden" max="24"
+                                            messageWhenRangeOverflow="Hours/Day should not exceed 24"
+                                            disabled="{!v.EditMode}" name="{!item.label}" value="{!item.value}"
+                                            onchange="{!c.CountSum}" step="0.01" />
+                                    </td>
+                                </aura:iteration>
+
+                                <td style="width:80px">
+                                    <lightning:input style="font-weight: bold;" variant="label-hidden" type="number"
+                                        formatter="decimal" value="{!Timesheet.TotalHours}" disabled="true"
+                                        step="0.01" />
+                                </td>
+                            </div>
+                            <aura:if isTrue="{!!v.EditMode}">
+                                <td>
+                                    <a onclick="{!c.removeRow}" data-record="{!index}">
+                                        <lightning:icon iconName="utility:delete" size="small"
+                                            alternativeText="Delete Row" />
+                                        <span class="slds-assistive-text">Delete Row</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a onclick="{!c.addRow}" data-record="{!index}">
+                                        <lightning:icon iconName="utility:add" size="small" alternativeText="Add Row" />
+                                        <span class="slds-assistive-text">Add Row</span>
+                                    </a>
+                                </td>
+                            </aura:if>
+                        </tr>
+                    </lightning:recordEditForm>
+                </aura:iteration>
+            </thead>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <div>
+                        <td style="width:20px">
+                        </td>
+                        <td style="width:140px">
+                        </td>
+                        <td style="width:200px">
+                        </td>
+                        <!-- SSE-20058 by Aashi-->
+                        <td style="width:200px">
+                        </td>
+                        <!--<td style="width:165px">
+                        </td>-->
+                        <td style="width:173px">
+                        </td>
+                        <td style="width:170px;text-align: center">
+                            <b>Total Hours</b>
+                        </td>
+                        <aura:iteration items="{!v.PerDayLoggedHours}" var="item">
+                            <td style="width:80px">
+                                <lightning:input style="font-weight: bold;" variant="label-hidden" type="number"
+                                    formatter="decimal" value="{!item.Totalhours}" disabled="true" step="0.01" max="24"
+                                    messageWhenRangeOverflow="Hours/Day should not exceed 24" />
+                            </td>
+                        </aura:iteration>
+                    </div>
+                </tr>
+            </thead>
+        </table>
+        <aura:if isTrue="{!!v.EditMode}">
+            <br></br>
+            <br></br>
+            <div style="padding-left:10px">
+                <lightning:button label="ADD ROW" iconName="utility:add" iconPosition="left" variant=""
+                    onclick="{!c.addRow}" />
+            </div>
+        </aura:if>
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,963 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Associate_Compact_layout</fullName>
+        <fields>Name</fields>
+        <fields>Project__c</fields>
+        <fields>Delivery_BU__c</fields>
+        <fields>Associate_Type__c</fields>
+        <fields>Invoice_Month__c</fields>
+        <fields>Date_Invoiced_Received__c</fields>
+        <label>Associate Compact layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>All associates used for Course Bookings</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Approved_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Approved By</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Associate and other Costs (Approved By)</relationshipLabel>
+        <relationshipName>R00N20000001SbyYEAS</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Associate_Cost__c</fullName>
+        <description>The number of associate days against the associate cost per day (SF field: “day rate”) excluding expenses where cost type = “Associate Consultant” OR “volunteer”</description>
+        <formula>IF(OR(TEXT( Associate_Type__c )=&apos;Associate Consultant&apos;,TEXT( Associate_Type__c )=&apos;Volunteer&apos;) , Value__c  , 0 )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The number of associate days against the associate cost per day (SF field: “day rate”) excluding expenses where cost type = “Associate Consultant” OR “volunteer”</inlineHelpText>
+        <label>Associate Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Associate_Notes__c</fullName>
+        <label>Associate Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Associate_Status__c</fullName>
+        <description>This is a mandatory field when you book costs which are not related to associates.</description>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Provisional</fullName>
+                    <default>false</default>
+                    <label>Provisional</label>
+                </value>
+                <value>
+                    <fullName>Confirmed</fullName>
+                    <default>false</default>
+                    <label>Confirmed</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Associate_Type__c</fullName>
+        <label>Cost Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Actor</fullName>
+                    <default>false</default>
+                    <label>Actor</label>
+                </value>
+                <value>
+                    <fullName>Airfare</fullName>
+                    <default>false</default>
+                    <label>Airfare</label>
+                </value>
+                <value>
+                    <fullName>Airfare &amp; Train</fullName>
+                    <default>false</default>
+                    <label>Airfare &amp; Train</label>
+                </value>
+                <value>
+                    <fullName>Associate Consultant</fullName>
+                    <default>false</default>
+                    <label>Associate Consultant</label>
+                </value>
+                <value>
+                    <fullName>Courier</fullName>
+                    <default>false</default>
+                    <label>Courier</label>
+                </value>
+                <value>
+                    <fullName>Development Team</fullName>
+                    <default>false</default>
+                    <label>Development Team</label>
+                </value>
+                <value>
+                    <fullName>External Partner</fullName>
+                    <default>false</default>
+                    <label>External Partner</label>
+                </value>
+                <value>
+                    <fullName>Hotels</fullName>
+                    <default>false</default>
+                    <label>Hotels</label>
+                </value>
+                <value>
+                    <fullName>LBU</fullName>
+                    <default>false</default>
+                    <label>LBU</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Product Consumption</fullName>
+                    <default>false</default>
+                    <label>Product Consumption</label>
+                </value>
+                <value>
+                    <fullName>Taxi</fullName>
+                    <default>false</default>
+                    <label>Taxi</label>
+                </value>
+                <value>
+                    <fullName>Venue Cost</fullName>
+                    <default>false</default>
+                    <label>Venue Cost</label>
+                </value>
+                <value>
+                    <fullName>Volunteer</fullName>
+                    <default>false</default>
+                    <label>Volunteer</label>
+                </value>
+                <value>
+                    <fullName>Cross-Border Delivery</fullName>
+                    <default>false</default>
+                    <label>Cross-Border Delivery</label>
+                </value>
+                <value>
+                    <fullName>Localisation</fullName>
+                    <default>false</default>
+                    <label>Localisation</label>
+                </value>
+                <value>
+                    <fullName>Multimedia Costs</fullName>
+                    <default>false</default>
+                    <label>Multimedia Costs</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Associate__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Associate name lookup to contact</description>
+        <label>Associate</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Associate and other Costs (Associate)</relationshipLabel>
+        <relationshipName>Associates</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CloneSourceId__c</fullName>
+        <description>Backend field to help identify a cloned record. It saves the Id of the original record that was cloned.</description>
+        <externalId>false</externalId>
+        <label>CloneSourceId</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Courses__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Link to course which associate works on</description>
+        <label>Course</label>
+        <referenceTo>Courses__c</referenceTo>
+        <relationshipLabel>Associates</relationshipLabel>
+        <relationshipName>Associates</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date_Invoiced_Received__c</fullName>
+        <description>Date associate invoice received</description>
+        <inlineHelpText>This field should contain the date the Project related expense was incurred.</inlineHelpText>
+        <label>Date Incurred</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Day_Rate__c</fullName>
+        <description>Associate day rate</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter the Associate day rate, if relevant. SHL-incurred expenses (e.g. Airfares) should be entered in the Expenses field.</inlineHelpText>
+        <label>Day Rate</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_Worked__c</fullName>
+        <description>Number of days associate worked on course</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter the number of days worked by the associate/volunteer, if relevant. SHL-incurred expenses (e.g. Airfares) should be entered in the Expenses field.</inlineHelpText>
+        <label>Days Worked</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Delivery_BU__c</fullName>
+        <label>Delivery BU</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>AD1</fullName>
+                    <default>false</default>
+                    <label>AD1</label>
+                </value>
+                <value>
+                    <fullName>AU1</fullName>
+                    <default>false</default>
+                    <label>AU1</label>
+                </value>
+                <value>
+                    <fullName>BE5</fullName>
+                    <default>false</default>
+                    <label>BE5</label>
+                </value>
+                <value>
+                    <fullName>CA1</fullName>
+                    <default>false</default>
+                    <label>CA1</label>
+                </value>
+                <value>
+                    <fullName>CH1</fullName>
+                    <default>false</default>
+                    <label>CH1</label>
+                </value>
+                <value>
+                    <fullName>CN1</fullName>
+                    <default>false</default>
+                    <label>CN1</label>
+                </value>
+                <value>
+                    <fullName>DE5</fullName>
+                    <default>false</default>
+                    <label>DE5</label>
+                </value>
+                <value>
+                    <fullName>DK1</fullName>
+                    <default>false</default>
+                    <label>DK1</label>
+                </value>
+                <value>
+                    <fullName>FI1</fullName>
+                    <default>false</default>
+                    <label>FI1</label>
+                </value>
+                <value>
+                    <fullName>FR5</fullName>
+                    <default>false</default>
+                    <label>FR5</label>
+                </value>
+                <value>
+                    <fullName>HK1</fullName>
+                    <default>false</default>
+                    <label>HK1</label>
+                </value>
+                <value>
+                    <fullName>IN1</fullName>
+                    <default>false</default>
+                    <label>IN1</label>
+                </value>
+                <value>
+                    <fullName>IT1</fullName>
+                    <default>false</default>
+                    <label>IT1</label>
+                </value>
+                <value>
+                    <fullName>ME1</fullName>
+                    <default>false</default>
+                    <label>ME1</label>
+                </value>
+                <value>
+                    <fullName>NL5</fullName>
+                    <default>false</default>
+                    <label>NL5</label>
+                </value>
+                <value>
+                    <fullName>NO1</fullName>
+                    <default>false</default>
+                    <label>NO1</label>
+                </value>
+                <value>
+                    <fullName>NZ1</fullName>
+                    <default>false</default>
+                    <label>NZ1</label>
+                </value>
+                <value>
+                    <fullName>PH1</fullName>
+                    <default>false</default>
+                    <label>PH1</label>
+                </value>
+                <value>
+                    <fullName>SA5</fullName>
+                    <default>false</default>
+                    <label>SA5</label>
+                </value>
+                <value>
+                    <fullName>SE1</fullName>
+                    <default>false</default>
+                    <label>SE1</label>
+                </value>
+                <value>
+                    <fullName>SG1</fullName>
+                    <default>false</default>
+                    <label>SG1</label>
+                </value>
+                <value>
+                    <fullName>UK1</fullName>
+                    <default>false</default>
+                    <label>UK1</label>
+                </value>
+                <value>
+                    <fullName>US5</fullName>
+                    <default>false</default>
+                    <label>US5</label>
+                </value>
+                <value>
+                    <fullName>ZA1</fullName>
+                    <default>false</default>
+                    <label>ZA1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Expenses__c</fullName>
+        <description>Total expenses for associate</description>
+        <inlineHelpText>This amount should exclude tax.</inlineHelpText>
+        <label>Expenses</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Internal_Notes__c</fullName>
+        <label>Internal Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Month__c</fullName>
+        <inlineHelpText>Course end date month</inlineHelpText>
+        <label>Invoice Month</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>January</fullName>
+                    <default>false</default>
+                    <label>January</label>
+                </value>
+                <value>
+                    <fullName>February</fullName>
+                    <default>false</default>
+                    <label>February</label>
+                </value>
+                <value>
+                    <fullName>March</fullName>
+                    <default>false</default>
+                    <label>March</label>
+                </value>
+                <value>
+                    <fullName>April</fullName>
+                    <default>false</default>
+                    <label>April</label>
+                </value>
+                <value>
+                    <fullName>May</fullName>
+                    <default>false</default>
+                    <label>May</label>
+                </value>
+                <value>
+                    <fullName>June</fullName>
+                    <default>false</default>
+                    <label>June</label>
+                </value>
+                <value>
+                    <fullName>July</fullName>
+                    <default>false</default>
+                    <label>July</label>
+                </value>
+                <value>
+                    <fullName>August</fullName>
+                    <default>false</default>
+                    <label>August</label>
+                </value>
+                <value>
+                    <fullName>September</fullName>
+                    <default>false</default>
+                    <label>September</label>
+                </value>
+                <value>
+                    <fullName>October</fullName>
+                    <default>false</default>
+                    <label>October</label>
+                </value>
+                <value>
+                    <fullName>November</fullName>
+                    <default>false</default>
+                    <label>November</label>
+                </value>
+                <value>
+                    <fullName>December</fullName>
+                    <default>false</default>
+                    <label>December</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LBU_Cost__c</fullName>
+        <description>The number of associate days against the associate cost per day (SF field: “day rate”) excluding expenses where cost type = “LBU”</description>
+        <formula>IF( TEXT( Associate_Type__c )=&apos;LBU&apos; ,  Value__c,0)</formula>
+        <inlineHelpText>The number of associate days against the associate cost per day (SF field: “day rate”) excluding expenses where cost type = “LBU”</inlineHelpText>
+        <label>LBU Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Other_Cost__c</fullName>
+        <description>To calculate Costs where Cost Type not LBU, Associate Consultant</description>
+        <formula>IF( NOT(OR(TEXT( Associate_Type__c )=&apos;LBU&apos; ,
+ TEXT( Associate_Type__c )=&apos;Associate Consultant&apos;)),
+ Value__c,0)</formula>
+        <inlineHelpText>To calculate Costs where Cost Type not LBU, Associate Consultant</inlineHelpText>
+        <label>Other Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <label>Project</label>
+        <referenceTo>ProjectObject__c</referenceTo>
+        <relationshipLabel>Associate and other Costs</relationshipLabel>
+        <relationshipName>Associates</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Reason__c</fullName>
+        <label>Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Client Requirement to use specific Associates</fullName>
+                    <default>false</default>
+                    <label>Client Requirement to use specific Associates</label>
+                </value>
+                <value>
+                    <fullName>Internal Capacity</fullName>
+                    <default>false</default>
+                    <label>Internal Capacity</label>
+                </value>
+                <value>
+                    <fullName>Location (in person)</fullName>
+                    <default>false</default>
+                    <label>Location (in person)</label>
+                </value>
+                <value>
+                    <fullName>Language Requirement</fullName>
+                    <default>false</default>
+                    <label>Language Requirement</label>
+                </value>
+                <value>
+                    <fullName>Seniority Needed</fullName>
+                    <default>false</default>
+                    <label>Seniority Needed</label>
+                </value>
+                <value>
+                    <fullName>Missing PS Skills</fullName>
+                    <default>false</default>
+                    <label>Missing PS Skills</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Rechargeable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>Is this associate or other cost rechargeable to the client?</inlineHelpText>
+        <label>Rechargeable</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Total_Costs__c</fullName>
+        <description>Sum of Associate Costs, LBU Costs and Expenses</description>
+        <formula>Value__c  +  Expenses__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Sum of Associate Costs, LBU Costs and Expenses</inlineHelpText>
+        <label>Total Costs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Invoice_Amount__c</fullName>
+        <formula>Value__c +  Expenses__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Invoice Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Value__c</fullName>
+        <formula>Day_Rate__c  * Days_Worked__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This amount should exclude tax</inlineHelpText>
+        <label>Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <label>Associate and other Cost</label>
+    <listViews>
+        <fullName>Europe_Assoc_POs_Specific_Assoc</fullName>
+        <columns>Associate__c</columns>
+        <columns>Date_Invoiced_Received__c</columns>
+        <columns>NAME</columns>
+        <columns>Project__c</columns>
+        <columns>Associate_Cost__c</columns>
+        <columns>Delivery_BU__c</columns>
+        <columns>Days_Worked__c</columns>
+        <columns>Approved_By__c</columns>
+        <columns>Associate_Notes__c</columns>
+        <columns>Expenses__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Delivery_BU__c</field>
+            <operation>equals</operation>
+            <value>BE5,CH1,DE5,DK1,FI1,FR5,IT1,NL5,NO1,SE1,UK1</value>
+        </filters>
+        <filters>
+            <field>Date_Invoiced_Received__c</field>
+            <operation>equals</operation>
+            <value>LAST_MONTH</value>
+        </filters>
+        <filters>
+            <field>Associate_Type__c</field>
+            <operation>equals</operation>
+            <value>Associate Consultant,External Partner</value>
+        </filters>
+        <filters>
+            <field>Associate_Status__c</field>
+            <operation>equals</operation>
+            <value>Provisional,Confirmed</value>
+        </filters>
+        <filters>
+            <field>Associate__c</field>
+            <operation>contains</operation>
+            <value>Maaike</value>
+        </filters>
+        <label>Europe Assoc POs - Specific Assoc</label>
+    </listViews>
+    <listViews>
+        <fullName>PO_Status</fullName>
+        <columns>NAME</columns>
+        <columns>Date_Invoiced_Received__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Associate__c</columns>
+        <columns>Associate_Notes__c</columns>
+        <columns>Associate_Status__c</columns>
+        <columns>Courses__c</columns>
+        <columns>Total_Invoice_Amount__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATEDBY_USER</field>
+            <operation>equals</operation>
+            <value>,sally treloar,aimee murray,tilden lamb,lauren hickford,shola stoute</value>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>1/1/2009 12:00 AM</value>
+        </filters>
+        <label>PO Status this year</label>
+    </listViews>
+    <nameField>
+        <displayFormat>T{00000}</displayFormat>
+        <label>T Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Associate and other Costs</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Associate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Courses__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Invoice_Month__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Associate__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Courses__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Invoice_Month__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Associate__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Courses__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Invoice_Month__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Associate__c</searchFilterFields>
+        <searchFilterFields>Courses__c</searchFilterFields>
+        <searchFilterFields>Invoice_Month__c</searchFilterFields>
+        <searchResultsAdditionalFields>Associate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Courses__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Invoice_Month__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>AssociateNameValidationRule</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(OR(ISPICKVAL(Associate_Type__c ,&apos;Associate Consultant&apos;),ISPICKVAL(Associate_Type__c ,&apos;Volunteer&apos;), ISPICKVAL(Associate_Type__c ,&apos;External Partner&apos;) ) , LEN(Associate__c )=0)</errorConditionFormula>
+        <errorDisplayField>Associate__c</errorDisplayField>
+        <errorMessage>Please select the Associate Name</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Associate_Notes_field_mandatory</fullName>
+        <active>true</active>
+        <description>The &apos;Associate Notes&apos; field needs to be mandatory if the &apos;cost type&apos; is set up to &apos;other&apos;</description>
+        <errorConditionFormula>AND( ISPICKVAL( Associate_Type__c ,&apos;Other&apos;) , ISBLANK( Associate_Notes__c ) )</errorConditionFormula>
+        <errorMessage>The &apos;Associate Notes&apos; field needs to be mandatory as the &apos;cost type&apos; is set up to &apos;other&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Associate_Notes_mandatory_reason_other</fullName>
+        <active>true</active>
+        <description>The &apos;Associate Notes&apos; field needs to be mandatory as the reason is set up to &apos;other&apos;</description>
+        <errorConditionFormula>AND( ISPICKVAL( Reason__c,&apos;Other&apos; ) , ISBLANK( Associate_Notes__c ))</errorConditionFormula>
+        <errorMessage>The &apos;Associate Notes&apos; field needs to be mandatory as the reason is set up to &apos;other&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CourseOrProjectRequired</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(  Courses__c =&quot;&quot; , Project__c =&quot;&quot;)</errorConditionFormula>
+        <errorMessage>Course or Project must be completed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>DateInvoicedMandatory</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(Project__c &lt;&gt;&quot;&quot; || Project__c &lt;&gt;&quot;a0920000002roAP&quot;,   NOT( ISPICKVAL(Associate_Type__c,&quot;Development Team&quot;) ),ISNULL(Date_Invoiced_Received__c))</errorConditionFormula>
+        <errorDisplayField>Date_Invoiced_Received__c</errorDisplayField>
+        <errorMessage>Please populate the Date  Incurred field for all project-related SHL incurred expenses.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Days_Worked_Are_Required</fullName>
+        <active>true</active>
+        <description>SSE-11327 - To make Days worked mandatory if there is a value in Day Rate field</description>
+        <errorConditionFormula>AND(NOT(ISBLANK(Day_Rate__c)),ISBLANK(Days_Worked__c))</errorConditionFormula>
+        <errorDisplayField>Days_Worked__c</errorDisplayField>
+        <errorMessage>Days worked are required, when a Day rate is defined</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Reason_field_mandatory</fullName>
+        <active>true</active>
+        <description>Reason field to be mandatory if the &apos;Cost Type&apos; is set up to &apos;Associate Consultant&apos;</description>
+        <errorConditionFormula>AND(ISPICKVAL( Associate_Type__c ,&apos;Associate Consultant&apos;), ISPICKVAL(Reason__c, &quot;&quot;) )</errorConditionFormula>
+        <errorMessage>Reason field needs to be mandatory as the &apos;Cost Type&apos; is &apos;Associate Consultant&apos;</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>New</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Associate and other Cost</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>var newUrl;
+if(&quot;{!ProjectObject__c.Id}&quot;!=&quot;&quot;)
+{
+newUrl = &quot;{!URLFOR( $Action.Associate__c.New, null,
+[CF00N20000001PpCz_lkid=ProjectObject__c.Id,
+CF00N20000001PpCz=ProjectObject__c.Name,
+retURL=$Request.retURL] ,true)}&quot;;
+}
+else if (&quot;{!Courses__c.Id}&quot;!=&quot;&quot;)
+{
+newUrl = &quot;{!URLFOR( $Action.Associate__c.New, null, 
+[CF00N20000001IjwC_lkid=Courses__c.Id, 
+CF00N20000001IjwC=Courses__c.Name, 
+retURL=$Request.retURL] ,true)}&quot;; 
+}
+else
+{
+newUrl = &quot;{!URLFOR( $Action.Associate__c.New, null,
+[retURL=$Request.retURL] ,true)}&quot;;
+}
+
+window.parent.location.replace(newUrl);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Associate_Project</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Associate</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>{!URLFOR($Action.Associate__c.New,  Associate__c.Id , [CF00N20000001PpCz_lkid=ProjectObject__c.Id,
+CF00N20000001PpCz=ProjectObject__c.Name], true)}&amp;00N4G000006y2sW={!ProjectObject__c.LBU__c}&amp;CurrencyIsoCode={!ProjectObject__c.CurrencyIsoCode}&amp;retURL=%2Fapex%2FProject_ViewPage%3Fid%3D{!ProjectObject__c.Id}%26sfdc.override%3D1</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Associate_and_other_cost_lightning</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New Associate and other cost</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/lightning/o/Associate__c/new?defaultFieldValues=Project__c={!ProjectObject__c.Id},Delivery_BU__c={!ProjectObject__c.LBU__c},CurrencyIsoCode={!ProjectObject__c.CurrencyIsoCode}&amp;
+backgroundContext=/lightning/r/ProjectObject__c/{!ProjectObject__c.Id}/view</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_on_Lex_Courses</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/lightning/o/Associate__c/new?defaultFieldValues=Project__c={!Courses__c.ProjectNum__c},Courses__c={!Courses__c.Id}&amp;count=1&amp;nooverride=1&amp;useRecordTypeCheck=1&amp;navigationLocation=RELATED_LIST&amp;ws=%2Flightning%2Fr%2FCourses__c%2F{!Courses__c.Id}%2Fview</url>
+    </webLinks>
+</CustomObject>

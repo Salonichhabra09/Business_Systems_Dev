@@ -1,0 +1,7 @@
+<aura:component implements="lightning:isUrlAddressable,force:appHostable,force:lightningQuickAction" access="global" controller="CurrentUserInfoController">
+    <aura:attribute name="recordId" type="String" description="ID of the record."/>
+    <aura:attribute name="url" type="String"/>
+    <lightning:navigation aura:id="navigate" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.doInit}"/><!--Added by Prabhat to Re-Initialise-->
+</aura:component>

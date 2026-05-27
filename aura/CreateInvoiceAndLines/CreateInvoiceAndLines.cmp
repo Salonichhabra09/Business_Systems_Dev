@@ -1,0 +1,15 @@
+<aura:component controller="OrderTriggerManager" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<aura:attribute name="disable" type="Boolean" default="false" description="To hold boolean value for disabling button" />
+    <aura:attribute name="recordId" type="id" access="global" />
+    <aura:attribute name="OderObj" type="Order"/>
+    <aura:attribute name="InvoiceLinked" type="Boolean"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />   
+    
+    <!--<lightning:flow aura:id="InvoiceHeaderFlowId"/>-->
+    <lightning:flow aura:id="InvoiceHeaderFlowId" onstatuschange="{!c.OnStatusChange}" />
+    <lightning:card title="Please Click 'Create Invoice' button to create Invoice Header and Invoice Lines before Activating an Order" iconName="utility:warning"> 
+        <div class="slds-m-around_medium">
+        <lightning:button variant="brand" label="Create Invoice" title="Brand action" onclick="{! c.callFlow }" />
+        </div>         
+    </lightning:card>
+</aura:component>

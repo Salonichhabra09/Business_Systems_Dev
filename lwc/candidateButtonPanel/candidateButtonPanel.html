@@ -1,0 +1,90 @@
+<template>
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading" variant="brand"></lightning-spinner>
+    </template>
+    <template if:false={systemUsed}>
+        <div class="slds-m-vertical_medium slds-align_absolute-center">
+            <p class="slds-text-body_large slds-text-title_bold">{errorMessage}</p>
+        </div>
+    </template>
+<template if:true={sysAvailable}>
+    <div class="slds-m-vertical_medium slds-align_absolute-center">
+        <p class="slds-text-body_large slds-text-title_bold">Please select system before uploading candidate data</p>
+    </div>
+</template>
+<template if:true={systemUsed} >
+    
+    <template if:true={showButtonPanel}>
+        <div class="slds-var-p-around_small slds-clearfix">
+            <!-- <lightning-button class="slds-float_right slds-var-m-left_x-small" variant="brand" label="Candidate List" title="Candidate List" onclick={handleCandidateList}></lightning-button> -->
+            <template if:true={showExportUpdateBtn}>
+                <lightning-button class="slds-float_right slds-var-m-left_x-small" variant="brand" label="Delete All Candidates/Ratings" title="Delete All Candidates/Ratings" onclick={deleteCandidateList}></lightning-button>
+                <lightning-button class="slds-float_right slds-var-m-left_x-small" label={updateCandidateLabel} onclick={handleUpdateCandidate1} variant="brand"></lightning-button>
+                <lightning-button class="slds-float_right slds-var-m-left_x-small" label={exportCandidateLabel} onclick={handleExportCandidate1} variant="brand" icon-name="utility:download"></lightning-button>
+            </template>
+            <lightning-button class="slds-float_right slds-var-m-left_x-small" label={importCandidateLabel} onclick={handleImportCandidate1} variant="brand"> </lightning-button>
+            <lightning-button class="slds-float_right slds-var-m-left_x-small" variant="brand" label="Create Candidates" title="Create Candidates" onclick={handleCandidateCreation}></lightning-button>
+            <template if:true={superUser}>
+            <lightning-button class="slds-float_right slds-var-m-left_x-small" variant="brand" label="Update Usage Manually" title="Update Usage Manually" onclick={handleUpdateUsage}></lightning-button>
+        </template>
+        </div>
+    </template>
+
+    <template if:true={showCandidateCreation}>
+        <c-candidate-creation record-id={recordId} oncandidatecreationsuccess={handleCandidateCreationSuccess} oncandidatecreationcancel={handleCandidateCreationCancel}></c-candidate-creation>
+    </template>
+    <template if:true={showCandidateImport}>
+        <c-process-c-s-v-file-and-split record-id={recordId} oncandidatehome={handleButtonPanel} oncandidateexportaction={handleCandidateExportAction}></c-process-c-s-v-file-and-split>
+    </template>
+    <template if:true={showCandidateList}>
+         <c-ms-candidate-data-table record-id={recordId} ondeletecandidate={handleUpdateExportBtn}></c-ms-candidate-data-table> 
+    </template>
+
+    <template if:true={isShowModal}>
+
+        <!--
+            I Used SLDS for this code
+            Here is link https://www.lightningdesignsystem.com/components/modals/
+        --> 
+
+<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+   <div class="slds-modal__container">
+    <!-- modal header start -->
+      <header class="slds-modal__header">
+         <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideModalBox}>
+            <lightning-icon icon-name="utility:close"
+               alternative-text="close"
+               variant="inverse"
+               size="small" ></lightning-icon>
+            <span class="slds-assistive-text">Close</span>
+         </button>
+         <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Update Usage Manually</h2>
+      </header>
+  
+      <!-- modal body start -->
+      <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+        <template if:true={showVocational}>
+            <lightning-input type="number" name="pass" value={pass} onchange={handleNumberChange} label="Count of Candidates Pass" ></lightning-input>
+            <lightning-input type="number" name="fail" value={fail} onchange={handleNumberChange} label="Count of Candidates Fail" ></lightning-input>
+            <lightning-input type="number" name="dna" value={dna} onchange={handleNumberChange} label="Count of Candidates DNA" ></lightning-input>
+        </template>
+        <template if:false={showVocational}>
+            <lightning-input type="number" name="invited" value={invited} onchange={handleNumberChange} label="Count of Candidates Invited" ></lightning-input>
+            <lightning-input type="number" name="actual" value={actual} onchange={handleNumberChange} label="Actual Count of Candidates" ></lightning-input>
+        </template>
+      </div>
+
+      <!-- modal footer start-->
+      <footer class="slds-modal__footer">
+        <button class="slds-button slds-button_neutral" onclick={save}>Save</button>
+         <button class="slds-button slds-button_neutral" onclick={hideModalBox}>Cancel</button>
+      </footer>
+   
+   </div>
+</section>
+<div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+<!-- modal end -->
+
+</template>
+</template>

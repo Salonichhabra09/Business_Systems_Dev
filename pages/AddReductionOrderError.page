@@ -1,0 +1,7 @@
+<apex:page >
+    <apex:form >
+     <apex:pageMessage severity="Error" summary="Add Order Product is only applicable for Reduction Orders" strength="1">
+        <apex:commandLink value="Back" action="/{!$CurrentPage.parameters.Id}"/>
+    </apex:pageMessage>
+    </apex:form>
+</apex:page>

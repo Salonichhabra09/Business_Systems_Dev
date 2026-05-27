@@ -1,0 +1,28 @@
+<apex:page standardController="Course_Booking__c">
+    <apex:includeScript value="/support/console/47.0/integration.js"/>
+    <script> var previousOnload = window.onload; 
+        window.onload = function(){ 
+            if (previousOnload) { 
+                previousOnload(); 
+            } 
+                alert('Please create a booking from the Courses Tab'); 
+                RedirectToCourse();
+        } 
+         
+        function RedirectToCourse(){
+            if (sforce.console.isInConsole()) {  
+                 sforce.console.getFocusedSubtabId(function(primaryResult){
+                     sforce.console.closeTab(primaryResult.id);
+                 
+                 });
+            
+            
+       
+            }
+            else{
+                window.history.back();
+            }
+        }             
+  </script>
+ <!-- <apex:pageMessage severity="Information" summary="Please create a booking from the Courses Tab"/> -->
+</apex:page>

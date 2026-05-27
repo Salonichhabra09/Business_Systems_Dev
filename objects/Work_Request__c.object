@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Work_Request</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Work_Request</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Module to store work request generated by managed services team and submitted by client back to managed services team</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>System Use: To link account with work request which are generated by managed services team</description>
+        <inlineHelpText>System Use: To link account with work request which are generated by managed services team</inlineHelpText>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Work Requests Generated</relationshipLabel>
+        <relationshipName>Work_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Candidate_Field_Configuration__c</fullName>
+        <label>Candidate Field Configuration</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Candidate_Limit_Reached__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(Job__r.Is_GCSC_Opp__c,0,No_of_Participant_Created__c - Candidate_Requested_Backend_Use__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Candidate Limit Reached</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Candidate_Request_Type_Backend_Use__c</fullName>
+        <description>This field is for backend use only</description>
+        <externalId>false</externalId>
+        <label>Candidate Request Type (Backend Use)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Candidate_Requested_Backend_Use__c</fullName>
+        <externalId>false</externalId>
+        <label>Candidate Requested (Backend Use)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Candidate_Template_Instructions__c</fullName>
+        <label>Candidate Template Instructions</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Client_Report_View_Link__c</fullName>
+        <label>Client Report View Link</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Client_Submitted_WRF_Preview__c</fullName>
+        <inlineHelpText>Click this link to see the snapshot of what customer/internal team has submitted for this work request.</inlineHelpText>
+        <label>Submitted Preview URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Cloned_From__c</fullName>
+        <externalId>false</externalId>
+        <label>Cloned From</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Deadline_Date__c</fullName>
+        <label>Deadline Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Field_Configuration__c</fullName>
+        <label>Field Configuration</label>
+        <length>131000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Is_Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>System Use: To mark work request as active or inactive</description>
+        <inlineHelpText>System Use: To mark work request as active or inactive</inlineHelpText>
+        <label>Is Active?</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Job_Id_System_Used__c</fullName>
+        <description>This field is used to store JobID of generated WRFs</description>
+        <externalId>false</externalId>
+        <label>Job Id (System Used)</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Job__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>System Use: To link job from where the work requests will be processed</description>
+        <inlineHelpText>System Use: To link job from where the work requests will be processed</inlineHelpText>
+        <label>Job</label>
+        <referenceTo>Job__c</referenceTo>
+        <relationshipLabel>Work Requests Submitted</relationshipLabel>
+        <relationshipName>Work_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Link_Expiry_Date__c</fullName>
+        <description>System Use: To capture the link expiry date of work request</description>
+        <inlineHelpText>System Use: To capture the link expiry date of work request</inlineHelpText>
+        <label>Request Expiration Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Link_Generated_Date__c</fullName>
+        <description>System Use: To capture the link generated date of work request</description>
+        <inlineHelpText>System Use: To capture the link generated date of work request</inlineHelpText>
+        <label>Generated On</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Max_Candidate_Limit__c</fullName>
+        <description>System Use: For capturing number of candidates requested by client under work request.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>System Use: For capturing number of candidates requested by client under work request.</inlineHelpText>
+        <label>Max Candidate Limit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_Candidate_Completed__c</fullName>
+        <description>System Use: To capture the number of candidate completed the assessment under the work request</description>
+        <externalId>false</externalId>
+        <inlineHelpText>System Use: To capture the number of candidate completed the assessment under the work request</inlineHelpText>
+        <label>No. of Candidates Completed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_Candidate_Created__c</fullName>
+        <description>System Use: To capture the total number of canidates created from work request submission</description>
+        <externalId>false</externalId>
+        <inlineHelpText>System Use: To capture the total number of canidates created from work request submission</inlineHelpText>
+        <label>No. of Candidates Created</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_Candidate_Requested__c</fullName>
+        <externalId>false</externalId>
+        <label>No. of Candidate Requested</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_Candidates_Uploaded__c</fullName>
+        <description>System Use: To capture the number of candidate uploaded from client repsonse.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>System Use: To capture the number of candidate uploaded from client repsonse.</inlineHelpText>
+        <label>No. of Candidates Uploaded</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_Participant_Created__c</fullName>
+        <externalId>false</externalId>
+        <label>No. of Participant Created</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_Participant_Requested__c</fullName>
+        <externalId>false</externalId>
+        <label>No. of Participant Requested</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_WR_submitted__c</fullName>
+        <description>System Use: to capture total number work requests submitted</description>
+        <externalId>false</externalId>
+        <inlineHelpText>System Use: to capture total number work requests submitted</inlineHelpText>
+        <label>No. of WR submitted</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Assessment__c</fullName>
+        <externalId>false</externalId>
+        <label>Product/Assessment</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Remaining_Candidates_Job_Level__c</fullName>
+        <externalId>false</externalId>
+        <formula>Job__r.Solution_Cap__c-Job__r.Number_of_Participants_New__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Remaining Candidates (Job Level)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Remaining_Candidates__c</fullName>
+        <externalId>false</externalId>
+        <formula>No_of_Participant_Requested__c -  No_of_Participant_Created__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Remaining Candidates</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requestor_Email__c</fullName>
+        <description>Reporting Only: To capture email of client who submitted the work request</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reporting Only: To capture email of client who submitted the work request</inlineHelpText>
+        <label>Requestor Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requestor_Name__c</fullName>
+        <description>Reporting: For capturing user&apos;s name who requested the work request.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reporting: For capturing user&apos;s name who requested the work request.</inlineHelpText>
+        <label>Requestor Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>false</default>
+                    <label>Open</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>System_Used__c</fullName>
+        <description>Reporting: to define the system used for which work request is generated</description>
+        <inlineHelpText>Reporting: to define the system used for which work request is generated</inlineHelpText>
+        <label>System Used</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>TalentCentral+</fullName>
+                    <default>false</default>
+                    <label>TalentCentral+</label>
+                </value>
+                <value>
+                    <fullName>TalentCentral</fullName>
+                    <default>false</default>
+                    <label>TalentCentral</label>
+                </value>
+                <value>
+                    <fullName>SHL 360</fullName>
+                    <default>false</default>
+                    <label>SHL 360</label>
+                </value>
+                <value>
+                    <fullName>Insights</fullName>
+                    <default>false</default>
+                    <label>Insights</label>
+                </value>
+                <value>
+                    <fullName>VADC</fullName>
+                    <default>false</default>
+                    <label>VADC</label>
+                </value>
+                <value>
+                    <fullName>SIOD</fullName>
+                    <default>false</default>
+                    <label>SIOD</label>
+                </value>
+                <value>
+                    <fullName>TalentCentral and 360</fullName>
+                    <default>false</default>
+                    <label>TalentCentral and 360</label>
+                </value>
+                <value>
+                    <fullName>TalentCentral+ and 360</fullName>
+                    <default>false</default>
+                    <label>TalentCentral+ and 360</label>
+                </value>
+                <value>
+                    <fullName>Insights and 360</fullName>
+                    <default>false</default>
+                    <label>Insights and 360</label>
+                </value>
+                <value>
+                    <fullName>TalentCentral and VADC</fullName>
+                    <default>false</default>
+                    <label>TalentCentral and VADC</label>
+                </value>
+                <value>
+                    <fullName>TalentCentral+ and VADC</fullName>
+                    <default>false</default>
+                    <label>TalentCentral+ and VADC</label>
+                </value>
+                <value>
+                    <fullName>TalentCentral and SIOD</fullName>
+                    <default>false</default>
+                    <label>TalentCentral and SIOD</label>
+                </value>
+                <value>
+                    <fullName>TalentCentral, 360 and Insights</fullName>
+                    <default>false</default>
+                    <label>TalentCentral, 360 and Insights</label>
+                </value>
+                <value>
+                    <fullName>TalentCentral+, 360 and Insights</fullName>
+                    <default>false</default>
+                    <label>TalentCentral+, 360 and Insights</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Text_Under_Logo__c</fullName>
+        <label>Text Under Logo</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>WRF_Client_Name__c</fullName>
+        <label>WRF Client Name</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>WRF_Link_Generated_for_Client__c</fullName>
+        <description>User view on job level under each WRF submitted</description>
+        <externalId>false</externalId>
+        <formula>if(ISBLANK(Cloned_From__c),WRF_Link__c,&apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Use this link in case customer has lost/forgotten the link they used for submitting this WRF.</inlineHelpText>
+        <label>Generated URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WRF_Link__c</fullName>
+        <description>System Use : To capture the link for work reqest generated by MS and sent over to client</description>
+        <inlineHelpText>System Use : To capture the link for work reqest generated by MS and sent over to client</inlineHelpText>
+        <label>WRF Link for Client</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Work_Request_Generated__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>System Use: To link all work request submitted to the work request from which it is generated</description>
+        <inlineHelpText>System Use: To link all work request submitted to the work request from which it is generated</inlineHelpText>
+        <label>Work Request Generated</label>
+        <referenceTo>Work_Request__c</referenceTo>
+        <relationshipLabel>Submitted Work Requests</relationshipLabel>
+        <relationshipName>Work_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Work_Request_Type__c</fullName>
+        <description>System Use: To define the type of work request whether it is generated by MS or submitted by Client</description>
+        <inlineHelpText>System Use: To define the type of work request whether it is generated by MS or submitted by Client</inlineHelpText>
+        <label>Work Request Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>MS Generated</fullName>
+                    <default>false</default>
+                    <label>MS Generated</label>
+                </value>
+                <value>
+                    <fullName>Client Submitted</fullName>
+                    <default>false</default>
+                    <label>Client Submitted</label>
+                </value>
+                <value>
+                    <fullName>Internal Submission</fullName>
+                    <default>false</default>
+                    <label>Internal Submission</label>
+                </value>
+                <value>
+                    <fullName>Client Report</fullName>
+                    <default>false</default>
+                    <label>Client Report</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>bulkJobId__c</fullName>
+        <label>bulkJobId</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>Work Request</label>
+    <listViews>
+        <fullName>All_WRFs</fullName>
+        <columns>NAME</columns>
+        <columns>Work_Request_Type__c</columns>
+        <columns>Work_Request_Generated__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All WRFs</label>
+    </listViews>
+    <nameField>
+        <displayFormat>WR-{0000}</displayFormat>
+        <label>Work Request Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Work Requests</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Generated</fullName>
+        <active>true</active>
+        <description>To mark records as Generated which are MS generated work request URL</description>
+        <label>Generated</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>System_Used__c</picklist>
+            <values>
+                <fullName>Insights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insights and 360</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHL 360</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SIOD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TalentCentral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TalentCentral and 360</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TalentCentral and SIOD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TalentCentral and VADC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TalentCentral%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TalentCentral%2B and 360</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TalentCentral%2B and VADC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TalentCentral%2B%2C 360 and Insights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TalentCentral%2C 360 and Insights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VADC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Work_Request_Type__c</picklist>
+            <values>
+                <fullName>Client Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Submitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Submission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MS Generated</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Submitted</fullName>
+        <active>true</active>
+        <description>To mark records as Generated which are MS submitted on behalf fof client or directly submitted by client.</description>
+        <label>Submitted</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>System_Used__c</picklist>
+            <values>
+                <fullName>Insights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insights and 360</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHL 360</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SIOD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TalentCentral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TalentCentral and 360</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TalentCentral and SIOD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TalentCentral and VADC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TalentCentral%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TalentCentral%2B and 360</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TalentCentral%2B and VADC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TalentCentral%2B%2C 360 and Insights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TalentCentral%2C 360 and Insights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VADC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Work_Request_Type__c</picklist>
+            <values>
+                <fullName>Client Submitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Submission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MS Generated</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>NewFromDocument</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Import</excludedStandardButtons>
+        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>PrintableListView</excludedStandardButtons>
+        <excludedStandardButtons>MassAssignRecordLabel</excludedStandardButtons>
+        <searchResultsAdditionalFields>Is_Active__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Job__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>No_of_Candidate_Requested__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Requestor_Email__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Requestor_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Work_Request_Type__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Restrict_Product_Assessment_For_MFS</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(OR(ISPICKVAL(Work_Request_Type__c , &apos;Client Submitted&apos;),
+							ISPICKVAL(Work_Request_Type__c , &apos;Internal Submission&apos;)
+							),
+				NOT(ISNEW()),
+				$Profile.Name != &apos;System Administrator&apos;, 
+				CONTAINS(TEXT(System_Used__c) , &apos;360&apos;),
+				ISCHANGED(Product_Assessment__c), 
+				NOT(OR(CONTAINS(UPPER(Product_Assessment__c), &apos;SHL 360&apos;),
+										CONTAINS(UPPER(Product_Assessment__c), &apos;NOMINATION&apos;),
+										CONTAINS(UPPER(Product_Assessment__c), &apos;ENGAGEMENT&apos;)
+										)
+							)  
+				)</errorConditionFormula>
+        <errorDisplayField>Product_Assessment__c</errorDisplayField>
+        <errorMessage>For 360 System, Product/Assessment should have one of the following: SHL 360, Nomination, or Engagement.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

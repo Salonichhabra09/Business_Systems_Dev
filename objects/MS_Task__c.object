@@ -1,0 +1,3319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>MS_Task_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>MS_Task_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>MS_Task_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>Task_Category__c</fields>
+        <fields>Task_Type__c</fields>
+        <fields>Task_Status__c</fields>
+        <fields>Task_Date__c</fields>
+        <fields>Job__c</fields>
+        <fields>Account_Name__c</fields>
+        <label>MS Task Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Object to accommodate Task information related to Managed Services</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Job__r.Account__r.Name</formula>
+        <label>Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Time_Taken__c</fullName>
+        <description>This field holds the overridden value of time entered by superuser or project manager</description>
+        <externalId>false</externalId>
+        <label>Overridden Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <description>This is used to capture the comments mentioned by users on the task.</description>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Created_by_Convayr__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Used in convayr to identify the newly created MS Task records</description>
+        <label>Created by Convayr</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Time_Required__c</fullName>
+        <description>This holds the value of estimated time required for completing a particular task.</description>
+        <externalId>false</externalId>
+        <label>Estimated Time Required</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID__c</fullName>
+        <description>Used for SmartSheets Integration</description>
+        <externalId>false</externalId>
+        <label>External ID</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IT_Ticket_Number__c</fullName>
+        <description>Input field on UI to hold the value in different contexts</description>
+        <externalId>false</externalId>
+        <label>Company ID/Job Number/ IT Ticket Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Logged_In_User_Task_Owner__c</fullName>
+        <description>If logged in user is task owner return &apos;true&apos; otherwise &apos;false&apos;</description>
+        <externalId>false</externalId>
+        <formula>IF(Owner:User.Id = $User.Id, 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Logged In User Task Owner</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Job_Region__c</fullName>
+        <label>Job Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>China</fullName>
+                    <default>false</default>
+                    <label>China</label>
+                </value>
+                <value>
+                    <fullName>Non China</fullName>
+                    <default>false</default>
+                    <label>Non China</label>
+                </value>
+                <value>
+                    <fullName>Hong Kong</fullName>
+                    <default>false</default>
+                    <label>Hong Kong</label>
+                </value>
+                <value>
+                    <fullName>Singapore</fullName>
+                    <default>false</default>
+                    <label>Singapore</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Job__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Job</label>
+        <referenceTo>Job__c</referenceTo>
+        <relationshipLabel>MS Tasks</relationshipLabel>
+        <relationshipName>MS_Tasks</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_Task_Id__c</fullName>
+        <description>This field retains the SFDC record id of the Legacy Task (standard) on New MS Task Record</description>
+        <externalId>false</externalId>
+        <label>Legacy Task Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Original_Time_Taken__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+				OR(ISBLANK(Task_Start_Time__c), ISBLANK(Task_End_Time__c)),
+				&apos;0 minute&apos;,
+    TEXT( FLOOR( ( (  (UNIXTIMESTAMP(Task_End_Time__c)*1000 - UNIXTIMESTAMP(Task_Start_Time__c)*1000 - Timer_Offset__c)/1000 ))/3600) ) &amp; &apos; hour &apos; &amp;
+				TEXT(	FLOOR(MOD((( (UNIXTIMESTAMP(Task_End_Time__c)*1000 - UNIXTIMESTAMP(Task_Start_Time__c)*1000 - Timer_Offset__c)/1000 )), 3600)/60 ) + IF(FLOOR( MOD(MOD( (( (UNIXTIMESTAMP(Task_End_Time__c)*1000 - UNIXTIMESTAMP(Task_Start_Time__c)*1000 - Timer_Offset__c)/1000 )), 3600), 60) )&lt; 30, 0, 1) ) &amp; &apos; minutes &apos;
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>System Calculated Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Scheduled_Time__c</fullName>
+        <description>This field holds the value of Time of the day at which particular task is scheduled to be picked up.</description>
+        <label>Scheduled Time</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Time</type>
+    </fields>
+    <fields>
+        <fullName>Smartsheet_Row_ID__c</fullName>
+        <description>This will contain the unique value of RowID column from smartsheet. This is being used by convayr job</description>
+        <externalId>true</externalId>
+        <label>Smartsheet Row ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Suggested_time_changed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This was created to hold the value of legacy data - This field not being used in new MS logic</description>
+        <label>Suggested time changed?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Systems__c</fullName>
+        <description>This field holds the value of the platform applications</description>
+        <label>Application</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Automation Tools</fullName>
+                    <default>false</default>
+                    <label>Automation Tools</label>
+                </value>
+                <value>
+                    <fullName>Contact Coaching/Project Coaching</fullName>
+                    <default>false</default>
+                    <label>Contact Coaching/Project Coaching</label>
+                </value>
+                <value>
+                    <fullName>Hardware Issues</fullName>
+                    <default>false</default>
+                    <label>Hardware Issues</label>
+                </value>
+                <value>
+                    <fullName>Insights</fullName>
+                    <default>false</default>
+                    <label>Insights</label>
+                </value>
+                <value>
+                    <fullName>Mail Sender</fullName>
+                    <default>false</default>
+                    <label>Mail Sender</label>
+                </value>
+                <value>
+                    <fullName>MFS</fullName>
+                    <default>false</default>
+                    <label>MFS</label>
+                </value>
+                <value>
+                    <fullName>MFS/TC</fullName>
+                    <default>false</default>
+                    <label>MFS/TC</label>
+                </value>
+                <value>
+                    <fullName>Other/None</fullName>
+                    <default>false</default>
+                    <label>Other/None</label>
+                </value>
+                <value>
+                    <fullName>Outlook</fullName>
+                    <default>false</default>
+                    <label>Outlook</label>
+                </value>
+                <value>
+                    <fullName>Percipio</fullName>
+                    <default>false</default>
+                    <label>Percipio</label>
+                </value>
+                <value>
+                    <fullName>Quaterly Conversations</fullName>
+                    <default>false</default>
+                    <label>Quaterly Conversations</label>
+                </value>
+                <value>
+                    <fullName>Resource Planner</fullName>
+                    <default>false</default>
+                    <label>Resource Planner</label>
+                </value>
+                <value>
+                    <fullName>Sharepoint</fullName>
+                    <default>false</default>
+                    <label>Sharepoint</label>
+                </value>
+                <value>
+                    <fullName>Talent Central</fullName>
+                    <default>false</default>
+                    <label>Talent Central</label>
+                </value>
+                <value>
+                    <fullName>TC+</fullName>
+                    <default>false</default>
+                    <label>TC+</label>
+                </value>
+                <value>
+                    <fullName>VADC/SIOD</fullName>
+                    <default>false</default>
+                    <label>VADC/SIOD</label>
+                </value>
+                <value>
+                    <fullName>Tableau Dashboard</fullName>
+                    <default>false</default>
+                    <label>Tableau Dashboard</label>
+                </value>
+                <value>
+                    <fullName>IGB</fullName>
+                    <default>false</default>
+                    <label>IGB</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Task_Category__c</fullName>
+        <label>Task Category</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pipeline</fullName>
+                    <default>false</default>
+                    <label>Pipeline</label>
+                </value>
+                <value>
+                    <fullName>Pre Launch</fullName>
+                    <default>false</default>
+                    <label>Pre Launch</label>
+                </value>
+                <value>
+                    <fullName>Launch</fullName>
+                    <default>false</default>
+                    <label>Launch</label>
+                </value>
+                <value>
+                    <fullName>Post Launch</fullName>
+                    <default>false</default>
+                    <label>Post Launch</label>
+                </value>
+                <value>
+                    <fullName>Scoping</fullName>
+                    <default>false</default>
+                    <label>Scoping</label>
+                </value>
+                <value>
+                    <fullName>Build</fullName>
+                    <default>false</default>
+                    <label>Build</label>
+                </value>
+                <value>
+                    <fullName>Delivery</fullName>
+                    <default>false</default>
+                    <label>Delivery</label>
+                </value>
+                <value>
+                    <fullName>Coaching &amp; Development</fullName>
+                    <default>false</default>
+                    <label>Coaching &amp; Development</label>
+                </value>
+                <value>
+                    <fullName>Miscellaneous</fullName>
+                    <default>false</default>
+                    <label>Miscellaneous</label>
+                </value>
+                <value>
+                    <fullName>Operational Tasks</fullName>
+                    <default>false</default>
+                    <label>Operational Tasks</label>
+                </value>
+                <value>
+                    <fullName>Product Related Tasks</fullName>
+                    <default>false</default>
+                    <label>Product Related Tasks</label>
+                </value>
+                <value>
+                    <fullName>Pool Reach-Out</fullName>
+                    <default>false</default>
+                    <label>Pool Reach-Out</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Task_Completed_On__c</fullName>
+        <label>Task Completed On</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Task_Date__c</fullName>
+        <description>This field holds the value of Date on which particular task is scheduled.</description>
+        <label>Task Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Task_End_Time__c</fullName>
+        <label>Task End Time</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Task_Start_Time__c</fullName>
+        <label>Task Start Time</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Task_Status__c</fullName>
+        <label>Task Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>false</default>
+                    <label>Not Started</label>
+                </value>
+                <value>
+                    <fullName>Accepted</fullName>
+                    <default>false</default>
+                    <label>Accepted</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Completed – Appointment booked</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Completed – Appointment booked</label>
+                </value>
+                <value>
+                    <fullName>Completed – No further action</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Completed – No further action</label>
+                </value>
+                <value>
+                    <fullName>Completed – Sale made</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Completed – Sale made</label>
+                </value>
+                <value>
+                    <fullName>Deferred</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Deferred</label>
+                </value>
+                <value>
+                    <fullName>Waiting on someone else</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Waiting on someone else</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Task_Time_Recorded__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(
+OR(ISBLANK(Task_Start_Time__c), ISBLANK(Task_End_Time__c)),Actual_Time_Taken__c,
+IF(Actual_Time_Taken__c=0
+, FLOOR( ( ( (UNIXTIMESTAMP(Task_End_Time__c)*1000 - UNIXTIMESTAMP(Task_Start_Time__c)*1000 - Timer_Offset__c)/1000 ))/60) + + IF(FLOOR( MOD(MOD( (( (UNIXTIMESTAMP(Task_End_Time__c)*1000 - UNIXTIMESTAMP(Task_Start_Time__c)*1000 - Timer_Offset__c)/1000 )), 3600), 60) )&lt; 30, 0, 1)
+, Actual_Time_Taken__c 
+) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Actual Time Taken</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Task_Type__c</fullName>
+        <label>Task Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Task_Category__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Additional Candidates QA</fullName>
+                    <default>false</default>
+                    <label>Additional Candidates QA</label>
+                </value>
+                <value>
+                    <fullName>Additional Candidates Setup</fullName>
+                    <default>false</default>
+                    <label>Additional Candidates Setup</label>
+                </value>
+                <value>
+                    <fullName>Assessment Creation</fullName>
+                    <default>false</default>
+                    <label>Assessment Creation</label>
+                </value>
+                <value>
+                    <fullName>Assessment Tracking - BOD/EOD Tracking and Reporting</fullName>
+                    <default>false</default>
+                    <label>Assessment Tracking - BOD/EOD Tracking and Reporting</label>
+                </value>
+                <value>
+                    <fullName>Assessor Alignment</fullName>
+                    <default>false</default>
+                    <label>Assessor Alignment</label>
+                </value>
+                <value>
+                    <fullName>Bandwidth Deployment (Internal)</fullName>
+                    <default>false</default>
+                    <label>Bandwidth Deployment (Internal)</label>
+                </value>
+                <value>
+                    <fullName>Batch Acceptance and TP intimation - Batch acceptance on Central portal</fullName>
+                    <default>false</default>
+                    <label>Batch Acceptance and TP intimation - Batch acceptance on Central portal</label>
+                </value>
+                <value>
+                    <fullName>Batch Acceptance and TP intimation - Batch details entered in the tracker</fullName>
+                    <default>false</default>
+                    <label>Batch Acceptance and TP intimation - Batch details entered in the tracker</label>
+                </value>
+                <value>
+                    <fullName>Batch Acceptance and TP intimation - Other stakeholder intimation</fullName>
+                    <default>false</default>
+                    <label>Batch Acceptance and TP intimation - Other stakeholder intimation</label>
+                </value>
+                <value>
+                    <fullName>Batch Acceptance and TP intimation - TP intimation</fullName>
+                    <default>false</default>
+                    <label>Batch Acceptance and TP intimation - TP intimation</label>
+                </value>
+                <value>
+                    <fullName>Billing Tracker</fullName>
+                    <default>false</default>
+                    <label>Billing Tracker</label>
+                </value>
+                <value>
+                    <fullName>Build - Demo</fullName>
+                    <default>false</default>
+                    <label>Build - Demo</label>
+                </value>
+                <value>
+                    <fullName>Build - Iteration</fullName>
+                    <default>false</default>
+                    <label>Build - Iteration</label>
+                </value>
+                <value>
+                    <fullName>Build - Update</fullName>
+                    <default>false</default>
+                    <label>Build - Update</label>
+                </value>
+                <value>
+                    <fullName>Cab Delay</fullName>
+                    <default>false</default>
+                    <label>Cab Delay</label>
+                </value>
+                <value>
+                    <fullName>Candidate Changes</fullName>
+                    <default>false</default>
+                    <label>Candidate Changes</label>
+                </value>
+                <value>
+                    <fullName>Candidate Completion check</fullName>
+                    <default>false</default>
+                    <label>Candidate Completion check</label>
+                </value>
+                <value>
+                    <fullName>Candidate Completion Check (extension)</fullName>
+                    <default>false</default>
+                    <label>Candidate Completion Check (extension)</label>
+                </value>
+                <value>
+                    <fullName>Candidate Recall</fullName>
+                    <default>false</default>
+                    <label>Candidate Recall</label>
+                </value>
+                <value>
+                    <fullName>Candidate Reminder</fullName>
+                    <default>false</default>
+                    <label>Candidate Reminder</label>
+                </value>
+                <value>
+                    <fullName>Candidate Reminder QA</fullName>
+                    <default>false</default>
+                    <label>Candidate Reminder QA</label>
+                </value>
+                <value>
+                    <fullName>Candidate Resend Invitation</fullName>
+                    <default>false</default>
+                    <label>Candidate Resend Invitation</label>
+                </value>
+                <value>
+                    <fullName>Candidate Reset Assessment</fullName>
+                    <default>false</default>
+                    <label>Candidate Reset Assessment</label>
+                </value>
+                <value>
+                    <fullName>Categorising Mailbox</fullName>
+                    <default>false</default>
+                    <label>Categorising Mailbox</label>
+                </value>
+                <value>
+                    <fullName>Check Request for all details</fullName>
+                    <default>false</default>
+                    <label>Check Request for all details</label>
+                </value>
+                <value>
+                    <fullName>Clean Data</fullName>
+                    <default>false</default>
+                    <label>Clean Data</label>
+                </value>
+                <value>
+                    <fullName>Client Portal Acceptance</fullName>
+                    <default>false</default>
+                    <label>Client Portal Acceptance</label>
+                </value>
+                <value>
+                    <fullName>Client Portal Upload</fullName>
+                    <default>false</default>
+                    <label>Client Portal Upload</label>
+                </value>
+                <value>
+                    <fullName>Client Result Approval</fullName>
+                    <default>false</default>
+                    <label>Client Result Approval</label>
+                </value>
+                <value>
+                    <fullName>Contact Coaching</fullName>
+                    <default>false</default>
+                    <label>Contact Coaching</label>
+                </value>
+                <value>
+                    <fullName>Count</fullName>
+                    <default>false</default>
+                    <label>Count</label>
+                </value>
+                <value>
+                    <fullName>Creating / Updating Templates</fullName>
+                    <default>false</default>
+                    <label>Creating / Updating Templates</label>
+                </value>
+                <value>
+                    <fullName>Creating / Updating User Guides</fullName>
+                    <default>false</default>
+                    <label>Creating / Updating User Guides</label>
+                </value>
+                <value>
+                    <fullName>Data Requirement</fullName>
+                    <default>false</default>
+                    <label>Data Requirement</label>
+                </value>
+                <value>
+                    <fullName>Data Upload</fullName>
+                    <default>false</default>
+                    <label>Data Upload</label>
+                </value>
+                <value>
+                    <fullName>Delivered</fullName>
+                    <default>false</default>
+                    <label>Delivered</label>
+                </value>
+                <value>
+                    <fullName>Demo Progress Report</fullName>
+                    <default>false</default>
+                    <label>Demo Progress Report</label>
+                </value>
+                <value>
+                    <fullName>Demo Project QA</fullName>
+                    <default>false</default>
+                    <label>Demo Project QA</label>
+                </value>
+                <value>
+                    <fullName>Demo Project Setup</fullName>
+                    <default>false</default>
+                    <label>Demo Project Setup</label>
+                </value>
+                <value>
+                    <fullName>Demo Report Send</fullName>
+                    <default>false</default>
+                    <label>Demo Report Send</label>
+                </value>
+                <value>
+                    <fullName>Description/Issues (if any)</fullName>
+                    <default>false</default>
+                    <label>Description/Issues (if any)</label>
+                </value>
+                <value>
+                    <fullName>Discovery</fullName>
+                    <default>false</default>
+                    <label>Discovery</label>
+                </value>
+                <value>
+                    <fullName>Email Send</fullName>
+                    <default>false</default>
+                    <label>Email Send</label>
+                </value>
+                <value>
+                    <fullName>Email Sender Build</fullName>
+                    <default>false</default>
+                    <label>Email Sender Build</label>
+                </value>
+                <value>
+                    <fullName>Email Sender QA</fullName>
+                    <default>false</default>
+                    <label>Email Sender QA</label>
+                </value>
+                <value>
+                    <fullName>Floor Support/Live QA</fullName>
+                    <default>false</default>
+                    <label>Floor Support/Live QA</label>
+                </value>
+                <value>
+                    <fullName>Gathering of Analytics Information</fullName>
+                    <default>false</default>
+                    <label>Gathering of Analytics Information</label>
+                </value>
+                <value>
+                    <fullName>Handover</fullName>
+                    <default>false</default>
+                    <label>Handover</label>
+                </value>
+                <value>
+                    <fullName>Hard Copy Readiness</fullName>
+                    <default>false</default>
+                    <label>Hard Copy Readiness</label>
+                </value>
+                <value>
+                    <fullName>Internal Teams Platform Training</fullName>
+                    <default>false</default>
+                    <label>Internal Teams Platform Training</label>
+                </value>
+                <value>
+                    <fullName>IT Issues</fullName>
+                    <default>false</default>
+                    <label>IT Issues</label>
+                </value>
+                <value>
+                    <fullName>Management Reporting</fullName>
+                    <default>false</default>
+                    <label>Management Reporting</label>
+                </value>
+                <value>
+                    <fullName>Manpower Alignemnt - Count of Tablets Aligned</fullName>
+                    <default>false</default>
+                    <label>Manpower Alignemnt - Count of Tablets Aligned</label>
+                </value>
+                <value>
+                    <fullName>Manpower Alignment - Count of Manpower Aligned</fullName>
+                    <default>false</default>
+                    <label>Manpower Alignment - Count of Manpower Aligned</label>
+                </value>
+                <value>
+                    <fullName>Manpower Requirement</fullName>
+                    <default>false</default>
+                    <label>Manpower Requirement</label>
+                </value>
+                <value>
+                    <fullName>Master Data Clean</fullName>
+                    <default>false</default>
+                    <label>Master Data Clean</label>
+                </value>
+                <value>
+                    <fullName>Master Data QA</fullName>
+                    <default>false</default>
+                    <label>Master Data QA</label>
+                </value>
+                <value>
+                    <fullName>MIS Creation</fullName>
+                    <default>false</default>
+                    <label>MIS Creation</label>
+                </value>
+                <value>
+                    <fullName>Monthly Billing Reconciliation</fullName>
+                    <default>false</default>
+                    <label>Monthly Billing Reconciliation</label>
+                </value>
+                <value>
+                    <fullName>Monthly Billing Trackers</fullName>
+                    <default>false</default>
+                    <label>Monthly Billing Trackers</label>
+                </value>
+                <value>
+                    <fullName>New Product Implementation</fullName>
+                    <default>false</default>
+                    <label>New Product Implementation</label>
+                </value>
+                <value>
+                    <fullName>One on One sessions</fullName>
+                    <default>false</default>
+                    <label>One on One sessions</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Periodical Updation of SOPs</fullName>
+                    <default>false</default>
+                    <label>Periodical Updation of SOPs</label>
+                </value>
+                <value>
+                    <fullName>Pilot Progress Report - Update &amp; Send</fullName>
+                    <default>false</default>
+                    <label>Pilot Progress Report - Update &amp; Send</label>
+                </value>
+                <value>
+                    <fullName>Pilot Progress Report - Update only</fullName>
+                    <default>false</default>
+                    <label>Pilot Progress Report - Update only</label>
+                </value>
+                <value>
+                    <fullName>Pilot Project Check Candidate Completion</fullName>
+                    <default>false</default>
+                    <label>Pilot Project Check Candidate Completion</label>
+                </value>
+                <value>
+                    <fullName>Pilot Project QA</fullName>
+                    <default>false</default>
+                    <label>Pilot Project QA</label>
+                </value>
+                <value>
+                    <fullName>Pilot Project Reminder</fullName>
+                    <default>false</default>
+                    <label>Pilot Project Reminder</label>
+                </value>
+                <value>
+                    <fullName>Pilot Project Reminder QA</fullName>
+                    <default>false</default>
+                    <label>Pilot Project Reminder QA</label>
+                </value>
+                <value>
+                    <fullName>Pilot Project Setup</fullName>
+                    <default>false</default>
+                    <label>Pilot Project Setup</label>
+                </value>
+                <value>
+                    <fullName>Pilot Reports Send</fullName>
+                    <default>false</default>
+                    <label>Pilot Reports Send</label>
+                </value>
+                <value>
+                    <fullName>PM/PA Meeting Additional Attendee</fullName>
+                    <default>false</default>
+                    <label>PM/PA Meeting Additional Attendee</label>
+                </value>
+                <value>
+                    <fullName>PM Bounceback Management</fullName>
+                    <default>false</default>
+                    <label>PM Bounceback Management</label>
+                </value>
+                <value>
+                    <fullName>PM Handover</fullName>
+                    <default>false</default>
+                    <label>PM Handover</label>
+                </value>
+                <value>
+                    <fullName>PM Invoice Monthly task</fullName>
+                    <default>false</default>
+                    <label>PM Invoice Monthly task</label>
+                </value>
+                <value>
+                    <fullName>PM Post Launch Mop Up Tasks</fullName>
+                    <default>false</default>
+                    <label>PM Post Launch Mop Up Tasks</label>
+                </value>
+                <value>
+                    <fullName>PM Project Check</fullName>
+                    <default>false</default>
+                    <label>PM Project Check</label>
+                </value>
+                <value>
+                    <fullName>PM Project Closed</fullName>
+                    <default>false</default>
+                    <label>PM Project Closed</label>
+                </value>
+                <value>
+                    <fullName>PM Project Documentation</fullName>
+                    <default>false</default>
+                    <label>PM Project Documentation</label>
+                </value>
+                <value>
+                    <fullName>PM Reports Available Check</fullName>
+                    <default>false</default>
+                    <label>PM Reports Available Check</label>
+                </value>
+                <value>
+                    <fullName>Post Release UAT</fullName>
+                    <default>false</default>
+                    <label>Post Release UAT</label>
+                </value>
+                <value>
+                    <fullName>Preparation - Build</fullName>
+                    <default>false</default>
+                    <label>Preparation - Build</label>
+                </value>
+                <value>
+                    <fullName>Preparation - Demo</fullName>
+                    <default>false</default>
+                    <label>Preparation - Demo</label>
+                </value>
+                <value>
+                    <fullName>Proctor Alignment</fullName>
+                    <default>false</default>
+                    <label>Proctor Alignment</label>
+                </value>
+                <value>
+                    <fullName>Progress Reports - QA</fullName>
+                    <default>false</default>
+                    <label>Progress Reports - QA</label>
+                </value>
+                <value>
+                    <fullName>Progress Report - Update &amp; Send</fullName>
+                    <default>false</default>
+                    <label>Progress Report - Update &amp; Send</label>
+                </value>
+                <value>
+                    <fullName>Progress Report - Update only</fullName>
+                    <default>false</default>
+                    <label>Progress Report - Update only</label>
+                </value>
+                <value>
+                    <fullName>Project Documentation</fullName>
+                    <default>false</default>
+                    <label>Project Documentation</label>
+                </value>
+                <value>
+                    <fullName>Project Related Product Enhancement Discussions</fullName>
+                    <default>false</default>
+                    <label>Project Related Product Enhancement Discussions</label>
+                </value>
+                <value>
+                    <fullName>Project Setup</fullName>
+                    <default>false</default>
+                    <label>Project Setup</label>
+                </value>
+                <value>
+                    <fullName>QA Full Checkup</fullName>
+                    <default>false</default>
+                    <label>QA Full Checkup</label>
+                </value>
+                <value>
+                    <fullName>QA PAT Card</fullName>
+                    <default>false</default>
+                    <label>QA PAT Card</label>
+                </value>
+                <value>
+                    <fullName>Quality Assurance</fullName>
+                    <default>false</default>
+                    <label>Quality Assurance</label>
+                </value>
+                <value>
+                    <fullName>Report Download</fullName>
+                    <default>false</default>
+                    <label>Report Download</label>
+                </value>
+                <value>
+                    <fullName>Report QA</fullName>
+                    <default>false</default>
+                    <label>Report QA</label>
+                </value>
+                <value>
+                    <fullName>Report Send</fullName>
+                    <default>false</default>
+                    <label>Report Send</label>
+                </value>
+                <value>
+                    <fullName>Report Send (South Africa)</fullName>
+                    <default>false</default>
+                    <label>Report Send (South Africa)</label>
+                </value>
+                <value>
+                    <fullName>Reports - Produce Customised</fullName>
+                    <default>false</default>
+                    <label>Reports - Produce Customised</label>
+                </value>
+                <value>
+                    <fullName>Reports - Produced Customised QA</fullName>
+                    <default>false</default>
+                    <label>Reports - Produced Customised QA</label>
+                </value>
+                <value>
+                    <fullName>Result Sharing</fullName>
+                    <default>false</default>
+                    <label>Result Sharing</label>
+                </value>
+                <value>
+                    <fullName>Result Upload</fullName>
+                    <default>false</default>
+                    <label>Result Upload</label>
+                </value>
+                <value>
+                    <fullName>Result Upload (Central Portal)</fullName>
+                    <default>false</default>
+                    <label>Result Upload (Central Portal)</label>
+                </value>
+                <value>
+                    <fullName>Review Delivery</fullName>
+                    <default>false</default>
+                    <label>Review Delivery</label>
+                </value>
+                <value>
+                    <fullName>Scanning and uploading</fullName>
+                    <default>false</default>
+                    <label>Scanning and uploading</label>
+                </value>
+                <value>
+                    <fullName>Scheduled Delivery</fullName>
+                    <default>false</default>
+                    <label>Scheduled Delivery</label>
+                </value>
+                <value>
+                    <fullName>Scheduling</fullName>
+                    <default>false</default>
+                    <label>Scheduling</label>
+                </value>
+                <value>
+                    <fullName>Scheduling - Invigilator Details</fullName>
+                    <default>false</default>
+                    <label>Scheduling - Invigilator Details</label>
+                </value>
+                <value>
+                    <fullName>Scoping External</fullName>
+                    <default>false</default>
+                    <label>Scoping External</label>
+                </value>
+                <value>
+                    <fullName>Scoping Internal</fullName>
+                    <default>false</default>
+                    <label>Scoping Internal</label>
+                </value>
+                <value>
+                    <fullName>SHL360 Participant Resend</fullName>
+                    <default>false</default>
+                    <label>SHL360 Participant Resend</label>
+                </value>
+                <value>
+                    <fullName>SHL360 Phase 1 Completion (Foci)</fullName>
+                    <default>false</default>
+                    <label>SHL360 Phase 1 Completion (Foci)</label>
+                </value>
+                <value>
+                    <fullName>SHL360 Phase 1 Launch (Foci)</fullName>
+                    <default>false</default>
+                    <label>SHL360 Phase 1 Launch (Foci)</label>
+                </value>
+                <value>
+                    <fullName>SHL360 Phase 1 Reminder (Foci)</fullName>
+                    <default>false</default>
+                    <label>SHL360 Phase 1 Reminder (Foci)</label>
+                </value>
+                <value>
+                    <fullName>SHL360 Phase 2 Completion (All)</fullName>
+                    <default>false</default>
+                    <label>SHL360 Phase 2 Completion (All)</label>
+                </value>
+                <value>
+                    <fullName>SHL360 Phase 2 Extended Completion (All)</fullName>
+                    <default>false</default>
+                    <label>SHL360 Phase 2 Extended Completion (All)</label>
+                </value>
+                <value>
+                    <fullName>SHL360 Phase 2 Launch (All)</fullName>
+                    <default>false</default>
+                    <label>SHL360 Phase 2 Launch (All)</label>
+                </value>
+                <value>
+                    <fullName>SHL360 Phase 2 Reminder (All)</fullName>
+                    <default>false</default>
+                    <label>SHL360 Phase 2 Reminder (All)</label>
+                </value>
+                <value>
+                    <fullName>SHL360 Progress Reports - QA</fullName>
+                    <default>false</default>
+                    <label>SHL360 Progress Reports - QA</label>
+                </value>
+                <value>
+                    <fullName>SHL360 Progress Report - Update</fullName>
+                    <default>false</default>
+                    <label>SHL360 Progress Report - Update</label>
+                </value>
+                <value>
+                    <fullName>SHL360 Progress Report - Update &amp; Send</fullName>
+                    <default>false</default>
+                    <label>SHL360 Progress Report - Update &amp; Send</label>
+                </value>
+                <value>
+                    <fullName>SHL360 QA Full Checkup</fullName>
+                    <default>false</default>
+                    <label>SHL360 QA Full Checkup</label>
+                </value>
+                <value>
+                    <fullName>SHL360 QA Questionnaire</fullName>
+                    <default>false</default>
+                    <label>SHL360 QA Questionnaire</label>
+                </value>
+                <value>
+                    <fullName>SHL360 - Report Check available</fullName>
+                    <default>false</default>
+                    <label>SHL360 - Report Check available</label>
+                </value>
+                <value>
+                    <fullName>SHL360 - Report Download</fullName>
+                    <default>false</default>
+                    <label>SHL360 - Report Download</label>
+                </value>
+                <value>
+                    <fullName>SHL360 - Report Enable</fullName>
+                    <default>false</default>
+                    <label>SHL360 - Report Enable</label>
+                </value>
+                <value>
+                    <fullName>SHL360 - Report QA</fullName>
+                    <default>false</default>
+                    <label>SHL360 - Report QA</label>
+                </value>
+                <value>
+                    <fullName>SHL360 - Report Send</fullName>
+                    <default>false</default>
+                    <label>SHL360 - Report Send</label>
+                </value>
+                <value>
+                    <fullName>Team Meetings - Business Updates</fullName>
+                    <default>false</default>
+                    <label>Team Meetings - Business Updates</label>
+                </value>
+                <value>
+                    <fullName>Testing</fullName>
+                    <default>false</default>
+                    <label>Testing</label>
+                </value>
+                <value>
+                    <fullName>Tool Building &amp; UAT</fullName>
+                    <default>false</default>
+                    <label>Tool Building &amp; UAT</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+                <value>
+                    <fullName>Updating User Guide/Tutorial Videos</fullName>
+                    <default>false</default>
+                    <label>Updating User Guide/Tutorial Videos</label>
+                </value>
+                <value>
+                    <fullName>TA Pre-Launch: Data Sourcing &amp; Cleaning</fullName>
+                    <default>false</default>
+                    <label>TA Pre-Launch: Data Sourcing &amp; Cleaning</label>
+                </value>
+                <value>
+                    <fullName>TA Pre-Launch: Job Launch</fullName>
+                    <default>false</default>
+                    <label>TA Pre-Launch: Job Launch</label>
+                </value>
+                <value>
+                    <fullName>TA Post-Launch: Applicant Data Cleaning</fullName>
+                    <default>false</default>
+                    <label>TA Post-Launch: Applicant Data Cleaning</label>
+                </value>
+                <value>
+                    <fullName>TA Post-Launch: Applicant Data Processing</fullName>
+                    <default>false</default>
+                    <label>TA Post-Launch: Applicant Data Processing</label>
+                </value>
+                <value>
+                    <fullName>TA Post-Launch: Reminders</fullName>
+                    <default>false</default>
+                    <label>TA Post-Launch: Reminders</label>
+                </value>
+                <value>
+                    <fullName>TA Post-Launch: MIS Creation</fullName>
+                    <default>false</default>
+                    <label>TA Post-Launch: MIS Creation</label>
+                </value>
+                <value>
+                    <fullName>OA Build</fullName>
+                    <default>false</default>
+                    <label>OA Build</label>
+                </value>
+                <value>
+                    <fullName>Internal Project</fullName>
+                    <default>false</default>
+                    <label>Internal Project</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Product Related Tasks</controllingFieldValue>
+                <valueName>New Product Implementation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Related Tasks</controllingFieldValue>
+                <controllingFieldValue>Pipeline</controllingFieldValue>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <controllingFieldValue>Launch</controllingFieldValue>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <controllingFieldValue>Scoping</controllingFieldValue>
+                <controllingFieldValue>Build</controllingFieldValue>
+                <controllingFieldValue>Delivery</controllingFieldValue>
+                <controllingFieldValue>Coaching &amp; Development</controllingFieldValue>
+                <controllingFieldValue>Miscellaneous</controllingFieldValue>
+                <controllingFieldValue>Operational Tasks</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Related Tasks</controllingFieldValue>
+                <valueName>Post Release UAT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Related Tasks</controllingFieldValue>
+                <valueName>Project Related Product Enhancement Discussions</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Product Related Tasks</controllingFieldValue>
+                <valueName>Updating User Guide/Tutorial Videos</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pipeline</controllingFieldValue>
+                <valueName>Demo Progress Report</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pipeline</controllingFieldValue>
+                <valueName>Demo Project QA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pipeline</controllingFieldValue>
+                <valueName>Demo Project Setup</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pipeline</controllingFieldValue>
+                <valueName>Demo Report Send</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pipeline</controllingFieldValue>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <controllingFieldValue>Delivery</controllingFieldValue>
+                <controllingFieldValue>Miscellaneous</controllingFieldValue>
+                <valueName>Handover</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pipeline</controllingFieldValue>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Project Documentation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pipeline</controllingFieldValue>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Scoping External</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pipeline</controllingFieldValue>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Scoping Internal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pool Reach-Out</controllingFieldValue>
+                <valueName>TA Pre-Launch: Data Sourcing &amp; Cleaning</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pool Reach-Out</controllingFieldValue>
+                <valueName>TA Pre-Launch: Job Launch</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pool Reach-Out</controllingFieldValue>
+                <valueName>TA Post-Launch: Applicant Data Cleaning</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pool Reach-Out</controllingFieldValue>
+                <valueName>TA Post-Launch: Applicant Data Processing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pool Reach-Out</controllingFieldValue>
+                <valueName>TA Post-Launch: Reminders</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pool Reach-Out</controllingFieldValue>
+                <valueName>TA Post-Launch: MIS Creation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Assessment Creation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Assessor Alignment</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Batch Acceptance and TP intimation - Batch acceptance on Central portal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Batch Acceptance and TP intimation - Batch details entered in the tracker</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Batch Acceptance and TP intimation - Other stakeholder intimation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Batch Acceptance and TP intimation - TP intimation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Check Request for all details</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Email Sender Build</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Email Sender QA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Gathering of Analytics Information</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Manpower Alignemnt - Count of Tablets Aligned</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Manpower Alignment - Count of Manpower Aligned</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Manpower Requirement</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Master Data Clean</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Master Data QA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>MIS Creation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Pilot Progress Report - Update &amp; Send</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Pilot Progress Report - Update only</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Pilot Project Check Candidate Completion</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Pilot Project QA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Pilot Project Reminder</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Pilot Project Reminder QA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Pilot Project Setup</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Pilot Reports Send</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <controllingFieldValue>Launch</controllingFieldValue>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>PM Project Check</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Proctor Alignment</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>QA PAT Card</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Reports - Produce Customised</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Scheduling</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pre Launch</controllingFieldValue>
+                <valueName>Scheduling - Invigilator Details</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Launch</controllingFieldValue>
+                <valueName>Assessment Tracking - BOD/EOD Tracking and Reporting</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Launch</controllingFieldValue>
+                <valueName>Data Upload</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Launch</controllingFieldValue>
+                <valueName>Email Send</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Launch</controllingFieldValue>
+                <valueName>Project Setup</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Launch</controllingFieldValue>
+                <valueName>QA Full Checkup</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Launch</controllingFieldValue>
+                <valueName>SHL360 Phase 1 Launch (Foci)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Launch</controllingFieldValue>
+                <valueName>SHL360 Phase 2 Launch (All)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Launch</controllingFieldValue>
+                <valueName>SHL360 QA Full Checkup</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Launch</controllingFieldValue>
+                <valueName>SHL360 QA Questionnaire</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Launch</controllingFieldValue>
+                <valueName>OA Build</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Additional Candidates QA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Additional Candidates Setup</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Bandwidth Deployment (Internal)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Candidate Changes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Candidate Completion check</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Candidate Completion Check (extension)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Candidate Recall</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Candidate Reminder</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Candidate Reminder QA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Candidate Resend Invitation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Candidate Reset Assessment</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Client Portal Acceptance</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Client Portal Upload</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Client Result Approval</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Count</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Data Requirement</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Description/Issues (if any)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Hard Copy Readiness</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>PM/PA Meeting Additional Attendee</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>PM Bounceback Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>PM Handover</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>PM Invoice Monthly task</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>PM Post Launch Mop Up Tasks</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>PM Project Closed</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>PM Project Documentation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>PM Reports Available Check</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Progress Reports - QA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Progress Report - Update &amp; Send</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Progress Report - Update only</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <controllingFieldValue>Operational Tasks</controllingFieldValue>
+                <valueName>Report Download</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Report QA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Report Send</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Report Send (South Africa)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Reports - Produced Customised QA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Result Sharing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Result Upload</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Result Upload (Central Portal)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>Scanning and uploading</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>SHL360 Participant Resend</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>SHL360 Phase 1 Completion (Foci)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>SHL360 Phase 1 Reminder (Foci)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>SHL360 Phase 2 Completion (All)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>SHL360 Phase 2 Extended Completion (All)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>SHL360 Phase 2 Reminder (All)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>SHL360 Progress Reports - QA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>SHL360 Progress Report - Update</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>SHL360 Progress Report - Update &amp; Send</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>SHL360 - Report Check available</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>SHL360 - Report Download</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>SHL360 - Report Enable</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>SHL360 - Report QA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Post Launch</controllingFieldValue>
+                <valueName>SHL360 - Report Send</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Scoping</controllingFieldValue>
+                <valueName>Build - Demo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Scoping</controllingFieldValue>
+                <valueName>Delivered</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Scoping</controllingFieldValue>
+                <valueName>Discovery</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Scoping</controllingFieldValue>
+                <valueName>Preparation - Demo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Build</controllingFieldValue>
+                <valueName>Build - Iteration</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Build</controllingFieldValue>
+                <valueName>Preparation - Build</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Build</controllingFieldValue>
+                <controllingFieldValue>Delivery</controllingFieldValue>
+                <valueName>Quality Assurance</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Build</controllingFieldValue>
+                <valueName>Review Delivery</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Build</controllingFieldValue>
+                <valueName>Testing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery</controllingFieldValue>
+                <valueName>Build - Update</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery</controllingFieldValue>
+                <valueName>Clean Data</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Delivery</controllingFieldValue>
+                <valueName>Scheduled Delivery</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coaching &amp; Development</controllingFieldValue>
+                <valueName>Contact Coaching</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coaching &amp; Development</controllingFieldValue>
+                <valueName>Floor Support/Live QA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coaching &amp; Development</controllingFieldValue>
+                <valueName>Internal Teams Platform Training</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coaching &amp; Development</controllingFieldValue>
+                <valueName>One on One sessions</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coaching &amp; Development</controllingFieldValue>
+                <valueName>Periodical Updation of SOPs</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coaching &amp; Development</controllingFieldValue>
+                <controllingFieldValue>Miscellaneous</controllingFieldValue>
+                <valueName>Team Meetings - Business Updates</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coaching &amp; Development</controllingFieldValue>
+                <valueName>Training</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Miscellaneous</controllingFieldValue>
+                <valueName>Cab Delay</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Miscellaneous</controllingFieldValue>
+                <valueName>IT Issues</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Miscellaneous</controllingFieldValue>
+                <valueName>Management Reporting</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Operational Tasks</controllingFieldValue>
+                <valueName>Categorising Mailbox</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Operational Tasks</controllingFieldValue>
+                <valueName>Creating / Updating Templates</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Operational Tasks</controllingFieldValue>
+                <valueName>Creating / Updating User Guides</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Operational Tasks</controllingFieldValue>
+                <valueName>Monthly Billing Reconciliation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Operational Tasks</controllingFieldValue>
+                <valueName>Monthly Billing Trackers</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Operational Tasks</controllingFieldValue>
+                <valueName>Tool Building &amp; UAT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Operational Tasks</controllingFieldValue>
+                <valueName>Internal Project</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Timer_Offset__c</fullName>
+        <description>Backend use only. It stores the interval time of play/pause of timer.</description>
+        <externalId>false</externalId>
+        <label>Timer Offset (System Used Only)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Timer_Resumed_At__c</fullName>
+        <description>Backend use only. It stores the timestamp at which the timer is resumed for task.</description>
+        <label>Timer Resumed At</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Timer_Stopped_At__c</fullName>
+        <description>Backend use only. It stores the timestamp at which the timer is stopped for task.</description>
+        <label>Timer Stopped At</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>UnScheduled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This is only used to retain the legacy data of Task for data migration, not used anywhere in new MS logic</description>
+        <label>Unscheduled</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>User_Lookup_System_Used_Only__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is being used in LWC component to work as user lookup input field.
+THIS FIELD SHOULD NOT HAVE FILTERS AND SHOULD NOT BE DELETED.</description>
+        <label>User Lookup (System Used Only)</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>MS_Tasks</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>MS Task</label>
+    <nameField>
+        <displayFormat>TSK-{00000}</displayFormat>
+        <label>MS Task Name</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>MS Tasks</pluralLabel>
+    <recordTypeTrackHistory>true</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>General_MS_Task</fullName>
+        <active>true</active>
+        <label>General MS Task</label>
+        <picklistValues>
+            <picklist>Job_Region__c</picklist>
+            <values>
+                <fullName>China</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hong Kong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non China</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Singapore</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Systems__c</picklist>
+            <values>
+                <fullName>Automation Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Coaching%2FProject Coaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hardware Issues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IGB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MFS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MFS%2FTC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mail Sender</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other%2FNone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Percipio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quaterly Conversations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resource Planner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sharepoint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TC%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tableau Dashboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Talent Central</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VADC%2FSIOD</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Category__c</picklist>
+            <values>
+                <fullName>Coaching %26 Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Miscellaneous</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operational Tasks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pool Reach-Out</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Related Tasks</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Status__c</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Type__c</picklist>
+            <values>
+                <fullName>Cab Delay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Categorising Mailbox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Coaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Creating %2F Updating Templates</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Creating %2F Updating User Guides</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Floor Support%2FLive QA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Handover</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Issues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Teams Platform Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Management Reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly Billing Reconciliation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly Billing Trackers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Product Implementation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>One on One sessions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PM Project Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Periodical Updation of SOPs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Release UAT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Related Product Enhancement Discussions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report Download</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TA Post-Launch%3A Applicant Data Cleaning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TA Post-Launch%3A Applicant Data Processing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TA Post-Launch%3A MIS Creation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TA Post-Launch%3A Reminders</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TA Pre-Launch%3A Data Sourcing %26 Cleaning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TA Pre-Launch%3A Job Launch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Team Meetings - Business Updates</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tool Building %26 UAT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Updating User Guide%2FTutorial Videos</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>MS_Analytics</fullName>
+        <active>true</active>
+        <label>MS Analytics</label>
+        <picklistValues>
+            <picklist>Job_Region__c</picklist>
+            <values>
+                <fullName>China</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hong Kong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non China</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Singapore</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Systems__c</picklist>
+            <values>
+                <fullName>Automation Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Coaching%2FProject Coaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hardware Issues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MFS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MFS%2FTC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mail Sender</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other%2FNone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Percipio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resource Planner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sharepoint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Talent Central</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VADC%2FSIOD</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Category__c</picklist>
+            <values>
+                <fullName>Build</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Launch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scoping</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Status__c</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Type__c</picklist>
+            <values>
+                <fullName>Build - Demo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Build - Iteration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Build - Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clean Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Discovery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gathering of Analytics Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Handover</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Preparation - Build</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Preparation - Demo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality Assurance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Testing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>TA_Corporate</fullName>
+        <active>true</active>
+        <label>TA - Corporate</label>
+        <picklistValues>
+            <picklist>Job_Region__c</picklist>
+            <values>
+                <fullName>China</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hong Kong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non China</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Singapore</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Systems__c</picklist>
+            <values>
+                <fullName>Automation Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Coaching%2FProject Coaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hardware Issues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MFS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MFS%2FTC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mail Sender</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other%2FNone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Percipio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resource Planner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sharepoint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Talent Central</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VADC%2FSIOD</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Category__c</picklist>
+            <values>
+                <fullName>Post Launch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre Launch</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Status__c</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Type__c</picklist>
+            <values>
+                <fullName>Assessment Creation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bandwidth Deployment %28Internal%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Tracker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Requirement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MIS Creation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manpower Requirement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Result Sharing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduling - Invigilator Details</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>TA_Vocational</fullName>
+        <active>true</active>
+        <label>TA - Vocational</label>
+        <picklistValues>
+            <picklist>Job_Region__c</picklist>
+            <values>
+                <fullName>China</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hong Kong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non China</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Singapore</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Systems__c</picklist>
+            <values>
+                <fullName>Automation Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Coaching%2FProject Coaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hardware Issues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MFS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MFS%2FTC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mail Sender</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other%2FNone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Percipio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resource Planner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sharepoint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Talent Central</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VADC%2FSIOD</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Category__c</picklist>
+            <values>
+                <fullName>Launch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Launch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre Launch</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Status__c</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Type__c</picklist>
+            <values>
+                <fullName>Assessment Creation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assessment Tracking - BOD%2FEOD Tracking and Reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assessor Alignment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Batch Acceptance and TP intimation - Batch acceptance on Central portal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Batch Acceptance and TP intimation - Batch details entered in the tracker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Batch Acceptance and TP intimation - Other stakeholder intimation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Batch Acceptance and TP intimation - TP intimation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Portal Acceptance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Portal Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Result Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Count</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Description%2FIssues %28if any%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gathering of Analytics Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hard Copy Readiness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manpower Alignemnt - Count of Tablets Aligned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manpower Alignment - Count of Manpower Aligned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proctor Alignment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Result Sharing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Result Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Result Upload %28Central Portal%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scanning and uploading</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Talent_Management</fullName>
+        <active>true</active>
+        <label>Talent Management</label>
+        <picklistValues>
+            <picklist>Job_Region__c</picklist>
+            <values>
+                <fullName>China</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hong Kong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non China</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Singapore</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Systems__c</picklist>
+            <values>
+                <fullName>Automation Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Coaching%2FProject Coaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hardware Issues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MFS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MFS%2FTC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mail Sender</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other%2FNone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outlook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Percipio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resource Planner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sharepoint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Talent Central</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VADC%2FSIOD</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Category__c</picklist>
+            <values>
+                <fullName>Launch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Launch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre Launch</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Status__c</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Type__c</picklist>
+            <values>
+                <fullName>Additional Candidates QA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Additional Candidates Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Candidate Changes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Candidate Completion Check %28extension%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Candidate Completion check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Candidate Recall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Candidate Reminder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Candidate Reminder QA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Candidate Resend Invitation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Candidate Reset Assessment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Check Request for all details</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo Progress Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo Project QA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo Project Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo Report Send</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Send</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Sender Build</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Sender QA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Handover</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Master Data Clean</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Master Data QA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OA Build</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PM Bounceback Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PM Handover</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PM Invoice Monthly task</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PM Post Launch Mop Up Tasks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PM Project Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PM Project Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PM Project Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PM Reports Available Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PM%2FPA Meeting Additional Attendee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pilot Progress Report - Update %26 Send</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pilot Progress Report - Update only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pilot Project Check Candidate Completion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pilot Project QA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pilot Project Reminder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pilot Project Reminder QA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pilot Project Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pilot Reports Send</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Progress Report - Update %26 Send</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Progress Report - Update only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Progress Reports - QA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QA Full Checkup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QA PAT Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report Download</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report QA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report Send</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report Send %28South Africa%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reports - Produce Customised</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reports - Produced Customised QA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHL360 - Report Check available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHL360 - Report Download</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHL360 - Report Enable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHL360 - Report QA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHL360 - Report Send</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHL360 Participant Resend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHL360 Phase 1 Completion %28Foci%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHL360 Phase 1 Launch %28Foci%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHL360 Phase 1 Reminder %28Foci%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHL360 Phase 2 Completion %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHL360 Phase 2 Extended Completion %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHL360 Phase 2 Launch %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHL360 Phase 2 Reminder %28All%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHL360 Progress Report - Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHL360 Progress Report - Update %26 Send</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHL360 Progress Reports - QA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHL360 QA Full Checkup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHL360 QA Questionnaire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scoping External</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scoping Internal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Actual_Time_On_Completed_Status</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL(Task_Status__c, &quot;Completed&quot;),
+ISBLANK(Actual_Time_Taken__c),ISNEW(),RecordType.DeveloperName = &quot;General_MS_Task&quot;)</errorConditionFormula>
+        <errorMessage>Actual Time Taken should not be blank if Task Staus is &apos;Completed&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prevent_IT_Ticket_Number_Editing</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(OR(ISPICKVAL(Task_Type__c, &quot;IT Issues&quot;),
+ISPICKVAL(Task_Type__c, &quot;Floor Support/Live QA&quot;)),
+ISBLANK(IT_Ticket_Number__c))</errorConditionFormula>
+        <errorMessage>IT Ticket Number should not be blank if Task Type value is &apos;IT Issues&apos;  or &apos;Floor Support/Live QA&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prevent_In_progress_MS_Task_Creation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL(Task_Status__c, &quot;In Progress&quot;),
+ISNEW(),RecordType.DeveloperName = &quot;General_MS_Task&quot;)</errorConditionFormula>
+        <errorMessage>You cannot create MS Task with &apos;In Progress&apos; Task Status.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prevent_Past_Task_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( OR(ISNEW(), ISCHANGED(Task_Date__c)), Task_Date__c &lt; TODAY(),RecordType.DeveloperName &lt;&gt; &quot;General_MS_Task&quot;, NOT(CONTAINS($Profile.Name,&apos;System Admin&apos;)))</errorConditionFormula>
+        <errorMessage>You cannot schedule a task in the past, please select current or future date</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

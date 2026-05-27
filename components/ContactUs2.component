@@ -1,0 +1,1188 @@
+<apex:component >
+ <html>
+
+       <style>
+           .g-recaptcha{
+           position:relative;
+           }
+           span.captcha-error{
+               position: absolute;
+                bottom: -12px;
+                width: 100%;
+                font-size: 12px;
+                color: red;
+                line-height: 10px;
+           }
+           span.error{
+                position: absolute;
+                top: 30px;
+                left: 256px;
+                width: 100%;
+                font-size: 12px;
+                color: red;
+                line-height: 10px;
+           }
+           .top-nav2-languages > form{
+               margin: 0;
+           }
+           .top-nav2-languages > form .styled-select > select{
+                    width: 100%;
+           }
+           #searchAskInput{
+            float:none;
+           }
+           h1{
+               line-height: normal;
+                font-size: 30px;
+               margin-top: 0;
+           }
+           p {
+                font-size: 14px;
+                color: #4d4d4f;
+            }
+           h2{
+                color: #4d4d4f;
+                font: 15px Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                line-height: 19px;
+                padding: 10px 0px;
+           }
+           form{
+                width: 100%;
+                margin: 14px auto 40px;
+           }
+           label {
+                max-width: 210px !important;
+                width: 100%;
+                display: inline-block;
+                font-size:14px;
+                line-height: 19px;
+                position: relative;
+            }
+           select{
+                vertical-align: top;
+                width: 444px;
+                float: right; 
+                height: 30px;
+           }
+           .shl-contact input{
+                vertical-align: top;
+                width:440px;
+                float: right;
+                height: 22px;
+           }
+           textarea{
+                vertical-align: top;
+                width:440px;
+                float: right;
+                height: 60px;
+               font-family: inherit;
+           }
+            .form_brdr{
+                   border-top: 1px solid #78d64b;
+                   width: 100%;
+                   margin-top: 10px;
+           }     
+           #attachments{
+                border: 0;
+                padding: 0;
+                margin: 0;
+           }
+           #addbtn1{
+                    float: left;
+                    width: 11%;
+           }
+           #recaptcha{
+                    margin: 0;
+                    border: 0;
+                    padding: 0;
+           }
+           input[type="submit"]{
+                    width: 11%;
+                    background-color: #555;
+                    color: white;
+                    padding: 5px 5px;
+                    border-radius: 5px;
+                    height: 29px;
+                    line-height: 12px;
+           }
+           a {
+                text-decoration: none;
+                color: #2A6ABB;
+            }
+
+        </style>
+
+        <form action="" method="POST" name="myform" class="shl-contact">
+            <input type = "hidden" name="orgid" value="00D2000000008g1"/>
+          <!--  <input type = "hidden" name="retURL" value="https://dev-support-shl.cs87.force.com/apex/Thankyou?core.apexpages.request.devconsole=1"/>-->
+<h1>
+    {!$Label.Kb_Case_Contact_Us}
+</h1>
+            <p>
+  {!$Label.Kb_Case_Contact_Local_SHL}<br></br><br></br>
+ {!$Label.KB_Case_Support_Timings}<br></br><br></br>
+  {!$Label.Kb_Case_Country}<br></br><br></br>
+ <span style="color: red !important; display: inline; float: none;">*</span> {!$Label.KB_IndicateRequiredFields}<br></br><br></br>
+</p>
+<h2>
+  {!$Label.kb_ask_Knowledge_Base}
+</h2><br></br>
+  <div class="form_brdr"></div>
+<br></br><br></br>
+<!--Query Type field -->
+
+<apex:variable var="catvalue" value="{!$CurrentPage.parameters.cg}"/>
+    <div style="display:{!IF($CurrentPage.parameters.cg=='client','block','none')};">
+<label for="QueryType">{!$Label.Kb_Case_Client_Query_Type} <span style="color: red !important; display: inline; float: none;">*</span></label>
+<select id="00ND00000069p73" name="00ND00000069p73" >
+    <option value="none">{!$Label.Kb_P2_Case_Client_Select_Query}</option>
+    <option value="Product, billing or ordering query">{!$Label.Kb_Case_Client_Query_Type_PB}</option>
+   <option value ="Technology related questions or issue">{!$Label.Kb_Case_Client_Query_Type_TQ}</option>
+</select><br></br><br></br><br></br>
+</div>
+<script>
+  
+$('#00ND00000069p73').on('change', function() {
+     $('#00ND00000069p6z').children('option').remove();
+        if($(this).val() == "Product, billing or ordering query"){
+            $('#00ND00000069p6z').append('<option value="">--{!$Label.None}--</option>');
+            $('#00ND00000069p6z').append(' <option value="Product">{!$Label.Product}</option>');
+              $('#00ND00000069p6z').append(' <option value="Billing">{!$Label.Billing}</option>');
+             $('#00ND00000069p6z').append('<option value="Order">{!$Label.Order}</option>');
+             $('#00ND00000069p6z').append('<option value="Systems related">{!$Label.Systems_related}</option>');
+             $('#00ND00000069p6z').append('  <option value="Training">{!$Label.Training}</option>');
+             $('#00ND00000069p6z').append('  <option value="Candidate">{!$Label.Candidate}</option>');
+             $('#00ND00000069p6z').append('<option value="Other, Please Specify">{!$Label.Others_Please_specify}</option>');
+        }
+         else if($(this).val()== "Technology related questions or issue"){
+             $('#00ND00000069p6z').append('<option value="">--{!$Label.None}--</option>');
+            $('#00ND00000069p6z').append(' <option value="Login Issue">{!$Label.Login_Issue}</option>');
+             $('#00ND00000069p6z').append(" <option value='Registration Issue'>{!$Label.Registration_Issue}</option>");
+             $('#00ND00000069p6z').append(' <option value="System Compatibility">{!$Label.System_Compatibility}</option>');
+             
+             $('#00ND00000069p6z').append('  <option value="Simple System Navigation">{!$Label.Simple_System_Navigation}</option>');
+             $('#00ND00000069p6z').append(" <option value='Invitation/Email not Received'>{!$Label.Invitation_Email_not_Received}</option>");
+             $('#00ND00000069p6z').append('<option value="Candidate Query">{!$Label.Candidate_Query}</option>');
+             $('#00ND00000069p6z').append(' <option value="General Enquiry">{!$Label.General_Enquiry}</option>');
+             $('#00ND00000069p6z').append(" <option value='Timer Extension Required'>{!$Label.Timer_Extension_Required}</option>");
+             $('#00ND00000069p6z').append(" <option value='Results Generation Issue'>{!$Label.Results_Generation_Issue}</option>");
+              $('#00ND00000069p6z').append(' <option value="System Performance">{!$Label.System_Performance}</option>');
+              $('#00ND00000069p6z').append('<option value="Other, Please Specify">{!$Label.Others_Please_specify}</option>');
+           
+        }
+    });
+
+$('#00ND00000069p73').on('change', function() {
+    if ($(this).val() === "Product, billing or ordering query") {
+     
+        $("#errmsg").attr("required",false);
+    } else {
+        $("#errmsg").attr("required",true);
+    }
+    //jQuery('#description').val('Enquiry: '+$(this).val()); 
+  
+});
+</script>
+<label  for="NewOrExisting">{!$Label.KB_new_or_existing} <span style="color: red !important; display: inline; float: none;">*</span></label>
+<select  id="00ND00000069p72" name="00ND00000069p72" title="New or Existing Query"><option value="none">--{!$Label.None}--</option><option value="New">{!$Label.KB_New}</option>
+<option value="Existing">{!$Label.KB_Existing}</option>
+</select><br></br><br></br><br></br>
+
+
+<script>
+$('#00ND00000069p72').on('change', function() {
+    if ($(this).val() === "Existing") {
+     
+        $("#00ND00000069p75").attr("required",true);
+    } else {
+        $("#00ND00000069p75").attr("required",false);
+    }
+    //jQuery('#description').val('Enquiry: '+$(this).val()); 
+});
+    
+</script>
+
+
+<label>{!$Label.KB_What_is_your_reference_number}</label><input  id="00ND00000069p75" maxlength="100" name="00ND00000069p75" size="20" type="number" min="0"/><br></br><br></br><br></br><br></br>
+<label for="Enterquestion">{!$Label.Kb_Case_Question_Text} <span style="color: red !important; display: inline; float: none;">*</span></label> <textarea id="test" rows="4" cols="50" minlength="50"  required="true"/><br></br><br></br><br></br>
+<br></br><br></br>
+    <div style="display:{!IF($CurrentPage.parameters.cg=='client','block','none')};">
+ <label for ="PlatformUsed">{!$Label.KB_What_platform_are_you_using} <span style="color: red !important; display: inline; float: none;">*</span></label>
+   <select id="00ND00000069p76" name="00ND00000069p76" title="What platform are you using?">
+       <option value="none">--{!$Label.None}--</option>
+              <option value="Brainbench">Brainbench</option>
+              <option value="iAssess/AMCAT">iAssess/AMCAT</option>
+              <option value="Insights">Insights</option>
+       <option value="Leader Edge">Leader Edge  </option>
+       <option value="Multirater Feedback System (MFS)">Multirater Feedback System (MFS)</option>
+       <option value="Other, please specify">Other, please specify</option>
+       <option value ="Select2Perform (S2P) ">Select2Perform (S2P)  </option>
+       <option value="SelectionSage">SelectionSage</option>
+       <option value="SHL On Demand (SODA)">SHL On Demand (SODA)</option>
+              <option value="SHLOnline">SHLOnline</option>
+       <option value="Sunstone Analytics">Sunstone Analytics</option>
+       <option value="TalentCentral™">TalentCentral™</option>
+       <option value="Unknown">Unknown</option>
+       
+        </select>    
+</div><br></br><br></br>
+<label for="Additionaldetails">{!$Label.KB_Additional_details_on_your_enquiry} <span style="color: red !important; display: inline; float: none;">*</span></label>
+<select  id="00ND00000069p6z" name="00ND00000069p6z" title="Additional details on your enquiry" required="true">
+    <option value="none">--{!$Label.None}--</option>
+    <option value="Login Issue">{!$Label.Login_Issue}</option>
+<option value="Registration Issue">{!$Label.Registration_Issue}</option>
+<option value="System Compatibility">{!$Label.System_Compatibility}</option>
+<option value="Test Status Enquiry">{!$Label.Test_Status_Enquiry}</option>
+<option value="Disability Query">{!$Label.Disability_Query}</option>
+<option value="Test Purpose Enquiry">{!$Label.Test_Purpose_Enquiry}</option>
+<option value="Test Link broken">{!$Label.Test_Link_broken}</option>
+    <option value="Product">{!$Label.Product}</option>
+    <option value="Billing">{!$Label.Billing}</option>
+    <option value="Order">{!$Label.Order}</option>
+    <option value="Systems related">{!$Label.Systems_related}</option>
+    <option value="Training">{!$Label.Training}</option>
+    <option value="Candidate">{!$Label.Candidate}</option>
+    <option value="Simple System Navigation">{!$Label.Simple_System_Navigation}</option>
+    <option value="Invitation/Email not Received">{!$Label.Invitation_Email_not_Received}</option>
+    <option value="Candidate Query">{!$Label.Candidate_Query}</option>
+    <option value="General Enquiry">{!$Label.General_Enquiry}</option>
+    <option value="Timer Extension Required">{!$Label.Timer_Extension_Required}</option>
+        <option value="Results Generation Issue">{!$Label.Results_Generation_Issue}</option>
+      <option value="System Performance">{!$Label.System_Performance}</option>
+
+<option value="Other, Please Specify">{!$Label.Others_Please_specify}</option>
+</select><br></br><br></br><br></br><br></br>
+<script>
+$('#00ND00000069p6z').on('change', function() {
+    if ($(this).val() === "Other, Please Specify") {
+     
+        $("#others").attr("required",true);
+    } else {
+        $("#others").attr("required",false);
+    }
+    });
+
+</script>
+ <label for="others">{!$Label.Others_Please_specify}</label>
+    <textarea  id="others" rows="4" cols="50" /><br></br><br></br><br></br>
+<h2>
+   {!$Label.Contact_Details}
+</h2>
+<br></br>
+
+<div class="form_brdr"></div>
+
+<br></br><br></br>
+<label for="ContactName">{!$Label.Kb_Case_FL_Name} <span style="color: red !important; display: inline; float: none;">*</span></label>
+<input  id="00N20000000io8V" name="00N20000000io8V" type="text" required="true" />
+<label for="CandidateName">{!$Label.Kb_Case_FL_Name} <span style="color: red !important; display: inline; float: none;">*</span></label>
+<input  id="00N20000000inkK" name="00N20000000inkK" type="text" required="true" /><br></br><br></br><br></br>
+
+<label for="CompanyClient">{!$Label.Kb_Case_Client_Company_name} <span style="color: red !important; display: inline; float: none;">*</span></label>
+<input  id="CompanyidClient" name="Company" type="text" required="true" />
+<label for="Company">{!$Label.Kb_Case_Company_Name} <span style="color: red !important; display: inline; float: none;">*</span></label>&nbsp;&nbsp;
+<input  id="Companyid" name="Company" type="text" required="true" /><br></br><br></br><br></br>
+
+<label style="display:{!IF($CurrentPage.parameters.cg=='client','inline-block','none')};" for="country">{!$Label.KB_Country} <span style="color: red !important; display: inline; float: none;">*</span></label>      
+
+<label style="display:{!IF($CurrentPage.parameters.cg=='candidate','inline-block','none')};" for="country">{!$Label.Country} <span style="color: red !important; display: inline; float: none;">*</span></label>      
+  
+<select name="00ND0000005D3ij" id="00ND0000005D3ij" required="true">
+   <!-- <optgroup label="Select country/region">-->
+       <!-- <option data-countryCode="Select country/region" value="Select country/region" ></option>-->
+      <!--  <option disabled="disabled">Select country/region</option>-->
+    <option value="none">{!$Label.Kb_Case_Select_Country}</option>
+          <option data-countryCode="US" value="USA">USA (+1)</option>
+  <option data-countryCode="GB" value="GBR">UK (+44)</option>
+  <option data-countryCode="AU" value="AUS">Australia (+61)</option>
+  <option data-countryCode="CN" value="CHN">China (+86)</option>
+  <option data-countryCode="DK" value="DNK">Denmark (+45)</option>
+  <option data-countryCode="FI" value="FIN">Finland (+358)</option>
+  <option data-countryCode="FR" value="FRA">France (+33)</option>
+  <option data-countryCode="DE" value="DEU">Germany (+49)</option>
+  <option data-countryCode="IN" value="IND">India (+91)</option>
+  <option data-countryCode="IT" value="ITA">Italy (+39)</option>
+  <option data-countryCode="NL" value="NLD">Netherlands (+31)</option>
+  <option data-countryCode="NO" value="NOR">Norway (+47)</option>
+  <option data-countryCode="SE" value="SWE">Sweden (+46)</option>
+  <option data-countryCode="ZA" value="ZAF">South Africa (+27)</option>
+    <option data-countryCode="GE" value="GEO">Abkhazia (+995)</option>
+    <option data-countryCode="AF" value="AFG">Afghanistan (+93)</option>
+    <option data-countryCode="AL" value="ALB">Albania (+335)</option>
+  <option data-countryCode="DZ" value="DZA">Algeria (+213)</option>
+<option data-countryCode="AD" value="AND">Andorra (+376)</option>
+  <option data-countryCode="AO" value="AGO">Angola (+244)</option>
+  <option data-countryCode="AG" value="ATG">Antigua &amp; Barbuda (-267)</option>
+  <option data-countryCode="AR" value="ARG">Argentina (+54)</option>
+  <option data-countryCode="AM" value="ARM">Armenia (+374)</option>
+  <option data-countryCode="AT" value="AUT">Austria (+43)</option>
+  <option data-countryCode="AZ" value="AZE">Azerbaijan (+994)</option>
+  <option data-countryCode="BS" value="BHS">Bahamas (-241)</option>
+  <option data-countryCode="BH" value="BHR">Bahrain (+973)</option>
+  <option data-countryCode="BD" value="BGD">Bangladesh (+880)</option>
+  <option data-countryCode="BB" value="BRB">Barbados (-245)</option>
+  <option data-countryCode="BY" value="BLR">Belarus (+375)</option>
+  <option data-countryCode="BE" value="BEL">Belgium (+32)</option>
+  <option data-countryCode="BZ" value="BLZ">Belize (+501)</option>
+  <option data-countryCode="BJ" value="BEN">Benin (+229)</option>
+  <option data-countryCode="BT" value="BTN">Bhutan (+975)</option>
+  <option data-countryCode="BO" value="BOL">Bolivia (+591)</option>
+  <option data-countryCode="BA" value="BIH">Bosnia Herzegovina (+387)</option>
+  <option data-countryCode="BW" value="BWA">Botswana (+267)</option>
+  <option data-countryCode="BR" value="BRA">Brazil (+55)</option>
+  <option data-countryCode="BN" value="BRN">Brunei (+673)</option>
+  <option data-countryCode="BG" value="BGR">Bulgaria (+359)</option>
+  <option data-countryCode="BF" value="BFA">Burkina Faso (+226)</option>
+  <option data-countryCode="BI" value="BDI">Burundi (+257)</option>
+  <option data-countryCode="KH" value="KHM">Cambodia (+855)</option>
+  <option data-countryCode="CM" value="CMR">Cameroon (+237)</option>
+  <option data-countryCode="CA" value="CAN">Canada (+1)</option>
+  <option data-countryCode="CV" value="CPV">Cape Verde Islands (+238)</option>
+  <option data-countryCode="CF" value="CAF">Central African Republic (+236)</option>
+  <option data-countryCode="TD" value="TCD">Chad (+235)</option>
+  <option data-countryCode="CL" value="CHL">Chile (+56)</option>
+  <option data-countryCode="CO" value="COL">Colombia (+57)</option>
+  <option data-countryCode="KM" value="COM">Comoros (+269)</option>
+  <option data-countryCode="CG" value="COG">Congo (+242)</option>
+  <option data-countryCode="CR" value="CRI">Costa Rica (+506)</option>
+  <option data-countryCode="CI" value="CIV">Cote d'Ivoire (Ivory Coast) (+225)</option>
+  <option data-countryCode="HR" value="HRV">Croatia (+385)</option>
+  <option data-countryCode="CU" value="CUB">Cuba (+53)</option> 
+  <option data-countryCode="CY" value="CYP">Cyprus(+357)</option>
+  <option data-countryCode="CZ" value="CZE">Czech Republic (+420)</option>
+  <option data-countryCode="DJ" value="DJI">Djibouti (+253)</option>
+  <option data-countryCode="DM" value="DMA">Dominica (-766)</option>
+  <option data-countryCode="DO" value="DOM">Dominican Republic (+809)</option>
+  <option data-countryCode="EC" value="ECU">Ecuador (+593)</option>
+  <option data-countryCode="EG" value="EGY">Egypt (+20)</option>
+  <option data-countryCode="SV" value="SLV">El Salvador (+503)</option>
+  <option data-countryCode="GQ" value="GNQ">Equatorial Guinea (+240)</option>
+  <option data-countryCode="ER" value="ERI">Eritrea (+291)</option>
+  <option data-countryCode="EE" value="EST">Estonia (+372)</option>
+  <option data-countryCode="ET" value="ETH">Ethiopia (+251)</option>
+   <option data-countryCode="FJ" value="FJI">Fiji (+679)</option>
+  <option data-countryCode="GF" value="594">French Guiana (+594)</option>
+  <option data-countryCode="PF" value="689">French Polynesia (+689)</option>
+  <option data-countryCode="GA" value="GAB">Gabon (+241)</option>
+  <option data-countryCode="GM" value="GMB">Gambia (+220)</option>
+  <option data-countryCode="GE" value="GEO">Georgia (+995)</option>
+  <option data-countryCode="GH" value="GHA">Ghana (+233)</option>
+  <option data-countryCode="GR" value="GRC">Greece (+30)</option>
+  <option data-countryCode="GD" value="GRD">Grenada (-472)</option>
+  <option data-countryCode="GT" value="GTM">Guatemala (+502)</option>
+  <option data-countryCode="GN" value="GIN">Guinea (+224)</option>
+  <option data-countryCode="GW" value="GNB">Guinea - Bissau (+245)</option>
+  <option data-countryCode="GY" value="GUY">Guyana (+592)</option>
+  <option data-countryCode="HT" value="HTI">Haiti (+509)</option>
+  <option data-countryCode="HN" value="HND">Honduras (+504)</option>
+  <option data-countryCode="HK" value="HKG">Hong Kong (+852)</option>
+  <option data-countryCode="HU" value="HUN">Hungary (+36)</option>
+  <option data-countryCode="IS" value="ISL">Iceland (+354)</option>
+  <option data-countryCode="ID" value="IDN">Indonesia (+62)</option>
+  <option data-countryCode="IQ" value="IRQ">Iraq (+964)</option>
+  <option data-countryCode="IR" value="IRN">Iran (+98)</option> 
+  <option data-countryCode="IE" value="IRL">Ireland (+353)</option>
+  <option data-countryCode="IL" value="ISR">Israel (+972)</option>
+  <option data-countryCode="JM" value="JAM">Jamaica (-875)</option>
+  <option data-countryCode="JP" value="JPN">Japan (+81)</option>
+  <option data-countryCode="JO" value="JOR">Jordan (+962)</option>
+  <option data-countryCode="KZ" value="KAZ">Kazakhstan (+7)</option>
+  <option data-countryCode="KE" value="KEN ">Kenya (+254)</option>
+  <option data-countryCode="KI" value="KIR">Kiribati (+686)</option>
+   <option data-countryCode="KP" value="PRK">Korea - North (+850)</option> 
+  <option data-countryCode="KR" value="KOR">Korea - South (+82)</option>
+  <option data-countryCode="KW" value="KWT">Kuwait (+965)</option>
+  <option data-countryCode="KG" value="KGZ">Kyrgyzstan (+996)</option>
+  <option data-countryCode="LA" value="LAO">Laos (+856)</option>
+  <option data-countryCode="LV" value="LVA">Latvia (+371)</option>
+  <option data-countryCode="LB" value="LBN">Lebanon (+961)</option>
+  <option data-countryCode="LS" value="LSO">Lesotho (+266)</option>
+  <option data-countryCode="LR" value="LBR">Liberia (+231)</option>
+  <option data-countryCode="LY" value="LBY">Libya (+218)</option>
+  <option data-countryCode="LI" value="LIE">Liechtenstein (+423)</option>
+  <option data-countryCode="LT" value="LTU">Lithuania (+370)</option>
+  <option data-countryCode="LU" value="LUX">Luxembourg (+352)</option>
+  <option data-countryCode="MK" value="MKD">Macedonia (+389)</option>
+  <option data-countryCode="MG" value="MDG">Madagascar (+261)</option>
+  <option data-countryCode="MW" value="MWI">Malawi (+265)</option>
+  <option data-countryCode="MY" value="MYS">Malaysia (+60)</option>
+  <option data-countryCode="MV" value="MDV">Maldives (+960)</option>
+  <option data-countryCode="ML" value="MLI">Mali (+223)</option>
+  <option data-countryCode="MT" value="MLT">Malta (+356)</option>
+  <option data-countryCode="MH" value="MHL">Marshall Islands (+692)</option>
+  <option data-countryCode="MR" value="MRT">Mauritania (+222)</option>
+  <option data-countryCode="MU" value="MUS">Mauritius(+230)</option>
+  <option data-countryCode="MX" value="MEX">Mexico (+52)</option>
+  <option data-countryCode="FM" value="FSM">Micronesia (+691)</option>
+  <option data-countryCode="MD" value="MDA">Moldova (+373)</option>
+  <option data-countryCode="MC" value="MCO">Monaco (+377)</option>
+  <option data-countryCode="MN" value="MNG">Mongolia (+976)</option>
+  <option data-countryCode="ME" value="MEN">Montenegro (+382)</option>
+  <option data-countryCode="MA" value="MAR">Morocco (+212)</option>
+  <option data-countryCode="MZ" value="MOZ">Mozambique (+258)</option>
+  <option data-countryCode="MM" value="MMR">Myanmar (+95)</option>
+  <option data-countryCode="NA" value="NAM">Namibia (+264)</option>
+  <option data-countryCode="NR" value="NRU">Nauru (+674)</option>
+  <option data-countryCode="NP" value="NPL">Nepal (+977)</option>
+  <option data-countryCode="NZ" value="NZL">New Zealand (+64)</option>
+  <option data-countryCode="NI" value="NIC">Nicaragua (+505)</option>
+  <option data-countryCode="NE" value="NER">Niger (+227)</option>
+  <option data-countryCode="NG" value="NGA">Nigeria (+234)</option>
+  <option data-countryCode="OM" value="OMN">Oman (+968)</option>
+  <option data-countryCode="PK" value="PAK">Pakistan (+92)</option>
+  <option data-countryCode="PW" value="PLW">Palau (+680)</option>
+  <option data-countryCode="PA" value="PAN">Panama (+507)</option>
+  <option data-countryCode="PG" value="PNG">Papua New Guinea (+675)</option>
+  <option data-countryCode="PY" value="PRY">Paraguay (+595)</option>
+  <option data-countryCode="PE" value="PER">Peru (+51)</option>
+  <option data-countryCode="PH" value="PHL">Philippines (+63)</option>
+  <option data-countryCode="PL" value="POL">Poland (+48)</option>
+  <option data-countryCode="PT" value="PRT">Portugal (+351)</option>
+  <option data-countryCode="QA" value="QAT">Qatar (+974)</option>
+  <option data-countryCode="RO" value="ROU">Romania (+40)</option>
+  <option data-countryCode="RU" value="RUS">Russia (+7)</option>
+  <option data-countryCode="RW" value="RWA">Rwanda (+250)</option>
+          <option data-countryCode="KN" value="KNA">Saint Kitts and Nevis (-868)</option>
+          <option data-countryCode="LC" value="LCA">Saint Lucia (-757)</option>
+           <option data-countryCode="VC" value="VCT">Saint Vincent and the Grenadines (-783)</option>
+  <option data-countryCode="WS" value="WSM">Samoa (+685)</option>
+ <option data-countryCode="SM" value="SMR">San Marino (+378)</option>
+  <option data-countryCode="ST" value="STP">Sao Tome &amp; Principe (+239)</option>
+  <option data-countryCode="SA" value="SAU">Saudi Arabia (+966)</option>
+  <option data-countryCode="SN" value="SEN">Senegal (+221)</option>
+  <option data-countryCode="CS" value="SRB">Serbia (+381)</option>
+  <option data-countryCode="SC" value="SYC">Seychelles (+248)</option>
+  <option data-countryCode="SL" value="SLE">Sierra Leone (+232)</option>
+  <option data-countryCode="SG" value="SGP">Singapore (+65)</option>
+  <option data-countryCode="SK" value="SVK">Slovakia(+421)</option>
+  <option data-countryCode="SI" value="SVN">Slovenia (+386)</option>
+  <option data-countryCode="SB" value="SLB">Solomon Islands (+677)</option>
+  <option data-countryCode="SO" value="SOM">Somalia (+252)</option>
+  <option data-countryCode="ES" value="ESP">Spain (+34)</option>
+  <option data-countryCode="SD" value="SDN">Sudan (+249)</option>
+          <option data-countryCode="SR" value="SUR">Suriname (+597)</option>
+  <option data-countryCode="SZ" value="SWZ">Swaziland (+268)</option>
+  <option data-countryCode="CH" value="CHE">Switzerland (+41)</option>
+   <option data-countryCode="SY" value="SYR">Syria (+963)</option> 
+  <option data-countryCode="TW" value="TWN">Taiwan (+886)</option>
+  <option data-countryCode="TJ" value="TJK">Tajikistan (+992)</option>
+<option data-countryCode="TZ" value="TZA">Tanzania (+255)</option>
+
+  <option data-countryCode="TH" value="THA">Thailand (+66)</option>
+          <option data-countryCode="TL" value="TLZ">Timor-Leste(East Timor) (+670)</option>
+
+  <option data-countryCode="TG" value="TGO">Togo (+228)</option>
+  <option data-countryCode="TO" value="TON">Tonga (+676)</option>
+  <option data-countryCode="TT" value="TTO">Trinidad &amp; Tobago (-876)</option>
+  <option data-countryCode="TN" value="TUN">Tunisia (+216)</option>
+  <option data-countryCode="TR" value="TUR">Turkey (+90)</option>
+  <option data-countryCode="TK" value="TKM">Turkmenistan (+993)</option>
+  <option data-countryCode="TV" value="TUV">Tuvalu (+688)</option>
+  <option data-countryCode="UG" value="UGA">Uganda (+256)</option>
+<option data-countryCode="UA" value="UKR">Ukraine (+380)</option>
+  <option data-countryCode="AE" value="ARE">United Arab Emirates (+971)</option>
+  <option data-countryCode="UY" value="URY">Uruguay (+598)</option>
+    <option data-countryCode="UZ" value="UZB">Uzbekistan (+998)</option>
+  <option data-countryCode="VU" value="VUT">Vanuatu (+678)</option>
+  <option data-countryCode="VA" value="VAT">Vatican City (+379)</option>
+  <option data-countryCode="VE" value="VEN">Venezuela (+58)</option>
+  <option data-countryCode="VN" value="VNM">Vietnam (+84)</option>
+  <option data-countryCode="YE" value="YEM">Yemen (+967)</option>
+  <option data-countryCode="ZM" value="ZMB">Zambia (+260)</option>
+  <option data-countryCode="ZW" value="ZWE">Zimbabwe (+263)</option>
+  <!--  </optgroup>-->
+</select><br></br><br></br><br></br>
+<label for="language">{!$Label.KB_Preferred_Language} <span style="color: red !important; display: inline; float: none;">*</span></label>
+<!--input  id="00ND00000069p74" maxlength="40" name="00ND00000069p74" size="20" type="text" required="true" /-->
+<select name="00ND00000069p74" id="00ND00000069p74" required="true">
+  <option value="" disabled="disabled" selected="selected">Please select an option</option>
+</select>
+
+<script>
+// Map your choices to your option value
+var lookup = {
+   'USA': ['English'],
+   'IND': ['English'],
+    'AUT': ['German','English'],
+    'BEL' : ['Dutch','French','English'],
+    'CHN' : ['English','Chinese'],
+    'DNK' : ['Danish','English'],
+    'FIN' : ['Finnish','English'],
+    'FRA' : ['French', 'English'],
+    'DEU' : ['English', 'German'],
+    'ITA' : ['Italian','English'],
+    'LUX' : ['French','German','English'],
+    'MCO' : ['French','English'],
+    'NLD' : ['Dutch','English'],
+    'NOR' : ['Norwegian','English'],
+    'SEN' : ['French','English'],
+    'SWE' : ['Swedish','English'],
+    'CHE' : ['German','French','Italian','English'],
+    'GBR' : ['English'],
+    'GEO' : ['None','English'],
+    'AFG' :['None','English'],
+     'ALB' :['English'],
+      'DZA' :['English'],
+    
+};
+jQuery('document').ready(function(){
+// When an option is changed, search the above for matching choices
+jQuery('#00ND0000005D3ij').on('change', function() {
+   // Set selected option as variable
+   var selectValue = jQuery(this).val();
+    var selecttext = jQuery('#00ND0000005D3ij option:selected').text();
+
+    var myString = selecttext.substr(selecttext.indexOf("+") + 0);
+    var cnty_code= myString.substr(0, myString.indexOf(')'));
+    var cat = '{!$CurrentPage.parameters.cg}';
+  
+     if( cat =='client'){
+        jQuery('#00N20000000in7C').val(cnty_code); // clinet page
+     }else{
+        jQuery('#00N200000029uH3').val(cnty_code);// candidate page
+     }
+
+   // Empty the target field
+   jQuery('#00ND00000069p74').empty();
+   if(lookup.hasOwnProperty(selectValue)){
+        
+           // For each chocie in the selected option
+       for (i = 0; i < lookup[selectValue].length; i++) {
+          // Output choice in the target field
+         jQuery('#00ND00000069p74').append("<option value='" + lookup[selectValue][i] + "'>" + lookup[selectValue][i] + "</option>");
+     
+       }
+    }
+    else{
+        jQuery('#00ND00000069p74').append("<option value='English'>English</option>");
+    }
+       
+});
+});
+</script>
+<br></br><br></br><br></br>
+
+<label for="AdminContact">{!$Label.Contact_Tel} <span style="color: red !important; display: inline; float: none;">*</span></label>
+<input  id="00N20000000in7C" maxlength="40" name="00N20000000in7C" size="20" type="text" required="true" />
+
+<label for="CandidateContact">{!$Label.Contact_Tel} <span style="color: red !important; display: inline; float: none;">*</span></label>
+<input  id="00N200000029uH3" maxlength="40" name="00N200000029uH3" size="20" type="text" required="true" />
+<br></br><br></br><br></br>
+
+<label for="contactemail">{!$Label.Email} <span style="color: red !important; display: inline; float: none;">*</span></label>
+<input  id="00N20000000in79" maxlength="80" name="00N20000000in79" size="20" type="text" required="true" />
+
+
+<!--<label for="email">Email <span style="color: red !important; display: inline; float: none;">*</span></label><input  id="ContactEmail" maxlength="80" name="email" size="20" type="text" /><br></br><br></br><br></br>-->
+<label for="candidatemail">{!$Label.Email} <span style="color: red !important; display: inline; float: none;">*</span></label>
+<input  id="00ND0000002gU6Y" maxlength="80" name="00ND0000002gU6Y" size="20" type="text" required="true" />
+<br></br><br></br><br></br><br></br>
+<label for="email">{!$Label.Kb_Case_Re_Email_Address} <span style="color: red !important; display: inline; float: none;">*</span></label>
+&nbsp;&nbsp;<input id="ContactEmail"  maxlength="80" name="ContactEmail" size="20" type="text" required="true" />
+<br></br><br></br><br></br>
+<script>
+jQuery('document').ready(function(){
+    jQuery('#ContactEmail').focusout(function(){
+         var cat = '{!$CurrentPage.parameters.cg}';
+        jQuery('label[for=email] .error').remove();
+        if((jQuery("#00N20000000in79").val() != jQuery("#ContactEmail").val()) && (cat =='client') ){
+            jQuery('label[for=email]').append("<span class='error'>{!$Label.Email_Id_do_not_match}</span>");
+            jQuery('input[type="submit"]').attr('disabled','true');
+            
+        }
+        else if((jQuery("#00ND0000002gU6Y").val() != jQuery("#ContactEmail").val()) && (cat =='candidate')){
+            jQuery('label[for=email]').append("<span class='error'>{!$Label.Email_Id_do_not_match}</span>");
+            jQuery('input[type="submit"]').attr('disabled','true');
+            console.log('eee');
+        }
+        else{
+            jQuery('label[for=email] .error').remove();
+            jQuery('input[type="submit"]').removeAttr('disabled');
+            console.log('nnn');
+        }
+        
+    });
+});
+ var cat = '{!$CurrentPage.parameters.cg}';
+     if( cat =='client'){
+                 $("#errmsg").attr("required",false);
+         }
+         else {
+        $("#errmsg").attr("required",true);
+    }
+         
+</script>
+   
+    <div style="display:{!IF($CurrentPage.parameters.cg=='client','inline-block','none')};">
+        <label for="Username">{!$Label.KB_Username_and_dnumber}</label>&nbsp;&nbsp; 
+    </div>
+    <div style="display:{!IF($CurrentPage.parameters.cg=='candidate','inline-block','none')};">
+        <label for="Username">{!$Label.Kb_Case_Username}</label>&nbsp;&nbsp;      
+    </div>
+    <input  id="00N20000000ilv7" maxlength="80" name="00N20000000ilv7" size="20" type="text" /><br></br><br></br><br></br>
+
+
+<label for="Errormsg">{!$Label.Kb_Case_Error_Message}</label>&nbsp;&nbsp;<input  id="Msg" maxlength="80" name="name" size="20" type="text" /><br></br><br></br><br></br>
+<label for="URL">{!$Label.KB_Please_copy_and_paste_your_URL_assessment_link_or_web_address_Candidate} <span style="color: red !important; display: inline; float: none;">*</span></label>&nbsp;&nbsp;<input  id="errmsg" maxlength="140" name="name" size="20" type="text" required="true" /><br></br><br></br><br></br>
+<label for="SessionID">{!$Label.Kb_Case_Session_ID}</label>&nbsp;&nbsp;<input  id="SessionID" maxlength="80" name="email" size="20" type="text" /><br></br><br></br><br></br>
+
+
+<br></br>
+<!--<fieldset id="attachments"> 
+                          <h2>
+                              Attachments             
+      </h2>
+    <div class="form_brdr"></div>
+                          
+                            <div class="legendDiv">
+                                <div class="fieldsRow">
+                                   <p>Please attach the documentation or screenshot of the issue (total attachments must not exceed 25MB).
+                                    You should not upload your CV/r&eacute;sum&eacute; here.<br></br><br></br><br></br>
+                                     </p>
+                                </div>
+                                
+                                <div class="fieldsRow" id="at1">
+                                    <label class="fieldlabel" for="username">Attachment 1</label>
+                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;   <input accept="" accessKey="" alt="" class="fieldinput" dir="" id="ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:up1" lang="" name="ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:up1:inputFile:file" onblur="" onchange="chkNull();" onclick="" ondblclick="" onfocus="" onkeydown="" onkeypress="" onkeyup="" onmousedown="" onmousemove="" onmouseout="" onmouseover="" size="" style="" tabindex="" title="" type="file" /><br></br>
+                                   
+</div><br></br><br></br>
+                            
+                                <div class="fieldsRow" id="at1b">
+                                    <input class="fieldlabel" id="addbtn1" onClick="document.getElementById('at2').style.display='';document.getElementById('at2b').style.display='';document.getElementById('at1b').style.display='none';checkFileSize();" type="button" value="Add more" />
+                                </div>                                
+                                
+                                <div class="fieldsRow" id="at2" style="display:none;">
+                                    <label class="fieldlabel" for="username">Attachment 2</label>
+            <input accept="" accessKey="" alt="" class="fieldinput" dir="" id="ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin2" lang="" name="ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin2:inputFile:file" onblur="" onchange="chkNull();" onclick="" ondblclick="" onfocus="" onkeydown="" onkeypress="" onkeyup="" onmousedown="" onmousemove="" onmouseout="" onmouseover="" size="" style="" tabindex="" title="" type="file" />
+                                </div>
+                                <div class="fieldsRow" id="at2b" style="display:none;">
+                                    <input class="fieldlabel" id="addbtn2" onClick="document.getElementById('at3').style.display='';document.getElementById('at2b').style.display='none';document.getElementById('at3b').style.display='';checkFileSize();" type="button" value="Add more" />
+                                    <input class="fieldlabel" id="rmvbtn2" onClick="document.getElementById('ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin2').value='';document.getElementById('at2b').style.display='none';document.getElementById('at2').style.display='none';document.getElementById('at1b').style.display='';" type="button" value="X" />
+                                </div>
+                                <div class="fieldsRow" id="at3" style="display:none;">
+                                    <label class="fieldlabel" for="username">Attachment 3</label>
+            <input accept="" accessKey="" alt="" class="fieldinput" dir="" id="ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin3" lang="" name="ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin3:inputFile:file" onblur="" onchange="chkNull();" onclick="" ondblclick="" onfocus="" onkeydown="" onkeypress="" onkeyup="" onmousedown="" onmousemove="" onmouseout="" onmouseover="" size="" style="" tabindex="" title="" type="file" />
+                                </div>
+                                <div class="fieldsRow" id="at3b" style="display:none;">
+                                    <input class="fieldlabel" id="addbtn3" onClick="document.getElementById('at4').style.display='';document.getElementById('at3b').style.display='none';document.getElementById('at4b').style.display='';checkFileSize();" type="button" value="Add more" />
+                                    <input class="fieldlabel" id="rmvbtn3" onClick="document.getElementById('ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin3').value='';document.getElementById('at3b').style.display='none';document.getElementById('at3').style.display='none';document.getElementById('at2b').style.display='';" type="button" value="X" />
+                                </div>
+                                
+                                <div class="fieldsRow" id="at4" style="display:none;">
+                                    <label class="fieldlabel" for="username">Attachment 4</label>
+            <input accept="" accessKey="" alt="" class="fieldinput" dir="" id="ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin4" lang="" name="ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin4:inputFile:file" onblur="" onchange="chkNull();" onclick="" ondblclick="" onfocus="" onkeydown="" onkeypress="" onkeyup="" onmousedown="" onmousemove="" onmouseout="" onmouseover="" size="" style="" tabindex="" title="" type="file" />
+                                </div>
+                                <div class="fieldsRow" id="at4b" style="display:none;">
+                                    <input class="fieldlabel" id="addbtn4" onClick="document.getElementById('at5').style.display='';document.getElementById('at4b').style.display='none';document.getElementById('at5b').style.display='';checkFileSize();" type="button" value="Add more" />
+                                    <input class="fieldlabel" id="rmvbtn3" onClick="document.getElementById('ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin4').value='';document.getElementById('at4b').style.display='none';document.getElementById('at4').style.display='none';document.getElementById('at3b').style.display='';" type="button" value="X" />
+                                </div>
+                                <div class="fieldsRow" id="at5" style="display:none;">
+                                    <label class="fieldlabel" for="username">Attachment 5</label>
+            <input accept="" accessKey="" alt="" class="fieldinput" dir="" id="ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin5" lang="" name="ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin5:inputFile:file" onblur="" onchange="chkNull();" onclick="" ondblclick="" onfocus="" onkeydown="" onkeypress="" onkeyup="" onmousedown="" onmousemove="" onmouseout="" onmouseover="" size="" style="" tabindex="" title="" type="file" />
+                                </div>
+                                <div class="fieldsRow" id="at5b" style="display:none;">
+                                    <input class="fieldlabel" id="addbtn5" onClick="document.getElementById('at6').style.display='';document.getElementById('at5b').style.display='none';document.getElementById('at6b').style.display='';checkFileSize();" type="button" value="Add more" />
+                                    <input class="fieldlabel" id="rmvbtn5" onClick="document.getElementById('ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin5').value='';document.getElementById('at5b').style.display='none';document.getElementById('at5').style.display='none';document.getElementById('at4b').style.display='';" type="button" value="X" />
+                                </div>
+                                <div class="fieldsRow" id="at6" style="display:none;">
+                                    <label class="fieldlabel" for="username">Attachment 6</label>
+            <input accept="" accessKey="" alt="" class="fieldinput" dir="" id="ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin6" lang="" name="ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin6:inputFile:file" onblur="" onchange="chkNull();" onclick="" ondblclick="" onfocus="" onkeydown="" onkeypress="" onkeyup="" onmousedown="" onmousemove="" onmouseout="" onmouseover="" size="" style="" tabindex="" title="" type="file" />
+                                </div>
+                                <div class="fieldsRow" id="at6b" style="display:none;">
+                                    <input class="fieldlabel" id="addbtn6" onClick="document.getElementById('at7').style.display='';document.getElementById('at6b').style.display='none';document.getElementById('at7b').style.display='';checkFileSize();" type="button" value="Add more" />
+                                    <input class="fieldlabel" id="rmvbtn6" onClick="document.getElementById('ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin7').value='';document.getElementById('at6b').style.display='none';document.getElementById('at6').style.display='none';document.getElementById('at5b').style.display='';" type="button" value="X" />
+                                </div>
+                                <div class="fieldsRow" id="at7" style="display:none;">
+                                    <label class="fieldlabel" for="username">Attachment 7</label>
+            <input accept="" accessKey="" alt="" class="fieldinput" dir="" id="ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin7" lang="" name="ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin7:inputFile:file" onblur="" onchange="chkNull();" onclick="" ondblclick="" onfocus="" onkeydown="" onkeypress="" onkeyup="" onmousedown="" onmousemove="" onmouseout="" onmouseover="" size="" style="" tabindex="" title="" type="file" />
+                                </div>
+                                <div class="fieldsRow" id="at7b" style="display:none;">
+                                    <input class="fieldlabel" id="addbtn7" onClick="document.getElementById('at8').style.display='';document.getElementById('at7b').style.display='none';document.getElementById('at8b').style.display='';checkFileSize();" type="button" value="Add more" />
+                                    <input class="fieldlabel" id="rmvbtn7" onClick="document.getElementById('ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin7').value='';document.getElementById('at7b').style.display='none';document.getElementById('at7').style.display='none';document.getElementById('at6b').style.display='';" type="button" value="X" />
+                                </div>
+                                
+                                <div class="fieldsRow" id="at8" style="display:none;">
+                                    <label class="fieldlabel" for="username">Attachment 8</label>
+            <input accept="" accessKey="" alt="" class="fieldinput" dir="" id="ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin8" lang="" name="ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin8:inputFile:file" onblur="" onchange="chkNull();" onclick="" ondblclick="" onfocus="" onkeydown="" onkeypress="" onkeyup="" onmousedown="" onmousemove="" onmouseout="" onmouseover="" size="" style="" tabindex="" title="" type="file" />
+                                </div>
+                                <div class="fieldsRow" id="at8b" style="display:none;">
+                                    <input class="fieldlabel" id="addbtn8" onClick="document.getElementById('at9').style.display='';document.getElementById('at8b').style.display='none';document.getElementById('at9b').style.display='';checkFileSize();" type="button" value="Add more" />
+                                    <input class="fieldlabel" id="rmvbtn7" onClick="document.getElementById('ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin8').value='';document.getElementById('at8b').style.display='none';document.getElementById('at8').style.display='none';document.getElementById('at7b').style.display='';" type="button" value="X" />
+                                </div>
+                                <div class="fieldsRow" id="at9" style="display:none;">
+                                    <label class="fieldlabel" for="username">Attachment 9</label>
+            <input accept="" accessKey="" alt="" class="fieldinput" dir="" id="ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin9" lang="" name="ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin9:inputFile:file" onblur="" onchange="chkNull();" onclick="" ondblclick="" onfocus="" onkeydown="" onkeypress="" onkeyup="" onmousedown="" onmousemove="" onmouseout="" onmouseover="" size="" style="" tabindex="" title="" type="file" />
+                                </div>
+                               <div class="fieldsRow" id="at9b" style="display:none;">
+                                    <input class="fieldlabel" id="addbtn9" onClick="document.getElementById('at10').style.display='';document.getElementById('at9b').style.display='none';document.getElementById('at10b').style.display='';checkFileSize();" type="button" value="Add more" />
+                                    <input class="fieldlabel" id="rmvbtn9" onClick="document.getElementById('ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin9').value='';document.getElementById('at9b').style.display='none';document.getElementById('at9').style.display='none';document.getElementById('at8b').style.display='';" type="button" value="X" />
+                                </div>
+                                <div class="fieldsRow" id="at10" style="display:none;">
+                                    <label class="fieldlabel" for="username">Attachment 10</label>
+            <input accept="" accessKey="" alt="" class="fieldinput" dir="" id="ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin10" lang="" name="ContactUsPage:j_id1:ContactUsComp:ContactUsComponent:ContactUsForm:upin10:inputFile:file" onblur="" onchange="chkNull();" onclick="" ondblclick="" onfocus="" onkeydown="" onkeypress="" onkeyup="" onmousedown="" onmousemove="" onmouseout="" onmouseover="" size="" style="" tabindex="" title="" type="file" />
+                                </div>
+      </div>
+</fieldset><br></br><br></br>
+<div class="form_brdr"></div>
+<br></br><br></br>-->
+    <fieldset id="recaptcha">
+                    <div class="legendDiv"></div>
+                    <div style="float:right;width:100%">
+                    
+                    
+                      <script src="https://www.google.com/recaptcha/api.js"></script> 
+                        
+                       
+                      <div class="g-recaptcha" data-sitekey="6Lez2wITAAAAABhiB2MfCLHHfea9YQcCJG2uqpbr"> </div> <br />
+                    
+                        
+                        <div style="position:relative;display:none">
+                            <a href="#" id="capError" style="color:red;text-decoration:none;pointer-events: none;cursor: default;">Your captcha entry is invalid. It was either left blank or was incorrect. Please try again.<br />Please check your attachments.</a>
+                        </div>
+                      
+                    </div>
+                    <br />
+                        <div style="display:{!IF($CurrentPage.parameters.cg=='candidate','block','none')};">
+
+                    <br /><div style="display:"><p class="labelClass">{!$Label.KB_GDPR_Label}           <a href="/ViewArticle?id=kA04G000000Xbg5&kb_gp=candidate&l=en_US&lva=000012082" target="_blank">{!$Label.KB_GDPR_Label2}</a>&nbsp; {!$Label.KB_GDPR_Label3} </p>
+                        <br /><p>{!$Label.KB_GDPR_Label4}&nbsp;
+
+                     <a href="/candidate?&amp;c=SHL_Support%3AData_Questions&amp;l=en_US" target="_blank">{!$Label.KB_GDPR_Label5}</a>
+                     </p>
+                    </div>
+                     </div>
+                </fieldset>
+              
+                     <h2>{!$Label.KB_SubmitForm}</h2>
+                     <div class="form_brdr"></div>
+                         <div style="display:{!IF($CurrentPage.parameters.cg=='candidate','block','none')};">
+
+                     <br></br><p>{!$Label.By_submitting_this_Contact_Us_form_I_confirm_that_I_have_read_and_understood_the}<br></br><br></br></p>
+                         </div>
+                   <p> {!$Label.Your_computer_settings_which_will_include_the_operating_system_browser_type_f}<br></br><br></br></p>
+                   <input type="hidden"  id="external" name="external" value="1" /><br></br>
+                   
+
+ <input type="submit" name="Submit" value ="{!$Label.Kb_Case_Submit}" return = "false"/>
+     
+     <!--<label for="subject">{!$Label.Subject}</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" value ="abc" /><br></br>-->
+         <input type="hidden" name="00N20000001lcTT" id="00N20000001lcTT" value="{!$CurrentPage.parameters.cg}"/>
+             <textarea type="hidden" name="description" id="description" hidden="true" value="tmp"></textarea><br></br>
+         <script>
+         console.log("VK")
+            var OSName="Unknown OS";
+                            if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
+                            if (navigator.appVersion.indexOf("Mac")!=-1) OSName="MacOS";
+                            if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";
+                            if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
+                            
+                        //document.write(''+OSName);
+                            var nVer = navigator.appVersion;
+                            var nAgt = navigator.userAgent;
+                            var browserName  = navigator.appName;
+                            var fullVersion  = ''+parseFloat(navigator.appVersion); 
+                            var majorVersion = parseInt(navigator.appVersion,10);
+                            var nameOffset,verOffset,ix;
+                            
+                            // In Opera, the true version is after "Opera" or after "Version"
+                            if ((verOffset=nAgt.indexOf("Opera"))!=-1) {
+                                browserName = "Opera";
+                                fullVersion = nAgt.substring(verOffset+6);
+                                if ((verOffset=nAgt.indexOf("Version"))!=-1) 
+                                    fullVersion = nAgt.substring(verOffset+8);
+                            }
+                            // In MSIE, the true version is after "MSIE" in userAgent
+                            else if ((verOffset=nAgt.indexOf("MSIE"))!=-1) {
+                                browserName = "Microsoft Internet Explorer";
+                                fullVersion = nAgt.substring(verOffset+5);
+                            }
+                            // In Chrome, the true version is after "Chrome" 
+                                else if ((verOffset=nAgt.indexOf("Chrome"))!=-1) {
+                                    browserName = "Chrome";
+                                    fullVersion = nAgt.substring(verOffset+7);
+                                }
+                            // In Safari, the true version is after "Safari" or after "Version" 
+                                    else if ((verOffset=nAgt.indexOf("Safari"))!=-1) {
+                                        browserName = "Safari";
+                                        fullVersion = nAgt.substring(verOffset+7);
+                                        if ((verOffset=nAgt.indexOf("Version"))!=-1) 
+                                            fullVersion = nAgt.substring(verOffset+8);
+                                    }
+                            // In Firefox, the true version is after "Firefox" 
+                                        else if ((verOffset=nAgt.indexOf("Firefox"))!=-1) {
+                                            browserName = "Firefox";
+                                            fullVersion = nAgt.substring(verOffset+8);
+                                        }
+                            // In most other browsers, "name/version" is at the end of userAgent 
+                                            else if ( (nameOffset=nAgt.lastIndexOf(' ')+1) < 
+                                                     (verOffset=nAgt.lastIndexOf('/')) ) 
+                                            {
+                                                browserName = nAgt.substring(nameOffset,verOffset);
+                                                fullVersion = nAgt.substring(verOffset+1);
+                                                if (browserName.toLowerCase()==browserName.toUpperCase()) {
+                                                    browserName = navigator.appName;
+                                                }
+                                            }
+                            // trim the fullVersion string at semicolon/space if present
+                            if ((ix=fullVersion.indexOf(";"))!=-1)
+                                fullVersion=fullVersion.substring(0,ix);
+                            if ((ix=fullVersion.indexOf(" "))!=-1)
+                                fullVersion=fullVersion.substring(0,ix);
+                            
+                            majorVersion = parseInt(''+fullVersion,10);
+                            if (isNaN(majorVersion)) {
+                                fullVersion  = ''+parseFloat(navigator.appVersion); 
+                                majorVersion = parseInt(navigator.appVersion,10);
+                            }
+                        var mine = window.open('','','width=1,height=1,left=0,top=0,scrollbars=no');
+    var popUps;
+    if(mine)
+        popUps = 'No';
+    else
+        popUps = 'Yes';
+    if(mine!=null)
+    {
+        mine.close()
+    }
+                        var width = window.innerWidth
+|| document.documentElement.clientWidth
+|| document.body.clientWidth;
+
+var height = window.innerHeight
+|| document.documentElement.clientHeight
+|| document.body.clientHeight;
+   var bSupport = false;
+try
+{
+    var Obj = document.getElementById("ActiveXChecker");
+    if(Obj) Obj.loadXML;
+}
+catch (e)
+{
+    //   alert(e.number + "\n" + e.description);
+    if(e.number == -2146827838) bSupport = true;
+}
+                          
+              
+                 function setdescription(e)
+                    { 
+                    
+                        /*if(isFlashEnabled()) { 
+                            var flash='Flasher Player: Installed';
+                        }                            
+                        else{   
+                            var flash='Flasher Player: Not Installed';
+                        }*/
+                        var cat = '{!$CurrentPage.parameters.cg}';
+                        if( cat =='client'){
+                           
+                            var service_ty="Service Site: Client";
+                        }else{
+                           
+                            var service_ty="Service Site: Candidate";
+                        }
+                        var articleid = '{!$CurrentPage.parameters.lva}';
+                        
+                        var finaldescription = service_ty+'\n'+"Operating System:"+' '+OSName +'\n'+"Browser Type:"+' '+browserName+'\n'+"Version:"+' '+fullVersion+'\n'+"Pop-up blocker enabled:"+' '+popUps+'\n'+"Screen Resolution : Width:"+' '+width+'\n'+" Height:"+' '+height+'\n'+"ActiveX:"+' '+bSupport+'\n'+"Java Type :";
+                        var temp_op= document.getElementById('description').value;
+                    
+                        //document.getElementById('description').value = finaldescription+'\n'+flash+temp_op+'\n'+"The article ID that the user was viewing prior to accessing the contact form:"+articleid; //+'\n'+ContactEmailvalue+'\n'+question+'\n'+msg+'\n'+SessionID+'\n'+company+'\n'+name+'\n'+enquiry+'\n'+errormsg+'\n'+name_2+'\n'+URL+'\n'+phone;
+                        document.getElementById('description').value = finaldescription+temp_op+'\n'+"The article ID that the user was viewing prior to accessing the contact form:"+articleid; //+'\n'+ContactEmailvalue+'\n'+question+'\n'+msg+'\n'+SessionID+'\n'+company+'\n'+name+'\n'+enquiry+'\n'+errormsg+'\n'+name_2+'\n'+URL+'\n'+phone;
+                 
+                     return 1;
+                   }
+                       
+                       /* function isFlashEnabled() {
+                            var flash = navigator.plugins.namedItem('Shockwave Flash');
+                            if (!flash) { return 0; } 
+                            else { return 1; }
+                        }
+                        */
+                        
+                        function form_value(){
+                            var desc;     
+                            var final;
+                            var tmp;
+                            var cat = '{!$CurrentPage.parameters.cg}';
+                            var current_url = window.location.href; 
+                            console.log(current_url);
+                        
+                             if(current_url){
+                                    desc = current_url;
+                                    tmp = jQuery('#description').val();
+                                    
+                                    desc = 'URL Captured: '+desc;
+                                   final = tmp+'\n'+desc;
+                                   jQuery('#description').val(final);
+                                    
+                               } 
+                                    if (jQuery('#test').val()){
+                                    desc = jQuery('#test').val();
+                                    tmp = jQuery('#description').val();
+                                    
+                                    desc = 'Question or Problem: '+desc;
+                                   final = tmp+'\n'+desc;
+                                   jQuery('#description').val(final);   
+                                }
+                             if (jQuery('#others').val()){
+                                    desc = jQuery('#others').val();
+                                    tmp = jQuery('#description').val();
+                                    
+                                    desc = 'Comments: '+desc;
+                                   final = tmp+'\n'+desc;
+                                   jQuery('#description').val(final);   
+                                }
+                            else{
+                                // desc = jQuery('#others').val();
+                                    tmp = jQuery('#description').val();
+                                    
+                                    desc = 'Comments:null ';
+                                   final = tmp+'\n'+desc;
+                                   jQuery('#description').val(final);  }
+                           if (jQuery('#Msg').val()){
+                                    desc = jQuery('#Msg').val();
+                                    tmp = jQuery('#description').val();
+                                    
+                                    desc = 'Error Message: '+desc;
+                                   final = tmp+'\n'+desc;
+                                   jQuery('#description').val(final);   
+                                }
+                            else { 
+                                    tmp = jQuery('#description').val();
+                                    
+                                    desc = 'Error Message: ';
+                                   final = tmp+'\n'+desc;
+                                   jQuery('#description').val(final);  
+                                 }
+                            if (jQuery('#SessionID').val()){
+                                    desc = jQuery('#SessionID').val();
+                                    tmp = jQuery('#description').val();
+                                    
+                                    desc = 'Session ID: '+desc;
+                                   final = tmp+'\n'+desc;
+                                   jQuery('#description').val(final);   
+                                }
+                            else { 
+                                    tmp = jQuery('#description').val();
+                                    
+                                  desc = 'Session ID: ';
+                                   final = tmp+'\n'+desc;
+                                   jQuery('#description').val(final); 
+                                 }
+                           if (jQuery('#Companyid').val()){
+                                    desc = jQuery('#Companyid').val();
+                                    tmp = jQuery('#description').val();
+                                    
+                                    desc = 'Company: '+desc;
+                                   final = tmp+'\n'+desc;
+                                   jQuery('#description').val(final);   
+                                }
+                            if (jQuery('#name').val()){
+                                    desc = jQuery('#name').val();
+                                    tmp = jQuery('#description').val();
+                                    
+                                    desc = 'URL: '+desc;
+                                   final = tmp+'\n'+desc;
+                                   jQuery('#description').val(final);   
+                                }
+                            if (jQuery('#00N20000000ilv7').val() ){
+                                    desc = jQuery('#00N20000000ilv7').val();
+                                    tmp = jQuery('#description').val();
+                                    
+                                desc = 'Username/D Number: '+desc;
+                                   final = tmp+'\n'+desc;
+                                   jQuery('#description').val(final);   
+                                }
+                         else {
+                                    tmp = jQuery('#description').val();  
+                                desc = 'Username: ';
+                                   final = tmp+'\n'+desc;
+                                   jQuery('#description').val(final);   
+                         }
+                      
+                            if (jQuery('#00ND00000069p73').val() && (cat =='client')){
+                                    desc = jQuery('#00ND00000069p73').val();
+                                    tmp = jQuery('#description').val();
+                                    
+                                    desc = 'Query Type: '+desc;
+                                   final = tmp+'\n'+desc;
+                                   jQuery('#description').val(final);   
+                                }
+                            if (jQuery('#00ND00000069p76').val() &&  (cat =='client')){
+                                    desc = jQuery('#00ND00000069p76').val();
+                                    tmp = jQuery('#description').val();
+                                    
+                                    desc = 'Platform being used: '+desc;
+                                   final = tmp+'\n'+desc;
+                                   jQuery('#description').val(final);   
+                                }
+                          if (jQuery('#00ND00000069p6z').val()){
+                                    desc = jQuery('#00ND00000069p6z').val();
+                                    tmp = jQuery('#description').val();
+                                    
+                                    desc = 'Enquiry Category: '+desc;
+                                   final = tmp+'\n'+desc;
+                                   jQuery('#description').val(final);   
+                                }
+                           if (jQuery('#errmsg').val()){
+                                    desc = jQuery('#errmsg').val();
+                                    tmp = jQuery('#description').val();
+                                    
+                                    desc = 'URL, assessment link or web address: '+desc;
+                                   final = tmp+'\n'+desc;
+                                   jQuery('#description').val(final);   
+                                }
+                            else
+                                { 
+                                    //desc = jQuery('#errmsg').val();
+                                    tmp = jQuery('#description').val();
+                                    
+                                    desc = 'URL, assessment link or web address: ';
+                                   final = tmp+'\n'+desc;
+                                   jQuery('#description').val(final);   
+                                }
+                           if (jQuery('#CompanyidClient').val()){
+                                    desc = jQuery('#CompanyidClient').val();
+                                    tmp = jQuery('#description').val();
+                                    
+                                    desc = 'Company: '+desc;
+                                   final = tmp+'\n'+desc;
+                                   jQuery('#description').val(final);  
+                                
+                                }
+                            return 1; 
+                        }
+                        jQuery(document).ready(function(){
+                            //if(window.location.href == 'https://support.shl.com/KB_ContactUs?cg=client%26l=en_US')
+//{
+   // window.location.href="https://support.shl.com/KB_ContactUs?cg=client&l=en_US&p=&pt=&lg=&cg=";
+//}
+                            var cat_hidden = '{!$CurrentPage.parameters.cg}';
+                        
+                            if( cat_hidden =='client'){
+                                  jQuery('#00N20000001lcTT').val('Customer');  
+                            }
+                            
+                              jQuery('form').submit(function (e) {
+                                    
+                              e.preventDefault();
+                                  jQuery('input[type="submit"]').attr("disabled", true); //disabled the submit button
+                                  var cat = '{!$CurrentPage.parameters.cg}';
+                                  jQuery('.captcha-error').remove();
+                                  jQuery('.select_none_error').remove();
+                                  var recaptcha = document.forms["myform"]["g-recaptcha-response"].value;
+                                  if (recaptcha == "") {
+                                      jQuery('.g-recaptcha').prepend("<span class='captcha-error'>{!$Label.Please_check_recaptcha}</span>");  
+                                      jQuery('input[type="submit"]').removeAttr('disabled');
+                                      return false;
+                                  }
+                                  var country_val_check = jQuery('#00ND0000005D3ij').val(); //for country check
+                                  if (country_val_check == "none") {
+                                      jQuery('label[for=country]').append("<span class='error select_none_error'>{!$Label.Please_select_an_option}</span>");  
+                                      jQuery('input[type="submit"]').removeAttr('disabled');
+                                      return false;
+                                  }
+                                   var query_val_check = jQuery('#00ND00000069p72').val(); //for new or existing
+                                  if (query_val_check == "none") {
+                                      jQuery('label[for=NewOrExisting]').append("<span class='error select_none_error'>{!$Label.Please_select_an_option}</span>");  
+                                      jQuery('input[type="submit"]').removeAttr('disabled');
+                                      return false;
+                                  }
+                                  var querytype_val_check = jQuery('#00ND00000069p73').val(); //for query type
+                                  if (querytype_val_check == "none" &&  (cat =='client')) {
+                                      jQuery('label[for=QueryType]').append("<span class='error select_none_error'>{!$Label.Please_select_an_option}</span>");  
+                                      jQuery('input[type="submit"]').removeAttr('disabled');
+                                      return false;
+                                  }
+                                   var additionaldetails_val_check = jQuery('#00ND00000069p6z').val(); //for additional details
+                                  if (additionaldetails_val_check == "none") {
+                                      jQuery('label[for=Additionaldetails]').append("<span class='error select_none_error'>{!$Label.Please_select_an_option}</span>");  
+                                      jQuery('input[type="submit"]').removeAttr('disabled');
+                                      return false;
+                                  }
+                                   var platform_val_check = jQuery('#00ND00000069p76').val(); //for platform value
+                                  if (platform_val_check == "none" &&  (cat =='client')) {
+                                      jQuery('label[for=PlatformUsed]').append("<span class='error select_none_error'>{!$Label.Please_select_an_option}</span>");  
+                                      jQuery('input[type="submit"]').removeAttr('disabled');
+                                      return false;
+                                  }
+                                  var desc_update = form_value();
+                                  if(desc_update==1){
+                                    var runned= setdescription();
+                                      }
+                                    if(runned==1){
+                                        var formData = $(this).serialize();
+                                        jQuery.post("https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8", formData).always(function() {
+                                            document.getElementById('welcomeDiv').style.display = "block";
+                                            jQuery('form').css('display','none');
+                                            jQuery([document.documentElement, document.body]).animate({
+                                                scrollTop: jQuery("#main").offset().top
+                                            }, 800); 
+                                        });
+                                    }
+                            });
+                            
+                     var cat = '{!$CurrentPage.parameters.cg}';
+                         
+                            if( cat =='client'){
+                            jQuery('#00N20000000inkK').removeAttr('required');
+                            jQuery('#00N20000000inkK').css('display','none');
+                            jQuery('label[for=CandidateName]').css('display','none');
+                              jQuery('#00N200000029uH3').removeAttr('required');
+                            jQuery('#00N200000029uH3').css('display','none');
+                            jQuery('label[for=CandidateContact]').css('display','none');
+                              jQuery('#00ND0000002gU6Y').removeAttr('required');
+                            jQuery('#00ND0000002gU6Y').css('display','none');
+                            jQuery('label[for=candidatemail]').css('display','none'); 
+                               jQuery('#Companyid').removeAttr('required');
+                            jQuery('#Companyid').css('display','none');
+                            jQuery('label[for=Company]').css('display','none');      
+                        }
+                        else{
+                            jQuery('#00N20000000io8V').removeAttr('required');
+                            jQuery('#00N20000000io8V').css('display','none');
+                            jQuery('label[for=ContactName]').css('display','none');
+                             jQuery('#00N20000000in7C').removeAttr('required');
+                            jQuery('#00N20000000in7C').css('display','none');
+                            jQuery('label[for=AdminContact]').css('display','none');
+                             jQuery('#00N20000000in79').removeAttr('required');
+                            jQuery('#00N20000000in79').css('display','none');
+                            jQuery('label[for=contactemail]').css('display','none');
+                             jQuery('#CompanyidClient').removeAttr('required');
+                            jQuery('#CompanyidClient').css('display','none');
+                            jQuery('label[for=CompanyClient]').css('display','none');
+                            
+                            $('#00ND00000069p6z').children('option[value^="Product"]').remove(); /// On canditate page it will hide options of enquiry category
+                           $('#00ND00000069p6z').children('option[value^="Billing"]').remove();
+                            $('#00ND00000069p6z').children('option[value^="Order"]').remove();
+                            $('#00ND00000069p6z').children('option[value^="Systems related"]').remove();
+                            $('#00ND00000069p6z').children('option[value^="Training"]').remove();
+                            $('#00ND00000069p6z').children('option[value^="Candidate"]').remove();
+                            $('#00ND00000069p6z').children('option[value^="Simple System Navigation"]').remove();
+                            $('#00ND00000069p6z').children("option[value^='Invitation/Email not Received']").remove();
+                            $('#00ND00000069p6z').children('option[value^="Candidate Query"]').remove();
+                            $('#00ND00000069p6z').children('option[value^="General Enquiry"]').remove();
+                            $('#00ND00000069p6z').children('option[value^="Timer Extension Required"]').remove();
+                            $('#00ND00000069p6z').children('option[value^="Results Generation Issue"]').remove();
+                            $('#00ND00000069p6z').children('option[value^="System Performance"]').remove();
+                            
+                            
+                             }
+                        });
+                       
+                        
+         </script>
+       
+
+
+ 
+
+        </form>
+        <div id="welcomeDiv"  style="display:none;" class="answer_list" > <h1><b style="color: #4d4d4f;"> {!$Label.Kb_Case_Contact_Us}</b>
+           
+            </h1><br></br><br></br><br></br><h2><b style="color:#5B6770;font:12px;">
+
+{!$Label.ThankYou}</b></h2> </div>
+    </html>
+</apex:component>

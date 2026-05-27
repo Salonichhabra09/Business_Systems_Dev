@@ -1,0 +1,17 @@
+<template>
+    <template if:true={showFlow}>
+    <!--<lightning-flow flow-api-name='TaskPOC'
+        flow-input-variables={inputVariables} onstatuschange={handleStatusChange} >
+    </lightning-flow> -->
+    <lightning-flow flow-api-name='MS_Tasks_Creation' flow-input-variables={inputVariables} 
+    onstatuschange={handleStatusChange}>
+    </lightning-flow>
+    </template>
+    <template if:true={showComponent}>
+        <c-bulk-m-s-task-creation-l-w-c tasks-from-flow={taskrecords} 
+        job-record-id ={recordId}
+        record-type-id ={recordTypeId} 
+        record-type-name={recordTypeName}>
+        </c-bulk-m-s-task-creation-l-w-c>
+    </template>
+</template>

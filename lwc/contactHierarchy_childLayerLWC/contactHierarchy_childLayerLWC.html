@@ -1,0 +1,22 @@
+<template>
+    <!-- Render the content if there are child contacts -->
+    <template lwc:if={has_conCount} >
+        <div data-id="childs"></div>
+        <!-- Unordered list to display child contacts -->
+        <ul >
+             <!-- Iterate over each contact in the 'contacts' array -->
+            <template for:each={contacts} for:item='cont'>
+                <!-- Render the contact card if it is a child contact -->
+                <template lwc:if={cont.isChild}>
+                    <li key={cont.Id}>
+                         <!-- Child contact card component. this component is parent and child-->
+                        <c-contact-hierarchy_contact-card-l-w-c contact={cont} contacts={contacts} 
+                        record-id={recordId} zoom-level={zoomLevel} filters={filters} 
+                        all-contacts-list={allContactsList} is-acc-plan-retired={isAccPlanRetired}>
+                        </c-contact-hierarchy_contact-card-l-w-c>
+                    </li>
+                </template>
+            </template>
+        </ul>
+    </template>
+</template>

@@ -1,0 +1,6 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">   
+    <lightning:conversationToolkitAPI aura:id="conversationKit" />
+    <lightning:workspaceAPI aura:id="workspace"/>  
+    <lightning:omniToolkitAPI aura:id="omniToolkit" />
+    <aura:handler event="lightning:conversationChatEnded" action="{!c.onChatEnded}" />   
+</aura:component>

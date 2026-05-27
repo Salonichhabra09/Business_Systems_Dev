@@ -1,0 +1,7 @@
+<!--Created By: Pankhuri Jain, for SSE-10854, 
+Purpose: Overiding Functionality of Future Product standard "EDIT & DELETE" actions. Redirect to Clone_Custom_Add_Products_Page VFPage
+-->
+
+<apex:page standardController="Future_Product__c" extensions="Future_Product_redirect_Ext" action="{!saveAndRedirect}"> 
+ 
+</apex:page>

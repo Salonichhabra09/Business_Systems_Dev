@@ -1,0 +1,16 @@
+.pillSize{
+    width : 100%;
+    display: inline-flex;
+}
+.input-space{
+    padding-left: 2rem;
+}
+.slds-combobox__input.slds-combobox__input-value{
+    padding-left: 2.25rem;
+}
+.slds-combobox__input-entity-icon{
+    top:70%;
+}
+.slds-input__icon_right{
+    top:70%;
+}

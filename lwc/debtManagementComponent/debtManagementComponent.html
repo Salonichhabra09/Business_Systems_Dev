@@ -1,0 +1,99 @@
+<template>
+    <lightning-card lwc:if={debtInformation}>
+        <div lwc:if={isOrder}>
+            <lightning-layout horizontal-align="center">
+                <lightning-layout-item class="slds-m-left_small">
+                    <img src={debtStatusIcon} alt={statusText} class="debt-status-icon" />
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-m-left_xx-small">
+                    <span lwc:if={isHighRisk} class="high-risk-order">Debt Risk: High </span>
+                    <span lwc:elseif={isRisk} class="moderate-risk-order">Debt Risk: Moderate </span>
+                    <span lwc:else class="low-risk-order">Debt Risk: Low/No </span>
+                </lightning-layout-item>
+                <lightning-layout-item>
+                    <div class={debtMessageOrderClass}>
+                        <span class="slds-m-left_xx-small">- {debtInformation.message}</span>
+                        <div lwc:if={isRisk}>
+                            Total Debt:<span> {debtInformation.unpaidAmount}</span>
+                        </div>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+        <div class="debt-status-container" lwc:else>
+            <lightning-layout>
+                <lightning-layout-item size="1" class="slds-m-left_small">
+                    <img src={debtStatusIcon} alt={statusText} class="debt-status-icon" />
+                </lightning-layout-item>
+                <lightning-layout-item size="10" class="slds-m-left_xx-small debt-heading">
+                    <span lwc:if={isHighRisk} class="high-risk">Debt Risk: High</span>
+                    <span lwc:elseif={isRisk} class="moderate-risk">Debt Risk: Moderate</span>
+                    <span lwc:else class="low-risk">Debt Risk: Low/No</span>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout> 
+                <lightning-layout-item size="12" class="slds-m-around_small">
+                    <div class="debt-status-message">
+                        <lightning-formatted-rich-text value={debtInformation.message}></lightning-formatted-rich-text>
+                        <div lwc:if={isRisk}>
+                            Total Debt:<span class="total-debt"> {debtInformation.unpaidAmount}</span>
+                        </div>
+                    </div>
+                    <div class="slds-m-top_x-small">
+                        <a lwc:if={isClickMoreVisible} onclick={openDebtDetails}>Click for more details.</a>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+
+    <template if:true={isOpenDebtDetails}>
+        <section role="dialog" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-modal__title">Debt Overview</h2>
+                    <button class="slds-button slds-modal__close" title="Close" onclick={closeDebtDetails}>
+                        <lightning-icon icon-name="utility:close" size="small"></lightning-icon>
+                    </button>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <p class="at-risk-opportunities">Closed Opportunities Under Debt: {numberOfOpportunities}</p>
+                    <div class="tile-grid">
+                        <template for:each={debtDetail} for:item="opp">
+                            <div key={opp.id} class="tile">
+                                <span class="opportunity-tile-heading">
+                                    <lightning-icon icon-name="standard:opportunity" size="small"></lightning-icon>
+                                    <a href={opp.link} target="_blank" class="tile-heading">{opp.name}</a>
+                                </span>
+                                <div class="invoice-table">
+                                    <table class="slds-table slds-table_cell-buffer slds-table_bordered table-border">
+                                        <thead>
+                                            <tr>
+                                                <th>Invoice</th>
+                                                <th>Unpaid Amount</th>
+                                                <th>Debt Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <template for:each={opp.invoices} for:item="inv">
+                                                <tr key={inv.id}>
+                                                    <td><a href={inv.invoiceLink} target="_blank">{inv.name}</a></td>
+                                                    <td>{inv.unpaidAmount}</td>
+                                                    <td class="debt-status-table-column"><img src={inv.status} class="debt-status-icon-table" /> <p class="slds-m-left_xx-small">{inv.statusMessage}</p></td>
+                                                </tr>
+                                            </template>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button label="Close" onclick={closeDebtDetails}></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

@@ -1,0 +1,36 @@
+<apex:page standardcontroller="Opportunity" extensions="ContractHeaderClassicCls" showHeader="false" sidebar="false">
+    
+    <apex:includeScript value="{!URLFOR($Resource.jquery_1_8_23, 'js/jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.jquery_1_8_23, 'js/jquery-ui.custom.min.js')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.jquery_1_8_23, '/css/ui-lightness/jquery-ui.custom.css')}"  />
+    <apex:includeScript value="/support/console/37.0/integration.js"/>
+    
+    <script type="text/javascript">
+    
+    	function RedirtToNewContract(flow,opptyid) 
+            {
+                var pageUrl="{!URLFOR('/flow/Create_Contract_From_Opportunity_Button')}";
+                var parameters = '?recordId=' + opptyid + '&' + 'retURL=' + opptyid;
+                var link = pageUrl + parameters;
+                if(sforce.console.isInConsole()){
+                    var primaryTabId = sforce.console.getEnclosingPrimaryTabId().id;
+                    sforce.console.openSubtab(primaryTabId , link, true, 
+                	'Create Contract', null);
+                }
+                else{
+                	window.top.location.href =link;
+                }
+            }
+    	function CloseAndRefresh()
+    		{
+                window.parent.reload();
+        		window.close();
+        	}
+   	</script>
+    <apex:outputpanel rendered="{!((Opportunity.stagename =='Proposal' || Opportunity.stagename =='Verbal') && Opportunity.ContractId == Null)}" layout="none">
+        <apex:pageMessage title="Warning! This Opportunity does not have a Contract associated with it." summary="Please click the 'Create Contract' button to create the Contract."  severity="info" strength="1">
+           <button title="Create Contract"  onclick="RedirtToNewContract(false,'{!Opportunity.Id}')" rerender="myDIV" class="slds-button slds-button--brand" >
+                 Create Contract </button>
+        </apex:pageMessage>	
+	</apex:outputpanel>
+</apex:page>

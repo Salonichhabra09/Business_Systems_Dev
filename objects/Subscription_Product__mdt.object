@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>ADMIN_CATEGORY__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>ADMIN CATEGORY</label>
+        <length>200</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AUTO_RENEWABLE__c</fullName>
+        <defaultValue>false</defaultValue>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>AUTO-RENEWABLE</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MS_PRODUCT__c</fullName>
+        <defaultValue>false</defaultValue>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>MS PRODUCT</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PRODUCT_AND_ASSESSMENT_FAMILY__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>PRODUCT AND ASSESSMENT FAMILY</label>
+        <length>200</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Name__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Product Name</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RECORD_TYPE__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>RECORD TYPE</label>
+        <length>200</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RENEWABLE__c</fullName>
+        <defaultValue>false</defaultValue>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>RENEWABLE</label>
+        <type>Checkbox</type>
+    </fields>
+    <label>Subscription Product</label>
+    <listViews>
+        <fullName>ALL_products</fullName>
+        <columns>MasterLabel</columns>
+        <columns>Product_Name__c</columns>
+        <columns>RENEWABLE__c</columns>
+        <columns>AUTO_RENEWABLE__c</columns>
+        <columns>MS_PRODUCT__c</columns>
+        <columns>PRODUCT_AND_ASSESSMENT_FAMILY__c</columns>
+        <columns>ADMIN_CATEGORY__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>ALL products</label>
+        <language>en_US</language>
+    </listViews>
+    <pluralLabel>Subscription Products</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

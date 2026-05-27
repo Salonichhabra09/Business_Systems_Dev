@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Map between Course Delivery Language, Certificate Language and Certificate text Translations</description>
+    <fields>
+        <fullName>Delivery_Language__c</fullName>
+        <description>Course Delivery Language</description>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Delivery Language</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>English</fullName>
+                    <default>true</default>
+                    <label>English</label>
+                </value>
+                <value>
+                    <fullName>French</fullName>
+                    <default>false</default>
+                    <label>French</label>
+                </value>
+                <value>
+                    <fullName>Italian</fullName>
+                    <default>false</default>
+                    <label>Italian</label>
+                </value>
+                <value>
+                    <fullName>Chinese (Mandarin/Simplified)</fullName>
+                    <default>false</default>
+                    <label>Chinese (Mandarin/Simplified)</label>
+                </value>
+                <value>
+                    <fullName>Chinese (Cantonese/Traditional)</fullName>
+                    <default>false</default>
+                    <label>Chinese (Cantonese/Traditional)</label>
+                </value>
+                <value>
+                    <fullName>Dutch</fullName>
+                    <default>false</default>
+                    <label>Dutch</label>
+                </value>
+                <value>
+                    <fullName>Brazilian Portuguese</fullName>
+                    <default>false</default>
+                    <label>Brazilian Portuguese</label>
+                </value>
+                <value>
+                    <fullName>German</fullName>
+                    <default>false</default>
+                    <label>German</label>
+                </value>
+                <value>
+                    <fullName>Spanish</fullName>
+                    <default>false</default>
+                    <label>Spanish</label>
+                </value>
+                <value>
+                    <fullName>Danish</fullName>
+                    <default>false</default>
+                    <label>Danish</label>
+                </value>
+                <value>
+                    <fullName>Finnish</fullName>
+                    <default>false</default>
+                    <label>Finnish</label>
+                </value>
+                <value>
+                    <fullName>Norwegian</fullName>
+                    <default>false</default>
+                    <label>Norwegian</label>
+                </value>
+                <value>
+                    <fullName>Swedish</fullName>
+                    <default>false</default>
+                    <label>Swedish</label>
+                </value>
+                <value>
+                    <fullName>Japanese</fullName>
+                    <default>false</default>
+                    <label>Japanese</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Text_Placeholder__c</fullName>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Text Placeholder</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ReplaceCertificateTitle_Label</fullName>
+                    <default>true</default>
+                    <label>ReplaceCertificateTitle_Label</label>
+                </value>
+                <value>
+                    <fullName>ReplaceCertifyThat_Label</fullName>
+                    <default>false</default>
+                    <label>ReplaceCertifyThat_Label</label>
+                </value>
+                <value>
+                    <fullName>ReplaceSuccessfullyCompleted_Label</fullName>
+                    <default>false</default>
+                    <label>ReplaceSuccessfullyCompleted_Label</label>
+                </value>
+                <value>
+                    <fullName>ReplaceAppropriateTraining_Label</fullName>
+                    <default>false</default>
+                    <label>ReplaceAppropriateTraining_Label</label>
+                </value>
+                <value>
+                    <fullName>ReplaceResgistrationNumber_Label</fullName>
+                    <default>false</default>
+                    <label>ReplaceResgistrationNumber_Label</label>
+                </value>
+                <value>
+                    <fullName>ReplaceTermsConditions_Label</fullName>
+                    <default>false</default>
+                    <label>ReplaceTermsConditions_Label</label>
+                </value>
+                <value>
+                    <fullName>ReplaceRightsReserved_Label</fullName>
+                    <default>false</default>
+                    <label>ReplaceRightsReserved_Label</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Text_Value_Translated__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Text Value Translated</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Course Certificate LanguageTranslation</label>
+    <listViews>
+        <fullName>All_Data</fullName>
+        <columns>MasterLabel</columns>
+        <columns>Delivery_Language__c</columns>
+        <columns>Text_Placeholder__c</columns>
+        <columns>Text_Value_Translated__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Data</label>
+        <language>en_US</language>
+    </listViews>
+    <pluralLabel>Course Certificate LanguageTranslations</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,20 @@
+.filter-panel {
+    background-color: rgb(243, 243, 243);
+}
+
+.table-container {
+    max-width: 95vw;
+    overflow-x: scroll;
+}
+
+.slds-truncate[c-taskManagerComponent_taskManagerComponent] {
+    white-space: pre-wrap;
+}
+
+.slds-scrollable_y {
+    -webkit-overflow-scrolling: touch;
+    max-height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    height: 100%;
+}

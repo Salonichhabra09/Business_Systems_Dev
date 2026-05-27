@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 11-26-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <div class="icon-container">
+        <!-- Loop through pre-computed role-icon pairs -->
+        <template for:each={roleIcons} for:item="item">
+            <div key={item.role} class="role-icon">
+                <lightning-icon icon-name={item.iconName} size="x-small" alternative-text={item.role} title={item.role}
+                    accesskey={item.role} class="enlargeIcon">
+                </lightning-icon>
+            </div>
+        </template>
+        <!--<lightning-icon icon-name={iconName} size="medium" alternative-text="Decision Maker">
+        </lightning-icon>-->
+        <!--<lightning-icon icon-name="action:edit_groups" size="x-small" alternative-text="Other Roles" title={moreIcons}
+            class="enlargeIcon" lwc:if={moreIcons}>
+        </lightning-icon>-->
+        <lightning-icon icon-name="action:edit_groups" onclick={handleEditContactRole} alternative-text="Edit"
+            title={allRoleNames} size="x-small" class={toggleColor} data-id="myDiv"></lightning-icon>
+    </div>
+</template>

@@ -1,0 +1,65 @@
+<apex:page > 
+<!--cache="false"
+  standardStylesheets="false"
+  showHeader="false"
+  sidebar="false"
+  controller="Kb_Controller"
+  language="{!$CurrentPage.parameters.l}"
+  applyBodyTag="false"
+  applyHtmlTag="false" 
+>
+ <!---- Google Analytics tracking code as part of SSE-6746 ------->
+<!--<head>
+<style>
+.circle{
+ position:absolute;
+  height:175px;
+  width:175px;
+  border-radius:175px;
+  //border:3px solid white;
+  //left:50%;
+  //margin-left:-25px;
+ // top: -20px;
+    background:#78d64b;
+    display:inline;
+    margin-left:-129px;
+    text-align: CENTER;
+    cursor: pointer;
+}
+
+</style>
+</head> 
+<!---- Google Analytics tracking code end ------->
+<!--<apex:composition template="Kb_Template">
+    <apex:define name="body"></apex:define>
+    <apex:define name="catDetail">
+        <div class="home-block-container" style="margin-left:130px;">
+            <ul id="homePgNav" style="padding-left:0px">
+            
+                <div class="circle"  style="background: url({!$Resource.thumb_support_client})  ;" onClick="catHomePage('client')"></div><li class="hpClientLink"  onClick="catHomePage('client')"><!--<span class="homeCat">{!$Label.Kb_Client_Bar_Text1}</span>-->
+
+                <!--<ul style="list-style-type:disc ;padding-top:12px;width: 100%;margin-left: 30px;">
+                <div style="color:#00664D;margin-left: 40px;font-size: 20px;font-family: 'Montserrat', sans-serif;font-weight: 600;line-height: 24px;margin-bottom: 5px">{!$Label.Kb_Client_Bar_Text2}</div>
+                <apex:repeat value="{!kbCon.catLevelList[0].childCategory}" var="c1">
+            <ul    style="display:{!IF(c1.apiname='SHL_Support:Reseller_and_Client_Information','none','')}" ><div style="margin-right:120px ;color: #FFFFFF;font-size: 17px;font-family: 'OpenSans', sans-serif;font-weight: 500;line-height: 23px;margin-bottom: 5px">{!c1.catLabel}</div></ul>
+            </apex:repeat>
+            </ul>
+                
+                
+                </li> 
+               <div class="circle" style="background: url({!$Resource.thumb_support_candidate})  top left no-repeat;margin-left: -198px" onClick="catHomePage('candidate')"></div> <li class="hpCandidateLink" onClick="catHomePage('candidate')" style="margin-left:-110px"><!--<span class="homeCat">{!$Label.Kb_Candidate_Bar_Text1}</span>-->
+                
+                <!--<ul style="list-style-type:disc; padding-top:12px;width: 100%;margin-left: 30px;">
+                <div style="color:#00664D;margin-left: 40px;font-size: 20px;font-family: 'Montserrat', sans-serif;font-weight: 600;line-height: 24px;margin-bottom: 5px"> <apex:outputtext value="{!$Label.Kb_Candidate_Bar_Text1}" escape="false" /></div>
+                
+                <apex:repeat value="{!kbCon.catLevelList[1].childCategory}" var="c1">
+            <ul  ><div style="margin-right:120px ;color: #FFFFFF;font-size: 17px;font-family: 'OpenSans', sans-serif;font-weight: 500;line-height: 23px;margin-bottom: 5px">{!c1.catLabel}</div></ul>
+            </apex:repeat>
+            </ul>
+                </li>
+                </ul>
+        </div>
+    </apex:define>
+</apex:composition>-->
+
+</apex:page>

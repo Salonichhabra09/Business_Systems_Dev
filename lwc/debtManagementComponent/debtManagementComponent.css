@@ -1,0 +1,123 @@
+.debt-status-container{
+
+}
+
+.debt-status-icon{
+    zoom: 75%;  
+}
+
+.debt-status-message{
+    font-size: 15px;
+    font-weight: 480;
+}
+
+.tile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
+    gap: 1rem;
+}
+
+.tile {
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background-color: #f9f9f9;
+}
+
+.tile-heading {
+    display: block;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.invoice-table {
+    max-height: 115px;
+    overflow-y: auto;
+    margin-top: 5px;
+}
+
+.maxHeight{
+    max-height: 25rem;
+    overflow-y:auto;
+}
+.slds-modal__content{
+    height: 22rem;
+    overflow: auto;
+}
+.slds-modal__container{
+    width: 75% !important;
+    max-width: 75% !important;   
+}
+
+.at-risk-opportunities{
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.debt-status-icon-table{
+    zoom: 45%;
+}
+
+.opportunity-tile-heading{
+    display: ruby;
+    zoom: 90%;
+}
+
+.table-border{
+    border: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+}
+
+.total-debt{
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.high-risk{
+    color: #E71515;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.moderate-risk{
+    color: #F88F18;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.low-risk{
+    color: #0DB120;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.debt-status-table-column{
+    display: flex;
+}
+
+.debt-heading{
+    margin-top: 2px;
+}
+
+.high-risk-order{
+    color: #E71515;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.moderate-risk-order{
+    color: #F88F18;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.low-risk-order{
+    color: #0DB120;
+    font-size: 1rem;
+    font-weight: 500;
+}

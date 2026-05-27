@@ -1,0 +1,9 @@
+.slds-card{
+    border-style: none;
+    background-color: lightgray;
+    vertical-align: center;
+}
+
+.slds-card__header{
+    -moz-box-align: center;
+}

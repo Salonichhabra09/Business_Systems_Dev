@@ -1,0 +1,13 @@
+<design:component>
+    <design:attribute name="objectName" label="Object API Name"  required="true" />
+    <design:attribute name="id" label="Opportunity Id"  required="true"/>
+    <design:attribute name="opportuntityName" label="Opportunity Name"  required="true"/>
+    <design:attribute name="accountName" label="Opportunity Account Name"  required="true"/>
+    <design:attribute name="profileName" label="User Profile"  required="true"/>
+    <design:attribute name="billingContactStatus" label="Billing Contact Status"  required="true"/>
+    <design:attribute name="primaryContactStatus" label="Primary Contact Status"  required="true"/>
+    <design:attribute name="CLMContractStatus" label="CLM Contract Status"  required="true"/>
+    <design:attribute name="accountNumber" label="Opportunity Account Number"  required="true"/>
+    
+    <design:attribute name="oppRecord" label="Opportunity Record" required="true"/>
+</design:component>

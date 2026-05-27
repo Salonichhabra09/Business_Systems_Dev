@@ -1,0 +1,161 @@
+<template>
+    <lightning-card title="Home Address" icon-name="standard:home">
+        <template lwc:if={showSpinner}>
+            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+        </template>
+        <lightning-button variant="neutral" onclick={handleCreate} label="Create" slot="actions" lwc:if={noHomeAddress}></lightning-button>                     
+        <lightning-button variant="neutral" onclick={handleEdit} label="Edit" slot="actions" lwc:if={hasHomeAddress}></lightning-button>                     
+        <div lwc:if={hasHomeAddress} class="slds-p-around_small address-font">
+            <lightning-layout class="slds-border_bottom">
+                <lightning-layout-item size="3" class="address-font-weight-label">
+                    Address
+                </lightning-layout-item>
+                <lightning-layout-item size="9" class="address-inline address-font-weight-value">
+                    <h1>{addressToShow}</h1>
+                    <!-- <h1 lwc:if={homeAddress.Address_Line_2__c.value}>, {homeAddress.Address_Line_2__c.value}</h1>
+                    <h1 lwc:if={homeAddress.Address_Line_3__c.value}>, {homeAddress.Address_Line_3__c.value}</h1>
+                    <h1 lwc:if={homeAddress.Address_Line_4__c.value}>, {homeAddress.Address_Line_4__c.value}</h1> -->
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout lwc:if={homeAddress.City__c.value} class="slds-m-top_small slds-border_bottom">
+                <lightning-layout-item size="3" class="address-font-weight-label">
+                    City
+                </lightning-layout-item>
+                <lightning-layout-item size="9" class="address-font-weight-value">
+                    <h1>{homeAddress.City__c.value}</h1>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout lwc:if={homeAddress.State_County__c.value} class="slds-m-top_small slds-border_bottom">
+                <lightning-layout-item size="3" class="address-font-weight-label">
+                    State/County
+                </lightning-layout-item>
+                <lightning-layout-item size="9" class="address-font-weight-value">
+                    <h1>{homeAddress.State_County__c.value}</h1>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout lwc:if={homeAddress.Global_Country__c.value} class="slds-m-top_small slds-border_bottom">
+                <lightning-layout-item size="3" class="address-font-weight-label">
+                    Country
+                </lightning-layout-item>
+                <lightning-layout-item size="9" class="address-font-weight-value">
+                    <h1>{homeAddress.Global_Country__c.value}</h1>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout lwc:if={homeAddress.ZIP_Postal_Code__c.value} class="slds-m-top_small">
+                <lightning-layout-item size="3" class="address-font-weight-label">
+                    ZIP/PIN Code
+                </lightning-layout-item>
+                <lightning-layout-item size="9" class="address-font-weight-value">
+                    <h1>{homeAddress.ZIP_Postal_Code__c.value}</h1>
+                </lightning-layout-item>
+            </lightning-layout>
+            
+        </div>
+        <div lwc:if={noHomeAddress} class="slds-p-horizontal_small">
+                Home address not found. Please click on create to add the Home Address.
+        </div>
+    </lightning-card>
+
+    <div lwc:if={isCreateRecord}>
+        <section role="dialog" tabindex="-1" aria-labelledby="contact-edit-modal" 
+        aria-modal="true" aria-describedby="contact-edit-modal" class="slds-modal slds-fade-in-open custom-alignment">
+            <div class="slds-modal__container slds-is-relative">
+    
+                <!-- Modal/Popup Box LWC header here -->
+                <div class="slds-is-relative custom-width">
+                    <template lwc:if={showSpinner}>
+                        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                    </template>
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" 
+                    title="Close" onclick={handleClose}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h3 id="modal-heading-06" class="slds-text-heading_medium slds-hyphenate">{headerTitle}</h3>
+                </header>
+               
+                <lightning-record-edit-form
+                    object-api-name="India_GST__c"
+                    onsuccess={handleCreateSuccess}
+                    onsubmit={handleSubmit}
+                    onerror={handleError}
+                    record-id={editRecordId}
+                    record-type-id={addressRecordTypeId}>
+                    
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-4">
+                    <lightning-messages></lightning-messages>
+                    <div class="slds-text-heading_small slds-m-bottom_medium slds-m-left_small">Information
+                    </div>
+                    <lightning-layout>
+                        <lightning-layout-item size="6">
+                            <lightning-input-field field-name="Type__c" value="Home Address" disabled="true"></lightning-input-field> 
+                            
+                        </lightning-layout-item>
+                        <lightning-layout-item size="6">
+                            <lightning-input-field field-name="Account__c" value={accountId} disabled="true"></lightning-input-field>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <lightning-layout>
+                        <lightning-layout-item size="6">
+                            <lightning-input-field field-name="Address_Line_1__c" required></lightning-input-field>
+                        </lightning-layout-item >
+                        <lightning-layout-item size="6">
+                            <lightning-input-field field-name="Contact__c" value={recordId} disabled="true"></lightning-input-field>
+                            
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <lightning-layout>
+                        <lightning-layout-item size="6">
+                            <lightning-input-field field-name="Address_Line_2__c" ></lightning-input-field>
+                        </lightning-layout-item >
+                        <lightning-layout-item size="6">
+                            <lightning-input-field field-name="City__c" required></lightning-input-field>   
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <lightning-layout>
+                        <lightning-layout-item size="6">
+                            <lightning-input-field field-name="Address_Line_3__c" 
+                            ></lightning-input-field>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="6">
+                            <lightning-input-field field-name="State_County__c"  
+                            ></lightning-input-field>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <lightning-layout>
+                        <lightning-layout-item size="6">
+                            <lightning-input-field field-name="Address_Line_4__c" 
+                            ></lightning-input-field>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="6">
+                            <lightning-input-field field-name="Global_Country__c"  
+                            ></lightning-input-field>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <lightning-layout>
+                        <lightning-layout-item size="6">
+                            <lightning-input-field field-name="ZIP_Postal_Code__c"  required
+                            ></lightning-input-field>
+                        </lightning-layout-item>
+                    </lightning-layout>
+    
+                </div>
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" 
+                    onclick={handleClose} type="Cancel" title="Cancel">Cancel</button>
+                    <button class="slds-button slds-button_brand" 
+                    type="submit" title="Save">Save</button>
+                </footer>
+            </lightning-record-edit-form> 
+        
+       
+            </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+</template>

@@ -1,0 +1,177 @@
+<!-- This Component is used to handle the creation of Bulk Course Booking from the Courses.
+     Created By: Prachi Gupta(prachi.gupta@shl.com)
+     Created Date: 20-04-2022 -->  
+
+<aura:component controller="CourseBookingBulkImplementor" implements= "force:hasRecordId,lightning:actionOverride,lightning:isUrlAddressable" 
+                access="global">
+    
+    <!-- To change the name of Subtab in Service Console. -->
+    <lightning:workspaceAPI aura:id="workspace" />
+	
+    <aura:attribute name="CourseRecord"  type="Courses__c"/>
+    <aura:attribute name="courseBookingList" type="Course_Booking__c[]"/>
+    <aura:attribute name="courseCategory" type="String"/>
+    <aura:attribute name="coursePrice" type="Decimal"/>
+    <aura:attribute name="CurrencyIsoCode" type="String"/>
+    <aura:attribute name="CourseId" type="String" access="global" description="Used to Hold the Id of record in Context"/>
+    <aura:attribute name="recordId"  type="String" access="global" description="Used to Hold the Id of record in Context"/>
+    <aura:attribute name="ShowDetails" type="Boolean" default="false"/>
+    <aura:attribute name="FreeSpaceCounter" type="Integer" default = "0" />
+    <aura:attribute name="MaxFreeSpaceValue" type="Integer" />
+    <aura:attribute name="CurrentFreeSpaceValue" type="Integer" />
+    <aura:attribute name="spinner" type="boolean" default="FALSE"/>
+    <aura:attribute name="hasDuplicatesCB" type="boolean" default="FALSE"/>
+    <aura:attribute name="errorMessage" type="String" default=""/>
+    <aura:attribute name="isDisabled" type="boolean" default="False"/>
+    
+    <aura:handler   name="init" value="{!this}" action="{!c.onPageReferenceChange}"/>
+    <aura:handler   name="change" value="{!v.pageReference}" action="{!c.onPageReferenceChange}"/>
+    
+    <!-- Shows the spinner when the Page is open -->
+     <aura:if isTrue="{!v.spinner}">
+        <div aura:id="spinnerId" class="slds-spinner_container">
+            <div class="slds-spinner--brand  slds-spinner slds-spinner--large slds-is-relative" role="alert">
+                <span class="slds-assistive-text">Loading...</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </aura:if>
+    
+    <!--  USED TO SHOW THE Course Details ON THE NEW COURSE BOOKING PAGE -->
+    <aura:if isTrue="{!v.ShowDetails}">
+        <lightning:recordViewForm recordId="{!v.CourseRecord.Id}" objectApiName="Courses__c" density="comfy">
+            <lightning:card title="Course Details">
+                <lightning:layout multipleRows="true">
+                    <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                        <lightning:outputField fieldName="Course_Name__c"/>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                        <lightning:outputField fieldName="Course_Description__c" />
+                    </lightning:layoutItem>               
+                    <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                        <lightning:outputField fieldName="Course_Start_Date__c" />
+                    </lightning:layoutItem>                  
+                    <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                        <lightning:outputField fieldName="Course_End_Date__c" />
+                    </lightning:layoutItem>
+                    <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                        <lightning:outputField fieldName="Start_time__c" />
+                    </lightning:layoutItem>  
+                     <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                        <lightning:outputField fieldName="TimeZone__c" />
+                    </lightning:layoutItem>  
+                </lightning:layout>
+            </lightning:card>
+        </lightning:recordViewForm>
+    </aura:if>
+    
+    
+    <!-- Used to show the Header -->
+    <div class="slds-page-header">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media" style="padding: 8px;">
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate" title="Create Milestones">Create Course Bookings</span>
+                                </h1>
+                            </div>
+                        </div>
+                        
+                        <div align="center">
+                            <lightning:button variant="Brand" label="Save" onclick="{!c.save}"/>  &nbsp;
+                            <lightning:button variant="Brand" label="Cancel" onclick="{!c.cancel}"/>
+                            <div style="display:inline;padding-left: 50px;">
+                               <b>  Max Free Space : <lightning:formattedNumber value="{!v.MaxFreeSpaceValue}" /> </b>
+                            </div>
+                            
+                            <div style="display:inline" class="slds-float_right">
+                                <lightning:button label="ADD ROW" iconName="utility:add" iconPosition="left"  variant="" onclick="{!c.addRow}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Used to show the table containing Course Booking Data -->
+    <div class="customSize" > 
+        <div class="highlights slds-clearfix slds-page-header slds-page-header_record-home">
+            <div class="secondaryFields">
+                <div class="slds-grid slds-page-header__detail-row" style="margin-top: 0px; padding-top: 0px;">
+                    <div>
+       <!-- <lightning:card> -->
+                        <table class="slds-table slds-table_bordered slds-table_striped slds-table_fixed-layout records-table">
+                            <thead>
+                                <tr class="slds-text-title_caps slds-text-align_left">
+                                   <!--<div>-->
+                                        <th style="width:3%;">#</th>
+                                        <th style="width:23%;">Course Number<p style="display: inline;color:red;">*</p></th>
+                                        <th style="width:23%;">Delegate Contact<p style="display: inline;color:red;">*</p></th>
+                                        <th style="width:23%">Lead Source</th>
+                                        <th style="width:23%">Booking Status<p style="display: inline;color:red;">*</p></th>
+                                        <th style="width:5%"></th>
+                                   <!-- </div>-->
+                                </tr>
+                            </thead>
+                        </table>
+            
+                        <table class="slds-table slds-table_bordered slds-table_striped slds-table_fixed-layout records-table" >
+                            <thead>     
+                                <aura:iteration items="{!v.courseBookingList}" var="CourseBooking" indexVar="index">
+                                    <lightning:recordEditForm aura:id="CourseBookingForm" objectApiName="Course_Booking__c" >                    
+                                       
+                                            <!--<div>-->
+                                                 <aura:if isTrue="{!v.hasDuplicatesCB}">
+                                        	        <ui:message title="" severity="error" closable="true">
+                                                    <aura:unescapedHtml value="{!v.errorMessage}" />
+                                                    </ui:message>
+                                                </aura:if> &nbsp;
+                                         <tr class="slds-text-align_left" style = "width: 100%; display: inline-table;"  id="rowtr">
+                                                <td style="width:3%;"> 
+                                                    {!index + 1}
+                                                </td>
+                                                <td style="width:23%">
+                                                    <lightning:inputField fieldName="Course_Number__c" value="{!CourseBooking.Course_Number__c}"  variant="label-hidden" required="true" disabled="true"></lightning:inputField>
+                                                </td>
+                                                <td style="width:23%">
+                                                    <lightning:inputField fieldName="Delegate_Contact__c" value="{!CourseBooking.Delegate_Contact__c}"  variant="label-hidden" required="true" ></lightning:inputField>
+                                                </td>
+                                                <td style="width:23%">
+                                                    <lightning:inputField fieldName="Lead_Source__c" value="{!CourseBooking.Lead_Source__c}"  variant="label-hidden" ></lightning:inputField>
+                                                </td>
+                                                <td style="width:23%">
+                                                   
+                                                    <lightning:inputField  fieldName="Booking_Status__c" value="{!CourseBooking.Booking_Status__c}"  variant="label-hidden" required="true" disabled = "false"></lightning:inputField>
+                                                   
+                                                    </td>
+                                                
+                                                <td style="width:5%;">
+                                                    <a onclick="{!c.removeRow}" data-record="{!index}">
+                                                        <lightning:icon iconName="utility:delete" size="x-small" alternativeText="Delete"/>
+                                                        <span class="slds-assistive-text">Delete</span>
+                                                    </a>
+                                                   <!--  <a onclick="{!c.clonerow}" data-record="{!index}">
+                                                        <lightning:icon iconName="utility:copy" size="x-small" alternativeText="Clone"/>
+                                                        <span class="slds-assistive-text">Clone</span>
+                                                    </a>-->
+                                                </td>
+                                           <!-- </div> -->
+                                        </tr>
+                                    </lightning:recordEditForm>
+                                </aura:iteration>
+                                
+                                
+                            </thead>
+                        </table>
+        <!--</lightning:card>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

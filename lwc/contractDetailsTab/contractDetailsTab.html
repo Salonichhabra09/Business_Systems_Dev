@@ -1,0 +1,200 @@
+<template>
+    <div class="slds-box">
+        <lightning-accordion class="example-accordion" active-section-name="Field Information"
+                            allow-multiple-sections-open>
+        <lightning-accordion-section  name="Field Information" label="Opportunity/Contract Details">
+            <lightning-record-view-form
+                record-id={recordId}
+                object-api-name="Job__c">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-2 slds-border_bottom slds-form-element slds-form-element_horizontal">
+                <label class="slds-form-element__label slds-m-left_xx-small">Opportunity</label>
+                <lightning-output-field variant="label-hidden" field-name="Opportunity__c">
+                </lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2 slds-m-left_x-small slds-border_bottom slds-form-element slds-form-element_horizontal">
+                <label class="slds-form-element__label slds-m-left_xx-small">Account</label>
+                <lightning-output-field variant="label-hidden" field-name="Account__c">
+                </lightning-output-field>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-2 slds-border_bottom slds-form-element slds-form-element_horizontal">
+                <label class="slds-form-element__label slds-m-left_xx-small">Opportunity Currency</label>
+                <lightning-output-field variant="label-hidden" field-name="Opportunity_Currency__c">
+                </lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2 slds-m-left_x-small slds-border_bottom slds-form-element slds-form-element_horizontal">
+                <label class="slds-form-element__label slds-m-left_xx-small">D Number</label>
+                <lightning-output-field variant="label-hidden" field-name="Account_Number__c">
+                </lightning-output-field>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-2 slds-border_bottom slds-form-element slds-form-element_horizontal">
+                <label class="slds-form-element__label slds-m-left_xx-small">Opportunity Amount</label>
+                <lightning-output-field  variant="label-hidden" field-name="Opportunity_Amount__c">
+                </lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2 slds-m-left_x-small slds-border_bottom slds-form-element slds-form-element_horizontal">
+                <label class="slds-form-element__label slds-m-left_xx-small">BU</label>
+                <lightning-output-field variant="label-hidden" field-name="Account_BU__c">
+                </lightning-output-field>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-2 slds-border_bottom slds-form-element slds-form-element_horizontal">
+                <label class="slds-form-element__label slds-m-left_xx-small">Opportunity MS Value</label>
+                <lightning-output-field  variant="label-hidden" field-name="Opportunity_MS_Value__c">
+                </lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2 slds-m-left_x-small slds-border_bottom slds-form-element slds-form-element_horizontal">
+                <label class="slds-form-element__label slds-m-left_xx-small">Region</label>
+                <lightning-output-field variant="label-hidden" field-name="Region__c">
+                </lightning-output-field>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-2 slds-border_bottom slds-form-element slds-form-element_horizontal">
+                <label class="slds-form-element__label slds-m-left_xx-small">Contract Number</label>
+                <lightning-output-field variant="label-hidden" field-name="Contract__c">
+                </lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2 slds-m-left_x-small slds-border_bottom slds-form-element slds-form-element_horizontal">
+                <label class="slds-form-element__label slds-m-left_xx-small ">Overall Time Spent (In Minutes)</label>
+                <lightning-output-field variant="label-hidden" field-name="Total_Time_Spent_All_Jobs__c">
+                </lightning-output-field>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-2 slds-border_bottom slds-form-element slds-form-element_horizontal">
+                <label class="slds-form-element__label slds-m-left_xx-small">Contract Start Date</label>
+                <lightning-output-field variant="label-hidden" field-name="Contract_Start_Date__c">
+                </lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2 slds-m-left_x-small slds-border_bottom slds-form-element slds-form-element_horizontal">
+                <label class="slds-form-element__label slds-m-left_xx-small">Total Number of Change Request</label>
+                <lightning-output-field variant="label-hidden" field-name="Total_number_of_change_request__c">
+                </lightning-output-field>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-2 slds-border_bottom slds-form-element slds-form-element_horizontal">
+                <label class="slds-form-element__label slds-m-left_xx-small">Contract End Date</label>
+                <lightning-output-field variant="label-hidden" field-name="Contract_End_Date__c">
+                </lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2 slds-m-left_x-small slds-border_bottom slds-form-element slds-form-element_horizontal">
+                <label class="slds-form-element__label slds-m-left_xx-small">Total Participants</label>
+                <lightning-output-field variant="label-hidden" field-name="Total_Participants__c">
+                </lightning-output-field>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-2 slds-border_bottom slds-form-element slds-form-element_horizontal">
+                <label class="slds-form-element__label slds-m-left_xx-small">Internal Contact</label>
+                <lightning-output-field variant="label-hidden" field-name="InternalContact__c">
+                </lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2 slds-m-left_x-small slds-border_bottom slds-form-element slds-form-element_horizontal">
+                <label class="slds-form-element__label slds-m-left_xx-small">Total Candidate Count</label>
+                <lightning-output-field variant="label-hidden" field-name="Actual_Count_of_Candidates__c">
+                </lightning-output-field>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-2 slds-border_bottom slds-form-element slds-form-element_horizontal">
+                <lightning-record-view-form
+                record-id={oppId}
+                object-api-name="Opportunity">
+                <label class="slds-form-element__label slds-m-left_xx-small">Primary Contact</label>
+                  
+                <lightning-output-field variant="label-hidden" field-name="Primary_Contact__c">
+                </lightning-output-field>
+                </lightning-record-view-form>
+            </div>
+            <div class="slds-col slds-size_1-of-2 slds-m-left_x-small slds-border_bottom slds-form-element slds-form-element_horizontal">
+                <label class="slds-form-element__label slds-m-left_xx-small">Total MS Value</label>
+                <lightning-output-field variant="label-hidden" field-name="Total_MS_Value__c">
+                </lightning-output-field>
+            </div>
+        </div>
+        </lightning-record-view-form>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-2 slds-border_bottom slds-form-element slds-form-element_horizontal">
+                <lightning-record-view-form
+                record-id={oppId}
+                object-api-name="Opportunity">
+                <label class="slds-form-element__label slds-m-left_xx-small">Opportunity Record Type</label>
+                <lightning-output-field variant="label-hidden" field-name="Actual_Record_Type_Name__c">
+                </lightning-output-field>
+            
+                </lightning-record-view-form>
+            </div>
+            <div class="slds-col slds-size_1-of-2 slds-m-left_x-small slds-border_bottom slds-form-element slds-form-element_horizontal">
+                <lightning-record-view-form record-id={orderID} object-api-name="Order">
+                <label class="slds-form-element__label slds-m-left_xx-small">Order Status</label>
+                <lightning-output-field variant="label-hidden" field-name="Status">
+                </lightning-output-field>
+                </lightning-record-view-form>
+           
+            </div>
+       </div>
+        </lightning-accordion-section>
+        <lightning-accordion-section name="Product And Services information" 
+           label="Product And Services Information">
+            <div class="slds-p-around_xx-small slds-box">
+                <lightning-card>
+                    <h1 slot="title">
+                        MS Products & Services
+                    </h1>
+                    <div slot="footer">
+                        <lightning-datatable key-field="Id"
+                                     data={productLineItems} 
+                                     columns={tableColumns} 
+                                     hide-checkbox-column=”true” > 
+                        </lightning-datatable> 
+                    </div>
+                </lightning-card>
+            </div>
+             <div class="slds-p-around_xx-small slds-box slds-m-top_xx-small" >
+
+                <lightning-card>
+                    <h1 slot="title">
+                        Non MS Products & Services
+                    </h1>
+                    <div slot="footer">
+                    <template if:true={showproductServiceTable}>
+                        <lightning-datatable key-field="Id"
+                                     data={NonproductLineItems} 
+                                     columns={tableColumns} 
+                                     hide-checkbox-column=”true” > 
+                        </lightning-datatable> 
+                    </template>
+                    <template if:false={showproductServiceTable}>
+                        <div class="slds-m-left_xx-large slds-text-heading_small slds-text-color_error">No Records are available to display.</div>
+                    </template>
+                    </div>
+                    
+                </lightning-card>
+              </div>
+        </lightning-accordion-section>
+        <lightning-accordion-section name="LPS Project Information" 
+           label="LPS Project Information">
+           <template if:true={showproductTable}>
+            <div class="slds-p-around_xx-small">
+            <lightning-datatable key-field="Id"
+                                 data={projectItems} 
+                                 columns={projecttableColumns} 
+                                 hide-checkbox-column=”true” > 
+            </lightning-datatable> 
+        </div>
+        </template>
+        <template if:false={showproductTable}>
+            <div class="slds-align_absolute-center slds-m-top_x-small slds-text-heading_small slds-text-color_error">No Project is linked to display.</div>
+        </template>
+        </lightning-accordion-section>
+        </lightning-accordion> 
+    </div>   
+    
+</template>

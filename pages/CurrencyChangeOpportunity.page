@@ -1,0 +1,70 @@
+<apex:page standardController="Opportunity" extensions="CurrencyChangeOpportunity" sidebar="false" showHeader="false">
+
+<script>
+    window.onunload = refreshParent;
+    function refreshParent() {
+        window.opener.location.reload();
+    }
+</script>
+
+
+<apex:pageblock >
+<apex:form >
+<apex:outputPanel id="MainSection" >
+<table align="center">
+<apex:actionStatus id="pageStatus">
+    <apex:facet name="start">
+        <apex:outputPanel >
+            <img src="{!$Resource.OneCEBMemberPageLoadImage}"  width="25" height="25" />
+            <apex:outputLabel value="Loading..."/>
+        </apex:outputPanel>            
+    </apex:facet>
+</apex:actionStatus>
+<tr><td><b>Select Currency </b>
+
+  <apex:selectList id="SelectCurrency" value="{!SelectedCurrency}" size="1"  style="border-radius: 5px;color: darkgrey;
+    font-weight: bold; width:120px;">
+   <apex:selectOptions value="{!AllCurrencyTypes}"/>
+   </apex:selectlist>
+   </td>
+   <td>
+   <apex:commandButton value="Change Currency" action="{!UpdateNewCurrencyOnOpportunity}" reRender="ShowMessage" status="pageStatus" />
+   <apex:commandButton value="Cancel" onclick="window.close()" reRender="ShowMessage"/>
+   <apex:commandButton value="Close" onclick="window.close()" reRender="ShowMessage"/>
+
+   </td>
+   </tr></table>
+   </apex:outputPanel>
+</apex:form>
+
+<apex:outputPanel id="ShowMessage" >
+<apex:pagemessages />
+
+<apex:PageBlockTable value="{!ProductsUpdated}" var="items" rendered="{!(ProductsUpdated.size > 0)}">
+<apex:facet name="header">
+The following items currency have been changed:
+</apex:facet>
+<apex:column value="{!items}">
+<apex:facet name="header">
+Product Name
+</apex:facet>
+</apex:column>
+</apex:PageBlockTable>
+
+
+
+<!--
+<apex:PageBlockTable value="{!Contract}" var="Orders" rendered="{!(Contract != NULL)}">
+<apex:facet name="header">
+</apex:facet>
+<apex:column value="{!Orders.name}">
+<apex:facet name="header">
+Order Name
+</apex:facet>
+</apex:column>
+</apex:PageBlockTable>
+-->
+
+</apex:outputPanel>
+</apex:pageblock>
+</apex:page>

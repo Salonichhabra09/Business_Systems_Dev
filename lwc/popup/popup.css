@@ -1,0 +1,189 @@
+.slds-p-around_medium {
+  margin: 10px 0;
+}
+
+.left-aligned {
+  text-align: left;
+}
+
+.right-aligned {
+  text-align: right;
+}
+
+.spacer {
+  flex-grow: 1; /* This pushes the right-aligned items to the right */
+}
+
+.datatable-green {
+  background-color: green !important;
+}
+
+  .greenColor {
+    background: lightcoral;
+  }
+
+  .horizontal-align {
+    display: flex;
+    justify-content: center; /* Centers the div horizontally */
+    align-items: center; /* Aligns content in the center vertically */
+}
+
+.align-center {
+    text-align: center; /* Centers text within the element */
+}
+
+.large-text {
+    font-size: 1rem; /* Increases the size of the text */
+    font-weight: bold; /* Makes the text bold */
+}
+
+.datatable-container {
+  width: 100%; /* Make the container responsive to the parent element */
+  overflow-x: auto; /* Allow horizontal scrolling for larger data sets */
+}
+.image-container {
+  position: relative;
+  text-align: center;
+  color: white; /* Change color based on your image */
+}
+
+.image-container img {
+  width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.overlay-heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the heading */
+  font-size: 24px; /* Adjust font size as needed */
+  color: white;
+  text-align: center;
+  width: 80%;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.); /* Optional: semi-transparent background */
+  padding: 10px; /* Optional: padding around the text */
+}
+/*.table-container {
+  margin: 1rem;
+}*/
+
+.filter-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+}
+
+/*lightning-input {
+  width: 200px;
+}*/
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f5f5f5;
+  padding: 20px;
+  height: 100px; /* Adjust height if needed */
+  border-radius: 8px;
+}
+
+.dashboard-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-left: 20px;
+}
+
+.logo-container {
+  height: 100%; /* Makes sure the container takes full height of the banner */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.shl-logo {
+  max-height: 100%; /* Ensures it scales within the banner height */
+  width: auto; /* Keeps the aspect ratio */
+  object-fit: contain; /* Prevents stretching */
+  padding-right: 20px; /* Adds spacing from the edge */
+}
+.dashboard-container {
+  padding: 20px;
+  background: #F4F4F4;
+}
+
+/* Container for each table */
+.table-container {
+  border: 2px solid #d8dde6;  /* Add border around the table container */
+  margin-bottom: 20px;
+  /*padding: 10px;*/
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Header for each table */
+/*.table-header {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 0;
+  background: #333;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+}*/
+.table-header {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 15px;
+  background: #333;
+  color: white;
+  border-radius: 4px;
+  position: relative; /* Enables absolute positioning inside */
+  text-align: center; /* Centers text */
+}
+
+.export-button {
+  position: absolute;
+  right: 10px; /* Aligns button to the right */
+  top: 50%;
+  transform: translateY(-50%); /* Centers vertically */
+}
+
+/* Table container specific styles */
+.myTable1, .myTable {
+  border: 1px solid #ddd;  /* Border around the table itself */
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+/* Optional: Add a small shadow to make the tables stand out */
+.myTable1, .myTable {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 34px;
+}
+
+.flex-item {
+  display: flex;
+  align-items: flex-start; 
+}
+
+lightning-layout {
+  gap: 16px; 
+}
+
+.spacing {
+  margin-top: 16px; 
+}

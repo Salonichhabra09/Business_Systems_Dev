@@ -1,0 +1,10 @@
+.accordion_class{
+    --slds-c-accordion-summary-color-background: white;
+    border-radius: 5px;
+}
+.link-color{
+    color:black;
+}
+.margin-bottom{
+    margin-bottom: 25px;
+}

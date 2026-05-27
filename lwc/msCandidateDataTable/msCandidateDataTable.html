@@ -1,0 +1,109 @@
+<template>
+    <div class="container">
+    <template if:true={showLoadingSpinner}>
+        <div style="z-index: 10000 !important;">
+            <lightning-spinner alternative-text="Loading..." size="medium"
+                style="z-index: 10000 !important;">
+            </lightning-spinner>
+        </div>
+    </template>
+    <template if:true={showCandidateScreen}>
+    <div class="filter-panel slds-var-p-around_x-small">
+        <lightning-layout horizontal-align="end">
+        <lightning-layout-item padding="around-small">
+            <lightning-button-icon icon-name="utility:refresh" variant="border-filled" alternative-text="Refresh List" title="Refresh List" onclick={showAllCandidates}></lightning-button-icon>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" >
+            <lightning-input type="text" variant="label-hidden" label="Search this list" placeholder="Search this list" value={candidateFilterValue} onchange={handleCandidateFilterValue} onkeypress={handleEnter}></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" >
+            <lightning-button variant="brand" label="Search" onclick={handleSearchAction}></lightning-button>
+        </lightning-layout-item>
+        </lightning-layout>
+    </div>
+        <div class="slds-var-m-around_small" style="height:300px">
+            <lightning-datatable key-field="id" data={data} columns={tableColumns}
+                onrowaction={handleRowAction} hide-checkbox-column enable-infinite-loading
+                load-more-offset="2" onloadmore={loadData} >
+            </lightning-datatable>
+        </div>
+        <div
+            class="slds-align_absolute-center slds-var-m-vertical_medium slds-text-body_small slds-text-color_weak">
+            {loadMoreStatus}
+        </div>
+    </template>
+    <template if:true={createNewCandidate}>
+                <lightning-record-edit-form object-api-name={candidateObject} record-id={candidateRecordId}
+                    onsuccess={handleSingleCandidateCreation} onload={handleRecordLoad} onsubmit={handleSubmit}>
+                    <div class="slds-modal slds-fade-in-open slds-modal_large">  
+                        <div class="slds-modal__container">  
+                          <!------HEADER Section-->  
+                          <div class="slds-modal__header">  
+                            <lightning-button-icon icon-name="utility:close" alternative-text="Close this window" size="large"  
+                              variant="bare-inverse" onclick={closeModal} class="slds-modal__close">  
+                            </lightning-button-icon>  
+                            <h1 class="slds-modal__title slds-hyphenate">Candidate Information</h1>  
+                          </div>  
+                          <!------Body Section-->  
+                          <div class="slds-modal__content slds-p-around_medium slds-p-bottom_xx-large"> 
+                    <lightning-messages></lightning-messages>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name={jobField} value={recordId}
+                                onchange={handleJobNameChange}> </lightning-input-field>
+                            <template if:true={candidateRecordId}>
+                                <lightning-input-field field-name={nameField} label="Candidate Id">
+                                </lightning-input-field>
+                            </template>
+                            <lightning-input-field field-name={firstNameField}></lightning-input-field>
+                            <lightning-input-field field-name={lastNameField}></lightning-input-field>
+                            <!--lightning-input-field field-name={statusField}></lightning-input-field-->
+
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-size_1-of-3 slds-m-left_xx-small">
+                                    <label class="slds-form-element__label slds-no-flex">Status</label>
+                                </div>
+                                <div class="customPicklist">
+                                    <lightning-combobox
+                                    style="display: inline-flex;"
+                                    class="slds-size_1-of-1"
+                                    name="Status"
+                                    value={status}
+                                    options={statusOptions}
+                                    onchange={handleStatusChange} 
+                                    access-key={index}></lightning-combobox>
+                                </div>
+                              </div>
+                            
+                            <lightning-input-field field-name={PhoneNumber}></lightning-input-field>
+                            <lightning-input-field field-name={systemField}></lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name={emailField}></lightning-input-field>
+                            <lightning-input-field field-name={genderField}></lightning-input-field>
+                            <lightning-input-field field-name={countryField}></lightning-input-field>
+                            <lightning-input-field field-name={languageField}></lightning-input-field>
+                            <lightning-input-field field-name={usernameField}></lightning-input-field>
+                            <lightning-input-field field-name={reportStatusField}></lightning-input-field>
+                            <lightning-input-field field-name={productAssessmentField}></lightning-input-field>
+                        </div>
+                    </div>
+                </div>  
+                <!------Footer Section-->  
+                <div class="slds-modal__footer">
+                    <div class="slds-align_absolute-center slds-var-m-vertical_medium">
+                        <lightning-button type="submit" variant="brand" label="Save"
+                            class="slds-var-m-horizontal_small">
+                        </lightning-button>
+                        <lightning-button type="cancel" variant="brand" label="Cancel"
+                            onclick={handleCandidateCancel}>
+                        </lightning-button>
+                    </div>  
+                </div>  
+              </div>  
+            </div>
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+                </lightning-record-edit-form>
+    </template>
+</div>
+</template>

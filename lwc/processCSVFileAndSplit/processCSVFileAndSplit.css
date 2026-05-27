@@ -1,0 +1,20 @@
+.spins::after {
+    position: absolute;
+    content: 'Hang On; We are uploading the records for you. Do not refresh the page or close this window.';
+    width: 100%;
+    text-align: center;
+    top: calc(50% - 4em);
+    font-weight: bold;
+    color: black;
+    font-size: medium;
+}
+.spinsExport::after {
+    position: absolute;
+    content: 'Loading...';
+    width: 100%;
+    text-align: center;
+    top: calc(50% + 1em);
+    font-weight: bold;
+    color: black;
+    font-size: medium;
+}

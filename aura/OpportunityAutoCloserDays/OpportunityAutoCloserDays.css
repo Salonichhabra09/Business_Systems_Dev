@@ -1,0 +1,44 @@
+.THIS .timerHolder{
+    background-color:white;
+    padding:1%;
+}
+
+.THIS .slds-page-header {
+    border-radius:0px;
+}
+
+.THIS #day_holder{
+    /* width: 70%; */
+    /* height: 100px; */
+    /* margin-top: 10%; */
+    padding: 20px;
+    background-color: #18A300;
+    /* color: #ccc; */
+    /* font-family: Verdana,Geneva,sans-serif; */
+    /* font-style: normal; */
+    /* font-size: 15px; */
+    /* border-radius: 1px; */
+    /* color: white; */
+    /* position: absolute; */
+}
+
+.THIS #day_holder >#daysBox{
+    /* width: 100%; */
+    /* height: fit-content; */
+    padding: 15px;
+    background: #000;
+    text-align: center;
+    color: #ff3;
+    font-family: Verdana,Geneva,sans-serif;
+    font: bold;
+    font-size: 22px;
+    /* position: relative; */
+    /* top: 25px; */
+    /* left: 25px; */
+    /* border-radius: 1px; */
+}
+
+.THIS.slds-spinner_container {  
+    z-index: 10000;
+    position: fixed;   
+  }

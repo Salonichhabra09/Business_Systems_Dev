@@ -1,0 +1,45 @@
+<apex:page Controller="InvoiceBillingDetailsOnIRController" standardStylesheets="true"  >
+<apex:variable var="userCanEditProject" value="{!OR(BEGINS(invoice.Project__r.Project_Manager__c,$User.Id),BEGINS(invoice.Project__r.Project_Co_ordinator__c,$User.Id),IsSuperUser)}" />
+<apex:form rendered="{!AND(NOT(invoice.Status__c='In Progress'),userCanEditProject)}">
+<apex:pageMessage severity="Error" summary="You cannot edit Invoice Billing Details as Invoice Request is Submitted for Processing or Processed" strength="1">
+<apex:commandLink value="Back" action="/{!InvoiceRequestId}"/>
+</apex:pageMessage>
+</apex:form>
+<apex:form rendered="{!NOT(userCanEditProject)}">
+<apex:pageMessage severity="Error" summary="You do not have permission to edit these Invoice Billing Details" strength="1" >
+<apex:commandLink value="Back" action="/{!InvoiceRequestId}"/>
+</apex:pageMessage>  
+</apex:form>
+    <apex:form rendered="{!AND(invoice.Status__c='In Progress',userCanEditProject)}">
+                 <apex:pageblock title="Invoice Billing Details">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!Save}" rerender="table2" disabled="{!disablebutton}"/>
+                <apex:commandButton value="Cancel" action="/{!InvoiceRequestId}" rerender="table2" />
+            </apex:pageBlockButtons>
+<!-- Discount Amount ({!invoice.CurrencyISOCode})  <i>Approved By</i> &nbsp;   <apex:selectList value="{!invoice.Discount_Approved_By__c}" size="1"><apex:selectOptions value="{!DiscountApprovers}"/></apex:selectList>
+ <br></br> -->
+ <br></br>
+ <apex:pageBlockTable value="{!InvoiceDetailsList}" var="InvoiceDetails" id="table" title="Invoice Billing Details" style="width:100%" columnsWidth="50px,200px, 100px, 100px, 100px, 150px, 100px, 100px,100px">
+
+                       <apex:column value="{!InvoiceDetails.Product__r.name}"/>
+                      <apex:column value="{!InvoiceDetails.IM_Code__c}"/> 
+                 <apex:column headerValue="Quantity">
+                    <apex:inputField value="{!InvoiceDetails.Quantity__c}"/>
+                </apex:column>
+                
+                <apex:column headerValue="Amount (Unit Price)">
+                    <apex:inputField value="{!InvoiceDetails.Amount_Unit_Price__c}"/>
+                </apex:column>
+                
+            <!--    <apex:column headerValue="Discount Amount">
+                    <apex:inputField value="{!InvoiceDetails.Discount_Amount__c}"/>
+                </apex:column> -->
+                <apex:column headerValue="Expense Recharge">
+                    <apex:inputField value="{!InvoiceDetails.Expense_Recharge__c}"/>
+                </apex:column>
+                </apex:pageBlockTable>
+   <!--         </apex:pageblockSection> -->
+            
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

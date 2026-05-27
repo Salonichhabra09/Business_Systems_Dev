@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+
+<title>Reject Invoice Request: Enter reason for Rejection.</title> 
+
+<link href="/sCSS/10.0/Theme2/default/common.css" type="text/css" media="handheld,print,projection,screen,tty,tv" rel="stylesheet" /> 
+<link href="/sCSS/10.0/Theme2/allCustom.css" type="text/css" media="handheld,print,projection,screen,tty,tv" rel="stylesheet" /> 
+
+<script type="text/javascript" src="/js/functions.js"></script> 
+<script src="/soap/ajax/12.0/connection.js"></script> 
+<script type="text/javascript" src="/soap/ajax/12.0/apex.js"></script> 
+<script type="text/javascript"> 
+
+function Page_OnLoad() 
+{ 
+var result=sforce.connection.query("Select Id from GroupMember g where ( g.Group.Name='SSC' OR g.Group.Name='OAT' ) and g.UserOrGroupId='{!$User.Id}'"); 
+if(result.size>0) 
+{ 
+if("{!Project_Invoice__c.Status__c}"=="Processed") 
+{ 
+alert("This invoice has already been processed");
+window.close(); 
+}
+else if ("{!Project_Invoice__c.Status__c}"=="In Progress") 
+{ 
+alert("Please submit this request for Processing"); 
+window.close(); 
+} 
+} 
+else 
+{ 
+alert("Sorry ! You are not authorised to process this Request"); 
+window.close(); 
+} 
+
+} 
+
+function Proceed_OnClick() 
+{ 
+var reasonForRejection = document.getElementById('RejectionReasonTextBox').value;
+var result = sforce.apex.execute('ProjectInvoice_Manager', 'rejectInvoice', {invoiceId: '{!Project_Invoice__c.Id}', reasonForRejection: reasonForRejection}); 
+if(result=='false') 
+alert("Sorry! The invoice request couldn't be rejected. Please try again."); 
+else 
+{ 
+window.close(); 
+top.window.opener.location.href = top.window.opener.location.href; 
+} 
+} 
+
+
+</script> 
+</head> 
+<body onload="Page_OnLoad()"> 
+<div class='listRelatedObject homeBlock'> 
+<div class='bPageBlock secondaryPalette'> 
+<div class='pbHeader'></div> 
+<div class='pbBody' style='line-height:20px;'> 
+Please Enter reason for Rejection. 
+<br/> 
+<input type='text' size=90 id='RejectionReasonTextBox' /> 
+<br/> 
+<input type='button' class='btn' id='ProceedButton' value='Proceed' onclick='Proceed_OnClick()' /> 
+<br/> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html>

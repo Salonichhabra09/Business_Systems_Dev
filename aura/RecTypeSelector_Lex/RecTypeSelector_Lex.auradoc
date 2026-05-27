@@ -1,0 +1,34 @@
+<aura:documentation>
+    
+    <aura:example name="ExampleName" ref="c:RecTypeSelector_Lex" label="Record Type Selector">
+    </aura:example> 
+    
+    <aura:description>
+        <p style="line-height: normal;"><strong><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif; color: #080707;">Overview:</span></strong></p>
+        <ul>
+            <li style="color: #080707; line-height: normal; tab-stops: list .5in;"><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif;">A new component, &lsquo;</span><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif;">RecTypeSelector_Lex</span><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif;">&rsquo; has been created to support the functionality of selecting an opportunity record type, while creating the variation opportunity from the original opportunity.</span></li>
+            <li style="color: #080707; line-height: normal; tab-stops: list .5in;"><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif;">This component appears above the details component of an opportunity record and is only visible when:</span></li>
+            <ul>
+                <li style="color: #080707; line-height: normal; tab-stops: list 1.0in;"><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif;">The &ldquo;Create Variation&rdquo; button is clicked.</span></li>
+                <li style="color: #080707; line-height: normal; tab-stops: list 1.0in;"><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif;">AND the Record type of an opportunity in context is &lsquo;Ignite&rsquo;</span></li>
+            </ul>
+            <li style="color: #080707; line-height: normal; tab-stops: list .5in;"><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif;">This component will always appear as drop down list:</span></li>
+            <ul>
+                <li style="color: #080707; line-height: normal; tab-stops: list 1.0in;"><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif;">Heading: Select Opportunity Record Type.</span></li>
+                <li style="color: #080707; line-height: normal; tab-stops: list 1.0in;"><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif;">List Values:</span></li>
+                <ul>
+                    <li style="color: #080707; line-height: normal; tab-stops: list 1.5in;"><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif;">--Record Type&mdash;</span></li>
+                    <li style="color: #080707; line-height: normal; tab-stops: list 1.5in;"><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif;">Ignite Opportunity</span></li>
+                    <li style="color: #080707; line-height: normal; tab-stops: list 1.5in;"><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif;">Standard Opportunity</span></li>
+                </ul>
+            </ul>
+        </ul>
+        <p style="line-height: normal;"><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif; color: #080707;">&nbsp;</span></p>
+        <p style="line-height: normal;"><strong><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif; color: #080707;">For the Developers:</span></strong></p>
+        <ul>
+            <li style="color: #080707; line-height: normal; tab-stops: list .5in;"><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif;">An event handler is defined over a component which is handling a system event on component initialization, which in turn calling controller action &rdquo;fetchrec&rdquo;, which in return calling a helper method &ldquo;fetchfromBase&rdquo;.</span></li>
+            <li style="color: #080707; line-height: normal; tab-stops: list .5in;"><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif;">The component's helper method calls a "GenericBase"-helper method(from base-parent component) which is collecting the server's response and passing that back to the helper of component.</span></li>
+            <li style="color: #080707; line-height: normal; tab-stops: list .5in;"><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif;">On Clicking "Create Variation" button a controller action "navigateTo</span>" being called, which in result calls a helper's method "createOppRecord" wherein the functionality of creating a variation Opty is defined.</li>
+        </ul>
+    </aura:description>
+</aura:documentation>

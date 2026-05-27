@@ -1,0 +1,35 @@
+<aura:component controller="ReductionOrderLEXClass" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute name="disable" type="Boolean" default="false" description="To hold boolean value for disabling button" />
+    <aura:attribute name="OrderId" type="string" />
+    <aura:attribute name="ActivatedOrder" type="string" access="global"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <!--<lightning:flow aura:id="CreateReductionFlow" onstatuschange="{!c.statusChange}"/>-->
+                
+    <aura:if isTrue="{!v.disable}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header slds-modal__header_empty">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick="{!c.handleClose}">
+                        <lightning:icon iconName="utility:close" variant="bare"/>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                </header>
+               <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning:flow aura:id="CreateReductionFlow" onstatuschange="{!c.statusChange}"/>
+                </div>
+                <!--footer class="slds-modal__footer">
+                    <lightning:button variant="Neutral" class="slds-button" label="Cancel" onclick="{!c.handleClose}"/>
+                </footer-->
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+    
+    <lightning:card>    
+        <ui:message title="This is an closed/won opportunity with a related activated order therefore you may vary it if required." severity="warning" ><br></br>
+            Please click the 'Create Reduction Order' button below to create reduction Order.
+            <br></br><span><lightning:button variant="brand" onclick="{!c.callFlow}" label="Create Reduction Order"/></span>
+        </ui:message> 
+    </lightning:card>	
+    
+</aura:component>

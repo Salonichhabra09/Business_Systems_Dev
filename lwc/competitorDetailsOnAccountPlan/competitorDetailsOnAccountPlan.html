@@ -1,0 +1,125 @@
+<template>
+    <lightning-card title="Competitor" icon-name="standard:account_info">
+        <lightning-button variant="brand-outline" label="New" title="New" onclick={openModalPopup} slot="actions" disabled={isAccountPlanUnderReview}></lightning-button>
+        <template if:true={competitorData}>
+    <div class="slds-border_left slds-border_right slds-border_top slds-border_bottom max-height-datatable">
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+    </template>
+    <lightning-datatable
+                key-field="id"
+                data={competitorData}
+                columns={columns}
+                min-column-width="120"
+                wrap-text-max-lines="12"
+                show-row-number-column
+                hide-checkbox-column>
+        </lightning-datatable>
+    </div>
+</template>
+    <template if:false={competitorData}>
+        <p class="slds-align_absolute-center">No Competitor Found!</p>
+    </template>
+</lightning-card>
+<template if:true={openModal}>
+    <!-- Modal/Popup Box LWC starts here -->
+    <div class="max-height">
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container slds-is-relative">
+            <!-- Modal/Popup Box LWC header here -->
+            <div class="slds-is-relative">
+                <template if:true={showSpinner}>
+                    <lightning-spinner alternative-text="Loading" size="small" ></lightning-spinner>
+                </template>
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                    <lightning-icon icon-name="utility:close"
+                        alternative-text="close"
+                        variant="inverse"
+                        size="small" ></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <h3 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Create Competitor</h3>
+            </header>
+            <!-- Modal/Popup Box LWC body starts here -->
+            <lightning-record-edit-form
+                object-api-name={objectApiName}
+                onsuccess={handleSuccess}
+                onerror={handleError}
+            >
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1" >
+                <template if:true={showErrorMessage}>
+                    <div class="slds-notify slds-notify_toast slds-theme_error slds-align_absolute-center" role="status">
+                        <span class="slds-assistive-text">error</span>
+                        <div class="slds-notify__content">
+                          <h2 class="slds-text-heading_small ">Please Fill In Required Fields</h2>
+                        </div>
+                    </div>
+                </template>
+            <lightning-messages></lightning-messages>
+            <lightning-layout class="slds-p-top_medium">
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name="Account__c" value={recordId} disabled="true"></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <lightning-input-field class="required-fields" field-name="Competitor__c" required></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="6">
+                    <lightning-input-field class="required-fields" field-name="Competing_Solution_Area__c" required></lightning-input-field>
+                </lightning-layout-item >
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name="Opportunity__c"></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-p-bottom_xx-small">
+                <lightning-layout-item size='2'>
+                    <div style="margin-left:5px;">
+                        <span class="slds-form-element__label">Notes</span>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size='10'>
+                    <lightning-input-field field-name="Notes__c"
+                        variant="label-hidden">
+                    </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <h3 class="slds-section-title--divider">Incumbent Information</h3>
+            <lightning-layout class="slds-p-top_medium">
+                <lightning-layout-item size="6">
+                    <lightning-input-field class="required-fields" field-name="Incumbent_Vendor__c" required></lightning-input-field>
+                </lightning-layout-item >
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name="Incumbent_Renewal_Date__c"></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name="Incumbent_Value__c" ></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name="Auto_create_Displacement_Opportunity__c"></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="6">
+                    <lightning-input-field field-name="CurrencyIsoCode"></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            </div>
+            <!-- Modal/Popup Box LWC footer starts here -->
+            <footer class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" onclick={closeModal} type="Cancel" title="Cancel">Cancel</button>
+                <button class="slds-button slds-button_brand" type="submit" title="Save" onclick={handleSave}>Save</button>
+            </footer>
+            
+        </lightning-record-edit-form>
+        </div>
+    </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</div>
+</template>
+
+</template>

@@ -1,0 +1,21 @@
+.spins::after {
+    position: absolute;
+    content: 'Hang on; We are uploading the records for you. Do not refresh the page or close this window. If you see a Page Unresponsive warning from the browser,please ignore the warning and wait.';
+    width: 100%;
+    text-align: center;
+    top: calc(50% - 4em);
+    font-weight: bold;
+    color: black;
+    font-size: medium;
+}
+
+.spinsExport::after {
+    position: absolute;
+    content: 'Loading...';
+    width: 100%;
+    text-align: center;
+    top: calc(50% + 1em);
+    font-weight: bold;
+    color: black;
+    font-size: medium;
+}

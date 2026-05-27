@@ -1,0 +1,31 @@
+.slds-dropdown {
+    position: relative;
+}
+.slds-combobox {
+    position: relative;
+}
+/*.slds-col {
+    flex: none;
+}*/
+/*.slds-col .slds-dropdown {
+    z-index: 9999;
+    position: absolute;
+    
+}
+.slds-modal {
+    overflow: visible;
+    z-index: 1040;
+    
+}
+
+.slds-modal__content {
+    position: relative;
+}
+
+.slds-modal__container {
+    overflow: visible;
+}
+
+.slds-backdrop {
+    z-index: 1030;
+}*/

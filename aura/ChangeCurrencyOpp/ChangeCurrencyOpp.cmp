@@ -1,0 +1,6 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" >
+    <!--<lightning:button variant="brand" label="Change Opportunity Currency" onclick="{!c.myAction}"/> -->
+    
+    <iframe src="{!'/apex/LightningCurrencyChangeOpportunity?id=' + v.recordId}" width="100%" height="180px" frameBorder="0"/> 
+    <lightning:button variant="brand" onclick="{!c.doCancel}" label="Close"></lightning:button>
+</aura:component>

@@ -1,0 +1,9 @@
+<aura:component controller="EndOfLifeProducts" implements="lightning:isUrlAddressable" >
+	<lightning:navigation aura:id="navigate" />
+    <lightning:workspaceAPI aura:id="workspace"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.doInit}"/>
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+
+</aura:component>

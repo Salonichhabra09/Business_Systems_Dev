@@ -1,0 +1,28 @@
+<aura:component implements="lightning:availableForFlowScreens" access="global">
+    <aura:attribute name="recId" type="String"/>
+	<lightning:recordViewForm recordId="{!v.recId}" objectApiName="Contract_Invoice_Line__c">
+        <!-- Using lightning:card tag with a title -->
+        <lightning:card title="Invoice Header Details">
+            <!-- lightning:card body section starts -->
+            <p class="slds-p-horizontal_small">
+                <!-- Forming a grid of two equal columns -->
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <!-- 
+                            Using lightning:outputField Tag with fieldName = Api name of field,
+                            if you are using a custom field, do check you have __c in the api name
+                         -->
+                        <lightning:outputField fieldName="Name" />    
+                        <lightning:outputField fieldName="Invoice_Status__c" />    
+                        <lightning:outputField fieldName="Invoice_Name__c" />    
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField fieldName="Service_Start_Date__c" />    
+                        <lightning:outputField fieldName="Service_End_Date__c" />    
+                        <lightning:outputField fieldName="BU__c" />    
+                    </div>
+                </div>
+            </p>
+        </lightning:card>        
+    </lightning:recordViewForm>
+</aura:component>

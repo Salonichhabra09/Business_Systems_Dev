@@ -1,0 +1,9 @@
+<!--
+Created By: Rishabh Kanotra, for SSE-7079, 
+Purpose: Overiding the Edit Functionality on Discount Summary & Redirecting to RateCardImport Page
+-->
+
+<apex:page StandardController="Discount_Summary__c" extensions="redirect_discount_Ext"
+    action="{!if(TRUE,'/apex/ImportRateCard_VF?oppId='+OpptyIddiscount,URLFOR($Action.Discount_Summary__c.Edit,Discount_Summary__c.Id,[
+saveURL=Discount_Summary__c.Id,retURL=OpptyIddiscount],true))}">
+</apex:page>

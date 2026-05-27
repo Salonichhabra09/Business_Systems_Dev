@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>To link to the Job object for OLB jobs.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fieldSets>
+        <fullName>Invoice_View</fullName>
+        <description>It will be used on visualforce page</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IsAdded_Notes__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Job__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Invoice_notes__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>InvoiceStatus__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SUNOrderNo__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>InvoiceType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Discount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>InvoiceTypeReason__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PromotionalCode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ApprovedBy__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreditCaseNo__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IsCreditCardPayment__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreditInstructions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreditCardContactNo__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Revenue_not_in_our_stream__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OrderBill__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LastModifiedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Invoice View</label>
+    </fieldSets>
+    <fields>
+        <fullName>ApprovedBy__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Applies to credits, FOC and discounts</inlineHelpText>
+        <label>Approved By</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CreditCardContactNo__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit Card Telephone</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CreditCaseNo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Credit Case Number</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipName>Bureau_Invoices</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CreditInstructions__c</fullName>
+        <label>Credit Instructions</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Discount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please specify if this is a value or %</inlineHelpText>
+        <label>Discount</label>
+        <length>8</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Generic_Log_In_Case_Number__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Generic Log In Case Number</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipName>Bureau_Invoices1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>InvoiceStatus__c</fullName>
+        <label>Invoice Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Created</fullName>
+                    <default>true</default>
+                    <label>Created</label>
+                </value>
+                <value>
+                    <fullName>Ready</fullName>
+                    <default>false</default>
+                    <label>Ready</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Completed – SHL Online</fullName>
+                    <default>false</default>
+                    <label>Completed – SHL Online</label>
+                </value>
+                <value>
+                    <fullName>SOE Complete</fullName>
+                    <default>false</default>
+                    <label>SOE Complete</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>InvoiceTypeReason__c</fullName>
+        <label>Invoice Type Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>MS1 - Demo</fullName>
+                    <default>false</default>
+                    <label>MS1 - Demo</label>
+                </value>
+                <value>
+                    <fullName>MS2 - MS Not included in Opp</fullName>
+                    <default>false</default>
+                    <label>MS2 - MS Not included in Opp</label>
+                </value>
+                <value>
+                    <fullName>MS3 - Discount</fullName>
+                    <default>false</default>
+                    <label>MS3 - Discount</label>
+                </value>
+                <value>
+                    <fullName>MS4 - Other</fullName>
+                    <default>false</default>
+                    <label>MS4 - Other</label>
+                </value>
+                <value>
+                    <fullName>SB1 - MS Operator Error</fullName>
+                    <default>false</default>
+                    <label>SB1 - MS Operator Error</label>
+                </value>
+                <value>
+                    <fullName>SB2 - Client order Error</fullName>
+                    <default>false</default>
+                    <label>SB2 - Client order Error</label>
+                </value>
+                <value>
+                    <fullName>SB3 - Goodwill Gesture</fullName>
+                    <default>false</default>
+                    <label>SB3 - Goodwill Gesture</label>
+                </value>
+                <value>
+                    <fullName>SB4 - Incorrect Address</fullName>
+                    <default>false</default>
+                    <label>SB4 - Incorrect Address</label>
+                </value>
+                <value>
+                    <fullName>SB5 - System Problems</fullName>
+                    <default>false</default>
+                    <label>SB5 - System Problems</label>
+                </value>
+                <value>
+                    <fullName>SB6 - Candidates Withdrawn</fullName>
+                    <default>false</default>
+                    <label>SB6 - Candidates Withdrawn</label>
+                </value>
+                <value>
+                    <fullName>SB7 - Incorrect Invoice</fullName>
+                    <default>false</default>
+                    <label>SB7 - Incorrect Invoice</label>
+                </value>
+                <value>
+                    <fullName>SB8 - SOE Operator error</fullName>
+                    <default>false</default>
+                    <label>SB8 - SOE Operator error</label>
+                </value>
+                <value>
+                    <fullName>SB9 - Incorrect pricing</fullName>
+                    <default>false</default>
+                    <label>SB9 - Incorrect pricing</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>InvoiceType__c</fullName>
+        <label>Invoice Type</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Invoice</fullName>
+                    <default>false</default>
+                    <label>Invoice</label>
+                </value>
+                <value>
+                    <fullName>Free of Charge</fullName>
+                    <default>false</default>
+                    <label>Free of Charge</label>
+                </value>
+                <value>
+                    <fullName>SOE Query</fullName>
+                    <default>false</default>
+                    <label>SOE Query</label>
+                </value>
+                <value>
+                    <fullName>Credit</fullName>
+                    <default>false</default>
+                    <label>Credit</label>
+                </value>
+                <value>
+                    <fullName>Reissue</fullName>
+                    <default>false</default>
+                    <label>Reissue</label>
+                </value>
+                <value>
+                    <fullName>Generic Log In</fullName>
+                    <default>false</default>
+                    <label>Generic Log In</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Invoice_Monthly__c</fullName>
+        <externalId>false</externalId>
+        <formula>Job__r.InvoiceMonthly__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Invoice Monthly?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_notes__c</fullName>
+        <label>Invoice notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>IsAdded_Notes__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Added Notes</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsCreditCardPayment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Credit Card Payment</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Job__c</fullName>
+        <label>Job</label>
+        <referenceTo>Job__c</referenceTo>
+        <relationshipName>Bureau_Invoices</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>MS_Revenue_or_Demo__c</fullName>
+        <externalId>false</externalId>
+        <label>MS Revenue or Demo</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderBill__c</fullName>
+        <label>Order Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PromotionalCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Promotional Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Revenue_not_in_our_stream__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Revenue not in our stream</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SUNOrderNo__c</fullName>
+        <externalId>false</externalId>
+        <label>SUN Order Number</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Managed Services Invoice</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>BInv{00000}</displayFormat>
+        <label>Managed Services Invoice</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Managed Services Invoices</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <listViewButtons>New</listViewButtons>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>InvoiceStatus__c</searchFilterFields>
+        <searchResultsAdditionalFields>InvoiceStatus__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>InvoiceType__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OrderBill__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Discount__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IsCreditCardPayment__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IsAdded_Notes__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SUNOrderNo__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Invoice_Monthly__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Case_Number_Required</fullName>
+        <active>true</active>
+        <description>If Revenu Not in Our Stream is checked or Invoice Type is &quot;Credit&quot; then Credit Case Number is mendatory.</description>
+        <errorConditionFormula>IF(
+   AND(Job__r.RecordType.DeveloperName = &apos;Bureau_Service&apos;,OR(Revenue_not_in_our_stream__c == true,ISPICKVAL(InvoiceType__c,&apos;Credit&apos;)),ISBLANK(CreditCaseNo__c))
+,true,false)</errorConditionFormula>
+        <errorDisplayField>CreditCaseNo__c</errorDisplayField>
+        <errorMessage>Please select a case.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Credit_Instruction_Required</fullName>
+        <active>true</active>
+        <description>If Invoice Type is &quot;Credit&quot; then Credit Instruction is mandatory.</description>
+        <errorConditionFormula>IF(AND(Job__r.RecordType.DeveloperName = &apos;Bureau_Service&apos;,ISPICKVAL(InvoiceType__c,&apos;Credit&apos;),ISBLANK(CreditInstructions__c)),true,false)</errorConditionFormula>
+        <errorDisplayField>CreditInstructions__c</errorDisplayField>
+        <errorMessage>Please provide value.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Invoice_Type_Reason_Mandatory</fullName>
+        <active>true</active>
+        <description>&quot;Invoice Type Reason&quot; is mandatory if &quot;Free of Charge&quot;, &quot;Credit&quot; or &quot;Reissue&quot; has been selected as &quot;Invoice Type&quot;.</description>
+        <errorConditionFormula>AND(
+	OR(		
+		TEXT(InvoiceType__c)=&quot;Credit&quot;,
+                TEXT(InvoiceType__c)=&quot;Free of Charge&quot;,
+		TEXT(InvoiceType__c)=&quot;Reissue&quot;
+	),
+	ISPICKVAL(InvoiceTypeReason__c,&apos;&apos;)
+)</errorConditionFormula>
+        <errorDisplayField>InvoiceTypeReason__c</errorDisplayField>
+        <errorMessage>Please provide Invoice Type Reason value.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>IsAdded_Notes</fullName>
+        <active>true</active>
+        <description>If Invoice Notes field is not blank then Added Notes should not be unchecked.</description>
+        <errorConditionFormula>IF(ISBLANK( Invoice_notes__c ), if(IsAdded_Notes__c==true,true,false),if(IsAdded_Notes__c==false,true,false))</errorConditionFormula>
+        <errorDisplayField>IsAdded_Notes__c</errorDisplayField>
+        <errorMessage>Please tick this if Invoice Notes have been added.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Lock_record_except_admin_if_SOE_Complete</fullName>
+        <active>true</active>
+        <description>Once the status = &apos;SOE Complete&apos; the record should be locked to all users other than system admins.</description>
+        <errorConditionFormula>IF( NOT(ISNEW()), IF( ISPICKVAL(PRIORVALUE
+( InvoiceStatus__c ), 
+&quot;SOE Complete&quot;) ,IF( NOT( CONTAINS( $Profile.Name , &quot;Admin&quot;) ) ,true,false),false), false)</errorConditionFormula>
+        <errorMessage>Cannot edit record as status set to SOE Complete</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SOE_profile_can_set_invoice_status</fullName>
+        <active>true</active>
+        <description>only users on the SOE profile can choose &apos;SOE Complete&apos;</description>
+        <errorConditionFormula>AND(NOT( OR( $Permission.SOE ,CONTAINS( $Profile.Name , &quot;Admin&quot;), $Permission.Permission_to_bypass_SOE_profile_can_set_invoice_status_rule )), ISPICKVAL( InvoiceStatus__c , &quot;SOE Complete&quot;) )</errorConditionFormula>
+        <errorMessage>Only users with SOE profile can select SOE Complete status</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sun_Order_not_set_blank_if_SOE_Complete</fullName>
+        <active>true</active>
+        <description>rule to ensure &apos;SOE Complete&apos; cannot be chosen unless there is a value in the Sun order number field.</description>
+        <errorConditionFormula>AND( ISPICKVAL( InvoiceStatus__c , &quot;SOE Complete&quot;) , ISBLANK( SUNOrderNo__c ) )</errorConditionFormula>
+        <errorMessage>Status SOE Complete cannot be chosen if Sun Order Number is blank</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>New</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>alert(&apos;Please create the invoice from the Job record&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Participants_List</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Participants List</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>window.open(&apos;/apex/BureauJob_ParticipantsList?id={!Job__c.Id}&apos;,&apos;&apos;,&apos;width=400,height=300,left=400,top=400,scrollbars=1&apos;)</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>AccountTriggerManager_1</members>
+        <members>AccountTriggerManager_1_Test</members>
+        <members>OpportunityTriggerManager</members>
+        <members>AddAccountTeamMember</members>
+        <members>TerritoryTriggerManager</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>Account_Trigger</members>
+        <members>Opportunity_Trigger</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>Territory__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <members>Commercial</members>
+        <name>Profile</name>
+    </types>
+    <version>46.0</version>
+</Package>

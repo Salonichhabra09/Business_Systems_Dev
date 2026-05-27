@@ -1,0 +1,8 @@
+<aura:component implements="lightning:isUrlAddressable" access="global" >
+    <lightning:navigation aura:id="navigate" />
+    <lightning:workspaceAPI aura:id="workspace"/>    
+    <aura:attribute name="url" type="String"/>
+   
+    <aura:handler name="init" value="{!this}" action="{!c.newCourseBooking}"/>
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.newCourseBooking}"/>
+</aura:component>

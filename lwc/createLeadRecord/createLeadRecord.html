@@ -1,0 +1,310 @@
+<template>
+    
+       <template if:true={showRecordForm}>
+        <template if:true={isStandard}>
+        <div class="slds-modal slds-fade-in-open slds-modal_medium">  
+            <div class="slds-modal__container">
+                <!------HEADER Section-->  
+                  <lightning-button-icon icon-name="utility:close" alternative-text="Close this window" size="large"  
+                    variant="bare-inverse" onclick={closeModal} class="slds-modal__close">  
+                  </lightning-button-icon>  
+                  <div class="slds-modal__header">
+                    <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">New Lead: {RecordTypeName}</h1>
+                  </div>
+                <!------Body Section-->  
+              <div class="slds-modal__content slds-p-around_medium slds-p-bottom_xx-large">
+                <template if:true={isCreated}> 
+                    <div class="backgroundInverse">
+                    <lightning-spinner alternative-text="Loading..."  size="medium">
+                    </lightning-spinner>
+                    </div>
+                </template>  
+                
+                <lightning-record-edit-form record-type-id={selectedValue} object-api-name="Lead" onsuccess={handleSuccess} onsubmit={handleFormSubmit}>
+                    <lightning-messages> </lightning-messages>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field required  onchange={handleInputFieldChange} value={contactName} field-name="Name"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-m-left_x-small slds-form-element slds-form-element_horizontal ">
+                        <label class="slds-form-element__label slds-m-left_xx-small"><abbr title="required" class="slds-required">*</abbr>Job Title</label>
+                        <lightning-input-field required onchange={handleInputFieldChange} variant="label-hidden" value={contactTitle} field-name="Title"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field required onchange={handleInputFieldChange} value={contactJobFunction} field-name="Job_Function__c"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-m-left_small">
+                        <lightning-input-field required onchange={handleInputFieldChange} value={contactJobLevel} field-name="Job_Level__c"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2 slds-form-element_horizontal">
+                        <label class="slds-form-element__label" ><abbr title="required" class="slds-required">*</abbr>Country</label>
+                        <lightning-input-field required variant="label-hidden" value={contactLeadCountry} field-name="Global_Lead_Country__c" onchange={handleInputFieldChange}></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-m-left_x-small slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label slds-m-left_xx-small"><abbr title="required" class="slds-required">*</abbr>Company</label>
+                        <lightning-input-field  required onchange={handleInputFieldChange} value={contactCompany} variant="label-hidden" field-name="Company"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field required onchange={handleInputFieldChange} value={contactPhone} field-name="Phone"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-m-left_x-small slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label slds-m-left_xx-small"><abbr title="required" class="slds-required">*</abbr>Email Address</label>
+                        <lightning-input-field required onchange={handleInputFieldChange} variant="label-hidden" value={contactEmail} field-name="Email"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field required onchange={handleInputFieldChange} value={contactStateCounty} field-name="State_County__c"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-m-left_small">
+                        <lightning-input-field required onchange={handleInputFieldChange} value={contactCityTown} field-name="City_Town__c"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field required onchange={handleInputFieldChange} value={contactAddress1} field-name="Address_1__c"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-m-left_small">
+                        <lightning-input-field onchange={handleInputFieldChange} value={contactAddress2} field-name="Address_2__c"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2 slds-form-element slds-form-element_horizontal">
+                        <lightning-combobox  field-level-help="If lead is in USA or Canada please select state/province." field-name="HQStateName" disabled={HQStateDisabled} onchange={handleInputFieldChange} name="HQState/" label="HQ State/Province" value={HQStateValue} placeholder=" Please Select" options={HQStateOptions} helptest></lightning-combobox>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-m-left_x-small slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label slds-m-left_xx-small"><abbr title="required" class="slds-required">*</abbr>Zip or Postal Code</label>
+                        <lightning-input-field required onchange={handleInputFieldChange} variant="label-hidden" value={contactZipCode} field-name="Zip_Postcode__c"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field required onchange={handleInputFieldChange} field-name="Lead_Type__c"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-m-left_x-small slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label slds-m-left_xx-small"><abbr title="required" class="slds-required">*</abbr>Size Of Workforce</label>
+                        <lightning-input-field required onchange={handleInputFieldChange} variant="label-hidden" value={contactSizeOfWork} field-name="Size_Of_Workforce__c"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2 slds-form-element_horizontal">
+                        <label class="slds-form-element__label" ><abbr title="required" class="slds-required">*</abbr>Product of Interest and Background for Follow Up</label>
+                        <lightning-input-field required onchange={handleInputFieldChange} variant="label-hidden" field-name="Description"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-m-left_x-small slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label" >Opt-in to Receive Marketing emails?</label>
+                        <lightning-input-field variant="label-hidden" onchange={handleInputFieldChange} field-name="Email_Opted_In__c"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field onchange={handleInputFieldChange} field-name="Urgent_Follow_Up_Required__c"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-m-left_x-small slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label slds-m-left_xx-small"><abbr title="required" class="slds-required">*</abbr>Which proposition is most descriptive of this person's interest?</label>
+                        <lightning-input-field required onchange={handleInputFieldChange} variant="label-hidden" value={contactAreaOfInterest} field-name="Area_of_Interest__c"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2 slds-form-element_horizontal">
+                        <lightning-input-field required onchange={handleInputFieldChange} value={email} field-name="Submitter_s_Email_Address__c"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-m-left_x-small slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label slds-m-left_xx-small">Submitter's Phone Number</label>
+                        <lightning-input-field variant="label-hidden" onchange={handleInputFieldChange} value={phoneNumber} field-name="Submitter_s_Referrer_s_telephone_number__c"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2 slds-form-element_horizontal">
+                        <label class="slds-form-element__label"><abbr title="required" class="slds-required">*</abbr>Submitter's Company</label>
+                        <lightning-input-field required variant="label-hidden" onchange={handleInputFieldChange} value={companyName} field-name="Submitter_s_Company__c"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-m-left_x-small slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label slds-m-left_xx-small"><abbr title="required" class="slds-required">*</abbr>Submitter's Name</label>
+                        <lightning-input-field required variant="label-hidden" onchange={handleInputFieldChange} value={name} field-name="Submitter_s_Referrer_s_name__c"></lightning-input-field>
+                    </div>
+                </div>
+                </lightning-record-edit-form>
+                
+             </div>
+              <div class="slds-modal__footer">
+                <lightning-layout horizontal-align="end">
+                    <template if:false={validationError}>
+                    <div class="slds-m-right_x-large">
+                    <lightning-helptext  icon-variant="error" content="Please Complete All Required Fields"></lightning-helptext>
+                    </div>
+                    </template>
+                    <lightning-layout-item >
+                        <div> 
+                            <lightning-button class="slds-m-top_small" type="submit" onclick={closeModal}  label="Cancel" variant="Brand"></lightning-button>
+                        </div>       
+                    </lightning-layout-item>
+                    <lightning-layout-item >
+                        <div class="slds-m-left_x-small"> 
+                            <lightning-button class="slds-m-top_small" type="submit" onclick={handleSubmitButtonClick}  disabled={isButtonDisabled} label="Save" variant="Brand"></lightning-button>
+                        </div>       
+                    </lightning-layout-item>
+                </lightning-layout>
+              </div>
+            </div>
+          </div>
+        </template>
+        <template if:false={isStandard}>
+        <div class="slds-align_absolute-center">
+        <div class="slds-page-header slds-size_xx-large slds-text-heading_medium slds-text-align_center">
+        New Lead: {RecordTypeName}
+        </div>
+        </div>
+        <div class="slds-align_absolute-center">
+        <div class="slds-size_xx-large slds-scrollable_y" style="max-height:57vh;">
+         <lightning-card>
+                <template if:true={isCreated}> 
+                    <div class="backgroundInverse">
+                    <lightning-spinner alternative-text="Loading..."  size="medium">
+                    </lightning-spinner>
+                    </div>
+                </template>  
+                <lightning-record-edit-form record-type-id={selectedValue} object-api-name="Lead" onsuccess={handleSuccess} onsubmit={handleFormSubmit}>
+                    <lightning-messages> </lightning-messages>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field required  onchange={handleInputFieldChange} value={contactName} field-name="Name"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-form-element slds-form-element_horizontal ">
+                        <label class="slds-form-element__label slds-m-left_xx-small"><abbr title="required" class="slds-required">*</abbr>Job Title</label>
+                        <lightning-input-field required onchange={handleInputFieldChange} variant="label-hidden" value={contactTitle} field-name="Title"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field required onchange={handleInputFieldChange} value={contactJobFunction} field-name="Job_Function__c"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field required onchange={handleInputFieldChange} value={contactJobLevel} field-name="Job_Level__c"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2 slds-form-element_horizontal">
+                        <label class="slds-form-element__label" ><abbr title="required" class="slds-required">*</abbr>Country</label>
+                        <lightning-input-field required variant="label-hidden" value={contactLeadCountry}  field-name="Global_Lead_Country__c" onchange={handleInputFieldChange}></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label slds-m-left_xx-small"><abbr title="required" class="slds-required">*</abbr>Company</label>
+                        <lightning-input-field  required onchange={handleInputFieldChange} variant="label-hidden" value={contactCompany} field-name="Company"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field required onchange={handleInputFieldChange} value={contactPhone} field-name="Phone"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label slds-m-left_xx-small"><abbr title="required" class="slds-required">*</abbr>Email Address</label>
+                        <lightning-input-field required onchange={handleInputFieldChange} variant="label-hidden" value={contactEmail}  field-name="Email"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field required onchange={handleInputFieldChange} value={contactStateCounty}  field-name="State_County__c"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field required onchange={handleInputFieldChange} value={contactCityTown}  field-name="City_Town__c"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field required onchange={handleInputFieldChange} value={contactAddress1}  field-name="Address_1__c"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 ">
+                        <lightning-input-field onchange={handleInputFieldChange} value={contactAddress2}  field-name="Address_2__c"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2 slds-form-element slds-form-element_horizontal">
+                        <lightning-combobox  field-level-help="If lead is in USA or Canada please select state/province." field-name="HQStateName" disabled={HQStateDisabled} onchange={handleInputFieldChange} name="HQState/" label="HQ State/Province" value={HQStateValue} placeholder=" Please Select" options={HQStateOptions} helptest></lightning-combobox>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label slds-m-left_xx-small"><abbr title="required" class="slds-required">*</abbr>Zip or Postal Code</label>
+                        <lightning-input-field required onchange={handleInputFieldChange} variant="label-hidden" value={contactZipCode}  field-name="Zip_Postcode__c"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field required onchange={handleInputFieldChange} field-name="Lead_Type__c"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label slds-m-left_xx-small"><abbr title="required" class="slds-required">*</abbr>Size Of Workforce</label>
+                        <lightning-input-field required onchange={handleInputFieldChange} variant="label-hidden" value={contactSizeOfWork}  field-name="Size_Of_Workforce__c"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2 slds-form-element_horizontal">
+                        <label class="slds-form-element__label" ><abbr title="required" class="slds-required">*</abbr>Product of Interest and Background for Follow Up</label>
+                        <lightning-input-field required onchange={handleInputFieldChange} variant="label-hidden" field-name="Description"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2  slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label" >Opt-in to Receive Marketing emails?</label>
+                        <lightning-input-field variant="label-hidden" onchange={handleInputFieldChange} field-name="Email_Opted_In__c"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field onchange={handleInputFieldChange} field-name="Urgent_Follow_Up_Required__c"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2  slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label slds-m-left_xx-small"><abbr title="required" class="slds-required">*</abbr>Which proposition is most descriptive of this person's interest?</label>
+                        <lightning-input-field required onchange={handleInputFieldChange} variant="label-hidden" value={contactAreaOfInterest} field-name="Area_of_Interest__c"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2 slds-form-element_horizontal">
+                        <lightning-input-field required onchange={handleInputFieldChange} value={email} field-name="Submitter_s_Email_Address__c"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label slds-m-left_xx-small">Submitter's Phone Number</label>
+                        <lightning-input-field variant="label-hidden" onchange={handleInputFieldChange} value={phoneNumber} field-name="Submitter_s_Referrer_s_telephone_number__c"></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2 slds-form-element_horizontal">
+                        <label class="slds-form-element__label"><abbr title="required" class="slds-required">*</abbr>Submitter's Company</label>
+                        <lightning-input-field required variant="label-hidden" onchange={handleInputFieldChange} value={companyName} field-name="Submitter_s_Company__c"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label slds-m-left_xx-small"><abbr title="required" class="slds-required">*</abbr>Submitter's Name</label>
+                        <lightning-input-field required variant="label-hidden" onchange={handleInputFieldChange} value={name} field-name="Submitter_s_Referrer_s_name__c"></lightning-input-field>
+                    </div>
+                </div>
+                </lightning-record-edit-form>
+            </lightning-card>
+            </div>
+          </div>
+          <div class="slds-align_absolute-center">
+            <div class="slds-size_xx-large slds-page-header">
+                <lightning-layout horizontal-align="end">
+                    <template if:false={validationError}>
+                    <div class="slds-m-right_x-large">
+                    <lightning-helptext  icon-variant="error" content="Please Complete All Required Fields"></lightning-helptext>
+                    </div>
+                    </template>
+                    <lightning-layout-item >
+                        <div> 
+                            <lightning-button class="slds-m-top_small" type="submit" onclick={closeModal}  label="Cancel" variant="Brand"></lightning-button>
+                        </div>       
+                    </lightning-layout-item>
+                    <lightning-layout-item >
+                        <div class="slds-m-left_x-small slds-m-right_x-small"> 
+                            <lightning-button class="slds-m-top_small" type="submit" onclick={handleSubmitButtonClick}  disabled={isButtonDisabled} label="Save" variant="Brand"></lightning-button>
+                        </div>       
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+        </div>
+        </template>
+      </template>
+</template>

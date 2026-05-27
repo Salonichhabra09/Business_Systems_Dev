@@ -1,0 +1,24 @@
+.THIS.c-container {
+    border: 1px solid #d8dde6;
+    margin: 10px 0 20px 0;
+}
+
+.THIS .custom-box {
+    text-align: center;
+    background-color: #18a300;
+    padding: 1rem;
+    color:white;
+    border: 1px solid #d8dde6;
+    line-height:0;
+    margin:-7px
+}
+
+.THIS .slds-section-title--divider{
+    
+    font-weight: 700;
+}
+
+.THIS .slds-card__header{
+    
+    margin:-6px;
+}

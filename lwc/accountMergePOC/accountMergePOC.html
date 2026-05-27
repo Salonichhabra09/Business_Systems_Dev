@@ -1,0 +1,64 @@
+<template>
+    <!-- <lightning-card title="Account Merge Wizard">
+        <lightning-button label="Open" class="slds-p-around_small" onclick={handleOpenWizard}></lightning-button>
+    </lightning-card> -->
+<lightning-card>
+    <div class="slds-m-left_small">
+        <!-- <lightning-radio-group name="radioGroup"
+            label="Merge Options available"
+            options={options}
+            onchange={handleChange}
+            value={mergeOption}
+            variant="label-inline"></lightning-radio-group> -->
+        <lightning-layout horizontal-align="space">
+            <lightning-layout-item style="display: grid;">
+                <p><legend class="slds-form-element__legend slds-form-element__label slds-text-heading_small slds-m-bottom_x-small">Guidelines :</legend></p>
+                    <p>1. Please note that merge action cannot be undone</p>
+                    <p>2. After merge you'll be redirected to the master record</p>
+                    <p>3. When you choose contact, related Account needs to be selected to start merge process</p> 
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <div class="vl"></div>
+            </lightning-layout-item>
+            <lightning-layout-item class="slds-m-right_xx-large">
+                <fieldset class="slds-form-element">
+                    <legend class="slds-form-element__legend slds-form-element__label slds-text-heading_medium slds-m-bottom_small">Please choose one of the following options :</legend>
+                    <div class="slds-form-element__control">
+                        <lightning-layout horizontal-align="spread">
+                            <lightning-layout-item class="slds-m-right_medium">
+                                <span class="slds-radio">
+                                    <input type="radio" id="radio-61" value="radio-61" name="Account" checked={isAccountChecked} onchange={handleChange} />
+                                    <label class="slds-radio__label" for="radio-61">
+                                      <span class="slds-radio_faux"></span>
+                                      <span class="slds-form-element__label">Account</span>
+                                    </label>
+                                  </span>
+                            </lightning-layout-item>
+                            <lightning-layout-item class="slds-m-left_xx-large">
+                                <span class="slds-radio">
+                                    <input type="radio" id="radio-62" value="radio-62" name="Contact" checked={isContactChecked} onchange={handleChange}/>
+                                    <label class="slds-radio__label" for="radio-62">
+                                      <span class="slds-radio_faux"></span>
+                                      <span class="slds-form-element__label">Contact</span>
+                                    </label>
+                                  </span>
+                                  <div style="width: 145px; max-height:50px" class={lookupClass}>
+                                    <c-custom-lookup-component object-name="Account" search-placeholder="Accounts" 
+                                        icon-name="standard:account" onlookupselected={handleAccountSelection} 
+                                        onlookupunselect={handleAccountRemoval} input-class-from-parent="slds-has-focus input-strategy" 
+                                        is-required="true"> </c-custom-lookup-component>
+                                </div>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                  </fieldset>
+            </lightning-layout-item>
+        </lightning-layout>
+        <div class="slds-clearfix slds-p-right_medium slds-m-top_xx-large">
+            <lightning-button class="slds-float_right" label="Next" title="Next" onclick={handleOpenMergeWiz} variant="brand"></lightning-button>
+        </div> 
+    </div>
+
+</lightning-card>
+
+</template>

@@ -1,0 +1,174 @@
+<apex:page Controller="ReductionOrderProducts" standardStylesheets="false" lightningStylesheets="true" >
+    <script type="text/javascript">
+    
+    var currentQuantityval = new Array();
+    var currentSalesPriceval = new Array();
+    
+    function selectAllCheckboxes(obj,receivedInputID){
+        var inputCheckBox = document.getElementsByTagName("input");
+        for(var i=0; i<inputCheckBox.length; i++){
+            if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){
+                inputCheckBox[i].checked = obj.checked;
+            }
+        }
+    }
+    
+    window.onload= function currentSPval(){
+        var receivedInputID = 'UnitPricefield';
+        var receivedInputQID = 'Quantityfield';
+        var indexval = document.getElementsByTagName("input");
+        for(var i=0; i<indexval.length; i++){
+            if(indexval[i].id.indexOf(receivedInputID)!=-1){
+                currentSalesPriceval[i] = indexval[i].value;
+            }
+            if(indexval[i].id.indexOf(receivedInputQID)!=-1){
+                currentQuantityval[i] = indexval[i].value;
+            }
+        }
+    }
+    
+    function checkvaluesNonGCSC(obj,receivedInputID){
+        var quantityval = document.getElementsByTagName("input");
+        for(var i=0; i<quantityval.length; i++){
+            if(quantityval[i].id.indexOf(receivedInputID)!=-1){
+                var str = quantityval[i].value;
+                var negativeval = str.includes("-");
+                if(parseFloat(currentQuantityval[i].replace(/,/g, '')) < parseFloat(quantityval[i].value.replace(/,/g, '')) ||quantityval[i].value=='0' || quantityval[i].value=='00.00' || quantityval[i].value=='0.0' ||quantityval[i].value=='0.00' || negativeval == true)
+                {
+                    alert('Quantity cannot be increased or marked as Zero/Negative');
+                    return False;
+                }
+                else if(parseFloat(currentQuantityval[i].replace(/,/g, '')) > parseFloat(quantityval[i].value.replace(/,/g, '')) || parseFloat(currentQuantityval[i].replace(/,/g, '')) == parseFloat(quantityval[i].value.replace(/,/g, ''))){
+                    //checkvaluesSP(obj);
+                    doSave();
+                    return True;
+                }
+            }
+        }
+        
+    }
+    
+    function checkvalues(obj,receivedInputID,receivedSalesPriceId){
+        var quantityval = document.getElementsByTagName("input");
+        for(var i=0; i<quantityval.length; i++){
+            if(quantityval[i].id.indexOf(receivedInputID)!=-1){
+                var str = quantityval[i].value;
+                var negativeval = str.includes("-");
+                if(parseFloat(currentQuantityval[i].replace(/,/g, '')) < parseFloat(quantityval[i].value.replace(/,/g, '')) || quantityval[i].value=='0.0' ||quantityval[i].value=='0.00'|| quantityval[i].value=='0' || negativeval == true)
+                {
+                    alert('Quantity cannot be increased or marked as Zero/Negative');
+                    return False;
+                }
+                else if(parseFloat(currentQuantityval[i].replace(/,/g, '')) > parseFloat(quantityval[i].value.replace(/,/g, '')) || parseFloat(currentQuantityval[i].replace(/,/g, '')) == parseFloat(quantityval[i].value.replace(/,/g, ''))){
+                    checkvaluesSP(obj,receivedSalesPriceId);
+                }
+            }
+        }
+        
+    }
+    
+    function checkvaluesSP(obj,receivedSalesPriceId){
+        var quantityval = document.getElementsByTagName("input");
+        for(var i=0; i<quantityval.length; i++){
+            if(quantityval[i].id.indexOf(receivedSalesPriceId)!=-1){
+                var str = quantityval[i].value;
+                var negativeval = str.includes("-");
+                if(parseFloat(currentSalesPriceval[i].replace(/,/g, '')) < parseFloat(quantityval[i].value.replace(/,/g, '')) || negativeval == true)
+                {
+                    alert('Sales Price cannot be increased or Negative');
+                    return False;
+                }
+                else if(quantityval[i].value =='0.0' || quantityval[i].value =='0.00' || quantityval[i].value =='0'){ 
+                    if(currentSalesPriceval[i]!='0' && currentSalesPriceval[i]!='0.0' && currentSalesPriceval[i]!='0.00' && currentSalesPriceval[i]!='00.00'){
+                        alert('Sales Price cannot be marked as Zero');
+                        return False; 
+                    }
+                }                           
+                    else if(parseFloat(currentSalesPriceval[i].replace(/,/g, '')) > parseFloat(quantityval[i].value.replace(/,/g, '')) || parseFloat(currentSalesPriceval[i].replace(/,/g, '')) == parseFloat(quantityval[i].value.replace(/,/g, ''))){
+                        doSave();
+                        return True;
+                    }
+            }
+        }
+    }
+    </script>
+    <apex:slds />
+    <apex:form rendered="{!ISNULL(wrapOrderItemList)}">
+        <apex:pageMessage severity="Error" summary="There is no Order Products added to Original Order to be part of Reduction Order" strength="1">
+            <apex:commandLink value="Back" action="/{!CurrentOrderid}"/>
+        </apex:pageMessage>
+    </apex:form>
+    
+    <apex:form rendered="{!NOT(ISNULL(wrapOrderItemList))}">
+        <apex:pageblock title="Select Order Products" rendered="{!(OrderRecordtypeName == 'GCSC_Order')}">
+            <apex:actionFunction name="doSave" action="{!AddProducts}"/>
+            <!--apex:pageBlockButtons -->
+            
+            <!--/apex:pageBlockButtons-->
+            <apex:pageBlockTable value="{!wrapOrderItemList}" var="OrderItemWrap" id="table2" title="Order Products" style="width:100%" columnsWidth="50px,200px, 100px, 100px, 100px, 150px, 100px, 100px,100px">
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId')" />
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!OrderItemWrap.selected}" id="inputId"/>
+                </apex:column>
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Product2.name}" />
+                <apex:column headerValue="Quantity">
+                    <apex:inputField value="{!OrderItemWrap.Orderitemrec.Quantity}" id="Quantityfield"/>
+                </apex:column> 
+                 <!--Changes added by Prachi (SSE-SSE-17449)-->
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Number_of_Services__c}"  />
+               
+                 <!--Changes ended-->
+                <apex:column headerValue="Sales Price">
+                    <apex:inputField value="{!OrderItemWrap.Orderitemrec.UnitPrice}" id="UnitPricefield"/>
+                </apex:column>
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Platform__c}" />
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Proposition__c}"  />
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Package__c}"  />
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Solution__c}"  /> <!--Changes added by Joana (SSE-16464)-->
+                <apex:column value="{!OrderItemWrap.Orderitemrec.TotalPrice}" />
+            </apex:pageBlockTable>
+            <Center>
+                <apex:commandButton value="Save" onclick="return checkvalues(this,'Quantityfield','UnitPricefield');" rerender="table2" styleClass="slds-button slds-button--brand"/>
+                <apex:commandButton value="Cancel" action="/{!CurrentOrderid}" rerender="table2" styleClass="slds-button slds-button_neutral"/>
+            </Center>
+        </apex:pageblock>
+        
+        <apex:pageblock title="Select Order Products" rendered="{!(OrderRecordtypeName != 'GCSC_Order')}">
+            <apex:actionFunction name="doSave" action="{!AddProducts}"/>
+            <!--apex:pageBlockButtons -->
+            
+            <!--/apex:pageBlockButtons-->
+            <apex:pageBlockTable value="{!wrapOrderItemList}" var="OrderItemWrap" id="table2" title="Order Products" style="width:100%" columnsWidth="50px,200px, 100px, 100px, 100px, 150px, 100px, 100px,100px">
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId')" />
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!OrderItemWrap.selected}" id="inputId"/>
+                </apex:column>
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Product2.name}" />
+                <apex:column headerValue="Quantity">
+                    <apex:inputField value="{!OrderItemWrap.Orderitemrec.Quantity}" id="Quantityfield"/>
+                </apex:column> 
+               
+               <!--Changes added by Prachi (SSE-SSE-17449)-->
+                
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Number_of_Services__c}"  />
+                
+                 <!--Changes ended-->
+                
+                <apex:column value="{!OrderItemWrap.Orderitemrec.UnitPrice}" id="UnitPricefield"/>
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Platform__c}" />
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Proposition__c}"  />
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Package__c}"  />
+                <apex:column value="{!OrderItemWrap.Orderitemrec.Solution__c}"  /> <!--Changes added by Joana (SSE-16464)-->
+                <apex:column value="{!OrderItemWrap.Orderitemrec.TotalPrice}" />
+            </apex:pageBlockTable>
+            <Center>
+                <apex:commandButton value="Save" onclick="return checkvaluesNonGCSC(this,'Quantityfield');" rerender="table2" styleClass="slds-button slds-button--brand"/>
+                <apex:commandButton value="Cancel" action="/{!CurrentOrderid}" rerender="table2" styleClass="slds-button slds-button_neutral"/>
+            </Center>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

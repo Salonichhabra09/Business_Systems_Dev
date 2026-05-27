@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>ANZ</fullName>
+        <default>false</default>
+        <label>ANZ</label>
+    </customValue>
+    <customValue>
+        <fullName>AMS</fullName>
+        <default>false</default>
+        <label>AMS</label>
+    </customValue>
+    <customValue>
+        <fullName>ASIA</fullName>
+        <default>false</default>
+        <label>ASIA</label>
+    </customValue>
+    <customValue>
+        <fullName>CHINA</fullName>
+        <default>false</default>
+        <label>CHINA</label>
+    </customValue>
+    <customValue>
+        <fullName>EUROPE</fullName>
+        <default>false</default>
+        <label>EUROPE</label>
+    </customValue>
+    <customValue>
+        <fullName>MENA</fullName>
+        <default>false</default>
+        <label>MENA</label>
+    </customValue>
+    <customValue>
+        <fullName>INDIA</fullName>
+        <default>false</default>
+        <label>INDIA</label>
+    </customValue>
+    <customValue>
+        <fullName>AMS </fullName>
+        <default>false</default>
+        <label>AMS </label>
+    </customValue>
+    <customValue>
+        <fullName>ESA - EUROPE</fullName>
+        <default>false</default>
+        <label>ESA - EUROPE</label>
+    </customValue>
+    <description>This field defines the values of Super MD Region across the Org</description>
+    <masterLabel>Super MD Region</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

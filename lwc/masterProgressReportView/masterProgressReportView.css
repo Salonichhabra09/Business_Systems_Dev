@@ -1,0 +1,86 @@
+.slds-card__body {
+    padding: 1rem;
+  }
+
+
+
+.horizontal-align label {
+  margin-bottom: 5px; /* Adjust the spacing between the label and combobox */
+}
+
+
+
+.spacer {
+  flex-grow: 1; /* This pushes the right-aligned items to the right */
+}
+
+.slds-modal__container {
+  width: 100%;
+  max-width: 90%;
+  height: 100%;
+  max-height: 100%;
+}
+
+.horizontal-align {
+  display: flex;
+  align-items: center;
+}
+.left-aligned {
+  justify-content: flex-start;
+}
+.right-aligned {
+  justify-content: flex-end;
+}
+
+.custom-horizontal-scroll {
+  position: relative; /* Ensures the container is positioned properly */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  overflow-y: hidden; /* Disables vertical scrolling */
+  max-width: 100%; /* Make sure the table doesn't exceed the container */
+  padding-bottom: 20px; /* Create space for the horizontal scrollbar to stay above the browser scrollbar */
+}
+
+/* Style for WebKit-based browsers */
+.custom-horizontal-scroll::-webkit-scrollbar {
+  height: 12px; /* Set scrollbar height */
+}
+
+.custom-horizontal-scroll::-webkit-scrollbar-thumb {
+  background-color: #888; /* Scrollbar color */
+  border-radius: 10px; /* Rounded scrollbar corners */
+}
+
+.custom-horizontal-scroll::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Scrollbar track background */
+}
+
+/* Customizing for other browsers */
+.custom-horizontal-scroll {
+  scrollbar-width: thin; /* Thin scrollbar for Firefox */
+  scrollbar-color: #888 #f1f1f1; /* Thumb and track colors for Firefox */
+}
+.dashboard-container {
+  padding: 20px;
+  background: #F4F4F4;
+}
+
+/* myComponent.css */
+.main-container {
+  background-color: #f0f0f0;
+  height: 2rem;
+  align-items: center;
+}
+
+.center-column {
+  display: flex;
+  justify-content: center;
+}
+
+.float-left-col{
+  float: left;
+}
+
+.align-text{
+  display: flex;
+  align-items: center;
+}

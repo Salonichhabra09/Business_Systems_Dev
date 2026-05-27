@@ -1,0 +1,1551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>MilestonesFromProject</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>LightningComponent</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Milestone_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>Project__c</fields>
+        <fields>Service_Type2__c</fields>
+        <fields>Milestone_Period_Date__c</fields>
+        <fields>Amount__c</fields>
+        <fields>Total_OrderProduct_Value__c</fields>
+        <fields>Total_Milestone_Value__c</fields>
+        <label>Milestone Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>An object to record Milestones that can be signed by the PM Agent for revenue recognition</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>Milestone_Code_Lookup__r.Account_Code__c</formula>
+        <label>Revenue Account Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <label>Amount</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>BU__c</fullName>
+        <description>BU values</description>
+        <label>BU</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AD1</fullName>
+                    <default>false</default>
+                    <label>AD1</label>
+                </value>
+                <value>
+                    <fullName>AU1</fullName>
+                    <default>false</default>
+                    <label>AU1</label>
+                </value>
+                <value>
+                    <fullName>BE5</fullName>
+                    <default>false</default>
+                    <label>BE5</label>
+                </value>
+                <value>
+                    <fullName>CA1</fullName>
+                    <default>false</default>
+                    <label>CA1</label>
+                </value>
+                <value>
+                    <fullName>CH1</fullName>
+                    <default>false</default>
+                    <label>CH1</label>
+                </value>
+                <value>
+                    <fullName>CN1</fullName>
+                    <default>false</default>
+                    <label>CN1</label>
+                </value>
+                <value>
+                    <fullName>DE5</fullName>
+                    <default>false</default>
+                    <label>DE5</label>
+                </value>
+                <value>
+                    <fullName>DK1</fullName>
+                    <default>false</default>
+                    <label>DK1</label>
+                </value>
+                <value>
+                    <fullName>FI1</fullName>
+                    <default>false</default>
+                    <label>FI1</label>
+                </value>
+                <value>
+                    <fullName>FR5</fullName>
+                    <default>false</default>
+                    <label>FR5</label>
+                </value>
+                <value>
+                    <fullName>HK1</fullName>
+                    <default>false</default>
+                    <label>HK1</label>
+                </value>
+                <value>
+                    <fullName>IN1</fullName>
+                    <default>false</default>
+                    <label>IN1</label>
+                </value>
+                <value>
+                    <fullName>IT1</fullName>
+                    <default>false</default>
+                    <label>IT1</label>
+                </value>
+                <value>
+                    <fullName>ME1</fullName>
+                    <default>false</default>
+                    <label>ME1</label>
+                </value>
+                <value>
+                    <fullName>NL5</fullName>
+                    <default>false</default>
+                    <label>NL5</label>
+                </value>
+                <value>
+                    <fullName>NO1</fullName>
+                    <default>false</default>
+                    <label>NO1</label>
+                </value>
+                <value>
+                    <fullName>NZ1</fullName>
+                    <default>false</default>
+                    <label>NZ1</label>
+                </value>
+                <value>
+                    <fullName>PH1</fullName>
+                    <default>false</default>
+                    <label>PH1</label>
+                </value>
+                <value>
+                    <fullName>SA5</fullName>
+                    <default>false</default>
+                    <label>SA5</label>
+                </value>
+                <value>
+                    <fullName>SE1</fullName>
+                    <default>false</default>
+                    <label>SE1</label>
+                </value>
+                <value>
+                    <fullName>SG1</fullName>
+                    <default>false</default>
+                    <label>SG1</label>
+                </value>
+                <value>
+                    <fullName>UK1</fullName>
+                    <default>false</default>
+                    <label>UK1</label>
+                </value>
+                <value>
+                    <fullName>US5</fullName>
+                    <default>false</default>
+                    <label>US5</label>
+                </value>
+                <value>
+                    <fullName>ZA1</fullName>
+                    <default>false</default>
+                    <label>ZA1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Cross_Border_BU__c</fullName>
+        <label>Cross Border BU</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AD1</fullName>
+                    <default>false</default>
+                    <label>AD1</label>
+                </value>
+                <value>
+                    <fullName>AU1</fullName>
+                    <default>false</default>
+                    <label>AU1</label>
+                </value>
+                <value>
+                    <fullName>BE5</fullName>
+                    <default>false</default>
+                    <label>BE5</label>
+                </value>
+                <value>
+                    <fullName>CA1</fullName>
+                    <default>false</default>
+                    <label>CA1</label>
+                </value>
+                <value>
+                    <fullName>CH1</fullName>
+                    <default>false</default>
+                    <label>CH1</label>
+                </value>
+                <value>
+                    <fullName>CN1</fullName>
+                    <default>false</default>
+                    <label>CN1</label>
+                </value>
+                <value>
+                    <fullName>DE5</fullName>
+                    <default>false</default>
+                    <label>DE5</label>
+                </value>
+                <value>
+                    <fullName>DK1</fullName>
+                    <default>false</default>
+                    <label>DK1</label>
+                </value>
+                <value>
+                    <fullName>FI1</fullName>
+                    <default>false</default>
+                    <label>FI1</label>
+                </value>
+                <value>
+                    <fullName>FR5</fullName>
+                    <default>false</default>
+                    <label>FR5</label>
+                </value>
+                <value>
+                    <fullName>HK1</fullName>
+                    <default>false</default>
+                    <label>HK1</label>
+                </value>
+                <value>
+                    <fullName>IN1</fullName>
+                    <default>false</default>
+                    <label>IN1</label>
+                </value>
+                <value>
+                    <fullName>IT1</fullName>
+                    <default>false</default>
+                    <label>IT1</label>
+                </value>
+                <value>
+                    <fullName>ME1</fullName>
+                    <default>false</default>
+                    <label>ME1</label>
+                </value>
+                <value>
+                    <fullName>NL5</fullName>
+                    <default>false</default>
+                    <label>NL5</label>
+                </value>
+                <value>
+                    <fullName>NO1</fullName>
+                    <default>false</default>
+                    <label>NO1</label>
+                </value>
+                <value>
+                    <fullName>NZ1</fullName>
+                    <default>false</default>
+                    <label>NZ1</label>
+                </value>
+                <value>
+                    <fullName>PH1</fullName>
+                    <default>false</default>
+                    <label>PH1</label>
+                </value>
+                <value>
+                    <fullName>SA5</fullName>
+                    <default>false</default>
+                    <label>SA5</label>
+                </value>
+                <value>
+                    <fullName>SE1</fullName>
+                    <default>false</default>
+                    <label>SE1</label>
+                </value>
+                <value>
+                    <fullName>SG1</fullName>
+                    <default>false</default>
+                    <label>SG1</label>
+                </value>
+                <value>
+                    <fullName>UK1</fullName>
+                    <default>false</default>
+                    <label>UK1</label>
+                </value>
+                <value>
+                    <fullName>US5</fullName>
+                    <default>false</default>
+                    <label>US5</label>
+                </value>
+                <value>
+                    <fullName>ZA1</fullName>
+                    <default>false</default>
+                    <label>ZA1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Enables_Product_Subscription__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Enables Product Subscription</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FC_Sign_Off_Date__c</fullName>
+        <label>FC Sign Off Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FC_Sign_Off_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>A user look up field</description>
+        <label>FC Sign Off Name</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Milestones1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FC_Sign_Off__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>Financial Controller approval only</inlineHelpText>
+        <label>FC Sign Off</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Financial_Period_Closed__c</fullName>
+        <formula>Milestone_Period__r.Financial_Period_Closed__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Financial Period Closed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IMCode__c</fullName>
+        <externalId>false</externalId>
+        <formula>Service__r.StockKeepingUnit</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>IM Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IM_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>Milestone_Code_Lookup__r.IM_code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>IM Code (Legacy)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IM_Lookup__c</fullName>
+        <externalId>false</externalId>
+        <formula>Milestone_Code_Lookup__r.IM_lookup__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>IM Lookup (Legacy)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Project_Manager__c</fullName>
+        <description>This field is used for system use to check if current logged in user is Project Manager of the concerned milestone</description>
+        <formula>OR(($User.Id = Project__r.Project_Manager__c),($User.Id =  Project__r.Project_Co_ordinator__c ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Project Manager</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Signed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Is Signed</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Logged_In_user__c</fullName>
+        <formula>Milestone_Owner__c = $User.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Logged In user</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Milestone_Code2__c</fullName>
+        <label>Milestone Code</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Service_Type2__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Exercise Design</fullName>
+                    <default>false</default>
+                    <label>Exercise Design</label>
+                </value>
+                <value>
+                    <fullName>Delivery of Assessment</fullName>
+                    <default>false</default>
+                    <label>Delivery of Assessment</label>
+                </value>
+                <value>
+                    <fullName>Outcome Design</fullName>
+                    <default>false</default>
+                    <label>Outcome Design</label>
+                </value>
+                <value>
+                    <fullName>Content Creation and data collection</fullName>
+                    <default>false</default>
+                    <label>Content Creation and data collection</label>
+                </value>
+                <value>
+                    <fullName>Report and Feedback</fullName>
+                    <default>false</default>
+                    <label>Report and Feedback</label>
+                </value>
+                <value>
+                    <fullName>Assessor Training</fullName>
+                    <default>false</default>
+                    <label>Assessor Training</label>
+                </value>
+                <value>
+                    <fullName>Delivery, Report and Feedback</fullName>
+                    <default>false</default>
+                    <label>Delivery, Report and Feedback</label>
+                </value>
+                <value>
+                    <fullName>Client Sign Off Feedback Session</fullName>
+                    <default>false</default>
+                    <label>Client Sign Off Feedback Session</label>
+                </value>
+                <value>
+                    <fullName>Workshop Design</fullName>
+                    <default>false</default>
+                    <label>Workshop Design</label>
+                </value>
+                <value>
+                    <fullName>Workshop Delivery</fullName>
+                    <default>false</default>
+                    <label>Workshop Delivery</label>
+                </value>
+                <value>
+                    <fullName>Client Sign Off Recommendations Report</fullName>
+                    <default>false</default>
+                    <label>Client Sign Off Recommendations Report</label>
+                </value>
+                <value>
+                    <fullName>Job Analysis</fullName>
+                    <default>false</default>
+                    <label>Job Analysis</label>
+                </value>
+                <value>
+                    <fullName>Client Sign Off Competency Framework</fullName>
+                    <default>false</default>
+                    <label>Client Sign Off Competency Framework</label>
+                </value>
+                <value>
+                    <fullName>Content Creation</fullName>
+                    <default>false</default>
+                    <label>Content Creation</label>
+                </value>
+                <value>
+                    <fullName>Client Sign Off Content (incl localisation)</fullName>
+                    <default>false</default>
+                    <label>Client Sign Off Content (incl localisation)</label>
+                </value>
+                <value>
+                    <fullName>Client Sign Off Content</fullName>
+                    <default>false</default>
+                    <label>Client Sign Off Content</label>
+                </value>
+                <value>
+                    <fullName>Client Sign Off Script</fullName>
+                    <default>false</default>
+                    <label>Client Sign Off Script</label>
+                </value>
+                <value>
+                    <fullName>Client Sign-Off of Mock-up</fullName>
+                    <default>false</default>
+                    <label>Client Sign-Off of Mock-up</label>
+                </value>
+                <value>
+                    <fullName>Client Sign-Off of Mappings</fullName>
+                    <default>false</default>
+                    <label>Client Sign-Off of Mappings</label>
+                </value>
+                <value>
+                    <fullName>Client Sign-Off of Equations, Norms and Rulebase</fullName>
+                    <default>false</default>
+                    <label>Client Sign-Off of Equations, Norms and Rulebase</label>
+                </value>
+                <value>
+                    <fullName>Client Sign Off IT Build</fullName>
+                    <default>false</default>
+                    <label>Client Sign Off IT Build</label>
+                </value>
+                <value>
+                    <fullName>Data Audit</fullName>
+                    <default>false</default>
+                    <label>Data Audit</label>
+                </value>
+                <value>
+                    <fullName>Presentation to Client</fullName>
+                    <default>false</default>
+                    <label>Presentation to Client</label>
+                </value>
+                <value>
+                    <fullName>Unit Exchange for Consulting</fullName>
+                    <default>false</default>
+                    <label>Unit Exchange for Consulting</label>
+                </value>
+                <value>
+                    <fullName>Unit Exchange for Training</fullName>
+                    <default>false</default>
+                    <label>Unit Exchange for Training</label>
+                </value>
+                <value>
+                    <fullName>Intra SHL Purchase of Services</fullName>
+                    <default>false</default>
+                    <label>Intra SHL Purchase of Services</label>
+                </value>
+                <value>
+                    <fullName>Initial Data Collection</fullName>
+                    <default>false</default>
+                    <label>Initial Data Collection</label>
+                </value>
+                <value>
+                    <fullName>Client Sign Off Draft Content</fullName>
+                    <default>false</default>
+                    <label>Client Sign Off Draft Content</label>
+                </value>
+                <value>
+                    <fullName>Client Sign Off Content Build</fullName>
+                    <default>false</default>
+                    <label>Client Sign Off Content Build</label>
+                </value>
+                <value>
+                    <fullName>Complete Data Collection</fullName>
+                    <default>false</default>
+                    <label>Complete Data Collection</label>
+                </value>
+                <value>
+                    <fullName>Delivery of Job Analysis Results / Assessment Recommendation</fullName>
+                    <default>false</default>
+                    <label>Delivery of Job Analysis Results / Assessment Recommendation</label>
+                </value>
+                <value>
+                    <fullName>OCP Facilitation and Report</fullName>
+                    <default>false</default>
+                    <label>OCP Facilitation and Report</label>
+                </value>
+                <value>
+                    <fullName>WPS Facilitation and Report</fullName>
+                    <default>false</default>
+                    <label>WPS Facilitation and Report</label>
+                </value>
+                <value>
+                    <fullName>Design of Bespoke Training</fullName>
+                    <default>false</default>
+                    <label>Design of Bespoke Training</label>
+                </value>
+                <value>
+                    <fullName>Delivery of Bespoke Training</fullName>
+                    <default>false</default>
+                    <label>Delivery of Bespoke Training</label>
+                </value>
+                <value>
+                    <fullName>Client sign-off Project Plan</fullName>
+                    <default>false</default>
+                    <label>Client sign-off Project Plan</label>
+                </value>
+                <value>
+                    <fullName>Client sign-off Project Completion</fullName>
+                    <default>false</default>
+                    <label>Client sign-off Project Completion</label>
+                </value>
+                <value>
+                    <fullName>Client sign off questionnaire design</fullName>
+                    <default>false</default>
+                    <label>Client sign off questionnaire design</label>
+                </value>
+                <value>
+                    <fullName>Talent Analytics Benchmark Report</fullName>
+                    <default>false</default>
+                    <label>Talent Analytics Benchmark Report</label>
+                </value>
+                <value>
+                    <fullName>Talent Analytics Client Report</fullName>
+                    <default>false</default>
+                    <label>Talent Analytics Client Report</label>
+                </value>
+                <value>
+                    <fullName>Assessment Solution Recommendation signed off</fullName>
+                    <default>false</default>
+                    <label>Assessment Solution Recommendation signed off</label>
+                </value>
+                <value>
+                    <fullName>Analysis Report</fullName>
+                    <default>false</default>
+                    <label>Analysis Report</label>
+                </value>
+                <value>
+                    <fullName>Subscription Support - Foundation</fullName>
+                    <default>false</default>
+                    <label>Subscription Support - Foundation</label>
+                </value>
+                <value>
+                    <fullName>Subscription Support - Embed</fullName>
+                    <default>false</default>
+                    <label>Subscription Support - Embed</label>
+                </value>
+                <value>
+                    <fullName>Subscription Support - Enhance</fullName>
+                    <default>false</default>
+                    <label>Subscription Support - Enhance</label>
+                </value>
+                <value>
+                    <fullName>Subscription Support - Bespoke</fullName>
+                    <default>false</default>
+                    <label>Subscription Support - Bespoke</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>1:1 Assessment</controllingFieldValue>
+                <controllingFieldValue>1:1 Development</controllingFieldValue>
+                <controllingFieldValue>Assessment Centre</controllingFieldValue>
+                <controllingFieldValue>Development Centre</controllingFieldValue>
+                <valueName>Exercise Design</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>1:1 Assessment</controllingFieldValue>
+                <controllingFieldValue>1:1 Development</controllingFieldValue>
+                <valueName>Delivery of Assessment</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>1:1 Assessment</controllingFieldValue>
+                <controllingFieldValue>1:1 Development</controllingFieldValue>
+                <valueName>Report and Feedback</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Assessment Centre</controllingFieldValue>
+                <controllingFieldValue>Development Centre</controllingFieldValue>
+                <valueName>Assessor Training</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Assessment Centre</controllingFieldValue>
+                <controllingFieldValue>Development Centre</controllingFieldValue>
+                <valueName>Delivery, Report and Feedback</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Milestone_Code_Lookup__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <label>Milestone Code Lookup</label>
+        <referenceTo>Milestone_Code__c</referenceTo>
+        <relationshipLabel>Milestones</relationshipLabel>
+        <relationshipName>Milestones</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Milestone_Description__c</fullName>
+        <label>Milestone Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Milestone_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Milestone Owner</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>(1 AND 2) OR (2 AND 3)</booleanFilter>
+            <filterItems>
+                <field>User.Is_Project_Manager__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <filterItems>
+                <field>User.IsActive</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <filterItems>
+                <field>User.Is_Project_Co_ordinator__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Milestones3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Milestone_Period_Date__c</fullName>
+        <formula>Milestone_Period__r.Financial_Period_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Milestone Period Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Milestone_Period__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <label>Milestone Period</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <filterItems>
+                <field>Milestone_Period__c.Financial_Period_Closed__c</field>
+                <operation>notEqual</operation>
+                <value>True</value>
+            </filterItems>
+            <filterItems>
+                <field>$User.Id</field>
+                <operation>equals</operation>
+                <value>005Q4000000BRRV</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Milestone_Period__c</referenceTo>
+        <relationshipLabel>Milestones</relationshipLabel>
+        <relationshipName>Milestones</relationshipName>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Milestone_Risk__c</fullName>
+        <label>Milestone Risk</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Milestone_Sign_Off_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Milestone Sign Off Name</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Milestones2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Month__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( MONTH(Milestone_Period__r.Financial_Period_Date__c ) , 1, &apos;Jan&apos;, 2, &apos;Feb&apos;,3,&apos;Mar&apos;,4,&apos;Apr&apos;,5,&apos;May&apos;,6,&apos;Jun&apos;,7,&apos;Jul&apos;,8,&apos;Aug&apos;,9,&apos;Sep&apos;,10,&apos;Oct&apos;,11,&apos;Nov&apos;,&apos;Dec&apos;)</formula>
+        <label>Month</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PM_Agent__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>PM Agent</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Milestones</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Practice_Area__c</fullName>
+        <label>Practice Area</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Advisory Services</fullName>
+                    <default>false</default>
+                    <label>Advisory Services</label>
+                </value>
+                <value>
+                    <fullName>Talent Acquisition</fullName>
+                    <default>false</default>
+                    <label>Talent Acquisition</label>
+                </value>
+                <value>
+                    <fullName>Talent Management</fullName>
+                    <default>false</default>
+                    <label>Talent Management</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <label>Project</label>
+        <referenceTo>ProjectObject__c</referenceTo>
+        <relationshipLabel>Milestones</relationshipLabel>
+        <relationshipName>Milestones</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Service_Type2__c</fullName>
+        <label>Service Type</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>360</fullName>
+                    <default>false</default>
+                    <label>360</label>
+                </value>
+                <value>
+                    <fullName>1:1 Assessment</fullName>
+                    <default>false</default>
+                    <label>1:1 Assessment</label>
+                </value>
+                <value>
+                    <fullName>1:1 Development</fullName>
+                    <default>false</default>
+                    <label>1:1 Development</label>
+                </value>
+                <value>
+                    <fullName>Assessment Centre</fullName>
+                    <default>false</default>
+                    <label>Assessment Centre</label>
+                </value>
+                <value>
+                    <fullName>Coding Simulation</fullName>
+                    <default>false</default>
+                    <label>Coding Simulation</label>
+                </value>
+                <value>
+                    <fullName>Competencies</fullName>
+                    <default>false</default>
+                    <label>Competencies</label>
+                </value>
+                <value>
+                    <fullName>Custom Report</fullName>
+                    <default>false</default>
+                    <label>Custom Report</label>
+                </value>
+                <value>
+                    <fullName>Development Centre</fullName>
+                    <default>false</default>
+                    <label>Development Centre</label>
+                </value>
+                <value>
+                    <fullName>Digital Training</fullName>
+                    <default>false</default>
+                    <label>Digital Training</label>
+                </value>
+                <value>
+                    <fullName>Experiences</fullName>
+                    <default>false</default>
+                    <label>Experiences</label>
+                </value>
+                <value>
+                    <fullName>Integration</fullName>
+                    <default>false</default>
+                    <label>Integration</label>
+                </value>
+                <value>
+                    <fullName>JFA - Tailor</fullName>
+                    <default>false</default>
+                    <label>JFA - Tailor</label>
+                </value>
+                <value>
+                    <fullName>Job Analysis</fullName>
+                    <default>false</default>
+                    <label>Job Analysis</label>
+                </value>
+                <value>
+                    <fullName>Localization</fullName>
+                    <default>false</default>
+                    <label>Localization</label>
+                </value>
+                <value>
+                    <fullName>Multimedia</fullName>
+                    <default>false</default>
+                    <label>Multimedia</label>
+                </value>
+                <value>
+                    <fullName>Product Review</fullName>
+                    <default>false</default>
+                    <label>Product Review</label>
+                </value>
+                <value>
+                    <fullName>ROI</fullName>
+                    <default>false</default>
+                    <label>ROI</label>
+                </value>
+                <value>
+                    <fullName>SJT &amp; RJP</fullName>
+                    <default>false</default>
+                    <label>SJT &amp; RJP</label>
+                </value>
+                <value>
+                    <fullName>Smart Interview</fullName>
+                    <default>false</default>
+                    <label>Smart Interview</label>
+                </value>
+                <value>
+                    <fullName>Solution Client Support</fullName>
+                    <default>false</default>
+                    <label>Solution Client Support</label>
+                </value>
+                <value>
+                    <fullName>Talent Insight Dashboard</fullName>
+                    <default>false</default>
+                    <label>Talent Insight Dashboard</label>
+                </value>
+                <value>
+                    <fullName>Talent Review / Analytics</fullName>
+                    <default>false</default>
+                    <label>Talent Review / Analytics</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+                <value>
+                    <fullName>Video Feedback</fullName>
+                    <default>false</default>
+                    <label>Video Feedback</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Service__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Service</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>Product2.Revenue_Category__c</field>
+                <operation>equals</operation>
+                <value>Professional Services</value>
+            </filterItems>
+            <filterItems>
+                <field>Product2.IsActive</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Milestones</relationshipLabel>
+        <relationshipName>Milestones</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Signature_Date__c</fullName>
+        <label>Milestone Sign Off Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Superuser_BU__c</fullName>
+        <formula>CONTAINS($User.Superuser_BU__c, TEXT(BU__c))</formula>
+        <label>Superuser BU</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Total_Milestone_Value__c</fullName>
+        <formula>Project__r.Milestones_Value__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Milestone Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_OrderProduct_Value__c</fullName>
+        <formula>Project__r.Total_Orderline_Value_RollUp__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total OrderProduct Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Track_change__c</fullName>
+        <label>Track change</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Track_changes_history__c</fullName>
+        <label>Track changes history</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Year__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(YEAR( Milestone_Period__r.Financial_Period_Date__c ))</formula>
+        <label>Year</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Milestone</label>
+    <listViews>
+        <fullName>All_Milestones</fullName>
+        <columns>Milestone_Period__c</columns>
+        <columns>Milestone_Description__c</columns>
+        <columns>NAME</columns>
+        <columns>Amount__c</columns>
+        <columns>Service_Type2__c</columns>
+        <columns>Milestone_Code_Lookup__c</columns>
+        <columns>Milestone_Code2__c</columns>
+        <columns>Project__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Is_Signed__c</columns>
+        <columns>Financial_Period_Closed__c</columns>
+        <columns>BU__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Milestones</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Milestones_from_go_live</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>BU__c</columns>
+        <columns>Amount__c</columns>
+        <columns>Is_Signed__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>7/8/2013 12:00 AM</value>
+        </filters>
+        <label>Milestones from go live</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Milestones2</fullName>
+        <columns>Milestone_Description__c</columns>
+        <columns>NAME</columns>
+        <columns>Amount__c</columns>
+        <columns>Service_Type2__c</columns>
+        <columns>Milestone_Period__c</columns>
+        <columns>Milestone_Code_Lookup__c</columns>
+        <columns>Milestone_Code2__c</columns>
+        <columns>Project__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Is_Signed__c</columns>
+        <columns>Financial_Period_Closed__c</columns>
+        <columns>BU__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Is_Signed__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Milestone_Period__c</field>
+            <operation>equals</operation>
+            <value>SE1-2013-Nov,SE1-2013-dec</value>
+        </filters>
+        <label>My Open Milestones - 2013</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Open_Milestones</fullName>
+        <columns>Project__c</columns>
+        <columns>Milestone_Period_Date__c</columns>
+        <columns>Milestone_Period__c</columns>
+        <columns>NAME</columns>
+        <columns>Milestone_Description__c</columns>
+        <columns>Amount__c</columns>
+        <columns>Is_Signed__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Is_Signed__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Milestone_Period_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>THIS_YEAR</value>
+        </filters>
+        <label>My Open Milestones</label>
+    </listViews>
+    <nameField>
+        <displayFormat>MS{00000}</displayFormat>
+        <label>Milestone Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Milestones</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Milestone_Period__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Project__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Milestone_Code2__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Service_Type2__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Is_Signed__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Amount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>BU__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Milestone_Period__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Project__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Milestone_Code2__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Service_Type2__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Is_Signed__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Amount__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>BU__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Milestone_Period__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Project__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Milestone_Code2__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Service_Type2__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Is_Signed__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Amount__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BU__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>AmountMustBeNegativeIfIntraSHLType</fullName>
+        <active>false</active>
+        <description>Add a new rule so that if the cross border BU on the milestone has a value, the amount must be set to negative.</description>
+        <errorConditionFormula>AND(ISPICKVAL( Service_Type2__c ,&quot;Intra SHL Purchase of Services&quot;), Amount__c  &gt;= 0)</errorConditionFormula>
+        <errorDisplayField>Amount__c</errorDisplayField>
+        <errorMessage>If the service type is Intra SHL Purchase of Services the amount must be set to negative.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CannotAddMilestones</fullName>
+        <active>true</active>
+        <description>Prevent Users from adding Milestones to Projects where the related Opportunity is Closed Lost</description>
+        <errorConditionFormula>ISPICKVAL(Project__r.Opportunity__r.StageName , &quot;Closed Lost&quot;)</errorConditionFormula>
+        <errorMessage>You cannot add Milestones to Projects where the related Opportunity is Closed Lost</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CrossBUMandatoryWhenIntraSHLServiceType</fullName>
+        <active>false</active>
+        <description>The Cross Border BU field is mandatory when the Service Type is set to Intra SHL Purchase of Services</description>
+        <errorConditionFormula>AND(ISPICKVAL( Service_Type2__c ,&quot;Intra SHL Purchase of Services&quot;),ISBLANK(TEXT( Cross_Border_BU__c)))</errorConditionFormula>
+        <errorDisplayField>Cross_Border_BU__c</errorDisplayField>
+        <errorMessage>The Cross Border BU field is mandatory when the Service Type is Intra SHL Purchase of Services</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CurrencySameAsProjectCurrency</fullName>
+        <active>true</active>
+        <description>Currency must be the same as the project currency.</description>
+        <errorConditionFormula>IF( TEXT(CurrencyIsoCode) != TEXT( Project__r.CurrencyIsoCode) ,true, false)</errorConditionFormula>
+        <errorDisplayField>CurrencyIsoCode</errorDisplayField>
+        <errorMessage>PM Agent - Currency must be the same as the project currency.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Milestone_Owner_fields_Check</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(
+OR(ISCHANGED(  Project__c ),ISCHANGED( BU__c ),ISCHANGED( Amount__c )),
+AND(($User.Id != Project__r.Project_Co_ordinator__c ),
+($User.Id != Project__r.Project_Manager__c ))
+)</errorConditionFormula>
+        <errorMessage>Only Project Manager or Project Co-ordinator  can edit Project, BU and Amount Fields.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NewFinanceProfileCanChangeOnly3Fields</fullName>
+        <active>false</active>
+        <description>Finance profile or group can only edit the 3 fields on the milestone and no others.</description>
+        <errorConditionFormula>IF($Profile.Name !=&apos;New Finance&apos;,false,IF(OR(ISCHANGED(  Project__c),ISCHANGED(Milestone_Period__c)),true,NOT(OR(ISCHANGED( FC_Sign_Off__c ),ISCHANGED(FC_Sign_Off_Date__c),ISCHANGED(FC_Sign_Off_Name__c)))))</errorConditionFormula>
+        <errorMessage>New Finance profile can only edit the &apos;FC Sign Off&apos;,&apos;FC Sign Off Date&apos;,&apos;FC Sign Off Name&apos; fields on the milestone and no others.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NoChangesIfPeriodClosed</fullName>
+        <active>true</active>
+        <description>PM agent is not allowed to edit or remove signed milestone lines in closed financial period.</description>
+        <errorConditionFormula>AND(
+    NOT($Permission.Modify_Milestone_if_Financial_Period_Closed),
+    Milestone_Period__r.Financial_Period_Closed__c,
+    Is_Signed__c
+)</errorConditionFormula>
+        <errorDisplayField>Amount__c</errorDisplayField>
+        <errorMessage>Any kind of update is not allowed on milestones when financial period is closed and milestone signed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NoChangesUnlessProjMan</fullName>
+        <active>false</active>
+        <description>PM Agent must be same as the Proj Manager field on project.</description>
+        <errorConditionFormula>IF(OR($User.Id==Project__r.Project_Manager__c,$User.Id==Project__r.Project_Co_ordinator__c,$User.Id== Milestone_Owner__c ,$Profile.Name ==&apos;System Administrator&apos;),False,If($Profile.Name ==&apos;New Finance&apos;,false,true))</errorConditionFormula>
+        <errorMessage>You can only create or edit milestones if you are the Project Manager OR the Project co-ordinator of the project or the Milestone Owner.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NoSignMilestoneTotalEqualOrderLineValue</fullName>
+        <active>false</active>
+        <description>The milestones total value must = the order product value.</description>
+        <errorConditionFormula>IF(
+AND(
+Is_Signed__c,
+NOT(ISNEW()),
+ROUND((IF(ISNEW(),Project__r.Milestones_Value__c,Project__r.Milestones_Value__c-PRIORVALUE(Amount__c))+Amount__c),2) != ROUND((Project__r.Total_Orderline_Value_RollUp__c)
+,2) )
+,true, false
+)</errorConditionFormula>
+        <errorDisplayField>Amount__c</errorDisplayField>
+        <errorMessage>You can only sign a milestone if the total milestones value = the order product value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NoSigningIfNoOrderLine</fullName>
+        <active>true</active>
+        <description>A validation rule to restrict the PM Agent - The PM Agent is not allowed to sign or remove milestone entries when there is no Orderline Number linked to the project.</description>
+        <errorConditionFormula>IF( AND(ISBLANK( Project__r.Order_Products_Count__c ), Is_Signed__c ) ,true,false)</errorConditionFormula>
+        <errorMessage>The milestone cannot be signed as there are no Order Products linked to the project.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Practice_Area_Required_for_US5</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL(BU__c,&quot;US5&quot;),ISPICKVAL(Practice_Area__c,&apos;&apos;))</errorConditionFormula>
+        <errorDisplayField>Practice_Area__c</errorDisplayField>
+        <errorMessage>Please provide a practice area for this milestone</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ProjManCanNotChange3Fields</fullName>
+        <active>false</active>
+        <description>Project Manager Or Project co-ordinator can not edit &apos;FC Sign Off&apos;,&apos;FC Sign Off Date&apos;,and &apos;FC Sign Off Name&apos; fields on the milestone.</description>
+        <errorConditionFormula>IF( OR(Project__r.Project_Manager__c ==$User.Id,Project__r.Project_Co_ordinator__c ==$User.Id),
+IF( ISNEW(),OR( FC_Sign_Off__c,NOT(ISBLANK(FC_Sign_Off_Date__c)),NOT(ISBLANK(FC_Sign_Off_Name__c))),
+	        OR(ISCHANGED( FC_Sign_Off__c ),ISCHANGED(FC_Sign_Off_Date__c),ISCHANGED(FC_Sign_Off_Name__c)) ),False)</errorConditionFormula>
+        <errorMessage>Project Manager OR Project co-ordinator can not edit &apos;FC Sign Off&apos;,&apos;FC Sign Off Date&apos;,and &apos;FC Sign Off Name&apos; fields on the milestone.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ProjectCCYandOrderCCYEqual</fullName>
+        <active>true</active>
+        <description>user can only edit a milestone when the currency of the project equals the currency of the opportunity</description>
+        <errorConditionFormula>AND( NOT(ISBLANK( Project__r.Opportunity__c )), TEXT(Project__r.CurrencyIsoCode) != TEXT( Project__r.Opportunity__r.CurrencyIsoCode ))</errorConditionFormula>
+        <errorMessage>You cannot edit a milestone unless the project and opportunity currency values match.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ProjectManagerMandatoryToSign</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( Is_Signed__c , ISBLANK( Project__r.Project_Manager__c ) )</errorConditionFormula>
+        <errorDisplayField>Is_Signed__c</errorDisplayField>
+        <errorMessage>Please add Project Manager before signing the milestone.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Same_Milestone_And_Milestone_Period_BU</fullName>
+        <active>true</active>
+        <description>To validate that the Milestone BU should be same as Milestone Period&apos;s BU.</description>
+        <errorConditionFormula>(TEXT( BU__c)  &lt;&gt;  TEXT(Milestone_Period__r.BU__c))  || 
+(TEXT( BU__c)  &lt;&gt;  TEXT( Project__r.LBU__c))</errorConditionFormula>
+        <errorDisplayField>BU__c</errorDisplayField>
+        <errorMessage>Milestone BU should match the related Project BU AND Milestone Period BU. Please choose the correct BU.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Validation_On_Track_Change</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(
+		OR(ISCHANGED( Track_change__c ),AND(PRIORVALUE(Track_change__c )=&apos;&apos;,Track_change__c !=&apos;&apos;)),
+		AND(($User.Id != Project__r.Project_Co_ordinator__c ),
+			($User.Id != Project__r.Project_Manager__c ))
+	  )</errorConditionFormula>
+        <errorMessage>Only Project Co-ordinator and Project Manager can edit the Track Change Filed</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>New_Milestone</fullName>
+        <availability>online</availability>
+        <description>Old URL - {!URLFOR($Action.Milestone__c.New, Milestone__c.Id, [CF00ND0000005EOwO_lkid=ProjectObject__c.Id, CF00ND0000005EOwO=ProjectObject__c.Project_Name__c, CF00NM0000000uOL9=ProjectObject__c.Project_Manager__c, CF00NM0000000uOL9_lkid=ProjectObject__c.Project_ManagerId__c], true)}&amp;00ND0000005EOxC={!ProjectObject__c.LBU__c}&amp;CurrencyIsoCode={!ProjectObject__c.CurrencyIsoCode}&amp;retURL=%2Fapex%2FProject_ViewPage%3Fid%3D{!ProjectObject__c.Id}%26sfdc.override%3D1</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Milestone (Single)</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/lightning/o/Milestone__c/new?nooverride=1&amp;defaultFieldValues=Project__c={!ProjectObject__c.Id},CurrencyIsoCode={!ProjectObject__c.CurrencyIsoCode},BU__c={!ProjectObject__c.LBU__c}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Milestone_LEX</fullName>
+        <availability>online</availability>
+        <description>Related List button on project, to create new record with Pre-populated values.</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Milestone</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/lightning/cmp/c__MilestonesFromProject?c__recordId={!ProjectObject__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Update_Milestones</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Update Milestones</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/lightning/cmp/c__BulkEditMilestonesFromProject?c__recordId={!ProjectObject__c.Id}</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,52 @@
+<template>
+    <!-- Take CSV file as a input from User -->
+    <lightning-card title="">
+        <div class="slds-var-p-around_medium">
+            <template if:true={showLoadingSpinner}>
+            <div style="z-index: 10000 !important;">
+                <lightning-spinner alternative-text="Hello" size="medium" class="spins"
+                    style="z-index: 10000 !important;">
+                </lightning-spinner>
+            </div>
+        </template>
+        <template if:true={showImportCandidateScreen}>
+                <form>
+                    <fieldset class="slds-box slds-theme_default fieldSetBorder">
+                        <legend id="reg2" class="slds-text-heading_small slds-var-p-vertical_medium bold-legend">
+                            Upload CSV File
+                        </legend>
+                        <label></label>
+                        <div class="slds-grid slds-grid_vertical slds-box slds-theme_warning" style="outline-style: solid;">
+                            <div class="slds-col">
+                                <b>Important Information - Before uploading the candidates:</b>
+                            </div>
+                            <div class="slds-col slds-var-m-left_medium">
+                                <ul style="list-style-type:disc">
+                                    <li>Please ensure that there are no invalid character in your upload file like: !@#$%^&amp;*()+={}[]|\:;&quot;&lt;&gt;?/.&copy;</li>
+                                    <li>Email Address column should have values as per universally accepted format.</li>
+                                    <li>There should not be any extra blank spaces before or after any text.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="slds-align_absolute-center slds-var-m-vertical_medium">
+                            <lightning-input type="file" label="" multiple="false" accept=".csv" 
+                                onchange={handleInputChange} disabled={disableInput}>
+                            </lightning-input>
+                        </div>
+                        <div class="slds-align_absolute-center slds-var-m-vertical_medium">
+                            Please ensure the CSV encoding is UTF-8 before upload or use the template below.
+                        </div>
+                        <div class="slds-align_absolute-center slds-var-m-vertical_medium">
+                            <lightning-button class="slds-var-m-around_medium" label="Candidate Home"
+                                onclick={handleBack} variant="brand"></lightning-button>
+                            <template if:false={updateCandidate}>
+                                <lightning-button class="slds-var-m-vertical_medium" label="Candidate Upload Template" 
+                                    onclick={handleFileFormatExport} variant="brand" icon-name="utility:download"></lightning-button>
+                            </template>
+                        </div>
+                    </fieldset>
+                </form>
+            </template>
+        </div>
+    </lightning-card>
+</template>

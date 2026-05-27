@@ -1,0 +1,12 @@
+.hideClass {
+    display: none;
+}
+
+.limitVert {
+    max-height: 30vh;
+    overflow: auto;
+}
+
+.custom-textarea {
+    --sds-c-textarea-sizing-min-height: 15rem;
+}

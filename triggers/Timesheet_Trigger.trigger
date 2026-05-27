@@ -1,0 +1,27 @@
+trigger Timesheet_Trigger on Timesheet_Line__c (before insert,before delete,after insert,after update,after delete){
+    If(Trigger_Activation__c.getInstance('Timesheet_Trigger').Active__c){
+        If(Trigger.IsInsert){
+            If(Trigger.IsBefore){
+                Timesheet_Manager.copyDataFromProject(trigger.new);
+            }
+            If(Trigger.IsAfter){
+                //TimesheetTriggerManager.TimesheetforCPSProjects(trigger.new);
+                TimesheetTriggerManager.UpdateTATonProject(trigger.new);
+            }
+        }
+        If(Trigger.IsDelete){
+            If(Trigger.IsBefore){
+                TimesheetTriggerManager.RestrictTimeshtDelete(trigger.old);             
+            }
+            If(Trigger.IsAfter){
+                TimesheetTriggerManager.DeleteTimshtEntries(trigger.old);             
+            }
+        }
+        If(Trigger.IsUpdate){
+            If(Trigger.IsAfter){
+                TimesheetTriggerManager.UpdateTimeShtHrs(trigger.new,trigger.old,trigger.newmap);
+                TimesheetTriggerManager.UpdateTATfrmTimeShtHrs(trigger.new,trigger.old);
+            }
+        }
+    }
+}

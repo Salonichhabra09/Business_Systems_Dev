@@ -1,0 +1,17 @@
+<!-- Generic Component to Activate Order Standard & GCSC Orders.
+     Created By: Prachi Gupta -->  
+<aura:component implements="force:lightningQuickAction,force:hasRecordId">
+    
+    <aura:attribute name="Order" type="Order"/>
+    <aura:attribute name="recordError" type="String"/>
+    <aura:attribute name="recordSuccess" type="String"/>
+    
+    <force:recordData aura:id="DataLoader"
+                      recordId="{!v.recordId}"
+                      fields="Status,RecordType.Name,Booked_Elsewhere__c,Oats_Status__c,Opportunity.MS_Opportunity__c,Opportunity.Apply_Price_Increase_Switch__c,Opportunity.Price_Increase_Clause__c,Opportunity.Price_Increase_Percentage__c,Opportunity.Opportunity_Deal_Year__c"
+                      targetFields="{!v.Order}"
+                      targetError="{!v.recordError}"
+                      mode="EDIT"
+                      recordUpdated="{!c.handleRecordUpdated}"                
+                      />
+</aura:component>

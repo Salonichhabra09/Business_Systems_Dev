@@ -1,0 +1,26 @@
+.split {
+    height: 100%;
+    width: 30%;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    padding-top: 10px;
+  }
+  
+  .left {
+    left: 0;
+  }
+  
+  .right {
+    right: 0;
+    overflow :auto;
+    max-height : 27rem;
+    width: 70%;
+    padding-bottom: 5.5rem;
+    padding-top: 10px;
+  }
+
+
+  .container {
+    overflow: auto;
+  }

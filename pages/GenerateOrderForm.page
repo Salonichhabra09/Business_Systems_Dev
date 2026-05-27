@@ -1,0 +1,26 @@
+<apex:page standardcontroller="Contract"  showHeader="false" sidebar="false">
+   <apex:form >
+    <apex:includeScript value="{!URLFOR($Resource.jquery_1_8_23, 'js/jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.jquery_1_8_23, 'js/jquery-ui.custom.min.js')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.jquery_1_8_23, '/css/ui-lightness/jquery-ui.custom.css')}"  />
+    <apex:includeScript value="/support/console/37.0/integration.js"/>
+    <script type="text/javascript">
+    function OrderForm(status,Opportunity_Number__c,D_Number__c){
+        var opptyval = Opportunity_Number__c.trim();
+        const url = 'https://analytics-eu.shl.com:443/MicroStrategy/servlet/mstrWeb?evt=2048001&src=mstrWeb.2048001&documentID=E6B6B55211EB1CF175890080EFC55AF1&currentViewMedia=1&visMode=0&Server=ENV-167202LAIOEUC1&Project=SHL%20SOF_Automation&Port=0&share=1&promptsAnswerXML=<rsl><pa pt="7" pin="0" did="35928DA04C59043D60D66A9F10F4C83C" tp="10"><mi><es><at did="85D6CF5A49DE3924F242BEA7DE72E33A" tp="12"/><e emt="1" ei="85D6CF5A49DE3924F242BEA7DE72E33A:'+opptyval+'" art="1" disp_n="'+Opportunity_Number__c+'"/></es></mi></pa><pa pt="7" pin="0" did="BAD5859E4714D96BB47580B4692DC19E" tp="10"><mi><es><at did="99242A6E496FF8DB1878A3B645D90C98" tp="12"/><e emt="1" ei="99242A6E496FF8DB1878A3B645D90C98:D0399806" art="1" disp_n="'+D_Number__c+':"/></es></mi></pa></rsl>';
+        console.log(url);
+        console.log(Opportunity_Number__c);
+        console.log(D_Number__c); 
+        
+        window.open(url,'_blank');
+        
+        }
+ 
+    </script>
+    <apex:outputpanel rendered="{!(Contract.status != 'Client Accepted' && Contract.status != 'Cancelled' && Contract.status != 'Business Lost' && $Permission.Generate_Order_Form_Permissions)}" layout="none"> 
+        <apex:pageMessage title="Please click below button to Generate Order Form"  severity="info" strength="1">
+                <apex:commandButton value="Generate Order Form" onclick="return OrderForm(false,'{!Contract.Opportunity_Number__c}','{!Contract.D_Number__c}')" />
+        </apex:pageMessage>
+    </apex:outputpanel>
+</apex:form>
+</apex:page>

@@ -1,0 +1,44 @@
+<template>
+    <lightning-card title="Manage Project Representatives" icon-name="standard:contact">
+        <div class="slds-p-around_medium">
+            <lightning-button label="Add Representative" onclick={handleAdd} disabled={disableAddButton}></lightning-button>
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={contacts} for:item="contact" for:index="index">
+                        <tr key={contact.id}>
+                            <td>
+                                <lightning-input type="text" data-id={index} name="name" value={contact.name}
+                                    onchange={handleChange}></lightning-input>
+                            </td>
+                            <td>
+                                <lightning-input type="email" data-id={index} name="email" value={contact.email}
+                                    onchange={handleChange}></lightning-input>
+                            </td>
+                            <td>
+                                <lightning-combobox data-id={index} name="role" value={contact.role} options={roleOptions}
+                                    onchange={handleChange}></lightning-combobox>
+                            </td>
+                            <td>
+                                <lightning-button-icon icon-name="utility:delete" alternative-text="Delete"
+                                    onclick={handleDelete} data-id={index}></lightning-button-icon>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+        <div class="slds-p-around_medium slds-align_absolute-center">
+            <lightning-button label="Cancel" variant="neutral" onclick={handleCancel}></lightning-button>
+            <lightning-button label="Save" variant="brand" onclick={handleSave} class="slds-m-left_small"
+                ></lightning-button>
+        </div>
+    </lightning-card>
+</template>

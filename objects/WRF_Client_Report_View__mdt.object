@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Mapping for Columns shown on Client Report view based on system selected on Job Card</description>
+    <fields>
+        <fullName>Field_Name__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Field Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Selected__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Keep it checked if we need field name to be considered as selected by default while generating client report view</description>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Is Selected?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>System_Used__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>System Used</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>WRF Client Report View</label>
+    <pluralLabel>WRF Client Report Views</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

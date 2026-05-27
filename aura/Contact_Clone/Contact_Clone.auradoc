@@ -1,0 +1,18 @@
+<aura:documentation>
+    <aura:example name="ExampleName" ref="c:Contact_Clone" label="Warning Message On Contact before Clone">
+    </aura:example> 
+    <aura:description>
+        <p style="line-height: normal;"><strong><span style="font-family: 'Arial',sans-serif; color: #080707;">Overview</span></strong></p>
+        <ul>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">The component will be available on the contact page to show a message when &lsquo;Clone&rsquo; button is clicked.</span></li>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">Once the &lsquo;clone&rsquo; button is clicked, user will be presented with a static message saying - Please ensure you check the qualifications of the new contact before you save the cloned record.</span></li>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">On clicking &lsquo;OK&rsquo; user will be taken to the next step of clone process.</span></li>
+        </ul>
+        <p style="line-height: normal;"><strong><span style="font-family: 'Arial',sans-serif; color: #080707;">For the Developers:</span></strong></p>
+        <ul>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">The Component is handling the functionality of displaying a warning message on a Contact record.</span></li>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">On Clicking &ldquo;OK&rdquo; button a controller action &ldquo;CloneContact&rdquo; is being called, which in return make a call to a helper function &ldquo;gotoURL&rdquo;.</span></li>
+            <li style="margin-left: .25in; text-indent: -.25in; line-height: normal; tab-stops: list .25in; border: none; padding: 0in;"><span style="font-family: 'Arial',sans-serif; color: #080707;">&ldquo;gotoURL&rdquo; method executes the functionality of navigating to an internal URL in which we are passing the record Id to navigate to cloned record.</span></li>
+        </ul>
+    </aura:description>
+</aura:documentation>

@@ -1,0 +1,20 @@
+<aura:documentation>
+    
+    <aura:example name="ExampleName" ref="c:GenericBase" label="GenericBase">
+        GenericBase Description
+    </aura:example>
+    <aura:description>
+        <p style="line-height: normal;"><strong><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif; color: #080707;">Overview:</span></strong></p>
+        <ul>
+            <li style="color: #080707; line-height: normal; tab-stops: list .5in;"><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif;">A component name &ldquo;GenericBase&rdquo; is created to serve as a base extensible component to any of the component in the org.</span></li>
+            <li style="color: #080707; line-height: normal; tab-stops: list .5in;"><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif;">This component will behave as a super component to the other components which will extend this particular component.</span></li>
+            <li style="color: #080707; line-height: normal; tab-stops: list .5in;"><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif;">This will leverage the functionality of Inheritance for other components.</span></li>
+        </ul>
+        <p style="line-height: normal;"><strong><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif; color: #080707;">For the Developers:</span></strong></p>
+        <ul>
+            <li style="text-indent: -.25in; line-height: normal;"><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif; color: #080707;">The helper function of the component is handling all the functionality.</span></li>
+            <li style="text-indent: -.25in; line-height: normal;"><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif; color: #080707;">&ldquo;CallServer&rdquo; method will be called from other components, &amp; the required parameters will be supplied to this, this method makes a call to the server, using the methods defined in the classes &amp; collect the server&rsquo;s response.</span></li>
+            <li style="text-indent: -.25in; line-height: normal;"><span style="font-size: 12.0pt; font-family: 'Arial',sans-serif; color: #080707;">If the response collected is in Success state, so the results will be passed to child&rsquo;s helper method, else the error handling mechanism will execute.</span></li>
+        </ul>
+    </aura:description>
+</aura:documentation>

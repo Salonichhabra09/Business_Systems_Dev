@@ -1,0 +1,7 @@
+<script language=javascript>
+
+var completeurl ="{!URLFOR( $Action.Course_Booking__c.Edit , Course_Booking__c.Id ,[saveURL=URLFOR( $SControl.CourseBooking_AfterUpdate, null, [CourseId=Courses__c.Id], true), cancelURL=URLFOR($Request.retURL, null,null,true), retURL=URLFOR($Request.retURL, null,null,true)] ,true)}";
+
+window.parent.location.href = completeurl;
+
+</script>

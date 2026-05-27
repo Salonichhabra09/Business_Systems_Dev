@@ -1,0 +1,105 @@
+<aura:component controller="OrderOrInvoiceDetailsController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="OrderRecord" type="Order"/>
+    <aura:attribute name="InvoiceHeader" type="Contract_Invoice_Header__c"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:if isTrue="{!AND(v.OrderRecord != null, v.OrderRecord.Status != 'Activated')}">
+    <lightning:card title="Order Details" iconName="standard:orders">
+        
+        <div class="c-container">
+            <lightning:layout >
+                <lightning:layoutItem padding="around-small">
+                    <div class="header-column">
+                        <p class="field-title" title="Field 1">Order Number</p>
+                        <p>{!v.OrderRecord.OrderNumber}</p>
+                    </div>
+                </lightning:layoutItem>
+                
+                <lightning:layoutItem padding="around-small">
+                    <div class="header-column">
+                        <p class="field-title" title="Field 2">Status</p>
+                        {!v.OrderRecord.Status}
+                    </div>
+                </lightning:layoutItem>
+                 <lightning:layoutItem padding="around-small">
+                    <div class="header-column">
+                        <p class="field-title" title="Field 3">OAT Status</p>
+                        <p>
+                            <span title="">{!v.OrderRecord.Oats_Status__c }</span>
+                        </p>
+                    </div>
+                </lightning:layoutItem>
+                <aura:if isTrue="{!v.OrderRecord.Oats_Status__c == 'Rejected'}">
+                <lightning:layoutItem padding="around-small">
+                    <div class="header-column">
+                        <p class="field-title" title="Field 3">Rejection Reason</p>
+                        <p>
+                            <span title="">{!v.OrderRecord.Rejection_Reason__c }</span>
+                        </p>
+                    </div>
+                </lightning:layoutItem>
+                </aura:if>
+                <lightning:layoutItem padding="around-small">
+                    <div class="header-column">
+                        <p class="field-title" title="Field 4">OAT Email</p>
+                        <p>
+                            <span title="">{!v.OrderRecord.OAT_Email__c}</span>
+                        </p>
+                    </div>
+                </lightning:layoutItem>
+                
+            </lightning:layout>
+        </div>
+       
+    </lightning:card>
+    </aura:if>
+    
+     <aura:if isTrue="{!and(v.OrderRecord.Status == 'Activated',v.InvoiceHeader != null)}">
+    <lightning:card title="Invoice Header Details" iconName="standard:checkout">
+        
+        <div class="c-container">
+            <lightning:layout >
+                <lightning:layoutItem padding="around-small">
+                    <div class="header-column">
+                        <p class="field-title" title="Field 1">Invoice Header ID</p>
+                        <p>{!v.InvoiceHeader.Name}</p>
+                    </div>
+                </lightning:layoutItem>
+                
+                <lightning:layoutItem padding="around-small">
+                    <div class="header-column">
+                        <p class="field-title" title="Field 2">Invoice Status</p>
+                        {!v.InvoiceHeader.Invoice_Status__c}
+                    </div>
+                </lightning:layoutItem>
+                 <lightning:layoutItem padding="around-small">
+                    <div class="header-column">
+                        <p class="field-title" title="Field 3">Invoice Total</p>
+                        <p>
+                            <span title="">{!v.InvoiceHeader.Invoice_Total__c }</span>
+                        </p>
+                    </div>
+                </lightning:layoutItem>
+                <lightning:layoutItem padding="around-small">
+                    <div class="header-column">
+                        <p class="field-title" title="Field 4">Sun Order Reference</p>
+                        <p>
+                            <span title="">{!v.InvoiceHeader.SunSystems_Order_Reference__c}</span>
+                        </p>
+                    </div>
+                </lightning:layoutItem>
+                 <lightning:layoutItem padding="around-small">
+                    <div class="header-column">
+                     <p class="field-title" title="Field 5">Service Start Date</p>
+                        <p>
+                            <span title="">{!v.InvoiceHeader.Service_Start_Date__c}</span>
+                        </p>
+                    </div>
+                </lightning:layoutItem>
+                
+            </lightning:layout>
+        </div>
+       
+    </lightning:card>
+    </aura:if>
+</aura:component>

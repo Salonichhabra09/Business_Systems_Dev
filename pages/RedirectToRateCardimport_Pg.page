@@ -1,0 +1,7 @@
+<!--
+Created By: Prabhat Arora, for SSE-7077, 
+Purpose: Overiding the EDIT Functionality on OLI & Redirecting to RateCardImport Page
+-->
+<apex:page standardController="OpportunityLineItem" extensions="redirect_Ext" 
+action="{!if(isIgniteOpp==TRUE,'/apex/ImportRateCard_VF?oppId='+OpptyId,'/lightning/r/OpportunityLineItem/'+OpportunityLineItem.Id+'/edit?backgroundContext=%2Flightning%2Fr%2FOpportunity%2F'+OpptyId+'%2Fview&nooverride=1')}">
+</apex:page>

@@ -1,0 +1,7 @@
+.slds-scrollable_y {
+    -webkit-overflow-scrolling: touch;
+    max-height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    height: 100%;
+}

@@ -1,0 +1,20 @@
+<template>
+    <div class="maxHeight">
+        <lightning-layout multiple-rows>
+            <template for:each={activeContracts} for:item="contract">
+                <lightning-layout-item size="6" key={contract.Id} class="slds-p-bottom_small">
+                <div class="bold">MSA Contract: <a class="plain" href={contract.linkToMsa} >{contract.contractNumber}</a></div>
+								<div class="bold">MSA Title: <label class="plain">{contract.MSATitle}</label></div>
+								<div class="bold">Start Date: <label class="plain">{contract.startDate}</label></div>
+                <div class="bold">End Date: <label class="plain">{contract.endDate}</label></div>
+                <template if:true={contract.MSARGIndicator}>
+                    <div class="bold">MSA R/G Indicator: <img src={contract.MSARGIndicator} style="height:15px; width:16px;" border="0"></div>	
+                </template>
+                <template if:false={contract.MSARGIndicator}>
+                    <div class="bold">MSA R/G Indicator: {contract.MSARGIndicator}</div>	
+                </template>
+        </lightning-layout-item>
+            </template>
+        </lightning-layout>
+    </div>
+</template>

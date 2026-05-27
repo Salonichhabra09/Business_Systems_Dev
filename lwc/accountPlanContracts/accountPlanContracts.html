@@ -1,0 +1,133 @@
+<template>
+    <div class="slds-card-wrapper" style="background-color: white; padding:0px 0px 10px 0px; height: 450px;">
+        <div style="background-color: rgb(248, 248, 248);"
+            class="slds-text-heading_small slds-p-vertical_small slds-align_absolute-center">
+            Current Contracts
+        </div>
+        <template lwc:if={showSpinner}>
+            <div class="slds-align_absolute-center" style="position: relative; top: 190px;">
+                <lightning-spinner class="slds-spinner_inline" alternative-text="Loading Contracts..."></lightning-spinner>
+            </div>
+        </template>
+        <template lwc:if={hasContracts}>
+        <lightning-layout multiple-rows class="slds-scrollable_y" style="height: 390px;">
+            <template for:each={accountContracts} for:item="contract">
+                <lightning-layout-item size="12" key={contract.id} class="slds-p-bottom_small">
+                    <div class="slds-p-around_small ">
+                        <div class="slds-card slds-card_boundary" style="padding: 5px; border-color: rgb(240,240,240);
+                        background-color: rgb(245,245,245);">
+                            <div class="slds-text-heading_small" style="padding: 5px 0px 5px 0px;
+                            margin-bottom: 5px;
+                            border-bottom: 1px solid rgb(230,230,230);">
+                                <a href={contract.url}>{contract.contractNumber}</a>
+                            </div>
+                            <div class="slds-grid">
+                                <div class="slds-col slds-size_4-of-12">
+                                    <p class="slds-wrap" title="Anual Contract Value">Anual Contract Value:</p>
+                                </div>
+                                <div class="slds-col slds-size_8-of-12">
+                                    <p class="slds-wrap" title={contract.totalAmmount}>
+                                        {contract.totalAmmount} (USD)
+                                        <!-- <lightning-formatted-number value={contract.totalAmmount} format-style="currency" currency-code="USD" currency-display-as="symbol"></lightning-formatted-number> -->
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Added by Prachi SSE-21663-->
+                            <div class="slds-grid">
+                                <div class="slds-col slds-size_4-of-12">
+                                    <p class="slds-wrap" title="Anual Contract Value">Account Name:</p>
+                                </div>
+                                <div class="slds-col slds-size_8-of-12">
+                                    <p class="slds-wrap" title={contract.DNumber}>
+                                        {contract.DNumber}
+                                       
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Changes End SSE-21663-->
+                            <div class="slds-grid">
+                                <div class="slds-col slds-size_4-of-12">
+                                    <p class="slds-truncate" title="Contract Type">Contract Type:</p>
+                                </div>
+                                <div class="slds-col slds-size_8-of-12">
+                                    <p class="slds-wrap" title={contract.contractType}>{contract.contractType}</p>
+                                </div>
+                            </div>
+                            <div class="slds-grid">
+                                <div class="slds-col slds-size_4-of-12">
+                                    <p class="slds-wrap" title="Contract End Date">Contract End Date:</p>
+                                </div>
+                                <div class="slds-col slds-size_8-of-12">
+                                    <template lwc:if={contract.contractEndDate}>
+                                        <p class="slds-wrap" title={contract.contractEndDate}>{contract.contractEndDate}
+                                        </p>
+                                    </template>
+                                    <template lwc:else>
+                                        <p class="slds-wrap" title={contract.contractEndDate}>------</p>
+                                    </template>
+
+                                </div>
+                            </div>
+                            <div class="slds-grid">
+                                <div class="slds-col slds-size_4-of-12">
+                                    <p class="slds-truncate" title="Contract Length">Contract Length:</p>
+                                </div>
+                                <div class="slds-col slds-size_8-of-12">
+                                    <template lwc:if={contract.contractLength}>
+                                        <p class="slds-wrap" title={contract.contractLength}>{contract.contractLength}
+                                        </p>
+                                    </template>
+                                    <template lwc:else>
+                                        <p class="slds-wrap" title={contract.contractLength}>------</p>
+                                    </template>
+
+                                </div>
+                            </div>
+                            <div class="slds-grid">
+                                <div class="slds-col slds-size_4-of-12">
+                                    <p class="slds-truncate" title="Renewal Date">Renewal Date:</p>
+                                </div>
+                                <div class="slds-col slds-size_8-of-12">
+                                    <template lwc:if={contract.renewalStartDate}>
+                                        <p class="slds-wrap" title={contract.renewalStartDate}>
+                                            {contract.renewalStartDate}</p>
+                                    </template>
+                                    <template lwc:else>
+                                        <p class="slds-wrap" title={contract.renewalStartDate}>------</p>
+                                    </template>
+
+                                </div>
+                            </div>
+                            <div class="slds-grid">
+                                <div class="slds-col slds-size_4-of-12">
+                                    <p class="slds-truncate" title="Solution">Solution:</p>
+                                </div>
+                                <div class="slds-col slds-size_8-of-12">
+                                    <p class="slds-wrap" title={contract.oliSolution}>{contract.oliSolution}</p>
+                                </div>
+                            </div>
+                            <div class="slds-grid">
+                                <div class="slds-col slds-size_4-of-12">
+                                    <p class="slds-truncate" title="Usage">Usage:</p>
+                                </div>
+                                <div class="slds-col slds-size_8-of-12">
+                                    <p class="slds-wrap" title={contract.oliQuantity}>{contract.oliQuantity}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </lightning-layout-item>
+            </template>
+        </lightning-layout>
+        </template>
+        <template lwc:else>
+            <lightning-card>
+                <div class="slds-align_absolute-center slds-text-heading_small"
+                    style="height: 150px!important; text-align: center;">
+                    <lightning-formatted-text value={errorMessage}></lightning-formatted-text> 
+                </div>
+            </lightning-card>
+        </template>
+    </div>
+</template>

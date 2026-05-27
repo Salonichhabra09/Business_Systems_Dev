@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Client_Friendly_Name__c</fullName>
+        <label>Client Friendly Name</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Deployment_URL__c</fullName>
+        <label>Deployment URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Deployment__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(Deployment_URL__c, &quot;Link&quot;, &quot;_blank&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Deployment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MS_Product__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>MS Product</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MS_Type__c</fullName>
+        <description>Value in this field defines the Product used by which MS Team, also this field being used to map LOB on auto created jobs based on the product selected at Opportunity level.</description>
+        <label>MS Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>TA - Corporate</fullName>
+                    <default>false</default>
+                    <label>TA - Corporate</label>
+                </value>
+                <value>
+                    <fullName>TA - Vocational</fullName>
+                    <default>false</default>
+                    <label>TA - Vocational</label>
+                </value>
+                <value>
+                    <fullName>Talent Management</fullName>
+                    <default>false</default>
+                    <label>Talent Management</label>
+                </value>
+                <value>
+                    <fullName>TA - Credentialing</fullName>
+                    <default>false</default>
+                    <label>TA - Credentialing</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Order_Form_Category__c</fullName>
+        <description>Category field will be used to  generate Order Form with right Product &amp; Service content. Will be used by MicroStrategy Tool.</description>
+        <label>Order Form Category</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Subscription</fullName>
+                    <default>false</default>
+                    <label>Subscription</label>
+                </value>
+                <value>
+                    <fullName>In advance Order</fullName>
+                    <default>false</default>
+                    <label>In advance Order</label>
+                </value>
+                <value>
+                    <fullName>In arrears Order</fullName>
+                    <default>false</default>
+                    <label>In arrears Order</label>
+                </value>
+                <value>
+                    <fullName>Managed Services</fullName>
+                    <default>false</default>
+                    <label>Managed Services</label>
+                </value>
+                <value>
+                    <fullName>Consulting (PS Work)</fullName>
+                    <default>false</default>
+                    <label>Consulting (PS Work)</label>
+                </value>
+                <value>
+                    <fullName>Setup / build</fullName>
+                    <default>false</default>
+                    <label>Setup / build</label>
+                </value>
+                <value>
+                    <fullName>ADC</fullName>
+                    <default>false</default>
+                    <label>ADC</label>
+                </value>
+                <value>
+                    <fullName>Advisory Services</fullName>
+                    <default>false</default>
+                    <label>Advisory Services</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+                <value>
+                    <fullName>Product License</fullName>
+                    <default>false</default>
+                    <label>Product License</label>
+                </value>
+                <value>
+                    <fullName>In company training</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>In company training</label>
+                </value>
+                <value>
+                    <fullName>Public training</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Public training</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Family__c</fullName>
+        <label>Product Family</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ADC</fullName>
+                    <default>false</default>
+                    <label>ADC</label>
+                </value>
+                <value>
+                    <fullName>Managed Services</fullName>
+                    <default>false</default>
+                    <label>Managed Services</label>
+                </value>
+                <value>
+                    <fullName>Wardhead</fullName>
+                    <default>false</default>
+                    <label>Wardhead</label>
+                </value>
+                <value>
+                    <fullName>360</fullName>
+                    <default>false</default>
+                    <label>360</label>
+                </value>
+                <value>
+                    <fullName>Ability</fullName>
+                    <default>false</default>
+                    <label>Ability</label>
+                </value>
+                <value>
+                    <fullName>Ancillary</fullName>
+                    <default>false</default>
+                    <label>Ancillary</label>
+                </value>
+                <value>
+                    <fullName>Coding Simulation</fullName>
+                    <default>false</default>
+                    <label>Coding Simulation</label>
+                </value>
+                <value>
+                    <fullName>Cognitive Ability</fullName>
+                    <default>false</default>
+                    <label>Cognitive Ability</label>
+                </value>
+                <value>
+                    <fullName>Competencies</fullName>
+                    <default>false</default>
+                    <label>Competencies</label>
+                </value>
+                <value>
+                    <fullName>Custom Report</fullName>
+                    <default>false</default>
+                    <label>Custom Report</label>
+                </value>
+                <value>
+                    <fullName>Digital Training</fullName>
+                    <default>false</default>
+                    <label>Digital Training</label>
+                </value>
+                <value>
+                    <fullName>Experiences</fullName>
+                    <default>false</default>
+                    <label>Experiences</label>
+                </value>
+                <value>
+                    <fullName>GCSC</fullName>
+                    <default>false</default>
+                    <label>GCSC</label>
+                </value>
+                <value>
+                    <fullName>Insights capability</fullName>
+                    <default>false</default>
+                    <label>Insights capability</label>
+                </value>
+                <value>
+                    <fullName>Integration</fullName>
+                    <default>false</default>
+                    <label>Integration</label>
+                </value>
+                <value>
+                    <fullName>Interview</fullName>
+                    <default>false</default>
+                    <label>Interview</label>
+                </value>
+                <value>
+                    <fullName>JFA - Tailor</fullName>
+                    <default>false</default>
+                    <label>JFA - Tailor</label>
+                </value>
+                <value>
+                    <fullName>Job Analysis</fullName>
+                    <default>false</default>
+                    <label>Job Analysis</label>
+                </value>
+                <value>
+                    <fullName>Judgement</fullName>
+                    <default>false</default>
+                    <label>Judgement</label>
+                </value>
+                <value>
+                    <fullName>Live Product</fullName>
+                    <default>false</default>
+                    <label>Live Product</label>
+                </value>
+                <value>
+                    <fullName>Localization</fullName>
+                    <default>false</default>
+                    <label>Localization</label>
+                </value>
+                <value>
+                    <fullName>Motivation</fullName>
+                    <default>false</default>
+                    <label>Motivation</label>
+                </value>
+                <value>
+                    <fullName>Multimedia</fullName>
+                    <default>false</default>
+                    <label>Multimedia</label>
+                </value>
+                <value>
+                    <fullName>Personality</fullName>
+                    <default>false</default>
+                    <label>Personality</label>
+                </value>
+                <value>
+                    <fullName>Personality / Behavioural</fullName>
+                    <default>false</default>
+                    <label>Personality / Behavioural</label>
+                </value>
+                <value>
+                    <fullName>Platform Onboarding</fullName>
+                    <default>false</default>
+                    <label>Platform Onboarding</label>
+                </value>
+                <value>
+                    <fullName>Precise Fit Solutions</fullName>
+                    <default>false</default>
+                    <label>Precise Fit Solutions</label>
+                </value>
+                <value>
+                    <fullName>Product capability</fullName>
+                    <default>false</default>
+                    <label>Product capability</label>
+                </value>
+                <value>
+                    <fullName>Product Review</fullName>
+                    <default>false</default>
+                    <label>Product Review</label>
+                </value>
+                <value>
+                    <fullName>ROI</fullName>
+                    <default>false</default>
+                    <label>ROI</label>
+                </value>
+                <value>
+                    <fullName>Situational Judgement</fullName>
+                    <default>false</default>
+                    <label>Situational Judgement</label>
+                </value>
+                <value>
+                    <fullName>SJT - Tailor / Bespoke</fullName>
+                    <default>false</default>
+                    <label>SJT - Tailor / Bespoke</label>
+                </value>
+                <value>
+                    <fullName>Skills</fullName>
+                    <default>false</default>
+                    <label>Skills</label>
+                </value>
+                <value>
+                    <fullName>Solution Client Support</fullName>
+                    <default>false</default>
+                    <label>Solution Client Support</label>
+                </value>
+                <value>
+                    <fullName>Solutions</fullName>
+                    <default>false</default>
+                    <label>Solutions</label>
+                </value>
+                <value>
+                    <fullName>Talent Insight Dashboard</fullName>
+                    <default>false</default>
+                    <label>Talent Insight Dashboard</label>
+                </value>
+                <value>
+                    <fullName>Talent Insight: Group Differences</fullName>
+                    <default>false</default>
+                    <label>Talent Insight: Group Differences</label>
+                </value>
+                <value>
+                    <fullName>Talent Review / Analytics</fullName>
+                    <default>false</default>
+                    <label>Talent Review / Analytics</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+                <value>
+                    <fullName>Units</fullName>
+                    <default>false</default>
+                    <label>Units</label>
+                </value>
+                <value>
+                    <fullName>Video Feedback</fullName>
+                    <default>false</default>
+                    <label>Video Feedback</label>
+                </value>
+                <value>
+                    <fullName>Other Services</fullName>
+                    <default>false</default>
+                    <label>Other Services</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Number__c</fullName>
+        <displayFormat>PROD - {0000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Product Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>RAG_Indicator__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(RAG_Option__c, &apos;High&apos;) ,  IMAGE(&quot;/resource/1674447737000/RAG_Indicator_Red?&quot; , &quot;Red&quot; , 25, 26) ,
+				IF( ISPICKVAL(RAG_Option__c, &apos;Light&apos;) ,  IMAGE(&quot;/resource/1674447737000/RAG_Indicator_Green?&quot; , &quot;Green&quot; , 25 ,26) , 
+						IF(ISPICKVAL(RAG_Option__c, &apos;Medium&apos;) , IMAGE(&quot;/resource/1674447737000/RAG_Indicator_Amber?&quot; , &quot;Amber&quot; , 25,26), &quot;&quot;)))</formula>
+        <label>RAG Indicator</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RAG_Option__c</fullName>
+        <inlineHelpText>This is used to describe the complexity of PS products</inlineHelpText>
+        <label>RAG Option</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>0</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>0</label>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>1</label>
+                </value>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Light</fullName>
+                    <default>false</default>
+                    <label>Light</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Renewable__c</fullName>
+        <inlineHelpText>This is a renewable product</inlineHelpText>
+        <label>Renewable</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Revenue_Category__c</fullName>
+        <label>Stream</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Professional Services</fullName>
+                    <default>false</default>
+                    <label>Professional Services</label>
+                </value>
+                <value>
+                    <fullName>Managed Services</fullName>
+                    <default>false</default>
+                    <label>Managed Services</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Product subscription</fullName>
+                    <default>false</default>
+                    <label>Product subscription</label>
+                </value>
+                <value>
+                    <fullName>Product in advance</fullName>
+                    <default>false</default>
+                    <label>Product in advance</label>
+                </value>
+                <value>
+                    <fullName>Product in arrears</fullName>
+                    <default>false</default>
+                    <label>Product in arrears</label>
+                </value>
+                <value>
+                    <fullName>Professional Services (Public Training)</fullName>
+                    <default>false</default>
+                    <label>Professional Services (Public Training)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <label>Status</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Beta</fullName>
+                    <default>false</default>
+                    <label>Beta</label>
+                </value>
+                <value>
+                    <fullName>Revenue Ready</fullName>
+                    <default>true</default>
+                    <label>Revenue Ready</label>
+                </value>
+                <value>
+                    <fullName>Withdrawn</fullName>
+                    <default>false</default>
+                    <label>Withdrawn</label>
+                </value>
+                <value>
+                    <fullName>End of Life</fullName>
+                    <default>false</default>
+                    <label>End of Life</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+</CustomObject>

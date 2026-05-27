@@ -1,0 +1,15 @@
+.max-height{
+    max-height: 30rem;
+    overflow: auto;
+}
+.total-potential-value-header{
+    font-weight: 500;
+    font-size: medium;
+}
+.total-potential-value{
+    display: inline-block;
+    text-align: center;
+}
+.total-potential-value > .total-potential-value-header{
+    display: block;
+}

@@ -1,0 +1,1019 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Revenue Account Code</label>
+        <length>6</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Description__c</fullName>
+        <label>Account Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Outsourced Assessment Revenue</fullName>
+                    <default>false</default>
+                    <label>Outsourced Assessment Revenue</label>
+                </value>
+                <value>
+                    <fullName>Solutions Consulting Revenue</fullName>
+                    <default>false</default>
+                    <label>Solutions Consulting Revenue</label>
+                </value>
+                <value>
+                    <fullName>Product Consulting Revenue</fullName>
+                    <default>false</default>
+                    <label>Product Consulting Revenue</label>
+                </value>
+                <value>
+                    <fullName>Training Revenue - Psychometric</fullName>
+                    <default>false</default>
+                    <label>Training Revenue - Psychometric</label>
+                </value>
+                <value>
+                    <fullName>Training Revenue - Non-Psychometric</fullName>
+                    <default>false</default>
+                    <label>Training Revenue - Non-Psychometric</label>
+                </value>
+                <value>
+                    <fullName>Other Assessment Intra SHL Purchases</fullName>
+                    <default>false</default>
+                    <label>Other Assessment Intra SHL Purchases</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Evidence__c</fullName>
+        <label>Evidence</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Documentation stored on server</fullName>
+                    <default>false</default>
+                    <label>Documentation stored on server</label>
+                </value>
+                <value>
+                    <fullName>Sign off doc candidate</fullName>
+                    <default>false</default>
+                    <label>Sign off doc candidate</label>
+                </value>
+                <value>
+                    <fullName>Report to client stored on server</fullName>
+                    <default>false</default>
+                    <label>Report to client stored on server</label>
+                </value>
+                <value>
+                    <fullName>Sign off doc Assessor</fullName>
+                    <default>false</default>
+                    <label>Sign off doc Assessor</label>
+                </value>
+                <value>
+                    <fullName>Collected data</fullName>
+                    <default>false</default>
+                    <label>Collected data</label>
+                </value>
+                <value>
+                    <fullName>Signed off doc client</fullName>
+                    <default>false</default>
+                    <label>Signed off doc client</label>
+                </value>
+                <value>
+                    <fullName>Contend send to client</fullName>
+                    <default>false</default>
+                    <label>Contend send to client</label>
+                </value>
+                <value>
+                    <fullName>Sign off doc client</fullName>
+                    <default>false</default>
+                    <label>Sign off doc client</label>
+                </value>
+                <value>
+                    <fullName>Content send to client</fullName>
+                    <default>false</default>
+                    <label>Content send to client</label>
+                </value>
+                <value>
+                    <fullName>PPT to client</fullName>
+                    <default>false</default>
+                    <label>PPT to client</label>
+                </value>
+                <value>
+                    <fullName>Data stored in client folder on server</fullName>
+                    <default>false</default>
+                    <label>Data stored in client folder on server</label>
+                </value>
+                <value>
+                    <fullName>PPT and date PPT at client site</fullName>
+                    <default>false</default>
+                    <label>PPT and date PPT at client site</label>
+                </value>
+                <value>
+                    <fullName>Attendee list</fullName>
+                    <default>false</default>
+                    <label>Attendee list</label>
+                </value>
+                <value>
+                    <fullName>Sign off doc Sales LBU</fullName>
+                    <default>false</default>
+                    <label>Sign off doc Sales LBU</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IM_code__c</fullName>
+        <externalId>false</externalId>
+        <label>IM code</label>
+        <length>13</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IM_lookup__c</fullName>
+        <externalId>false</externalId>
+        <label>IM lookup</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Milestone__c</fullName>
+        <description>A set of Milestone values to be selected.</description>
+        <label>Milestone</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Service_Type__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Exercise Design</fullName>
+                    <default>false</default>
+                    <label>Exercise Design</label>
+                </value>
+                <value>
+                    <fullName>Delivery of Assessment</fullName>
+                    <default>false</default>
+                    <label>Delivery of Assessment</label>
+                </value>
+                <value>
+                    <fullName>Outcome Design</fullName>
+                    <default>false</default>
+                    <label>Outcome Design</label>
+                </value>
+                <value>
+                    <fullName>Content Creation and data collection</fullName>
+                    <default>false</default>
+                    <label>Content Creation and data collection</label>
+                </value>
+                <value>
+                    <fullName>Report and Feedback</fullName>
+                    <default>false</default>
+                    <label>Report and Feedback</label>
+                </value>
+                <value>
+                    <fullName>Assessor Training</fullName>
+                    <default>false</default>
+                    <label>Assessor Training</label>
+                </value>
+                <value>
+                    <fullName>Delivery, Report and Feedback</fullName>
+                    <default>false</default>
+                    <label>Delivery, Report and Feedback</label>
+                </value>
+                <value>
+                    <fullName>Client Sign Off Feedback Session</fullName>
+                    <default>false</default>
+                    <label>Client Sign Off Feedback Session</label>
+                </value>
+                <value>
+                    <fullName>Workshop Design</fullName>
+                    <default>false</default>
+                    <label>Workshop Design</label>
+                </value>
+                <value>
+                    <fullName>Workshop Delivery</fullName>
+                    <default>false</default>
+                    <label>Workshop Delivery</label>
+                </value>
+                <value>
+                    <fullName>Client Sign Off Recommendations Report</fullName>
+                    <default>false</default>
+                    <label>Client Sign Off Recommendations Report</label>
+                </value>
+                <value>
+                    <fullName>Job Analysis</fullName>
+                    <default>false</default>
+                    <label>Job Analysis</label>
+                </value>
+                <value>
+                    <fullName>Client Sign Off Competency Framework</fullName>
+                    <default>false</default>
+                    <label>Client Sign Off Competency Framework</label>
+                </value>
+                <value>
+                    <fullName>Content Creation</fullName>
+                    <default>false</default>
+                    <label>Content Creation</label>
+                </value>
+                <value>
+                    <fullName>Client Sign Off Content (incl localisation)</fullName>
+                    <default>false</default>
+                    <label>Client Sign Off Content (incl localisation)</label>
+                </value>
+                <value>
+                    <fullName>Client Sign Off IT Build</fullName>
+                    <default>false</default>
+                    <label>Client Sign Off IT Build</label>
+                </value>
+                <value>
+                    <fullName>Client Sign Off Script</fullName>
+                    <default>false</default>
+                    <label>Client Sign Off Script</label>
+                </value>
+                <value>
+                    <fullName>Client Sign Off Content</fullName>
+                    <default>false</default>
+                    <label>Client Sign Off Content</label>
+                </value>
+                <value>
+                    <fullName>Client Sign-Off of Mock-up</fullName>
+                    <default>false</default>
+                    <label>Client Sign-Off of Mock-up</label>
+                </value>
+                <value>
+                    <fullName>Client Sign-Off of Mappings</fullName>
+                    <default>false</default>
+                    <label>Client Sign-Off of Mappings</label>
+                </value>
+                <value>
+                    <fullName>Client Sign-Off of Equations, Norms and Rulebase</fullName>
+                    <default>false</default>
+                    <label>Client Sign-Off of Equations, Norms and Rulebase</label>
+                </value>
+                <value>
+                    <fullName>Data Audit</fullName>
+                    <default>false</default>
+                    <label>Data Audit</label>
+                </value>
+                <value>
+                    <fullName>Presentation to Client</fullName>
+                    <default>false</default>
+                    <label>Presentation to Client</label>
+                </value>
+                <value>
+                    <fullName>Unit Exchange for Consulting</fullName>
+                    <default>false</default>
+                    <label>Unit Exchange for Consulting</label>
+                </value>
+                <value>
+                    <fullName>Unit Exchange for Training</fullName>
+                    <default>false</default>
+                    <label>Unit Exchange for Training</label>
+                </value>
+                <value>
+                    <fullName>Intra SHL Purchase of Services</fullName>
+                    <default>false</default>
+                    <label>Intra SHL Purchase of Services</label>
+                </value>
+                <value>
+                    <fullName>Initial Data Collection</fullName>
+                    <default>false</default>
+                    <label>Initial Data Collection</label>
+                </value>
+                <value>
+                    <fullName>Client Sign Off Draft Content</fullName>
+                    <default>false</default>
+                    <label>Client Sign Off Draft Content</label>
+                </value>
+                <value>
+                    <fullName>Client Sign Off Content Build</fullName>
+                    <default>false</default>
+                    <label>Client Sign Off Content Build</label>
+                </value>
+                <value>
+                    <fullName>Complete Data Collection</fullName>
+                    <default>false</default>
+                    <label>Complete Data Collection</label>
+                </value>
+                <value>
+                    <fullName>Delivery of Job Analysis Results / Assessment Recommendation</fullName>
+                    <default>false</default>
+                    <label>Delivery of Job Analysis Results / Assessment Recommendation</label>
+                </value>
+                <value>
+                    <fullName>OCP Facilitation and Report</fullName>
+                    <default>false</default>
+                    <label>OCP Facilitation and Report</label>
+                </value>
+                <value>
+                    <fullName>WPS Facilitation and Report</fullName>
+                    <default>false</default>
+                    <label>WPS Facilitation and Report</label>
+                </value>
+                <value>
+                    <fullName>Design of Bespoke Training</fullName>
+                    <default>false</default>
+                    <label>Design of Bespoke Training</label>
+                </value>
+                <value>
+                    <fullName>Delivery of Bespoke Training</fullName>
+                    <default>false</default>
+                    <label>Delivery of Bespoke Training</label>
+                </value>
+                <value>
+                    <fullName>Client sign-off Project Plan</fullName>
+                    <default>false</default>
+                    <label>Client sign-off Project Plan</label>
+                </value>
+                <value>
+                    <fullName>Client sign-off Project Completion</fullName>
+                    <default>false</default>
+                    <label>Client sign-off Project Completion</label>
+                </value>
+                <value>
+                    <fullName>Client sign off questionnaire design</fullName>
+                    <default>false</default>
+                    <label>Client sign off questionnaire design</label>
+                </value>
+                <value>
+                    <fullName>Talent Analytics Benchmark Report</fullName>
+                    <default>false</default>
+                    <label>Talent Analytics Benchmark Report</label>
+                </value>
+                <value>
+                    <fullName>Talent Analytics Client Report</fullName>
+                    <default>false</default>
+                    <label>Talent Analytics Client Report</label>
+                </value>
+                <value>
+                    <fullName>Assessment Solution Recommendation signed off</fullName>
+                    <default>false</default>
+                    <label>Assessment Solution Recommendation signed off</label>
+                </value>
+                <value>
+                    <fullName>Analysis Report</fullName>
+                    <default>false</default>
+                    <label>Analysis Report</label>
+                </value>
+                <value>
+                    <fullName>Subscription Support - Foundation</fullName>
+                    <default>false</default>
+                    <label>Subscription Support - Foundation</label>
+                </value>
+                <value>
+                    <fullName>Subscription Support - Embed</fullName>
+                    <default>false</default>
+                    <label>Subscription Support - Embed</label>
+                </value>
+                <value>
+                    <fullName>Subscription Support - Enhance</fullName>
+                    <default>false</default>
+                    <label>Subscription Support - Enhance</label>
+                </value>
+                <value>
+                    <fullName>Subscription Support - Bespoke</fullName>
+                    <default>false</default>
+                    <label>Subscription Support - Bespoke</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Bespoke Non-Psychometric Training</controllingFieldValue>
+                <controllingFieldValue>Bespoke Psychometric Training</controllingFieldValue>
+                <valueName>Design of Bespoke Training</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Bespoke Non-Psychometric Training</controllingFieldValue>
+                <controllingFieldValue>Bespoke Psychometric Training</controllingFieldValue>
+                <valueName>Delivery of Bespoke Training</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Project Management (Solutions Consulting)</controllingFieldValue>
+                <controllingFieldValue>Project Management (Product Consulting)</controllingFieldValue>
+                <controllingFieldValue>Project Management (Assessment Services)</controllingFieldValue>
+                <valueName>Client sign-off Project Plan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Project Management (Solutions Consulting)</controllingFieldValue>
+                <controllingFieldValue>Project Management (Product Consulting)</controllingFieldValue>
+                <controllingFieldValue>Project Management (Assessment Services)</controllingFieldValue>
+                <valueName>Client sign-off Project Completion</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Assessment Centre</controllingFieldValue>
+                <controllingFieldValue>Development Centre</controllingFieldValue>
+                <controllingFieldValue>1:1 Assessment</controllingFieldValue>
+                <controllingFieldValue>1:1 Development</controllingFieldValue>
+                <valueName>Exercise Design</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Assessment Centre</controllingFieldValue>
+                <controllingFieldValue>Development Centre</controllingFieldValue>
+                <valueName>Assessor Training</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Assessment Centre</controllingFieldValue>
+                <controllingFieldValue>Development Centre</controllingFieldValue>
+                <valueName>Delivery, Report and Feedback</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Job Analysis - Stand Alone (PC)</controllingFieldValue>
+                <controllingFieldValue>Job Analysis - Stand Alone (SC)</controllingFieldValue>
+                <valueName>Complete Data Collection</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Job Analysis - Stand Alone (PC)</controllingFieldValue>
+                <controllingFieldValue>Job Analysis - Stand Alone (SC)</controllingFieldValue>
+                <valueName>Delivery of Job Analysis Results / Assessment Recommendation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PST_3rd Party Integration</controllingFieldValue>
+                <controllingFieldValue>PST_360 Solution</controllingFieldValue>
+                <controllingFieldValue>Talent Screener MM/Video (+1 language)</controllingFieldValue>
+                <controllingFieldValue>PST_Custom Norm</controllingFieldValue>
+                <controllingFieldValue>PST_Branded Solution</controllingFieldValue>
+                <controllingFieldValue>Custom Report (UCR)</controllingFieldValue>
+                <controllingFieldValue>PST_S2P Solution</controllingFieldValue>
+                <controllingFieldValue>Custom Report (Client Competencies)</controllingFieldValue>
+                <controllingFieldValue>Talent Screener (+ 1 language)</controllingFieldValue>
+                <valueName>Client Sign Off IT Build</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PST_360 Solution</controllingFieldValue>
+                <valueName>Client sign off questionnaire design</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PST_Talent Audit</controllingFieldValue>
+                <valueName>Talent Analytics Benchmark Report</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PST_Talent Audit</controllingFieldValue>
+                <valueName>Talent Analytics Client Report</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Screener MM/Video (+1 language)</controllingFieldValue>
+                <controllingFieldValue>RJP</controllingFieldValue>
+                <controllingFieldValue>Competency Design</controllingFieldValue>
+                <controllingFieldValue>Talent Screener (+ 1 language)</controllingFieldValue>
+                <valueName>Job Analysis</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Screener MM/Video (+1 language)</controllingFieldValue>
+                <controllingFieldValue>RJP</controllingFieldValue>
+                <controllingFieldValue>Talent Screener (+ 1 language)</controllingFieldValue>
+                <valueName>Content Creation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Screener MM/Video (+1 language)</controllingFieldValue>
+                <controllingFieldValue>Talent Screener (+ 1 language)</controllingFieldValue>
+                <valueName>Client Sign Off Content (incl localisation)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Screener MM/Video (+1 language)</controllingFieldValue>
+                <valueName>Client Sign Off Script</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>RJP</controllingFieldValue>
+                <valueName>Client Sign Off Content</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Custom Report (UCR)</controllingFieldValue>
+                <controllingFieldValue>Custom Report (Client Competencies)</controllingFieldValue>
+                <valueName>Client Sign-Off of Mock-up</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PST_S2P Solution</controllingFieldValue>
+                <valueName>Assessment Solution Recommendation signed off</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Custom Report (Client Competencies)</controllingFieldValue>
+                <valueName>Client Sign-Off of Mappings</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Custom Report (Client Competencies)</controllingFieldValue>
+                <valueName>Client Sign-Off of Equations, Norms and Rulebase</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PST_Talent Screener Evaluation</controllingFieldValue>
+                <valueName>Analysis Report</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Outcome Study</controllingFieldValue>
+                <valueName>Data Audit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Outcome Study</controllingFieldValue>
+                <valueName>Presentation to Client</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Subscription Support</controllingFieldValue>
+                <valueName>Subscription Support - Foundation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Subscription Support</controllingFieldValue>
+                <valueName>Subscription Support - Embed</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Subscription Support</controllingFieldValue>
+                <valueName>Subscription Support - Enhance</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Subscription Support</controllingFieldValue>
+                <valueName>Subscription Support - Bespoke</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Unit Exchange</controllingFieldValue>
+                <valueName>Unit Exchange for Consulting</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Unit Exchange</controllingFieldValue>
+                <valueName>Unit Exchange for Training</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Intra SHL Purchase of Services</controllingFieldValue>
+                <valueName>Intra SHL Purchase of Services</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other Custom Content Development</controllingFieldValue>
+                <valueName>Initial Data Collection</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other Custom Content Development</controllingFieldValue>
+                <valueName>Client Sign Off Draft Content</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other Custom Content Development</controllingFieldValue>
+                <valueName>Client Sign Off Content Build</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Job Profiling</controllingFieldValue>
+                <valueName>OCP Facilitation and Report</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Job Profiling</controllingFieldValue>
+                <valueName>WPS Facilitation and Report</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>1:1 Assessment</controllingFieldValue>
+                <controllingFieldValue>1:1 Development</controllingFieldValue>
+                <valueName>Delivery of Assessment</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>1:1 Assessment</controllingFieldValue>
+                <controllingFieldValue>1:1 Development</controllingFieldValue>
+                <controllingFieldValue>Talent Analytics</controllingFieldValue>
+                <valueName>Report and Feedback</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Individual Development Feedback Session</controllingFieldValue>
+                <valueName>Client Sign Off Feedback Session</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Team Development Feedback Session</controllingFieldValue>
+                <valueName>Workshop Design</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Team Development Feedback Session</controllingFieldValue>
+                <valueName>Workshop Delivery</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Competency Design</controllingFieldValue>
+                <valueName>Client Sign Off Competency Framework</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Competency Profiling / Review</controllingFieldValue>
+                <valueName>Client Sign Off Recommendations Report</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Analytics</controllingFieldValue>
+                <valueName>Outcome Design</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Talent Analytics</controllingFieldValue>
+                <valueName>Content Creation and data collection</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Service_Type__c</fullName>
+        <label>Service Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1:1 Assessment</fullName>
+                    <default>false</default>
+                    <label>1:1 Assessment</label>
+                </value>
+                <value>
+                    <fullName>1:1 Development</fullName>
+                    <default>false</default>
+                    <label>1:1 Development</label>
+                </value>
+                <value>
+                    <fullName>Assessment Centre</fullName>
+                    <default>false</default>
+                    <label>Assessment Centre</label>
+                </value>
+                <value>
+                    <fullName>Development Centre</fullName>
+                    <default>false</default>
+                    <label>Development Centre</label>
+                </value>
+                <value>
+                    <fullName>Individual Development Feedback Session</fullName>
+                    <default>false</default>
+                    <label>Individual Development Feedback Session</label>
+                </value>
+                <value>
+                    <fullName>Team Development Feedback Session</fullName>
+                    <default>false</default>
+                    <label>Team Development Feedback Session</label>
+                </value>
+                <value>
+                    <fullName>Competency Design</fullName>
+                    <default>false</default>
+                    <label>Competency Design</label>
+                </value>
+                <value>
+                    <fullName>Competency Profiling / Review</fullName>
+                    <default>false</default>
+                    <label>Competency Profiling / Review</label>
+                </value>
+                <value>
+                    <fullName>Talent Screener (+ 1 language)</fullName>
+                    <default>false</default>
+                    <label>Talent Screener (+ 1 language)</label>
+                </value>
+                <value>
+                    <fullName>Talent Screener MM/Video (+1 language)</fullName>
+                    <default>false</default>
+                    <label>Talent Screener MM/Video (+1 language)</label>
+                </value>
+                <value>
+                    <fullName>RJP</fullName>
+                    <default>false</default>
+                    <label>RJP</label>
+                </value>
+                <value>
+                    <fullName>Custom Report (UCR)</fullName>
+                    <default>false</default>
+                    <label>Custom Report (UCR)</label>
+                </value>
+                <value>
+                    <fullName>Custom Report (Client Competencies)</fullName>
+                    <default>false</default>
+                    <label>Custom Report (Client Competencies)</label>
+                </value>
+                <value>
+                    <fullName>Business Outcome Study</fullName>
+                    <default>false</default>
+                    <label>Business Outcome Study</label>
+                </value>
+                <value>
+                    <fullName>Unit Exchange</fullName>
+                    <default>false</default>
+                    <label>Unit Exchange</label>
+                </value>
+                <value>
+                    <fullName>Intra SHL Purchase of Services</fullName>
+                    <default>false</default>
+                    <label>Intra SHL Purchase of Services</label>
+                </value>
+                <value>
+                    <fullName>Other Custom Content Development</fullName>
+                    <default>false</default>
+                    <label>Other Custom Content Development</label>
+                </value>
+                <value>
+                    <fullName>Job Analysis - Stand Alone (PC)</fullName>
+                    <default>false</default>
+                    <label>Job Analysis - Stand Alone (PC)</label>
+                </value>
+                <value>
+                    <fullName>Job Profiling</fullName>
+                    <default>false</default>
+                    <label>Job Profiling</label>
+                </value>
+                <value>
+                    <fullName>Talent Analytics</fullName>
+                    <default>false</default>
+                    <label>Talent Analytics</label>
+                </value>
+                <value>
+                    <fullName>Bespoke Psychometric Training</fullName>
+                    <default>false</default>
+                    <label>Bespoke Psychometric Training</label>
+                </value>
+                <value>
+                    <fullName>Bespoke Non-Psychometric Training</fullName>
+                    <default>false</default>
+                    <label>Bespoke Non-Psychometric Training</label>
+                </value>
+                <value>
+                    <fullName>Project Management (Solutions Consulting)</fullName>
+                    <default>false</default>
+                    <label>Project Management (Solutions Consulting)</label>
+                </value>
+                <value>
+                    <fullName>Project Management (Product Consulting)</fullName>
+                    <default>false</default>
+                    <label>Project Management (Product Consulting)</label>
+                </value>
+                <value>
+                    <fullName>Project Management (Assessment Services)</fullName>
+                    <default>false</default>
+                    <label>Project Management (Assessment Services)</label>
+                </value>
+                <value>
+                    <fullName>PST_3rd Party Integration</fullName>
+                    <default>false</default>
+                    <label>PST_3rd Party Integration</label>
+                </value>
+                <value>
+                    <fullName>PST_360 Solution</fullName>
+                    <default>false</default>
+                    <label>PST_360 Solution</label>
+                </value>
+                <value>
+                    <fullName>PST_Talent Audit</fullName>
+                    <default>false</default>
+                    <label>PST_Talent Audit</label>
+                </value>
+                <value>
+                    <fullName>PST_Custom Norm</fullName>
+                    <default>false</default>
+                    <label>PST_Custom Norm</label>
+                </value>
+                <value>
+                    <fullName>PST_Branded Solution</fullName>
+                    <default>false</default>
+                    <label>PST_Branded Solution</label>
+                </value>
+                <value>
+                    <fullName>PST_S2P Solution</fullName>
+                    <default>false</default>
+                    <label>PST_S2P Solution</label>
+                </value>
+                <value>
+                    <fullName>PST_Talent Screener Evaluation</fullName>
+                    <default>false</default>
+                    <label>PST_Talent Screener Evaluation</label>
+                </value>
+                <value>
+                    <fullName>Job Analysis - Stand Alone (SC)</fullName>
+                    <default>false</default>
+                    <label>Job Analysis - Stand Alone (SC)</label>
+                </value>
+                <value>
+                    <fullName>Subscription Support</fullName>
+                    <default>false</default>
+                    <label>Subscription Support</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Milestone Code</label>
+    <listViews>
+        <fullName>All_Codes</fullName>
+        <columns>NAME</columns>
+        <columns>Service_Type__c</columns>
+        <columns>Milestone__c</columns>
+        <columns>IM_code__c</columns>
+        <columns>IM_lookup__c</columns>
+        <columns>Account_Code__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Codes</label>
+    </listViews>
+    <listViews>
+        <fullName>IT_Build_codes</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Code__c</columns>
+        <columns>IM_lookup__c</columns>
+        <columns>IM_code__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>contains</operation>
+            <value>IT build</value>
+        </filters>
+        <label>IT Build codes</label>
+    </listViews>
+    <nameField>
+        <label>Milestone Code</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Milestone Codes</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Service_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IM_code__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IM_lookup__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Account_Code__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Service_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Account_Code__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>IM_lookup__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Account_Code__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>IM_code__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>IM_lookup__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Service_Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OWNER.FIRST_NAME</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Account_Code__c</searchFilterFields>
+        <searchFilterFields>IM_code__c</searchFilterFields>
+        <searchFilterFields>IM_lookup__c</searchFilterFields>
+        <searchFilterFields>Service_Type__c</searchFilterFields>
+        <searchFilterFields>OWNER.FIRST_NAME</searchFilterFields>
+        <searchResultsAdditionalFields>Account_Code__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IM_code__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IM_lookup__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Service_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.FIRST_NAME</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>
