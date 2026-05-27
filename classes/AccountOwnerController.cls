@@ -6,7 +6,7 @@ public without sharing class AccountOwnerController {
         try {
 //added comments fro dev branch to be merged with main
             AccountDetails detailsToReturn = new AccountDetails();
-            List<Account> accountToQuery = [SELECT Id,OwnerId,GCSC_Owned_Account__c,GCSC_Account_Owner__c,Owner.Name,Customer_Connect_Account__c, name FROM Account WHERE Id =:recordId];
+            List<Account> accountToQuery = [SELECT Id,OwnerId,GCSC_Owned_Account__c,GCSC_Account_Owner__c,Owner.Name,Customer_Connect_Account__c, name,abc__c FROM Account WHERE Id =:recordId];
             if(!accountToQuery.isEmpty()){
                 UserRecordAccess access = [SELECT RecordId,HasTransferAccess,HasEditAccess FROM UserRecordAccess where UserId =:UserInfo.getUserId() AND RecordId =:recordId];
                 
